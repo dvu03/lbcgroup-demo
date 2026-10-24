@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/common/SEOHead';
-import { Breadcrumbs } from '../components/common/Breadcrumbs';
+import { PageHeroBanner } from '../components/common/PageHeroBanner';
 import { SectionTitle } from '../components/common/SectionTitle';
 import { useDemoData } from '../context/DemoDataContext';
 import { DEFAULT_DOCTOR_AVATAR } from '../data/doctors';
@@ -17,15 +17,15 @@ export const DoctorsListPage: React.FC = () => {
         description="Đội ngũ bác sĩ chuyên khoa da liễu có trình độ sau đại học tại Lạc's Beauty Center Cần Thơ. Thạc sĩ, Bác sĩ Chuyên khoa I & II trực tiếp thăm khám."
       />
 
-      <Breadcrumbs items={[{ label: 'Đội ngũ bác sĩ' }]} />
+      <PageHeroBanner
+        pageId="doi-ngu-bac-si"
+        breadcrumbLabel="Đội ngũ bác sĩ"
+        defaultBadge="Chuyên môn sau đại học"
+        defaultTitle="Đội Ngũ Bác Sĩ Chuyên Khoa Da Liễu"
+        defaultDescription="Hội tụ các chuyên gia da liễu đầu ngành, được đào tạo bài bản sau đại học và tu nghiệp nâng cao tại các trung tâm y khoa quốc tế."
+      />
 
       <section className="py-12 sm:py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle
-          asH1={true}
-          badge="Chuyên môn sau đại học"
-          title="Đội Ngũ Bác Sĩ Chuyên Khoa Da Liễu"
-          subtitle="Hội tụ các chuyên gia da liễu đầu ngành, được đào tạo bài bản sau đại học và tu nghiệp nâng cao tại các trung tâm y khoa quốc tế."
-        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {doctors.map((doc) => (

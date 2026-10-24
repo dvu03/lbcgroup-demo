@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/common/SEOHead';
-import { Breadcrumbs } from '../components/common/Breadcrumbs';
+import { PageHeroBanner } from '../components/common/PageHeroBanner';
 import { SectionTitle } from '../components/common/SectionTitle';
 import { useDemoData } from '../context/DemoDataContext';
 import { MapPin, Phone, Clock, Calendar, Navigation, ShieldCheck } from 'lucide-react';
@@ -16,14 +16,15 @@ export const FacilitiesPage: React.FC = () => {
         description="Khám phá địa chỉ, hình ảnh thực tế, giờ mở cửa và bản đồ đường đi tới Cơ sở 01 và Cơ sở 02 của Phòng khám Da liễu Lạc's Beauty Center Cần Thơ."
       />
 
-      <Breadcrumbs items={[{ label: 'Hệ thống cơ sở' }]} />
+      <PageHeroBanner
+        pageId="he-thong-co-so"
+        breadcrumbLabel="Hệ thống cơ sở"
+        defaultBadge="Hệ thống cơ sở khang trang"
+        defaultTitle="Hệ Thống 2 Cơ Sở Tại TP. Cần Thơ"
+        defaultDescription="Tọa lạc tại các trục đường huyết mạch thuận tiện di chuyển, trang bị đầy đủ máy móc công nghệ cao và phòng vô trùng đạt chuẩn y tế."
+      />
 
       <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle
-          badge="Hệ thống cơ sở khang trang"
-          title="Hệ Thống 2 Cơ Sở Tại TP. Cần Thơ"
-          subtitle="Tọa lạc tại các trục đường huyết mạch thuận tiện di chuyển, trang bị đầy đủ máy móc công nghệ cao và phòng vô trùng đạt chuẩn y tế."
-        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {locations.map((loc) => (

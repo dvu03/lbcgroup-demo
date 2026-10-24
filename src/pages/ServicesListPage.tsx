@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/common/SEOHead';
-import { Breadcrumbs } from '../components/common/Breadcrumbs';
+import { PageHeroBanner } from '../components/common/PageHeroBanner';
 import { SectionTitle } from '../components/common/SectionTitle';
 import { useDemoData } from '../context/DemoDataContext';
 import { ArrowRight, CheckCircle2, Calendar, Stethoscope } from 'lucide-react';
 
 export const ServicesListPage: React.FC = () => {
-  const { services } = useDemoData();
+  const { services, pagesConfig } = useDemoData();
+  const pageConfig = pagesConfig?.['dich-vu'];
 
   return (
     <>
@@ -16,15 +17,15 @@ export const ServicesListPage: React.FC = () => {
         description="Danh sách 9 dịch vụ khám và điều trị da liễu chuẩn y khoa tại Lạc's Beauty Center Cần Thơ: trị mụn kháng trị, sẹo rỗ, nám tàn nhang, nâng cơ RF, triệt lông..."
       />
 
-      <Breadcrumbs items={[{ label: 'Dịch vụ điều trị' }]} />
+      <PageHeroBanner
+        pageId="dich-vu"
+        breadcrumbLabel="Dịch vụ điều trị"
+        defaultBadge="Phác đồ điều trị chuẩn y khoa"
+        defaultTitle="9 Dịch Vụ Điều Trị Da Liễu Chuyên Sâu"
+        defaultDescription="Tất cả các dịch vụ đều được bác sĩ chuyên khoa da liễu sau đại học trực tiếp thăm khám, lập phác đồ cá nhân hóa và theo dõi tiến trình hồi phục."
+      />
 
       <section className="py-12 sm:py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle
-          asH1={true}
-          badge="Phác đồ điều trị chuẩn y khoa"
-          title="9 Dịch Vụ Điều Trị Da Liễu Chuyên Sâu"
-          subtitle="Tất cả các dịch vụ đều được bác sĩ chuyên khoa da liễu sau đại học trực tiếp thăm khám, lập phác đồ cá nhân hóa và theo dõi tiến trình hồi phục."
-        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((srv) => (

@@ -3,6 +3,7 @@ import { initialSiteConfig, SiteConfig } from '../data/siteConfig';
 import { initialHomepageModules, HomepageModuleConfig } from '../data/homepageModules';
 import { initialHeroSlides, initialSideBanners, SlideItem, SideBanner } from '../data/heroSlider';
 import { initialCoreValues, CoreValue } from '../data/coreValues';
+import { initialPagesConfig, PageBannerConfig } from '../data/pagesConfig';
 import { initialSpecialties, Specialty } from '../data/specialties';
 import { initialServices, ServiceItem } from '../data/services';
 import { initialDoctors, DoctorProfile } from '../data/doctors';
@@ -61,6 +62,12 @@ interface DemoDataContextType {
 
   coreValues: CoreValue[];
   updateCoreValues: (values: CoreValue[]) => void;
+  saveCoreValue: (item: CoreValue) => void;
+  deleteCoreValue: (id: string) => void;
+
+  pagesConfig: Record<string, PageBannerConfig>;
+  updatePagesConfig: (configs: Record<string, PageBannerConfig>) => void;
+  updatePageConfig: (pageId: string, partial: Partial<PageBannerConfig>) => void;
 
   specialties: Specialty[];
   updateSpecialties: (items: Specialty[]) => void;
@@ -209,6 +216,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
   const [locations, setLocations] = useState<LocationItem[]>(() => loadFromStorage("locations", initialLocations));
   const [faqs, setFaqs] = useState<FAQGroup[]>(() => loadFromStorage("faqs", initialFAQs));
   const [navItems, setNavItems] = useState<NavItem[]>(() => loadFromStorage("navItems", initialNavItems));
+  const [pagesConfig, setPagesConfig] = useState<Record<string, PageBannerConfig>>(() => loadFromStorage("pagesConfig", initialPagesConfig));
   const [bookingLeads, setBookingLeads] = useState<BookingLead[]>(() => loadFromStorage("bookingLeads", []));
   const [cart, setCart] = useState<CartItem[]>(() => loadFromStorage("cart", []));
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -253,6 +261,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
           if (data.locations) setLocations(data.locations);
           if (data.faqs) setFaqs(data.faqs);
           if (data.navItems) setNavItems(data.navItems);
+          if (data.pagesConfig) setPagesConfig(data.pagesConfig);
           setDbStatus('connected');
           setSyncStatus('saved');
         }
@@ -310,6 +319,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
   useEffect(() => saveToStorage("locations", locations), [locations]);
   useEffect(() => saveToStorage("faqs", faqs), [faqs]);
   useEffect(() => saveToStorage("navItems", navItems), [navItems]);
+  useEffect(() => saveToStorage("pagesConfig", pagesConfig), [pagesConfig]);
   useEffect(() => saveToStorage("bookingLeads", bookingLeads), [bookingLeads]);
   useEffect(() => saveToStorage("cart", cart), [cart]);
 
@@ -330,6 +340,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
   useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("locations", locations, "Cơ sở", "Chi nhánh"); }, [locations]);
   useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("faqs", faqs, "Câu hỏi thường gặp", "FAQ"); }, [faqs]);
   useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("navItems", navItems, "Menu", "Menu điều hướng"); }, [navItems]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("pagesConfig", pagesConfig, "Quản lý Trang", "Cấu hình Banner & Trang"); }, [pagesConfig]);
 
   // Multi-tab storage synchronization
   useEffect(() => {
@@ -473,6 +484,28 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
   const deleteSideBanner = (id: string) => {
     setSideBanners(prev => prev.filter(b => b.id !== id));
     logAuditAction("Banner phụ", "delete", id, "Xóa banner phụ");
+  };
+
+  const saveCoreValue = (item: CoreValue) => {
+    setCoreValues(prev => {
+      const idx = prev.findIndex(v => v.id === item.id);
+      if (idx >= 0) {
+        const next = [...prev];
+        next[idx] = item;
+        logAuditAction("Giá trị cốt lõi", "update", item.title, "Cập nhật thẻ giá trị");
+        return next;
+      }
+      logAuditAction("Giá trị cốt lõi", "create", item.title, "Thêm thẻ giá trị mới");
+      return [...prev, item];
+    });
+  };
+
+  const deleteCoreValue = (id: string) => {
+    setCoreValues(prev => {
+      const found = prev.find(v => v.id === id);
+      logAuditAction("Giá trị cốt lõi", "delete", found?.title || id, "Xóa thẻ giá trị");
+      return prev.filter(v => v.id !== id);
+    });
   };
 
   const saveSpecialty = (item: Specialty) => {
@@ -763,6 +796,33 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
     logAuditAction("Menu & Điều hướng", "delete", id, "Xóa mục menu");
   };
 
+  const updatePageConfig = (pageId: string, partial: Partial<PageBannerConfig>) => {
+    setPagesConfig(prev => {
+      const current = prev[pageId] || initialPagesConfig[pageId] || {
+        id: pageId,
+        pageName: pageId,
+        routePath: `/${pageId}`,
+        enabled: true,
+        badge: "",
+        title: "",
+        description: "",
+        desktopImage: "",
+        overlayOpacity: 70,
+        overlayColor: "dark" as const,
+        alignment: "center" as const
+      };
+      const updated = {
+        ...prev,
+        [pageId]: {
+          ...current,
+          ...partial
+        }
+      };
+      logAuditAction("Quản lý Trang", "update", current.pageName || pageId, `Cập nhật cấu hình banner trang ${pageId}`);
+      return updated;
+    });
+  };
+
   const addBookingLead = (lead: Omit<BookingLead, "id" | "createdAt" | "status">) => {
     const newLead: BookingLead = {
       ...lead,
@@ -951,7 +1011,8 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
         articles,
         locations,
         faqs,
-        navItems
+        navItems,
+        pagesConfig
       };
 
       let allSuccess = true;
@@ -1001,6 +1062,11 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
         deleteSideBanner,
         coreValues,
         updateCoreValues: setCoreValues,
+        saveCoreValue,
+        deleteCoreValue,
+        pagesConfig,
+        updatePagesConfig: setPagesConfig,
+        updatePageConfig,
         specialties,
         updateSpecialties: setSpecialties,
         saveSpecialty,

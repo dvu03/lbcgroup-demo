@@ -28,6 +28,7 @@ interface AdminHeaderProps {
 const TAB_TITLES: Record<AdminTabKey, { title: string; category: string; description: string }> = {
   dashboard: { title: "Tổng quan hệ thống", category: "TỔNG QUAN", description: "Báo cáo số liệu và hoạt động gần đây" },
   "homepage-sections": { title: "Trang chủ & Bố cục Section", category: "NỘI DUNG WEBSITE", description: "Bật tắt, đổi thứ tự và sửa nội dung các khối" },
+  "page-banners": { title: "Banner & Nội dung các trang", category: "NỘI DUNG WEBSITE", description: "Quản lý hero banner và nội dung 13 trang con" },
   navigation: { title: "Menu & Điều hướng", category: "NỘI DUNG WEBSITE", description: "Quản lý liên kết thanh menu chính và chân trang" },
   "header-footer": { title: "Header & Footer", category: "NỘI DUNG WEBSITE", description: "Cấu hình thanh thông báo, thông tin chân trang" },
   "cta-contact": { title: "CTA & Thông tin liên hệ", category: "NỘI DUNG WEBSITE", description: "Số hotline, nút đặt lịch và hộp tư vấn" },

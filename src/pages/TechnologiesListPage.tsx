@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/common/SEOHead';
-import { Breadcrumbs } from '../components/common/Breadcrumbs';
+import { PageHeroBanner } from '../components/common/PageHeroBanner';
 import { SectionTitle } from '../components/common/SectionTitle';
 import { useDemoData } from '../context/DemoDataContext';
 import { Cpu, ShieldCheck, ArrowRight, AlertCircle } from 'lucide-react';
@@ -16,14 +16,15 @@ export const TechnologiesListPage: React.FC = () => {
         description="Khám phá các công nghệ tiên tiến tại Lạc's Beauty Center Cần Thơ: máy soi da VISIA 3D, nâng cơ RF Jovena, HIFU, Laser thẩm mỹ vi điểm..."
       />
 
-      <Breadcrumbs items={[{ label: 'Công nghệ' }]} />
+      <PageHeroBanner
+        pageId="cong-nghe"
+        breadcrumbLabel="Công nghệ"
+        defaultBadge="Thiết bị y tế chính hãng"
+        defaultTitle="Hệ Thống Công Nghệ Cao Tại Lạc's"
+        defaultDescription="Đầu tư đồng bộ hệ thống thiết bị y tế hiện đại nhập khẩu chính hãng, phục vụ đắc lực cho các phác đồ y học cá nhân hóa."
+      />
 
       <section className="py-12 sm:py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle
-          badge="Thiết bị y tế chính hãng"
-          title="Hệ Thống Công Nghệ Cao Tại Lạc's"
-          subtitle="Đầu tư đồng bộ hệ thống thiết bị y tế hiện đại nhập khẩu chính hãng, phục vụ đắc lực cho các phác đồ y học cá nhân hóa."
-        />
 
         <div className="mb-8 p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-600 flex items-start gap-3">
           <AlertCircle className="w-4 h-4 text-primary-600 shrink-0 mt-0.5" />

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/common/SEOHead';
 import { Breadcrumbs } from '../components/common/Breadcrumbs';
+import { PageHeroBanner } from '../components/common/PageHeroBanner';
 import { SectionTitle } from '../components/common/SectionTitle';
 import { useDemoData } from '../context/DemoDataContext';
 import { 
@@ -17,7 +18,8 @@ import {
 } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
-  const { siteConfig, coreValues, doctors, specialties } = useDemoData();
+  const { siteConfig, coreValues, doctors, specialties, pagesConfig } = useDemoData();
+  const pageConfig = pagesConfig?.['gioi-thieu'];
 
   return (
     <>
@@ -26,74 +28,58 @@ export const AboutPage: React.FC = () => {
         description="Tìm hiểu câu chuyện thương hiệu, tầm nhìn, sứ mệnh, giá trị cốt lõi và hành trình phát triển của Lạc's Beauty Center tại Cần Thơ."
       />
 
-      <Breadcrumbs items={[{ label: 'Giới thiệu' }]} />
+      {/* Dynamic Hero Banner from CMS */}
+      <PageHeroBanner
+        pageId="gioi-thieu"
+        breadcrumbLabel="Giới thiệu"
+        defaultBadge="CÂU CHUYỆN THƯƠNG HIỆU"
+        defaultTitle="Tiên Phong Công Nghệ Cao – Hướng Đến Y Học Cá Nhân Hóa"
+        defaultDescription="Hành trình kiến tạo chuẩn mực điều trị da liễu chuyên sâu, mang giải pháp y khoa hiện đại và sự an tâm tuyệt đối đến cho cộng đồng miền Tây."
+      />
 
-      {/* Hero Banner */}
-      <section className="relative py-16 sm:py-24 bg-gradient-to-br from-slate-900 via-primary-950 to-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-25">
-          <img
-            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80"
-            alt="Phòng khám Lạc's Beauty Center"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold bg-primary-500/20 text-primary-300 border border-primary-400/30 backdrop-blur-md uppercase tracking-wider">
-            Câu chuyện thương hiệu
-          </span>
-          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white max-w-3xl mx-auto leading-tight">
-            Tiên Phong Công Nghệ Cao – Hướng Đến Y Học Cá Nhân Hóa
-          </h1>
-          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Hành trình kiến tạo chuẩn mực điều trị da liễu chuyên sâu, mang giải pháp y khoa hiện đại và sự an tâm tuyệt đối đến cho cộng đồng miền Tây.
-          </p>
-          <div className="pt-4 flex items-center justify-center gap-4">
-            <Link
-              to="/dat-lich-kham"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white font-semibold text-xs sm:text-sm shadow-lg transition-all"
-            >
-              <Calendar className="w-4 h-4" />
-              <span>Đặt lịch thăm khám</span>
-            </Link>
-            <Link
-              to="/doi-ngu-bac-si"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm backdrop-blur-md border border-white/20 transition-all"
-            >
-              <span>Đội ngũ bác sĩ</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Brand Story */}
+      {/* Brand Story (Dynamic from CMS) */}
       <section className="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-6 space-y-5">
             <span className="text-xs font-bold text-primary-600 uppercase tracking-wider">
-              Khởi nguồn & Triết lý
+              {pageConfig?.storyBadge || "Khởi nguồn & Triết lý"}
             </span>
             <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
-              Khát Vọng Mang Chuẩn Mực Da Liễu Hiện Đại Về Miền Tây
+              {pageConfig?.storyTitle || "Khát Vọng Mang Chuẩn Mực Da Liễu Hiện Đại Về Miền Tây"}
             </h2>
             <div className="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
               <p>
-                Được thành lập bởi đội ngũ bác sĩ chuyên khoa da liễu giàu tâm huyết, <strong>{siteConfig.facilityName}</strong> xuất phát từ niềm trăn trở trước thực trạng nhiều người dân tại Đồng bằng sông Cửu Long phải gánh chịu hậu quả nặng nề do sử dụng kem trộn, mỹ phẩm chứa corticoid hoặc điều trị tại các cơ sở thẩm mỹ không phép.
+                {pageConfig?.storyParagraph1 || (
+                  <>
+                    Được thành lập bởi đội ngũ bác sĩ chuyên khoa da liễu giàu tâm huyết, <strong>{siteConfig.facilityName}</strong> xuất phát từ niềm trăn trở trước thực trạng nhiều người dân tại Đồng bằng sông Cửu Long phải gánh chịu hậu quả nặng nề do sử dụng kem trộn, mỹ phẩm chứa corticoid hoặc điều trị tại các cơ sở thẩm mỹ không phép.
+                  </>
+                )}
               </p>
               <p>
-                Chúng tôi tin rằng, mỗi làn da là một thực thể sinh học độc bản với cấu trúc, tiền sử dị ứng và lối sống riêng. Việc điều trị da liễu không thể áp dụng máy móc một công thức chung cho tất cả. Bằng việc đầu tư hệ thống máy soi da đa tầng VISIA 3D hàng đầu thế giới và phác đồ điều trị đa mô thức, Lạc's Beauty Center giúp chẩn đoán chính xác nguyên nhân gốc rễ và đồng hành kiên trì cùng khách hàng.
+                {pageConfig?.storyParagraph2 || (
+                  <>
+                    Chúng tôi tin rằng, mỗi làn da là một thực thể sinh học độc bản với cấu trúc, tiền sử dị ứng và lối sống riêng. Việc điều trị da liễu không thể áp dụng máy móc một công thức chung cho tất cả. Bằng việc đầu tư hệ thống máy soi da đa tầng VISIA 3D hàng đầu thế giới và phác đồ điều trị đa mô thức, Lạc's Beauty Center giúp chẩn đoán chính xác nguyên nhân gốc rễ và đồng hành kiên trì cùng khách hàng.
+                  </>
+                )}
               </p>
             </div>
             
             <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
               <div className="p-4 rounded-2xl bg-primary-50/60 border border-primary-100">
-                <span className="font-heading text-2xl sm:text-3xl font-bold text-primary-800 block">10.000+</span>
-                <span className="text-xs text-slate-600 font-medium">Khách hàng điều trị thành công</span>
+                <span className="font-heading text-2xl sm:text-3xl font-bold text-primary-800 block">
+                  {pageConfig?.stat1Number || "10.000+"}
+                </span>
+                <span className="text-xs text-slate-600 font-medium">
+                  {pageConfig?.stat1Label || "Khách hàng điều trị thành công"}
+                </span>
               </div>
               <div className="p-4 rounded-2xl bg-primary-50/60 border border-primary-100">
-                <span className="font-heading text-2xl sm:text-3xl font-bold text-primary-800 block">100%</span>
-                <span className="text-xs text-slate-600 font-medium">Bác sĩ trình độ Sau Đại học</span>
+                <span className="font-heading text-2xl sm:text-3xl font-bold text-primary-800 block">
+                  {pageConfig?.stat2Number || "100%"}
+                </span>
+                <span className="text-xs text-slate-600 font-medium">
+                  {pageConfig?.stat2Label || "Bác sĩ trình độ Sau Đại học"}
+                </span>
               </div>
             </div>
           </div>

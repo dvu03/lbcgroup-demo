@@ -24,6 +24,7 @@ export interface MediaLibraryModalProps {
   onClose: () => void;
   onSelect?: (media: { url: string; altText?: string; name?: string }) => void;
   onSelectMedia?: (media: { url: string; alt?: string; altText?: string; name?: string; title?: string }) => void;
+  onSelectImage?: (url: string) => void;
   title?: string;
   allowedTypes?: ('image' | 'video' | 'icon')[];
 }
@@ -33,11 +34,13 @@ export const MediaLibraryModal: React.FC<MediaLibraryModalProps> = ({
   onClose,
   onSelect,
   onSelectMedia,
+  onSelectImage,
   title = "Thư Viện Media — Chọn hoặc Tải Lên",
   allowedTypes = ['image', 'video', 'icon']
 }) => {
   const handleChosenMedia = (mediaObj: { url: string; altText?: string; name?: string }) => {
     if (onSelect) onSelect(mediaObj);
+    if (onSelectImage) onSelectImage(mediaObj.url);
     if (onSelectMedia) {
       onSelectMedia({
         url: mediaObj.url,

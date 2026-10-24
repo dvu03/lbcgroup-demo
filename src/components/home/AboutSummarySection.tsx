@@ -1,11 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle2, ArrowRight, Award, Shield, HeartHandshake } from 'lucide-react';
+import {
+  CheckCircle2,
+  ArrowRight,
+  Award,
+  Shield,
+  HeartHandshake,
+  GraduationCap,
+  Sparkles,
+  Stethoscope,
+  Cpu,
+  Fingerprint,
+  ShieldCheck
+} from 'lucide-react';
 import { useDemoData } from '../../context/DemoDataContext';
 
 export const AboutSummarySection: React.FC = () => {
   const { siteConfig } = useDemoData();
   const about = siteConfig.aboutConfig;
+
+  // Check if section is enabled
+  if (about?.enabled === false) {
+    return null;
+  }
 
   const mainImage = about?.mainImage || "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80";
   const subImages = about?.subImages?.length ? about.subImages : [
@@ -16,11 +33,67 @@ export const AboutSummarySection: React.FC = () => {
   const metricNumber = about?.metricNumber || "10.000+";
   const metricLabel = about?.metricLabel || "Ca điều trị chuẩn Y khoa";
   const metricBadge = about?.metricBadge || "VISIA 3D";
-  const badge = about?.badge || "Về chúng tôi";
+  const badge = about?.badge || "VỀ CHÚNG TÔI";
   const title = about?.title || siteConfig.facilityName;
   const description = about?.description || "Tọa lạc tại trung tâm thành phố Cần Thơ, Lạc's Beauty Center được xây dựng với định vị là phòng khám da liễu chuẩn y khoa chuyên sâu. Chúng tôi không chạy theo các trào lưu làm đẹp lột tẩy cấp tốc, mà kiên định theo đuổi triết lý Y học Cá nhân hóa: mỗi làn da cần một phác đồ khoa học riêng biệt dựa trên bằng chứng soi da vi thể và theo dõi sát sao của bác sĩ chuyên khoa sau đại học.";
-  const ctaText = about?.ctaText || "Xem câu chuyện thương hiệu";
-  const ctaLink = about?.ctaLink || "/gioi-thieu";
+
+  // Dynamic focus cards
+  const focusCards = (about?.focusCards?.length ? about.focusCards : [
+    {
+      id: "focus-1",
+      iconName: "Award",
+      title: "Đội ngũ Chuyên môn Sau Đại học",
+      description: "100% bác sĩ có học vị Thạc sĩ, Bác sĩ Chuyên khoa I & II giàu kinh nghiệm, trực tiếp khám và lên phác đồ.",
+      enabled: true,
+      order: 1
+    },
+    {
+      id: "focus-2",
+      iconName: "Shield",
+      title: "Công nghệ Tiên tiến & Minh bạch",
+      description: "Đơn vị sở hữu máy soi da VISIA 3D đầu tiên tại Việt Nam, máy nâng cơ RF Jovena, HIFU và Laser nhập khẩu chính hãng.",
+      enabled: true,
+      order: 2
+    },
+    {
+      id: "focus-3",
+      iconName: "HeartHandshake",
+      title: "Không gian Chuẩn Y khoa & Tận tâm",
+      description: "Hệ thống 2 cơ sở khang trang, phòng thủ thuật vô trùng khép kín và phong cách phục vụ chu đáo, gần gũi với người miền Tây.",
+      enabled: true,
+      order: 3
+    }
+  ])
+    .filter((c) => c.enabled !== false)
+    .sort((a, b) => (a.order || 0) - (b.order || 0));
+
+  // Dynamic CTAs
+  const cta1Text = about?.cta1Text || about?.ctaText || "Xem câu chuyện thương hiệu";
+  const cta1Link = about?.cta1Link || about?.ctaLink || "/gioi-thieu";
+  const cta1Enabled = about?.cta1Enabled !== false;
+
+  const cta2Text = about?.cta2Text || "Hồ sơ Bác sĩ";
+  const cta2Link = about?.cta2Link || "/doi-ngu-bac-si";
+  const cta2Enabled = about?.cta2Enabled !== false;
+
+  const renderIcon = (iconName: string, imageUrl?: string) => {
+    if (imageUrl) {
+      return <img src={imageUrl} alt="" className="w-5 h-5 object-contain" />;
+    }
+    switch (iconName) {
+      case 'Award': return <Award className="w-5 h-5" />;
+      case 'Shield': return <Shield className="w-5 h-5" />;
+      case 'HeartHandshake': return <HeartHandshake className="w-5 h-5" />;
+      case 'GraduationCap': return <GraduationCap className="w-5 h-5" />;
+      case 'Sparkles': return <Sparkles className="w-5 h-5" />;
+      case 'Stethoscope': return <Stethoscope className="w-5 h-5" />;
+      case 'Cpu': return <Cpu className="w-5 h-5" />;
+      case 'Fingerprint': return <Fingerprint className="w-5 h-5" />;
+      case 'ShieldCheck': return <ShieldCheck className="w-5 h-5" />;
+      case 'CheckCircle2': return <CheckCircle2 className="w-5 h-5" />;
+      default: return <Award className="w-5 h-5" />;
+    }
+  };
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-slate-50/70 border-y border-slate-100">
@@ -50,9 +123,11 @@ export const AboutSummarySection: React.FC = () => {
                     {metricNumber}
                   </span>
                 </div>
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-primary-100 text-primary-700 flex items-center justify-center font-bold text-[10px] sm:text-xs shrink-0">
-                  {metricBadge}
-                </div>
+                {metricBadge && (
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-primary-100 text-primary-700 flex items-center justify-center font-bold text-[10px] sm:text-xs shrink-0">
+                    {metricBadge}
+                  </div>
+                )}
               </div>
             </div>
 
@@ -73,12 +148,14 @@ export const AboutSummarySection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Brand Narrative & 3 Focus Points */}
+          {/* Right Column: Brand Narrative & Dynamic Focus Points */}
           <div className="lg:col-span-6 space-y-6">
             <div>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary-100 text-primary-700 uppercase tracking-wider mb-3">
-                {badge}
-              </span>
+              {badge && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary-100 text-primary-700 uppercase tracking-wider mb-3">
+                  {badge}
+                </span>
+              )}
               <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
                 {title}
               </h2>
@@ -87,67 +164,52 @@ export const AboutSummarySection: React.FC = () => {
               </p>
             </div>
 
-            {/* 3 Focus Points */}
-            <div className="space-y-4 pt-2">
-              <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-slate-100 shadow-sm hover:border-primary-200 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center shrink-0">
-                  <Award className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-heading font-bold text-sm text-slate-900">
-                    Đội ngũ Chuyên môn Sau Đại học
-                  </h4>
-                  <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">
-                    100% bác sĩ có học vị Thạc sĩ, Bác sĩ Chuyên khoa I & II giàu kinh nghiệm, trực tiếp khám và lên phác đồ.
-                  </p>
-                </div>
+            {/* Dynamic Focus Cards */}
+            {focusCards.length > 0 && (
+              <div className="space-y-4 pt-2">
+                {focusCards.map((card) => (
+                  <div
+                    key={card.id}
+                    className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-slate-100 shadow-sm hover:border-primary-200 transition-colors"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center shrink-0">
+                      {renderIcon(card.iconName, card.imageUrl)}
+                    </div>
+                    <div>
+                      <h4 className="font-heading font-bold text-sm text-slate-900">
+                        {card.title}
+                      </h4>
+                      <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">
+                        {card.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
-
-              <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-slate-100 shadow-sm hover:border-primary-200 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center shrink-0">
-                  <Shield className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-heading font-bold text-sm text-slate-900">
-                    Công nghệ Tiên tiến & Minh bạch
-                  </h4>
-                  <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">
-                    Đơn vị sở hữu máy soi da VISIA 3D đầu tiên tại Việt Nam, máy nâng cơ RF Jovena, HIFU và Laser nhập khẩu chính hãng.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-slate-100 shadow-sm hover:border-primary-200 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center shrink-0">
-                  <HeartHandshake className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-heading font-bold text-sm text-slate-900">
-                    Không gian Chuẩn Y khoa & Tận tâm
-                  </h4>
-                  <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">
-                    Hệ thống 2 cơ sở khang trang, phòng thủ thuật vô trùng khép kín và phong cách phục vụ chu đáo, gần gũi với người miền Tây.
-                  </p>
-                </div>
-              </div>
-            </div>
+            )}
 
             {/* CTAs */}
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <Link
-                to={ctaLink}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white font-semibold text-xs sm:text-sm shadow-md transition-all"
-              >
-                <span>{ctaText}</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/doi-ngu-bac-si"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs sm:text-sm transition-all"
-              >
-                <span>Hồ sơ Bác sĩ</span>
-              </Link>
-            </div>
+            {(cta1Enabled || cta2Enabled) && (
+              <div className="pt-2 flex flex-wrap items-center gap-4">
+                {cta1Enabled && cta1Text && (
+                  <Link
+                    to={cta1Link}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white font-semibold text-xs sm:text-sm shadow-md transition-all"
+                  >
+                    <span>{cta1Text}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                )}
+                {cta2Enabled && cta2Text && (
+                  <Link
+                    to={cta2Link}
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs sm:text-sm transition-all"
+                  >
+                    <span>{cta2Text}</span>
+                  </Link>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDemoData } from "../context/DemoDataContext";
-import { Breadcrumbs } from "../components/common/Breadcrumbs";
+import { PageHeroBanner } from "../components/common/PageHeroBanner";
 import { SEOHead } from "../components/common/SEOHead";
 import { SectionTitle } from "../components/common/SectionTitle";
 import { Calendar, Clock, UserCheck, Search, ArrowRight, BookOpen } from "lucide-react";
@@ -32,29 +32,13 @@ export default function NewsListPage() {
         description="Tổng hợp kiến thức y khoa chuyên sâu về điều trị mụn, sẹo rỗ, nám má, trẻ hóa da và các hoạt động học thuật tại Phòng khám Lạc's Beauty Center."
       />
 
-      <Breadcrumbs
-        items={[
-          { label: "Trang chủ", path: "/" },
-          { label: "Tin tức & Kiến thức" }
-        ]}
+      <PageHeroBanner
+        pageId="tin-tuc"
+        breadcrumbLabel="Tin tức & Kiến thức"
+        defaultBadge="Kiến thức y khoa chuẩn xác"
+        defaultTitle="Cẩm Nang Chăm Sóc Da & Kiến Thức Da Liễu"
+        defaultDescription="Cập nhật bài viết chuyên môn từ các bác sĩ chuyên khoa da liễu, hướng dẫn chăm sóc da đúng cách và giải mã các trào lưu làm đẹp."
       />
-
-      <section className="bg-gradient-to-r from-primary-900 to-primary-800 text-white py-16">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold tracking-wider uppercase mb-4 border border-white/20">
-              <BookOpen className="w-4 h-4 text-teal-300" />
-              Cẩm nang y khoa & Hoạt động
-            </div>
-            <h1 className="text-3xl md:text-5xl font-serif font-bold mb-4">
-              Kiến Thức Da Liễu Chuẩn Y Khoa
-            </h1>
-            <p className="text-primary-100 text-base md:text-lg leading-relaxed">
-              Các bài viết được biên soạn và kiểm duyệt bởi đội ngũ Bác sĩ chuyên khoa Da liễu Lạc's Beauty Center, giúp người bệnh hiểu đúng về làn da và phòng tránh các sai lầm nguy hại.
-            </p>
-          </div>
-        </div>
-      </section>
 
       <section className="py-12 bg-slate-50 min-h-screen">
         <div className="container-custom">

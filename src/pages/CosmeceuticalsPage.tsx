@@ -7,7 +7,8 @@ import { useDemoData } from '../context/DemoDataContext';
 import { ShoppingBag, Filter, ShieldCheck, Search, ArrowRight, AlertCircle } from 'lucide-react';
 
 export const CosmeceuticalsPage: React.FC = () => {
-  const { products, brands, addToCart } = useDemoData();
+  const { products, brands, addToCart, pagesConfig } = useDemoData();
+  const pageConfig = pagesConfig?.['duoc-my-pham'];
   const [searchParams] = useSearchParams();
   const categoryParam = searchParams.get('cat') || 'all';
 
@@ -51,25 +52,27 @@ export const CosmeceuticalsPage: React.FC = () => {
 
       <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Banner */}
-        <div className="relative rounded-3xl overflow-hidden bg-slate-900 text-white p-8 sm:p-12 mb-10 shadow-lg">
-          <img
-            src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1600&q=80"
-            alt="Dược mỹ phẩm chính hãng"
-            className="absolute inset-0 w-full h-full object-cover brightness-[0.40]"
-          />
-          <div className="relative z-10 max-w-2xl space-y-3">
-            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary-500/30 text-primary-200 border border-primary-400/40 uppercase">
-              100% Nhập khẩu chính ngạch
-            </span>
-            <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-              Dược Mỹ Phẩm Chính Hãng Chuẩn Y Khoa
-            </h1>
-            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-              Các dòng sản phẩm phục hồi, trị mụn và chống nắng từ các hãng dược phẩm nổi tiếng thế giới. Mọi sản phẩm đều có số phiếu công bố và tem kiểm định của Bộ Y tế.
-            </p>
+        {/* Banner from CMS */}
+        {pageConfig?.enabled !== false && (
+          <div className="relative rounded-3xl overflow-hidden bg-slate-900 text-white p-8 sm:p-12 mb-10 shadow-lg">
+            <img
+              src={pageConfig?.desktopImage || "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1600&q=80"}
+              alt={pageConfig?.title || "Dược mỹ phẩm chính hãng"}
+              className="absolute inset-0 w-full h-full object-cover brightness-[0.40]"
+            />
+            <div className="relative z-10 max-w-2xl space-y-3">
+              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary-500/30 text-primary-200 border border-primary-400/40 uppercase">
+                {pageConfig?.badge || "100% Nhập khẩu chính ngạch"}
+              </span>
+              <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+                {pageConfig?.title || "Dược Mỹ Phẩm Chính Hãng Chuẩn Y Khoa"}
+              </h1>
+              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                {pageConfig?.description || "Các dòng sản phẩm phục hồi, trị mụn và chống nắng từ các hãng dược phẩm nổi tiếng thế giới. Mọi sản phẩm đều có số phiếu công bố và tem kiểm định của Bộ Y tế."}
+              </p>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Demo Disclaimer */}
         <div className="mb-8 p-3.5 rounded-2xl bg-amber-50 border border-amber-200/80 text-xs text-amber-800 flex items-center gap-2.5">

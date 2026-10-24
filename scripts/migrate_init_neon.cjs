@@ -81,6 +81,7 @@ async function runMigration() {
       { localKey: 'LBC_DEMO_heroSlides', dbKey: 'heroSlides' },
       { localKey: 'LBC_DEMO_sideBanners', dbKey: 'sideBanners' },
       { localKey: 'LBC_DEMO_coreValues', dbKey: 'coreValues' },
+      { localKey: 'LBC_DEMO_pagesConfig', dbKey: 'pagesConfig' },
       { localKey: 'LBC_DEMO_specialties', dbKey: 'specialties' },
       { localKey: 'LBC_DEMO_services', dbKey: 'services' },
       { localKey: 'LBC_DEMO_doctors', dbKey: 'doctors' },

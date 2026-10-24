@@ -34,6 +34,7 @@ import {
 export type AdminTabKey =
   | "dashboard"
   | "homepage-sections"
+  | "page-banners"
   | "navigation"
   | "header-footer"
   | "cta-contact"
@@ -109,6 +110,7 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({
         { key: "branding", label: "Logo & Nhận diện", icon: Sparkles },
         { key: "navigation", label: "Menu & Điều hướng", icon: Menu },
         { key: "homepage-sections", label: "Trang chủ & Section", icon: Home },
+        { key: "page-banners", label: "Banner & Nội dung các trang", icon: Layers },
         { key: "ui-config", label: "Cấu hình giao diện chung", icon: Palette }
       ]
     },

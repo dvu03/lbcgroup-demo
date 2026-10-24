@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDemoData } from "../context/DemoDataContext";
-import { Breadcrumbs } from "../components/common/Breadcrumbs";
+import { PageHeroBanner } from "../components/common/PageHeroBanner";
 import { SEOHead } from "../components/common/SEOHead";
 import {
   Calendar,
@@ -81,30 +81,13 @@ export default function BookingPage() {
         description="Đăng ký lịch khám và soi da trực tiếp cùng Bác sĩ Chuyên khoa Da liễu Lạc's Beauty Center tại Cần Thơ. Đặt hẹn nhanh chóng, không chờ đợi lâu."
       />
 
-      <Breadcrumbs
-        items={[
-          { label: "Trang chủ", path: "/" },
-          { label: "Đặt lịch khám" }
-        ]}
+      <PageHeroBanner
+        pageId="dat-lich-kham"
+        breadcrumbLabel="Đặt lịch khám"
+        defaultBadge="Dịch vụ y tế tận tâm"
+        defaultTitle="Đặt Lịch Khám & Soi Da VISIA 3D Đa Tầng"
+        defaultDescription="Chủ động chọn bác sĩ, khung giờ và cơ sở mong muốn. 100% ca khám và điều trị được thực hiện trực tiếp bởi Bác sĩ Chuyên khoa Da liễu trình độ sau đại học."
       />
-
-      {/* Header */}
-      <section className="bg-gradient-to-r from-primary-900 via-primary-800 to-primary-700 text-white py-16">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-xs font-semibold tracking-wider uppercase mb-4 border border-white/20">
-              <Calendar className="w-4 h-4 text-teal-300" />
-              Đặt hẹn trực tuyến tiện lợi
-            </div>
-            <h1 className="text-3xl md:text-5xl font-serif font-bold mb-4">
-              Đặt Lịch Khám Da Liễu Cùng Bác Sĩ
-            </h1>
-            <p className="text-primary-100 text-base md:text-lg leading-relaxed">
-              Chủ động thời gian, tiết kiệm thời gian chờ đợi. 100% ca khám và điều trị được thực hiện trực tiếp bởi Bác sĩ Chuyên khoa Da liễu trình độ sau đại học.
-            </p>
-          </div>
-        </div>
-      </section>
 
       <section className="py-16 bg-slate-50 min-h-[70vh]">
         <div className="container-custom">

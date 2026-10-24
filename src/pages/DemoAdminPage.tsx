@@ -24,6 +24,7 @@ import { LocationsTab } from "../components/admin/tabs/LocationsTab";
 import { NavigationTab } from "../components/admin/tabs/NavigationTab";
 import { LegalInfoTab } from "../components/admin/tabs/LegalInfoTab";
 import { BannerTopHeaderTab } from "../components/admin/tabs/BannerTopHeaderTab";
+import { PageBannersTab } from "../components/admin/tabs/PageBannersTab";
 
 export default function DemoAdminPage() {
   const {
@@ -82,6 +83,8 @@ export default function DemoAdminPage() {
         );
       case "homepage-sections":
         return <HomepageSectionsTab />;
+      case "page-banners":
+        return <PageBannersTab />;
       case "hero-banners":
         return <HeroBannersTab />;
       case "doctors":

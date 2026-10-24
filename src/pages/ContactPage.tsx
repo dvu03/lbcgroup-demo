@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDemoData } from "../context/DemoDataContext";
-import { Breadcrumbs } from "../components/common/Breadcrumbs";
+import { PageHeroBanner } from "../components/common/PageHeroBanner";
 import { SEOHead } from "../components/common/SEOHead";
 import { SectionTitle } from "../components/common/SectionTitle";
 import {
@@ -49,29 +49,13 @@ export default function ContactPage() {
         description="Thông tin liên hệ, hotline, email và bản đồ hệ thống 2 cơ sở Phòng khám Chuyên khoa Da liễu Lạc's Beauty Center tại Cần Thơ."
       />
 
-      <Breadcrumbs
-        items={[
-          { label: "Trang chủ", path: "/" },
-          { label: "Liên hệ" }
-        ]}
+      <PageHeroBanner
+        pageId="lien-he"
+        breadcrumbLabel="Liên hệ"
+        defaultBadge="Kết nối cùng Lạc's"
+        defaultTitle="Thông Tin Liên Hệ & Hỗ Trợ Khách Hàng"
+        defaultDescription="Đội ngũ chuyên viên tư vấn và bác sĩ da liễu luôn sẵn sàng lắng nghe, giải đáp mọi băn khoăn về tình trạng làn da của bạn."
       />
-
-      {/* Hero Header */}
-      <section className="bg-gradient-to-r from-primary-900 to-primary-800 text-white py-16">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <span className="text-teal-300 text-xs font-bold tracking-widest uppercase mb-2 block">
-              Kết nối trực tiếp
-            </span>
-            <h1 className="text-3xl md:text-5xl font-serif font-bold mb-4">
-              Liên Hệ Lạc's Beauty Center
-            </h1>
-            <p className="text-primary-100 text-base md:text-lg leading-relaxed">
-              Quý khách hàng có nhu cầu thăm khám da liễu, hợp tác chuyên môn hoặc tham gia các khóa đào tạo Lạc's Academy, vui lòng liên hệ với chúng tôi qua các kênh dưới đây.
-            </p>
-          </div>
-        </div>
-      </section>
 
       <section className="py-16 bg-slate-50">
         <div className="container-custom">

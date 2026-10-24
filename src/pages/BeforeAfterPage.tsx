@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/common/SEOHead';
-import { Breadcrumbs } from '../components/common/Breadcrumbs';
+import { PageHeroBanner } from '../components/common/PageHeroBanner';
 import { SectionTitle } from '../components/common/SectionTitle';
 import { useDemoData } from '../context/DemoDataContext';
 import { BeforeAfterViewer } from '../components/common/BeforeAfterViewer';
@@ -22,14 +22,15 @@ export const BeforeAfterPage: React.FC = () => {
         description="Hình ảnh trước và sau điều trị mụn kháng trị, sẹo rỗ, nám tàn nhang, nâng cơ tại Lạc's Beauty Center Cần Thơ. 100% ca điều trị có văn bản đồng ý chia sẻ."
       />
 
-      <Breadcrumbs items={[{ label: 'Kết quả điều trị (Before – After)' }]} />
+      <PageHeroBanner
+        pageId="ket-qua-dieu-tri"
+        breadcrumbLabel="Kết quả điều trị (Before – After)"
+        defaultBadge="Bằng chứng lâm sàng thực tế"
+        defaultTitle="Người Thật – Việc Thật (Before & After)"
+        defaultDescription="Tổng hợp các ca điều trị thành công tại phòng khám. Hình ảnh chụp cùng góc máy, cùng điều kiện ánh sáng chuẩn y khoa, không sử dụng filter hay phần mềm chỉnh sửa da."
+      />
 
       <section className="py-12 sm:py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle
-          badge="Bằng chứng lâm sàng thực tế"
-          title="Người Thật – Việc Thật (Before & After)"
-          subtitle="Tổng hợp các ca điều trị thành công tại phòng khám. Hình ảnh chụp cùng góc máy, cùng điều kiện ánh sáng chuẩn y khoa, không sử dụng filter hay phần mềm chỉnh sửa da."
-        />
 
         {/* Regulatory & Consent Notice */}
         <div className="mb-10 p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-700 flex items-start gap-3 shadow-sm">

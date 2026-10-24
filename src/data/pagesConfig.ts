@@ -1,0 +1,316 @@
+export interface PageBannerConfig {
+  id: string; // Khóa định danh trang (VD: "gioi-thieu", "dich-vu")
+  pageName: string; // Tên trang hiển thị trong admin
+  routePath: string; // Đường dẫn route
+  enabled: boolean; // Bật/tắt hero banner của trang
+  badge: string; // Nhãn nhỏ phía trên tiêu đề
+  title: string; // Tiêu đề chính
+  description: string; // Mô tả ngắn
+  desktopImage: string; // Ảnh nền desktop
+  mobileImage?: string; // Ảnh nền mobile
+  overlayOpacity: number; // Độ đậm lớp phủ (0 - 100%)
+  overlayColor: 'dark' | 'primary' | 'light';
+  alignment: 'center' | 'left' | 'right';
+  textColor?: string;
+  cta1Text?: string;
+  cta1Link?: string;
+  cta1Enabled?: boolean;
+  cta2Text?: string;
+  cta2Link?: string;
+  cta2Enabled?: boolean;
+  showBreadcrumbs?: boolean;
+
+  // Dành riêng cho trang Giới thiệu & các section mở rộng
+  storyBadge?: string;
+  storyTitle?: string;
+  storyParagraph1?: string;
+  storyParagraph2?: string;
+  stat1Number?: string;
+  stat1Label?: string;
+  stat2Number?: string;
+  stat2Label?: string;
+}
+
+export const initialPagesConfig: Record<string, PageBannerConfig> = {
+  "gioi-thieu": {
+    id: "gioi-thieu",
+    pageName: "Giới thiệu & Câu chuyện thương hiệu",
+    routePath: "/gioi-thieu",
+    enabled: true,
+    badge: "CÂU CHUYỆN THƯƠNG HIỆU",
+    title: "Tiên Phong Công Nghệ Cao – Hướng Đến Y Học Cá Nhân Hóa",
+    description: "Hành trình kiến tạo chuẩn mực điều trị da liễu chuyên sâu, mang giải pháp y khoa hiện đại và sự an tâm tuyệt đối đến cho cộng đồng miền Tây.",
+    desktopImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80",
+    mobileImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80",
+    overlayOpacity: 75,
+    overlayColor: "dark",
+    alignment: "center",
+    cta1Text: "Đặt lịch thăm khám",
+    cta1Link: "/dat-lich-kham",
+    cta1Enabled: true,
+    cta2Text: "Đội ngũ bác sĩ",
+    cta2Link: "/doi-ngu-bac-si",
+    cta2Enabled: true,
+    showBreadcrumbs: true,
+    storyBadge: "Khởi nguồn & Triết lý",
+    storyTitle: "Khát Vọng Mang Chuẩn Mực Da Liễu Hiện Đại Về Miền Tây",
+    storyParagraph1: "Được thành lập bởi đội ngũ bác sĩ chuyên khoa da liễu giàu tâm huyết, Lạc's Beauty Center xuất phát từ niềm trăn trở trước thực trạng nhiều người dân tại Đồng bằng sông Cửu Long phải gánh chịu hậu quả nặng nề do sử dụng kem trộn, mỹ phẩm chứa corticoid hoặc điều trị tại các cơ sở thẩm mỹ không phép.",
+    storyParagraph2: "Chúng tôi tin rằng, mỗi làn da là một thực thể sinh học độc bản với cấu trúc, tiền sử dị ứng và lối sống riêng. Việc điều trị da liễu không thể áp dụng máy móc một công thức chung cho tất cả. Bằng việc đầu tư hệ thống máy soi da đa tầng VISIA 3D hàng đầu thế giới và phác đồ điều trị đa mô thức, Lạc's Beauty Center giúp chẩn đoán chính xác nguyên nhân gốc rễ và đồng hành kiên trì cùng khách hàng.",
+    stat1Number: "10.000+",
+    stat1Label: "Khách hàng điều trị thành công",
+    stat2Number: "100%",
+    stat2Label: "Bác sĩ trình độ Sau Đại học"
+  },
+  "dich-vu": {
+    id: "dich-vu",
+    pageName: "Danh mục 9 Dịch vụ điều trị",
+    routePath: "/dich-vu",
+    enabled: true,
+    badge: "Phác đồ điều trị chuẩn y khoa",
+    title: "9 Dịch Vụ Điều Trị Da Liễu Chuyên Sâu",
+    description: "Tất cả các dịch vụ đều được bác sĩ chuyên khoa da liễu sau đại học trực tiếp thăm khám, lập phác đồ cá nhân hóa và theo dõi tiến trình hồi phục.",
+    desktopImage: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1920&q=80",
+    mobileImage: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80",
+    overlayOpacity: 70,
+    overlayColor: "dark",
+    alignment: "center",
+    cta1Text: "Đặt lịch tư vấn",
+    cta1Link: "/dat-lich-kham",
+    cta1Enabled: true,
+    cta2Text: "Xem bảng giá",
+    cta2Link: "/lien-he",
+    cta2Enabled: false,
+    showBreadcrumbs: true
+  },
+  "doi-ngu-bac-si": {
+    id: "doi-ngu-bac-si",
+    pageName: "Đội ngũ Bác sĩ & Chuyên gia",
+    routePath: "/doi-ngu-bac-si",
+    enabled: true,
+    badge: "Chuyên môn sau đại học",
+    title: "Đội Ngũ Bác Sĩ Chuyên Khoa Da Liễu",
+    description: "Hội tụ các chuyên gia da liễu đầu ngành, được đào tạo bài bản sau đại học và tu nghiệp nâng cao tại các trung tâm y khoa quốc tế.",
+    desktopImage: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1920&q=80",
+    mobileImage: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80",
+    overlayOpacity: 75,
+    overlayColor: "dark",
+    alignment: "center",
+    cta1Text: "Đặt lịch khám với Bác sĩ",
+    cta1Link: "/dat-lich-kham",
+    cta1Enabled: true,
+    cta2Text: "Hệ thống cơ sở",
+    cta2Link: "/he-thong-co-so",
+    cta2Enabled: true,
+    showBreadcrumbs: true
+  },
+  "cong-nghe": {
+    id: "cong-nghe",
+    pageName: "Công nghệ & Trang thiết bị y tế",
+    routePath: "/cong-nghe",
+    enabled: true,
+    badge: "Trang thiết bị y tế chính hãng",
+    title: "Hệ Thống Công Nghệ Cao Chuẩn Quốc Tế",
+    description: "Đầu tư đồng bộ trang thiết bị nhập khẩu chính hãng từ Mỹ, Châu Âu và Hàn Quốc, đáp ứng các tiêu chuẩn khắt khe của FDA và CE.",
+    desktopImage: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1920&q=80",
+    mobileImage: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80",
+    overlayOpacity: 70,
+    overlayColor: "dark",
+    alignment: "center",
+    cta1Text: "Trải nghiệm soi da VISIA",
+    cta1Link: "/dat-lich-kham",
+    cta1Enabled: true,
+    cta2Text: "Xem dịch vụ ứng dụng",
+    cta2Link: "/dich-vu",
+    cta2Enabled: true,
+    showBreadcrumbs: true
+  },
+  "ket-qua-dieu-tri": {
+    id: "ket-qua-dieu-tri",
+    pageName: "Khách hàng Before–After (Kết quả)",
+    routePath: "/ket-qua-dieu-tri",
+    enabled: true,
+    badge: "Minh chứng lâm sàng thực tế",
+    title: "Hình Ảnh Trước – Sau & Ca Điều Trị Thực Tế",
+    description: "100% hình ảnh thực tế từ khách hàng đã điều trị thành công tại Lạc's Beauty Center, được chụp và phân tích đối chiếu bằng máy VISIA 3D.",
+    desktopImage: "https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1920&q=80",
+    mobileImage: "https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=800&q=80",
+    overlayOpacity: 75,
+    overlayColor: "dark",
+    alignment: "center",
+    cta1Text: "Nhận phác đồ điều trị",
+    cta1Link: "/dat-lich-kham",
+    cta1Enabled: true,
+    cta2Text: "Tìm hiểu dịch vụ",
+    cta2Link: "/dich-vu",
+    cta2Enabled: false,
+    showBreadcrumbs: true
+  },
+  "duoc-my-pham": {
+    id: "duoc-my-pham",
+    pageName: "Dược mỹ phẩm & Sản phẩm chính hãng",
+    routePath: "/duoc-my-pham",
+    enabled: true,
+    badge: "Dược mỹ phẩm chính hãng 100%",
+    title: "Nhà Thuốc Da Liễu & Dược Mỹ Phẩm Phục Hồi",
+    description: "Sản phẩm được bác sĩ da liễu chọn lọc khắt khe từ các thương hiệu uy tín toàn cầu: Bioderma, La Roche-Posay, Obagi, Eucerin, A-Derma.",
+    desktopImage: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1920&q=80",
+    mobileImage: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80",
+    overlayOpacity: 70,
+    overlayColor: "dark",
+    alignment: "center",
+    cta1Text: "Tư vấn sản phẩm phù hợp",
+    cta1Link: "/dat-lich-kham",
+    cta1Enabled: true,
+    cta2Text: "Xem thương hiệu",
+    cta2Link: "/duoc-my-pham",
+    cta2Enabled: false,
+    showBreadcrumbs: true
+  },
+  "tin-tuc": {
+    id: "tin-tuc",
+    pageName: "Tin tức & Kiến thức y khoa",
+    routePath: "/tin-tuc",
+    enabled: true,
+    badge: "Kiến thức y khoa chuẩn xác",
+    title: "Cẩm Nang Chăm Sóc Da & Kiến Thức Da Liễu",
+    description: "Cập nhật bài viết chuyên môn từ các bác sĩ chuyên khoa da liễu, hướng dẫn chăm sóc da đúng cách và giải mã các trào lưu làm đẹp.",
+    desktopImage: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1920&q=80",
+    mobileImage: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80",
+    overlayOpacity: 75,
+    overlayColor: "dark",
+    alignment: "center",
+    cta1Text: "Gửi câu hỏi cho Bác sĩ",
+    cta1Link: "/dat-lich-kham",
+    cta1Enabled: true,
+    cta2Text: "Đọc cẩm nang trị mụn",
+    cta2Link: "/tin-tuc",
+    cta2Enabled: false,
+    showBreadcrumbs: true
+  },
+  "he-thong-co-so": {
+    id: "he-thong-co-so",
+    pageName: "Hệ thống cơ sở phòng khám",
+    routePath: "/he-thong-co-so",
+    enabled: true,
+    badge: "Hệ thống cơ sở khang trang",
+    title: "Hệ Thống 2 Cơ Sở Tại TP. Cần Thơ",
+    description: "Tọa lạc tại các trục đường huyết mạch thuận tiện di chuyển, trang bị đầy đủ máy móc công nghệ cao và phòng vô trùng đạt chuẩn y tế.",
+    desktopImage: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80",
+    mobileImage: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80",
+    overlayOpacity: 70,
+    overlayColor: "dark",
+    alignment: "center",
+    cta1Text: "Đặt lịch tại Cơ sở 1",
+    cta1Link: "/dat-lich-kham",
+    cta1Enabled: true,
+    cta2Text: "Hotline chỉ đường",
+    cta2Link: "tel:19006750",
+    cta2Enabled: true,
+    showBreadcrumbs: true
+  },
+  "lien-he": {
+    id: "lien-he",
+    pageName: "Liên hệ & Đóng góp ý kiến",
+    routePath: "/lien-he",
+    enabled: true,
+    badge: "Kết nối cùng Lạc's",
+    title: "Thông Tin Liên Hệ & Hỗ Trợ Khách Hàng",
+    description: "Đội ngũ chuyên viên tư vấn và bác sĩ da liễu luôn sẵn sàng lắng nghe, giải đáp mọi băn khoăn về tình trạng làn da của bạn.",
+    desktopImage: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1920&q=80",
+    mobileImage: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80",
+    overlayOpacity: 70,
+    overlayColor: "dark",
+    alignment: "center",
+    cta1Text: "Gọi Hotline 1900 6750",
+    cta1Link: "tel:19006750",
+    cta1Enabled: true,
+    cta2Text: "Chat qua Zalo OA",
+    cta2Link: "https://zalo.me/lacsbeautycenter",
+    cta2Enabled: true,
+    showBreadcrumbs: true
+  },
+  "dat-lich-kham": {
+    id: "dat-lich-kham",
+    pageName: "Đặt lịch khám & Soi da",
+    routePath: "/dat-lich-kham",
+    enabled: true,
+    badge: "Dịch vụ y tế tận tâm",
+    title: "Đặt Lịch Khám & Soi Da VISIA 3D Đa Tầng",
+    description: "Chủ động chọn bác sĩ, khung giờ và cơ sở mong muốn. Không phải chờ đợi lâu khi đến phòng khám.",
+    desktopImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80",
+    mobileImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80",
+    overlayOpacity: 75,
+    overlayColor: "dark",
+    alignment: "center",
+    cta1Text: "Điền form đặt hẹn",
+    cta1Link: "#booking-form",
+    cta1Enabled: false,
+    cta2Text: "Xem đội ngũ bác sĩ",
+    cta2Link: "/doi-ngu-bac-si",
+    cta2Enabled: true,
+    showBreadcrumbs: true
+  },
+  "cau-hoi-thuong-gap": {
+    id: "cau-hoi-thuong-gap",
+    pageName: "Câu hỏi thường gặp (FAQ)",
+    routePath: "/cau-hoi-thuong-gap",
+    enabled: true,
+    badge: "Giải đáp thắc mắc",
+    title: "Câu Hỏi Thường Gặp & Tư Vấn Y Khoa",
+    description: "Tổng hợp các câu hỏi phổ biến nhất về chi phí, phác đồ điều trị, chăm sóc sau trị liệu và chính sách bảo hành.",
+    desktopImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1920&q=80",
+    mobileImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80",
+    overlayOpacity: 75,
+    overlayColor: "dark",
+    alignment: "center",
+    cta1Text: "Đặt câu hỏi trực tiếp",
+    cta1Link: "/dat-lich-kham",
+    cta1Enabled: true,
+    cta2Text: "Liên hệ Hotline",
+    cta2Link: "tel:19006750",
+    cta2Enabled: true,
+    showBreadcrumbs: true
+  },
+  "giay-phep-hoat-dong": {
+    id: "giay-phep-hoat-dong",
+    pageName: "Giấy phép hoạt động & Pháp lý",
+    routePath: "/giay-phep-hoat-dong",
+    enabled: true,
+    badge: "Pháp lý minh bạch",
+    title: "Giấy Phép Hoạt Động & Pháp Lý Y Tế",
+    description: "Minh bạch hồ sơ pháp lý, giấy phép hoạt động khám chữa bệnh được cấp bởi Sở Y Tế và chứng chỉ hành nghề của đội ngũ chuyên môn.",
+    desktopImage: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1920&q=80",
+    mobileImage: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80",
+    overlayOpacity: 75,
+    overlayColor: "dark",
+    alignment: "center",
+    cta1Text: "Xem hệ thống cơ sở",
+    cta1Link: "/he-thong-co-so",
+    cta1Enabled: true,
+    cta2Text: "Đội ngũ bác sĩ",
+    cta2Link: "/doi-ngu-bac-si",
+    cta2Enabled: true,
+    showBreadcrumbs: true
+  },
+  "tuyen-dung": {
+    id: "tuyen-dung",
+    pageName: "Tuyển dụng & Cơ hội nghề nghiệp",
+    routePath: "/tuyen-dung",
+    enabled: true,
+    badge: "Gia nhập đội ngũ LBC",
+    title: "Cơ Hội Nghề Nghiệp Tại Lạc's Beauty Center",
+    description: "Môi trường làm việc y khoa chuyên nghiệp, lộ trình đào tạo bài bản cùng chế độ đãi ngộ hấp dẫn dành cho nhân tài y tế.",
+    desktopImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80",
+    mobileImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+    overlayOpacity: 70,
+    overlayColor: "dark",
+    alignment: "center",
+    cta1Text: "Gửi hồ sơ ứng tuyển",
+    cta1Link: "mailto:tuyendung@lbcgroup.vn",
+    cta1Enabled: true,
+    cta2Text: "Về chúng tôi",
+    cta2Link: "/gioi-thieu",
+    cta2Enabled: true,
+    showBreadcrumbs: true
+  }
+};
