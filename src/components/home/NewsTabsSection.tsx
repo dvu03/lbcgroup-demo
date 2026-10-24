@@ -67,6 +67,9 @@ export const NewsTabsSection: React.FC = () => {
                 <img
                   src={art.imageUrl}
                   alt={art.title}
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/fallback-clinic.svg';
+                  }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-white/90 text-primary-800 backdrop-blur-sm shadow-sm uppercase tracking-wide">

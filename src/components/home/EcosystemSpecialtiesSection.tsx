@@ -37,6 +37,9 @@ export const EcosystemSpecialtiesSection: React.FC = () => {
               <img
                 src={spec.heroImage}
                 alt={spec.name}
+                onError={(e) => {
+                  e.currentTarget.src = '/images/fallback-clinic.svg';
+                }}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-[0.75]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent"></div>

@@ -121,6 +121,9 @@ export const TechnologiesSection: React.FC = () => {
                   <img
                     src={imageSrc}
                     alt={bannerTitle}
+                    onError={(e) => {
+                      e.currentTarget.src = '/images/fallback-clinic.svg';
+                    }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.82]"
                     loading="lazy"
                   />
@@ -199,6 +202,9 @@ export const TechnologiesSection: React.FC = () => {
               <img
                 src={tech.actionImageUrl || tech.imageUrl}
                 alt={tech.name}
+                onError={(e) => {
+                  e.currentTarget.src = '/images/fallback-clinic.svg';
+                }}
                 className="w-full h-full object-cover"
               />
             </div>

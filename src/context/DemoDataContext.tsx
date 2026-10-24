@@ -146,17 +146,27 @@ function loadFromStorage<T>(key: string, defaultValue: T): T {
     const item = localStorage.getItem(STORAGE_PREFIX + key);
     if (!item) return defaultValue;
     const parsed = JSON.parse(item);
+    if (Array.isArray(defaultValue) && (!Array.isArray(parsed) || parsed.length === 0)) {
+      return defaultValue;
+    }
     if (key === "siteConfig" && typeof defaultValue === "object" && defaultValue !== null) {
+      const defaultObj = defaultValue as any;
       return {
         ...defaultValue,
         ...parsed,
+        logoHeader: parsed.logoHeader || defaultObj.logoHeader || "/images/logo.svg",
+        logoUrl: parsed.logoUrl || defaultObj.logoUrl || "/images/logo.svg",
+        logoWhiteUrl: parsed.logoWhiteUrl || defaultObj.logoWhiteUrl || "/images/logo-white.svg",
+        logoFooterUrl: parsed.logoFooterUrl || defaultObj.logoFooterUrl || "/images/logo-white.svg",
         bannerTopConfig: {
-          ...(defaultValue as any).bannerTopConfig,
+          ...defaultObj.bannerTopConfig,
           ...(parsed.bannerTopConfig || {})
         },
         headerMainConfig: {
-          ...(defaultValue as any).headerMainConfig,
-          ...(parsed.headerMainConfig || {})
+          ...defaultObj.headerMainConfig,
+          ...(parsed.headerMainConfig || {}),
+          logoUrl: parsed.headerMainConfig?.logoUrl || defaultObj.headerMainConfig?.logoUrl || "/images/logo.svg",
+          logoWhiteUrl: parsed.headerMainConfig?.logoWhiteUrl || defaultObj.headerMainConfig?.logoWhiteUrl || "/images/logo-white.svg"
         }
       };
     }

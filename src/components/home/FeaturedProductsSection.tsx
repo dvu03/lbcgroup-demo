@@ -59,6 +59,9 @@ export const FeaturedProductsSection: React.FC = () => {
               <img
                 src={p.imageUrls[0]}
                 alt={p.name}
+                onError={(e) => {
+                  e.currentTarget.src = '/images/fallback-clinic.svg';
+                }}
                 className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
               />
               <span className="absolute top-3 left-3 px-2 py-0.5 rounded-full text-[10px] font-bold bg-white/90 text-primary-800 shadow-sm border border-slate-100 uppercase tracking-wide">

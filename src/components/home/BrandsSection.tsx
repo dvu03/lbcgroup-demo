@@ -72,6 +72,9 @@ export const BrandsSection: React.FC = () => {
                           <img
                             src={p.imageUrls[0]}
                             alt={p.name}
+                            onError={(e) => {
+                              e.currentTarget.src = '/images/fallback-clinic.svg';
+                            }}
                             className="w-8 h-8 rounded-lg object-cover border border-slate-100 shrink-0"
                           />
                           <span className="line-clamp-1 flex-1 font-medium">{p.name}</span>

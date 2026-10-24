@@ -215,8 +215,8 @@ export const initialHeaderMainConfig: HeaderMainConfig = {
   stickyHeader: true,
   isSticky: true,
 
-  logoUrl: "",
-  logoWhiteUrl: "",
+  logoUrl: "/images/logo.svg",
+  logoWhiteUrl: "/images/logo-white.svg",
   logoWidthDesktop: 185,
   logoHeightDesktop: 48,
   logoWidthMobile: 130,
@@ -392,5 +392,9 @@ export const initialSiteConfig: SiteConfig = {
     ctaLink: "/gioi-thieu"
   },
   bannerTopConfig: initialBannerTopConfig,
-  headerMainConfig: initialHeaderMainConfig
+  headerMainConfig: initialHeaderMainConfig,
+  logoHeader: "/images/logo.svg",
+  logoUrl: "/images/logo.svg",
+  logoWhiteUrl: "/images/logo-white.svg",
+  logoFooterUrl: "/images/logo-white.svg"
 };

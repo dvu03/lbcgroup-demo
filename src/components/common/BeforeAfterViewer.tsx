@@ -43,6 +43,9 @@ export const BeforeAfterViewer: React.FC<BeforeAfterViewerProps> = ({
         <img
           src={afterImage}
           alt={afterLabel}
+          onError={(e) => {
+            e.currentTarget.src = '/images/fallback-clinic.svg';
+          }}
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         />
         <div className="absolute bottom-3 right-3 z-10 px-2.5 py-1 rounded bg-primary-700/80 backdrop-blur-sm text-white text-xs font-semibold shadow">
@@ -57,6 +60,9 @@ export const BeforeAfterViewer: React.FC<BeforeAfterViewerProps> = ({
           <img
             src={beforeImage}
             alt={beforeLabel}
+            onError={(e) => {
+              e.currentTarget.src = '/images/fallback-clinic.svg';
+            }}
             className="absolute inset-0 w-full h-full object-cover max-w-none pointer-events-none"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />

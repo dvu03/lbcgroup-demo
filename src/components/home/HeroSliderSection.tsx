@@ -75,6 +75,9 @@ export const HeroSliderSection: React.FC = () => {
                   <img
                     src={s.desktopImage}
                     alt={s.title}
+                    onError={(e) => {
+                      e.currentTarget.src = '/images/fallback-clinic.svg';
+                    }}
                     className="w-full h-full object-cover object-center brightness-[0.62]"
                   />
                 </picture>
@@ -165,6 +168,9 @@ export const HeroSliderSection: React.FC = () => {
                 <img
                   src={banner.imageUrl}
                   alt={banner.title}
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/fallback-clinic.svg';
+                  }}
                   className="absolute inset-0 w-full h-full object-cover object-center brightness-[0.52] group-hover:scale-105 transition-transform duration-500"
                 />
                 {/* High Contrast Overlay */}

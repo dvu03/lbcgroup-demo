@@ -33,6 +33,9 @@ export const AboutSummarySection: React.FC = () => {
               <img
                 src={mainImage}
                 alt="Không gian sảnh phòng khám Lạc's Beauty Center"
+                onError={(e) => {
+                  e.currentTarget.src = '/images/fallback-clinic.svg';
+                }}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
@@ -60,6 +63,9 @@ export const AboutSummarySection: React.FC = () => {
                   <img
                     src={imgUrl}
                     alt={`Hoạt động phòng khám ${i + 1}`}
+                    onError={(e) => {
+                      e.currentTarget.src = '/images/fallback-clinic.svg';
+                    }}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>

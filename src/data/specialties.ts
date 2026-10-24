@@ -100,7 +100,7 @@ export const initialSpecialties: Specialty[] = [
     heroImage: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1600&q=80",
     galleryImages: [
       "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1586015555751-63c254b1fbf4?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=800&q=80"
     ]
   },
   {
