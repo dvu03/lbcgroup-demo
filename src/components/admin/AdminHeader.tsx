@@ -63,7 +63,8 @@ export const AdminHeader: React.FC<AdminHeaderProps> = ({
   quickNewTitle,
   saveStatus = "saved"
 }) => {
-  const { dbStatus, syncStatus } = useDemoData();
+  const { dbStatus, syncStatus, refreshFromNeon } = useDemoData();
+  const [isRefreshing, setIsRefreshing] = React.useState(false);
 
   const currentMeta = TAB_TITLES[activeTab] || {
     title: "Quản trị nội dung",
@@ -154,6 +155,22 @@ export const AdminHeader: React.FC<AdminHeaderProps> = ({
               <span>Cục bộ (Offline)</span>
             </div>
           )}
+
+          {/* Quick Refresh from Neon button */}
+          <button
+            type="button"
+            onClick={async () => {
+              setIsRefreshing(true);
+              await refreshFromNeon();
+              setTimeout(() => setIsRefreshing(false), 500);
+            }}
+            disabled={isRefreshing}
+            className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-neutral-700 hover:text-emerald-800 bg-neutral-100 hover:bg-neutral-200 rounded-xl transition cursor-pointer"
+            title="Tải lại toàn bộ dữ liệu mới nhất từ cơ sở dữ liệu Neon PostgreSQL"
+          >
+            <RefreshCw className={`w-3.5 h-3.5 ${isRefreshing ? 'animate-spin text-emerald-600' : ''}`} />
+            <span className="hidden md:inline">Làm mới Neon</span>
+          </button>
 
           {/* Quick Add Button if applicable */}
           {onQuickNew && (

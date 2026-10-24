@@ -155,6 +155,8 @@ interface DemoDataContextType {
   adminToken: string;
   setAdminToken: (token: string) => void;
   syncAllToNeon: () => Promise<{ success: boolean; message: string }>;
+  refreshFromNeon: () => Promise<{ success: boolean; message: string }>;
+  clearLocalCache: () => void;
 }
 
 const DemoDataContext = createContext<DemoDataContextType | undefined>(undefined);
@@ -242,46 +244,61 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   const isHydratedRef = useRef(false);
 
-  // 1. Hydrate all content from Neon PostgreSQL on initial load
-  useEffect(() => {
-    let active = true;
-    async function hydrateFromNeon() {
-      try {
-        setDbStatus('syncing');
-        const res = await fetch('/api/content');
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = await res.json();
-        if (active && data && typeof data === 'object') {
-          if (data.siteConfig) setSiteConfig(data.siteConfig);
-          if (data.homepageModules) setHomepageModules(data.homepageModules);
-          if (data.heroSlides) setHeroSlides(data.heroSlides);
-          if (data.sideBanners) setSideBanners(data.sideBanners);
-          if (data.coreValues) setCoreValues(data.coreValues);
-          if (data.specialties) setSpecialties(data.specialties);
-          if (data.services) setServices(data.services);
-          if (data.doctors) setDoctors(data.doctors);
-          if (data.technologies) setTechnologies(data.technologies);
-          if (data.caseStudies) setCaseStudies(data.caseStudies);
-          if (data.brands) setBrands(data.brands);
-          if (data.products) setProducts(data.products);
-          if (data.productCategories) setProductCategories(data.productCategories);
-          if (data.articles) setArticles(data.articles);
-          if (data.locations) setLocations(data.locations);
-          if (data.faqs) setFaqs(data.faqs);
-          if (data.navItems) setNavItems(data.navItems);
-          if (data.pagesConfig) setPagesConfig(data.pagesConfig);
-          setDbStatus('connected');
-          setSyncStatus('saved');
-        }
-      } catch (e) {
-        console.warn('Neon DB hydration fallback to local storage:', e);
-        setDbStatus('local');
-      } finally {
-        isHydratedRef.current = true;
+  // 1. Hydrate/refresh all content from Neon PostgreSQL
+  const refreshFromNeon = async (): Promise<{ success: boolean; message: string }> => {
+    try {
+      setDbStatus('syncing');
+      const res = await fetch('/api/content?_t=' + Date.now());
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      if (data && typeof data === 'object') {
+        if (data.siteConfig) setSiteConfig(data.siteConfig);
+        if (data.homepageModules) setHomepageModules(data.homepageModules);
+        if (data.heroSlides) setHeroSlides(data.heroSlides);
+        if (data.sideBanners) setSideBanners(data.sideBanners);
+        if (data.coreValues) setCoreValues(data.coreValues);
+        if (data.specialties) setSpecialties(data.specialties);
+        if (data.services) setServices(data.services);
+        if (data.doctors) setDoctors(data.doctors);
+        if (data.technologies) setTechnologies(data.technologies);
+        if (data.caseStudies) setCaseStudies(data.caseStudies);
+        if (data.brands) setBrands(data.brands);
+        if (data.products) setProducts(data.products);
+        if (data.productCategories) setProductCategories(data.productCategories);
+        if (data.articles) setArticles(data.articles);
+        if (data.locations) setLocations(data.locations);
+        if (data.faqs) setFaqs(data.faqs);
+        if (data.navItems) setNavItems(data.navItems);
+        if (data.pagesConfig) setPagesConfig(data.pagesConfig);
+        setDbStatus('connected');
+        setSyncStatus('saved');
+        return { success: true, message: "Đã làm mới dữ liệu thành công từ Neon PostgreSQL!" };
       }
+      throw new Error("Dữ liệu nhận được không hợp lệ");
+    } catch (e: any) {
+      console.warn('Neon DB hydration fallback to local storage:', e);
+      setDbStatus('local');
+      return { success: false, message: `Không thể kết nối Neon: ${e.message}` };
+    } finally {
+      isHydratedRef.current = true;
     }
-    hydrateFromNeon();
-    return () => { active = false; };
+  };
+
+  const clearLocalCache = () => {
+    try {
+      Object.keys(localStorage).forEach(key => {
+        if (key.startsWith(STORAGE_PREFIX)) {
+          localStorage.removeItem(key);
+        }
+      });
+      window.location.reload();
+    } catch (e) {
+      console.error("Failed to clear local cache", e);
+    }
+  };
+
+  useEffect(() => {
+    refreshFromNeon();
   }, []);
 
   // 2. Helper to sync any module to Neon
@@ -1168,7 +1185,9 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
         syncStatus,
         adminToken,
         setAdminToken,
-        syncAllToNeon
+        syncAllToNeon,
+        refreshFromNeon,
+        clearLocalCache
       }}
     >
       {children}

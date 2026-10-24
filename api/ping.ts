@@ -4,6 +4,7 @@ export default async function handler(req: any, res: any) {
     message: 'Pong from Vercel Serverless Function',
     hasDatabaseUrl: Boolean(process.env.DATABASE_URL),
     hasAdminSecret: Boolean(process.env.ADMIN_SECRET),
+    usingFallbackSecret: !process.env.ADMIN_SECRET,
     nodeVersion: process.version,
     env: process.env.VERCEL_ENV || 'development',
     region: process.env.VERCEL_REGION || 'unknown',
