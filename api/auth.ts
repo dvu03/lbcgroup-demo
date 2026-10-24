@@ -1,4 +1,4 @@
-import { verifyAdmin } from './_db';
+import { verifyAdmin } from './_db.js';
 
 export default async function handler(req: any, res: any) {
   if (req.method === 'POST') {

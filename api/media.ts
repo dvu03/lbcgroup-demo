@@ -1,4 +1,4 @@
-import { getDb, verifyAdmin } from './_db';
+import { getDb, verifyAdmin } from './_db.js';
 
 export default async function handler(req: any, res: any) {
   // GET: Read all media
