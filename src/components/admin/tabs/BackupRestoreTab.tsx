@@ -9,7 +9,11 @@ import {
   FileText,
   ShieldCheck,
   FileCode,
-  Copy
+  Copy,
+  Database,
+  RefreshCw,
+  Key,
+  Server
 } from "lucide-react";
 import { useDemoData } from "../../../context/DemoDataContext";
 import { ConfirmationModal } from "../ConfirmationModal";
@@ -24,7 +28,12 @@ export const BackupRestoreTab: React.FC = () => {
     products,
     heroSlides,
     articles,
-    siteConfig
+    siteConfig,
+    dbStatus,
+    syncStatus,
+    adminToken,
+    setAdminToken,
+    syncAllToNeon
   } = useDemoData();
 
   const [importJsonText, setImportJsonText] = useState("");
@@ -41,9 +50,54 @@ export const BackupRestoreTab: React.FC = () => {
   const [showResetDefaultConfirm, setShowResetDefaultConfirm] = useState(false);
   const [toastMsg, setToastMsg] = useState<string | null>(null);
 
+  const [isSyncingNeon, setIsSyncingNeon] = useState(false);
+  const [isTestingDb, setIsTestingDb] = useState(false);
+  const [healthStatus, setHealthStatus] = useState<string | null>(null);
+  const [showTokenInput, setShowTokenInput] = useState(false);
+  const [tempToken, setTempToken] = useState(adminToken);
+
   const showToast = (msg: string) => {
     setToastMsg(msg);
     setTimeout(() => setToastMsg(null), 3500);
+  };
+
+  const handleSyncNeon = async () => {
+    setIsSyncingNeon(true);
+    try {
+      const res = await syncAllToNeon();
+      showToast(res.message);
+    } catch (e: any) {
+      showToast("Lỗi đồng bộ: " + e.message);
+    } finally {
+      setIsSyncingNeon(false);
+    }
+  };
+
+  const handleTestHealth = async () => {
+    setIsTestingDb(true);
+    setHealthStatus(null);
+    try {
+      const res = await fetch("/api/health");
+      const data = await res.json();
+      if (res.ok && data.status === "ok") {
+        setHealthStatus(`✅ Kết nối Neon PostgreSQL thành công! (PG: ${data.timestamp || "Active"})`);
+        showToast("Kết nối cơ sở dữ liệu Neon hoạt động hoàn hảo!");
+      } else {
+        setHealthStatus(`❌ Không thể kết nối: ${data.error || "Lỗi máy chủ"}`);
+        showToast("Lỗi kết nối Neon DB: " + (data.error || "Không rõ"));
+      }
+    } catch (e: any) {
+      setHealthStatus(`❌ Lỗi API: ${e.message}`);
+      showToast("Lỗi kết nối API: " + e.message);
+    } finally {
+      setIsTestingDb(false);
+    }
+  };
+
+  const handleSaveToken = () => {
+    setAdminToken(tempToken);
+    setShowTokenInput(false);
+    showToast("Đã lưu khóa bảo mật Admin Secret!");
   };
 
   const handleDownloadBackup = () => {
@@ -154,6 +208,115 @@ export const BackupRestoreTab: React.FC = () => {
           <span>{toastMsg}</span>
         </div>
       )}
+
+      {/* Neon Cloud Database Sync Card */}
+      <div className="bg-white rounded-2xl border border-neutral-200 p-6 shadow-xs space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-neutral-100">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
+              <Database className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h3 className="font-bold text-neutral-900 text-sm font-heading">
+                  Cơ Sở Dữ Liệu Đám Mây Neon PostgreSQL
+                </h3>
+                <span
+                  className={`px-2 py-0.5 text-[10px] font-bold rounded-full ${
+                    dbStatus === "connected"
+                      ? "bg-emerald-100 text-emerald-800"
+                      : dbStatus === "syncing"
+                      ? "bg-blue-100 text-blue-800"
+                      : "bg-amber-100 text-amber-800"
+                  }`}
+                >
+                  {dbStatus === "connected" ? "🟢 Đã kết nối" : dbStatus === "syncing" ? "⏳ Đang kết nối" : "🟡 Cục bộ (Offline)"}
+                </span>
+              </div>
+              <p className="text-xs text-neutral-500 mt-0.5">
+                Dữ liệu được lưu trữ tự động trên máy chủ Neon PostgreSQL (4 bảng: <code>cms_content</code>, <code>media_library</code>, <code>booking_leads</code>, <code>audit_logs</code>).
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              type="button"
+              disabled={isTestingDb}
+              onClick={handleTestHealth}
+              className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-neutral-700 bg-neutral-100 hover:bg-neutral-200 rounded-xl transition"
+            >
+              {isTestingDb ? <RefreshCw className="w-3.5 h-3.5 animate-spin" /> : <Server className="w-3.5 h-3.5" />}
+              <span>Kiểm tra /api/health</span>
+            </button>
+            <button
+              type="button"
+              disabled={isSyncingNeon}
+              onClick={handleSyncNeon}
+              className="flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 disabled:opacity-50 rounded-xl shadow-xs transition"
+            >
+              <RefreshCw className={`w-3.5 h-3.5 ${isSyncingNeon ? "animate-spin" : ""}`} />
+              <span>{isSyncingNeon ? "Đang đẩy lên Neon..." : "Đồng bộ toàn bộ lên Neon DB"}</span>
+            </button>
+          </div>
+        </div>
+
+        {healthStatus && (
+          <div className="p-3 bg-neutral-50 border border-neutral-200 rounded-xl text-xs font-medium text-neutral-700 flex items-center justify-between">
+            <span>{healthStatus}</span>
+            <button
+              type="button"
+              onClick={() => setHealthStatus(null)}
+              className="text-neutral-400 hover:text-neutral-600 text-[11px]"
+            >
+              Đóng
+            </button>
+          </div>
+        )}
+
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs pt-1">
+          <div className="text-neutral-500">
+            Trạng thái ghi tự động: <span className="font-semibold text-neutral-800">{syncStatus === "saving" ? "Đang gửi thay đổi..." : syncStatus === "saved" ? "Mọi thay đổi đã lưu lên Neon" : "Chưa đồng bộ"}</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            {!showTokenInput ? (
+              <button
+                type="button"
+                onClick={() => setShowTokenInput(true)}
+                className="text-[11px] font-semibold text-emerald-700 hover:underline flex items-center gap-1"
+              >
+                <Key className="w-3 h-3" />
+                <span>Cấu hình Admin Secret Token</span>
+              </button>
+            ) : (
+              <div className="flex items-center gap-2">
+                <input
+                  type="password"
+                  value={tempToken}
+                  onChange={(e) => setTempToken(e.target.value)}
+                  placeholder="Nhập ADMIN_SECRET"
+                  className="px-2.5 py-1 text-xs border border-neutral-300 rounded-lg focus:outline-hidden focus:border-emerald-600"
+                />
+                <button
+                  type="button"
+                  onClick={handleSaveToken}
+                  className="px-2.5 py-1 text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg"
+                >
+                  Lưu
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setShowTokenInput(false)}
+                  className="text-xs text-neutral-500 hover:text-neutral-700"
+                >
+                  Hủy
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
 
       {/* Two Columns: Export on Left, Import on Right */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

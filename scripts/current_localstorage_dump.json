@@ -1,0 +1,2349 @@
+{
+  "LBC_DEMO_faqs": [
+    {
+      "id": "dat-lich-tham-kham",
+      "groupTitle": "Đặt lịch & Thăm khám tại Phòng khám",
+      "items": [
+        {
+          "question": "Phòng khám có cần đặt lịch hẹn trước khi đến không?",
+          "answer": "Quý khách nên đặt lịch trước qua website hoặc Hotline 1900 6750 để được sắp xếp bác sĩ chuyên khoa phù hợp và không phải chờ đợi lâu, đặc biệt vào các khung giờ cao điểm và cuối tuần."
+        },
+        {
+          "question": "Chi phí khám và soi da ban đầu là bao nhiêu?",
+          "answer": "Chi phí thăm khám trực tiếp cùng Bác sĩ Chuyên khoa Da liễu và phân tích da đa tầng bằng máy VISIA 3D được áp dụng theo bảng giá niêm yết công khai tại phòng khám. Vào các dịp đặc biệt hoặc đăng ký online, phòng khám thường có chính sách ưu đãi trải nghiệm soi da miễn phí."
+        },
+        {
+          "question": "Bác sĩ nào sẽ trực tiếp thăm khám cho tôi?",
+          "answer": "100% khách hàng tại Lạc's Beauty Center được trực tiếp Bác sĩ có trình độ sau đại học (Thạc sĩ, Bác sĩ Chuyên khoa I, II) thăm khám, phân tích phim soi da và lên phác đồ điều trị."
+        },
+        {
+          "question": "Hai cơ sở của phòng khám có khác nhau về dịch vụ không?",
+          "answer": "Cả 2 cơ sở (231T Đường 3/2 và 388 Nguyễn Văn Cừ) đều sở hữu đồng bộ hệ thống máy móc công nghệ cao, đội ngũ bác sĩ luân phiên làm việc theo lịch cố định và chất lượng dịch vụ đạt chuẩn y khoa như nhau."
+        }
+      ]
+    },
+    {
+      "id": "dich-vu-dieu-tri",
+      "groupTitle": "Dịch vụ Điều trị Da liễu & Thẩm mỹ",
+      "items": [
+        {
+          "question": "Liệu trình trị mụn tại Lạc's kéo dài bao lâu?",
+          "answer": "Thời gian điều trị phụ thuộc vào mức độ mụn viêm, mụn ẩn và cơ địa từng người. Thông thường sau 2 – 3 buổi (khoảng 3 – 4 tuần), các ổ viêm se cồi rõ rệt; liệu trình hoàn chỉnh thường kéo dài từ 6 – 8 buổi."
+        },
+        {
+          "question": "Bóc tách đáy sẹo và bắn laser trị sẹo rỗ có đau không?",
+          "answer": "Trước khi thực hiện, khách hàng được ủ tê y tế chuyên dụng từ 30 – 45 phút nên quá trình thực hiện rất nhẹ nhàng, chỉ cảm thấy châm chích nhẹ và hoàn toàn trong ngưỡng chịu đựng được."
+        },
+        {
+          "question": "Sau khi trị nám bằng laser có bị tăng sắc tố dội ngược không?",
+          "answer": "Tại Lạc's, bác sĩ sử dụng bước sóng laser chọn lọc năng lượng thấp kết hợp phục hồi màng đáy và kem bôi ức chế tế bào hắc tố, giúp kiểm soát tối đa nguy cơ tăng sắc tố sau viêm (PIH)."
+        },
+        {
+          "question": "Nâng cơ RF Jovena và HIFU duy trì hiệu quả được bao lâu?",
+          "answer": "Hiệu quả săn chắc thon gọn viền hàm có thể thấy ngay sau buổi đầu tiên và tiếp tục tăng sinh collagen tối ưu trong 3 – 6 tháng tiếp theo, duy trì ổn định từ 8 đến 12 tháng tùy vào chế độ sinh hoạt."
+        }
+      ]
+    },
+    {
+      "id": "mua-hang-giao-hang",
+      "groupTitle": "Mua hàng Dược mỹ phẩm & Giao hàng",
+      "items": [
+        {
+          "question": "Dược mỹ phẩm tại website có phải là hàng chính hãng 100% không?",
+          "answer": "Lạc's Beauty Center cam kết 100% sản phẩm phân phối là hàng chính ngạch nhập khẩu ủy quyền từ các thương hiệu Bioderma, Biotrade, PostQuam... Có đầy đủ tem chống hàng giả, tem phụ tiếng Việt và hóa đơn VAT."
+        },
+        {
+          "question": "Tôi ở các tỉnh miền Tây thì giao hàng mất bao lâu?",
+          "answer": "Đối với khu vực nội ô TP. Cần Thơ, phòng khám hỗ trợ giao hỏa tốc trong 2 – 4 giờ. Với các tỉnh miền Tây lân cận (Hậu Giang, Vĩnh Long, Sóc Trăng, An Giang...), thời gian nhận hàng từ 1 – 2 ngày làm việc."
+        },
+        {
+          "question": "Website có bán thuốc kê đơn trực tuyến không?",
+          "answer": "Theo quy định pháp luật y tế Việt Nam, Nhà thuốc Lạc's không bán thuốc kê đơn qua mạng. Website chỉ giới thiệu thông tin và cung cấp các dòng dược mỹ phẩm chăm sóc da không kê đơn."
+        }
+      ]
+    },
+    {
+      "id": "dao-tao-academy",
+      "groupTitle": "Đào tạo nghề – Lạc's Academy",
+      "items": [
+        {
+          "question": "Học viên chưa biết gì về chăm sóc da có học được không?",
+          "answer": "Khóa đào tạo Kỹ thuật viên Chăm sóc da chuẩn y khoa được thiết kế bài bản từ cơ bản đến nâng cao, phù hợp cho cả người mới bắt đầu từ con số 0."
+        },
+        {
+          "question": "Thời gian thực hành trên người thật chiếm bao nhiêu phần trăm?",
+          "answer": "Chương trình đào tạo tại Lạc's Academy chú trọng thực chiến với hơn 80% thời lượng là thực hành trực tiếp trên mẫu thật dưới sự kèm cặp 1:1 của giảng viên và bác sĩ."
+        },
+        {
+          "question": "Sau khi tốt nghiệp có được cấp chứng chỉ hợp pháp không?",
+          "answer": "Học viên hoàn thành khóa học và đạt kỳ thi kiểm tra tay nghề sẽ được cấp Chứng chỉ đào tạo nghề sơ cấp có giá trị pháp lý toàn quốc để tự tin hành nghề hoặc mở cơ sở làm đẹp riêng."
+        }
+      ]
+    }
+  ],
+  "LBC_DEMO_services": [
+    {
+      "id": "srv-01",
+      "name": "Điều trị mụn – kể cả mụn kháng trị",
+      "shortName": "Trị mụn",
+      "slug": "dieu-tri-mun",
+      "iconCode": "ICO-D1",
+      "iconName": "ShieldAlert",
+      "metaDescription": "Thăm khám và điều trị mụn theo phác đồ cá nhân hóa tại Phòng khám Da liễu Lạc's Beauty Center, Cần Thơ – bác sĩ trực tiếp đánh giá và theo dõi.",
+      "suitableFor": [
+        "Mụn bọc, mụn viêm sưng đỏ, mụn mủ dai dẳng",
+        "Mụn ẩn, mụn đầu đen, bít tắc tuyến bã nhờn diện rộng",
+        "Mụn kháng trị đã điều trị nhiều nơi nhưng liên tục tái phát",
+        "Da yếu, mỏng đỏ do từng nhiễm corticoid hoặc kem trộn"
+      ],
+      "protocolSteps": [
+        {
+          "step": 1,
+          "title": "Soi da đa tầng VISIA 3D & Thăm khám",
+          "desc": "Bác sĩ trực tiếp kiểm tra cấu trúc da, ổ vi khuẩn P.acnes và mức độ bài tiết bã nhờn."
+        },
+        {
+          "step": 2,
+          "title": "Xét nghiệm vi sinh & Xác định nguyên nhân",
+          "desc": "Soi tươi tìm ký sinh trùng Demodex hoặc vi nấm nếu có biểu hiện ngứa rát, kháng trị."
+        },
+        {
+          "step": 3,
+          "title": "Thiết lập phác đồ cá nhân hóa",
+          "desc": "Kê đơn thuốc bôi, thuốc uống chuẩn y khoa kết hợp chỉ định liệu trình can thiệp tại chỗ."
+        },
+        {
+          "step": 4,
+          "title": "Lấy nhân mụn chuẩn y khoa & Chiếu ánh sáng",
+          "desc": "Quy trình vô trùng tuyệt đối, kết hợp chiếu ánh sáng sinh học Blue/Red Light kháng khuẩn, gom cồi mụn."
+        },
+        {
+          "step": 5,
+          "title": "Theo dõi & Hướng dẫn phục hồi tại nhà",
+          "desc": "Bác sĩ tái khám định kỳ mỗi 2 tuần, điều chỉnh phác đồ phù hợp theo tốc độ đáp ứng của da."
+        }
+      ],
+      "technologyIds": [
+        "cn-06",
+        "cn-03"
+      ],
+      "duration": "Liệu trình từ 4 – 8 buổi (tùy tình trạng mụn nặng hay nhẹ)",
+      "consultingDoctor": "ThS.BS. Chuyên khoa Da liễu (Nội dung minh họa – cần bác sĩ duyệt)",
+      "faqs": [
+        {
+          "question": "Mụn kháng trị là gì?",
+          "answer": "Là tình trạng mụn mạn tính không đáp ứng với các phác đồ thông thường hoặc tái phát dữ dội sau khi dừng điều trị, thường do vi khuẩn kháng thuốc hoặc da tổn thương hàng rào sinh học nặng."
+        },
+        {
+          "question": "Bao lâu thì thấy cải thiện rõ rệt?",
+          "answer": "Thông thường sau 2 – 3 buổi (khoảng 3 – 4 tuần), các ổ viêm sẽ se cồi, giảm sưng đỏ và da dần ổn định, ít tiết dầu nhờn hơn."
+        },
+        {
+          "question": "Có cần kiêng ăn uống gì khi điều trị không?",
+          "answer": "Cần hạn chế thực phẩm có chỉ số đường huyết cao (đồ ngọt, trà sữa), sữa động vật và thức ăn nhiều dầu mỡ cay nóng; duy trì thói quen ngủ trước 23h."
+        }
+      ],
+      "beforeAfterCaseIds": [
+        "ba-01",
+        "ba-02"
+      ],
+      "coverImage": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+      "seoKeyword": "điều trị mụn Cần Thơ",
+      "contentMarkdown": "## Tổng quan về phương pháp điều trị mụn chuẩn y khoa tại Lạc's\n\nMụn trứng cá không đơn thuần là vấn đề thẩm mỹ mà là một bệnh lý da liễu mạn tính của hệ thống nang lông tuyến bã. Tại **Phòng khám Chuyên khoa Da liễu Lạc's Beauty Center**, chúng tôi áp dụng nguyên tắc **Y học Cá nhân hóa**: không dùng một công thức chung cho mọi khách hàng mà xây dựng phác đồ dựa trên kết quả soi da đa tầng VISIA 3D và tình trạng cơ địa thực tế.\n\n### Tại sao mụn hay tái phát nếu không điều trị đúng cách?\n- Tự ý cạy nặn làm vỡ bọc mụn dưới da, lây lan vi khuẩn sang các vùng nang lông lân cận.\n- Sử dụng sản phẩm chứa corticoid mang lại hiệu quả nhanh ảo nhưng phá hủy hoàn toàn hàng rào bảo vệ da.\n- Bỏ dở liệu trình khi vừa giảm sưng mà không xử lý triệt để bít tắc nang lông và thói quen sinh hoạt.\n\n### Quy trình điều trị vô trùng nghiêm ngặt\nMỗi khách hàng được cấp một bộ dụng cụ tiệt trùng riêng biệt. Đội ngũ điều dưỡng được đào tạo chuyên sâu về kỹ thuật nặn mụn không để lại sẹo thâm, kết hợp các công nghệ quang học làm dịu da tức thì.",
+      "isDoctorApproved": false
+    },
+    {
+      "id": "srv-02",
+      "name": "Điều trị sẹo rỗ, sẹo thâm kỹ thuật cao",
+      "shortName": "Trị sẹo",
+      "slug": "dieu-tri-seo",
+      "iconCode": "ICO-D2",
+      "iconName": "Activity",
+      "metaDescription": "Điều trị sẹo rỗ, sẹo đáy nhọn, sẹo lượn sóng bằng kỹ thuật bóc tách đáy sẹo kết hợp Laser vi điểm tại Lạc's Beauty Center Cần Thơ.",
+      "suitableFor": [
+        "Sẹo rỗ lâu năm do di chứng mụn bọc, mụn nang để lại",
+        "Sẹo đáy nhọn (ice pick), sẹo đáy vuông (boxcar), sẹo lượn sóng (rolling)",
+        "Sẹo thâm đỏ, sẹo thâm nâu sau mụn dai dẳng khó mờ",
+        "Bề mặt da sần sùi, lỗ chân lông to mất thẩm mỹ"
+      ],
+      "protocolSteps": [
+        {
+          "step": 1,
+          "title": "Thăm khám & Phân loại hình thái sẹo",
+          "desc": "Bác sĩ đánh giá độ sâu chân sẹo và mức độ xơ hóa dưới bề mặt biểu bì."
+        },
+        {
+          "step": 2,
+          "title": "Bóc tách đáy sẹo (Subcision)",
+          "desc": "Dùng kim y khoa chuyên dụng cắt đứt chân xơ sẹo đang kéo lõm bề mặt da."
+        },
+        {
+          "step": 3,
+          "title": "Công nghệ Laser vi điểm & RF siêu vi",
+          "desc": "Tác động vi nhiệt kích thích tăng sinh mạng lưới collagen và elastin mới."
+        },
+        {
+          "step": 4,
+          "title": "Thoa hoạt chất tái tạo & Tế bào sinh học",
+          "desc": "Cung cấp dưỡng chất peptide và yếu tố tăng trưởng để làm đầy hố sẹo nhanh chóng."
+        },
+        {
+          "step": 5,
+          "title": "Hướng dẫn phục hồi và bảo vệ da",
+          "desc": "Chăm sóc phục hồi tại nhà, bảo vệ chống nắng nghiêm ngặt tránh tăng sắc tố sau viêm."
+        }
+      ],
+      "technologyIds": [
+        "cn-04",
+        "cn-03"
+      ],
+      "duration": "Từ 3 – 5 buổi cách nhau 4 – 6 tuần",
+      "consultingDoctor": "Bác sĩ Chuyên khoa Da liễu (Nội dung minh họa – cần bác sĩ duyệt)",
+      "faqs": [
+        {
+          "question": "Sẹo rỗ có thể đầy lại 100% không?",
+          "answer": "Không có phương pháp nào cam kết đầy sẹo 100% vĩnh viễn. Phác đồ kết hợp tại phòng khám có thể giúp cải thiện 70% – 85% độ sâu sẹo tùy vào độ tuổi sẹo và khả năng tăng sinh mô của từng người."
+        },
+        {
+          "question": "Sau khi bóc tách đáy sẹo da có bị bầm không?",
+          "answer": "Vùng điều trị có thể hơi đỏ và bầm nhẹ trong 3 – 5 ngày đầu, đây là phản ứng tự nhiên của cơ thể để giải phóng các yếu tố tăng trưởng kích thích làm đầy sẹo."
+        }
+      ],
+      "beforeAfterCaseIds": [
+        "ba-03",
+        "ba-04"
+      ],
+      "coverImage": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
+      "seoKeyword": "trị sẹo rỗ Cần Thơ",
+      "contentMarkdown": "## Giải pháp phục hồi làn da phẳng mịn với phác đồ đa mô thức\n\nSẹo rỗ hình thành do cấu trúc collagen và elastin bị phá hủy nghiêm trọng sau tổn thương mụn hoặc thủy đậu. Bằng kỹ thuật bóc tách đáy sẹo giải phóng các bó xơ kết hợp công nghệ Laser Fractional CO2 vi điểm, mô da được đánh thức và tự tái sinh tự nhiên từ bên trong.",
+      "isDoctorApproved": false
+    },
+    {
+      "id": "srv-03",
+      "name": "Điều trị sắc tố – Nám, tàn nhang, đồi mồi",
+      "shortName": "Trị nám – tàn nhang",
+      "slug": "dieu-tri-nam-tan-nhang",
+      "iconCode": "ICO-D3",
+      "iconName": "SunMedium",
+      "metaDescription": "Phác đồ điều trị nám má, tàn nhang, đồi mồi an toàn bằng công nghệ Laser chọn lọc kết hợp phục hồi màng đáy tại Cần Thơ.",
+      "suitableFor": [
+        "Nám mảng, nám chân sâu, nám hỗn hợp sau sinh hoặc do nội tiết",
+        "Tàn nhang bẩm sinh, đồi mồi do tác hại của ánh nắng mặt trời miền Tây",
+        "Tăng sắc tố sau viêm do peel da hóa học sai cách hoặc tai biến laser",
+        "Làn da xỉn màu, không đều màu, tăng sắc tố loang lổ"
+      ],
+      "protocolSteps": [
+        {
+          "step": 1,
+          "title": "Phân tích sắc tố VISIA 3D",
+          "desc": "Đo lường chính xác lượng melanin bề mặt và sắc tố tiềm ẩn sâu dưới lớp trung bì."
+        },
+        {
+          "step": 2,
+          "title": "Laser chọn lọc phá vỡ hạt sắc tố",
+          "desc": "Năng lượng laser tác động quang âm tán nhỏ melanin thành các hạt siêu mịn để đại thực bào đào thải."
+        },
+        {
+          "step": 3,
+          "title": "Phục hồi hàng rào màng đáy da",
+          "desc": "Ứng dụng hoạt chất làm dịu và phục hồi vi tuần hoàn, ngăn chặn melanin tái kích hoạt."
+        },
+        {
+          "step": 4,
+          "title": "Kết hợp thuốc bôi ức chế men Tyrosinase",
+          "desc": "Kê đơn kem đặc trị ức chế nám chuẩn y khoa, an toàn cho làn da châu Á."
+        }
+      ],
+      "technologyIds": [
+        "cn-03",
+        "cn-06"
+      ],
+      "duration": "Liệu trình 6 – 10 buổi tùy phân loại nám",
+      "consultingDoctor": "Bác sĩ Chuyên khoa Da liễu (Nội dung minh họa – cần bác sĩ duyệt)",
+      "faqs": [
+        {
+          "question": "Nám có khỏi vĩnh viễn không?",
+          "answer": "Nám da chịu ảnh hưởng mạnh bởi nội tiết tố và tia UV. Điều trị giúp loại bỏ sắc tố hiện hữu và đưa da về trạng thái khỏe mạnh; việc duy trì chống nắng và dưỡng da là bắt buộc để ngăn ngừa tái phát."
+        },
+        {
+          "question": "Bắn laser trị nám có bị bỏng rát hay bong tróc không?",
+          "answer": "Công nghệ laser xung ngắn hiện đại chỉ tác động có chọn lọc lên hạt melanin mà không gây tổn thương mô xung quanh, không gây bong tróc lột tẩy da dữ dội."
+        }
+      ],
+      "beforeAfterCaseIds": [
+        "ba-05",
+        "ba-06"
+      ],
+      "coverImage": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80",
+      "seoKeyword": "trị nám Cần Thơ",
+      "contentMarkdown": "## Phác đồ trị nám an toàn – Không bào mòn, không tái phát dữ dội\n\nĐiều trị tăng sắc tố tại Lạc's Beauty Center tuyệt đối nói không với các biện pháp lột tẩy cấp tốc. Chúng tôi tập trung vào việc ổn định màng đáy và ức chế quá trình sản sinh melanin từ tế bào sắc tố, bảo vệ làn da khỏe đẹp bền vững.",
+      "isDoctorApproved": false
+    },
+    {
+      "id": "srv-04",
+      "name": "Điều trị rụng tóc & Kích thích mọc tóc",
+      "shortName": "Trị rụng tóc",
+      "slug": "dieu-tri-rung-toc",
+      "iconCode": "ICO-D4",
+      "iconName": "Feather",
+      "metaDescription": "Thăm khám nguyên nhân rụng tóc từng mảng, hói đầu và liệu pháp Mesotherapy kích thích nang tóc tại Lạc's Beauty Center Cần Thơ.",
+      "suitableFor": [
+        "Rụng tóc sau sinh, rụng tóc do stress hoặc rối loạn nội tiết",
+        "Rụng tóc từng mảng (Alopecia Areata), rụng tóc kiểu hói nam/nữ",
+        "Sợi tóc mảnh, yếu, dễ gãy rụng, da đầu nhiều gàu ngứa bã nhờn"
+      ],
+      "protocolSteps": [
+        {
+          "step": 1,
+          "title": "Soi da đầu và mật độ nang tóc",
+          "desc": "Đánh giá tình trạng teo nang tóc và kiểm tra mức độ viêm da đầu."
+        },
+        {
+          "step": 2,
+          "title": "Làm sạch sâu da đầu & Vô khuẩn",
+          "desc": "Loại bỏ mảng bám bã nhờn giúp nang tóc thông thoáng hấp thụ dưỡng chất."
+        },
+        {
+          "step": 3,
+          "title": "Mesotherapy vi điểm dưỡng chất nuôi nang",
+          "desc": "Đưa trực tiếp biotin, peptide, vitamin và yếu tố tăng trưởng vào tầng trung bì da đầu."
+        },
+        {
+          "step": 4,
+          "title": "Chiếu ánh sáng sinh học kích hoạt vi tuần hoàn",
+          "desc": "Tăng lưu lượng máu nuôi dưỡng nang tóc, rút ngắn giai đoạn nghỉ của tóc."
+        }
+      ],
+      "technologyIds": [
+        "cn-06"
+      ],
+      "duration": "Liệu trình 6 – 8 buổi, mỗi buổi cách nhau 2 tuần",
+      "consultingDoctor": "Bác sĩ Chuyên khoa Da liễu (Nội dung minh họa – cần bác sĩ duyệt)",
+      "faqs": [
+        {
+          "question": "Sau bao lâu thì thấy tóc con mọc lại?",
+          "answer": "Thông thường sau 4 – 6 tuần điều trị kiên trì, lượng tóc rụng giảm rõ rệt và các mầm tóc tơ bắt đầu xuất hiện tại các nang tóc được phục hồi."
+        }
+      ],
+      "beforeAfterCaseIds": [
+        "ba-09"
+      ],
+      "coverImage": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1200&q=80",
+      "seoKeyword": "trị rụng tóc Cần Thơ",
+      "contentMarkdown": "## Phục hồi mái tóc dày khỏe từ tế bào nang tóc\n\nRụng tóc cần được can thiệp sớm khi nang tóc còn hoạt động. Liệu pháp tiêm vi điểm hoạt chất sinh học tại Lạc's giúp nuôi dưỡng trực tiếp tế bào mầm tóc, mang lại mái tóc chắc khỏe và hạn chế tối đa gãy rụng.",
+      "isDoctorApproved": false
+    },
+    {
+      "id": "srv-05",
+      "name": "Thẩm mỹ nội khoa – Trẻ hóa da vi điểm",
+      "shortName": "Thẩm mỹ nội khoa",
+      "slug": "tham-my-noi-khoa",
+      "iconCode": "ICO-D5",
+      "iconName": "Syringe",
+      "metaDescription": "Dịch vụ thẩm mỹ nội khoa, tiêm vi điểm Mesotherapy, tiêm BAP, trẻ hóa da tự nhiên không phẫu thuật do bác sĩ da liễu trực tiếp thực hiện.",
+      "suitableFor": [
+        "Làn da lão hóa, khô sần, chùng nhão, nếp nhăn li ti",
+        "Lỗ chân lông to, da thiếu sức sống do suy giảm collagen",
+        "Khách hàng mong muốn làm đẹp tinh tế, tự nhiên, không nghỉ dưỡng"
+      ],
+      "protocolSteps": [
+        {
+          "step": 1,
+          "title": "Bác sĩ tư vấn & Đánh giá giải phẫu khuôn mặt",
+          "desc": "Lựa chọn hoạt chất chính hãng phù hợp (Hyaluronic Acid, Peptide, Polynucleotide)."
+        },
+        {
+          "step": 2,
+          "title": "Ủ tê chuẩn y tế & Vô khuẩn da mặt",
+          "desc": "Đảm bảo quá trình thực hiện êm ái, an toàn tuyệt đối."
+        },
+        {
+          "step": 3,
+          "title": "Thực hiện kỹ thuật tiêm vi điểm chuẩn xác",
+          "desc": "Bác sĩ da liễu trực tiếp tiêm đúng lớp biểu bì hoặc trung bì nông."
+        },
+        {
+          "step": 4,
+          "title": "Đắp mặt nạ sinh học làm dịu & Hướng dẫn",
+          "desc": "Giảm đỏ nhanh chóng và bàn giao hướng dẫn chăm sóc sau thủ thuật."
+        }
+      ],
+      "technologyIds": [
+        "cn-06"
+      ],
+      "duration": "Liệu trình 1 – 3 buổi tùy loại hoạt chất",
+      "consultingDoctor": "Bác sĩ Chuyên khoa Da liễu (Nội dung minh họa – cần bác sĩ duyệt)",
+      "faqs": [
+        {
+          "question": "Tiêm meso có bị sưng hay bầm nhiều không?",
+          "answer": "Các nốt sần meso thường biến mất sau 12 – 24 giờ. Vết chích siêu nhỏ ít khi bầm và có thể trang điểm nhẹ nhàng sau 48 giờ."
+        }
+      ],
+      "beforeAfterCaseIds": [],
+      "coverImage": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80",
+      "seoKeyword": "thẩm mỹ nội khoa Cần Thơ",
+      "contentMarkdown": "## Đẹp tự nhiên – Chuẩn y khoa với tay nghề Bác sĩ chuyên khoa\n\nMọi thủ thuật thẩm mỹ nội khoa tại Lạc's Beauty Center đều do chính bác sĩ chuyên khoa da liễu sau đại học thực hiện, cam kết sử dụng 100% hoạt chất nhập khẩu chính ngạch có tem kiểm định của Bộ Y tế.",
+      "isDoctorApproved": false
+    },
+    {
+      "id": "srv-06",
+      "name": "Nâng cơ trẻ hóa da công nghệ cao",
+      "shortName": "Nâng cơ",
+      "slug": "nang-co",
+      "iconCode": "ICO-D6",
+      "iconName": "Zap",
+      "metaDescription": "Nâng cơ thon gọn hàm, xóa nhăn trẻ hóa da bằng công nghệ sóng RF Jovena và HIFU không xâm lấn tại Lạc's Beauty Center Cần Thơ.",
+      "suitableFor": [
+        "Khách hàng từ 28 tuổi trở lên có dấu hiệu chảy xệ cơ mặt, nọng cằm",
+        "Vết chân chim đuôi mắt, rãnh cười sâu (rãnh mũi má)",
+        "Đường viền hàm kém thon gọn, da mất độ đàn hồi săn chắc"
+      ],
+      "protocolSteps": [
+        {
+          "step": 1,
+          "title": "Soi da & Định hình vùng cơ chùng nhão",
+          "desc": "Xác định mật độ collagen và lập bản đồ vector nâng cơ."
+        },
+        {
+          "step": 2,
+          "title": "Làm sạch & Thoa gel dẫn truyền năng lượng",
+          "desc": "Tối ưu hóa khả năng hấp thụ sóng vi nhiệt vào lớp SMAS."
+        },
+        {
+          "step": 3,
+          "title": "Tiến hành nâng cơ với đầu máy công nghệ cao",
+          "desc": "Năng lượng tập trung làm co các sợi collagen chùng nhão tức thì."
+        },
+        {
+          "step": 4,
+          "title": "Dưỡng ẩm làm dịu & Đánh giá kết quả ngay sau buổi",
+          "desc": "Khách hàng cảm nhận ngay độ săn chắc viền hàm sau buổi đầu tiên."
+        }
+      ],
+      "technologyIds": [
+        "cn-01",
+        "cn-02"
+      ],
+      "duration": "1 buổi điều trị duy trì hiệu quả từ 6 – 12 tháng",
+      "consultingDoctor": "Bác sĩ Chuyên khoa Da liễu (Nội dung minh họa – cần bác sĩ duyệt)",
+      "faqs": [
+        {
+          "question": "Nâng cơ RF/HIFU có đau không?",
+          "answer": "Công nghệ thế hệ mới kiểm soát nhiệt lượng thông minh, khách hàng chỉ cảm thấy ấm nóng và châm chích nhẹ vùng viền hàm, hoàn toàn không cần gây mê hay nghỉ dưỡng."
+        }
+      ],
+      "beforeAfterCaseIds": [
+        "ba-07",
+        "ba-08"
+      ],
+      "coverImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
+      "seoKeyword": "nâng cơ trẻ hóa da Cần Thơ",
+      "contentMarkdown": "## Khôi phục đường nét thanh xuân không phẫu thuật\n\nSự kết hợp giữa công nghệ sóng RF đơn/đa cực Jovena và sóng siêu âm hội tụ HIFU tác động chuẩn xác vào tầng cân cơ nông (SMAS), kích hoạt quá trình tái tạo collagen tự thân giúp khuôn mặt thon gọn sắc nét.",
+      "isDoctorApproved": false
+    },
+    {
+      "id": "srv-07",
+      "name": "Chăm sóc da chuyên sâu & Phục hồi hàng rào sinh học",
+      "shortName": "Chăm sóc da",
+      "slug": "cham-soc-da-chuyen-sau",
+      "iconCode": "ICO-D7",
+      "iconName": "HeartHandshake",
+      "metaDescription": "Dịch vụ chăm sóc da chuyên sâu chuẩn y khoa, cấp ẩm đa tầng và phục hồi da nhạy cảm bằng dược mỹ phẩm chính hãng tại Cần Thơ.",
+      "suitableFor": [
+        "Da mệt mỏi, khô ráp, thiếu nước do môi trường điều hòa hoặc nắng gió",
+        "Da nhạy cảm sau các liệu trình điều trị công nghệ cao",
+        "Khách hàng muốn thư giãn và nuôi dưỡng làn da khỏe mạnh định kỳ"
+      ],
+      "protocolSteps": [
+        {
+          "step": 1,
+          "title": "Tẩy trang dịu nhẹ & Rửa mặt sạch sâu",
+          "desc": "Dùng dung dịch Bioderma Sensibio cân bằng sinh học da."
+        },
+        {
+          "step": 2,
+          "title": "Tẩy tế bào chết enzyme sinh học",
+          "desc": "Làm mềm lớp sừng nhẹ nhàng không gây rát da."
+        },
+        {
+          "step": 3,
+          "title": "Điện di tinh chất Hyaluronic Acid & Vitamin B5",
+          "desc": "Đẩy sâu dưỡng chất vào tầng đáy biểu bì da."
+        },
+        {
+          "step": 4,
+          "title": "Massage lưu thông hệ bạch huyết & Đắp mặt nạ y tế",
+          "desc": "Thư giãn cơ mặt và khóa ẩm chuyên sâu."
+        }
+      ],
+      "technologyIds": [
+        "cn-06"
+      ],
+      "duration": "60 – 75 phút mỗi buổi, duy trì 1 – 2 tuần/lần",
+      "consultingDoctor": "Kỹ thuật viên Trưởng & Bác sĩ Da liễu",
+      "faqs": [
+        {
+          "question": "Da mụn có làm chăm sóc da chuyên sâu được không?",
+          "answer": "Có, phòng khám có gói chăm sóc riêng cho da dầu mụn với sản phẩm kháng viêm và kiềm dầu an toàn."
+        }
+      ],
+      "beforeAfterCaseIds": [],
+      "coverImage": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+      "seoKeyword": "chăm sóc da Cần Thơ",
+      "contentMarkdown": "## Liệu trình chăm sóc da chuẩn y khoa giúp da tái sinh tràn đầy năng lượng\n\nKhông gian phòng khám thanh lịch, hương thơm tinh dầu dịu nhẹ cùng quy trình chăm sóc tỉ mỉ giúp giải tỏa căng thẳng và đưa làn da trở về trạng thái căng mọng, rạng rỡ nhất.",
+      "isDoctorApproved": false
+    },
+    {
+      "id": "srv-08",
+      "name": "Điều trị các bệnh lý về da khác (Viêm da cơ địa, Vảy nến)",
+      "shortName": "Bệnh da khác",
+      "slug": "benh-da-lieu-khac",
+      "iconCode": "ICO-D8",
+      "iconName": "Microscope",
+      "metaDescription": "Khám và điều trị các bệnh da liễu mạn tính: viêm da cơ địa, viêm da tiết bã, mề đay, vảy nến, chàm da tại Phòng khám Lạc's Beauty Center Cần Thơ.",
+      "suitableFor": [
+        "Viêm da tiếp xúc, viêm da cơ địa ngứa ngáy, nứt nẻ chảy dịch",
+        "Viêm da tiết bã vùng cánh mũi, chân mày, da đầu nhiều vảy nhờn",
+        "Mề đay cấp và mạn tính, dị ứng thời tiết",
+        "Vảy nến, dày sừng nang lông và các vấn đề nhiễm trùng da"
+      ],
+      "protocolSteps": [
+        {
+          "step": 1,
+          "title": "Khám lâm sàng toàn diện bởi Bác sĩ Sau đại học",
+          "desc": "Hỏi bệnh sử, tiền sử dị ứng và đánh giá thương tổn da."
+        },
+        {
+          "step": 2,
+          "title": "Xét nghiệm loại trừ nguyên nhân nhiễm trùng, vi nấm",
+          "desc": "Soi tìm bào tử nấm, kiểm tra dị nguyên khi cần."
+        },
+        {
+          "step": 3,
+          "title": "Kê đơn thuốc kiểm soát viêm & Chăm sóc dưỡng ẩm",
+          "desc": "Cân bằng điều trị kiểm soát đợt cấp và phòng ngừa tái phát mạn tính."
+        },
+        {
+          "step": 4,
+          "title": "Tư vấn chế độ sinh hoạt và bảo vệ da lâu dài",
+          "desc": "Hướng dẫn lựa chọn xà phòng, chất giặt tẩy và nhiệt độ nước tắm phù hợp."
+        }
+      ],
+      "technologyIds": [
+        "cn-06"
+      ],
+      "duration": "Theo dõi định kỳ theo phác đồ từng bệnh lý",
+      "consultingDoctor": "Bác sĩ Chuyên khoa Da liễu (Nội dung minh họa – cần bác sĩ duyệt)",
+      "faqs": [
+        {
+          "question": "Viêm da cơ địa có chữa dứt điểm được không?",
+          "answer": "Viêm da cơ địa có yếu tố di truyền và miễn dịch. Điều trị đúng cách giúp kiểm soát hoàn toàn triệu chứng, kéo dài thời gian lui bệnh và cải thiện chất lượng sống tối ưu cho bệnh nhân."
+        }
+      ],
+      "beforeAfterCaseIds": [],
+      "coverImage": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1200&q=80",
+      "seoKeyword": "khám bệnh da liễu Cần Thơ",
+      "contentMarkdown": "## Chăm sóc toàn diện cho bệnh nhân da liễu mạn tính\n\nChúng tôi thấu hiểu nỗi khổ của bệnh nhân mắc các bệnh da liễu mạn tính dai dẳng. Bác sĩ Lạc's luôn đồng hành kiên trì cùng người bệnh với phác đồ chuẩn y khoa và lời khuyên sinh hoạt khoa học.",
+      "isDoctorApproved": false
+    },
+    {
+      "id": "srv-09",
+      "name": "Triệt lông công nghệ cao không đau rát",
+      "shortName": "Triệt lông",
+      "slug": "triet-long",
+      "iconCode": "ICO-D9",
+      "iconName": "Sparkle",
+      "metaDescription": "Triệt lông nách, tay chân, bikini bằng công nghệ Diode Laser làm mát thông minh không đau rát tại Lạc's Beauty Center Cần Thơ.",
+      "suitableFor": [
+        "Khách hàng có nhu cầu dọn sạch nang lông vùng nách, mép, tay, chân, bikini",
+        "Tình trạng viêm nang lông, lông mọc ngược sần sùi sẫm màu",
+        "Vùng da dưới cánh tay bị thâm sạm và có mùi khó chịu"
+      ],
+      "protocolSteps": [
+        {
+          "step": 1,
+          "title": "Vệ sinh vùng da & Cạo lông xuôi chiều",
+          "desc": "Giữ lại chân nang lông để hấp thu năng lượng quang học tối đa."
+        },
+        {
+          "step": 2,
+          "title": "Bôi gel làm mát chuyên dụng",
+          "desc": "Làm dịu bề mặt da và tăng cường khúc xạ ánh sáng."
+        },
+        {
+          "step": 3,
+          "title": "Di chuyển đầu xung ánh sáng công nghệ Diode",
+          "desc": "Năng lượng làm teo mầm nhú nang lông, lông rụng tự nhiên sau vài ngày."
+        },
+        {
+          "step": 4,
+          "title": "Làm sạch gel & Thoa kem dưỡng ẩm dịu da",
+          "desc": "Se khít lỗ chân lông và làm sáng mịn vùng da vừa triệt."
+        }
+      ],
+      "technologyIds": [
+        "cn-05"
+      ],
+      "duration": "Liệu trình 6 – 8 buổi, bảo hành định kỳ",
+      "consultingDoctor": "Kỹ thuật viên tay nghề cao & Bác sĩ cố vấn",
+      "faqs": [
+        {
+          "question": "Triệt lông có vĩnh viễn không?",
+          "answer": "Theo quy định y khoa, triệt lông giúp phá hủy mầm nhú nang lông để lông mọc lại rất tơ, nhạt màu và thưa thớt, duy trì làn da sạch mịn lâu dài nhiều năm."
+        }
+      ],
+      "beforeAfterCaseIds": [
+        "ba-10"
+      ],
+      "coverImage": "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1200&q=80",
+      "seoKeyword": "triệt lông Cần Thơ",
+      "contentMarkdown": "## Làn da láng mịn tự tin diện mọi trang phục\n\nCông nghệ triệt lông với hệ thống làm mát bằng đá sapphire -5°C giúp quá trình điều trị hoàn toàn êm ái, hỗ trợ điều trị dứt điểm tình trạng viêm nang lông và se khít lỗ chân lông rõ rệt.",
+      "isDoctorApproved": false
+    }
+  ],
+  "LBC_DEMO_articles": [
+    {
+      "id": "art-01",
+      "title": "Mụn ẩn, mụn viêm, mụn kháng trị: phân biệt thế nào và khi nào cần gặp bác sĩ da liễu",
+      "slug": "mun-an-mun-viem-mun-khang-tri",
+      "category": "cham-soc-da",
+      "categoryName": "Chăm sóc da",
+      "summary": "Hướng dẫn nhận biết các cấp độ mụn từ mụn ẩn không viêm đến mụn bọc kháng trị và thời điểm vàng cần can thiệp y khoa để tránh sẹo rỗ vĩnh viễn.",
+      "author": "Ban Biên tập Y khoa LBC",
+      "consultingDoctor": "ThS.BS. Lạc Kim Ngân (Tham vấn chuyên môn)",
+      "publishedDate": "15/10/2026",
+      "readTime": "5 phút đọc",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+      "isFeatured": true,
+      "tableOfContents": [
+        {
+          "id": "phan-biet-cac-loai-mun",
+          "title": "1. Phân biệt các loại mụn thường gặp",
+          "level": 2
+        },
+        {
+          "id": "the-nao-la-mun-khang-tri",
+          "title": "2. Thế nào được gọi là mụn kháng trị?",
+          "level": 2
+        },
+        {
+          "id": "sai-lam-khi-tu-dieu-tri",
+          "title": "3. Những sai lầm tai hại khi tự chữa mụn",
+          "level": 2
+        },
+        {
+          "id": "khi-nao-can-gap-bac-si",
+          "title": "4. Khi nào bạn bắt buộc phải gặp bác sĩ da liễu?",
+          "level": 2
+        }
+      ],
+      "contentMarkdown": "## 1. Phân biệt các loại mụn thường gặp {#phan-biet-cac-loai-mun}\n\nMụn trứng cá là một trong những vấn đề da liễu phổ biến nhất nhưng thường bị xử lý sai cách do không phân biệt đúng hình thái tổn thương. Về cơ bản, mụn được chia làm hai nhóm chính:\n\n- **Mụn không viêm (mụn ẩn, mụn đầu đen):** Hình thành do tế bào chết và bã nhờn tích tụ làm bít tắc lỗ chân lông. Chúng không gây đau nhức nhưng khiến bề mặt da sần sùi kém mịn màng.\n- **Mụn viêm (mụn mủ, mụn bọc, mụn nang):** Khi vi khuẩn *Cutibacterium acnes* sinh sôi mạnh mẽ trong môi trường bít tắc, cơ thể phản ứng bằng tình trạng viêm sưng, tấy đỏ và tích mủ sâu dưới da.\n\n## 2. Thế nào được gọi là mụn kháng trị? {#the-nao-la-mun-khang-tri}\n\nMụn kháng trị (*Recalcitrant Acne*) là tình trạng mụn mạn tính dai dẳng, không thuyên giảm sau khi đã áp dụng các phác đồ điều trị thông thường (như thuốc bôi kháng sinh, retinoid bôi hoặc thậm chí kháng sinh uống) trong ít nhất 8 – 12 tuần. Mụn thường tái phát dữ dội ngay khi ngừng thuốc hoặc có biểu hiện lan rộng thành các ổ áp-xe dưới da.\n\n## 3. Những sai lầm tai hại khi tự chữa mụn {#sai-lam-khi-tu-dieu-tri}\n\nNhiều bạn trẻ tại miền Tây thường tìm đến các phương pháp truyền miệng như:\n1. **Dùng kem trị mụn trôi nổi chứa corticoid:** Mụn xẹp rất nhanh sau 3 ngày nhưng sau đó bùng phát thành mụn viêm rỉ dịch, teo da và giãn mao mạch.\n2. **Tự cạy nặn mụn tại nhà bằng móng tay:** Gây dập nát mô da, đưa thêm vi khuẩn tụ cầu vào ổ viêm dẫn đến sẹo rỗ vĩnh viễn.\n3. **Lạm dụng các sản phẩm tẩy da chết nồng độ cao:** Phá hủy hàng rào bảo vệ sinh học tự nhiên, khiến da yếu và dễ nhiễm khuẩn hơn.\n\n## 4. Khi nào bạn bắt buộc phải gặp bác sĩ da liễu? {#khi-nao-can-gap-bac-si}\n\nBạn nên đến cơ sở y tế chuyên khoa da liễu uy tín ngay khi:\n- Mụn xuất hiện dạng bọc lớn, sưng đau nhức nhiều ngày.\n- Mụn lan rộng xuống vùng cằm, quai hàm, cổ hoặc lưng.\n- Đã thay đổi nhiều loại mỹ phẩm nhưng tình trạng mụn không cải thiện sau 2 tháng.\n- Có dấu hiệu hình thành sẹo thâm sâu hoặc sẹo lõm sau mụn."
+    },
+    {
+      "id": "art-02",
+      "title": "Vì sao mụn cứ tái đi tái lại? Những thói quen chăm sóc da cần xem lại",
+      "slug": "vi-sao-mun-cu-tai-di-tai-lai",
+      "category": "cham-soc-da",
+      "categoryName": "Chăm sóc da",
+      "summary": "Phân tích 5 nguyên nhân gốc rễ khiến mụn trứng cá liên tục quay trở lại dù đã chữa khỏi nhiều lần và cách thiết lập lối sống chuẩn y khoa.",
+      "author": "BSCKI. Nguyễn Văn An",
+      "consultingDoctor": "BSCKI. Nguyễn Văn An",
+      "publishedDate": "12/10/2026",
+      "readTime": "4 phút đọc",
+      "imageUrl": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=1200&q=80",
+      "tableOfContents": [
+        {
+          "id": "nguyen-nhan-khien-mun-tai-phat",
+          "title": "1. Nguyên nhân vì sao mụn tái phát",
+          "level": 2
+        },
+        {
+          "id": "thoi-quen-hang-ngay",
+          "title": "2. Những thói quen xấu vô tình nuôi dưỡng mụn",
+          "level": 2
+        },
+        {
+          "id": "phac-do-duy-tri",
+          "title": "3. Phác đồ duy trì sau khi hết mụn",
+          "level": 2
+        }
+      ],
+      "contentMarkdown": "## 1. Nguyên nhân vì sao mụn tái phát {#nguyen-nhan-khien-mun-tai-phat}\nMụn là bệnh lý liên quan mật thiết đến tuyến bã nhờn và nội tiết. Khi bạn dừng phác đồ điều trị mà không duy trì các bước chăm sóc củng cố, tuyến dầu sẽ nhanh chóng hoạt động mạnh trở lại và gây bít tắc mới.\n\n## 2. Những thói quen xấu vô tình nuôi dưỡng mụn {#thoi-quen-hang-ngay}\n- Thường xuyên chạm tay lên mặt hoặc không giặt vỏ gối, khẩu trang định kỳ.\n- Thức khuya sau 23h làm tăng nồng độ cortisol, kích thích tuyến bã nhờn tiết dầu gấp đôi.\n- Dung nạp nhiều đường tinh luyện, sữa bò và đồ chiên rán cay nóng.\n\n## 3. Phác đồ duy trì sau khi hết mụn {#phac-do-duy-tri}\nSau giai đoạn tấn công, bác sĩ sẽ chuyển sang giai đoạn duy trì với hoạt chất bôi mỏng nhẹ (như Adapalene hoặc Azelaic acid) để giữ cho cổ nang lông luôn thông thoáng."
+    },
+    {
+      "id": "art-03",
+      "title": "Nám, tàn nhang hay đồi mồi? Cách nhận biết các loại tăng sắc tố thường gặp",
+      "slug": "cach-nhan-biet-nam-tan-nhang-doi-moi",
+      "category": "cham-soc-da",
+      "categoryName": "Chăm sóc da",
+      "summary": "Hướng dẫn chi tiết phân biệt nám mảng, nám chân sâu, tàn nhang bẩm sinh và đồi mồi tuổi tác để lựa chọn đúng phác đồ điều trị bằng ánh sáng y khoa.",
+      "author": "ThS.BS. Trần Thị Bích Thảo",
+      "consultingDoctor": "ThS.BS. Trần Thị Bích Thảo",
+      "publishedDate": "10/10/2026",
+      "readTime": "6 phút đọc",
+      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80",
+      "tableOfContents": [
+        {
+          "id": "dac-diem-nam-da",
+          "title": "1. Đặc điểm nhận diện nám da (Melasma)",
+          "level": 2
+        },
+        {
+          "id": "tan-nhang-doi-moi",
+          "title": "2. Tàn nhang và đồi mồi khác nhau thế nào?",
+          "level": 2
+        },
+        {
+          "id": "phac-do-y-khoa",
+          "title": "3. Phác đồ điều trị sắc tố an toàn tại Lạc's",
+          "level": 2
+        }
+      ],
+      "contentMarkdown": "## 1. Đặc điểm nhận diện nám da (Melasma) {#dac-diem-nam-da}\nNám thường xuất hiện đối xứng hai bên má, trán hoặc sống mũi dưới dạng các mảng màu nâu sẫm hoặc xám xanh. Nám liên quan sâu sắc đến sự biến động estrogen và tia cực tím.\n\n## 2. Tàn nhang và đồi mồi khác nhau thế nào? {#tan-nhang-doi-moi}\n- **Tàn nhang:** Đốm nhỏ từ 1 – 2mm, màu nâu nhạt, xuất hiện từ thời niên thiếu và đậm màu khi ra nắng.\n- **Đồi mồi:** Đốm phẳng màu nâu hoặc đen, kích thước lớn hơn, thường xuất hiện ở người trên 35 tuổi do tác động tích lũy của ánh nắng mặt trời qua nhiều năm.\n\n## 3. Phác đồ điều trị sắc tố an toàn tại Lạc's {#phac-do-y-khoa}\nKết hợp công nghệ laser chọn lọc phân rã hạt melanin cùng các hoạt chất phục hồi màng đáy, nói không với bào mòn hay lột da gây mất sắc tố."
+    },
+    {
+      "id": "art-04",
+      "title": "Chống nắng đúng cách cho người sống và làm việc ở miền Tây",
+      "slug": "chong-nang-dung-cach-mien-tay",
+      "category": "cham-soc-da",
+      "categoryName": "Chăm sóc da",
+      "summary": "Đặc thù thời tiết nắng gắt quanh năm và độ ẩm cao tại miền Tây đòi hỏi phương pháp lựa chọn kem chống nắng phổ rộng và cách bôi dặm khoa học.",
+      "author": "Dược sĩ Chuyên môn Nhà thuốc LBC",
+      "consultingDoctor": "ThS.BS. Lạc Kim Ngân",
+      "publishedDate": "08/10/2026",
+      "readTime": "4 phút đọc",
+      "imageUrl": "https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=1200&q=80",
+      "tableOfContents": [
+        {
+          "id": "dac-thu-tia-uv-mien-tay",
+          "title": "1. Chỉ số UV tại các tỉnh miền Tây",
+          "level": 2
+        },
+        {
+          "id": "tieu-chi-chon-kem-chong-nang",
+          "title": "2. Tiêu chí chọn kem chống nắng chuẩn",
+          "level": 2
+        },
+        {
+          "id": "cach-boi-lai-hieu-qua",
+          "title": "3. Cách bôi lại kem chống nắng khi ra nhiều mồ hôi",
+          "level": 2
+        }
+      ],
+      "contentMarkdown": "## 1. Chỉ số UV tại các tỉnh miền Tây {#dac-thu-tia-uv-mien-tay}\nChỉ số UV tại Cần Thơ và Đồng bằng sông Cửu Long thường xuyên ở mức 9 – 11 (cực độ nguy hiểm) trong khoảng thời gian từ 10h sáng đến 15h chiều.\n\n## 2. Tiêu chí chọn kem chống nắng chuẩn {#tieu-chi-chon-kem-chong-nang}\nNên chọn kem chống nắng có màng lọc phổ rộng SPF 50+, PA++++, kết cấu mỏng nhẹ chống thấm nước để không gây bết rít hay bít tắc mụn trong thời tiết nóng ẩm."
+    },
+    {
+      "id": "art-05",
+      "title": "Sẹo rỗ sau mụn: các hướng điều trị tại phòng khám da liễu",
+      "slug": "huong-dieu-tri-seo-ro-sau-mun",
+      "category": "cham-soc-da",
+      "categoryName": "Chăm sóc da",
+      "summary": "Tổng hợp các kỹ thuật can thiệp sẹo rỗ hiện đại nhất hiện nay: bóc tách xơ sẹo, Laser Fractional CO2, vi điểm RF và PRP phục hồi mô.",
+      "author": "BSCKI. Nguyễn Văn An",
+      "consultingDoctor": "BSCKI. Nguyễn Văn An",
+      "publishedDate": "05/10/2026",
+      "readTime": "5 phút đọc",
+      "imageUrl": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
+      "tableOfContents": [
+        {
+          "id": "co-che-hinh-thanh-seo-ro",
+          "title": "1. Cơ chế hình thành sẹo rỗ xơ hóa",
+          "level": 2
+        },
+        {
+          "id": "cac-ky-thuat-dieu-tri",
+          "title": "2. Các kỹ thuật điều trị chuẩn y khoa",
+          "level": 2
+        }
+      ],
+      "contentMarkdown": "## 1. Cơ chế hình thành sẹo rỗ xơ hóa {#co-che-hinh-thanh-seo-ro}\nKhi ổ mụn nang ăn sâu vào tầng trung bì, các mô liên kết bị hoại tử và thay thế bằng dải xơ cứng kéo bề mặt da lõm xuống.\n\n## 2. Các kỹ thuật điều trị chuẩn y khoa {#cac-ky-thuat-dieu-tri}\nPhải kết hợp bóc tách đáy sẹo để cắt đứt chân xơ, sau đó ứng dụng laser hoặc sóng vi nhiệt kích thích cơ thể sản sinh mô mới lấp đầy hố sẹo."
+    },
+    {
+      "id": "art-06",
+      "title": "Rụng tóc nhiều: những nguyên nhân thường gặp và khi nào cần thăm khám",
+      "slug": "nguyen-nhan-rung-toc-nhieu",
+      "category": "cham-soc-da",
+      "categoryName": "Chăm sóc da",
+      "summary": "Phân biệt rụng tóc sinh lý dưới 100 sợi/ngày với rụng tóc bệnh lý từng mảng, hói đầu nội tiết và giải pháp tiêm meso nuôi nang tóc.",
+      "author": "BSCKII. Lê Hoàng Nam",
+      "consultingDoctor": "BSCKII. Lê Hoàng Nam",
+      "publishedDate": "03/10/2026",
+      "readTime": "4 phút đọc",
+      "imageUrl": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1200&q=80",
+      "tableOfContents": [
+        {
+          "id": "khi-nao-la-rung-toc-benh-ly",
+          "title": "1. Thế nào là rụng tóc bệnh lý?",
+          "level": 2
+        },
+        {
+          "id": "phuong-phap-phuc-hoi",
+          "title": "2. Phương pháp phục hồi nang tóc suy yếu",
+          "level": 2
+        }
+      ],
+      "contentMarkdown": "## 1. Thế nào là rụng tóc bệnh lý? {#khi-nao-la-rung-toc-benh-ly}\nNếu mỗi ngày tóc rụng trên 100 sợi, rụng thành từng mảng tròn lộ da đầu hoặc tóc con mọc lại rất mảnh yếu, bạn cần thăm khám da liễu sớm trước khi nang tóc teo hoàn toàn."
+    },
+    {
+      "id": "art-07",
+      "title": "Quy trình chăm sóc da cơ bản cho da dầu mụn",
+      "slug": "quy-trinh-skincare-cho-da-dau-mun",
+      "category": "cham-soc-da",
+      "categoryName": "Chăm sóc da",
+      "summary": "Xây dựng chu trình chăm sóc da tối giản nhưng hiệu quả cao gồm 4 bước: Làm sạch kép, cân bằng ẩm, đặc trị và bảo vệ chống nắng.",
+      "author": "Ban Chuyên môn LBC",
+      "consultingDoctor": "ThS.BS. Lạc Kim Ngân",
+      "publishedDate": "01/10/2026",
+      "readTime": "4 phút đọc",
+      "imageUrl": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1200&q=80",
+      "tableOfContents": [
+        {
+          "id": "nguyen-tac-toi-gian",
+          "title": "1. Nguyên tắc tối giản cho da dầu mụn",
+          "level": 2
+        },
+        {
+          "id": "bon-buoc-skincare",
+          "title": "2. Bốn bước chăm sóc da buổi sáng và tối",
+          "level": 2
+        }
+      ],
+      "contentMarkdown": "## 1. Nguyên tắc tối giản cho da dầu mụn {#nguyen-tac-toi-gian}\nĐừng bôi quá nhiều lớp dưỡng chất khiến lỗ chân lông bị nghẹt. Ưu tiên các sản phẩm dạng gel, lotion mỏng nhẹ có nhãn non-comedogenic."
+    },
+    {
+      "id": "art-08",
+      "title": "Nâng cơ không xâm lấn là gì? Những điều cần biết trước khi thực hiện",
+      "slug": "nang-co-khong-xam-lan-la-gi",
+      "category": "cham-soc-da",
+      "categoryName": "Chăm sóc da",
+      "summary": "Tìm hiểu cơ chế trẻ hóa của công nghệ sóng tần số vô tuyến RF Jovena và siêu âm hội tụ HIFU giúp thon gọn gương mặt mà không cần phẫu thuật.",
+      "author": "ThS.BS. Lạc Kim Ngân",
+      "consultingDoctor": "ThS.BS. Lạc Kim Ngân",
+      "publishedDate": "28/09/2026",
+      "readTime": "5 phút đọc",
+      "imageUrl": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80",
+      "tableOfContents": [
+        {
+          "id": "co-che-nang-co",
+          "title": "1. Cơ chế nâng cơ không phẫu thuật",
+          "level": 2
+        },
+        {
+          "id": "ai-nen-thuc-hien",
+          "title": "2. Ai là đối tượng phù hợp nhất?",
+          "level": 2
+        }
+      ],
+      "contentMarkdown": "## 1. Cơ chế nâng cơ không phẫu thuật {#co-che-nang-co}\nNăng lượng sóng vi nhiệt làm co ngắn các sợi collagen chùng nhão ngay lập tức và kích thích quá trình tự chữa lành tạo mô nâng đỡ mới kéo dài trong 3 – 6 tháng."
+    },
+    {
+      "id": "art-09",
+      "title": "Lạc's Beauty Center tưng bừng khai trương Cơ sở 02 (29/09/2026)",
+      "slug": "khai-truong-co-so-02-lacs-beauty-center",
+      "category": "hoat-dong",
+      "categoryName": "Hoạt động phòng khám",
+      "summary": "Đánh dấu cột mốc phát triển mới của LBC Group với cơ sở điều trị công nghệ cao tại số 388 Nguyễn Văn Cừ, TP. Cần Thơ.",
+      "author": "Ban Truyền thông LBC Group",
+      "publishedDate": "29/09/2026",
+      "readTime": "3 phút đọc",
+      "imageUrl": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
+      "tableOfContents": [
+        {
+          "id": "cot-moc-moi",
+          "title": "1. Cột mốc mở rộng hệ sinh thái y khoa LBC",
+          "level": 2
+        },
+        {
+          "id": "co-so-vat-chat",
+          "title": "2. Không gian sang trọng và trang thiết bị tân tiến",
+          "level": 2
+        }
+      ],
+      "contentMarkdown": "## 1. Cột mốc mở rộng hệ sinh thái y khoa LBC {#cot-moc-moi}\nNgày 29/09/2026, Lạc's Beauty Center chính thức khai trương Cơ sở 02 tại Cần Thơ nhằm đáp ứng nhu cầu thăm khám da liễu ngày càng tăng của người dân miền Tây."
+    },
+    {
+      "id": "art-10",
+      "title": "Lạc's Academy: Lễ bế giảng và trao chứng chỉ khóa đào tạo Kỹ thuật viên Chăm sóc da",
+      "slug": "lacs-academy-lop-dao-tao-cham-soc-da",
+      "category": "hoat-dong",
+      "categoryName": "Hoạt động phòng khám",
+      "summary": "Chúc mừng các học viên xuất sắc hoàn thành khóa đào tạo sơ cấp Chăm sóc da chuyên sâu chuẩn y khoa và sẵn sàng gia nhập ngành làm đẹp.",
+      "author": "Ban Đào tạo Lạc's Academy",
+      "publishedDate": "25/09/2026",
+      "readTime": "3 phút đọc",
+      "imageUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80",
+      "tableOfContents": [
+        {
+          "id": "chuong-trinh-hoc-thuc-te",
+          "title": "1. Chương trình thực hành trên 80% thời lượng",
+          "level": 2
+        },
+        {
+          "id": "co-hoi-viec-lam",
+          "title": "2. Cam kết đầu ra và cơ hội việc làm",
+          "level": 2
+        }
+      ],
+      "contentMarkdown": "## 1. Chương trình thực hành trên 80% thời lượng {#chuong-trinh-hoc-thuc-te}\nCác học viên được rèn luyện trực tiếp dưới sự hướng dẫn 1:1 của các bác sĩ và chuyên viên tay nghề cao, nắm vững quy tắc vô trùng y khoa."
+    },
+    {
+      "id": "art-11",
+      "title": "Đội ngũ Bác sĩ Lạc's tham dự Hội nghị Khoa học Da liễu Toàn quốc",
+      "slug": "bac-si-lacs-tham-du-hoi-nghi-chuyen-mon",
+      "category": "hoat-dong",
+      "categoryName": "Hoạt động phòng khám",
+      "summary": "Cập nhật các tiến bộ y học mới nhất về phác đồ cá nhân hóa và công nghệ laser thế hệ mới trong điều trị sắc tố da.",
+      "author": "Ban Biên tập Y khoa",
+      "publishedDate": "20/09/2026",
+      "readTime": "3 phút đọc",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+      "tableOfContents": [
+        {
+          "id": "giao-luu-chuyen-mon",
+          "title": "1. Nâng cao trình độ chuyên môn liên tục",
+          "level": 2
+        }
+      ],
+      "contentMarkdown": "## 1. Nâng cao trình độ chuyên môn liên tục {#giao-luu-chuyen-mon}\nĐội ngũ bác sĩ tại Lạc's Beauty Center thường xuyên tham gia các hội thảo khoa học trong và ngoài nước để đưa những giải pháp y khoa tân tiến nhất về phục vụ bà con miền Tây."
+    },
+    {
+      "id": "art-12",
+      "title": "Chương trình Thăm khám và Soi da miễn phí vì sức khỏe làn da cộng đồng miền Tây",
+      "slug": "hoat-dong-cong-dong-tu-van-da-mien-tay",
+      "category": "hoat-dong",
+      "categoryName": "Hoạt động phòng khám",
+      "summary": "Hơn 500 người dân đã được bác sĩ chuyên khoa soi da đa tầng và tư vấn cách phòng ngừa ung thư da cũng như tác hại của kem trộn chứa corticoid.",
+      "author": "Đoàn Công tác Xã hội LBC",
+      "publishedDate": "15/09/2026",
+      "readTime": "4 phút đọc",
+      "imageUrl": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1200&q=80",
+      "tableOfContents": [
+        {
+          "id": "nang-cao-nhan-thuc",
+          "title": "1. Nâng cao nhận thức chăm sóc da an toàn",
+          "level": 2
+        }
+      ],
+      "contentMarkdown": "## 1. Nâng cao nhận thức chăm sóc da an toàn {#nang-cao-nhan-thuc}\nChương trình thiện nguyện vì cộng đồng giúp bà con hiểu đúng về các bệnh da liễu thường gặp và tránh xa các sản phẩm thuốc bôi trôi nổi không rõ nguồn gốc."
+    }
+  ],
+  "LBC_DEMO_siteConfig": {
+    "brandName": "Lạc's Beauty Center",
+    "tagline": "Tiên phong công nghệ cao – Hướng đến Y học Cá nhân hóa",
+    "legalEntity": "CÔNG TY TNHH VIỆN CHĂM SÓC DA LẠC'S BEAUTY CENTER",
+    "facilityName": "Phòng khám Chuyên khoa Da liễu",
+    "domain": "lbcgroup.vn",
+    "hotline": "1900 6750",
+    "hotlineConsultation": "0901 234 567",
+    "email": "cskh@lbcgroup.vn",
+    "announcement": {
+      "enabled": true,
+      "text": "Đơn vị sở hữu máy soi da VISIA 3D đầu tiên tại Việt Nam",
+      "subText": "Soi da công nghệ cao – Thấy được kết quả trước khi thực hiện",
+      "link": "/dat-lich-kham",
+      "backgroundColor": "#0E7C86",
+      "textColor": "#FFFFFF",
+      "desktopImage": "",
+      "mobileImage": ""
+    },
+    "headerWelcomeMessages": [
+      "LBC xin chào.",
+      "Hướng đến Y học Cá nhân hóa.",
+      "Tiên phong trong ứng dụng công nghệ cao."
+    ],
+    "searchSuggestions": [
+      "Trị mụn",
+      "Trị nám",
+      "Nâng cơ",
+      "Triệt lông",
+      "Bioderma"
+    ],
+    "socialLinks": {
+      "facebook": "https://facebook.com/lacsbeautycenter",
+      "tiktok": "https://tiktok.com/@lacsbeautycenter",
+      "zalo": "https://zalo.me/lacsbeautycenter",
+      "messenger": "https://m.me/lacsbeautycenter",
+      "youtube": "https://youtube.com/@lacsbeautycenter",
+      "shopee": "https://shopee.vn/lacsbeautycenter",
+      "tiktokShop": "https://tiktok.com/@lacsbeautycenter/shop"
+    },
+    "operatingHours": "08:00 – 20:00 (Hằng ngày)",
+    "seoDefault": {
+      "title": "Phòng khám Chuyên khoa Da liễu Lạc's Beauty Center | Cần Thơ",
+      "description": "Phòng khám Chuyên khoa Da liễu Lạc's Beauty Center tại Cần Thơ. Đội ngũ bác sĩ trình độ sau đại học, tiên phong công nghệ cao, y học cá nhân hóa.",
+      "keywords": "da liễu Cần Thơ, trị mụn Cần Thơ, trị nám Cần Thơ, nâng cơ, Lạc's Beauty Center, bác sĩ da liễu"
+    },
+    "popupBanner": {
+      "enabled": false,
+      "title": "Mừng Khai Trương Cơ Sở 02 Lạc's Beauty Center",
+      "description": "Trải nghiệm soi da VISIA 3D đa tầng miễn phí và nhận phác đồ điều trị cá nhân hóa từ Bác sĩ Chuyên khoa.",
+      "imageUrl": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80",
+      "link": "/he-thong-co-so"
+    },
+    "floatingContact": {
+      "enabled": true,
+      "actions": [
+        {
+          "id": "act-hotline",
+          "type": "hotline",
+          "label": "Hotline 1900 6750",
+          "url": "tel:19006750",
+          "enabled": true,
+          "order": 1
+        },
+        {
+          "id": "act-zalo",
+          "type": "zalo",
+          "label": "Chat Zalo OA",
+          "url": "https://zalo.me/lacsbeautycenter",
+          "enabled": true,
+          "order": 2
+        },
+        {
+          "id": "act-messenger",
+          "type": "messenger",
+          "label": "Messenger phòng khám",
+          "url": "https://m.me/lacsbeautycenter",
+          "enabled": true,
+          "order": 3
+        },
+        {
+          "id": "act-facilities",
+          "type": "facilities",
+          "label": "Hệ thống 2 cơ sở",
+          "url": "/he-thong-co-so",
+          "enabled": true,
+          "order": 4
+        }
+      ]
+    },
+    "aboutConfig": {
+      "badge": "Về chúng tôi",
+      "title": "Phòng khám Chuyên khoa Da liễu Lạc's Beauty Center",
+      "description": "Tọa lạc tại trung tâm thành phố Cần Thơ, Lạc's Beauty Center được xây dựng với định vị là phòng khám da liễu chuẩn y khoa chuyên sâu. Chúng tôi không chạy theo các trào lưu làm đẹp lột tẩy cấp tốc, mà kiên định theo đuổi triết lý Y học Cá nhân hóa: mỗi làn da cần một phác đồ khoa học riêng biệt dựa trên bằng chứng soi da vi thể và theo dõi sát sao của bác sĩ chuyên khoa sau đại học.",
+      "metricNumber": "10.000+",
+      "metricLabel": "Ca điều trị chuẩn Y khoa (Số liệu minh họa – Chờ xác nhận)",
+      "metricBadge": "VISIA 3D",
+      "mainImage": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
+      "subImages": [
+        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80"
+      ],
+      "ctaText": "Xem câu chuyện thương hiệu",
+      "ctaLink": "/gioi-thieu"
+    },
+    "bannerTopConfig": {
+      "enabled": true,
+      "messages": [
+        {
+          "id": "msg-1",
+          "text": "Đơn vị sở hữu máy soi da VISIA 3D đầu tiên tại Việt Nam",
+          "subText": "Soi da công nghệ cao – Thấy được kết quả trước khi thực hiện",
+          "link": "/dat-lich-kham",
+          "enabled": true,
+          "order": 1
+        },
+        {
+          "id": "msg-2",
+          "text": "Soi da công nghệ cao - Thấy được kết quả trước khi thực hiện",
+          "subText": "Phác đồ cá nhân hóa chuẩn Y khoa cùng Bác sĩ Chuyên khoa Da liễu",
+          "link": "/dat-lich-kham",
+          "enabled": true,
+          "order": 2
+        }
+      ],
+      "desktopImage": "",
+      "mobileImage": "",
+      "link": "/dat-lich-kham",
+      "backgroundColor": "#0E7C86",
+      "textColor": "#FFFFFF",
+      "rotationInterval": 4,
+      "alignment": "center",
+      "heightDesktop": 44,
+      "heightMobile": 40
+    },
+    "headerMainConfig": {
+      "enabled": true,
+      "backgroundMode": "white",
+      "bgMode": "white",
+      "backgroundColor": "#FFFFFF",
+      "bgColor": "#FFFFFF",
+      "textColor": "#1E293B",
+      "iconColor": "#0E7C86",
+      "useBackgroundImage": false,
+      "backgroundImage": "",
+      "backgroundImageMobile": "",
+      "bgPatternUrl": "",
+      "backgroundSize": "cover",
+      "backgroundPosition": "center",
+      "backgroundOpacity": 15,
+      "bgPatternOpacity": 0.08,
+      "backgroundFallbackColor": "#FFFFFF",
+      "showTopbar": true,
+      "showWelcomeGreeting": true,
+      "welcomeMessages": [
+        "LBC xin chào.",
+        "Hướng đến Y học Cá nhân hóa.",
+        "Tiên phong trong ứng dụng công nghệ cao."
+      ],
+      "greeting1": "LBC xin chào.",
+      "greeting2": "Hướng đến Y học Cá nhân hóa.",
+      "greeting3": "Tiên phong trong ứng dụng công nghệ cao.",
+      "showHotline": true,
+      "hotlineLabel": "HOTLINE",
+      "showOperatingHours": true,
+      "showSearch": true,
+      "searchPlaceholder": "Tìm dịch vụ, sản phẩm hoặc thương hiệu...",
+      "searchSuggestions": [
+        "Trị mụn",
+        "Trị nám",
+        "Nâng cơ",
+        "Triệt lông",
+        "Bioderma"
+      ],
+      "showBranches": true,
+      "branchTitle": "Hệ thống",
+      "branchSubtitle": "2 cơ sở",
+      "showAccount": true,
+      "showCart": true,
+      "showCta": true,
+      "ctaText": "ĐẶT LỊCH KHÁM",
+      "ctaLink": "/dat-lich-kham",
+      "ctaBgColor": "#0E7C86",
+      "ctaTextColor": "#FFFFFF",
+      "navBackgroundMode": "white",
+      "navBackgroundColor": "#FFFFFF",
+      "navTextColor": "#334155",
+      "containerMaxWidth": "1380px",
+      "containerPaddingX": 16,
+      "gapLogoSearch": 24,
+      "gapSearchActions": 24,
+      "gapIcons": 12,
+      "gapRightElements": 16,
+      "headerPaddingYDesktop": 12,
+      "headerPaddingYMobile": 8,
+      "headerHeightDesktop": 76,
+      "headerHeightMobile": 64,
+      "elementsGap": "normal",
+      "stickyHeader": true,
+      "isSticky": true,
+      "logoUrl": "",
+      "logoWhiteUrl": "",
+      "logoWidthDesktop": 185,
+      "logoHeightDesktop": 48,
+      "logoWidthMobile": 130,
+      "logoHeightMobile": 36,
+      "logoFit": "contain",
+      "showBrandNameText": true,
+      "showFacilitySubtitle": true,
+      "brandNameFontSize": "16px",
+      "facilityFontSize": "11px",
+      "gapLogoText": 10,
+      "logoVerticalAlign": "center"
+    }
+  },
+  "LBC_DEMO_technologies": [
+    {
+      "id": "cn-01",
+      "code": "CN-01",
+      "name": "Công nghệ Nâng cơ RF Jovena",
+      "deviceOrigin": "Hệ thống Jovena RF – Brera Medical Technologies – Ý",
+      "appliedService": "Dịch vụ Nâng cơ, trẻ hóa da, làm săn chắc vùng viền hàm và rãnh cười",
+      "bannerTitle": "Nâng cơ RF Jovena – Dịch vụ nâng cơ, trẻ hóa da",
+      "slug": "nang-co-rf-jovena",
+      "principle": "Sử dụng sóng tần số vô tuyến RF đa tầng tác động nhiệt có kiểm soát vào lớp biểu bì và trung bì sâu, kích thích tăng sinh tức thì mạng lưới collagen và elastin mới mà không gây tổn thương bề mặt.",
+      "benefits": [
+        "Làm mờ rõ rệt nếp nhăn đuôi mắt, rãnh mũi má và săn chắc vùng nọng cằm",
+        "Kích thích tái tạo tế bào tự thân, cải thiện kết cấu da mịn màng từ bên trong",
+        "Quy trình điều trị êm ái, hoàn toàn không đau, không cần thời gian nghỉ dưỡng"
+      ],
+      "sessionProcess": [
+        "Bước 1: Làm sạch da chuyên sâu và thoa gel dẫn truyền năng lượng nhiệt y khoa",
+        "Bước 2: Cài đặt mức năng lượng và tần số sóng RF phù hợp với độ dày từng vùng da",
+        "Bước 3: Bác sĩ/chuyên viên di chuyển đầu máy theo vector nâng cơ khuôn mặt",
+        "Bước 4: Đắp mặt nạ sinh học làm dịu da và thoa kem khóa ẩm phục hồi"
+      ],
+      "certifications": "Đạt chứng nhận an toàn CE Châu Âu (Số lưu hành TBYT: Cần đối chiếu hồ sơ nhập khẩu)",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=80",
+      "actionImageUrl": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80",
+      "showOnHomeBanner2": true,
+      "isVerified": false
+    },
+    {
+      "id": "cn-02",
+      "code": "CN-02",
+      "name": "Công nghệ Sóng siêu âm hội tụ HIFU",
+      "deviceOrigin": "Hệ thống HIFU vi điểm đa tầng – Hàn Quốc",
+      "appliedService": "Dịch vụ Nâng cơ thon gọn mặt, tạo đường nét V-line tự nhiên",
+      "bannerTitle": "Sóng siêu âm HIFU – Dịch vụ nâng cơ, săn chắc da",
+      "slug": "song-sieu-am-hifu",
+      "principle": "Hội tụ năng lượng sóng siêu âm cường độ cao tại độ sâu 3.0mm – 4.5mm đến tận lớp cân cơ nông SMAS, tạo các điểm đông nhiệt vi mô giúp co rút và nâng đỡ các vùng mô chùng nhão.",
+      "benefits": [
+        "Tác động sâu đến tầng cân cơ tương đương phẫu thuật thẩm mỹ căng da",
+        "Định hình đường viền hàm sắc nét, giảm mỡ má bầu và nọng cằm chảy xệ",
+        "Hiệu quả duy trì dài lâu từ 6 đến 12 tháng chỉ sau 1 buổi liệu trình"
+      ],
+      "sessionProcess": [
+        "Bước 1: Bác sĩ định hình các điểm mốc giải phẫu trên khuôn mặt",
+        "Bước 2: Ủ tê nhẹ nhàng tạo cảm giác thoải mái tối đa cho khách hàng",
+        "Bước 3: Đi máy HIFU với số shot năng lượng được tính toán chuẩn xác",
+        "Bước 4: Massage thư giãn và hướng dẫn cách duy trì độ săn chắc tại nhà"
+      ],
+      "certifications": "Chứng nhận FDA Hoa Kỳ & KFDA Hàn Quốc (Chờ xác nhận hồ sơ lưu hành)",
+      "imageUrl": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80",
+      "actionImageUrl": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80",
+      "showOnHomeBanner2": true,
+      "isVerified": false
+    },
+    {
+      "id": "cn-03",
+      "code": "CN-03",
+      "name": "Hệ thống Laser Quang học Điều trị Sắc tố",
+      "deviceOrigin": "Laser Q-Switched / Picosecond thế hệ mới – Hoa Kỳ/Hàn Quốc",
+      "appliedService": "Dịch vụ Điều trị nám, tàn nhang, đồi mồi, xóa xăm và thâm sau viêm",
+      "bannerTitle": "Laser quang học – Dịch vụ điều trị nám, sắc tố da",
+      "slug": "laser-dieu-tri-sac-to",
+      "principle": "Phát ra các xung năng lượng cực ngắn tính bằng nano hoặc pico giây, phá vỡ liên kết melanin thành các hạt siêu nhỏ để hệ thống đại thực bào cơ thể tự đào thải an toàn.",
+      "benefits": [
+        "Tác động quang cơ có chọn lọc cao, không gây tổn thương hay bỏng biểu bì",
+        "Xử lý hiệu quả cả nám mảng nông và các chân nám sâu dưới lớp trung bì",
+        "Kích thích trẻ hóa bề mặt da, giúp da đều màu và sáng mịn tự nhiên"
+      ],
+      "sessionProcess": [
+        "Bước 1: Soi da đánh giá mật độ và độ sâu chân sắc tố trước khi bắn",
+        "Bước 2: Làm sạch sâu và che mắt bảo vệ bằng kính quang học chuyên dụng",
+        "Bước 3: Bác sĩ chuyên khoa trực tiếp điều chỉnh bước sóng và phát xung laser",
+        "Bước 4: Chườm mát dịu da và thoa tinh chất ức chế sắc tố độc quyền"
+      ],
+      "certifications": "Chứng nhận an toàn chuẩn CE & Giấy phép thiết bị y tế loại B (Bộ Y tế)",
+      "imageUrl": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80",
+      "actionImageUrl": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
+      "showOnHomeBanner2": true,
+      "isVerified": false
+    },
+    {
+      "id": "cn-04",
+      "code": "CN-04",
+      "name": "Công nghệ Laser Vi điểm Fractional Tái tạo Sẹo",
+      "deviceOrigin": "Hệ thống Laser Fractional CO2 – Hãng thiết bị y tế Hoa Kỳ",
+      "appliedService": "Dịch vụ Điều trị sẹo rỗ, thu nhỏ lỗ chân lông và làm mịn bề mặt da",
+      "bannerTitle": "Laser Fractional vi điểm – Dịch vụ điều trị sẹo rỗ, tái tạo da",
+      "slug": "laser-fractional-tri-seo",
+      "principle": "Tạo ra hàng ngàn vi cột tổn thương nhiệt có kiểm soát xuyên sâu vào lớp biểu bì, khởi động cơ chế tự chữa lành của cơ thể để tái cấu trúc mạng lưới collagen làm đầy hố sẹo.",
+      "benefits": [
+        "Cải thiện độ sâu sẹo rỗ rõ rệt, đặc biệt khi kết hợp kỹ thuật bóc tách đáy sẹo",
+        "Tái tạo lớp sừng da mới, se khít lỗ chân lông và trẻ hóa toàn diện bề mặt",
+        "Mức độ tổn thương được phân tách vi mô giúp thời gian lành thương nhanh hơn"
+      ],
+      "sessionProcess": [
+        "Bước 1: Bác sĩ sát khuẩn và ủ tê chuyên dụng 30 – 45 phút",
+        "Bước 2: Bóc tách chân xơ sẹo co kéo dưới da bằng kim y khoa",
+        "Bước 3: Chiếu vi điểm Laser Fractional CO2 đều khắp bề mặt vùng sẹo",
+        "Bước 4: Điện di tinh chất tế bào gốc tăng trưởng và chiếu đèn làm dịu"
+      ],
+      "certifications": "Chứng nhận FDA Hoa Kỳ (Chờ đối chiếu hồ sơ lưu hành TBYT)",
+      "imageUrl": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1000&q=80",
+      "actionImageUrl": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
+      "showOnHomeBanner2": true,
+      "isVerified": false
+    },
+    {
+      "id": "cn-05",
+      "code": "CN-05",
+      "name": "Công nghệ Diode Laser Triệt lông Làm mát Thông minh",
+      "deviceOrigin": "Máy Diode Laser 808nm – Hàn Quốc",
+      "appliedService": "Dịch vụ Triệt lông sạch nang lông và hỗ trợ trị viêm nang lông",
+      "slug": "diode-laser-triet-long",
+      "principle": "Bước sóng 808nm hấp thụ chọn lọc bởi sắc tố melanin trong mầm nhú nang lông, chuyển thành nhiệt năng làm teo mạch máu nuôi dưỡng lông mà không gây rát bề mặt da.",
+      "benefits": [
+        "Đầu làm mát bằng đá sapphire duy trì nhiệt độ -5°C, triệt lông hoàn toàn không đau",
+        "Triệt sạch mọi vùng lông dày cứng đến lông tơ mảnh mà không kích ứng",
+        "Hỗ trợ giảm thâm sạm và cải thiện tình trạng viêm lỗ chân lông"
+      ],
+      "sessionProcess": [
+        "Bước 1: Làm sạch và cạo sạch phần ngọn lông xuôi chiều",
+        "Bước 2: Bôi một lớp gel dẫn truyền lạnh làm dịu da",
+        "Bước 3: Bác sĩ/kỹ thuật viên di đầu xung laser trượt đều trên bề mặt da",
+        "Bước 4: Vệ sinh sạch gel và thoa kem dưỡng ẩm phục hồi"
+      ],
+      "certifications": "Chứng nhận CE & FDA (Chờ xác nhận hồ sơ lưu hành)",
+      "imageUrl": "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1000&q=80",
+      "actionImageUrl": "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1200&q=80",
+      "showOnHomeBanner2": false,
+      "isVerified": false
+    },
+    {
+      "id": "cn-06",
+      "code": "CN-06",
+      "name": "Hệ thống Soi Da & Phân tích Đa tầng VISIA 3D",
+      "deviceOrigin": "Canfield Scientific – Hoa Kỳ",
+      "appliedService": "Thăm khám, lập phác đồ cá nhân hóa và đo lường trước – sau điều trị",
+      "bannerTitle": "Soi da VISIA 3D – Dịch vụ phân tích da đa tầng, lập phác đồ",
+      "slug": "soi-da-visia-3d",
+      "principle": "Sử dụng công nghệ chụp ảnh ma trận ánh sáng phân cực chéo, phân cực song song và tia UV để quét toàn bộ khuôn mặt, đo lường chính xác 8 chỉ số sức khỏe của da.",
+      "benefits": [
+        "Phát hiện chính xác tổn thương sắc tố, mạch máu và ổ vi khuẩn ẩn sâu dưới da",
+        "Mô phỏng quá trình lão hóa da trong tương lai nếu không có phác đồ chăm sóc",
+        "Định lượng chính xác tỷ lệ phần trăm cải thiện sau mỗi đợt điều trị"
+      ],
+      "sessionProcess": [
+        "Bước 1: Tẩy trang sạch toàn bộ khuôn mặt để da trở về trạng thái mộc tự nhiên",
+        "Bước 2: Đặt cằm vào khoang chụp chuẩn ánh sáng của máy VISIA 3D",
+        "Bước 3: Chụp 3 góc nghiêng (chính diện, trái, phải) trong vòng 2 phút",
+        "Bước 4: Bác sĩ cùng khách hàng đọc báo cáo phân tích chi tiết trên màn hình lớn"
+      ],
+      "certifications": "Hệ thống tiêu chuẩn vàng lâm sàng toàn cầu do Canfield Scientific chế tạo",
+      "imageUrl": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=80",
+      "actionImageUrl": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
+      "showOnHomeBanner2": true,
+      "isVerified": true
+    }
+  ],
+  "LBC_DEMO_bookingLeads": [],
+  "LBC_DEMO_specialties": [
+    {
+      "id": "spec-01",
+      "code": "ICO-K1",
+      "name": "Khoa Da liễu",
+      "slug": "khoa-da-lieu",
+      "tagline": "Chẩn đoán chính xác – Điều trị tận gốc",
+      "shortDesc": "Thăm khám và điều trị các bệnh lý về da, mụn kháng trị, sẹo rỗ, nám tàn nhang và trẻ hóa da chuẩn y khoa.",
+      "fullDesc": "Khoa Da liễu Lạc's Beauty Center là mũi nhọn chuyên môn của phòng khám. Dưới sự phụ trách trực tiếp của đội ngũ bác sĩ chuyên khoa da liễu trình độ sau đại học, khoa tiếp nhận và điều trị toàn diện các bệnh lý da liễu từ thường gặp đến phức tạp. Ứng dụng công nghệ soi da đa tầng VISIA 3D giúp phân tích sâu 8 chỉ số của da, từ đó xây dựng phác đồ cá nhân hóa cho từng khách hàng, kết hợp công nghệ cao và thuốc điều trị an toàn.",
+      "iconName": "Stethoscope",
+      "ctaText": "Đặt lịch khám da liễu",
+      "ctaLink": "/dat-lich-kham?khoa=da-lieu",
+      "servicesList": [
+        "Điều trị mụn & mụn kháng trị",
+        "Điều trị sẹo rỗ, sẹo thâm kỹ thuật cao",
+        "Điều trị rối loạn sắc tố (nám, tàn nhang, đồi mồi)",
+        "Nâng cơ trẻ hóa da công nghệ RF Jovena & HIFU",
+        "Thẩm mỹ nội khoa (tiêm vi điểm, mesotherapy)",
+        "Điều trị rụng tóc & phục hồi nang tóc",
+        "Chăm sóc da chuyên sâu & phục hồi hàng rào bảo vệ da"
+      ],
+      "inChargePerson": "Bác sĩ Chuyên khoa Da liễu phụ trách kỹ thuật (Chờ xác nhận danh tính)",
+      "licenseInfo": "Theo Giấy phép hoạt động khám bệnh, chữa bệnh số 0123/CTO-GPHĐ cấp bởi Sở Y tế TP. Cần Thơ",
+      "operatingHours": "08:00 – 20:00 (Hằng ngày)",
+      "heroImage": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80",
+      "galleryImages": [
+        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "id": "spec-02",
+      "code": "ICO-K2",
+      "name": "Khoa Xét nghiệm",
+      "slug": "khoa-xet-nghiem",
+      "tagline": "Chuẩn xác – Nhanh chóng – Hỗ trợ chẩn đoán tối ưu",
+      "shortDesc": "Thực hiện các xét nghiệm vi nấm, soi ký sinh trùng Demodex, công thức máu và sinh hóa phục vụ phác đồ điều trị.",
+      "fullDesc": "Khoa Xét nghiệm đóng vai trò nền tảng trong việc xác định chính xác nguyên nhân gốc rễ của các vấn đề da liễu dai dẳng. Được trang bị hệ thống kính hiển vi soi tươi độ phóng đại cao và thiết bị phân tích hiện đại, khoa cung cấp kết quả nhanh chóng, chính xác nhằm hỗ trợ bác sĩ kê đơn thuốc và phác đồ điều trị đúng hướng, tránh tình trạng điều trị mò hay lạm dụng corticoid.",
+      "iconName": "FlaskConical",
+      "ctaText": "Đặt lịch khám & xét nghiệm",
+      "ctaLink": "/dat-lich-kham?khoa=xet-nghiem",
+      "servicesList": [
+        "Soi tươi tìm ký sinh trùng Demodex trên da",
+        "Xét nghiệm soi tươi & cấy vi nấm ngoài da, móng, tóc",
+        "Xét nghiệm vi sinh vật & kháng sinh đồ đối với mụn mủ kháng trị",
+        "Xét nghiệm máu cơ bản trước liệu trình điều trị toàn thân",
+        "Xét nghiệm đánh giá chức năng gan, thận khi dùng thuốc đặc trị"
+      ],
+      "inChargePerson": "Cử nhân Xét nghiệm Y học (Chờ xác nhận)",
+      "licenseInfo": "Phòng Xét nghiệm thuộc cơ cấu chuyên môn được cấp phép hoạt động trong Giấy phép KCB",
+      "operatingHours": "08:00 – 17:30 (Thứ 2 – Thứ 7)",
+      "heroImage": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1600&q=80",
+      "galleryImages": [
+        "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "id": "spec-03",
+      "code": "ICO-K3",
+      "name": "Nhà thuốc Chuyên khoa",
+      "slug": "nha-thuoc",
+      "tagline": "Thuốc chuẩn GPP – Tư vấn tận tâm",
+      "shortDesc": "Cung cấp đầy đủ các loại thuốc bôi, thuốc uống chuyên khoa da liễu theo đơn bác sĩ, đảm bảo nguồn gốc xuất xứ.",
+      "fullDesc": "Nhà thuốc Chuyên khoa Da liễu Lạc's Beauty Center đạt chuẩn Thực hành tốt cơ sở bán lẻ thuốc (GPP). Nhà thuốc chuyên cung ứng các danh mục thuốc da liễu chuyên biệt, thuốc kháng sinh, kháng nấm, điều hòa miễn dịch và dưỡng ẩm y tế do chính bác sĩ phòng khám chỉ định. Lưu ý pháp lý: Nhà thuốc chỉ phục vụ cấp phát thuốc trực tiếp theo đơn hợp lệ tại phòng khám, không bán thuốc kê đơn trực tuyến qua mạng.",
+      "iconName": "Pill",
+      "ctaText": "Liên hệ tư vấn nhà thuốc",
+      "ctaLink": "/lien-he",
+      "servicesList": [
+        "Cấp phát thuốc điều trị da liễu theo đơn bác sĩ",
+        "Tư vấn sử dụng thuốc an toàn, đúng liều lượng và thời điểm",
+        "Hướng dẫn chăm sóc tương tác thuốc bôi ngoài da",
+        "Cung cấp các sản phẩm làm sạch, dưỡng ẩm y tế bổ trợ",
+        "Theo dõi phản ứng phụ và nhắc nhở lịch tái khám"
+      ],
+      "inChargePerson": "Dược sĩ phụ trách chuyên môn (Chờ xác nhận)",
+      "licenseInfo": "Giấy chứng nhận Đủ điều kiện kinh doanh dược số 123/ĐKKDD-CTO do Sở Y tế TP. Cần Thơ cấp",
+      "operatingHours": "08:00 – 20:00 (Hằng ngày)",
+      "heroImage": "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1600&q=80",
+      "galleryImages": [
+        "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1586015555751-63c254b1fbf4?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "id": "spec-04",
+      "code": "ICO-K4",
+      "name": "Dược – Mỹ phẩm Chính hãng",
+      "slug": "duoc-my-pham",
+      "tagline": "100% Chính hãng – Nhập khẩu ủy quyền",
+      "shortDesc": "Kênh phân phối các dòng dược mỹ phẩm hàng đầu thế giới: Bioderma, Biotrade, PostQuam... phù hợp cho da nhạy cảm.",
+      "fullDesc": "Lạc's Beauty Center là đối tác phân phối chính hãng của các tập đoàn dược mỹ phẩm danh tiếng từ Pháp, Tây Ban Nha, Bulgaria như Bioderma, Biotrade, PostQuam. Mọi sản phẩm đều có đầy đủ hóa đơn chứng từ, tem chống hàng giả và số phiếu công bố mỹ phẩm của Bộ Y tế. Các dòng sản phẩm được chọn lọc khắt khe dựa trên hiệu quả lâm sàng cho da mụn, da sau xâm lấn và da nhiễm độc corticoid.",
+      "iconName": "Sparkles",
+      "ctaText": "Xem danh mục sản phẩm",
+      "ctaLink": "/duoc-my-pham",
+      "servicesList": [
+        "Dược mỹ phẩm làm sạch sâu & cân bằng độ pH",
+        "Tinh chất đặc trị mụn viêm, mụn ẩn, mụn đầu đen",
+        "Kem phục hồi hàng rào sinh học & làm dịu da kích ứng",
+        "Kem chống nắng phổ rộng bảo vệ da chuyên biệt",
+        "Dưỡng chất ức chế melanin, làm sáng da mờ thâm nám"
+      ],
+      "inChargePerson": "Bộ phận Dược mỹ phẩm & CSKH LBC",
+      "licenseInfo": "Hóa đơn VAT nhà phân phối & Phiếu công bố sản phẩm mỹ phẩm hợp lệ",
+      "operatingHours": "08:00 – 20:00 (Hỗ trợ đặt hàng trực tuyến)",
+      "heroImage": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1600&q=80",
+      "galleryImages": [
+        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80"
+      ]
+    },
+    {
+      "id": "spec-05",
+      "code": "ICO-K5",
+      "name": "Đào tạo nghề – Lạc's Academy",
+      "slug": "dao-tao",
+      "tagline": "Vững tay nghề – Chuẩn y khoa – Tự tin lập nghiệp",
+      "shortDesc": "Học viện đào tạo kỹ thuật viên chăm sóc da sơ cấp, chuyển giao công nghệ làm đẹp chuẩn y khoa tại miền Tây.",
+      "fullDesc": "Lạc's Academy là đơn vị đào tạo nghề trực thuộc hệ sinh thái LBC Group, chuyên cung cấp các khóa học chăm sóc da sơ cấp và nâng cao. Học viên được đào tạo trực tiếp bởi các bác sĩ da liễu và chuyên viên tay nghề cao, thực hành trên 80% thời lượng với hệ thống máy móc công nghệ hiện đại. Sau tốt nghiệp, học viên được cấp chứng chỉ nghề hợp pháp và có cơ hội làm việc ngay tại hệ thống phòng khám hoặc tự mở spa.",
+      "iconName": "GraduationCap",
+      "ctaText": "Đăng ký tư vấn khóa học",
+      "ctaLink": "/dao-tao#dang-ky",
+      "servicesList": [
+        "Khóa đào tạo Chăm sóc da chuyên sâu chuẩn y khoa",
+        "Khóa kỹ thuật nặn mụn vô khuẩn chuẩn y khoa không để lại sẹo",
+        "Khóa ứng dụng công nghệ cao trong trẻ hóa da & triệt lông",
+        "Khóa phân tích bệnh học da liễu cơ bản dành cho chủ Spa",
+        "Chuyển giao quy trình vận hành và setup phòng khám Spa"
+      ],
+      "inChargePerson": "Ban Giảng huấn Lạc's Academy (Chờ xác nhận)",
+      "licenseInfo": "Đăng ký hoạt động giáo dục nghề nghiệp trình độ sơ cấp (Chờ đối chiếu mã ngành)",
+      "operatingHours": "08:30 – 17:30 (Thứ 2 – Thứ 7)",
+      "heroImage": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1600&q=80",
+      "galleryImages": [
+        "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80"
+      ]
+    }
+  ],
+  "LBC_DEMO_heroSlides": [
+    {
+      "id": "slide-01",
+      "badge": "Phòng khám Chuyên khoa Da liễu",
+      "title": "Lạc's Beauty Center – Tiên phong Y học Cá nhân hóa",
+      "subtitle": "Chẩn đoán chính xác bằng hệ thống soi da VISIA 3D và phác đồ điều trị chuyên biệt cho từng làn da.",
+      "ctaText": "Tìm hiểu về phòng khám",
+      "ctaLink": "/gioi-thieu",
+      "desktopImage": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80",
+      "mobileImage": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=750&q=80"
+    },
+    {
+      "id": "slide-02",
+      "badge": "Đội ngũ Chuyên môn Cấp cao",
+      "title": "100% Bác sĩ trình độ Sau Đại học trực tiếp thăm khám",
+      "subtitle": "Thạc sĩ, Bác sĩ Chuyên khoa I & II giàu kinh nghiệm lâm sàng đồng hành suốt toàn bộ phác đồ điều trị.",
+      "ctaText": "Gặp gỡ đội ngũ bác sĩ",
+      "ctaLink": "/doi-ngu-bac-si",
+      "desktopImage": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80",
+      "mobileImage": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=750&q=80"
+    },
+    {
+      "id": "slide-03",
+      "badge": "Công nghệ Thẩm mỹ Tiên tiến",
+      "title": "Sở hữu máy soi da VISIA 3D đầu tiên tại Việt Nam",
+      "subtitle": "Ứng dụng các công nghệ điều trị nâng cơ RF Jovena, HIFU và Laser vi điểm đạt chuẩn quốc tế.",
+      "ctaText": "Khám phá công nghệ",
+      "ctaLink": "/cong-nghe",
+      "desktopImage": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80",
+      "mobileImage": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=750&q=80"
+    },
+    {
+      "id": "slide-04",
+      "badge": "Mở rộng Hệ thống Y tế",
+      "title": "Chào đón Cơ sở 02 Lạc's Beauty Center tại Cần Thơ",
+      "subtitle": "Không gian chuẩn y khoa hiện đại, tiện nghi sẵn sàng phục vụ khách hàng trên toàn khu vực miền Tây.",
+      "ctaText": "Xem hệ thống cơ sở",
+      "ctaLink": "/he-thong-co-so",
+      "desktopImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80",
+      "mobileImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=750&q=80"
+    },
+    {
+      "id": "slide-05",
+      "badge": "Học viện Đào tạo Nghề",
+      "title": "Lạc's Academy – Đào tạo chăm sóc da chuẩn Y khoa",
+      "subtitle": "Chương trình thực hành trên 80% thời lượng, cấp chứng chỉ sơ cấp chính quy tự tin lập nghiệp.",
+      "ctaText": "Tư vấn khóa học",
+      "ctaLink": "/dao-tao",
+      "desktopImage": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1600&q=80",
+      "mobileImage": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=750&q=80"
+    }
+  ],
+  "LBC_DEMO_products": [
+    {
+      "id": "prd-01",
+      "sku": "BIO-SEN-500",
+      "name": "Nước tẩy trang Bioderma Sensibio H2O 500ml",
+      "slug": "bioderma-sensibio-h2o-500ml",
+      "brandId": "br-01",
+      "brandName": "Bioderma",
+      "category": "lam-sach",
+      "categoryName": "Làm sạch – tẩy trang",
+      "skinType": "Da nhạy cảm, da thường, da kích ứng",
+      "spec": "Chai 500ml",
+      "price": 495000,
+      "originalPrice": 520000,
+      "shortDesc": "Nước làm sạch và tẩy trang micellar water dịu nhẹ giúp loại bỏ lớp trang điểm, bụi mịn PM 2.5 mà không gây khô căng da.",
+      "uses": "Làm sạch sâu 99% lớp trang điểm và bã nhờn, bảo vệ lớp màng hydrolipid tự nhiên của da, làm dịu tức thì cảm giác châm chích.",
+      "mainIngredients": "Micelle sinh học tương thích với màng tế bào da, chiết xuất dưa chuột làm mát, phức hợp D.A.F tăng ngưỡng dung nạp.",
+      "usageGuide": "Thấm dung dịch ra bông tẩy trang, nhẹ nhàng lau khắp mặt và mắt môi cho đến khi bông sạch. Không cần rửa lại với nước.",
+      "origin": "Pháp",
+      "imageUrls": [
+        "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80"
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "prd-02",
+      "sku": "BIO-SEB-200",
+      "name": "Gel rửa mặt Bioderma Sébium Gel Moussant 200ml",
+      "slug": "bioderma-sebium-gel-moussant-200ml",
+      "brandId": "br-01",
+      "brandName": "Bioderma",
+      "category": "lam-sach",
+      "categoryName": "Làm sạch – tẩy trang",
+      "skinType": "Da dầu mụn, da hỗn hợp thiên dầu",
+      "spec": "Chai vòi nhấn 200ml",
+      "price": 385000,
+      "shortDesc": "Gel rửa mặt tạo bọt dịu nhẹ kiểm soát bã nhờn, ngăn ngừa bít tắc lỗ chân lông và ức chế sự sinh sôi của khuẩn mụn.",
+      "uses": "Làm sạch dịu nhẹ không chứa xà phòng, hạn chế tiết bã nhờn dư thừa nhờ phức hợp Fluidactiv™ độc quyền.",
+      "mainIngredients": "Kẽm Gluconate, Đồng Sulfate, Phức hợp Fluidactiv™",
+      "usageGuide": "Làm ướt mặt, lấy một lượng gel vừa đủ tạo bọt nhẹ và massage đều khắp mặt trong 60 giây, rửa sạch lại với nước mát.",
+      "origin": "Pháp",
+      "imageUrls": [
+        "https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=800&q=80"
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "prd-03",
+      "sku": "BIO-ACN-30",
+      "name": "Dung dịch chấm mụn Biotrade Acnaut Active Lotion 30ml",
+      "slug": "biotrade-acnaut-active-lotion-30ml",
+      "brandId": "br-02",
+      "brandName": "Biotrade",
+      "category": "dac-tri-mun",
+      "categoryName": "Đặc trị mụn",
+      "skinType": "Da mụn bọc, mụn viêm, mụn mủ",
+      "spec": "Lọ 30ml",
+      "price": 590000,
+      "shortDesc": "Lotion đặc trị mụn bọc, mụn sưng viêm cấp tốc không chứa kháng sinh, gom cồi mụn nhanh chóng trong 24 – 48 giờ.",
+      "uses": "Giảm sưng viêm nhanh, gom khô cồi mụn mủ, tiêu diệt vi khuẩn P.acnes mà không làm chai đầu mụn.",
+      "mainIngredients": "PASC (phức hợp chống khuẩn không kháng sinh), Nước hoa hồng hữu cơ Rosa Damascena",
+      "usageGuide": "Dùng tăm bông chấm trực tiếp dung dịch lên các nốt mụn viêm 2 – 3 lần/ngày sau khi làm sạch da.",
+      "origin": "Bulgaria",
+      "imageUrls": [
+        "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80"
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "prd-04",
+      "sku": "BIO-ACN-HYD",
+      "name": "Kem dưỡng phục hồi da mụn Biotrade Acnaut Hydro Active 60ml",
+      "slug": "biotrade-acnaut-hydro-active-60ml",
+      "brandId": "br-02",
+      "brandName": "Biotrade",
+      "category": "phuc-hoi-duong-am",
+      "categoryName": "Phục hồi – dưỡng ẩm",
+      "skinType": "Da đang điều trị mụn, da bong tróc khô rát",
+      "spec": "Tuýp 60ml",
+      "price": 490000,
+      "shortDesc": "Kem dưỡng ẩm chuyên biệt cho da đang điều trị mụn với isotretinoin hoặc retinoids, cấp nước tức thì mà không gây bít tắc.",
+      "uses": "Làm dịu cảm giác khô căng châm chích, phục hồi màng ẩm tự nhiên, ngăn ngừa bong tróc da khi trị mụn.",
+      "mainIngredients": "Panthenol (Vitamin B5), Vitamin E, Glycerin, D-Panthenol",
+      "usageGuide": "Thoa một lớp mỏng lên toàn mặt 2 lần mỗi ngày vào buổi sáng và buổi tối.",
+      "origin": "Bulgaria",
+      "imageUrls": [
+        "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80"
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "prd-05",
+      "sku": "PQ-RES-30",
+      "name": "Serum phục hồi PostQuam Resveraderm 30ml",
+      "slug": "serum-postquam-resveraderm-30ml",
+      "brandId": "br-03",
+      "brandName": "PostQuam",
+      "category": "phuc-hoi-duong-am",
+      "categoryName": "Phục hồi – dưỡng ẩm",
+      "skinType": "Da sau laser, bóc tách sẹo, da nhiễm corticoid",
+      "spec": "Lọ hút 30ml",
+      "price": 850000,
+      "shortDesc": "Tinh chất phục hồi tế bào chứa Resveratrol đậm đặc và Hyaluronic acid phân tử nhỏ, phục hồi nhanh sau thủ thuật y khoa.",
+      "uses": "Làm lành nhanh các vi tổn thương, củng cố hàng rào lipid biểu bì, chống oxy hóa và ngăn ngừa lão hóa sớm.",
+      "mainIngredients": "Resveratrol tinh khiết, Sodium Hyaluronate đa kích thước, Chiết xuất rau má Centella Asiatica",
+      "usageGuide": "Lấy 3 – 4 giọt thoa đều lên da sau bước làm sạch, vỗ nhẹ cho tinh chất thẩm thấu sâu.",
+      "origin": "Tây Ban Nha",
+      "imageUrls": [
+        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80"
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "prd-06",
+      "sku": "PQ-SUN-50",
+      "name": "Kem chống nắng PostQuam Sun Care SPF 50+ 75ml",
+      "slug": "postquam-sun-care-spf-50-75ml",
+      "brandId": "br-03",
+      "brandName": "PostQuam",
+      "category": "chong-nang",
+      "categoryName": "Chống nắng",
+      "skinType": "Mọi loại da, da nhạy cảm sau điều trị công nghệ cao",
+      "spec": "Tuýp 75ml",
+      "price": 680000,
+      "shortDesc": "Kem chống nắng phổ rộng bảo vệ da toàn diện trước tia UVA, UVB, ánh sáng xanh HEV, không nâng tông trắng bệch.",
+      "uses": "Bảo vệ màng tế bào khỏi tổn hại của gốc tự do, ngăn ngừa tái phát nám và sạm đen da dưới nắng miền Tây.",
+      "mainIngredients": "Màng lọc chống nắng thế hệ mới Tinosorb S & M, Vitamin E, Chiết xuất cúc La Mã",
+      "usageGuide": "Thoa đều trước khi ra ngoài 20 phút. Thoa lại sau mỗi 3 – 4 giờ nếu hoạt động liên tục ngoài trời.",
+      "origin": "Tây Ban Nha",
+      "imageUrls": [
+        "https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=800&q=80"
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "prd-07",
+      "sku": "LRP-MEL-30",
+      "name": "Serum sáng da mờ thâm La Roche-Posay Mela B3 30ml",
+      "slug": "la-roche-posay-mela-b3-serum-30ml",
+      "brandId": "br-04",
+      "brandName": "La Roche-Posay",
+      "category": "sang-da-mo-tham",
+      "categoryName": "Sáng da – mờ thâm nám",
+      "skinType": "Da thâm mụn, da nám mảng, tàn nhang",
+      "spec": "Chai 30ml",
+      "price": 1100000,
+      "shortDesc": "Tinh chất đột phá với hoạt chất Melasyl™ độc quyền giúp ngăn chặn sự tích tụ hắc sắc tố melanin tại tế bào mầm.",
+      "uses": "Làm mờ rõ rệt thâm mụn đỏ, thâm nâu, vết nám đốm nâu và ngăn ngừa tái phát đốm sắc tố mới.",
+      "mainIngredients": "Melasyl™, Niacinamide 10% (Vitamin B3), LHA & Carnosine",
+      "usageGuide": "Dùng 3 – 4 giọt vào buổi sáng và tối trước kem dưỡng, luôn kết hợp kem chống nắng vào ban ngày.",
+      "origin": "Pháp",
+      "imageUrls": [
+        "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": "prd-08",
+      "sku": "LRP-CIC-40",
+      "name": "Kem dưỡng phục hồi La Roche-Posay Cicaplast Baume B5+ 40ml",
+      "slug": "la-roche-posay-cicaplast-baume-b5-40ml",
+      "brandId": "br-04",
+      "brandName": "La Roche-Posay",
+      "category": "phuc-hoi-duong-am",
+      "categoryName": "Phục hồi – dưỡng ẩm",
+      "skinType": "Da kích ứng, nứt nẻ, da sau can thiệp laser",
+      "spec": "Tuýp 40ml",
+      "price": 365000,
+      "shortDesc": "Kem dưỡng phục hồi hàng rào biểu bì thế hệ mới với phức hợp Tribioma cân bằng hệ vi sinh vật trên da.",
+      "uses": "Làm dịu tức thì cảm giác rát buốt, phục hồi hàng rào bảo vệ da sau 1 giờ sử dụng, kháng viêm ngăn ngừa sẹo.",
+      "mainIngredients": "Panthenol 5% (B5), Madecassoside, Phức hợp khoáng Đồng – Kẽm – Mangan, Men vi sinh Tribioma",
+      "usageGuide": "Thoa 2 lần/ngày lên vùng da cần phục hồi sau khi làm sạch nhẹ nhàng.",
+      "origin": "Pháp",
+      "imageUrls": [
+        "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80"
+      ],
+      "isFeatured": true
+    }
+  ],
+  "LBC_DEMO_coreValues": [
+    {
+      "id": "v-01",
+      "iconName": "Cpu",
+      "title": "Tiên phong Công nghệ cao",
+      "description": "Sở hữu máy soi da VISIA 3D và các thiết bị điều trị tiên tiến chuẩn quốc tế."
+    },
+    {
+      "id": "v-02",
+      "iconName": "Fingerprint",
+      "title": "Y học Cá nhân hóa",
+      "description": "Mỗi làn da là một phác đồ riêng biệt, thiết kế theo cơ địa và lối sống từng khách hàng."
+    },
+    {
+      "id": "v-03",
+      "iconName": "GraduationCap",
+      "title": "Bác sĩ Sau Đại học",
+      "description": "100% bác sĩ có trình độ sau đại học, trực tiếp thăm khám và theo dõi suốt liệu trình."
+    },
+    {
+      "id": "v-04",
+      "iconName": "ShieldCheck",
+      "title": "Phác đồ Chuẩn Y khoa",
+      "description": "Quy trình vô trùng nghiêm ngặt, kết hợp dược mỹ phẩm nhập khẩu chính hãng.",
+      "isProposed": true
+    }
+  ],
+  "LBC_DEMO_sideBanners": [
+    {
+      "id": "side-01",
+      "tag": "ĐẶT LỊCH NGAY",
+      "title": "Soi da đa tầng VISIA 3D",
+      "desc": "Đo lường 8 chỉ số sức khỏe làn da & tư vấn trực tiếp cùng Bác sĩ Chuyên khoa.",
+      "ctaText": "Đặt lịch thăm khám",
+      "ctaLink": "/dat-lich-kham",
+      "imageUrl": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "side-02",
+      "tag": "100% CHÍNH HÃNG",
+      "title": "Dược mỹ phẩm Quốc tế",
+      "desc": "Bioderma, Biotrade, PostQuam nhập khẩu chính ngạch bảo vệ da nhạy cảm.",
+      "ctaText": "Khám phá sản phẩm",
+      "ctaLink": "/duoc-my-pham",
+      "imageUrl": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80"
+    }
+  ],
+  "LBC_DEMO_homepageModules": [
+    {
+      "id": "hero-slider",
+      "name": "Hero – Slider thương hiệu (5 slide + 2 banner phải)",
+      "themeMapping": "Module Slider (col-lg-8 + col-lg-4)",
+      "enabled": true,
+      "order": 1,
+      "description": "Slider thông điệp thương hiệu, bác sĩ, công nghệ cao, cơ sở 02, Academy cùng 2 banner phụ."
+    },
+    {
+      "id": "core-values",
+      "name": "Khối Giá trị cốt lõi (4 giá trị y khoa)",
+      "themeMapping": "Module Chính sách (chuyển lên dưới Slider)",
+      "enabled": true,
+      "order": 2,
+      "description": "4 ô: Tiên phong Công nghệ cao, Y học Cá nhân hóa, Bác sĩ Sau ĐH, Phác đồ Chuẩn Y khoa."
+    },
+    {
+      "id": "about-summary",
+      "name": "Về Lạc's Beauty Center (Giới thiệu & Số liệu)",
+      "themeMapping": "Module Giới thiệu (About Us)",
+      "enabled": true,
+      "order": 3,
+      "description": "Ảnh lớn sảnh, 3 điểm nhấn y khoa, số liệu thực tế phòng khám và nút xem thêm."
+    },
+    {
+      "id": "ecosystem-specialties",
+      "name": "Hệ sinh thái 5 Chuyên khoa / Lĩnh vực",
+      "themeMapping": "Module Banner 1 (5 banner thẻ trượt)",
+      "enabled": true,
+      "order": 4,
+      "description": "5 lĩnh vực: Khoa Da liễu, Khoa Xét nghiệm, Nhà thuốc, Dược - Mỹ phẩm, Đào tạo Lạc's Academy."
+    },
+    {
+      "id": "featured-services",
+      "name": "Dịch vụ điều trị chuyên sâu (Lưới 10 ô)",
+      "themeMapping": "Module Danh mục sản phẩm (Đổi thành Lưới 10 dịch vụ)",
+      "enabled": true,
+      "order": 5,
+      "description": "9 dịch vụ da liễu chủ lực + 1 ô Đặt lịch soi da VISIA 3D."
+    },
+    {
+      "id": "technologies-banner",
+      "name": "Công nghệ cao tại phòng khám",
+      "themeMapping": "Module Banner 2 (Slider công nghệ)",
+      "enabled": true,
+      "order": 6,
+      "description": "Các công nghệ điều trị ứng dụng: RF Jovena, HIFU, Laser thẩm mỹ, VISIA 3D."
+    },
+    {
+      "id": "doctors-section",
+      "name": "Đội ngũ Bác sĩ trình độ Sau Đại học",
+      "themeMapping": "Module Tin tức 2 (Tùy biến thành 4 thẻ ngang)",
+      "enabled": true,
+      "order": 7,
+      "description": "4 thẻ bác sĩ nằm ngang cân đối, học vị sau đại học, chuyên môn và nút xem hồ sơ."
+    },
+    {
+      "id": "before-after-section",
+      "name": "Người thật – Việc thật (Before – After)",
+      "themeMapping": "Module Banner 3 (Banner kết quả điều trị)",
+      "enabled": true,
+      "order": 8,
+      "description": "Ca điều trị thực tế có cam kết đồng ý, hình ảnh trước sau và cảnh báo kết quả tùy cơ địa."
+    },
+    {
+      "id": "brands-section",
+      "name": "Thương hiệu Dược mỹ phẩm chính hãng",
+      "themeMapping": "Module Thương hiệu (Brand carousel)",
+      "enabled": true,
+      "order": 9,
+      "description": "Logo các hãng dược mỹ phẩm quốc tế: Bioderma, Biotrade, PostQuam, La Roche-Posay..."
+    },
+    {
+      "id": "featured-products",
+      "name": "Sản phẩm Dược mỹ phẩm tiêu biểu",
+      "themeMapping": "Module Tab Sản phẩm 1 (Tắt nhãn flash sale)",
+      "enabled": true,
+      "order": 10,
+      "description": "Tab sản phẩm theo nhu cầu (Làm sạch, Trị mụn, Phục hồi, Chống nắng, Sáng da)."
+    },
+    {
+      "id": "news-tabs",
+      "name": "Tin tức & Kiến thức y khoa",
+      "themeMapping": "Module Tin tức dạng tab (Bài mới, Chăm sóc da, Hoạt động)",
+      "enabled": true,
+      "order": 11,
+      "description": "Bài viết chuyên môn có bác sĩ tham vấn và tin tức hoạt động phòng khám."
+    },
+    {
+      "id": "customer-utilities",
+      "name": "Tiện ích cho khách hàng (4 ô tiện ích)",
+      "themeMapping": "Module Tiện ích (Chuyển xuống áp chót trang)",
+      "enabled": true,
+      "order": 12,
+      "description": "Đặt lịch khám, Hỏi đáp chuyên gia, Hệ thống 2 cơ sở, Tra cứu đơn hàng."
+    }
+  ],
+  "LBC_DEMO_doctors": [
+    {
+      "id": "doc-01",
+      "name": "Lạc Kim Ngân",
+      "degree": "Thạc sĩ, Bác sĩ Chuyên khoa Da liễu",
+      "formalTitle": "ThS.BS. Lạc Kim Ngân",
+      "roleAtClinic": "Giám đốc Chuyên môn & Sáng lập",
+      "specialty": "Da liễu – Thẩm mỹ Da",
+      "slug": "bs-lac-kim-ngan",
+      "licenseNumber": "Số CCHN: 012345/CTO-CCHN (Nội dung minh họa – Chờ xác nhận)",
+      "educationHistory": [
+        "Tốt nghiệp Bác sĩ Đa khoa – Trường Đại học Y Dược Cần Thơ",
+        "Tốt nghiệp Thạc sĩ Chuyên ngành Da liễu – Đại học Y Dược TP. Hồ Chí Minh",
+        "Tu nghiệp lâm sàng về Ứng dụng Laser & Năng lượng cao tại Hàn Quốc & Singapore"
+      ],
+      "certifications": [
+        "Chứng chỉ Ứng dụng Laser và Ánh sáng trong Da liễu (Bệnh viện Da liễu Trung ương)",
+        "Chứng chỉ Kỹ thuật Tiêm vi điểm Mesotherapy & Thẩm mỹ Nội khoa",
+        "Chứng nhận Đào tạo Quốc tế về Trẻ hóa da công nghệ RF & HIFU"
+      ],
+      "experienceYears": 12,
+      "specialtyStrengths": [
+        "Điều trị mụn kháng trị & sẹo rỗ phức tạp",
+        "Phác đồ trẻ hóa da đa tầng bằng công nghệ cao",
+        "Thẩm mỹ nội khoa tinh tế chuẩn y khoa",
+        "Phục hồi da tổn thương nhiễm corticoid"
+      ],
+      "philosophy": "Mỗi làn da là một tác phẩm độc bản. Y học chuẩn mực và sự tận tâm là chìa khóa mang lại vẻ đẹp tự tin bền vững.",
+      "shortSummary": "Hơn 12 năm kinh nghiệm điều trị da liễu và phục hồi da chuyên sâu cho hàng ngàn khách hàng tại miền Tây.",
+      "fullBio": "ThS.BS. Lạc Kim Ngân là người sáng lập và giữ cương vị Giám đốc Chuyên môn tại Phòng khám Chuyên khoa Da liễu Lạc's Beauty Center. Với nền tảng đào tạo sau đại học bài bản và hơn một thập kỷ thực hành lâm sàng, bác sĩ Ngân luôn tiên phong cập nhật các công nghệ điều trị mới nhất trên thế giới về ứng dụng tại miền Tây. Tôn chỉ làm việc của bác sĩ là chẩn đoán đúng gốc rễ, điều trị bằng sự thấu hiểu và nói không với các biện pháp làm đẹp cấp tốc gây hại cho da.",
+      "schedule": [
+        {
+          "facility": "Cơ sở 01 (Đường 3/2)",
+          "days": "Thứ 2, Thứ 4, Thứ 6, Thứ 7",
+          "hours": "08:30 – 17:30"
+        },
+        {
+          "facility": "Cơ sở 02 (Nguyễn Văn Cừ)",
+          "days": "Thứ 3, Thứ 5, Chủ Nhật",
+          "hours": "08:30 – 17:30"
+        }
+      ],
+      "avatarUrl": "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=1200&q=80",
+      "actionImages": [
+        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80"
+      ],
+      "hasConsentForm": true,
+      "isOfficialApproved": false
+    },
+    {
+      "id": "doc-02",
+      "name": "Nguyễn Văn An",
+      "degree": "Bác sĩ Chuyên khoa I (BSCKI)",
+      "formalTitle": "BSCKI. Nguyễn Văn An",
+      "roleAtClinic": "Bác sĩ Điều trị Da liễu",
+      "specialty": "Da liễu – Laser Thẩm mỹ",
+      "slug": "bs-nguyen-van-an",
+      "licenseNumber": "Số CCHN: 023456/CTO-CCHN (Nội dung minh họa – Chờ xác nhận)",
+      "educationHistory": [
+        "Tốt nghiệp Bác sĩ Y khoa – Đại học Y Dược Cần Thơ",
+        "Bác sĩ Chuyên khoa I Da liễu – Đại học Y Dược TP. Hồ Chí Minh"
+      ],
+      "certifications": [
+        "Chứng chỉ Kỹ thuật Bóc tách đáy sẹo và Điều trị sẹo rỗ vi điểm",
+        "Chứng nhận Sử dụng Công nghệ Laser Toning và Fractional CO2",
+        "Hội viên Hội Da liễu Việt Nam"
+      ],
+      "experienceYears": 9,
+      "specialtyStrengths": [
+        "Điều trị sẹo rỗ đa mô thức",
+        "Laser thẩm mỹ điều trị sắc tố tàn nhang, đồi mồi",
+        "Kiểm soát viêm da tiết bã và mụn nang"
+      ],
+      "philosophy": "Điều trị chuẩn y khoa là tôn trọng cấu trúc sinh học tự nhiên của làn da.",
+      "shortSummary": "Chuyên gia bóc tách đáy sẹo và ứng dụng laser quang học điều trị tổn thương da.",
+      "fullBio": "BSCKI. Nguyễn Văn An là bác sĩ điều trị chính tại khoa Da liễu Lạc's Beauty Center. Với tính cách cẩn trọng và tay nghề khéo léo trong các thủ thuật vi điểm, bác sĩ An đã giúp rất nhiều bạn trẻ giải quyết triệt để tình trạng sẹo rỗ xơ hóa lâu năm do mụn để lại, khôi phục bề mặt da mịn màng tự tin.",
+      "schedule": [
+        {
+          "facility": "Cơ sở 01 (Đường 3/2)",
+          "days": "Thứ 3, Thứ 5, Thứ 7",
+          "hours": "08:00 – 19:30"
+        },
+        {
+          "facility": "Cơ sở 02 (Nguyễn Văn Cừ)",
+          "days": "Thứ 2, Thứ 4, Chủ Nhật",
+          "hours": "08:00 – 19:30"
+        }
+      ],
+      "avatarUrl": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1200&q=80",
+      "actionImages": [
+        "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80"
+      ],
+      "hasConsentForm": true,
+      "isOfficialApproved": false
+    },
+    {
+      "id": "doc-03",
+      "name": "Trần Thị Bích Thảo",
+      "degree": "Thạc sĩ, Bác sĩ Da liễu",
+      "formalTitle": "ThS.BS. Trần Thị Bích Thảo",
+      "roleAtClinic": "Bác sĩ Chuyên khoa Sắc tố & Trẻ hóa",
+      "specialty": "Rối loạn sắc tố da – Nám nội tiết",
+      "slug": "bs-tran-thi-bich-thao",
+      "licenseNumber": "Số CCHN: 034567/CTO-CCHN (Nội dung minh họa – Chờ xác nhận)",
+      "educationHistory": [
+        "Tốt nghiệp Bác sĩ Y khoa chính quy",
+        "Thạc sĩ Da liễu – Đại học Y Dược Cần Thơ",
+        "Tham gia các khóa đào tạo nâng cao về Rối loạn sắc tố da tại Bangkok"
+      ],
+      "certifications": [
+        "Chứng chỉ Quản lý và Điều trị Nám mảng, Nám chân sâu",
+        "Chứng chỉ Căng chỉ sinh học và Nâng cơ không phẫu thuật"
+      ],
+      "experienceYears": 8,
+      "specialtyStrengths": [
+        "Điều trị nám má, tàn nhang phụ nữ sau sinh",
+        "Phác đồ ức chế melanin màng đáy không lột tẩy",
+        "Trẻ hóa và phục hồi da nhạy cảm lão hóa sớm"
+      ],
+      "philosophy": "Trị nám cần sự kiên nhẫn và khoa học. Lắng nghe làn da để tìm thấy sự cân bằng.",
+      "shortSummary": "Chuyên sâu về các ca tăng sắc tố khó, nám nội tiết và phục hồi hàng rào màng đáy.",
+      "fullBio": "ThS.BS. Trần Thị Bích Thảo luôn dành sự tận tâm tỉ mỉ cho từng bệnh nhân gặp vấn đề về rối loạn sắc tố. Bác sĩ Thảo nổi tiếng với phong cách giải thích cặn kẽ cơ chế hình thành nám và hướng dẫn bệnh nhân cách tự bảo vệ làn da khỏi tia cực tím miền Tây.",
+      "schedule": [
+        {
+          "facility": "Cơ sở 01 (Đường 3/2)",
+          "days": "Thứ 2 đến Thứ 6",
+          "hours": "08:30 – 17:00"
+        },
+        {
+          "facility": "Cơ sở 02 (Nguyễn Văn Cừ)",
+          "days": "Thứ 7, Chủ Nhật",
+          "hours": "08:30 – 17:00"
+        }
+      ],
+      "avatarUrl": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80",
+      "actionImages": [
+        "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80"
+      ],
+      "hasConsentForm": true,
+      "isOfficialApproved": false
+    },
+    {
+      "id": "doc-04",
+      "name": "Lê Hoàng Nam",
+      "degree": "Bác sĩ Chuyên khoa II (BSCKII)",
+      "formalTitle": "BSCKII. Lê Hoàng Nam",
+      "roleAtClinic": "Cố vấn Chuyên môn Cấp cao",
+      "specialty": "Da liễu Lâm sàng & Miễn dịch học",
+      "slug": "bs-le-hoang-nam",
+      "licenseNumber": "Số CCHN: 045678/CTO-CCHN (Nội dung minh họa – Chờ xác nhận)",
+      "educationHistory": [
+        "Tốt nghiệp Bác sĩ Y khoa – Đại học Y Dược",
+        "Bác sĩ Chuyên khoa I Da liễu",
+        "Bác sĩ Chuyên khoa II Da liễu – Đại học Y Dược TP. Hồ Chí Minh"
+      ],
+      "certifications": [
+        "Hội viên Ban Chấp hành Hội Da liễu miền Nam",
+        "Báo cáo viên tại các Hội nghị Da liễu toàn quốc"
+      ],
+      "experienceYears": 20,
+      "specialtyStrengths": [
+        "Chẩn đoán và hội chẩn các ca bệnh da liễu khó",
+        "Viêm da cơ địa, vảy nến, dị ứng thuốc",
+        "Định hướng phác đồ y học cá nhân hóa cho phòng khám"
+      ],
+      "philosophy": "Y đức đi đầu, chuyên môn vững vàng, vì sức khỏe toàn diện của cộng đồng.",
+      "shortSummary": "Hơn 20 năm công tác chuyên môn da liễu, cố vấn các phác đồ y khoa phức tạp.",
+      "fullBio": "BSCKII. Lê Hoàng Nam là chuyên gia cố vấn chuyên môn cấp cao tại Lạc's Beauty Center. Với hơn hai thập kỷ kinh nghiệm tại các bệnh viện tuyến đầu, bác sĩ Nam trực tiếp tham gia hội chẩn các ca bệnh lý da liễu nặng, kháng trị và đào tạo định kỳ cho đội ngũ bác sĩ trẻ tại phòng khám.",
+      "schedule": [
+        {
+          "facility": "Cơ sở 01 (Đường 3/2)",
+          "days": "Thứ 3, Thứ 6 (Hội chẩn chuyên gia)",
+          "hours": "09:00 – 16:30"
+        },
+        {
+          "facility": "Cơ sở 02 (Nguyễn Văn Cừ)",
+          "days": "Đặt lịch trước qua Hotline",
+          "hours": "Theo lịch hẹn"
+        }
+      ],
+      "avatarUrl": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=1200&q=80",
+      "actionImages": [
+        "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80"
+      ],
+      "hasConsentForm": true,
+      "isOfficialApproved": false
+    }
+  ],
+  "LBC_DEMO_caseStudies": [
+    {
+      "id": "ba-01",
+      "code": "BA-01",
+      "serviceId": "srv-01",
+      "serviceName": "Điều trị mụn – kể cả mụn kháng trị",
+      "customerInitial": "Khách hàng L.T.H (24 tuổi, Cần Thơ)",
+      "initialCondition": "Mụn nang viêm đỏ lan tỏa 2 bên má, nhiều ổ mụn mủ sâu tái phát kéo dài hơn 2 năm, da tăng tiết dầu nhờn quá mức.",
+      "protocolSummary": "Kháng sinh đường uống liều kiểm soát + Chiếu ánh sáng Blue Light + Lấy nhân mụn chuẩn y khoa + Bôi gel ức chế P.acnes",
+      "sessions": "Liệu trình 6 buổi trong 2.5 tháng",
+      "treatingDoctor": "ThS.BS. Lạc Kim Ngân",
+      "beforeImageUrl": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80",
+      "afterImageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
+      "hasConsentForm": true,
+      "notes": "Nội dung minh họa – Đã có biên bản thỏa thuận chia sẻ hình ảnh ẩn danh phục vụ mục đích y khoa."
+    },
+    {
+      "id": "ba-02",
+      "code": "BA-02",
+      "serviceId": "srv-01",
+      "serviceName": "Điều trị mụn – kể cả mụn kháng trị",
+      "customerInitial": "Khách hàng P.V.K (21 tuổi, Hậu Giang)",
+      "initialCondition": "Mụn ẩn, mụn đầu đen bít tắc toàn mặt, nhiều vết thâm đỏ sau nặn mụn sai cách tại nhà.",
+      "protocolSummary": "Peel sinh học BHA nồng độ thấp + Lấy nhân mụn vô khuẩn + Điện di phục hồi Hyaluronic Acid",
+      "sessions": "4 buổi trong 6 tuần",
+      "treatingDoctor": "BSCKI. Nguyễn Văn An",
+      "beforeImageUrl": "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=800&q=80",
+      "afterImageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+      "hasConsentForm": true,
+      "notes": "Bề mặt da giảm 85% nhân mụn ẩn, thu nhỏ lỗ chân lông và sáng đều màu."
+    },
+    {
+      "id": "ba-03",
+      "code": "BA-03",
+      "serviceId": "srv-02",
+      "serviceName": "Điều trị sẹo rỗ kỹ thuật cao",
+      "customerInitial": "Khách hàng N.H.N (28 tuổi, Cần Thơ)",
+      "initialCondition": "Sẹo rỗ hỗn hợp (đáy vuông và đáy nhọn) vùng 2 bên thái dương và má, đáy sẹo xơ cứng kéo lõm sâu.",
+      "protocolSummary": "Bóc tách đáy sẹo Subcision bằng kim y khoa + Laser vi điểm Fractional CO2 + Thoa huyết tương giàu tiểu cầu",
+      "sessions": "Liệu trình 4 buổi (mỗi buổi cách 5 tuần)",
+      "treatingDoctor": "BSCKI. Nguyễn Văn An",
+      "beforeImageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+      "afterImageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
+      "hasConsentForm": true,
+      "notes": "Độ sâu hố sẹo đầy lên khoảng 75% – 80%, da săn chắc và mịn màng hơn rõ rệt."
+    },
+    {
+      "id": "ba-04",
+      "code": "BA-04",
+      "serviceId": "srv-02",
+      "serviceName": "Điều trị sẹo rỗ kỹ thuật cao",
+      "customerInitial": "Khách hàng T.M.T (32 tuổi, Vĩnh Long)",
+      "initialCondition": "Sẹo lượn sóng rolling scars nông nhưng diện rộng, da sần sùi kém đàn hồi.",
+      "protocolSummary": "Sóng RF siêu vi điểm + Tiêm meso phục hồi màng đáy da + Bóc tách xơ sẹo nông",
+      "sessions": "3 buổi trong 3 tháng",
+      "treatingDoctor": "ThS.BS. Lạc Kim Ngân",
+      "beforeImageUrl": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80",
+      "afterImageUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80",
+      "hasConsentForm": true,
+      "notes": "Làn da phẳng mịn, độ đàn hồi và sáng bóng cải thiện vượt bậc."
+    },
+    {
+      "id": "ba-05",
+      "code": "BA-05",
+      "serviceId": "srv-03",
+      "serviceName": "Điều trị sắc tố – Nám, tàn nhang",
+      "customerInitial": "Khách hàng V.T.M (38 tuổi, Sóc Trăng)",
+      "initialCondition": "Nám mảng hai gò má sau sinh 3 năm, màu nâu sẫm lan rộng do tiếp xúc nắng gió miền Tây.",
+      "protocolSummary": "Laser chọn lọc phá hạt melanin + Điện di dưỡng chất ức chế men Tyrosinase + Kem bôi chống oxy hóa",
+      "sessions": "8 buổi trong 4 tháng",
+      "treatingDoctor": "ThS.BS. Trần Thị Bích Thảo",
+      "beforeImageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
+      "afterImageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+      "hasConsentForm": true,
+      "notes": "Vết nám mờ hơn 80%, không xuất hiện tình trạng mất sắc tố hay dội ngược sắc tố."
+    },
+    {
+      "id": "ba-06",
+      "code": "BA-06",
+      "serviceId": "srv-03",
+      "serviceName": "Điều trị sắc tố – Nám, tàn nhang",
+      "customerInitial": "Khách hàng Đ.T.K (27 tuổi, Cần Thơ)",
+      "initialCondition": "Tàn nhang bẩm sinh li ti tập trung vùng sống mũi và gò má, đậm màu vào mùa hè.",
+      "protocolSummary": "Xung ánh sáng laser quang âm chuyên biệt + Thoa serum phục hồi Biotrade",
+      "sessions": "3 buổi trong 6 tuần",
+      "treatingDoctor": "ThS.BS. Trần Thị Bích Thảo",
+      "beforeImageUrl": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80",
+      "afterImageUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+      "hasConsentForm": true,
+      "notes": "Đốm tàn nhang mờ hẳn, làn da sáng trong trẻ trung."
+    },
+    {
+      "id": "ba-07",
+      "code": "BA-07",
+      "serviceId": "srv-06",
+      "serviceName": "Nâng cơ trẻ hóa da công nghệ cao",
+      "customerInitial": "Khách hàng N.T.T (45 tuổi, Cần Thơ)",
+      "initialCondition": "Cơ mặt chùng nhão, đường viền hàm mất nét, xuất hiện nọng cằm và rãnh cười sâu.",
+      "protocolSummary": "Liệu trình nâng cơ vi tầng RF Jovena kết hợp HIFU tác động lớp SMAS",
+      "sessions": "1 buổi duy nhất",
+      "treatingDoctor": "ThS.BS. Lạc Kim Ngân",
+      "beforeImageUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80",
+      "afterImageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80",
+      "hasConsentForm": true,
+      "notes": "Đường viền hàm thon gọn nâng cao tức thì 2cm, rãnh mũi má cạn đi trông thấy."
+    },
+    {
+      "id": "ba-08",
+      "code": "BA-08",
+      "serviceId": "srv-06",
+      "serviceName": "Nâng cơ trẻ hóa da công nghệ cao",
+      "customerInitial": "Khách hàng B.T.L (36 tuổi, An Giang)",
+      "initialCondition": "Vùng khóe miệng và đuôi mắt có nhiều nếp nhăn tĩnh, da kém săn chắc sau giảm cân.",
+      "protocolSummary": "Nâng cơ nhiệt sóng RF Jovena tập trung vùng trung và hạ mặt",
+      "sessions": "2 buổi cách nhau 1 tháng",
+      "treatingDoctor": "ThS.BS. Lạc Kim Ngân",
+      "beforeImageUrl": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=800&q=80",
+      "afterImageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+      "hasConsentForm": true,
+      "notes": "Da căng mọng tự nhiên, không bị đơ cứng biểu cảm khuôn mặt."
+    },
+    {
+      "id": "ba-09",
+      "code": "BA-09",
+      "serviceId": "srv-04",
+      "serviceName": "Điều trị rụng tóc & Kích thích mọc tóc",
+      "customerInitial": "Khách hàng H.Q.V (35 tuổi, Cần Thơ)",
+      "initialCondition": "Rụng tóc kiểu chữ M vùng trán và đỉnh đầu thưa tóc rõ rệt do căng thẳng công việc.",
+      "protocolSummary": "Mesotherapy vi điểm dưỡng chất nang tóc + Chiếu ánh sáng sinh học kích thích tuần hoàn",
+      "sessions": "6 buổi trong 3 tháng",
+      "treatingDoctor": "BSCKI. Nguyễn Văn An",
+      "beforeImageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
+      "afterImageUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80",
+      "hasConsentForm": true,
+      "notes": "Chân tóc con mọc dày đặc tại vùng trán thưa, tóc chắc khỏe giảm rụng khi gội đầu."
+    },
+    {
+      "id": "ba-10",
+      "code": "BA-10",
+      "serviceId": "srv-09",
+      "serviceName": "Triệt lông công nghệ cao",
+      "customerInitial": "Khách hàng K.L.P (23 tuổi, Cần Thơ)",
+      "initialCondition": "Lông vùng nách rậm, da sần sùi và thâm sạm do thói quen dùng nhíp nhổ tại nhà.",
+      "protocolSummary": "Diode Laser làm mát sapphire -5°C + Thoa kem kiềm nang lông",
+      "sessions": "5 buổi",
+      "treatingDoctor": "Kỹ thuật viên Trưởng",
+      "beforeImageUrl": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
+      "afterImageUrl": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80",
+      "hasConsentForm": true,
+      "notes": "Vùng nách trắng sáng, sạch lông hoàn toàn, lỗ chân lông se khít không còn viêm ngứa."
+    }
+  ],
+  "LBC_DEMO_brands": [
+    {
+      "id": "br-01",
+      "name": "Bioderma",
+      "slug": "bioderma",
+      "origin": "Pháp",
+      "description": "Thương hiệu dược mỹ phẩm tiên phong ứng dụng công nghệ sinh học bảo vệ hệ sinh thái tự nhiên của làn da, nổi tiếng toàn cầu với dòng Sensibio dành riêng cho da nhạy cảm.",
+      "logoUrl": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=400&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80",
+      "representativeProductIds": [
+        "prd-01",
+        "prd-02"
+      ]
+    },
+    {
+      "id": "br-02",
+      "name": "Biotrade",
+      "slug": "biotrade",
+      "origin": "Bulgaria",
+      "description": "Tập đoàn dược mỹ phẩm da liễu hàng đầu Châu Âu với giải pháp trị mụn Acnaut chuyên biệt không chứa kháng sinh, kiểm soát bã nhờn và ức chế P.acnes hiệu quả cao.",
+      "logoUrl": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=400&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1200&q=80",
+      "representativeProductIds": [
+        "prd-03",
+        "prd-04"
+      ]
+    },
+    {
+      "id": "br-03",
+      "name": "PostQuam",
+      "slug": "postquam",
+      "origin": "Tây Ban Nha",
+      "description": "Thương hiệu dược mỹ phẩm chuyên nghiệp tại các phòng khám thẩm mỹ Châu Âu, dẫn đầu về công nghệ phục hồi da sau xâm lấn, serum peptide và chống lão hóa đa tầng.",
+      "logoUrl": "https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=400&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=1200&q=80",
+      "representativeProductIds": [
+        "prd-05",
+        "prd-06"
+      ]
+    },
+    {
+      "id": "br-04",
+      "name": "La Roche-Posay",
+      "slug": "la-roche-posay",
+      "origin": "Pháp",
+      "description": "Nhãn hàng dược mỹ phẩm được hơn 90.000 chuyên gia da liễu trên thế giới khuyên dùng, giàu nước khoáng nhiệt khoáng làm dịu da kích ứng và phục hồi màng bảo vệ.",
+      "logoUrl": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=400&q=80",
+      "bannerUrl": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1200&q=80",
+      "representativeProductIds": [
+        "prd-07",
+        "prd-08"
+      ]
+    }
+  ],
+  "LBC_DEMO_navItems": [
+    {
+      "id": "nav-home",
+      "title": "Trang chủ",
+      "path": "/",
+      "isActive": true
+    },
+    {
+      "id": "nav-about",
+      "title": "Giới thiệu",
+      "path": "/gioi-thieu",
+      "isActive": true,
+      "children": [
+        {
+          "title": "Về Lạc's Beauty Center",
+          "path": "/gioi-thieu",
+          "desc": "Câu chuyện thương hiệu, tầm nhìn & sứ mệnh"
+        },
+        {
+          "title": "Giá trị cốt lõi",
+          "path": "/gioi-thieu#gia-tri-cot-loi",
+          "desc": "4 giá trị chuẩn mực y khoa"
+        },
+        {
+          "title": "Hệ thống cơ sở",
+          "path": "/he-thong-co-so",
+          "desc": "Khám phá 2 cơ sở khang trang tại Cần Thơ"
+        },
+        {
+          "title": "Giấy phép hoạt động",
+          "path": "/giay-phep-hoat-dong",
+          "desc": "Hồ sơ pháp lý minh bạch của Sở Y tế"
+        },
+        {
+          "title": "Cơ hội tuyển dụng",
+          "path": "/tuyen-dung",
+          "desc": "Gia nhập đội ngũ y khoa LBC Group"
+        }
+      ]
+    },
+    {
+      "id": "nav-specialties",
+      "title": "Chuyên khoa",
+      "path": "/khoa-da-lieu",
+      "isActive": true,
+      "isMega": true,
+      "megaType": "specialties"
+    },
+    {
+      "id": "nav-services",
+      "title": "Dịch vụ điều trị",
+      "path": "/dich-vu",
+      "isActive": true,
+      "isMega": true,
+      "megaType": "services"
+    },
+    {
+      "id": "nav-doctors",
+      "title": "Đội ngũ bác sĩ",
+      "path": "/doi-ngu-bac-si",
+      "isActive": true
+    },
+    {
+      "id": "nav-technologies",
+      "title": "Công nghệ",
+      "path": "/cong-nghe",
+      "isActive": true
+    },
+    {
+      "id": "nav-before-after",
+      "title": "Kết quả điều trị",
+      "path": "/ket-qua-dieu-tri",
+      "isActive": true
+    },
+    {
+      "id": "nav-cosmeceuticals",
+      "title": "Dược – Mỹ phẩm",
+      "path": "/duoc-my-pham",
+      "isActive": true,
+      "isMega": true,
+      "megaType": "brands"
+    },
+    {
+      "id": "nav-news",
+      "title": "Tin tức",
+      "path": "/tin-tuc",
+      "isActive": true,
+      "children": [
+        {
+          "title": "Kiến thức chăm sóc da",
+          "path": "/tin-tuc?cat=cham-soc-da",
+          "desc": "Bác sĩ giải đáp các vấn đề về da"
+        },
+        {
+          "title": "Hoạt động phòng khám",
+          "path": "/tin-tuc?cat=hoat-dong",
+          "desc": "Sự kiện, hội nghị y khoa và khai trương"
+        }
+      ]
+    },
+    {
+      "id": "nav-contact",
+      "title": "Liên hệ",
+      "path": "/lien-he",
+      "isActive": true
+    }
+  ],
+  "LBC_DEMO_locations": [
+    {
+      "id": "cs-01",
+      "name": "Cơ sở 01 – Phòng khám Chuyên khoa Da liễu Lạc's Beauty Center",
+      "shortName": "Cơ sở 01 (Đường 3/2)",
+      "address": "Số 231T, Đường 3/2, Phường Tân An, Quận Ninh Kiều, Thành phố Cần Thơ, Việt Nam",
+      "phone": "1900 6750 - 0292 3888 123",
+      "hours": "08:00 – 20:00 (Hằng ngày)",
+      "isMainFacility": true,
+      "imageUrl": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
+      "mapEmbedUrl": "https://maps.google.com/maps?q=231T+Đường+3/2+Ninh+Kiều+Cần+Thơ&t=&z=15&ie=UTF8&iwloc=&output=embed"
+    },
+    {
+      "id": "cs-02",
+      "name": "Cơ sở 02 – Viện Chăm sóc Da & Công nghệ cao Lạc's Beauty Center",
+      "shortName": "Cơ sở 02 (Nguyễn Văn Cừ)",
+      "address": "Số 388, Đường Nguyễn Văn Cừ, Phường An Khánh, Quận Ninh Kiều, Thành phố Cần Thơ",
+      "phone": "1900 6750 - 0292 3888 456",
+      "hours": "08:00 – 20:00 (Hằng ngày)",
+      "isMainFacility": false,
+      "notes": "Cơ sở khai trương ngày 29/09/2026 – Địa chỉ hành chính chi tiết cần rà soát với giấy phép Sở Y tế",
+      "imageUrl": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
+      "mapEmbedUrl": "https://maps.google.com/maps?q=388+Nguyễn+Văn+Cừ+Cần+Thơ&t=&z=15&ie=UTF8&iwloc=&output=embed"
+    }
+  ],
+  "LBC_DEMO_cart": []
+}

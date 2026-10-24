@@ -164,6 +164,22 @@ export const initialMediaItems: MediaItem[] = [
 ];
 
 export async function getAllMediaFromDB(): Promise<MediaItem[]> {
+  // 1. Try to fetch from Neon PostgreSQL first
+  try {
+    const res = await fetch('/api/media');
+    if (res.ok) {
+      const serverItems = await res.json();
+      if (Array.isArray(serverItems) && serverItems.length > 0) {
+        // Cache in IndexedDB in background
+        saveAllMediaToIndexedDB(serverItems).catch(() => {});
+        return serverItems;
+      }
+    }
+  } catch (err) {
+    console.warn('API /api/media fetch failed, falling back to local IndexedDB', err);
+  }
+
+  // 2. Fallback to local IndexedDB
   try {
     const db = await getDB();
     return new Promise((resolve, reject) => {
@@ -174,8 +190,7 @@ export async function getAllMediaFromDB(): Promise<MediaItem[]> {
       request.onsuccess = () => {
         const storedItems = request.result as MediaItem[];
         if (!storedItems || storedItems.length === 0) {
-          // Initialize with seed items if store is empty
-          saveAllMediaToDB(initialMediaItems).then(() => resolve(initialMediaItems));
+          saveAllMediaToIndexedDB(initialMediaItems).then(() => resolve(initialMediaItems));
         } else {
           resolve(storedItems);
         }
@@ -189,10 +204,28 @@ export async function getAllMediaFromDB(): Promise<MediaItem[]> {
   }
 }
 
-export async function saveMediaItemToDB(item: MediaItem): Promise<void> {
+async function saveAllMediaToIndexedDB(items: MediaItem[]): Promise<void> {
   try {
     const db = await getDB();
     return new Promise((resolve, reject) => {
+      const transaction = db.transaction([STORE_NAME], 'readwrite');
+      const store = transaction.objectStore(STORE_NAME);
+      items.forEach(item => {
+        store.put(item);
+      });
+      transaction.oncomplete = () => resolve();
+      transaction.onerror = () => reject(transaction.error);
+    });
+  } catch (e) {
+    console.error('Failed to cache items to IndexedDB', e);
+  }
+}
+
+export async function saveMediaItemToDB(item: MediaItem): Promise<void> {
+  // 1. Save to IndexedDB locally
+  try {
+    const db = await getDB();
+    await new Promise<void>((resolve, reject) => {
       const transaction = db.transaction([STORE_NAME], 'readwrite');
       const store = transaction.objectStore(STORE_NAME);
       const request = store.put(item);
@@ -203,31 +236,32 @@ export async function saveMediaItemToDB(item: MediaItem): Promise<void> {
   } catch (e) {
     console.error('Failed to save media item to IndexedDB', e);
   }
-}
 
-export async function saveAllMediaToDB(items: MediaItem[]): Promise<void> {
+  // 2. Sync to Neon PostgreSQL
   try {
-    const db = await getDB();
-    return new Promise((resolve, reject) => {
-      const transaction = db.transaction([STORE_NAME], 'readwrite');
-      const store = transaction.objectStore(STORE_NAME);
-      
-      items.forEach(item => {
-        store.put(item);
-      });
-
-      transaction.oncomplete = () => resolve();
-      transaction.onerror = () => reject(transaction.error);
+    const token = localStorage.getItem('LBC_ADMIN_TOKEN') || 'lbc_admin_secret_998877';
+    await fetch('/api/media', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify(item)
     });
-  } catch (e) {
-    console.error('Failed to save items to IndexedDB', e);
+  } catch (apiErr) {
+    console.warn('Failed to sync media item to Neon DB:', apiErr);
   }
 }
 
+export async function saveAllMediaToDB(items: MediaItem[]): Promise<void> {
+  return saveAllMediaToIndexedDB(items);
+}
+
 export async function deleteMediaItemFromDB(id: string): Promise<void> {
+  // 1. Delete from IndexedDB
   try {
     const db = await getDB();
-    return new Promise((resolve, reject) => {
+    await new Promise<void>((resolve, reject) => {
       const transaction = db.transaction([STORE_NAME], 'readwrite');
       const store = transaction.objectStore(STORE_NAME);
       const request = store.delete(id);
@@ -237,6 +271,19 @@ export async function deleteMediaItemFromDB(id: string): Promise<void> {
     });
   } catch (e) {
     console.error('Failed to delete media item from IndexedDB', e);
+  }
+
+  // 2. Delete from Neon PostgreSQL
+  try {
+    const token = localStorage.getItem('LBC_ADMIN_TOKEN') || 'lbc_admin_secret_998877';
+    await fetch(`/api/media?id=${encodeURIComponent(id)}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+  } catch (apiErr) {
+    console.warn('Failed to delete media from Neon DB:', apiErr);
   }
 }
 

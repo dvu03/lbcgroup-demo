@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import { AdminTabKey } from "./AdminSidebar";
 
+import { useDemoData } from "../../context/DemoDataContext";
+
 interface AdminHeaderProps {
   activeTab: AdminTabKey;
   onOpenMobileSidebar: () => void;
@@ -60,6 +62,8 @@ export const AdminHeader: React.FC<AdminHeaderProps> = ({
   quickNewTitle,
   saveStatus = "saved"
 }) => {
+  const { dbStatus, syncStatus } = useDemoData();
+
   const currentMeta = TAB_TITLES[activeTab] || {
     title: "Quản trị nội dung",
     category: "HỆ THỐNG",
@@ -110,14 +114,45 @@ export const AdminHeader: React.FC<AdminHeaderProps> = ({
             />
           </div>
 
-          {/* Persistent storage indicator badge */}
-          <div
-            className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-medium rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200"
-            title="Dữ liệu được lưu trữ tự động trong IndexedDB & LocalStorage của trình duyệt"
-          >
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-            <span>Đã lưu cục bộ</span>
-          </div>
+          {/* Database / Sync indicator badge */}
+          {dbStatus === 'connected' ? (
+            <div
+              className={`hidden sm:flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-medium rounded-full ${
+                syncStatus === 'saving'
+                  ? 'bg-amber-50 text-amber-800 border border-amber-200 animate-pulse'
+                  : 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+              }`}
+              title="Dữ liệu đồng bộ trực tiếp với cơ sở dữ liệu đám mây Neon PostgreSQL"
+            >
+              {syncStatus === 'saving' ? (
+                <>
+                  <RefreshCw className="w-3.5 h-3.5 text-amber-600 animate-spin" />
+                  <span>Đang lưu Neon...</span>
+                </>
+              ) : (
+                <>
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>Neon DB: Đã kết nối</span>
+                </>
+              )}
+            </div>
+          ) : dbStatus === 'syncing' ? (
+            <div
+              className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-medium rounded-full bg-blue-50 text-blue-800 border border-blue-200 animate-pulse"
+              title="Đang đồng bộ dữ liệu với Neon PostgreSQL..."
+            >
+              <RefreshCw className="w-3.5 h-3.5 text-blue-600 animate-spin" />
+              <span>Đang kết nối Neon...</span>
+            </div>
+          ) : (
+            <div
+              className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-medium rounded-full bg-amber-50 text-amber-800 border border-amber-200"
+              title="Đang chạy ở chế độ offline (IndexedDB & LocalStorage)"
+            >
+              <CheckCircle2 className="w-3.5 h-3.5 text-amber-600" />
+              <span>Cục bộ (Offline)</span>
+            </div>
+          )}
 
           {/* Quick Add Button if applicable */}
           {onQuickNew && (

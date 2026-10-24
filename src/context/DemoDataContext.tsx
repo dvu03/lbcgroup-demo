@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef, ReactNode } from 'react';
 import { initialSiteConfig, SiteConfig } from '../data/siteConfig';
 import { initialHomepageModules, HomepageModuleConfig } from '../data/homepageModules';
 import { initialHeroSlides, initialSideBanners, SlideItem, SideBanner } from '../data/heroSlider';
@@ -135,6 +135,13 @@ interface DemoDataContextType {
   resetToDefaults: () => void;
   exportJSON: () => string;
   importJSON: (jsonString: string) => { success: boolean; message: string };
+
+  // Neon Database & API Sync
+  dbStatus: 'connected' | 'syncing' | 'error' | 'local';
+  syncStatus: 'saved' | 'saving' | 'unsaved';
+  adminToken: string;
+  setAdminToken: (token: string) => void;
+  syncAllToNeon: () => Promise<{ success: boolean; message: string }>;
 }
 
 const DemoDataContext = createContext<DemoDataContextType | undefined>(undefined);
@@ -206,6 +213,86 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
   const [cart, setCart] = useState<CartItem[]>(() => loadFromStorage("cart", []));
   const [isCartOpen, setIsCartOpen] = useState(false);
 
+  // Neon PostgreSQL Database Status
+  const [dbStatus, setDbStatus] = useState<'connected' | 'syncing' | 'error' | 'local'>('local');
+  const [syncStatus, setSyncStatus] = useState<'saved' | 'saving' | 'unsaved'>('saved');
+  const [adminToken, setAdminTokenState] = useState<string>(() => {
+    return localStorage.getItem('LBC_ADMIN_TOKEN') || 'lbc_admin_secret_998877';
+  });
+
+  const setAdminToken = (token: string) => {
+    setAdminTokenState(token);
+    localStorage.setItem('LBC_ADMIN_TOKEN', token);
+  };
+
+  const isHydratedRef = useRef(false);
+
+  // 1. Hydrate all content from Neon PostgreSQL on initial load
+  useEffect(() => {
+    let active = true;
+    async function hydrateFromNeon() {
+      try {
+        setDbStatus('syncing');
+        const res = await fetch('/api/content');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (active && data && typeof data === 'object') {
+          if (data.siteConfig) setSiteConfig(data.siteConfig);
+          if (data.homepageModules) setHomepageModules(data.homepageModules);
+          if (data.heroSlides) setHeroSlides(data.heroSlides);
+          if (data.sideBanners) setSideBanners(data.sideBanners);
+          if (data.coreValues) setCoreValues(data.coreValues);
+          if (data.specialties) setSpecialties(data.specialties);
+          if (data.services) setServices(data.services);
+          if (data.doctors) setDoctors(data.doctors);
+          if (data.technologies) setTechnologies(data.technologies);
+          if (data.caseStudies) setCaseStudies(data.caseStudies);
+          if (data.brands) setBrands(data.brands);
+          if (data.products) setProducts(data.products);
+          if (data.articles) setArticles(data.articles);
+          if (data.locations) setLocations(data.locations);
+          if (data.faqs) setFaqs(data.faqs);
+          if (data.navItems) setNavItems(data.navItems);
+          setDbStatus('connected');
+          setSyncStatus('saved');
+        }
+      } catch (e) {
+        console.warn('Neon DB hydration fallback to local storage:', e);
+        setDbStatus('local');
+      } finally {
+        isHydratedRef.current = true;
+      }
+    }
+    hydrateFromNeon();
+    return () => { active = false; };
+  }, []);
+
+  // 2. Helper to sync any module to Neon
+  const saveKeyToNeon = async (key: string, data: any, moduleName?: string, actionTitle?: string) => {
+    if (!isHydratedRef.current) return;
+    try {
+      setSyncStatus('saving');
+      const token = localStorage.getItem('LBC_ADMIN_TOKEN') || adminToken;
+      const res = await fetch('/api/content', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ key, data, moduleName, actionTitle })
+      });
+      if (res.ok) {
+        setSyncStatus('saved');
+        setDbStatus('connected');
+      } else {
+        setSyncStatus('unsaved');
+      }
+    } catch (e) {
+      console.warn(`Sync ${key} to Neon failed:`, e);
+      setSyncStatus('unsaved');
+    }
+  };
+
   // Sync to localStorage
   useEffect(() => saveToStorage("siteConfig", siteConfig), [siteConfig]);
   useEffect(() => saveToStorage("homepageModules", homepageModules), [homepageModules]);
@@ -225,6 +312,24 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
   useEffect(() => saveToStorage("navItems", navItems), [navItems]);
   useEffect(() => saveToStorage("bookingLeads", bookingLeads), [bookingLeads]);
   useEffect(() => saveToStorage("cart", cart), [cart]);
+
+  // Sync to Neon PostgreSQL whenever state updates after hydration
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("siteConfig", siteConfig, "Hệ thống", "Cấu hình chung"); }, [siteConfig]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("homepageModules", homepageModules, "Trang chủ", "Bố cục Section"); }, [homepageModules]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("heroSlides", heroSlides, "Hero Banner", "Slide chính"); }, [heroSlides]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("sideBanners", sideBanners, "Hero Banner", "Banner phụ"); }, [sideBanners]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("coreValues", coreValues, "Giá trị cốt lõi", "Cốt lõi"); }, [coreValues]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("specialties", specialties, "Chuyên khoa", "Danh mục chuyên khoa"); }, [specialties]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("services", services, "Dịch vụ", "Danh mục dịch vụ"); }, [services]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("doctors", doctors, "Đội ngũ Bác sĩ", "Hồ sơ bác sĩ"); }, [doctors]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("technologies", technologies, "Công nghệ", "Thiết bị y tế"); }, [technologies]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("caseStudies", caseStudies, "Before-After", "Ca lâm sàng"); }, [caseStudies]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("brands", brands, "Thương hiệu", "Đối tác thương hiệu"); }, [brands]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("products", products, "Dược mỹ phẩm", "Sản phẩm"); }, [products]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("articles", articles, "Tin tức & Y khoa", "Bài viết chuyên môn"); }, [articles]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("locations", locations, "Cơ sở", "Chi nhánh"); }, [locations]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("faqs", faqs, "Câu hỏi thường gặp", "FAQ"); }, [faqs]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("navItems", navItems, "Menu", "Menu điều hướng"); }, [navItems]);
 
   // Multi-tab storage synchronization
   useEffect(() => {
@@ -666,6 +771,14 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
       status: "new"
     };
     setBookingLeads(prev => [newLead, ...prev]);
+
+    // Sync to Neon PostgreSQL
+    fetch('/api/leads', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newLead)
+    }).catch(e => console.warn('Failed to post lead to Neon:', e));
+
     return newLead;
   };
 
@@ -683,6 +796,14 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
       status: "new"
     };
     setBookingLeads(prev => [newLead, ...prev]);
+
+    // Sync to Neon PostgreSQL
+    fetch('/api/leads', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newLead)
+    }).catch(e => console.warn('Failed to post lead to Neon:', e));
+
     return newLead;
   };
 
@@ -810,6 +931,56 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
     }
   };
 
+  const syncAllToNeon = async (): Promise<{ success: boolean; message: string }> => {
+    try {
+      setSyncStatus('saving');
+      const token = localStorage.getItem('LBC_ADMIN_TOKEN') || adminToken;
+      const payload: Record<string, any> = {
+        siteConfig,
+        homepageModules,
+        heroSlides,
+        sideBanners,
+        coreValues,
+        specialties,
+        services,
+        doctors,
+        technologies,
+        caseStudies,
+        brands,
+        products,
+        articles,
+        locations,
+        faqs,
+        navItems
+      };
+
+      let allSuccess = true;
+      for (const [key, data] of Object.entries(payload)) {
+        const res = await fetch('/api/content', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({ key, data, moduleName: "Đồng bộ hệ thống", actionTitle: `Đồng bộ ${key}` })
+        });
+        if (!res.ok) allSuccess = false;
+      }
+
+      if (allSuccess) {
+        setSyncStatus('saved');
+        setDbStatus('connected');
+        return { success: true, message: "Toàn bộ dữ liệu đã được lưu trữ an toàn trên Neon PostgreSQL!" };
+      } else {
+        setSyncStatus('unsaved');
+        return { success: false, message: "Một số module không thể đồng bộ lên Neon. Vui lòng kiểm tra quyền hoặc kết nối." };
+      }
+    } catch (e: any) {
+      setSyncStatus('unsaved');
+      return { success: false, message: `Lỗi đồng bộ Neon: ${e?.message || "Không thể kết nối"}` };
+    }
+  };
+
   return (
     <DemoDataContext.Provider
       value={{
@@ -887,7 +1058,12 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
         openCart,
         resetToDefaults,
         exportJSON,
-        importJSON
+        importJSON,
+        dbStatus,
+        syncStatus,
+        adminToken,
+        setAdminToken,
+        syncAllToNeon
       }}
     >
       {children}

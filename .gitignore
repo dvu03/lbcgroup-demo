@@ -20,6 +20,13 @@ dist/
 dist-ssr/
 *.local
 
+# Environment & Secrets (NEVER COMMIT)
+.env
+.env.local
+.env.*.local
+*.env
+scripts/*backup*.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
