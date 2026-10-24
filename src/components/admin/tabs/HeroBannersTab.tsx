@@ -1,0 +1,736 @@
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import {
+  Sliders,
+  Plus,
+  Edit,
+  Trash2,
+  Copy,
+  Eye,
+  EyeOff,
+  ArrowUp,
+  ArrowDown,
+  Image as ImageIcon,
+  ExternalLink,
+  Smartphone,
+  Monitor,
+  CheckCircle2,
+  Sparkles
+} from "lucide-react";
+import { useDemoData } from "../../../context/DemoDataContext";
+import { SlideItem, SideBanner } from "../../../data/heroSlider";
+import { MediaLibraryModal } from "../MediaLibraryModal";
+import { ConfirmationModal } from "../ConfirmationModal";
+
+export const HeroBannersTab: React.FC = () => {
+  const {
+    heroSlides,
+    updateHeroSlides,
+    saveSlide,
+    deleteSlide,
+    duplicateSlide,
+    sideBanners,
+    saveSideBanner
+  } = useDemoData();
+
+  const [activeSubTab, setActiveSubTab] = useState<"slides" | "sideBanners">("slides");
+  const [editingSlide, setEditingSlide] = useState<SlideItem | null>(null);
+  const [editingSideBanner, setEditingSideBanner] = useState<SideBanner | null>(null);
+  const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
+  const [mediaPickerTarget, setMediaPickerTarget] = useState<"desktop" | "mobile" | "side" | null>(null);
+  const [previewDevice, setPreviewDevice] = useState<"desktop" | "mobile">("desktop");
+  const [toastMsg, setToastMsg] = useState<string | null>(null);
+
+  const showToast = (msg: string) => {
+    setToastMsg(msg);
+    setTimeout(() => setToastMsg(null), 3500);
+  };
+
+  const handleCreateNewSlide = () => {
+    const newSlide: SlideItem = {
+      id: `slide-${Date.now()}`,
+      badge: "Ưu đãi đặc biệt",
+      title: "Tiêu đề banner mới Lạc's Beauty Center",
+      subtitle: "Mô tả ngắn gọn về chương trình dịch vụ hoặc công nghệ nổi bật.",
+      ctaText: "Xem chi tiết",
+      ctaLink: "/dich-vu",
+      desktopImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80",
+      mobileImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=750&q=80",
+      altText: "Banner Lạc's Beauty Center",
+      enabled: true,
+      overlayOpacity: 40,
+      textColor: "light",
+      align: "left"
+    };
+    setEditingSlide(newSlide);
+  };
+
+  const handleMoveSlide = (index: number, direction: "up" | "down") => {
+    const targetIdx = direction === "up" ? index - 1 : index + 1;
+    if (targetIdx < 0 || targetIdx >= heroSlides.length) return;
+
+    const list = [...heroSlides];
+    const [moved] = list.splice(index, 1);
+    list.splice(targetIdx, 0, moved);
+    updateHeroSlides(list);
+    showToast("Đã cập nhật thứ tự hiển thị banner!");
+  };
+
+  const handleSaveSlideSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingSlide) return;
+    saveSlide(editingSlide);
+    showToast(`Đã lưu banner: "${editingSlide.title}"!`);
+    setEditingSlide(null);
+  };
+
+  const handleSaveSideBannerSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingSideBanner) return;
+    saveSideBanner(editingSideBanner);
+    showToast(`Đã lưu banner phụ: "${editingSideBanner.title}"!`);
+    setEditingSideBanner(null);
+  };
+
+  return (
+    <div className="space-y-6">
+      {/* Header Info */}
+      <div className="bg-white rounded-2xl p-5 border border-neutral-200 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h2 className="text-base font-bold text-neutral-900 font-heading flex items-center gap-2">
+            <Sliders className="w-5 h-5 text-emerald-700" />
+            <span>Quản lý Hero Banners & Slider Trang chủ</span>
+          </h2>
+          <p className="text-xs text-neutral-500 mt-1 max-w-2xl leading-relaxed">
+            Tùy biến 5 slide chính tại khung banner lớn và 2 banner phụ cố định bên phải. Cập nhật ảnh chuẩn tỉ lệ Desktop & Mobile, nhãn badge và đường dẫn CTA.
+          </p>
+        </div>
+
+        <div className="flex items-center gap-2.5 shrink-0">
+          {activeSubTab === "slides" && (
+            <button
+              type="button"
+              onClick={handleCreateNewSlide}
+              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition"
+            >
+              <Plus className="w-4 h-4" />
+              <span>Tạo Banner mới</span>
+            </button>
+          )}
+
+          <Link
+            to="/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-neutral-700 bg-neutral-100 hover:bg-neutral-200 rounded-xl transition"
+          >
+            <ExternalLink className="w-3.5 h-3.5" />
+            <span>Xem Hero Live</span>
+          </Link>
+        </div>
+      </div>
+
+      {/* Sub Tabs */}
+      <div className="flex items-center gap-2 border-b border-neutral-200 pb-2">
+        <button
+          type="button"
+          onClick={() => setActiveSubTab("slides")}
+          className={`flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition ${
+            activeSubTab === "slides"
+              ? "bg-emerald-700 text-white shadow-xs"
+              : "text-neutral-600 hover:bg-neutral-100"
+          }`}
+        >
+          <span>Slide chính Hero Slider ({heroSlides.length})</span>
+        </button>
+
+        <button
+          type="button"
+          onClick={() => setActiveSubTab("sideBanners")}
+          className={`flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition ${
+            activeSubTab === "sideBanners"
+              ? "bg-emerald-700 text-white shadow-xs"
+              : "text-neutral-600 hover:bg-neutral-100"
+          }`}
+        >
+          <span>2 Banner phụ bên phải ({sideBanners.length})</span>
+        </button>
+      </div>
+
+      {/* Info shortcut banner for top announcement */}
+      <div className="p-3.5 bg-emerald-50/70 border border-emerald-200/80 rounded-2xl flex items-center justify-between gap-3 text-xs text-neutral-700">
+        <div className="flex items-center gap-2.5">
+          <Sparkles className="w-4 h-4 text-emerald-700 shrink-0" />
+          <span>
+            <strong>Lưu ý:</strong> Thanh thông báo Banner Top trên cùng Header được quản lý tập trung tại mục{" "}
+            <span className="font-semibold text-emerald-800">Giao diện website → Banner top & Header</span> để đảm bảo Single Source of Truth.
+          </span>
+        </div>
+      </div>
+
+      {toastMsg && (
+        <div className="p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs flex items-center gap-2 animate-fadeIn font-medium">
+          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+          <span>{toastMsg}</span>
+        </div>
+      )}
+
+      {/* Hero Slides List */}
+      {activeSubTab === "slides" && (
+        <div className="space-y-4">
+          <div className="grid grid-cols-1 gap-4">
+            {heroSlides.map((slide, index) => {
+              const isFirst = index === 0;
+              const isLast = index === heroSlides.length - 1;
+              const isEnabled = slide.enabled !== false;
+
+              return (
+                <div
+                  key={slide.id}
+                  className={`bg-white rounded-2xl border p-4 transition-all hover:shadow-md flex flex-col md:flex-row items-start md:items-center gap-4 ${
+                    isEnabled ? "border-neutral-200" : "border-neutral-200 bg-neutral-50/70 opacity-70"
+                  }`}
+                >
+                  {/* Thumbnail */}
+                  <div className="relative w-full md:w-56 h-32 rounded-xl overflow-hidden bg-neutral-900 shrink-0 group border border-neutral-200">
+                    <img
+                      src={slide.desktopImage}
+                      alt={slide.altText || slide.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2">
+                      <span className="text-[10px] text-white/90 font-mono truncate">
+                        Slide #{index + 1}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Info */}
+                  <div className="flex-1 min-w-0 space-y-1.5">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                        {slide.badge}
+                      </span>
+                      <span className="text-xs text-neutral-400 font-mono">ID: {slide.id}</span>
+                      {!isEnabled && (
+                        <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-neutral-200 text-neutral-600">
+                          Tạm ẩn
+                        </span>
+                      )}
+                    </div>
+
+                    <h4 className="text-sm font-bold text-neutral-900 line-clamp-1 font-heading">
+                      {slide.title}
+                    </h4>
+
+                    <p className="text-xs text-neutral-500 line-clamp-2 leading-relaxed">
+                      {slide.subtitle}
+                    </p>
+
+                    <div className="flex items-center gap-3 pt-1 text-xs text-neutral-600">
+                      <span className="font-medium text-emerald-800">CTA: "{slide.ctaText}"</span>
+                      <span className="text-neutral-400 font-mono text-[11px] truncate max-w-xs">&rarr; {slide.ctaLink}</span>
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="flex md:flex-col items-center justify-end gap-1.5 shrink-0 w-full md:w-auto border-t md:border-t-0 pt-3 md:pt-0 border-neutral-100">
+                    <div className="flex items-center gap-1">
+                      <button
+                        type="button"
+                        disabled={isFirst}
+                        onClick={() => handleMoveSlide(index, "up")}
+                        className="p-1.5 rounded-lg text-neutral-500 hover:text-emerald-700 hover:bg-neutral-100 disabled:opacity-30 transition"
+                        title="Di chuyển lên"
+                      >
+                        <ArrowUp className="w-4 h-4" />
+                      </button>
+
+                      <button
+                        type="button"
+                        disabled={isLast}
+                        onClick={() => handleMoveSlide(index, "down")}
+                        className="p-1.5 rounded-lg text-neutral-500 hover:text-emerald-700 hover:bg-neutral-100 disabled:opacity-30 transition"
+                        title="Di chuyển xuống"
+                      >
+                        <ArrowDown className="w-4 h-4" />
+                      </button>
+                    </div>
+
+                    <div className="flex items-center gap-1">
+                      <button
+                        type="button"
+                        onClick={() => duplicateSlide(slide.id)}
+                        className="p-1.5 rounded-lg text-neutral-600 hover:text-purple-700 hover:bg-purple-50 transition"
+                        title="Nhân bản slide này"
+                      >
+                        <Copy className="w-4 h-4" />
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => setEditingSlide({ ...slide })}
+                        className="p-1.5 rounded-lg text-neutral-600 hover:text-blue-700 hover:bg-blue-50 transition"
+                        title="Chỉnh sửa slide"
+                      >
+                        <Edit className="w-4 h-4" />
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => setDeleteConfirmId(slide.id)}
+                        className="p-1.5 rounded-lg text-neutral-400 hover:text-red-600 hover:bg-red-50 transition"
+                        title="Xóa slide"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Side Banners List */}
+      {activeSubTab === "sideBanners" && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {sideBanners.map((banner, index) => (
+            <div
+              key={banner.id}
+              className="bg-white rounded-2xl border border-neutral-200 p-5 shadow-xs space-y-3"
+            >
+              <div className="relative h-44 rounded-xl overflow-hidden bg-neutral-900 border border-neutral-200">
+                <img
+                  src={banner.imageUrl}
+                  alt={banner.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4 flex flex-col justify-end text-white">
+                  <span className="text-[10px] font-bold tracking-wider uppercase text-emerald-300">
+                    {banner.tag}
+                  </span>
+                  <h4 className="text-sm font-bold mt-0.5 font-heading">{banner.title}</h4>
+                  <p className="text-xs text-neutral-200 mt-1 line-clamp-1">{banner.desc}</p>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between pt-2">
+                <div>
+                  <span className="text-xs font-bold text-neutral-700">Vị trí: Banner phụ #{index + 1}</span>
+                  <div className="text-[11px] text-neutral-400 font-mono">Link: {banner.ctaLink}</div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setEditingSideBanner({ ...banner })}
+                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 rounded-xl transition"
+                >
+                  <Edit className="w-3.5 h-3.5" />
+                  <span>Sửa banner</span>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Edit Slide Modal with Live Preview */}
+      {editingSlide && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm animate-fadeIn overflow-y-auto">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full my-8 overflow-hidden border border-neutral-200">
+            <form onSubmit={handleSaveSlideSubmit}>
+              <div className="p-5 border-b border-neutral-200 flex items-center justify-between">
+                <div>
+                  <h3 className="text-base font-bold text-neutral-900 font-heading">
+                    Chỉnh sửa Banner Slide: {editingSlide.title}
+                  </h3>
+                  <span className="text-xs text-neutral-400 font-mono">ID: {editingSlide.id}</span>
+                </div>
+
+                <div className="flex items-center gap-2 bg-neutral-100 p-1 rounded-xl">
+                  <button
+                    type="button"
+                    onClick={() => setPreviewDevice("desktop")}
+                    className={`flex items-center gap-1 px-2.5 py-1 text-xs rounded-lg transition font-medium ${
+                      previewDevice === "desktop" ? "bg-white text-emerald-800 shadow-xs font-bold" : "text-neutral-600"
+                    }`}
+                  >
+                    <Monitor className="w-3.5 h-3.5" />
+                    <span>Desktop</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setPreviewDevice("mobile")}
+                    className={`flex items-center gap-1 px-2.5 py-1 text-xs rounded-lg transition font-medium ${
+                      previewDevice === "mobile" ? "bg-white text-emerald-800 shadow-xs font-bold" : "text-neutral-600"
+                    }`}
+                  >
+                    <Smartphone className="w-3.5 h-3.5" />
+                    <span>Mobile</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Live Preview Box */}
+              <div className="p-4 bg-neutral-900/90 border-b border-neutral-800 flex justify-center">
+                <div
+                  className={`transition-all duration-300 relative rounded-xl overflow-hidden shadow-lg border border-neutral-700 ${
+                    previewDevice === "desktop" ? "w-full max-w-2xl h-44" : "w-64 h-52"
+                  }`}
+                >
+                  <img
+                    src={previewDevice === "desktop" ? editingSlide.desktopImage : (editingSlide.mobileImage || editingSlide.desktopImage)}
+                    alt={editingSlide.altText || "Preview"}
+                    className="w-full h-full object-cover"
+                  />
+                  <div
+                    className="absolute inset-0 bg-black flex flex-col justify-center p-4 text-white"
+                    style={{ opacity: (editingSlide.overlayOpacity ?? 40) / 100 }}
+                  />
+                  <div className="absolute inset-0 flex flex-col justify-center p-4 text-white">
+                    <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-600 text-white w-max mb-1">
+                      {editingSlide.badge}
+                    </span>
+                    <h4 className="text-sm font-bold font-heading line-clamp-1">{editingSlide.title}</h4>
+                    <p className="text-[11px] text-neutral-200 line-clamp-2 mt-0.5">{editingSlide.subtitle}</p>
+                    <div className="mt-2">
+                      <span className="inline-block px-3 py-1 text-[10px] font-bold bg-white text-neutral-900 rounded-lg">
+                        {editingSlide.ctaText} &rarr;
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Form Fields */}
+              <div className="p-6 space-y-4 max-h-[50vh] overflow-y-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                      Nhãn nhỏ (Badge)
+                    </label>
+                    <input
+                      type="text"
+                      value={editingSlide.badge}
+                      onChange={(e) => setEditingSlide({ ...editingSlide, badge: e.target.value })}
+                      required
+                      className="w-full px-3 py-2 text-sm border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                      Văn bản thay thế (Alt Text SEO)
+                    </label>
+                    <input
+                      type="text"
+                      value={editingSlide.altText || ""}
+                      onChange={(e) => setEditingSlide({ ...editingSlide, altText: e.target.value })}
+                      placeholder="Banner phòng khám Lạc's Beauty Center"
+                      className="w-full px-3 py-2 text-sm border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                    Tiêu đề chính banner
+                  </label>
+                  <input
+                    type="text"
+                    value={editingSlide.title}
+                    onChange={(e) => setEditingSlide({ ...editingSlide, title: e.target.value })}
+                    required
+                    className="w-full px-3 py-2 text-sm border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden font-heading"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                    Mô tả / Phụ đề
+                  </label>
+                  <textarea
+                    rows={2}
+                    value={editingSlide.subtitle}
+                    onChange={(e) => setEditingSlide({ ...editingSlide, subtitle: e.target.value })}
+                    required
+                    className="w-full px-3 py-2 text-sm border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden resize-none"
+                  />
+                </div>
+
+                {/* Images */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-neutral-100">
+                  <div>
+                    <div className="flex items-center justify-between mb-1">
+                      <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider">
+                        Ảnh Desktop (1600x600)
+                      </label>
+                      <button
+                        type="button"
+                        onClick={() => setMediaPickerTarget("desktop")}
+                        className="text-xs text-emerald-700 hover:text-emerald-900 font-semibold flex items-center gap-1"
+                      >
+                        <ImageIcon className="w-3.5 h-3.5" />
+                        <span>Thư viện Media</span>
+                      </button>
+                    </div>
+                    <input
+                      type="url"
+                      value={editingSlide.desktopImage}
+                      onChange={(e) => setEditingSlide({ ...editingSlide, desktopImage: e.target.value })}
+                      required
+                      placeholder="https://..."
+                      className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden font-mono"
+                    />
+                  </div>
+
+                  <div>
+                    <div className="flex items-center justify-between mb-1">
+                      <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider">
+                        Ảnh Mobile (750x450)
+                      </label>
+                      <button
+                        type="button"
+                        onClick={() => setMediaPickerTarget("mobile")}
+                        className="text-xs text-emerald-700 hover:text-emerald-900 font-semibold flex items-center gap-1"
+                      >
+                        <ImageIcon className="w-3.5 h-3.5" />
+                        <span>Thư viện Media</span>
+                      </button>
+                    </div>
+                    <input
+                      type="url"
+                      value={editingSlide.mobileImage}
+                      onChange={(e) => setEditingSlide({ ...editingSlide, mobileImage: e.target.value })}
+                      placeholder="Để trống sẽ dùng ảnh desktop"
+                      className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden font-mono"
+                    />
+                  </div>
+                </div>
+
+                {/* CTAs */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-neutral-100">
+                  <div>
+                    <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                      Nhãn nút CTA 1
+                    </label>
+                    <input
+                      type="text"
+                      value={editingSlide.ctaText}
+                      onChange={(e) => setEditingSlide({ ...editingSlide, ctaText: e.target.value })}
+                      required
+                      className="w-full px-3 py-2 text-sm border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                      Đường dẫn URL CTA 1
+                    </label>
+                    <input
+                      type="text"
+                      value={editingSlide.ctaLink}
+                      onChange={(e) => setEditingSlide({ ...editingSlide, ctaLink: e.target.value })}
+                      required
+                      className="w-full px-3 py-2 text-sm border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 pt-2">
+                  <input
+                    type="checkbox"
+                    id="slideEnabledCheck"
+                    checked={editingSlide.enabled !== false}
+                    onChange={(e) => setEditingSlide({ ...editingSlide, enabled: e.target.checked })}
+                    className="w-4 h-4 text-emerald-600 rounded border-neutral-300 focus:ring-emerald-500"
+                  />
+                  <label htmlFor="slideEnabledCheck" className="text-xs font-medium text-neutral-800 cursor-pointer">
+                    Bật hiển thị slide này trong slider trang chủ
+                  </label>
+                </div>
+              </div>
+
+              <div className="px-6 py-4 bg-neutral-50 border-t border-neutral-200 flex items-center justify-end gap-3">
+                <button
+                  type="button"
+                  onClick={() => setEditingSlide(null)}
+                  className="px-4 py-2 text-xs font-medium text-neutral-700 bg-white border border-neutral-300 rounded-xl hover:bg-neutral-100 transition"
+                >
+                  Hủy bỏ
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition"
+                >
+                  Lưu thay đổi Banner
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Edit Side Banner Modal */}
+      {editingSideBanner && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden border border-neutral-200">
+            <form onSubmit={handleSaveSideBannerSubmit}>
+              <div className="p-5 border-b border-neutral-200">
+                <h3 className="text-base font-bold text-neutral-900 font-heading">
+                  Chỉnh sửa Banner phụ: {editingSideBanner.title}
+                </h3>
+                <span className="text-xs text-neutral-400 font-mono">ID: {editingSideBanner.id}</span>
+              </div>
+
+              <div className="p-6 space-y-4">
+                <div>
+                  <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                    Nhãn Tag nổi bật
+                  </label>
+                  <input
+                    type="text"
+                    value={editingSideBanner.tag}
+                    onChange={(e) => setEditingSideBanner({ ...editingSideBanner, tag: e.target.value })}
+                    required
+                    className="w-full px-3 py-2 text-sm border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                    Tiêu đề
+                  </label>
+                  <input
+                    type="text"
+                    value={editingSideBanner.title}
+                    onChange={(e) => setEditingSideBanner({ ...editingSideBanner, title: e.target.value })}
+                    required
+                    className="w-full px-3 py-2 text-sm border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                    Mô tả
+                  </label>
+                  <textarea
+                    rows={2}
+                    value={editingSideBanner.desc}
+                    onChange={(e) => setEditingSideBanner({ ...editingSideBanner, desc: e.target.value })}
+                    required
+                    className="w-full px-3 py-2 text-sm border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden resize-none"
+                  />
+                </div>
+
+                <div>
+                  <div className="flex items-center justify-between mb-1">
+                    <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider">
+                      Ảnh Banner phụ
+                    </label>
+                    <button
+                      type="button"
+                      onClick={() => setMediaPickerTarget("side")}
+                      className="text-xs text-emerald-700 hover:text-emerald-900 font-semibold flex items-center gap-1"
+                    >
+                      <ImageIcon className="w-3.5 h-3.5" />
+                      <span>Thư viện Media</span>
+                    </button>
+                  </div>
+                  <input
+                    type="url"
+                    value={editingSideBanner.imageUrl}
+                    onChange={(e) => setEditingSideBanner({ ...editingSideBanner, imageUrl: e.target.value })}
+                    required
+                    className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden font-mono"
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                      Nút bấm CTA
+                    </label>
+                    <input
+                      type="text"
+                      value={editingSideBanner.ctaText}
+                      onChange={(e) => setEditingSideBanner({ ...editingSideBanner, ctaText: e.target.value })}
+                      required
+                      className="w-full px-3 py-2 text-sm border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                      URL liên kết
+                    </label>
+                    <input
+                      type="text"
+                      value={editingSideBanner.ctaLink}
+                      onChange={(e) => setEditingSideBanner({ ...editingSideBanner, ctaLink: e.target.value })}
+                      required
+                      className="w-full px-3 py-2 text-sm border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="px-6 py-4 bg-neutral-50 border-t border-neutral-200 flex items-center justify-end gap-3">
+                <button
+                  type="button"
+                  onClick={() => setEditingSideBanner(null)}
+                  className="px-4 py-2 text-xs font-medium text-neutral-700 bg-white border border-neutral-300 rounded-xl hover:bg-neutral-100 transition"
+                >
+                  Hủy bỏ
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition"
+                >
+                  Lưu banner phụ
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Delete Confirmation Modal */}
+      <ConfirmationModal
+        isOpen={!!deleteConfirmId}
+        type="danger"
+        title="Xóa Hero Slide này?"
+        message="Hành động này sẽ xóa vĩnh viễn slide khỏi danh sách trình chiếu trên trang chủ website."
+        confirmLabel="Xóa Slide"
+        cancelLabel="Hủy bỏ"
+        onConfirm={() => {
+          if (deleteConfirmId) {
+            deleteSlide(deleteConfirmId);
+            setDeleteConfirmId(null);
+            showToast("Đã xóa slide thành công!");
+          }
+        }}
+        onCancel={() => setDeleteConfirmId(null)}
+      />
+
+      {/* Media Picker Modal */}
+      <MediaLibraryModal
+        isOpen={!!mediaPickerTarget}
+        onClose={() => setMediaPickerTarget(null)}
+        onSelectMedia={(media) => {
+          if (mediaPickerTarget === "desktop" && editingSlide) {
+            setEditingSlide({ ...editingSlide, desktopImage: media.url, altText: editingSlide.altText || media.alt });
+          } else if (mediaPickerTarget === "mobile" && editingSlide) {
+            setEditingSlide({ ...editingSlide, mobileImage: media.url });
+          } else if (mediaPickerTarget === "side" && editingSideBanner) {
+            setEditingSideBanner({ ...editingSideBanner, imageUrl: media.url });
+          }
+          setMediaPickerTarget(null);
+        }}
+        title="Chọn ảnh Banner từ Thư viện Media"
+      />
+    </div>
+  );
+};
