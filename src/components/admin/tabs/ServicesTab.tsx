@@ -21,6 +21,8 @@ import { ServiceItem } from "../../../data/services";
 import { RichTextEditor } from "../RichTextEditor";
 import { MediaLibraryModal } from "../MediaLibraryModal";
 import { ConfirmationModal } from "../ConfirmationModal";
+import { DynamicIcon } from "../../common/DynamicIcon";
+import { IconPickerModal } from "../IconPickerModal";
 
 export const ServicesTab: React.FC = () => {
   const { services, saveService, deleteService, duplicateService, specialties, doctors } = useDemoData();
@@ -30,6 +32,7 @@ export const ServicesTab: React.FC = () => {
   const [editingService, setEditingService] = useState<ServiceItem | null>(null);
   const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
   const [showMediaPicker, setShowMediaPicker] = useState(false);
+  const [showIconPicker, setShowIconPicker] = useState(false);
   const [activeFormTab, setActiveFormTab] = useState<"info" | "content" | "protocol" | "faqs">("info");
   const [toastMsg, setToastMsg] = useState<string | null>(null);
 
@@ -180,8 +183,9 @@ export const ServicesTab: React.FC = () => {
 
                 <div className="min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
-                      {srv.shortName}
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                      <DynamicIcon name={srv.iconName} url={srv.iconUrl} className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
+                      <span>{srv.shortName}</span>
                     </span>
                     <span className="text-[11px] text-neutral-400 font-mono">ID: {srv.id}</span>
                     {srv.isDoctorApproved ? (
@@ -326,6 +330,40 @@ export const ServicesTab: React.FC = () => {
               <div className="p-6 space-y-4 max-h-[55vh] overflow-y-auto">
                 {activeFormTab === "info" && (
                   <>
+                    {/* Icon Picker Section */}
+                    <div className="p-3.5 bg-neutral-50 rounded-xl border border-neutral-200">
+                      <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2">
+                        Icon Dịch vụ (Hiển thị Menu & Danh mục điều trị)
+                      </label>
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 h-12 rounded-xl bg-white border border-neutral-200 flex items-center justify-center shadow-xs">
+                            <DynamicIcon
+                              name={editingService.iconName}
+                              url={editingService.iconUrl}
+                              className="w-6 h-6 text-emerald-700"
+                            />
+                          </div>
+                          <div>
+                            <div className="text-xs font-bold text-neutral-900">
+                              {editingService.iconUrl ? "Icon ảnh / SVG tùy chỉnh" : (editingService.iconName || "Sparkles")}
+                            </div>
+                            <div className="text-[11px] text-neutral-500">
+                              {editingService.iconUrl ? "Tài nguyên Media upload" : "Icon vector Lucide"}
+                            </div>
+                          </div>
+                        </div>
+
+                        <button
+                          type="button"
+                          onClick={() => setShowIconPicker(true)}
+                          className="px-3.5 py-1.5 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-lg transition"
+                        >
+                          Đổi Icon
+                        </button>
+                      </div>
+                    </div>
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
@@ -633,6 +671,24 @@ export const ServicesTab: React.FC = () => {
           setShowMediaPicker(false);
         }}
         title="Chọn ảnh đại diện Dịch vụ"
+      />
+
+      {/* Icon Picker Modal */}
+      <IconPickerModal
+        isOpen={showIconPicker}
+        onClose={() => setShowIconPicker(false)}
+        onSelect={(iconName, iconUrl) => {
+          if (editingService) {
+            setEditingService({
+              ...editingService,
+              iconName,
+              iconUrl
+            });
+          }
+        }}
+        currentIconName={editingService?.iconName}
+        currentIconUrl={editingService?.iconUrl}
+        initialCategory="service"
       />
     </div>
   );

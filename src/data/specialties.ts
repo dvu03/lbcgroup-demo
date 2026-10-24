@@ -7,6 +7,7 @@ export interface Specialty {
   shortDesc: string;
   fullDesc: string;
   iconName: string;
+  iconUrl?: string;
   ctaText: string;
   ctaLink: string;
   servicesList: string[];

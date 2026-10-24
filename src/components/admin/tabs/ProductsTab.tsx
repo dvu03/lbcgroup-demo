@@ -21,9 +21,12 @@ import {
   Sparkles,
   ArrowRight
 } from "lucide-react";
-import { useDemoData } from "../../../context/DemoDataContext";
 import { ProductItem } from "../../../data/products";
 import { BrandItem } from "../../../data/brands";
+import { ProductCategory } from "../../../data/categories";
+import { useDemoData } from "../../../context/DemoDataContext";
+import { DynamicIcon } from "../../common/DynamicIcon";
+import { IconPickerModal } from "../IconPickerModal";
 import { MediaLibraryModal } from "../MediaLibraryModal";
 import { ConfirmationModal } from "../ConfirmationModal";
 
@@ -39,7 +42,10 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
     duplicateProduct,
     brands,
     saveBrand,
-    deleteBrand
+    deleteBrand,
+    productCategories,
+    saveProductCategory,
+    deleteProductCategory
   } = useDemoData();
 
   const [activeSubTab, setActiveSubTab] = useState<"products" | "brands" | "categories">(initialSubTab);
@@ -70,15 +76,14 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
     setTimeout(() => setToastMsg(null), 3500);
   };
 
-  const categories = [
-    { id: "lam-sach", name: "Làm sạch – tẩy trang", desc: "Nước tẩy trang, gel rửa mặt dịu lành cho da mẫn cảm" },
-    { id: "dac-tri-mun", name: "Đặc trị mụn", desc: "Kiểm soát bã nhờn, ức chế vi khuẩn P.acnes không kháng thuốc" },
-    { id: "phuc-hoi-duong-am", name: "Phục hồi – dưỡng ẩm", desc: "Tái tạo hàng rào biểu bì sinh học sau liệu trình chuyên sâu" },
-    { id: "chong-nang", name: "Chống nắng bảo vệ", desc: "Màng lọc phổ rộng quang phổ rộng ngăn ngừa tăng sắc tố" },
-    { id: "sang-da-mo-tham", name: "Sáng da – mờ thâm", desc: "Dưỡng chất chống oxy hóa, làm đều màu da và mờ vết thâm mụn" }
-  ];
+  // Category states
+  const [editingCategory, setEditingCategory] = useState<ProductCategory | null>(null);
+  const [deleteCategoryConfirmId, setDeleteCategoryConfirmId] = useState<string | null>(null);
+  const [showIconPickerForCategory, setShowIconPickerForCategory] = useState(false);
 
-  const filteredProducts = products.filter((p) => {
+  const categories = productCategories;
+
+  const filteredProducts = products.filter((p: ProductItem) => {
     const matchesSearch =
       p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.sku.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -272,7 +277,7 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
                 className="px-3 py-1.5 text-xs border border-neutral-300 rounded-xl bg-white focus:outline-hidden font-medium text-neutral-700"
               >
                 <option value="all">Tất cả thương hiệu</option>
-                {brands.map((b) => (
+                {brands.map((b: BrandItem) => (
                   <option key={b.id} value={b.name}>
                     {b.name}
                   </option>
@@ -286,7 +291,7 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
                 className="px-3 py-1.5 text-xs border border-neutral-300 rounded-xl bg-white focus:outline-hidden font-medium text-neutral-700"
               >
                 <option value="all">Tất cả danh mục ({products.length})</option>
-                {categories.map((c) => (
+                {categories.map((c: ProductCategory) => (
                   <option key={c.id} value={c.id}>
                     {c.name}
                   </option>
@@ -301,7 +306,7 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
 
           {/* Products Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {filteredProducts.map((prd) => (
+            {filteredProducts.map((prd: ProductItem) => (
               <div
                 key={prd.id}
                 className="bg-white rounded-2xl border border-neutral-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col justify-between group"
@@ -397,9 +402,9 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
       {activeSubTab === "brands" && (
         <div className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {brands.map((brand) => {
+            {brands.map((brand: BrandItem) => {
               const brandProducts = products.filter(
-                (p) => p.brandId === brand.id || p.brandName.toLowerCase() === brand.name.toLowerCase()
+                (p: ProductItem) => p.brandId === brand.id || p.brandName.toLowerCase() === brand.name.toLowerCase()
               );
 
               return (
@@ -502,44 +507,105 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
       {/* ===================== SUBTAB 3: CATEGORIES ===================== */}
       {activeSubTab === "categories" && (
         <div className="space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-2 border-b border-neutral-200 gap-3">
+            <div>
+              <h3 className="text-sm font-bold text-neutral-900 font-heading">
+                Quản lý Danh mục Dược mỹ phẩm & Icon ({categories.length} danh mục)
+              </h3>
+              <p className="text-xs text-neutral-500 mt-0.5">
+                Chỉnh sửa tên danh mục, mô tả và chọn icon hiển thị trên Menu, Mega menu và Trang Dược mỹ phẩm. Dữ liệu lưu trực tiếp vào Neon.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                setEditingCategory({
+                  id: `cat-${Date.now()}`,
+                  name: "Danh mục mới",
+                  slug: `danh-muc-moi-${Date.now()}`,
+                  description: "Mô tả phạm vi chăm sóc da của danh mục...",
+                  iconName: "Sparkles",
+                  order: categories.length + 1,
+                  enabled: true
+                });
+              }}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition shrink-0"
+            >
+              <Plus className="w-4 h-4" />
+              <span>Thêm Danh mục Mới</span>
+            </button>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {categories.map((cat, idx) => {
-              const catProducts = products.filter((p) => p.category === cat.id);
+            {categories.map((cat: ProductCategory, idx: number) => {
+              const catProducts = products.filter((p: ProductItem) => p.category === cat.id);
 
               return (
                 <div
                   key={cat.id}
-                  className="bg-white rounded-2xl border border-neutral-200 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between"
+                  className="bg-white rounded-2xl border border-neutral-200 p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between group"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <span className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-800 font-bold text-xs flex items-center justify-center font-mono">
-                        0{idx + 1}
-                      </span>
-                      <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-neutral-100 text-neutral-800">
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-800 shrink-0">
+                          <DynamicIcon name={cat.iconName} url={cat.iconUrl} className="w-5 h-5 text-emerald-700" />
+                        </div>
+                        <span className="text-xs font-bold text-neutral-400 font-mono">
+                          0{idx + 1}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-1">
+                        <button
+                          type="button"
+                          onClick={() => setEditingCategory({ ...cat })}
+                          className="p-1.5 rounded-lg text-neutral-500 hover:text-blue-700 hover:bg-blue-50 transition"
+                          title="Chỉnh sửa danh mục & icon"
+                        >
+                          <Edit className="w-3.5 h-3.5" />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setDeleteCategoryConfirmId(cat.id)}
+                          className="p-1.5 rounded-lg text-neutral-400 hover:text-red-700 hover:bg-red-50 transition"
+                          title="Xóa danh mục"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2 mb-1 flex-wrap">
+                      <h3 className="text-sm font-bold text-neutral-900 font-heading">
+                        {cat.name}
+                      </h3>
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-neutral-100 text-neutral-700">
                         {catProducts.length} sản phẩm
                       </span>
                     </div>
 
-                    <h3 className="text-sm font-bold text-neutral-900 font-heading mb-1.5">
-                      {cat.name}
-                    </h3>
-                    <p className="text-xs text-neutral-500 leading-relaxed mb-4">
-                      {cat.desc}
+                    <p className="text-xs text-neutral-500 leading-relaxed mb-4 line-clamp-2">
+                      {cat.description || (cat as any).desc}
                     </p>
                   </div>
 
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSelectedCategory(cat.id);
-                      setActiveSubTab("products");
-                    }}
-                    className="w-full py-2 px-3 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 rounded-xl transition flex items-center justify-center gap-1.5"
-                  >
-                    <span>Lọc sản phẩm trong mục này</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  <div className="pt-3 border-t border-neutral-100 flex items-center justify-between gap-2">
+                    <span className="text-[11px] font-mono text-neutral-400 truncate">
+                      ID: {cat.id}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSelectedCategory(cat.id);
+                        setActiveSubTab("products");
+                      }}
+                      className="py-1.5 px-3 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 rounded-xl transition flex items-center gap-1 shrink-0"
+                    >
+                      <span>Lọc sản phẩm</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </button>
+                  </div>
                 </div>
               );
             })}
@@ -556,7 +622,7 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
                 <h3 className="text-base font-bold text-neutral-900 font-heading flex items-center gap-2">
                   <ShoppingBag className="w-5 h-5 text-emerald-700" />
                   <span>
-                    {editingProduct.id.startsWith("prd-") && !products.some((p) => p.id === editingProduct.id)
+                    {editingProduct.id.startsWith("prd-") && !products.some((p: ProductItem) => p.id === editingProduct.id)
                       ? "Thêm Sản phẩm Dược mỹ phẩm"
                       : "Chỉnh sửa Sản phẩm"}
                   </span>
@@ -602,7 +668,7 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
                     <select
                       value={editingProduct.brandName}
                       onChange={(e) => {
-                        const selected = brands.find((b) => b.name === e.target.value);
+                        const selected = brands.find((b: BrandItem) => b.name === e.target.value);
                         setEditingProduct({
                           ...editingProduct,
                           brandName: e.target.value,
@@ -612,7 +678,7 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
                       }}
                       className="w-full px-3 py-2 border border-neutral-300 rounded-xl bg-white focus:outline-hidden font-medium"
                     >
-                      {brands.map((b) => (
+                      {brands.map((b: BrandItem) => (
                         <option key={b.id} value={b.name}>
                           {b.name} ({b.origin})
                         </option>
@@ -625,7 +691,7 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
                     <select
                       value={editingProduct.category}
                       onChange={(e) => {
-                        const cat = categories.find((c) => c.id === e.target.value);
+                        const cat = categories.find((c: ProductCategory) => c.id === e.target.value);
                         setEditingProduct({
                           ...editingProduct,
                           category: e.target.value as ProductItem["category"],
@@ -634,7 +700,7 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
                       }}
                       className="w-full px-3 py-2 border border-neutral-300 rounded-xl bg-white focus:outline-hidden font-medium"
                     >
-                      {categories.map((c) => (
+                      {categories.map((c: ProductCategory) => (
                         <option key={c.id} value={c.id}>
                           {c.name}
                         </option>
@@ -806,7 +872,7 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
                 <h3 className="text-base font-bold text-neutral-900 font-heading flex items-center gap-2">
                   <Building2 className="w-5 h-5 text-emerald-700" />
                   <span>
-                    {editingBrand.id.startsWith("br-") && !brands.some((b) => b.id === editingBrand.id)
+                    {editingBrand.id.startsWith("br-") && !brands.some((b: BrandItem) => b.id === editingBrand.id)
                       ? "Thêm Thương hiệu Đối tác mới"
                       : `Chỉnh sửa Thương hiệu: ${editingBrand.name}`}
                   </span>
@@ -1020,6 +1086,201 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
           setBrandMediaPickerTarget(null);
         }}
         title="Chọn ảnh thương hiệu từ Thư viện Media"
+      />
+
+      {/* Edit Category Modal */}
+      {editingCategory && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-4 overflow-y-auto">
+          <div className="bg-white rounded-3xl max-w-lg w-full shadow-2xl animate-scaleIn border border-neutral-200 overflow-hidden">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                saveProductCategory(editingCategory);
+                showToast(`Đã lưu danh mục "${editingCategory.name}" thành công!`);
+                setEditingCategory(null);
+              }}
+            >
+              <div className="p-6 border-b border-neutral-100 flex items-center justify-between bg-neutral-50/70">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-800">
+                    <DynamicIcon name={editingCategory.iconName} url={editingCategory.iconUrl} className="w-5 h-5 text-emerald-700" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold text-neutral-900 font-heading">
+                      {productCategories.some((c: ProductCategory) => c.id === editingCategory.id)
+                        ? "Chỉnh sửa Danh mục & Icon"
+                        : "Thêm Danh mục Dược mỹ phẩm"}
+                    </h3>
+                    <p className="text-xs text-neutral-500 mt-0.5">Quản lý icon và thông tin danh mục</p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setEditingCategory(null)}
+                  className="p-1.5 rounded-xl text-neutral-400 hover:text-neutral-700 hover:bg-neutral-100"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div className="p-6 space-y-4 text-xs">
+                <div>
+                  <label className="block font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                    Tên danh mục *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={editingCategory.name}
+                    onChange={(e) => setEditingCategory({ ...editingCategory, name: e.target.value })}
+                    placeholder="VD: Làm sạch – Tẩy trang"
+                    className="w-full px-3 py-2 text-sm border border-neutral-300 rounded-xl font-bold focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden"
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                      Mã ID / Slug *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={editingCategory.slug || editingCategory.id}
+                      onChange={(e) => setEditingCategory({ ...editingCategory, id: e.target.value, slug: e.target.value })}
+                      placeholder="VD: lam-sach"
+                      className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-xl font-mono focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                      Thứ tự hiển thị
+                    </label>
+                    <input
+                      type="number"
+                      value={editingCategory.order || 1}
+                      onChange={(e) => setEditingCategory({ ...editingCategory, order: Number(e.target.value) })}
+                      className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-xl font-mono"
+                    />
+                  </div>
+                </div>
+
+                {/* Icon Selection Box */}
+                <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="font-semibold text-neutral-800 uppercase tracking-wider text-[11px]">
+                      Biểu tượng hiển thị (Icon)
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setShowIconPickerForCategory(true)}
+                      className="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1"
+                    >
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>Đổi Icon / SVG</span>
+                    </button>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-white border border-neutral-300 flex items-center justify-center p-2 shadow-xs shrink-0">
+                      <DynamicIcon name={editingCategory.iconName} url={editingCategory.iconUrl} className="w-6 h-6 text-emerald-700" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <span className="font-mono font-bold text-neutral-900 block truncate">
+                        {editingCategory.iconUrl ? "Icon Ảnh/SVG riêng" : `Lucide: ${editingCategory.iconName || "Sparkles"}`}
+                      </span>
+                      <span className="text-[11px] text-neutral-400 block truncate">
+                        {editingCategory.iconUrl || "Biểu tượng vector chuẩn y khoa"}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                    Mô tả danh mục
+                  </label>
+                  <textarea
+                    rows={3}
+                    value={editingCategory.description || (editingCategory as any).desc || ""}
+                    onChange={(e) => setEditingCategory({ ...editingCategory, description: e.target.value })}
+                    placeholder="Mô tả công dụng và phân loại sản phẩm thuộc danh mục này..."
+                    className="w-full px-3 py-2 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden resize-none"
+                  />
+                </div>
+
+                <div className="flex items-center gap-2 pt-1">
+                  <input
+                    type="checkbox"
+                    id="catEnabledCheck"
+                    checked={editingCategory.enabled !== false}
+                    onChange={(e) => setEditingCategory({ ...editingCategory, enabled: e.target.checked })}
+                    className="w-4 h-4 text-emerald-600 rounded border-neutral-300 focus:ring-emerald-500"
+                  />
+                  <label htmlFor="catEnabledCheck" className="font-medium text-neutral-800 cursor-pointer text-xs">
+                    Kích hoạt hiển thị danh mục này trên website
+                  </label>
+                </div>
+              </div>
+
+              <div className="p-4 bg-neutral-50 border-t border-neutral-200 flex items-center justify-end gap-2.5">
+                <button
+                  type="button"
+                  onClick={() => setEditingCategory(null)}
+                  className="px-4 py-2 text-xs font-semibold text-neutral-700 bg-white border border-neutral-300 rounded-xl hover:bg-neutral-100 transition"
+                >
+                  Hủy bỏ
+                </button>
+                <button
+                  type="submit"
+                  className="px-5 py-2 text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition"
+                >
+                  Lưu Danh Mục
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Delete Category Confirmation Modal */}
+      <ConfirmationModal
+        isOpen={!!deleteCategoryConfirmId}
+        type="danger"
+        title="Xóa Danh mục Dược mỹ phẩm?"
+        message="Hành động này sẽ xóa danh mục khỏi hệ thống website. Các sản phẩm thuộc danh mục này vẫn được giữ nguyên an toàn."
+        confirmLabel="Xóa Danh mục"
+        cancelLabel="Hủy bỏ"
+        onConfirm={() => {
+          if (deleteCategoryConfirmId) {
+            deleteProductCategory(deleteCategoryConfirmId);
+            setDeleteCategoryConfirmId(null);
+            showToast("Đã xóa danh mục dược mỹ phẩm thành công!");
+          }
+        }}
+        onCancel={() => setDeleteCategoryConfirmId(null)}
+      />
+
+      {/* Icon Picker Modal for Category */}
+      <IconPickerModal
+        isOpen={showIconPickerForCategory}
+        onClose={() => setShowIconPickerForCategory(false)}
+        selectedIconName={editingCategory?.iconName || "Sparkles"}
+        selectedIconUrl={editingCategory?.iconUrl}
+        recommendedCategory="product"
+        title="Chọn Icon cho Danh mục Dược mỹ phẩm"
+        onSelect={(name, url) => {
+          if (editingCategory) {
+            setEditingCategory({
+              ...editingCategory,
+              iconName: name,
+              iconUrl: url
+            });
+          }
+          setShowIconPickerForCategory(false);
+          showToast(`Đã chọn icon "${name}" cho danh mục!`);
+        }}
       />
     </div>
   );

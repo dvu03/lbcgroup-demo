@@ -24,6 +24,8 @@ import {
 } from 'lucide-react';
 import { useDemoData } from '../../context/DemoDataContext';
 import { initialNavItems } from '../../data/navigation';
+import { initialProductCategories } from '../../data/categories';
+import { DynamicIcon } from '../common/DynamicIcon';
 import { SearchBar } from './SearchBar';
 
 interface MainNavigationProps {
@@ -35,7 +37,7 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({
   isMobileMenuOpen,
   onCloseMobileMenu
 }) => {
-  const { specialties, services, siteConfig, navItems, brands } = useDemoData();
+  const { specialties, services, siteConfig, navItems, brands, productCategories: contextCategories } = useDemoData();
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileTab, setMobileTab] = useState<'menu' | 'specialties'>('menu');
   const location = useLocation();
@@ -43,38 +45,48 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({
   const currentNavItems = (navItems && navItems.length > 0 ? navItems : initialNavItems);
   const activeNavItems = currentNavItems.filter(item => item.isActive !== false);
 
-  const productCategories = [
-    { id: 'lam-sach', name: 'Làm sạch – tẩy trang' },
-    { id: 'dac-tri-mun', name: 'Đặc trị mụn' },
-    { id: 'phuc-hoi-duong-am', name: 'Phục hồi – dưỡng ẩm' },
-    { id: 'chong-nang', name: 'Chống nắng bảo vệ' },
-    { id: 'sang-da-mo-tham', name: 'Sáng da – mờ thâm' }
-  ];
+  const productCategories = contextCategories && contextCategories.length > 0
+    ? contextCategories
+    : initialProductCategories;
 
-  const getSpecialtyIcon = (slug: string) => {
-    switch (slug) {
-      case 'khoa-da-lieu': return <Stethoscope className="w-5 h-5 text-primary-600" />;
-      case 'khoa-xet-nghiem': return <FlaskConical className="w-5 h-5 text-primary-600" />;
-      case 'nha-thuoc': return <Pill className="w-5 h-5 text-primary-600" />;
-      case 'duoc-my-pham': return <Sparkles className="w-5 h-5 text-primary-600" />;
-      case 'dao-tao': return <GraduationCap className="w-5 h-5 text-primary-600" />;
-      default: return <Stethoscope className="w-5 h-5 text-primary-600" />;
+  const getSpecialtyIcon = (specOrSlug: any, sizeClass = "w-5 h-5") => {
+    if (typeof specOrSlug === 'object' && specOrSlug !== null) {
+      return (
+        <DynamicIcon
+          name={specOrSlug.iconName || 'Stethoscope'}
+          url={specOrSlug.iconUrl}
+          className={`${sizeClass} text-primary-600`}
+        />
+      );
     }
+    const found = specialties.find(s => s.slug === specOrSlug);
+    return (
+      <DynamicIcon
+        name={found?.iconName || 'Stethoscope'}
+        url={found?.iconUrl}
+        className={`${sizeClass} text-primary-600`}
+      />
+    );
   };
 
-  const getServiceIcon = (slug: string) => {
-    switch (slug) {
-      case 'dieu-tri-mun': return <ShieldAlert className="w-4 h-4 text-primary-600" />;
-      case 'dieu-tri-seo': return <Activity className="w-4 h-4 text-primary-600" />;
-      case 'dieu-tri-nam-tan-nhang': return <SunMedium className="w-4 h-4 text-primary-600" />;
-      case 'dieu-tri-rung-toc': return <Feather className="w-4 h-4 text-primary-600" />;
-      case 'tham-my-noi-khoa': return <Syringe className="w-4 h-4 text-primary-600" />;
-      case 'nang-co': return <Zap className="w-4 h-4 text-primary-600" />;
-      case 'cham-soc-da-chuyen-sau': return <HeartHandshake className="w-4 h-4 text-primary-600" />;
-      case 'benh-da-lieu-khac': return <Microscope className="w-4 h-4 text-primary-600" />;
-      case 'triet-long': return <Sparkle className="w-4 h-4 text-primary-600" />;
-      default: return <Activity className="w-4 h-4 text-primary-600" />;
+  const getServiceIcon = (srvOrSlug: any, sizeClass = "w-4 h-4") => {
+    if (typeof srvOrSlug === 'object' && srvOrSlug !== null) {
+      return (
+        <DynamicIcon
+          name={srvOrSlug.iconName || 'Sparkles'}
+          url={srvOrSlug.iconUrl}
+          className={`${sizeClass} text-primary-600`}
+        />
+      );
     }
+    const found = services.find(s => s.slug === srvOrSlug);
+    return (
+      <DynamicIcon
+        name={found?.iconName || 'Sparkles'}
+        url={found?.iconUrl}
+        className={`${sizeClass} text-primary-600`}
+      />
+    );
   };
 
   const isActive = (path: string) => {
@@ -273,10 +285,13 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({
                                 <Link
                                   key={c.id}
                                   to={`/duoc-my-pham?cat=${c.id}`}
-                                  className="flex items-center justify-between p-2 rounded-xl hover:bg-primary-50 text-xs text-slate-700 hover:text-primary-700 font-medium transition-colors"
+                                  className="flex items-center justify-between p-2 rounded-xl hover:bg-primary-50 text-xs text-slate-700 hover:text-primary-700 font-medium transition-colors group/cat"
                                 >
-                                  <span>{c.name}</span>
-                                  <ChevronRight className="w-3.5 h-3.5 text-slate-300" />
+                                  <div className="flex items-center gap-2">
+                                    <DynamicIcon name={c.iconName} url={c.iconUrl} className="w-4 h-4 text-primary-600 shrink-0" />
+                                    <span>{c.name}</span>
+                                  </div>
+                                  <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover/cat:text-primary-600 transition-colors" />
                                 </Link>
                               ))}
                             </div>

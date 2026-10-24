@@ -5,6 +5,7 @@ export interface ServiceItem {
   slug: string;
   iconCode: string;
   iconName: string;
+  iconUrl?: string;
   metaDescription: string;
   suitableFor: string[];
   protocolSteps: { step: number; title: string; desc: string }[];

@@ -15,6 +15,8 @@ import { useDemoData } from "../../../context/DemoDataContext";
 import { Specialty } from "../../../data/specialties";
 import { ConfirmationModal } from "../ConfirmationModal";
 import { MediaLibraryModal } from "../MediaLibraryModal";
+import { DynamicIcon } from "../../common/DynamicIcon";
+import { IconPickerModal } from "../IconPickerModal";
 
 export const SpecialtiesTab: React.FC = () => {
   const { specialties, saveSpecialty, deleteSpecialty } = useDemoData();
@@ -22,6 +24,7 @@ export const SpecialtiesTab: React.FC = () => {
   const [editingSpecialty, setEditingSpecialty] = useState<Specialty | null>(null);
   const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
   const [showMediaPicker, setShowMediaPicker] = useState(false);
+  const [showIconPicker, setShowIconPicker] = useState(false);
   const [toastMsg, setToastMsg] = useState<string | null>(null);
 
   const showToast = (msg: string) => {
@@ -111,10 +114,15 @@ export const SpecialtiesTab: React.FC = () => {
                 </span>
               </div>
 
-              <div>
-                <h3 className="text-sm font-bold text-neutral-900 font-heading">{s.name}</h3>
-                <p className="text-xs text-emerald-800 font-medium">{s.tagline}</p>
-                <p className="text-xs text-neutral-500 line-clamp-2 mt-1">{s.shortDesc}</p>
+              <div className="flex items-start gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/60 flex items-center justify-center shrink-0 mt-0.5">
+                  <DynamicIcon name={s.iconName} url={s.iconUrl} className="w-4 h-4 text-emerald-700" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-neutral-900 font-heading">{s.name}</h3>
+                  <p className="text-xs text-emerald-800 font-medium">{s.tagline}</p>
+                  <p className="text-xs text-neutral-500 line-clamp-2 mt-1">{s.shortDesc}</p>
+                </div>
               </div>
 
               <div className="text-[11px] text-neutral-400">
@@ -159,6 +167,40 @@ export const SpecialtiesTab: React.FC = () => {
               </div>
 
               <div className="p-6 space-y-4 max-h-[60vh] overflow-y-auto text-xs">
+                {/* Icon Picker Section */}
+                <div className="p-3.5 bg-neutral-50 rounded-xl border border-neutral-200">
+                  <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2">
+                    Icon Chuyên khoa (Hiển thị Menu & Danh mục)
+                  </label>
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-xl bg-white border border-neutral-200 flex items-center justify-center shadow-xs">
+                        <DynamicIcon
+                          name={editingSpecialty.iconName}
+                          url={editingSpecialty.iconUrl}
+                          className="w-6 h-6 text-emerald-700"
+                        />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-neutral-900">
+                          {editingSpecialty.iconUrl ? "Icon ảnh / SVG tùy chỉnh" : (editingSpecialty.iconName || "Stethoscope")}
+                        </div>
+                        <div className="text-[11px] text-neutral-500">
+                          {editingSpecialty.iconUrl ? "Tài nguyên Media upload" : "Icon vector Lucide"}
+                        </div>
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => setShowIconPicker(true)}
+                      className="px-3.5 py-1.5 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-lg transition"
+                    >
+                      Đổi Icon
+                    </button>
+                  </div>
+                </div>
+
                 <div>
                   <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
                     Tên chuyên khoa
@@ -306,6 +348,23 @@ export const SpecialtiesTab: React.FC = () => {
           setShowMediaPicker(false);
         }}
         title="Chọn ảnh Chuyên khoa từ Media"
+      />
+
+      <IconPickerModal
+        isOpen={showIconPicker}
+        onClose={() => setShowIconPicker(false)}
+        onSelect={(iconName, iconUrl) => {
+          if (editingSpecialty) {
+            setEditingSpecialty({
+              ...editingSpecialty,
+              iconName,
+              iconUrl
+            });
+          }
+        }}
+        currentIconName={editingSpecialty?.iconName}
+        currentIconUrl={editingSpecialty?.iconUrl}
+        initialCategory="medical"
       />
     </div>
   );

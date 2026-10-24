@@ -7,7 +7,7 @@ import { useDemoData } from '../context/DemoDataContext';
 import { ShoppingBag, Filter, ShieldCheck, Search, ArrowRight, AlertCircle } from 'lucide-react';
 
 export const CosmeceuticalsPage: React.FC = () => {
-  const { products, brands, addToCart, pagesConfig } = useDemoData();
+  const { products, brands, addToCart, pagesConfig, productCategories } = useDemoData();
   const pageConfig = pagesConfig?.['duoc-my-pham'];
   const [searchParams] = useSearchParams();
   const categoryParam = searchParams.get('cat') || 'all';
@@ -19,11 +19,16 @@ export const CosmeceuticalsPage: React.FC = () => {
 
   const categories = [
     { id: 'all', label: 'Tất cả nhu cầu' },
-    { id: 'lam-sach', label: 'Làm sạch – Tẩy trang' },
-    { id: 'dac-tri-mun', label: 'Đặc trị mụn' },
-    { id: 'phuc-hoi-duong-am', label: 'Phục hồi – Cấp ẩm' },
-    { id: 'chong-nang', label: 'Chống nắng phổ rộng' },
-    { id: 'sang-da-mo-tham', label: 'Sáng da – Mờ thâm' }
+    ...(productCategories && productCategories.length > 0
+      ? productCategories.map(c => ({ id: c.id, label: c.name }))
+      : [
+          { id: 'lam-sach', label: 'Làm sạch – Tẩy trang' },
+          { id: 'dac-tri-mun', label: 'Đặc trị mụn' },
+          { id: 'phuc-hoi-duong-am', label: 'Phục hồi – Cấp ẩm' },
+          { id: 'chong-nang', label: 'Chống nắng phổ rộng' },
+          { id: 'sang-da-mo-tham', label: 'Sáng da – Mờ thâm' }
+        ]
+    )
   ];
 
   let filtered = products.filter(p => {

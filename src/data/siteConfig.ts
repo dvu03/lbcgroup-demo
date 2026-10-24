@@ -269,6 +269,23 @@ export interface AboutSectionConfig {
   ctaLink?: string;
 }
 
+export interface BackToTopConfig {
+  enabled: boolean;
+  iconName: string;
+  iconUrl?: string;
+  position: 'bottom-right' | 'bottom-left';
+  bottomOffsetDesktop: number;
+  bottomOffsetMobile: number;
+  sideOffset?: number;
+  backgroundColor: string;
+  iconColor: string;
+  hoverBackgroundColor: string;
+  size: 'sm' | 'md' | 'lg';
+  borderRadius: 'full' | 'xl' | 'lg';
+  scrollThreshold: number;
+  tooltipText?: string;
+}
+
 export interface SiteConfig {
   brandName: string;
   tagline: string;
@@ -339,6 +356,7 @@ export interface SiteConfig {
   fontHeading?: string;
   fontBody?: string;
   address?: string;
+  backToTop?: BackToTopConfig;
 }
 
 export const initialSiteConfig: SiteConfig = {
@@ -457,5 +475,20 @@ export const initialSiteConfig: SiteConfig = {
   logoHeader: "/images/logo.svg",
   logoUrl: "/images/logo.svg",
   logoWhiteUrl: "/images/logo-white.svg",
-  logoFooterUrl: "/images/logo-white.svg"
+  logoFooterUrl: "/images/logo-white.svg",
+  backToTop: {
+    enabled: true,
+    iconName: "ArrowUp",
+    position: "bottom-right",
+    bottomOffsetDesktop: 96,
+    bottomOffsetMobile: 76,
+    sideOffset: 24,
+    backgroundColor: "#0E7C86",
+    iconColor: "#FFFFFF",
+    hoverBackgroundColor: "#096068",
+    size: "md",
+    borderRadius: "full",
+    scrollThreshold: 300,
+    tooltipText: "Cuộn lên đầu trang"
+  }
 };

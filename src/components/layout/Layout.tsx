@@ -5,6 +5,7 @@ import { Footer } from './Footer';
 import { FloatingContact } from './FloatingContact';
 import { CartDrawer } from '../common/CartDrawer';
 import { PopupBanner } from '../common/PopupBanner';
+import { BackToTop } from '../common/BackToTop';
 
 export const Layout: React.FC = () => {
   const { pathname } = useLocation();
@@ -26,6 +27,7 @@ export const Layout: React.FC = () => {
       </main>
       <Footer />
       <FloatingContact />
+      <BackToTop />
       <CartDrawer />
       <PopupBanner />
     </div>

@@ -11,6 +11,7 @@ import { initialTechnologies, TechnologyItem } from '../data/technologies';
 import { initialCaseStudies, CaseStudyItem } from '../data/caseStudies';
 import { initialBrands, BrandItem } from '../data/brands';
 import { initialProducts, ProductItem } from '../data/products';
+import { initialProductCategories, ProductCategory } from '../data/categories';
 import { initialArticles, ArticleItem } from '../data/articles';
 import { initialLocations, LocationItem } from '../data/locations';
 import { initialFAQs, FAQGroup } from '../data/faqs';
@@ -100,6 +101,11 @@ interface DemoDataContextType {
   saveProduct: (item: ProductItem) => void;
   deleteProduct: (id: string) => void;
   duplicateProduct: (id: string) => void;
+
+  productCategories: ProductCategory[];
+  updateProductCategories: (items: ProductCategory[]) => void;
+  saveProductCategory: (item: ProductCategory) => void;
+  deleteProductCategory: (id: string) => void;
 
   articles: ArticleItem[];
   saveArticle: (item: ArticleItem) => void;
@@ -212,6 +218,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
   const [caseStudies, setCaseStudies] = useState<CaseStudyItem[]>(() => loadFromStorage("caseStudies", initialCaseStudies));
   const [brands, setBrands] = useState<BrandItem[]>(() => loadFromStorage("brands", initialBrands));
   const [products, setProducts] = useState<ProductItem[]>(() => loadFromStorage("products", initialProducts));
+  const [productCategories, setProductCategories] = useState<ProductCategory[]>(() => loadFromStorage("productCategories", initialProductCategories));
   const [articles, setArticles] = useState<ArticleItem[]>(() => loadFromStorage("articles", initialArticles));
   const [locations, setLocations] = useState<LocationItem[]>(() => loadFromStorage("locations", initialLocations));
   const [faqs, setFaqs] = useState<FAQGroup[]>(() => loadFromStorage("faqs", initialFAQs));
@@ -257,6 +264,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
           if (data.caseStudies) setCaseStudies(data.caseStudies);
           if (data.brands) setBrands(data.brands);
           if (data.products) setProducts(data.products);
+          if (data.productCategories) setProductCategories(data.productCategories);
           if (data.articles) setArticles(data.articles);
           if (data.locations) setLocations(data.locations);
           if (data.faqs) setFaqs(data.faqs);
@@ -315,6 +323,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
   useEffect(() => saveToStorage("caseStudies", caseStudies), [caseStudies]);
   useEffect(() => saveToStorage("brands", brands), [brands]);
   useEffect(() => saveToStorage("products", products), [products]);
+  useEffect(() => saveToStorage("productCategories", productCategories), [productCategories]);
   useEffect(() => saveToStorage("articles", articles), [articles]);
   useEffect(() => saveToStorage("locations", locations), [locations]);
   useEffect(() => saveToStorage("faqs", faqs), [faqs]);
@@ -336,6 +345,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
   useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("caseStudies", caseStudies, "Before-After", "Ca lâm sàng"); }, [caseStudies]);
   useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("brands", brands, "Thương hiệu", "Đối tác thương hiệu"); }, [brands]);
   useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("products", products, "Dược mỹ phẩm", "Sản phẩm"); }, [products]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("productCategories", productCategories, "Danh mục sản phẩm", "Cập nhật danh mục dược mỹ phẩm"); }, [productCategories]);
   useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("articles", articles, "Tin tức & Y khoa", "Bài viết chuyên môn"); }, [articles]);
   useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("locations", locations, "Cơ sở", "Chi nhánh"); }, [locations]);
   useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("faqs", faqs, "Câu hỏi thường gặp", "FAQ"); }, [faqs]);
@@ -703,6 +713,28 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
     logAuditAction("Sản phẩm", "create", duplicated.name, "Nhân bản sản phẩm");
   };
 
+  const saveProductCategory = (item: ProductCategory) => {
+    setProductCategories(prev => {
+      const idx = prev.findIndex(c => c.id === item.id);
+      if (idx >= 0) {
+        const next = [...prev];
+        next[idx] = item;
+        logAuditAction("Danh mục sản phẩm", "update", item.name, "Cập nhật danh mục dược mỹ phẩm");
+        return next;
+      }
+      logAuditAction("Danh mục sản phẩm", "create", item.name, "Thêm danh mục dược mỹ phẩm mới");
+      return [...prev, item];
+    });
+  };
+
+  const deleteProductCategory = (id: string) => {
+    setProductCategories(prev => {
+      const found = prev.find(c => c.id === id);
+      logAuditAction("Danh mục sản phẩm", "delete", found?.name || id, "Xóa danh mục");
+      return prev.filter(c => c.id !== id);
+    });
+  };
+
   const saveArticle = (item: ArticleItem) => {
     setArticles(prev => {
       const idx = prev.findIndex(a => a.id === item.id);
@@ -956,6 +988,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
       caseStudies,
       brands,
       products,
+      productCategories,
       articles,
       locations,
       faqs,
@@ -980,6 +1013,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
       if (data.caseStudies) setCaseStudies(data.caseStudies);
       if (data.brands) setBrands(data.brands);
       if (data.products) setProducts(data.products);
+      if (data.productCategories) setProductCategories(data.productCategories);
       if (data.articles) setArticles(data.articles);
       if (data.locations) setLocations(data.locations);
       if (data.faqs) setFaqs(data.faqs);
@@ -1008,6 +1042,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
         caseStudies,
         brands,
         products,
+        productCategories,
         articles,
         locations,
         faqs,
@@ -1092,6 +1127,10 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
         saveProduct,
         deleteProduct,
         duplicateProduct,
+        productCategories,
+        updateProductCategories: setProductCategories,
+        saveProductCategory,
+        deleteProductCategory,
         articles,
         saveArticle,
         deleteArticle,

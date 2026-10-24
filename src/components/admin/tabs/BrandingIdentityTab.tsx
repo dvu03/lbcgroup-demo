@@ -19,12 +19,15 @@ import {
   Search,
   Sliders,
   Type,
-  Share
+  Share,
+  ArrowUp
 } from "lucide-react";
 import { useDemoData } from "../../../context/DemoDataContext";
-import { SiteConfig } from "../../../data/siteConfig";
+import { SiteConfig, BackToTopConfig } from "../../../data/siteConfig";
 import { MediaLibraryModal } from "../MediaLibraryModal";
 import { fileToMediaItem, saveMediaItemToDB } from "../../../utils/mediaStorage";
+import { DynamicIcon } from "../../common/DynamicIcon";
+import { IconPickerModal } from "../IconPickerModal";
 
 export type BrandingSubTab = "branding" | "contact" | "seo" | "ui" | "popup";
 
@@ -39,6 +42,7 @@ export const BrandingIdentityTab: React.FC<BrandingIdentityTabProps> = ({
   const [activeSubTab, setActiveSubTab] = useState<BrandingSubTab>(initialSubTab);
   const [formData, setFormData] = useState<SiteConfig>({ ...siteConfig });
   const [mediaPickerTarget, setMediaPickerTarget] = useState<"logoHeader" | "logoFooter" | "favicon" | "ogImage" | "popupImage" | null>(null);
+  const [showBackToTopIconPicker, setShowBackToTopIconPicker] = useState(false);
   const [toastMsg, setToastMsg] = useState<string | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
   const [previewErrors, setPreviewErrors] = useState<{
@@ -292,7 +296,7 @@ export const BrandingIdentityTab: React.FC<BrandingIdentityTabProps> = ({
           }`}
         >
           <Sliders className="w-4 h-4" />
-          <span>5. Popup & Liên Hệ Nổi</span>
+          <span>5. Popup, Liên Hệ Nổi & Back to Top</span>
         </button>
       </div>
 
@@ -1265,6 +1269,403 @@ export const BrandingIdentityTab: React.FC<BrandingIdentityTabProps> = ({
               </div>
             </div>
 
+            {/* Mục 18: Nút Di Chuyển Lên Đầu Trang (Back To Top) */}
+            {(() => {
+              const bttConfig: BackToTopConfig = {
+                enabled: true,
+                iconName: "ArrowUp",
+                iconUrl: "",
+                position: "bottom-right",
+                bottomOffsetDesktop: 96,
+                bottomOffsetMobile: 76,
+                sideOffset: 24,
+                size: "md",
+                backgroundColor: "#0E7C86",
+                hoverBackgroundColor: "#0A5C63",
+                iconColor: "#FFFFFF",
+                borderRadius: "full",
+                scrollThreshold: 300,
+                ...(formData.backToTop || {})
+              };
+
+              const updateBtt = (partial: Partial<BackToTopConfig>) => {
+                setFormData(prev => ({
+                  ...prev,
+                  backToTop: {
+                    ...bttConfig,
+                    ...partial
+                  }
+                }));
+              };
+
+              return (
+                <div className="bg-white rounded-3xl border border-neutral-200 p-6 shadow-xs space-y-5">
+                  <div className="flex items-center justify-between pb-3 border-b border-neutral-100 flex-wrap gap-2">
+                    <div className="flex items-center gap-2">
+                      <ArrowUp className="w-4 h-4 text-emerald-700" />
+                      <h3 className="font-bold text-neutral-900 text-sm font-heading">
+                        Mục 18. Nút Di Chuyển Lên Đầu Trang (Back To Top)
+                      </h3>
+                    </div>
+
+                    <label className="flex items-center gap-2 text-xs font-bold cursor-pointer">
+                      <span className={bttConfig.enabled ? "text-emerald-700 font-semibold" : "text-neutral-500"}>
+                        {bttConfig.enabled ? "Đang BẬT" : "Đang TẮT"}
+                      </span>
+                      <input
+                        type="checkbox"
+                        checked={bttConfig.enabled}
+                        onChange={(e) => updateBtt({ enabled: e.target.checked })}
+                        className="w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500"
+                      />
+                    </label>
+                  </div>
+
+                  <div className="p-3.5 bg-emerald-50/70 border border-emerald-200/70 rounded-2xl text-[11px] text-emerald-900 leading-relaxed">
+                    <strong>Hành vi chuẩn UX:</strong> Nút tự động xuất hiện mượt mà khi người dùng cuộn qua ngưỡng cấu hình, cuộn êm (smooth scroll) lên đỉnh trang, tự ẩn khi ở đầu trang, hỗ trợ bàn phím (Tab focus, Enter/Space), tuân thủ <code>prefers-reduced-motion</code> và được tính toán khoảng cách an toàn tránh đè lên Floating Contact Hub.
+                  </div>
+
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    {/* Cột Cấu Hình (7 cols) */}
+                    <div className="lg:col-span-7 space-y-4">
+                      {/* Chọn Icon Nút */}
+                      <div className="p-3.5 bg-neutral-50 rounded-2xl border border-neutral-200">
+                        <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-2">
+                          1. Biểu tượng nút Back To Top
+                        </label>
+                        <div className="flex items-center justify-between gap-3">
+                          <div className="flex items-center gap-3">
+                            <div
+                              className="w-11 h-11 rounded-xl flex items-center justify-center shadow-xs transition"
+                              style={{
+                                backgroundColor: bttConfig.backgroundColor,
+                                color: bttConfig.iconColor,
+                                borderRadius: bttConfig.borderRadius === "full" ? "9999px" : bttConfig.borderRadius === "xl" ? "12px" : "8px"
+                              }}
+                            >
+                              <DynamicIcon
+                                name={bttConfig.iconName || "ArrowUp"}
+                                url={bttConfig.iconUrl}
+                                className="w-5 h-5"
+                              />
+                            </div>
+                            <div>
+                              <div className="text-xs font-bold text-neutral-900">
+                                {bttConfig.iconUrl ? "Icon ảnh / SVG tùy chỉnh" : (bttConfig.iconName || "ArrowUp")}
+                              </div>
+                              <div className="text-[11px] text-neutral-500">
+                                {bttConfig.iconUrl ? "Tài nguyên Media upload" : "Icon thư viện Lucide"}
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="flex items-center gap-2">
+                            {(bttConfig.iconUrl || bttConfig.iconName !== "ArrowUp") && (
+                              <button
+                                type="button"
+                                onClick={() => updateBtt({ iconName: "ArrowUp", iconUrl: "" })}
+                                className="px-2.5 py-1.5 text-xs text-neutral-600 hover:text-neutral-900 bg-white border border-neutral-200 rounded-lg transition"
+                                title="Đặt lại ArrowUp mặc định"
+                              >
+                                Mặc định
+                              </button>
+                            )}
+                            <button
+                              type="button"
+                              onClick={() => setShowBackToTopIconPicker(true)}
+                              className="px-3 py-1.5 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-lg transition"
+                            >
+                              Đổi Icon
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Vị trí hiển thị */}
+                      <div className="p-3.5 bg-neutral-50 rounded-2xl border border-neutral-200 space-y-2">
+                        <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider">
+                          2. Vị trí hiển thị
+                        </label>
+                        <div className="grid grid-cols-2 gap-3 text-xs">
+                          <label className={`p-3 rounded-xl border flex items-center gap-2.5 cursor-pointer transition ${bttConfig.position === "bottom-right" ? "bg-emerald-50/60 border-emerald-300 text-emerald-950 font-semibold" : "bg-white border-neutral-200 text-neutral-700"}`}>
+                            <input
+                              type="radio"
+                              name="bttPosition"
+                              checked={bttConfig.position === "bottom-right"}
+                              onChange={() => updateBtt({ position: "bottom-right" })}
+                              className="text-emerald-600"
+                            />
+                            <div>
+                              <div>Góc phải dưới (Khuyên dùng)</div>
+                              <div className="text-[10px] text-neutral-500 font-normal">Nằm trên cụm Hotline/Zalo nổi</div>
+                            </div>
+                          </label>
+
+                          <label className={`p-3 rounded-xl border flex items-center gap-2.5 cursor-pointer transition ${bttConfig.position === "bottom-left" ? "bg-emerald-50/60 border-emerald-300 text-emerald-950 font-semibold" : "bg-white border-neutral-200 text-neutral-700"}`}>
+                            <input
+                              type="radio"
+                              name="bttPosition"
+                              checked={bttConfig.position === "bottom-left"}
+                              onChange={() => updateBtt({ position: "bottom-left" })}
+                              className="text-emerald-600"
+                            />
+                            <div>
+                              <div>Góc trái dưới</div>
+                              <div className="text-[10px] text-neutral-500 font-normal">Độc lập ở cạnh trái màn hình</div>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+
+                      {/* Kích thước & Bo góc */}
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="p-3.5 bg-neutral-50 rounded-2xl border border-neutral-200">
+                          <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5">
+                            3. Kích thước nút
+                          </label>
+                          <select
+                            value={bttConfig.size}
+                            onChange={(e) => updateBtt({ size: e.target.value as "sm" | "md" | "lg" })}
+                            className="w-full px-3 py-1.5 text-xs border border-neutral-300 rounded-xl bg-white font-medium"
+                          >
+                            <option value="sm">Nhỏ gọn (36 × 36 px)</option>
+                            <option value="md">Tiêu chuẩn (44 × 44 px - Khuyên dùng)</option>
+                            <option value="lg">Lớn nổi bật (52 × 52 px)</option>
+                          </select>
+                        </div>
+
+                        <div className="p-3.5 bg-neutral-50 rounded-2xl border border-neutral-200">
+                          <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1.5">
+                            4. Kiểu bo góc
+                          </label>
+                          <select
+                            value={bttConfig.borderRadius}
+                            onChange={(e) => updateBtt({ borderRadius: e.target.value as "full" | "xl" | "lg" })}
+                            className="w-full px-3 py-1.5 text-xs border border-neutral-300 rounded-xl bg-white font-medium"
+                          >
+                            <option value="full">Tròn hoàn toàn (Bo tròn 9999px)</option>
+                            <option value="xl">Bo góc mềm vừa (12px)</option>
+                            <option value="lg">Bo góc nhẹ vuông vức (8px)</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      {/* Khoảng cách an toàn (Offsets & Threshold) */}
+                      <div className="p-3.5 bg-neutral-50 rounded-2xl border border-neutral-200 space-y-3">
+                        <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider">
+                          5. Khoảng cách an toàn & Ngưỡng cuộn (Safe Offsets)
+                        </label>
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                          <div>
+                            <span className="text-[11px] font-medium text-neutral-600 block mb-1">Cách đáy Desktop:</span>
+                            <div className="flex items-center gap-1.5">
+                              <input
+                                type="number"
+                                min={40}
+                                max={250}
+                                step={2}
+                                value={bttConfig.bottomOffsetDesktop}
+                                onChange={(e) => updateBtt({ bottomOffsetDesktop: Number(e.target.value) || 96 })}
+                                className="w-full px-2.5 py-1.5 text-xs border border-neutral-300 rounded-xl font-mono text-center"
+                              />
+                              <span className="text-neutral-400 font-mono text-[11px]">px</span>
+                            </div>
+                            <span className="text-[10px] text-neutral-400 mt-1 block">Khuyên dùng: 96px</span>
+                          </div>
+
+                          <div>
+                            <span className="text-[11px] font-medium text-neutral-600 block mb-1">Cách đáy Mobile:</span>
+                            <div className="flex items-center gap-1.5">
+                              <input
+                                type="number"
+                                min={40}
+                                max={200}
+                                step={2}
+                                value={bttConfig.bottomOffsetMobile}
+                                onChange={(e) => updateBtt({ bottomOffsetMobile: Number(e.target.value) || 76 })}
+                                className="w-full px-2.5 py-1.5 text-xs border border-neutral-300 rounded-xl font-mono text-center"
+                              />
+                              <span className="text-neutral-400 font-mono text-[11px]">px</span>
+                            </div>
+                            <span className="text-[10px] text-neutral-400 mt-1 block">Khuyên dùng: 76px</span>
+                          </div>
+
+                          <div>
+                            <span className="text-[11px] font-medium text-neutral-600 block mb-1">Ngưỡng cuộn hiện:</span>
+                            <div className="flex items-center gap-1.5">
+                              <input
+                                type="number"
+                                min={100}
+                                max={1500}
+                                step={50}
+                                value={bttConfig.scrollThreshold}
+                                onChange={(e) => updateBtt({ scrollThreshold: Number(e.target.value) || 300 })}
+                                className="w-full px-2.5 py-1.5 text-xs border border-neutral-300 rounded-xl font-mono text-center"
+                              />
+                              <span className="text-neutral-400 font-mono text-[11px]">px</span>
+                            </div>
+                            <span className="text-[10px] text-neutral-400 mt-1 block">Khuyên dùng: 300px</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Bảng màu */}
+                      <div className="p-3.5 bg-neutral-50 rounded-2xl border border-neutral-200 space-y-3">
+                        <div className="flex items-center justify-between">
+                          <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider">
+                            6. Màu sắc nhận diện
+                          </label>
+                          <button
+                            type="button"
+                            onClick={() => updateBtt({
+                              backgroundColor: "#0E7C86",
+                              hoverBackgroundColor: "#0A5C63",
+                              iconColor: "#FFFFFF"
+                            })}
+                            className="text-[11px] text-emerald-700 hover:text-emerald-900 font-semibold"
+                          >
+                            Khôi phục chuẩn LBC (#0E7C86)
+                          </button>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                          <div>
+                            <span className="text-[11px] font-medium text-neutral-600 block mb-1">Màu nền nút:</span>
+                            <div className="flex items-center gap-2">
+                              <input
+                                type="color"
+                                value={bttConfig.backgroundColor}
+                                onChange={(e) => updateBtt({ backgroundColor: e.target.value })}
+                                className="w-7 h-7 rounded-lg border border-neutral-300 cursor-pointer p-0.5"
+                              />
+                              <input
+                                type="text"
+                                value={bttConfig.backgroundColor}
+                                onChange={(e) => updateBtt({ backgroundColor: e.target.value })}
+                                className="w-full px-2 py-1 text-xs font-mono border border-neutral-300 rounded-lg uppercase"
+                              />
+                            </div>
+                          </div>
+
+                          <div>
+                            <span className="text-[11px] font-medium text-neutral-600 block mb-1">Màu khi Hover:</span>
+                            <div className="flex items-center gap-2">
+                              <input
+                                type="color"
+                                value={bttConfig.hoverBackgroundColor}
+                                onChange={(e) => updateBtt({ hoverBackgroundColor: e.target.value })}
+                                className="w-7 h-7 rounded-lg border border-neutral-300 cursor-pointer p-0.5"
+                              />
+                              <input
+                                type="text"
+                                value={bttConfig.hoverBackgroundColor}
+                                onChange={(e) => updateBtt({ hoverBackgroundColor: e.target.value })}
+                                className="w-full px-2 py-1 text-xs font-mono border border-neutral-300 rounded-lg uppercase"
+                              />
+                            </div>
+                          </div>
+
+                          <div>
+                            <span className="text-[11px] font-medium text-neutral-600 block mb-1">Màu Icon:</span>
+                            <div className="flex items-center gap-2">
+                              <input
+                                type="color"
+                                value={bttConfig.iconColor}
+                                onChange={(e) => updateBtt({ iconColor: e.target.value })}
+                                className="w-7 h-7 rounded-lg border border-neutral-300 cursor-pointer p-0.5"
+                              />
+                              <input
+                                type="text"
+                                value={bttConfig.iconColor}
+                                onChange={(e) => updateBtt({ iconColor: e.target.value })}
+                                className="w-full px-2 py-1 text-xs font-mono border border-neutral-300 rounded-lg uppercase"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Cột Trực Quan Hóa Live Preview (5 cols) */}
+                    <div className="lg:col-span-5 space-y-4">
+                      <div className="bg-neutral-900 rounded-2xl p-4 text-white space-y-3 sticky top-4">
+                        <div className="flex items-center justify-between text-xs pb-2 border-b border-neutral-800">
+                          <span className="font-bold flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span>Trực Quan Hóa Tương Tác Live</span>
+                          </span>
+                          <span className="text-[10px] text-neutral-400 font-mono">Desktop & Mobile</span>
+                        </div>
+
+                        {/* Desktop Simulation Window */}
+                        <div className="relative h-64 rounded-xl bg-slate-950 border border-neutral-800 overflow-hidden flex flex-col justify-between p-3 select-none">
+                          {/* Top browser bar */}
+                          <div className="flex items-center justify-between pb-2 border-b border-neutral-800/80">
+                            <div className="flex items-center gap-1.5">
+                              <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                              <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                            </div>
+                            <span className="text-[9px] text-neutral-500 font-mono">lacbeautycenter.com</span>
+                          </div>
+
+                          {/* Mock Page Content Lines */}
+                          <div className="space-y-2 opacity-25">
+                            <div className="h-2.5 bg-neutral-700 rounded-full w-3/4"></div>
+                            <div className="h-2 bg-neutral-800 rounded-full w-full"></div>
+                            <div className="h-2 bg-neutral-800 rounded-full w-5/6"></div>
+                            <div className="h-2 bg-neutral-800 rounded-full w-4/6"></div>
+                          </div>
+
+                          {/* Floating Contact Hub simulation */}
+                          <div className="absolute bottom-3 right-3 flex flex-col items-center gap-1">
+                            <div className="w-9 h-9 rounded-full bg-[#0E7C86] flex items-center justify-center text-white text-[10px] shadow-lg font-bold">
+                              LBC
+                            </div>
+                            <span className="text-[8px] text-neutral-400 font-mono">Hub Liên Hệ</span>
+                          </div>
+
+                          {/* Back To Top Button Simulation */}
+                          {bttConfig.enabled ? (
+                            <div
+                              className="absolute transition-all duration-300 flex items-center justify-center shadow-2xl group cursor-pointer hover:scale-110"
+                              style={{
+                                bottom: `${Math.min(Math.max(bttConfig.bottomOffsetDesktop * 0.55, 30), 120)}px`,
+                                [bttConfig.position === "bottom-left" ? "left" : "right"]: "14px",
+                                width: bttConfig.size === "sm" ? "28px" : bttConfig.size === "lg" ? "40px" : "34px",
+                                height: bttConfig.size === "sm" ? "28px" : bttConfig.size === "lg" ? "40px" : "34px",
+                                backgroundColor: bttConfig.backgroundColor,
+                                color: bttConfig.iconColor,
+                                borderRadius: bttConfig.borderRadius === "full" ? "9999px" : bttConfig.borderRadius === "xl" ? "10px" : "6px"
+                              }}
+                              title="Bấm thử nghiệm cuộn lên đầu"
+                            >
+                              <DynamicIcon
+                                name={bttConfig.iconName || "ArrowUp"}
+                                url={bttConfig.iconUrl}
+                                className={bttConfig.size === "sm" ? "w-3.5 h-3.5" : bttConfig.size === "lg" ? "w-5 h-5" : "w-4 h-4"}
+                              />
+                            </div>
+                          ) : (
+                            <div className="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-xs text-xs text-neutral-400">
+                              (Nút Back to Top đang TẮT)
+                            </div>
+                          )}
+                        </div>
+
+                        <div className="text-[11px] text-neutral-400 leading-normal flex items-start gap-2 pt-1">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                          <span>
+                            Khoảng cách an toàn được tối ưu tự động: Trên desktop nút nằm trên cụm Hotline 1 khoảng thẩm mỹ ({bttConfig.bottomOffsetDesktop}px); trên mobile cách đáy {bttConfig.bottomOffsetMobile}px không che thanh công cụ.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })()}
+
             {/* Mục 5: Về Lạc's Beauty Center */}
             <div className="bg-white rounded-3xl border border-neutral-200 p-6 shadow-xs space-y-4">
               <div className="flex items-center gap-2 pb-3 border-b border-neutral-100">
@@ -1392,6 +1793,42 @@ export const BrandingIdentityTab: React.FC<BrandingIdentityTabProps> = ({
           setMediaPickerTarget(null);
         }}
         title="Chọn ảnh từ Thư viện Media"
+      />
+
+      {/* Back to Top Icon Picker Modal */}
+      <IconPickerModal
+        isOpen={showBackToTopIconPicker}
+        onClose={() => setShowBackToTopIconPicker(false)}
+        onSelect={(iconName, iconUrl) => {
+          setFormData(prev => {
+            const currentBtt = prev.backToTop || {
+              enabled: true,
+              iconName: "ArrowUp",
+              iconUrl: "",
+              position: "bottom-right",
+              bottomOffsetDesktop: 96,
+              bottomOffsetMobile: 76,
+              sideOffset: 24,
+              size: "md",
+              backgroundColor: "#0E7C86",
+              hoverBackgroundColor: "#0A5C63",
+              iconColor: "#FFFFFF",
+              borderRadius: "full",
+              scrollThreshold: 300
+            };
+            return {
+              ...prev,
+              backToTop: {
+                ...currentBtt,
+                iconName,
+                iconUrl: iconUrl || ""
+              }
+            };
+          });
+        }}
+        currentIconName={formData.backToTop?.iconName || "ArrowUp"}
+        currentIconUrl={formData.backToTop?.iconUrl}
+        initialCategory="navigation"
       />
     </div>
   );

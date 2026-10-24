@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingBag, ArrowRight, ShieldCheck } from 'lucide-react';
+import { ShoppingBag, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
 import { useDemoData } from '../../context/DemoDataContext';
+import { initialProductCategories } from '../../data/categories';
+import { DynamicIcon } from '../common/DynamicIcon';
 import { SectionTitle } from '../common/SectionTitle';
 
 export const FeaturedProductsSection: React.FC = () => {
-  const { products, addToCart } = useDemoData();
+  const { products, addToCart, productCategories: contextCategories } = useDemoData();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
+  const activeCategories = contextCategories && contextCategories.length > 0
+    ? contextCategories
+    : initialProductCategories;
+
   const categories = [
-    { id: 'all', label: 'Tất cả' },
-    { id: 'lam-sach', label: 'Làm sạch' },
-    { id: 'dac-tri-mun', label: 'Đặc trị mụn' },
-    { id: 'phuc-hoi-duong-am', label: 'Phục hồi – dưỡng ẩm' },
-    { id: 'chong-nang', label: 'Chống nắng' },
-    { id: 'sang-da-mo-tham', label: 'Sáng da – mờ thâm' }
+    { id: 'all', name: 'Tất cả', iconName: 'Sparkles', iconUrl: '' },
+    ...activeCategories
   ];
 
   const filteredProducts = (selectedCategory === 'all'
@@ -36,13 +38,20 @@ export const FeaturedProductsSection: React.FC = () => {
           <button
             key={cat.id}
             onClick={() => setSelectedCategory(cat.id)}
-            className={`px-4 py-2 rounded-full whitespace-nowrap transition-all ${
+            className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full whitespace-nowrap transition-all ${
               selectedCategory === cat.id
                 ? 'bg-primary-600 text-white shadow-md'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
-            {cat.label}
+            {cat.id !== 'all' && (
+              <DynamicIcon
+                name={cat.iconName}
+                url={cat.iconUrl}
+                className={`w-3.5 h-3.5 ${selectedCategory === cat.id ? 'text-white' : 'text-primary-600'}`}
+              />
+            )}
+            <span>{cat.name}</span>
           </button>
         ))}
       </div>
