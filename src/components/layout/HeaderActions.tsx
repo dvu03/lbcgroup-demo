@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { User, ShoppingBag, Calendar, Menu, X, LogIn, UserPlus, ClipboardList, ChevronDown } from 'lucide-react';
+import { User, ShoppingBag, Calendar, Menu, X, LogIn, UserPlus, ClipboardList, ChevronDown, Settings } from 'lucide-react';
 import { useDemoData } from '../../context/DemoDataContext';
 
 interface HeaderActionsProps {
@@ -123,6 +123,17 @@ export const HeaderActions: React.FC<HeaderActionsProps> = ({
                 >
                   <ClipboardList className="w-3.5 h-3.5 text-primary-600" />
                   <span>Lịch khám của tôi (Demo)</span>
+                </Link>
+
+                <div className="my-1.5 border-t border-slate-100" />
+
+                <Link
+                  to="/demo-admin"
+                  onClick={() => setIsAccountOpen(false)}
+                  className="flex items-center gap-2 px-3 py-2 rounded-xl bg-primary-50/80 hover:bg-primary-100 text-primary-800 font-semibold transition-colors"
+                >
+                  <Settings className="w-3.5 h-3.5 text-primary-600" />
+                  <span>Quản trị CMS (Admin)</span>
                 </Link>
               </div>
             </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Phone, Clock, Settings } from 'lucide-react';
 import { useDemoData } from '../../context/DemoDataContext';
 import { initialHeaderMainConfig, HeaderMainConfig } from '../../data/siteConfig';
 
@@ -98,6 +99,22 @@ export const HeaderTopbar: React.FC = () => {
               <span>{operatingHours}</span>
             </div>
           )}
+
+          <span className={isDark ? 'text-white/20' : 'text-slate-300'}>|</span>
+
+          {/* Quick switch to CMS Admin */}
+          <Link
+            to="/demo-admin"
+            className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold transition-all ${
+              isDark
+                ? 'bg-amber-400/20 text-amber-300 hover:bg-amber-400 hover:text-slate-900 border border-amber-400/30'
+                : 'bg-primary-50 text-primary-700 hover:bg-primary-600 hover:text-white border border-primary-200/80 shadow-xs'
+            }`}
+            title="Mở bảng điều khiển quản trị CMS (Demo Admin)"
+          >
+            <Settings className="w-3 h-3" />
+            <span>Quản trị CMS</span>
+          </Link>
         </div>
 
       </div>

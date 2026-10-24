@@ -19,7 +19,8 @@ import {
   Sparkle,
   Phone,
   Calendar,
-  X
+  X,
+  Settings
 } from 'lucide-react';
 import { useDemoData } from '../../context/DemoDataContext';
 import { initialNavItems } from '../../data/navigation';
@@ -482,6 +483,14 @@ export const MainNavigation: React.FC<MainNavigationProps> = ({
                 <Phone className="w-3.5 h-3.5" />
                 <span>Hotline: {siteConfig.hotline}</span>
               </a>
+              <Link
+                to="/demo-admin"
+                onClick={onCloseMobileMenu}
+                className="w-full py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs flex items-center justify-center gap-2 border border-slate-200 transition-colors"
+              >
+                <Settings className="w-3.5 h-3.5 text-primary-600" />
+                <span>Quản trị CMS (Demo Admin)</span>
+              </Link>
             </div>
 
           </div>
