@@ -128,6 +128,7 @@ export const HomepageSectionsTab: React.FC = () => {
   // Media Picker state for About section
   const [aboutMediaTarget, setAboutMediaTarget] = useState<"main" | "sub-0" | "sub-1" | "sub-2" | "focusCard" | null>(null);
   const [editingFocusCard, setEditingFocusCard] = useState<AboutFocusCard | null>(null);
+  const [isSaving, setIsSaving] = useState(false);
 
   const showToast = (msg: string) => {
     setToastMsg(msg);
@@ -135,7 +136,7 @@ export const HomepageSectionsTab: React.FC = () => {
   };
 
   // Reorder modules
-  const handleMoveModule = (index: number, direction: "up" | "down") => {
+  const handleMoveModule = async (index: number, direction: "up" | "down") => {
     const targetIndex = direction === "up" ? index - 1 : index + 1;
     if (targetIndex < 0 || targetIndex >= homepageModules.length) return;
 
@@ -144,12 +145,14 @@ export const HomepageSectionsTab: React.FC = () => {
     list.splice(targetIndex, 0, moved);
 
     const updated = list.map((item, idx) => ({ ...item, order: idx + 1 }));
-    reorderHomepageModules(updated);
-    showToast(`Đã di chuyển section "${moved.name.split("–")[0]}" ${direction === "up" ? "lên" : "xuống"}!`);
+    const res = await reorderHomepageModules(updated);
+    if (res.success) {
+      showToast(`Đã di chuyển section "${moved.name.split("–")[0]}" ${direction === "up" ? "lên" : "xuống"}!`);
+    }
   };
 
   // Reorder Core Values
-  const handleMoveCoreValue = (index: number, direction: "up" | "down") => {
+  const handleMoveCoreValue = async (index: number, direction: "up" | "down") => {
     const targetIndex = direction === "up" ? index - 1 : index + 1;
     if (targetIndex < 0 || targetIndex >= coreValues.length) return;
 
@@ -158,12 +161,14 @@ export const HomepageSectionsTab: React.FC = () => {
     list.splice(targetIndex, 0, moved);
 
     const updated = list.map((item, idx) => ({ ...item, order: idx + 1 }));
-    updateCoreValues(updated);
-    showToast(`Đã đổi thứ tự thẻ "${moved.title}"!`);
+    const res = await updateCoreValues(updated);
+    if (res.success) {
+      showToast(`Đã đổi thứ tự thẻ "${moved.title}"!`);
+    }
   };
 
   // Save Core Value item
-  const handleSaveCoreValue = (e: React.FormEvent) => {
+  const handleSaveCoreValue = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingValue || !editingValue.title.trim()) return;
 
@@ -172,13 +177,19 @@ export const HomepageSectionsTab: React.FC = () => {
       order: editingValue.order || coreValues.length + 1
     };
 
-    saveCoreValue(valueToSave);
-    showToast(`Đã lưu thẻ giá trị "${valueToSave.title}" lên hệ thống và Neon DB!`);
-    setEditingValue(null);
+    setIsSaving(true);
+    const res = await saveCoreValue(valueToSave);
+    setIsSaving(false);
+    if (res.success) {
+      showToast(`Đã lưu thẻ giá trị "${valueToSave.title}" lên hệ thống và Neon DB!`);
+      setEditingValue(null);
+    } else {
+      alert("Lỗi khi lưu thẻ giá trị: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+    }
   };
 
   // Save About Section Config
-  const handleSaveAboutConfig = () => {
+  const handleSaveAboutConfig = async () => {
     const updatedAbout: AboutSectionConfig = {
       ...aboutForm,
       badge: aboutForm.sectionBadge,
@@ -192,10 +203,16 @@ export const HomepageSectionsTab: React.FC = () => {
       cta2Link: aboutForm.cta2Url
     };
 
-    updateSiteConfig({
+    setIsSaving(true);
+    const res = await updateSiteConfig({
       aboutConfig: updatedAbout
     });
-    showToast("Đã lưu toàn bộ cấu hình Section Về Chúng Tôi lên Neon PostgreSQL!");
+    setIsSaving(false);
+    if (res.success) {
+      showToast("Đã lưu toàn bộ cấu hình Section Về Chúng Tôi lên Neon PostgreSQL!");
+    } else {
+      alert("Lỗi khi lưu cấu hình Về Chúng Tôi: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+    }
   };
 
   // Render preview icon helper
@@ -575,11 +592,21 @@ export const HomepageSectionsTab: React.FC = () => {
 
                 <button
                   type="button"
+                  disabled={isSaving}
                   onClick={handleSaveAboutConfig}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs shadow-xs transition"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold text-xs shadow-xs transition"
                 >
-                  <Save className="w-4 h-4" />
-                  <span>Lưu lên Neon DB</span>
+                  {isSaving ? (
+                    <>
+                      <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span>Đang lưu...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Save className="w-4 h-4" />
+                      <span>Lưu lên Neon DB</span>
+                    </>
+                  )}
                 </button>
               </div>
             </div>
@@ -920,11 +947,21 @@ export const HomepageSectionsTab: React.FC = () => {
             <div className="pt-4 border-t border-neutral-200 flex items-center justify-end gap-3">
               <button
                 type="button"
+                disabled={isSaving}
                 onClick={handleSaveAboutConfig}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs shadow-md transition"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-xs shadow-md transition"
               >
-                <Save className="w-4 h-4" />
-                <span>Lưu toàn bộ thay đổi lên Neon DB</span>
+                {isSaving ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    <span>Đang lưu vào Neon PostgreSQL...</span>
+                  </>
+                ) : (
+                  <>
+                    <Save className="w-4 h-4" />
+                    <span>Lưu toàn bộ thay đổi lên Neon DB</span>
+                  </>
+                )}
               </button>
             </div>
           </div>
@@ -1150,9 +1187,17 @@ export const HomepageSectionsTab: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition"
+                  disabled={isSaving}
+                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed rounded-xl shadow-xs transition flex items-center gap-1.5"
                 >
-                  Lưu Thẻ Giá Trị
+                  {isSaving ? (
+                    <>
+                      <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span>Đang lưu...</span>
+                    </>
+                  ) : (
+                    <span>Lưu Thẻ Giá Trị</span>
+                  )}
                 </button>
               </div>
             </form>
@@ -1270,11 +1315,16 @@ export const HomepageSectionsTab: React.FC = () => {
         message="Bạn có chắc chắn muốn xóa thẻ giá trị này khỏi Section A? Thao tác sẽ được ghi nhận và đồng bộ lên Neon DB."
         confirmLabel="Xóa vĩnh viễn"
         cancelLabel="Hủy bỏ"
-        onConfirm={() => {
+        onConfirm={async () => {
           if (deleteValueId) {
-            deleteCoreValue(deleteValueId);
+            const id = deleteValueId;
             setDeleteValueId(null);
-            showToast("Đã xóa thẻ giá trị cốt lõi!");
+            const res = await deleteCoreValue(id);
+            if (res.success) {
+              showToast("Đã xóa thẻ giá trị cốt lõi!");
+            } else {
+              alert("Lỗi khi xóa thẻ giá trị: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+            }
           }
         }}
         onCancel={() => setDeleteValueId(null)}

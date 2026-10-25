@@ -41,94 +41,100 @@ export interface CartItem {
   quantity: number;
 }
 
+export interface SaveResult {
+  success: boolean;
+  error?: string;
+  key?: string;
+}
+
 interface DemoDataContextType {
   siteConfig: SiteConfig;
-  updateSiteConfig: (newConfig: Partial<SiteConfig>) => void;
+  updateSiteConfig: (newConfig: Partial<SiteConfig>) => Promise<SaveResult>;
   
   homepageModules: HomepageModuleConfig[];
-  toggleHomepageModule: (id: string) => void;
-  reorderHomepageModules: (newModules: HomepageModuleConfig[]) => void;
-  updateHomepageModule: (moduleOrId: string | HomepageModuleConfig, updates?: Partial<HomepageModuleConfig>) => void;
+  toggleHomepageModule: (id: string) => Promise<SaveResult>;
+  reorderHomepageModules: (newModules: HomepageModuleConfig[]) => Promise<SaveResult>;
+  updateHomepageModule: (moduleOrId: string | HomepageModuleConfig, updates?: Partial<HomepageModuleConfig>) => Promise<SaveResult>;
 
   heroSlides: SlideItem[];
-  updateHeroSlides: (slides: SlideItem[]) => void;
-  saveSlide: (item: SlideItem) => void;
-  deleteSlide: (id: string) => void;
-  duplicateSlide: (id: string) => void;
+  updateHeroSlides: (slides: SlideItem[]) => Promise<SaveResult>;
+  saveSlide: (item: SlideItem) => Promise<SaveResult>;
+  deleteSlide: (id: string) => Promise<SaveResult>;
+  duplicateSlide: (id: string) => Promise<SaveResult>;
 
   heroSliderSettings: HeroSliderSettings;
-  updateHeroSliderSettings: (settings: Partial<HeroSliderSettings>) => void;
+  updateHeroSliderSettings: (settings: Partial<HeroSliderSettings>) => Promise<SaveResult>;
 
   sideBanners: SideBanner[];
-  updateSideBanners: (banners: SideBanner[]) => void;
-  saveSideBanner: (banner: SideBanner) => void;
-  deleteSideBanner: (id: string) => void;
+  updateSideBanners: (banners: SideBanner[]) => Promise<SaveResult>;
+  saveSideBanner: (banner: SideBanner) => Promise<SaveResult>;
+  deleteSideBanner: (id: string) => Promise<SaveResult>;
 
   coreValues: CoreValue[];
-  updateCoreValues: (values: CoreValue[]) => void;
-  saveCoreValue: (item: CoreValue) => void;
-  deleteCoreValue: (id: string) => void;
+  updateCoreValues: (values: CoreValue[]) => Promise<SaveResult>;
+  saveCoreValue: (item: CoreValue) => Promise<SaveResult>;
+  deleteCoreValue: (id: string) => Promise<SaveResult>;
 
   pagesConfig: Record<string, PageBannerConfig>;
-  updatePagesConfig: (configs: Record<string, PageBannerConfig>) => void;
-  updatePageConfig: (pageId: string, partial: Partial<PageBannerConfig>) => void;
+  updatePagesConfig: (configs: Record<string, PageBannerConfig>) => Promise<SaveResult>;
+  updatePageConfig: (pageId: string, partial: Partial<PageBannerConfig>) => Promise<SaveResult>;
 
   specialties: Specialty[];
-  updateSpecialties: (items: Specialty[]) => void;
-  saveSpecialty: (item: Specialty) => void;
-  deleteSpecialty: (id: string) => void;
+  updateSpecialties: (items: Specialty[]) => Promise<SaveResult>;
+  saveSpecialty: (item: Specialty) => Promise<SaveResult>;
+  deleteSpecialty: (id: string) => Promise<SaveResult>;
 
   services: ServiceItem[];
-  saveService: (item: ServiceItem) => void;
-  deleteService: (id: string) => void;
-  duplicateService: (id: string) => void;
+  saveService: (item: ServiceItem) => Promise<SaveResult>;
+  deleteService: (id: string) => Promise<SaveResult>;
+  duplicateService: (id: string) => Promise<SaveResult>;
 
   doctors: DoctorProfile[];
-  saveDoctor: (item: DoctorProfile) => void;
-  deleteDoctor: (id: string) => void;
-  duplicateDoctor: (id: string) => void;
+  saveDoctor: (item: DoctorProfile) => Promise<SaveResult>;
+  deleteDoctor: (id: string) => Promise<SaveResult>;
+  duplicateDoctor: (id: string) => Promise<SaveResult>;
 
   technologies: TechnologyItem[];
-  saveTechnology: (item: TechnologyItem) => void;
-  deleteTechnology: (id: string) => void;
+  saveTechnology: (item: TechnologyItem) => Promise<SaveResult>;
+  deleteTechnology: (id: string) => Promise<SaveResult>;
 
   caseStudies: CaseStudyItem[];
-  saveCaseStudy: (item: CaseStudyItem) => void;
-  deleteCaseStudy: (id: string) => void;
+  saveCaseStudy: (item: CaseStudyItem) => Promise<SaveResult>;
+  deleteCaseStudy: (id: string) => Promise<SaveResult>;
 
   brands: BrandItem[];
-  saveBrand: (item: BrandItem) => void;
-  deleteBrand: (id: string) => void;
+  saveBrand: (item: BrandItem) => Promise<SaveResult>;
+  deleteBrand: (id: string) => Promise<SaveResult>;
 
   products: ProductItem[];
-  saveProduct: (item: ProductItem) => void;
-  deleteProduct: (id: string) => void;
-  duplicateProduct: (id: string) => void;
+  saveProduct: (item: ProductItem) => Promise<SaveResult>;
+  deleteProduct: (id: string) => Promise<SaveResult>;
+  duplicateProduct: (id: string) => Promise<SaveResult>;
 
   productCategories: ProductCategory[];
-  updateProductCategories: (items: ProductCategory[]) => void;
-  saveProductCategory: (item: ProductCategory) => void;
-  deleteProductCategory: (id: string) => void;
+  updateProductCategories: (items: ProductCategory[]) => Promise<SaveResult>;
+  saveProductCategory: (item: ProductCategory) => Promise<SaveResult>;
+  deleteProductCategory: (id: string) => Promise<SaveResult>;
 
   articles: ArticleItem[];
-  saveArticle: (item: ArticleItem) => void;
-  deleteArticle: (id: string) => void;
-  duplicateArticle: (id: string) => void;
+  saveArticle: (item: ArticleItem) => Promise<SaveResult>;
+  deleteArticle: (id: string) => Promise<SaveResult>;
+  duplicateArticle: (id: string) => Promise<SaveResult>;
 
   locations: LocationItem[];
-  updateLocations: (items: LocationItem[]) => void;
-  saveLocation: (item: LocationItem) => void;
-  deleteLocation: (id: string) => void;
+  updateLocations: (items: LocationItem[]) => Promise<SaveResult>;
+  saveLocation: (item: LocationItem) => Promise<SaveResult>;
+  deleteLocation: (id: string) => Promise<SaveResult>;
 
   faqs: FAQGroup[];
-  updateFAQs: (items: FAQGroup[]) => void;
-  saveFAQ: (item: FAQGroup) => void;
-  deleteFAQ: (id: string) => void;
+  updateFAQs: (items: FAQGroup[]) => Promise<SaveResult>;
+  saveFAQ: (item: FAQGroup) => Promise<SaveResult>;
+  deleteFAQ: (id: string) => Promise<SaveResult>;
 
   navItems: NavItem[];
-  updateNavItems: (items: NavItem[]) => void;
-  saveNavItem: (item: NavItem) => void;
-  deleteNavItem: (id: string) => void;
+  updateNavItems: (items: NavItem[]) => Promise<SaveResult>;
+  saveNavItem: (item: NavItem) => Promise<SaveResult>;
+  deleteNavItem: (id: string) => Promise<SaveResult>;
 
   bookingLeads: BookingLead[];
   addBookingLead: (lead: Omit<BookingLead, "id" | "createdAt" | "status">) => void;
@@ -157,6 +163,7 @@ interface DemoDataContextType {
   syncStatus: 'saved' | 'saving' | 'unsaved';
   adminToken: string;
   setAdminToken: (token: string) => void;
+  saveKeyToNeon: (key: string, data: any, moduleName?: string, actionTitle?: string) => Promise<SaveResult>;
   syncAllToNeon: () => Promise<{ success: boolean; message: string }>;
   refreshFromNeon: () => Promise<{ success: boolean; message: string }>;
   clearLocalCache: () => void;
@@ -175,24 +182,9 @@ function loadFromStorage<T>(key: string, defaultValue: T): T {
       return defaultValue;
     }
     if (key === "siteConfig" && typeof defaultValue === "object" && defaultValue !== null) {
-      const defaultObj = defaultValue as any;
       return {
         ...defaultValue,
-        ...parsed,
-        logoHeader: parsed.logoHeader || defaultObj.logoHeader || "/images/logo.svg",
-        logoUrl: parsed.logoUrl || defaultObj.logoUrl || "/images/logo.svg",
-        logoWhiteUrl: parsed.logoWhiteUrl || defaultObj.logoWhiteUrl || "/images/logo-white.svg",
-        logoFooterUrl: parsed.logoFooterUrl || defaultObj.logoFooterUrl || "/images/logo-white.svg",
-        bannerTopConfig: {
-          ...defaultObj.bannerTopConfig,
-          ...(parsed.bannerTopConfig || {})
-        },
-        headerMainConfig: {
-          ...defaultObj.headerMainConfig,
-          ...(parsed.headerMainConfig || {}),
-          logoUrl: parsed.headerMainConfig?.logoUrl || defaultObj.headerMainConfig?.logoUrl || "/images/logo.svg",
-          logoWhiteUrl: parsed.headerMainConfig?.logoWhiteUrl || defaultObj.headerMainConfig?.logoWhiteUrl || "/images/logo-white.svg"
-        }
+        ...parsed
       };
     }
     return parsed;
@@ -248,33 +240,130 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   const isHydratedRef = useRef(false);
 
-  // 1. Hydrate/refresh all content from Neon PostgreSQL
+  // 1. Core Persistence Engine: Save directly to Neon PostgreSQL first
+  const saveKeyToNeon = async (
+    key: string, 
+    data: any, 
+    moduleName?: string, 
+    actionTitle?: string
+  ): Promise<SaveResult> => {
+    try {
+      setSyncStatus('saving');
+      const token = localStorage.getItem('LBC_ADMIN_TOKEN') || adminToken || 'lbc_admin_secret_998877';
+      const res = await fetch('/api/content', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ key, data, moduleName, actionTitle })
+      });
+
+      if (!res.ok) {
+        const errJson = await res.json().catch(() => ({}));
+        const errMsg = errJson.message || errJson.error || `Lỗi máy chủ HTTP ${res.status}`;
+        console.error(`Save ${key} to Neon failed:`, errMsg);
+        setSyncStatus('unsaved');
+        return { success: false, error: errMsg, key };
+      }
+
+      setSyncStatus('saved');
+      setDbStatus('connected');
+      // Save to localStorage mirror after successful backend write
+      saveToStorage(key, data);
+      return { success: true, key };
+    } catch (e: any) {
+      console.error(`Sync ${key} to Neon network error:`, e);
+      setSyncStatus('unsaved');
+      return { success: false, error: e.message || 'Lỗi kết nối máy chủ', key };
+    }
+  };
+
+  // 2. Hydrate/refresh all content directly from Neon PostgreSQL
   const refreshFromNeon = async (): Promise<{ success: boolean; message: string }> => {
     try {
       setDbStatus('syncing');
-      const res = await fetch('/api/content?_t=' + Date.now());
+      const res = await fetch('/api/content?_t=' + Date.now(), { cache: 'no-store' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       if (data && typeof data === 'object') {
-        if (data.siteConfig) setSiteConfig(data.siteConfig);
-        if (data.homepageModules) setHomepageModules(data.homepageModules);
-        if (data.heroSlides) setHeroSlides(data.heroSlides);
-        if (data.heroSliderSettings) setHeroSliderSettings({ ...defaultHeroSliderSettings, ...data.heroSliderSettings });
-        if (data.sideBanners) setSideBanners(data.sideBanners);
-        if (data.coreValues) setCoreValues(data.coreValues);
-        if (data.specialties) setSpecialties(data.specialties);
-        if (data.services) setServices(data.services);
-        if (data.doctors) setDoctors(data.doctors);
-        if (data.technologies) setTechnologies(data.technologies);
-        if (data.caseStudies) setCaseStudies(data.caseStudies);
-        if (data.brands) setBrands(data.brands);
-        if (data.products) setProducts(data.products);
-        if (data.productCategories) setProductCategories(data.productCategories);
-        if (data.articles) setArticles(data.articles);
-        if (data.locations) setLocations(data.locations);
-        if (data.faqs) setFaqs(data.faqs);
-        if (data.navItems) setNavItems(data.navItems);
-        if (data.pagesConfig) setPagesConfig(data.pagesConfig);
+        if (data.siteConfig) {
+          setSiteConfig(data.siteConfig);
+          saveToStorage("siteConfig", data.siteConfig);
+        }
+        if (data.homepageModules) {
+          setHomepageModules(data.homepageModules);
+          saveToStorage("homepageModules", data.homepageModules);
+        }
+        if (data.heroSlides) {
+          setHeroSlides(data.heroSlides);
+          saveToStorage("heroSlides", data.heroSlides);
+        }
+        if (data.heroSliderSettings) {
+          const merged = { ...defaultHeroSliderSettings, ...data.heroSliderSettings };
+          setHeroSliderSettings(merged);
+          saveToStorage("heroSliderSettings", merged);
+        }
+        if (data.sideBanners) {
+          setSideBanners(data.sideBanners);
+          saveToStorage("sideBanners", data.sideBanners);
+        }
+        if (data.coreValues) {
+          setCoreValues(data.coreValues);
+          saveToStorage("coreValues", data.coreValues);
+        }
+        if (data.specialties) {
+          setSpecialties(data.specialties);
+          saveToStorage("specialties", data.specialties);
+        }
+        if (data.services) {
+          setServices(data.services);
+          saveToStorage("services", data.services);
+        }
+        if (data.doctors) {
+          setDoctors(data.doctors);
+          saveToStorage("doctors", data.doctors);
+        }
+        if (data.technologies) {
+          setTechnologies(data.technologies);
+          saveToStorage("technologies", data.technologies);
+        }
+        if (data.caseStudies) {
+          setCaseStudies(data.caseStudies);
+          saveToStorage("caseStudies", data.caseStudies);
+        }
+        if (data.brands) {
+          setBrands(data.brands);
+          saveToStorage("brands", data.brands);
+        }
+        if (data.products) {
+          setProducts(data.products);
+          saveToStorage("products", data.products);
+        }
+        if (data.productCategories) {
+          setProductCategories(data.productCategories);
+          saveToStorage("productCategories", data.productCategories);
+        }
+        if (data.articles) {
+          setArticles(data.articles);
+          saveToStorage("articles", data.articles);
+        }
+        if (data.locations) {
+          setLocations(data.locations);
+          saveToStorage("locations", data.locations);
+        }
+        if (data.faqs) {
+          setFaqs(data.faqs);
+          saveToStorage("faqs", data.faqs);
+        }
+        if (data.navItems) {
+          setNavItems(data.navItems);
+          saveToStorage("navItems", data.navItems);
+        }
+        if (data.pagesConfig) {
+          setPagesConfig(data.pagesConfig);
+          saveToStorage("pagesConfig", data.pagesConfig);
+        }
         setDbStatus('connected');
         setSyncStatus('saved');
         return { success: true, message: "Đã làm mới dữ liệu thành công từ Neon PostgreSQL!" };
@@ -306,109 +395,19 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
     refreshFromNeon();
   }, []);
 
-  // 2. Helper to sync any module to Neon
-  const saveKeyToNeon = async (key: string, data: any, moduleName?: string, actionTitle?: string) => {
-    if (!isHydratedRef.current) return;
-    try {
-      setSyncStatus('saving');
-      const token = localStorage.getItem('LBC_ADMIN_TOKEN') || adminToken;
-      const res = await fetch('/api/content', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify({ key, data, moduleName, actionTitle })
-      });
-      if (res.ok) {
-        setSyncStatus('saved');
-        setDbStatus('connected');
-      } else {
-        setSyncStatus('unsaved');
-      }
-    } catch (e) {
-      console.warn(`Sync ${key} to Neon failed:`, e);
-      setSyncStatus('unsaved');
-    }
-  };
-
-  // Sync to localStorage
-  useEffect(() => saveToStorage("siteConfig", siteConfig), [siteConfig]);
-  useEffect(() => saveToStorage("homepageModules", homepageModules), [homepageModules]);
-  useEffect(() => saveToStorage("heroSlides", heroSlides), [heroSlides]);
-  useEffect(() => saveToStorage("heroSliderSettings", heroSliderSettings), [heroSliderSettings]);
-  useEffect(() => saveToStorage("sideBanners", sideBanners), [sideBanners]);
-  useEffect(() => saveToStorage("coreValues", coreValues), [coreValues]);
-  useEffect(() => saveToStorage("specialties", specialties), [specialties]);
-  useEffect(() => saveToStorage("services", services), [services]);
-  useEffect(() => saveToStorage("doctors", doctors), [doctors]);
-  useEffect(() => saveToStorage("technologies", technologies), [technologies]);
-  useEffect(() => saveToStorage("caseStudies", caseStudies), [caseStudies]);
-  useEffect(() => saveToStorage("brands", brands), [brands]);
-  useEffect(() => saveToStorage("products", products), [products]);
-  useEffect(() => saveToStorage("productCategories", productCategories), [productCategories]);
-  useEffect(() => saveToStorage("articles", articles), [articles]);
-  useEffect(() => saveToStorage("locations", locations), [locations]);
-  useEffect(() => saveToStorage("faqs", faqs), [faqs]);
-  useEffect(() => saveToStorage("navItems", navItems), [navItems]);
-  useEffect(() => saveToStorage("pagesConfig", pagesConfig), [pagesConfig]);
-  useEffect(() => saveToStorage("bookingLeads", bookingLeads), [bookingLeads]);
-  useEffect(() => saveToStorage("cart", cart), [cart]);
-
-  // Sync to Neon PostgreSQL whenever state updates after hydration
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("siteConfig", siteConfig, "Hệ thống", "Cấu hình chung"); }, [siteConfig]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("homepageModules", homepageModules, "Trang chủ", "Bố cục Section"); }, [homepageModules]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("heroSlides", heroSlides, "Hero Banner", "Slide chính"); }, [heroSlides]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("heroSliderSettings", heroSliderSettings, "Hero Banner", "Cấu hình chuyển slide"); }, [heroSliderSettings]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("sideBanners", sideBanners, "Hero Banner", "Banner phụ"); }, [sideBanners]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("coreValues", coreValues, "Giá trị cốt lõi", "Cốt lõi"); }, [coreValues]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("specialties", specialties, "Chuyên khoa", "Danh mục chuyên khoa"); }, [specialties]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("services", services, "Dịch vụ", "Danh mục dịch vụ"); }, [services]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("doctors", doctors, "Đội ngũ Bác sĩ", "Hồ sơ bác sĩ"); }, [doctors]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("technologies", technologies, "Công nghệ", "Thiết bị y tế"); }, [technologies]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("caseStudies", caseStudies, "Before-After", "Ca lâm sàng"); }, [caseStudies]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("brands", brands, "Thương hiệu", "Đối tác thương hiệu"); }, [brands]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("products", products, "Dược mỹ phẩm", "Sản phẩm"); }, [products]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("productCategories", productCategories, "Danh mục sản phẩm", "Cập nhật danh mục dược mỹ phẩm"); }, [productCategories]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("articles", articles, "Tin tức & Y khoa", "Bài viết chuyên môn"); }, [articles]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("locations", locations, "Cơ sở", "Chi nhánh"); }, [locations]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("faqs", faqs, "Câu hỏi thường gặp", "FAQ"); }, [faqs]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("navItems", navItems, "Menu", "Menu điều hướng"); }, [navItems]);
-  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("pagesConfig", pagesConfig, "Quản lý Trang", "Cấu hình Banner & Trang"); }, [pagesConfig]);
-
   // Multi-tab storage synchronization
   useEffect(() => {
     const handleStorageEvent = (e: StorageEvent) => {
       if (!e.key || !e.newValue) return;
-      if (e.key === STORAGE_PREFIX + "siteConfig") {
-        try {
-          setSiteConfig(JSON.parse(e.newValue));
-        } catch {}
-      } else if (e.key === STORAGE_PREFIX + "homepageModules") {
-        try {
-          setHomepageModules(JSON.parse(e.newValue));
-        } catch {}
-      } else if (e.key === STORAGE_PREFIX + "heroSlides") {
-        try {
-          setHeroSlides(JSON.parse(e.newValue));
-        } catch {}
-      } else if (e.key === STORAGE_PREFIX + "heroSliderSettings") {
-        try {
-          setHeroSliderSettings(JSON.parse(e.newValue));
-        } catch {}
-      } else if (e.key === STORAGE_PREFIX + "doctors") {
-        try {
-          setDoctors(JSON.parse(e.newValue));
-        } catch {}
-      } else if (e.key === STORAGE_PREFIX + "services") {
-        try {
-          setServices(JSON.parse(e.newValue));
-        } catch {}
-      } else if (e.key === STORAGE_PREFIX + "products") {
-        try {
-          setProducts(JSON.parse(e.newValue));
-        } catch {}
-      }
+      try {
+        if (e.key === STORAGE_PREFIX + "siteConfig") setSiteConfig(JSON.parse(e.newValue));
+        else if (e.key === STORAGE_PREFIX + "homepageModules") setHomepageModules(JSON.parse(e.newValue));
+        else if (e.key === STORAGE_PREFIX + "heroSlides") setHeroSlides(JSON.parse(e.newValue));
+        else if (e.key === STORAGE_PREFIX + "heroSliderSettings") setHeroSliderSettings(JSON.parse(e.newValue));
+        else if (e.key === STORAGE_PREFIX + "doctors") setDoctors(JSON.parse(e.newValue));
+        else if (e.key === STORAGE_PREFIX + "services") setServices(JSON.parse(e.newValue));
+        else if (e.key === STORAGE_PREFIX + "products") setProducts(JSON.parse(e.newValue));
+      } catch {}
     };
     window.addEventListener("storage", handleStorageEvent);
     return () => window.removeEventListener("storage", handleStorageEvent);
@@ -428,219 +427,280 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
     }
   }, [siteConfig.faviconUrl, siteConfig.favicon]);
 
-  // Updater functions
-  const updateSiteConfig = (newConfig: Partial<SiteConfig>) => {
-    setSiteConfig(prev => {
-      const merged: SiteConfig = { ...prev, ...newConfig };
-      // Keep aliases in perfect sync
-      if (newConfig.logoUrl !== undefined) merged.logoHeader = newConfig.logoUrl;
-      if (newConfig.logoHeader !== undefined) merged.logoUrl = newConfig.logoHeader;
-      if (newConfig.logoFooterUrl !== undefined) merged.logoFooter = newConfig.logoFooterUrl;
-      if (newConfig.logoFooter !== undefined) merged.logoFooterUrl = newConfig.logoFooter;
-      if (newConfig.faviconUrl !== undefined) merged.favicon = newConfig.faviconUrl;
-      if (newConfig.favicon !== undefined) merged.faviconUrl = newConfig.favicon;
-      
+  // =========================================================================
+  // ATOMIC UPDATER FUNCTIONS: Save to Neon first, then update state & storage
+  // =========================================================================
+
+  const updateSiteConfig = async (newConfig: Partial<SiteConfig>): Promise<SaveResult> => {
+    const merged: SiteConfig = { ...siteConfig, ...newConfig };
+    if (newConfig.logoUrl !== undefined) merged.logoHeader = newConfig.logoUrl;
+    if (newConfig.logoHeader !== undefined) merged.logoUrl = newConfig.logoHeader;
+    if (newConfig.logoFooterUrl !== undefined) merged.logoFooter = newConfig.logoFooterUrl;
+    if (newConfig.logoFooter !== undefined) merged.logoFooterUrl = newConfig.logoFooter;
+    if (newConfig.faviconUrl !== undefined) merged.favicon = newConfig.faviconUrl;
+    if (newConfig.favicon !== undefined) merged.faviconUrl = newConfig.favicon;
+
+    const result = await saveKeyToNeon("siteConfig", merged, "Hệ thống", "Cấu hình thương hiệu");
+    if (result.success) {
+      setSiteConfig(merged);
       logAuditAction("Hệ thống", "update", "Cấu hình thương hiệu", "Cập nhật logo và thông tin nhận diện");
-      return merged;
-    });
-  };
-
-  const toggleHomepageModule = (id: string) => {
-    setHomepageModules(prev =>
-      prev.map(mod => mod.id === id ? { ...mod, enabled: !mod.enabled } : mod)
-    );
-  };
-
-  const reorderHomepageModules = (newModules: HomepageModuleConfig[]) => {
-    setHomepageModules(newModules);
-  };
-
-  const updateHomepageModule = (moduleOrId: string | HomepageModuleConfig, updates?: Partial<HomepageModuleConfig>) => {
-    if (typeof moduleOrId === "object") {
-      setHomepageModules(prev =>
-        prev.map(mod => mod.id === moduleOrId.id ? { ...mod, ...moduleOrId } : mod)
-      );
-      logAuditAction("Trang chủ", "update", moduleOrId.name, "Cập nhật cấu hình section");
-    } else {
-      setHomepageModules(prev =>
-        prev.map(mod => mod.id === moduleOrId ? { ...mod, ...(updates || {}) } : mod)
-      );
-      logAuditAction("Trang chủ", "update", moduleOrId, "Cập nhật cấu hình section");
     }
+    return result;
   };
 
-  // Slide & Banner CMS methods
-  const updateHeroSliderSettings = (settings: Partial<HeroSliderSettings>) => {
-    setHeroSliderSettings(prev => {
-      const next = { ...prev, ...settings };
+  const toggleHomepageModule = async (id: string): Promise<SaveResult> => {
+    const updated = homepageModules.map(mod => mod.id === id ? { ...mod, enabled: !mod.enabled } : mod);
+    const result = await saveKeyToNeon("homepageModules", updated, "Trang chủ", `Bật/tắt section ${id}`);
+    if (result.success) {
+      setHomepageModules(updated);
+    }
+    return result;
+  };
+
+  const reorderHomepageModules = async (newModules: HomepageModuleConfig[]): Promise<SaveResult> => {
+    const result = await saveKeyToNeon("homepageModules", newModules, "Trang chủ", "Sắp xếp lại các Section");
+    if (result.success) {
+      setHomepageModules(newModules);
+    }
+    return result;
+  };
+
+  const updateHomepageModule = async (moduleOrId: string | HomepageModuleConfig, updates?: Partial<HomepageModuleConfig>): Promise<SaveResult> => {
+    let next: HomepageModuleConfig[];
+    let targetName = "";
+    if (typeof moduleOrId === "object") {
+      next = homepageModules.map(mod => mod.id === moduleOrId.id ? { ...mod, ...moduleOrId } : mod);
+      targetName = moduleOrId.name;
+    } else {
+      next = homepageModules.map(mod => mod.id === moduleOrId ? { ...mod, ...(updates || {}) } : mod);
+      targetName = moduleOrId;
+    }
+    const result = await saveKeyToNeon("homepageModules", next, "Trang chủ", `Cập nhật section ${targetName}`);
+    if (result.success) {
+      setHomepageModules(next);
+      logAuditAction("Trang chủ", "update", targetName, "Cập nhật cấu hình section");
+    }
+    return result;
+  };
+
+  const updateHeroSliderSettings = async (settings: Partial<HeroSliderSettings>): Promise<SaveResult> => {
+    const next: HeroSliderSettings = { ...heroSliderSettings, ...settings };
+    const result = await saveKeyToNeon("heroSliderSettings", next, "Hero Banner", "Cấu hình chuyển slide");
+    if (result.success) {
+      setHeroSliderSettings(next);
       logAuditAction(
         "Hero Banner",
         "update",
         "Thời gian chuyển slide",
         `Tự động: ${next.autoplayEnabled ? 'Bật' : 'Tắt'}, Thời gian: ${next.autoplayInterval}s/slide`
       );
-      return next;
-    });
+    }
+    return result;
   };
 
-  const saveSlide = (item: SlideItem) => {
-    setHeroSlides(prev => {
-      const idx = prev.findIndex(s => s.id === item.id);
-      if (idx >= 0) {
-        const next = [...prev];
-        next[idx] = item;
-        logAuditAction("Hero Banner", "update", item.title || item.badge || item.id, "Cập nhật slide hero");
-        return next;
-      }
-      logAuditAction("Hero Banner", "create", item.title || item.badge || item.id, "Thêm mới slide hero");
-      return [...prev, item];
-    });
+  const saveSlide = async (item: SlideItem): Promise<SaveResult> => {
+    const idx = heroSlides.findIndex(s => s.id === item.id);
+    const next = idx >= 0 ? [...heroSlides] : [...heroSlides, item];
+    if (idx >= 0) next[idx] = item;
+    const result = await saveKeyToNeon("heroSlides", next, "Hero Banner", `Slide: ${item.title}`);
+    if (result.success) {
+      setHeroSlides(next);
+      logAuditAction("Hero Banner", idx >= 0 ? "update" : "create", item.title || item.id, "Lưu slide hero");
+    }
+    return result;
   };
 
-  const deleteSlide = (id: string) => {
-    setHeroSlides(prev => {
-      const found = prev.find(s => s.id === id);
-      logAuditAction("Hero Banner", "delete", found?.title || id, "Xóa slide hero");
-      return prev.filter(s => s.id !== id);
-    });
+  const updateHeroSlides = async (slides: SlideItem[]): Promise<SaveResult> => {
+    const result = await saveKeyToNeon("heroSlides", slides, "Hero Banner", "Cập nhật danh sách slide");
+    if (result.success) {
+      setHeroSlides(slides);
+    }
+    return result;
   };
 
-  const duplicateSlide = (id: string) => {
+  const deleteSlide = async (id: string): Promise<SaveResult> => {
+    const next = heroSlides.filter(s => s.id !== id);
+    const result = await saveKeyToNeon("heroSlides", next, "Hero Banner", "Xóa slide");
+    if (result.success) {
+      setHeroSlides(next);
+      logAuditAction("Hero Banner", "delete", id, "Xóa slide hero");
+    }
+    return result;
+  };
+
+  const duplicateSlide = async (id: string): Promise<SaveResult> => {
     const found = heroSlides.find(s => s.id === id);
-    if (!found) return;
+    if (!found) return { success: false, error: "Không tìm thấy slide" };
     const duplicated: SlideItem = {
       ...found,
       id: "slide-" + Date.now(),
       title: `${found.title} (Bản sao)`,
       badge: `${found.badge} [Copy]`
     };
-    setHeroSlides(prev => [...prev, duplicated]);
-    logAuditAction("Hero Banner", "create", duplicated.title, "Nhân bản slide hero");
+    const next = [...heroSlides, duplicated];
+    const result = await saveKeyToNeon("heroSlides", next, "Hero Banner", "Nhân bản slide hero");
+    if (result.success) {
+      setHeroSlides(next);
+      logAuditAction("Hero Banner", "create", duplicated.title, "Nhân bản slide hero");
+    }
+    return result;
   };
 
-  const saveSideBanner = (item: SideBanner) => {
-    setSideBanners(prev => {
-      const idx = prev.findIndex(b => b.id === item.id);
-      if (idx >= 0) {
-        const next = [...prev];
-        next[idx] = item;
-        logAuditAction("Banner phụ", "update", item.title || item.id, "Cập nhật banner phụ");
-        return next;
-      }
-      logAuditAction("Banner phụ", "create", item.title || item.id, "Thêm banner phụ");
-      return [...prev, item];
-    });
+  const saveSideBanner = async (item: SideBanner): Promise<SaveResult> => {
+    const idx = sideBanners.findIndex(b => b.id === item.id);
+    const next = idx >= 0 ? [...sideBanners] : [...sideBanners, item];
+    if (idx >= 0) next[idx] = item;
+    const result = await saveKeyToNeon("sideBanners", next, "Banner phụ", `Banner phụ: ${item.title}`);
+    if (result.success) {
+      setSideBanners(next);
+      logAuditAction("Banner phụ", idx >= 0 ? "update" : "create", item.title || item.id, "Lưu banner phụ");
+    }
+    return result;
   };
 
-  const deleteSideBanner = (id: string) => {
-    setSideBanners(prev => prev.filter(b => b.id !== id));
-    logAuditAction("Banner phụ", "delete", id, "Xóa banner phụ");
+  const updateSideBanners = async (banners: SideBanner[]): Promise<SaveResult> => {
+    const result = await saveKeyToNeon("sideBanners", banners, "Banner phụ", "Cập nhật danh sách banner phụ");
+    if (result.success) {
+      setSideBanners(banners);
+    }
+    return result;
   };
 
-  const saveCoreValue = (item: CoreValue) => {
-    setCoreValues(prev => {
-      const idx = prev.findIndex(v => v.id === item.id);
-      if (idx >= 0) {
-        const next = [...prev];
-        next[idx] = item;
-        logAuditAction("Giá trị cốt lõi", "update", item.title, "Cập nhật thẻ giá trị");
-        return next;
-      }
-      logAuditAction("Giá trị cốt lõi", "create", item.title, "Thêm thẻ giá trị mới");
-      return [...prev, item];
-    });
+  const deleteSideBanner = async (id: string): Promise<SaveResult> => {
+    const next = sideBanners.filter(b => b.id !== id);
+    const result = await saveKeyToNeon("sideBanners", next, "Banner phụ", "Xóa banner phụ");
+    if (result.success) {
+      setSideBanners(next);
+      logAuditAction("Banner phụ", "delete", id, "Xóa banner phụ");
+    }
+    return result;
   };
 
-  const deleteCoreValue = (id: string) => {
-    setCoreValues(prev => {
-      const found = prev.find(v => v.id === id);
-      logAuditAction("Giá trị cốt lõi", "delete", found?.title || id, "Xóa thẻ giá trị");
-      return prev.filter(v => v.id !== id);
-    });
+  const saveCoreValue = async (item: CoreValue): Promise<SaveResult> => {
+    const idx = coreValues.findIndex(v => v.id === item.id);
+    const next = idx >= 0 ? [...coreValues] : [...coreValues, item];
+    if (idx >= 0) next[idx] = item;
+    const result = await saveKeyToNeon("coreValues", next, "Giá trị cốt lõi", `Giá trị: ${item.title}`);
+    if (result.success) {
+      setCoreValues(next);
+      logAuditAction("Giá trị cốt lõi", idx >= 0 ? "update" : "create", item.title, "Lưu thẻ giá trị");
+    }
+    return result;
   };
 
-  const saveSpecialty = (item: Specialty) => {
-    setSpecialties(prev => {
-      const idx = prev.findIndex(s => s.id === item.id);
-      if (idx >= 0) {
-        const next = [...prev];
-        next[idx] = item;
-        logAuditAction("Chuyên khoa", "update", item.name, "Cập nhật chuyên khoa");
-        return next;
-      }
-      logAuditAction("Chuyên khoa", "create", item.name, "Thêm chuyên khoa mới");
-      return [...prev, item];
-    });
+  const updateCoreValues = async (values: CoreValue[]): Promise<SaveResult> => {
+    const result = await saveKeyToNeon("coreValues", values, "Giá trị cốt lõi", "Cập nhật thứ tự thẻ giá trị");
+    if (result.success) {
+      setCoreValues(values);
+    }
+    return result;
   };
 
-  const deleteSpecialty = (id: string) => {
-    setSpecialties(prev => {
-      const found = prev.find(s => s.id === id);
-      logAuditAction("Chuyên khoa", "delete", found?.name || id, "Xóa chuyên khoa");
-      return prev.filter(s => s.id !== id);
-    });
+  const deleteCoreValue = async (id: string): Promise<SaveResult> => {
+    const next = coreValues.filter(v => v.id !== id);
+    const result = await saveKeyToNeon("coreValues", next, "Giá trị cốt lõi", "Xóa thẻ giá trị");
+    if (result.success) {
+      setCoreValues(next);
+      logAuditAction("Giá trị cốt lõi", "delete", id, "Xóa thẻ giá trị");
+    }
+    return result;
   };
 
-  const saveService = (item: ServiceItem) => {
-    setServices(prev => {
-      const idx = prev.findIndex(s => s.id === item.id);
-      if (idx >= 0) {
-        const next = [...prev];
-        next[idx] = item;
-        logAuditAction("Dịch vụ", "update", item.name, "Cập nhật dịch vụ y khoa");
-        return next;
-      }
-      logAuditAction("Dịch vụ", "create", item.name, "Thêm dịch vụ điều trị mới");
-      return [...prev, item];
-    });
+  const saveSpecialty = async (item: Specialty): Promise<SaveResult> => {
+    const idx = specialties.findIndex(s => s.id === item.id);
+    const next = idx >= 0 ? [...specialties] : [...specialties, item];
+    if (idx >= 0) next[idx] = item;
+    const result = await saveKeyToNeon("specialties", next, "Chuyên khoa", `Chuyên khoa: ${item.name}`);
+    if (result.success) {
+      setSpecialties(next);
+      logAuditAction("Chuyên khoa", idx >= 0 ? "update" : "create", item.name, "Lưu chuyên khoa");
+    }
+    return result;
   };
 
-  const deleteService = (id: string) => {
-    setServices(prev => {
-      const found = prev.find(s => s.id === id);
-      logAuditAction("Dịch vụ", "delete", found?.name || id, "Xóa dịch vụ");
-      return prev.filter(s => s.id !== id);
-    });
+  const updateSpecialties = async (items: Specialty[]): Promise<SaveResult> => {
+    const result = await saveKeyToNeon("specialties", items, "Chuyên khoa", "Cập nhật danh sách chuyên khoa");
+    if (result.success) {
+      setSpecialties(items);
+    }
+    return result;
   };
 
-  const duplicateService = (id: string) => {
+  const deleteSpecialty = async (id: string): Promise<SaveResult> => {
+    const next = specialties.filter(s => s.id !== id);
+    const result = await saveKeyToNeon("specialties", next, "Chuyên khoa", "Xóa chuyên khoa");
+    if (result.success) {
+      setSpecialties(next);
+      logAuditAction("Chuyên khoa", "delete", id, "Xóa chuyên khoa");
+    }
+    return result;
+  };
+
+  const saveService = async (item: ServiceItem): Promise<SaveResult> => {
+    const idx = services.findIndex(s => s.id === item.id);
+    const next = idx >= 0 ? [...services] : [...services, item];
+    if (idx >= 0) next[idx] = item;
+    const result = await saveKeyToNeon("services", next, "Dịch vụ", `Dịch vụ: ${item.name}`);
+    if (result.success) {
+      setServices(next);
+      logAuditAction("Dịch vụ", idx >= 0 ? "update" : "create", item.name, "Lưu dịch vụ y khoa");
+    }
+    return result;
+  };
+
+  const deleteService = async (id: string): Promise<SaveResult> => {
+    const next = services.filter(s => s.id !== id);
+    const result = await saveKeyToNeon("services", next, "Dịch vụ", "Xóa dịch vụ");
+    if (result.success) {
+      setServices(next);
+      logAuditAction("Dịch vụ", "delete", id, "Xóa dịch vụ");
+    }
+    return result;
+  };
+
+  const duplicateService = async (id: string): Promise<SaveResult> => {
     const found = services.find(s => s.id === id);
-    if (!found) return;
+    if (!found) return { success: false, error: "Không tìm thấy dịch vụ" };
     const duplicated: ServiceItem = {
       ...found,
       id: "srv-" + Date.now(),
       name: `${found.name} (Bản sao)`,
       slug: `${found.slug}-copy-${Date.now().toString().slice(-4)}`
     };
-    setServices(prev => [...prev, duplicated]);
-    logAuditAction("Dịch vụ", "create", duplicated.name, "Nhân bản dịch vụ");
+    const next = [...services, duplicated];
+    const result = await saveKeyToNeon("services", next, "Dịch vụ", "Nhân bản dịch vụ");
+    if (result.success) {
+      setServices(next);
+      logAuditAction("Dịch vụ", "create", duplicated.name, "Nhân bản dịch vụ");
+    }
+    return result;
   };
 
-  const saveDoctor = (item: DoctorProfile) => {
-    setDoctors(prev => {
-      const idx = prev.findIndex(d => d.id === item.id);
-      if (idx >= 0) {
-        const next = [...prev];
-        next[idx] = item;
-        logAuditAction("Bác sĩ", "update", item.name, `Cập nhật hồ sơ ${item.formalTitle}`);
-        return next;
-      }
-      logAuditAction("Bác sĩ", "create", item.name, `Thêm mới hồ sơ bác sĩ ${item.name}`);
-      return [...prev, item];
-    });
+  const saveDoctor = async (item: DoctorProfile): Promise<SaveResult> => {
+    const idx = doctors.findIndex(d => d.id === item.id);
+    const next = idx >= 0 ? [...doctors] : [...doctors, item];
+    if (idx >= 0) next[idx] = item;
+    const result = await saveKeyToNeon("doctors", next, "Bác sĩ", `Hồ sơ: ${item.formalTitle}`);
+    if (result.success) {
+      setDoctors(next);
+      logAuditAction("Bác sĩ", idx >= 0 ? "update" : "create", item.name, `Lưu hồ sơ ${item.formalTitle}`);
+    }
+    return result;
   };
 
-  const deleteDoctor = (id: string) => {
-    setDoctors(prev => {
-      const found = prev.find(d => d.id === id);
-      logAuditAction("Bác sĩ", "delete", found?.name || id, "Xóa hồ sơ bác sĩ");
-      return prev.filter(d => d.id !== id);
-    });
+  const deleteDoctor = async (id: string): Promise<SaveResult> => {
+    const next = doctors.filter(d => d.id !== id);
+    const result = await saveKeyToNeon("doctors", next, "Bác sĩ", "Xóa hồ sơ bác sĩ");
+    if (result.success) {
+      setDoctors(next);
+      logAuditAction("Bác sĩ", "delete", id, "Xóa hồ sơ bác sĩ");
+    }
+    return result;
   };
 
-  const duplicateDoctor = (id: string) => {
+  const duplicateDoctor = async (id: string): Promise<SaveResult> => {
     const found = doctors.find(d => d.id === id);
-    if (!found) return;
+    if (!found) return { success: false, error: "Không tìm thấy bác sĩ" };
     const duplicated: DoctorProfile = {
       ...found,
       id: "doc-" + Date.now(),
@@ -648,101 +708,106 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
       formalTitle: `${found.formalTitle} (Bản sao)`,
       slug: `bs-${found.slug.replace(/^bs-/, '')}-copy`
     };
-    setDoctors(prev => [...prev, duplicated]);
-    logAuditAction("Bác sĩ", "create", duplicated.name, "Nhân bản hồ sơ bác sĩ");
+    const next = [...doctors, duplicated];
+    const result = await saveKeyToNeon("doctors", next, "Bác sĩ", "Nhân bản hồ sơ bác sĩ");
+    if (result.success) {
+      setDoctors(next);
+      logAuditAction("Bác sĩ", "create", duplicated.name, "Nhân bản hồ sơ bác sĩ");
+    }
+    return result;
   };
 
-  const saveTechnology = (item: TechnologyItem) => {
-    setTechnologies(prev => {
-      const idx = prev.findIndex(t => t.id === item.id);
-      if (idx >= 0) {
-        const next = [...prev];
-        next[idx] = item;
-        logAuditAction("Công nghệ", "update", item.name, "Cập nhật công nghệ thẩm mỹ");
-        return next;
-      }
-      logAuditAction("Công nghệ", "create", item.name, "Thêm mới công nghệ thẩm mỹ");
-      return [...prev, item];
-    });
+  const saveTechnology = async (item: TechnologyItem): Promise<SaveResult> => {
+    const idx = technologies.findIndex(t => t.id === item.id);
+    const next = idx >= 0 ? [...technologies] : [...technologies, item];
+    if (idx >= 0) next[idx] = item;
+    const result = await saveKeyToNeon("technologies", next, "Công nghệ", `Thiết bị: ${item.name}`);
+    if (result.success) {
+      setTechnologies(next);
+      logAuditAction("Công nghệ", idx >= 0 ? "update" : "create", item.name, "Lưu công nghệ");
+    }
+    return result;
   };
 
-  const deleteTechnology = (id: string) => {
-    setTechnologies(prev => {
-      const found = prev.find(t => t.id === id);
-      logAuditAction("Công nghệ", "delete", found?.name || id, "Xóa công nghệ");
-      return prev.filter(t => t.id !== id);
-    });
+  const deleteTechnology = async (id: string): Promise<SaveResult> => {
+    const next = technologies.filter(t => t.id !== id);
+    const result = await saveKeyToNeon("technologies", next, "Công nghệ", "Xóa công nghệ");
+    if (result.success) {
+      setTechnologies(next);
+      logAuditAction("Công nghệ", "delete", id, "Xóa công nghệ");
+    }
+    return result;
   };
 
-  const saveCaseStudy = (item: CaseStudyItem) => {
-    setCaseStudies(prev => {
-      const idx = prev.findIndex(c => c.id === item.id);
-      if (idx >= 0) {
-        const next = [...prev];
-        next[idx] = item;
-        logAuditAction("Before-After", "update", item.serviceName, "Cập nhật ca lâm sàng");
-        return next;
-      }
-      logAuditAction("Before-After", "create", item.serviceName, "Thêm mới ca lâm sàng");
-      return [...prev, item];
-    });
+  const saveCaseStudy = async (item: CaseStudyItem): Promise<SaveResult> => {
+    const idx = caseStudies.findIndex(c => c.id === item.id);
+    const next = idx >= 0 ? [...caseStudies] : [...caseStudies, item];
+    if (idx >= 0) next[idx] = item;
+    const result = await saveKeyToNeon("caseStudies", next, "Before-After", `Ca lâm sàng: ${item.serviceName} (${item.customerInitial})`);
+    if (result.success) {
+      setCaseStudies(next);
+      logAuditAction("Before-After", idx >= 0 ? "update" : "create", item.serviceName, "Lưu ca lâm sàng");
+    }
+    return result;
   };
 
-  const deleteCaseStudy = (id: string) => {
-    setCaseStudies(prev => {
-      const found = prev.find(c => c.id === id);
-      logAuditAction("Before-After", "delete", found?.serviceName || id, "Xóa ca lâm sàng");
-      return prev.filter(c => c.id !== id);
-    });
+  const deleteCaseStudy = async (id: string): Promise<SaveResult> => {
+    const next = caseStudies.filter(c => c.id !== id);
+    const result = await saveKeyToNeon("caseStudies", next, "Before-After", "Xóa ca lâm sàng");
+    if (result.success) {
+      setCaseStudies(next);
+      logAuditAction("Before-After", "delete", id, "Xóa ca lâm sàng");
+    }
+    return result;
   };
 
-  const saveBrand = (item: BrandItem) => {
-    setBrands(prev => {
-      const idx = prev.findIndex(b => b.id === item.id);
-      if (idx >= 0) {
-        const next = [...prev];
-        next[idx] = item;
-        logAuditAction("Thương hiệu", "update", item.name, "Cập nhật thương hiệu");
-        return next;
-      }
-      logAuditAction("Thương hiệu", "create", item.name, "Thêm thương hiệu dược mỹ phẩm");
-      return [...prev, item];
-    });
+  const saveBrand = async (item: BrandItem): Promise<SaveResult> => {
+    const idx = brands.findIndex(b => b.id === item.id);
+    const next = idx >= 0 ? [...brands] : [...brands, item];
+    if (idx >= 0) next[idx] = item;
+    const result = await saveKeyToNeon("brands", next, "Thương hiệu", `Đối tác: ${item.name}`);
+    if (result.success) {
+      setBrands(next);
+      logAuditAction("Thương hiệu", idx >= 0 ? "update" : "create", item.name, "Lưu thương hiệu");
+    }
+    return result;
   };
 
-  const deleteBrand = (id: string) => {
-    setBrands(prev => {
-      const found = prev.find(b => b.id === id);
-      logAuditAction("Thương hiệu", "delete", found?.name || id, "Xóa thương hiệu");
-      return prev.filter(b => b.id !== id);
-    });
+  const deleteBrand = async (id: string): Promise<SaveResult> => {
+    const next = brands.filter(b => b.id !== id);
+    const result = await saveKeyToNeon("brands", next, "Thương hiệu", "Xóa thương hiệu");
+    if (result.success) {
+      setBrands(next);
+      logAuditAction("Thương hiệu", "delete", id, "Xóa thương hiệu");
+    }
+    return result;
   };
 
-  const saveProduct = (item: ProductItem) => {
-    setProducts(prev => {
-      const idx = prev.findIndex(p => p.id === item.id);
-      if (idx >= 0) {
-        const next = [...prev];
-        next[idx] = item;
-        logAuditAction("Sản phẩm", "update", item.name, `Cập nhật sản phẩm (${item.price.toLocaleString("vi-VN")} ₫)`);
-        return next;
-      }
-      logAuditAction("Sản phẩm", "create", item.name, `Thêm mới sản phẩm ${item.name}`);
-      return [...prev, item];
-    });
+  const saveProduct = async (item: ProductItem): Promise<SaveResult> => {
+    const idx = products.findIndex(p => p.id === item.id);
+    const next = idx >= 0 ? [...products] : [...products, item];
+    if (idx >= 0) next[idx] = item;
+    const result = await saveKeyToNeon("products", next, "Sản phẩm", `Dược mỹ phẩm: ${item.name}`);
+    if (result.success) {
+      setProducts(next);
+      logAuditAction("Sản phẩm", idx >= 0 ? "update" : "create", item.name, `Lưu sản phẩm (${item.price.toLocaleString("vi-VN")} ₫)`);
+    }
+    return result;
   };
 
-  const deleteProduct = (id: string) => {
-    setProducts(prev => {
-      const found = prev.find(p => p.id === id);
-      logAuditAction("Sản phẩm", "delete", found?.name || id, "Xóa sản phẩm");
-      return prev.filter(p => p.id !== id);
-    });
+  const deleteProduct = async (id: string): Promise<SaveResult> => {
+    const next = products.filter(p => p.id !== id);
+    const result = await saveKeyToNeon("products", next, "Sản phẩm", "Xóa sản phẩm");
+    if (result.success) {
+      setProducts(next);
+      logAuditAction("Sản phẩm", "delete", id, "Xóa sản phẩm");
+    }
+    return result;
   };
 
-  const duplicateProduct = (id: string) => {
+  const duplicateProduct = async (id: string): Promise<SaveResult> => {
     const found = products.find(p => p.id === id);
-    if (!found) return;
+    if (!found) return { success: false, error: "Không tìm thấy sản phẩm" };
     const duplicated: ProductItem = {
       ...found,
       id: "prd-" + Date.now(),
@@ -750,57 +815,70 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
       sku: `${found.sku}-COPY`,
       slug: `${found.slug}-copy-${Date.now().toString().slice(-4)}`
     };
-    setProducts(prev => [...prev, duplicated]);
-    logAuditAction("Sản phẩm", "create", duplicated.name, "Nhân bản sản phẩm");
+    const next = [...products, duplicated];
+    const result = await saveKeyToNeon("products", next, "Sản phẩm", "Nhân bản sản phẩm");
+    if (result.success) {
+      setProducts(next);
+      logAuditAction("Sản phẩm", "create", duplicated.name, "Nhân bản sản phẩm");
+    }
+    return result;
   };
 
-  const saveProductCategory = (item: ProductCategory) => {
-    setProductCategories(prev => {
-      const idx = prev.findIndex(c => c.id === item.id);
-      if (idx >= 0) {
-        const next = [...prev];
-        next[idx] = item;
-        logAuditAction("Danh mục sản phẩm", "update", item.name, "Cập nhật danh mục dược mỹ phẩm");
-        return next;
-      }
-      logAuditAction("Danh mục sản phẩm", "create", item.name, "Thêm danh mục dược mỹ phẩm mới");
-      return [...prev, item];
-    });
+  const saveProductCategory = async (item: ProductCategory): Promise<SaveResult> => {
+    const idx = productCategories.findIndex(c => c.id === item.id);
+    const next = idx >= 0 ? [...productCategories] : [...productCategories, item];
+    if (idx >= 0) next[idx] = item;
+    const result = await saveKeyToNeon("productCategories", next, "Danh mục sản phẩm", `Danh mục: ${item.name}`);
+    if (result.success) {
+      setProductCategories(next);
+      logAuditAction("Danh mục sản phẩm", idx >= 0 ? "update" : "create", item.name, "Lưu danh mục sản phẩm");
+    }
+    return result;
   };
 
-  const deleteProductCategory = (id: string) => {
-    setProductCategories(prev => {
-      const found = prev.find(c => c.id === id);
-      logAuditAction("Danh mục sản phẩm", "delete", found?.name || id, "Xóa danh mục");
-      return prev.filter(c => c.id !== id);
-    });
+  const updateProductCategories = async (items: ProductCategory[]): Promise<SaveResult> => {
+    const result = await saveKeyToNeon("productCategories", items, "Danh mục sản phẩm", "Cập nhật danh mục sản phẩm");
+    if (result.success) {
+      setProductCategories(items);
+    }
+    return result;
   };
 
-  const saveArticle = (item: ArticleItem) => {
-    setArticles(prev => {
-      const idx = prev.findIndex(a => a.id === item.id);
-      if (idx >= 0) {
-        const next = [...prev];
-        next[idx] = item;
-        logAuditAction("Tin tức & Bài viết", "update", item.title, "Cập nhật bài viết y khoa");
-        return next;
-      }
-      logAuditAction("Tin tức & Bài viết", "create", item.title, "Đăng bài viết y khoa mới");
-      return [...prev, item];
-    });
+  const deleteProductCategory = async (id: string): Promise<SaveResult> => {
+    const next = productCategories.filter(c => c.id !== id);
+    const result = await saveKeyToNeon("productCategories", next, "Danh mục sản phẩm", "Xóa danh mục");
+    if (result.success) {
+      setProductCategories(next);
+      logAuditAction("Danh mục sản phẩm", "delete", id, "Xóa danh mục");
+    }
+    return result;
   };
 
-  const deleteArticle = (id: string) => {
-    setArticles(prev => {
-      const found = prev.find(a => a.id === id);
-      logAuditAction("Tin tức & Bài viết", "delete", found?.title || id, "Xóa bài viết");
-      return prev.filter(a => a.id !== id);
-    });
+  const saveArticle = async (item: ArticleItem): Promise<SaveResult> => {
+    const idx = articles.findIndex(a => a.id === item.id);
+    const next = idx >= 0 ? [...articles] : [...articles, item];
+    if (idx >= 0) next[idx] = item;
+    const result = await saveKeyToNeon("articles", next, "Tin tức", `Bài viết: ${item.title}`);
+    if (result.success) {
+      setArticles(next);
+      logAuditAction("Tin tức & Bài viết", idx >= 0 ? "update" : "create", item.title, "Lưu bài viết y khoa");
+    }
+    return result;
   };
 
-  const duplicateArticle = (id: string) => {
+  const deleteArticle = async (id: string): Promise<SaveResult> => {
+    const next = articles.filter(a => a.id !== id);
+    const result = await saveKeyToNeon("articles", next, "Tin tức", "Xóa bài viết");
+    if (result.success) {
+      setArticles(next);
+      logAuditAction("Tin tức & Bài viết", "delete", id, "Xóa bài viết");
+    }
+    return result;
+  };
+
+  const duplicateArticle = async (id: string): Promise<SaveResult> => {
     const found = articles.find(a => a.id === id);
-    if (!found) return;
+    if (!found) return { success: false, error: "Không tìm thấy bài viết" };
     const duplicated: ArticleItem = {
       ...found,
       id: "art-" + Date.now(),
@@ -808,94 +886,143 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
       slug: `${found.slug}-copy-${Date.now().toString().slice(-4)}`,
       publishedDate: new Date().toLocaleDateString("vi-VN")
     };
-    setArticles(prev => [...prev, duplicated]);
-    logAuditAction("Tin tức & Bài viết", "create", duplicated.title, "Nhân bản bài viết");
+    const next = [...articles, duplicated];
+    const result = await saveKeyToNeon("articles", next, "Tin tức", "Nhân bản bài viết");
+    if (result.success) {
+      setArticles(next);
+      logAuditAction("Tin tức & Bài viết", "create", duplicated.title, "Nhân bản bài viết");
+    }
+    return result;
   };
 
-  const saveLocation = (item: LocationItem) => {
-    setLocations(prev => {
-      const idx = prev.findIndex(l => l.id === item.id);
-      if (idx >= 0) {
-        const next = [...prev];
-        next[idx] = item;
-        logAuditAction("Hệ thống cơ sở", "update", item.name, "Cập nhật cơ sở phòng khám");
-        return next;
+  const saveLocation = async (item: LocationItem): Promise<SaveResult> => {
+    const idx = locations.findIndex(l => l.id === item.id);
+    const next = idx >= 0 ? [...locations] : [...locations, item];
+    if (idx >= 0) next[idx] = item;
+    const result = await saveKeyToNeon("locations", next, "Cơ sở", `Chi nhánh: ${item.name}`);
+    if (result.success) {
+      setLocations(next);
+      logAuditAction("Hệ thống cơ sở", idx >= 0 ? "update" : "create", item.name, "Lưu cơ sở phòng khám");
+    }
+    return result;
+  };
+
+  const updateLocations = async (items: LocationItem[]): Promise<SaveResult> => {
+    const result = await saveKeyToNeon("locations", items, "Cơ sở", "Cập nhật danh sách cơ sở");
+    if (result.success) {
+      setLocations(items);
+    }
+    return result;
+  };
+
+  const deleteLocation = async (id: string): Promise<SaveResult> => {
+    const next = locations.filter(l => l.id !== id);
+    const result = await saveKeyToNeon("locations", next, "Cơ sở", "Xóa cơ sở");
+    if (result.success) {
+      setLocations(next);
+      logAuditAction("Hệ thống cơ sở", "delete", id, "Xóa cơ sở phòng khám");
+    }
+    return result;
+  };
+
+  const saveFAQ = async (item: FAQGroup): Promise<SaveResult> => {
+    const idx = faqs.findIndex(f => f.id === item.id);
+    const next = idx >= 0 ? [...faqs] : [...faqs, item];
+    if (idx >= 0) next[idx] = item;
+    const result = await saveKeyToNeon("faqs", next, "FAQ", `Nhóm câu hỏi: ${item.groupTitle}`);
+    if (result.success) {
+      setFaqs(next);
+      logAuditAction("FAQ", idx >= 0 ? "update" : "create", item.groupTitle, "Lưu nhóm FAQ");
+    }
+    return result;
+  };
+
+  const updateFAQs = async (items: FAQGroup[]): Promise<SaveResult> => {
+    const result = await saveKeyToNeon("faqs", items, "FAQ", "Cập nhật danh sách FAQ");
+    if (result.success) {
+      setFaqs(items);
+    }
+    return result;
+  };
+
+  const deleteFAQ = async (id: string): Promise<SaveResult> => {
+    const next = faqs.filter(f => f.id !== id);
+    const result = await saveKeyToNeon("faqs", next, "FAQ", "Xóa nhóm FAQ");
+    if (result.success) {
+      setFaqs(next);
+      logAuditAction("FAQ", "delete", id, "Xóa nhóm FAQ");
+    }
+    return result;
+  };
+
+  const saveNavItem = async (item: NavItem): Promise<SaveResult> => {
+    const idx = navItems.findIndex(n => n.id === item.id);
+    const next = idx >= 0 ? [...navItems] : [...navItems, item];
+    if (idx >= 0) next[idx] = item;
+    const result = await saveKeyToNeon("navItems", next, "Menu", `Menu: ${item.title}`);
+    if (result.success) {
+      setNavItems(next);
+      logAuditAction("Menu & Điều hướng", idx >= 0 ? "update" : "create", item.title, "Lưu mục menu");
+    }
+    return result;
+  };
+
+  const updateNavItems = async (items: NavItem[]): Promise<SaveResult> => {
+    const result = await saveKeyToNeon("navItems", items, "Menu", "Cập nhật menu điều hướng");
+    if (result.success) {
+      setNavItems(items);
+    }
+    return result;
+  };
+
+  const deleteNavItem = async (id: string): Promise<SaveResult> => {
+    const next = navItems.filter(n => n.id !== id);
+    const result = await saveKeyToNeon("navItems", next, "Menu", "Xóa mục menu");
+    if (result.success) {
+      setNavItems(next);
+      logAuditAction("Menu & Điều hướng", "delete", id, "Xóa mục menu");
+    }
+    return result;
+  };
+
+  const updatePagesConfig = async (configs: Record<string, PageBannerConfig>): Promise<SaveResult> => {
+    const result = await saveKeyToNeon("pagesConfig", configs, "Quản lý Trang", "Cập nhật cấu hình banner các trang");
+    if (result.success) {
+      setPagesConfig(configs);
+    }
+    return result;
+  };
+
+  const updatePageConfig = async (pageId: string, partial: Partial<PageBannerConfig>): Promise<SaveResult> => {
+    const current = pagesConfig[pageId] || initialPagesConfig[pageId] || {
+      id: pageId,
+      pageName: pageId,
+      routePath: `/${pageId}`,
+      enabled: true,
+      badge: "",
+      title: "",
+      description: "",
+      desktopImage: "",
+      overlayOpacity: 70,
+      overlayColor: "dark" as const,
+      alignment: "center" as const
+    };
+    const updated = {
+      ...pagesConfig,
+      [pageId]: {
+        ...current,
+        ...partial
       }
-      logAuditAction("Hệ thống cơ sở", "create", item.name, "Thêm mới cơ sở phòng khám");
-      return [...prev, item];
-    });
-  };
-
-  const deleteLocation = (id: string) => {
-    setLocations(prev => prev.filter(l => l.id !== id));
-    logAuditAction("Hệ thống cơ sở", "delete", id, "Xóa cơ sở phòng khám");
-  };
-
-  const saveFAQ = (item: FAQGroup) => {
-    setFaqs(prev => {
-      const idx = prev.findIndex(f => f.id === item.id);
-      if (idx >= 0) {
-        const next = [...prev];
-        next[idx] = item;
-        logAuditAction("FAQ", "update", item.groupTitle, "Cập nhật nhóm câu hỏi");
-        return next;
-      }
-      logAuditAction("FAQ", "create", item.groupTitle, "Thêm nhóm câu hỏi mới");
-      return [...prev, item];
-    });
-  };
-
-  const deleteFAQ = (id: string) => {
-    setFaqs(prev => prev.filter(f => f.id !== id));
-    logAuditAction("FAQ", "delete", id, "Xóa nhóm FAQ");
-  };
-
-  const saveNavItem = (item: NavItem) => {
-    setNavItems(prev => {
-      const idx = prev.findIndex(n => n.id === item.id);
-      if (idx >= 0) {
-        const next = [...prev];
-        next[idx] = item;
-        logAuditAction("Menu & Điều hướng", "update", item.title, "Cập nhật menu");
-        return next;
-      }
-      logAuditAction("Menu & Điều hướng", "create", item.title, "Thêm mục menu mới");
-      return [...prev, item];
-    });
-  };
-
-  const deleteNavItem = (id: string) => {
-    setNavItems(prev => prev.filter(n => n.id !== id));
-    logAuditAction("Menu & Điều hướng", "delete", id, "Xóa mục menu");
-  };
-
-  const updatePageConfig = (pageId: string, partial: Partial<PageBannerConfig>) => {
-    setPagesConfig(prev => {
-      const current = prev[pageId] || initialPagesConfig[pageId] || {
-        id: pageId,
-        pageName: pageId,
-        routePath: `/${pageId}`,
-        enabled: true,
-        badge: "",
-        title: "",
-        description: "",
-        desktopImage: "",
-        overlayOpacity: 70,
-        overlayColor: "dark" as const,
-        alignment: "center" as const
-      };
-      const updated = {
-        ...prev,
-        [pageId]: {
-          ...current,
-          ...partial
-        }
-      };
+    };
+    const result = await saveKeyToNeon("pagesConfig", updated, "Quản lý Trang", `Cập nhật banner trang ${pageId}`);
+    if (result.success) {
+      setPagesConfig(updated);
       logAuditAction("Quản lý Trang", "update", current.pageName || pageId, `Cập nhật cấu hình banner trang ${pageId}`);
-      return updated;
-    });
+    }
+    return result;
   };
 
+  // Booking leads (separate endpoint /api/leads)
   const addBookingLead = (lead: Omit<BookingLead, "id" | "createdAt" | "status">) => {
     const newLead: BookingLead = {
       ...lead,
@@ -905,7 +1032,6 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
     };
     setBookingLeads(prev => [newLead, ...prev]);
 
-    // Sync to Neon PostgreSQL
     fetch('/api/leads', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -930,7 +1056,6 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
     };
     setBookingLeads(prev => [newLead, ...prev]);
 
-    // Sync to Neon PostgreSQL
     fetch('/api/leads', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -1069,7 +1194,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
   const syncAllToNeon = async (): Promise<{ success: boolean; message: string }> => {
     try {
       setSyncStatus('saving');
-      const token = localStorage.getItem('LBC_ADMIN_TOKEN') || adminToken;
+      const token = localStorage.getItem('LBC_ADMIN_TOKEN') || adminToken || 'lbc_admin_secret_998877';
       const payload: Record<string, any> = {
         siteConfig,
         homepageModules,
@@ -1128,25 +1253,25 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
         reorderHomepageModules,
         updateHomepageModule,
         heroSlides,
-        updateHeroSlides: setHeroSlides,
+        updateHeroSlides,
         saveSlide,
         deleteSlide,
         duplicateSlide,
         heroSliderSettings,
         updateHeroSliderSettings,
         sideBanners,
-        updateSideBanners: setSideBanners,
+        updateSideBanners,
         saveSideBanner,
         deleteSideBanner,
         coreValues,
-        updateCoreValues: setCoreValues,
+        updateCoreValues,
         saveCoreValue,
         deleteCoreValue,
         pagesConfig,
-        updatePagesConfig: setPagesConfig,
+        updatePagesConfig,
         updatePageConfig,
         specialties,
-        updateSpecialties: setSpecialties,
+        updateSpecialties,
         saveSpecialty,
         deleteSpecialty,
         services,
@@ -1171,7 +1296,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
         deleteProduct,
         duplicateProduct,
         productCategories,
-        updateProductCategories: setProductCategories,
+        updateProductCategories,
         saveProductCategory,
         deleteProductCategory,
         articles,
@@ -1179,15 +1304,15 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
         deleteArticle,
         duplicateArticle,
         locations,
-        updateLocations: setLocations,
+        updateLocations,
         saveLocation,
         deleteLocation,
         faqs,
-        updateFAQs: setFaqs,
+        updateFAQs,
         saveFAQ,
         deleteFAQ,
         navItems,
-        updateNavItems: setNavItems,
+        updateNavItems,
         saveNavItem,
         deleteNavItem,
         bookingLeads,
@@ -1211,6 +1336,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
         syncStatus,
         adminToken,
         setAdminToken,
+        saveKeyToNeon,
         syncAllToNeon,
         refreshFromNeon,
         clearLocalCache

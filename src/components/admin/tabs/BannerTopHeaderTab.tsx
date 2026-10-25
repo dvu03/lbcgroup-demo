@@ -87,6 +87,11 @@ export const BannerTopHeaderTab: React.FC<BannerTopHeaderTabProps> = ({ onNaviga
 
   // Responsive simulator viewport
   const [previewDevice, setPreviewDevice] = useState<"desktop" | "tablet" | "mobile">("desktop");
+  const [isSaving, setIsSaving] = useState(false);
+  const [clinicContact, setClinicContact] = useState({
+    hotline: siteConfig.hotline || "1900 6750",
+    operatingHours: siteConfig.operatingHours || "08:00 – 20:00 (Hằng ngày)",
+  });
 
   // Sync state if siteConfig changes from other tabs
   useEffect(() => {
@@ -102,6 +107,10 @@ export const BannerTopHeaderTab: React.FC<BannerTopHeaderTabProps> = ({ onNaviga
       brandName: siteConfig.brandName || "Lạc's Beauty Center",
       facilityName: siteConfig.facilityName || "Phòng khám Chuyên khoa Da liễu",
     });
+    setClinicContact({
+      hotline: siteConfig.hotline || "1900 6750",
+      operatingHours: siteConfig.operatingHours || "08:00 – 20:00 (Hằng ngày)",
+    });
   }, [siteConfig]);
 
   useEffect(() => {
@@ -116,8 +125,9 @@ export const BannerTopHeaderTab: React.FC<BannerTopHeaderTabProps> = ({ onNaviga
   };
 
   // Save all top area changes
-  const handleSaveAll = () => {
-    updateSiteConfig({
+  const handleSaveAll = async () => {
+    setIsSaving(true);
+    const resSite = await updateSiteConfig({
       bannerTopConfig: bannerConfig,
       headerMainConfig: headerConfig,
       logoHeader: logoState.logoHeader,
@@ -125,22 +135,31 @@ export const BannerTopHeaderTab: React.FC<BannerTopHeaderTabProps> = ({ onNaviga
       logoWhiteUrl: logoState.logoWhiteUrl,
       brandName: logoState.brandName,
       facilityName: logoState.facilityName,
+      hotline: clinicContact.hotline,
+      operatingHours: clinicContact.operatingHours,
     });
-    updateNavItems(localNavItems);
-    showToast("Đã lưu thành công toàn bộ cấu hình Banner Top, Header và Menu!");
+    const resNav = await updateNavItems(localNavItems);
+    setIsSaving(false);
+    if (resSite.success && resNav.success) {
+      showToast("Đã lưu thành công toàn bộ cấu hình Banner Top, Header và Menu vào Neon PostgreSQL!");
+    } else {
+      alert("Lỗi khi lưu vào server: " + (resSite.error || resNav.error || "Không thể ghi dữ liệu"));
+    }
   };
 
   // Reset to default brief
-  const handleResetDefaults = () => {
+  const handleResetDefaults = async () => {
     if (window.confirm("Bạn có chắc chắn muốn khôi phục cấu hình Banner Top và Header về mặc định theo brief LBC?")) {
       setBannerConfig(initialBannerTopConfig);
       setHeaderConfig(initialHeaderMainConfig);
       setLocalNavItems(initialNavItems);
-      updateSiteConfig({
+      setIsSaving(true);
+      await updateSiteConfig({
         bannerTopConfig: initialBannerTopConfig,
         headerMainConfig: initialHeaderMainConfig,
       });
-      updateNavItems(initialNavItems);
+      await updateNavItems(initialNavItems);
+      setIsSaving(false);
       showToast("Đã khôi phục cấu hình mặc định chuẩn LBC!");
     }
   };
@@ -314,11 +333,21 @@ export const BannerTopHeaderTab: React.FC<BannerTopHeaderTabProps> = ({ onNaviga
           </button>
           <button
             type="button"
+            disabled={isSaving}
             onClick={handleSaveAll}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 active:bg-primary-800 text-white font-bold text-xs shadow-md transition-all transform hover:-translate-y-0.5"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 active:bg-primary-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-xs shadow-md transition-all transform hover:-translate-y-0.5"
           >
-            <Save className="w-4 h-4 text-white" />
-            <span>LƯU CẤU HÌNH</span>
+            {isSaving ? (
+              <>
+                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                <span>ĐANG LƯU...</span>
+              </>
+            ) : (
+              <>
+                <Save className="w-4 h-4 text-white" />
+                <span>LƯU CẤU HÌNH</span>
+              </>
+            )}
           </button>
         </div>
       </div>
@@ -976,8 +1005,8 @@ export const BannerTopHeaderTab: React.FC<BannerTopHeaderTabProps> = ({ onNaviga
                 </label>
                 <input
                   type="text"
-                  value={siteConfig.hotline}
-                  onChange={e => updateSiteConfig({ hotline: e.target.value })}
+                  value={clinicContact.hotline}
+                  onChange={e => setClinicContact(prev => ({ ...prev, hotline: e.target.value }))}
                   className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-medium"
                 />
               </div>
@@ -987,8 +1016,8 @@ export const BannerTopHeaderTab: React.FC<BannerTopHeaderTabProps> = ({ onNaviga
                 </label>
                 <input
                   type="text"
-                  value={siteConfig.operatingHours}
-                  onChange={e => updateSiteConfig({ operatingHours: e.target.value })}
+                  value={clinicContact.operatingHours}
+                  onChange={e => setClinicContact(prev => ({ ...prev, operatingHours: e.target.value }))}
                   className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-medium"
                 />
               </div>

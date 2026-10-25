@@ -24,6 +24,7 @@ export const CaseStudiesTab: React.FC = () => {
   const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
   const [mediaTarget, setMediaTarget] = useState<"before" | "after" | null>(null);
   const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const [isSaving, setIsSaving] = useState(false);
 
   const showToast = (msg: string) => {
     setToastMsg(msg);
@@ -55,12 +56,18 @@ export const CaseStudiesTab: React.FC = () => {
     setEditingCase(newCase);
   };
 
-  const handleSave = (e: React.FormEvent) => {
+  const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingCase) return;
-    saveCaseStudy(editingCase);
-    showToast(`Đã lưu ca điều trị Before-After: "${editingCase.customerInitial}"!`);
-    setEditingCase(null);
+    setIsSaving(true);
+    const res = await saveCaseStudy(editingCase);
+    setIsSaving(false);
+    if (res.success) {
+      showToast(`Đã lưu ca điều trị Before-After: "${editingCase.customerInitial}"!`);
+      setEditingCase(null);
+    } else {
+      alert("Lỗi khi lưu ca điều trị: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+    }
   };
 
   return (
@@ -348,9 +355,17 @@ export const CaseStudiesTab: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition"
+                  disabled={isSaving}
+                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed rounded-xl shadow-xs transition flex items-center gap-1.5"
                 >
-                  Lưu ca điều trị
+                  {isSaving ? (
+                    <>
+                      <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span>Đang lưu...</span>
+                    </>
+                  ) : (
+                    <span>Lưu ca điều trị</span>
+                  )}
                 </button>
               </div>
             </form>
@@ -365,11 +380,16 @@ export const CaseStudiesTab: React.FC = () => {
         message="Hành động này sẽ xóa ca điều trị khỏi khối Người thật việc thật trên website."
         confirmLabel="Xóa"
         cancelLabel="Hủy"
-        onConfirm={() => {
+        onConfirm={async () => {
           if (deleteConfirmId) {
-            deleteCaseStudy(deleteConfirmId);
+            const id = deleteConfirmId;
             setDeleteConfirmId(null);
-            showToast("Đã xóa ca điều trị!");
+            const res = await deleteCaseStudy(id);
+            if (res.success) {
+              showToast("Đã xóa ca điều trị!");
+            } else {
+              alert("Lỗi khi xóa ca điều trị: " + (res.error || "Không thể xóa"));
+            }
           }
         }}
         onCancel={() => setDeleteConfirmId(null)}

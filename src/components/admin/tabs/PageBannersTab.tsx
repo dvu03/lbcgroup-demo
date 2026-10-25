@@ -70,11 +70,15 @@ export const PageBannersTab: React.FC = () => {
     e.preventDefault();
     setIsSaving(true);
     try {
-      updatePageConfig(selectedPageId, formState);
-      showToast(`Đã lưu cấu hình banner và nội dung trang "${formState.pageName}" lên Neon DB!`);
-    } catch (err) {
+      const res = await updatePageConfig(selectedPageId, formState);
+      if (res.success) {
+        showToast(`Đã lưu cấu hình banner và nội dung trang "${formState.pageName}" lên Neon DB!`);
+      } else {
+        alert("Lỗi khi lưu cấu hình trang: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+      }
+    } catch (err: any) {
       console.error(err);
-      showToast("Lỗi khi lưu cấu hình!");
+      alert("Lỗi khi lưu cấu hình: " + (err?.message || "Lỗi không xác định"));
     } finally {
       setIsSaving(false);
     }

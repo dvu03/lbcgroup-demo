@@ -46,6 +46,7 @@ export const HeroBannersTab: React.FC = () => {
   const [mediaPickerTarget, setMediaPickerTarget] = useState<"desktop" | "mobile" | "side" | null>(null);
   const [previewDevice, setPreviewDevice] = useState<"desktop" | "mobile">("desktop");
   const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const [isSaving, setIsSaving] = useState(false);
 
   // Local state for autoplay timing preview before saving
   const [autoplaySettings, setAutoplaySettings] = useState<HeroSliderSettings>(heroSliderSettings);
@@ -61,18 +62,28 @@ export const HeroBannersTab: React.FC = () => {
     setHasUnsavedTiming(true);
   };
 
-  const handleSaveTiming = () => {
-    updateHeroSliderSettings(autoplaySettings);
-    setHasUnsavedTiming(false);
-    showToast(`Đã lưu cấu hình chuyển slide: ${autoplaySettings.autoplayEnabled ? `${autoplaySettings.autoplayInterval} giây/slide` : 'Tắt tự động'}`);
+  const handleSaveTiming = async () => {
+    setIsSaving(true);
+    const res = await updateHeroSliderSettings(autoplaySettings);
+    setIsSaving(false);
+    if (res.success) {
+      setHasUnsavedTiming(false);
+      showToast(`Đã lưu cấu hình chuyển slide: ${autoplaySettings.autoplayEnabled ? `${autoplaySettings.autoplayInterval} giây/slide` : 'Tắt tự động'}`);
+    } else {
+      alert("Lỗi khi lưu thời gian: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+    }
   };
 
-  const handleResetDefaultTiming = () => {
+  const handleResetDefaultTiming = async () => {
     const defaults: HeroSliderSettings = { autoplayEnabled: true, autoplayInterval: 5, pauseOnHover: true };
     setAutoplaySettings(defaults);
-    updateHeroSliderSettings(defaults);
-    setHasUnsavedTiming(false);
-    showToast("Đã khôi phục cài đặt mặc định: 5 giây/slide, bật tự động!");
+    setIsSaving(true);
+    const res = await updateHeroSliderSettings(defaults);
+    setIsSaving(false);
+    if (res.success) {
+      setHasUnsavedTiming(false);
+      showToast("Đã khôi phục cài đặt mặc định: 5 giây/slide, bật tự động!");
+    }
   };
 
   const showToast = (msg: string) => {
@@ -99,31 +110,47 @@ export const HeroBannersTab: React.FC = () => {
     setEditingSlide(newSlide);
   };
 
-  const handleMoveSlide = (index: number, direction: "up" | "down") => {
+  const handleMoveSlide = async (index: number, direction: "up" | "down") => {
     const targetIdx = direction === "up" ? index - 1 : index + 1;
     if (targetIdx < 0 || targetIdx >= heroSlides.length) return;
 
     const list = [...heroSlides];
     const [moved] = list.splice(index, 1);
     list.splice(targetIdx, 0, moved);
-    updateHeroSlides(list);
-    showToast("Đã cập nhật thứ tự hiển thị banner!");
+    const res = await updateHeroSlides(list);
+    if (res.success) {
+      showToast("Đã cập nhật thứ tự hiển thị banner!");
+    } else {
+      alert("Lỗi khi cập nhật thứ tự banner: " + (res.error || "Không thể lưu"));
+    }
   };
 
-  const handleSaveSlideSubmit = (e: React.FormEvent) => {
+  const handleSaveSlideSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingSlide) return;
-    saveSlide(editingSlide);
-    showToast(`Đã lưu banner: "${editingSlide.title}"!`);
-    setEditingSlide(null);
+    setIsSaving(true);
+    const res = await saveSlide(editingSlide);
+    setIsSaving(false);
+    if (res.success) {
+      showToast(`Đã lưu banner: "${editingSlide.title}"!`);
+      setEditingSlide(null);
+    } else {
+      alert("Lỗi khi lưu slide banner: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+    }
   };
 
-  const handleSaveSideBannerSubmit = (e: React.FormEvent) => {
+  const handleSaveSideBannerSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingSideBanner) return;
-    saveSideBanner(editingSideBanner);
-    showToast(`Đã lưu banner phụ: "${editingSideBanner.title}"!`);
-    setEditingSideBanner(null);
+    setIsSaving(true);
+    const res = await saveSideBanner(editingSideBanner);
+    setIsSaving(false);
+    if (res.success) {
+      showToast(`Đã lưu banner phụ: "${editingSideBanner.title}"!`);
+      setEditingSideBanner(null);
+    } else {
+      alert("Lỗi khi lưu banner phụ: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+    }
   };
 
   return (
@@ -260,11 +287,16 @@ export const HeroBannersTab: React.FC = () => {
 
                 <button
                   type="button"
+                  disabled={isSaving}
                   onClick={handleSaveTiming}
-                  className="px-3.5 py-1.5 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition flex items-center gap-1.5"
+                  className="px-3.5 py-1.5 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed rounded-xl shadow-xs transition flex items-center gap-1.5"
                 >
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  <span>Lưu thời gian</span>
+                  {isSaving ? (
+                    <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  ) : (
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                  )}
+                  <span>{isSaving ? "Đang lưu..." : "Lưu thời gian"}</span>
                 </button>
               </div>
             </div>
@@ -944,9 +976,17 @@ export const HeroBannersTab: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition"
+                  disabled={isSaving}
+                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed rounded-xl shadow-xs transition flex items-center gap-1.5"
                 >
-                  Lưu thay đổi Banner
+                  {isSaving ? (
+                    <>
+                      <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span>Đang lưu vào Neon...</span>
+                    </>
+                  ) : (
+                    <span>Lưu thay đổi Banner</span>
+                  )}
                 </button>
               </div>
             </form>
@@ -1207,9 +1247,17 @@ export const HeroBannersTab: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition"
+                  disabled={isSaving}
+                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed rounded-xl shadow-xs transition flex items-center gap-1.5"
                 >
-                  Lưu banner phụ
+                  {isSaving ? (
+                    <>
+                      <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span>Đang lưu...</span>
+                    </>
+                  ) : (
+                    <span>Lưu banner phụ</span>
+                  )}
                 </button>
               </div>
             </form>
@@ -1225,11 +1273,16 @@ export const HeroBannersTab: React.FC = () => {
         message="Hành động này sẽ xóa vĩnh viễn slide khỏi danh sách trình chiếu trên trang chủ website."
         confirmLabel="Xóa Slide"
         cancelLabel="Hủy bỏ"
-        onConfirm={() => {
+        onConfirm={async () => {
           if (deleteConfirmId) {
-            deleteSlide(deleteConfirmId);
+            const id = deleteConfirmId;
             setDeleteConfirmId(null);
-            showToast("Đã xóa slide thành công!");
+            const res = await deleteSlide(id);
+            if (res.success) {
+              showToast("Đã xóa slide thành công!");
+            } else {
+              alert("Lỗi khi xóa slide: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+            }
           }
         }}
         onCancel={() => setDeleteConfirmId(null)}

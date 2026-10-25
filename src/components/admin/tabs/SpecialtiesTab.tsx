@@ -26,6 +26,7 @@ export const SpecialtiesTab: React.FC = () => {
   const [showMediaPicker, setShowMediaPicker] = useState(false);
   const [showIconPicker, setShowIconPicker] = useState(false);
   const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const [isSaving, setIsSaving] = useState(false);
 
   const showToast = (msg: string) => {
     setToastMsg(msg);
@@ -59,12 +60,18 @@ export const SpecialtiesTab: React.FC = () => {
     setEditingSpecialty(newSpec);
   };
 
-  const handleSave = (e: React.FormEvent) => {
+  const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingSpecialty) return;
-    saveSpecialty(editingSpecialty);
-    showToast(`Đã lưu chuyên khoa: "${editingSpecialty.name}"!`);
-    setEditingSpecialty(null);
+    setIsSaving(true);
+    const res = await saveSpecialty(editingSpecialty);
+    setIsSaving(false);
+    if (res.success) {
+      showToast(`Đã lưu chuyên khoa: "${editingSpecialty.name}"!`);
+      setEditingSpecialty(null);
+    } else {
+      alert("Lỗi khi lưu chuyên khoa: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+    }
   };
 
   return (
@@ -311,9 +318,17 @@ export const SpecialtiesTab: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition"
+                  disabled={isSaving}
+                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed rounded-xl shadow-xs transition flex items-center gap-1.5"
                 >
-                  Lưu Chuyên khoa
+                  {isSaving ? (
+                    <>
+                      <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span>Đang lưu...</span>
+                    </>
+                  ) : (
+                    <span>Lưu Chuyên khoa</span>
+                  )}
                 </button>
               </div>
             </form>
@@ -328,11 +343,16 @@ export const SpecialtiesTab: React.FC = () => {
         message="Hành động này sẽ xóa chuyên khoa khỏi danh sách hệ sinh thái phòng khám."
         confirmLabel="Xóa"
         cancelLabel="Hủy"
-        onConfirm={() => {
+        onConfirm={async () => {
           if (deleteConfirmId) {
-            deleteSpecialty(deleteConfirmId);
+            const id = deleteConfirmId;
             setDeleteConfirmId(null);
-            showToast("Đã xóa chuyên khoa!");
+            const res = await deleteSpecialty(id);
+            if (res.success) {
+              showToast("Đã xóa chuyên khoa!");
+            } else {
+              alert("Lỗi khi xóa chuyên khoa: " + (res.error || "Không thể xóa"));
+            }
           }
         }}
         onCancel={() => setDeleteConfirmId(null)}

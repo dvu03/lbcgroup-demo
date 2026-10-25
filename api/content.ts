@@ -12,6 +12,9 @@ export default async function handler(req: any, res: any) {
         if (rows.length === 0) {
           return res.status(404).json({ error: `Key ${key} not found` });
         }
+        res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0');
+        res.setHeader('Pragma', 'no-cache');
+        res.setHeader('Expires', '0');
         return res.status(200).json(rows[0].data);
       }
 
@@ -22,8 +25,10 @@ export default async function handler(req: any, res: any) {
         dictionary[row.key] = row.data;
       }
 
-      // Add cache headers for client performance (stale-while-revalidate)
-      res.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate=59');
+      // Set strict no-cache headers so browser and Vercel Edge never return stale CMS data
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
       return res.status(200).json(dictionary);
     } catch (error: any) {
       return res.status(500).json({ error: 'Failed to fetch content from database', details: error.message });
@@ -74,6 +79,7 @@ export default async function handler(req: any, res: any) {
         );
       `.catch(e => console.warn('Audit log write error:', e));
 
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
       return res.status(200).json({
         success: true,
         key: result[0].key,

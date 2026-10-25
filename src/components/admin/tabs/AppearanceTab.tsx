@@ -126,6 +126,7 @@ export const AppearanceTab: React.FC<AppearanceTabProps> = ({
   const [logoPreviewBg, setLogoPreviewBg] = useState<"white" | "light" | "teal" | "dark">("white");
   const [toastMsg, setToastMsg] = useState<string | null>(null);
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
 
   useEffect(() => {
     if (initialSubTab) {
@@ -193,8 +194,9 @@ export const AppearanceTab: React.FC<AppearanceTabProps> = ({
     }
   };
 
-  const handleSave = (e?: React.FormEvent) => {
+  const handleSave = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
+    setIsSaving(true);
 
     const payload: Partial<SiteConfig> = {
       ...formData,
@@ -215,9 +217,14 @@ export const AppearanceTab: React.FC<AppearanceTabProps> = ({
       theme: { ...themeState }
     };
 
-    updateSiteConfig(payload);
-    setHasUnsavedChanges(false);
-    showToast("Đã lưu toàn bộ cấu hình giao diện thành công vào Neon PostgreSQL!");
+    const res = await updateSiteConfig(payload);
+    setIsSaving(false);
+    if (res.success) {
+      setHasUnsavedChanges(false);
+      showToast("Đã lưu toàn bộ cấu hình giao diện thành công vào Neon PostgreSQL!");
+    } else {
+      alert("Lỗi khi lưu dữ liệu lên server: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+    }
   };
 
   const handleResetDefaults = () => {
@@ -261,7 +268,8 @@ export const AppearanceTab: React.FC<AppearanceTabProps> = ({
           <button
             type="button"
             onClick={handleResetDefaults}
-            className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-neutral-600 hover:text-neutral-900 bg-white border border-neutral-300 hover:bg-neutral-50 rounded-xl transition shadow-xs"
+            disabled={isSaving}
+            className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-neutral-600 hover:text-neutral-900 bg-white border border-neutral-300 hover:bg-neutral-50 disabled:opacity-50 rounded-xl transition shadow-xs"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>Mặc định</span>
@@ -269,11 +277,21 @@ export const AppearanceTab: React.FC<AppearanceTabProps> = ({
 
           <button
             type="button"
+            disabled={isSaving}
             onClick={() => handleSave()}
-            className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition"
+            className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed rounded-xl shadow-xs transition"
           >
-            <Save className="w-4 h-4" />
-            <span>Lưu Thay Đổi</span>
+            {isSaving ? (
+              <>
+                <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                <span>Đang lưu...</span>
+              </>
+            ) : (
+              <>
+                <Save className="w-4 h-4" />
+                <span>Lưu Thay Đổi</span>
+              </>
+            )}
           </button>
         </div>
       </div>

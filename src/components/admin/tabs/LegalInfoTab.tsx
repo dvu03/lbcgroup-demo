@@ -15,16 +15,23 @@ export const LegalInfoTab: React.FC = () => {
   const { siteConfig, updateSiteConfig } = useDemoData();
   const [formData, setFormData] = useState<SiteConfig>({ ...siteConfig });
   const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const [isSaving, setIsSaving] = useState(false);
 
   const showToast = (msg: string) => {
     setToastMsg(msg);
     setTimeout(() => setToastMsg(null), 3500);
   };
 
-  const handleSave = (e: React.FormEvent) => {
+  const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    updateSiteConfig(formData);
-    showToast("Đã lưu thông tin pháp lý phòng khám thành công!");
+    setIsSaving(true);
+    const res = await updateSiteConfig(formData);
+    setIsSaving(false);
+    if (res.success) {
+      showToast("Đã lưu thông tin pháp lý phòng khám thành công vào Neon PostgreSQL!");
+    } else {
+      alert("Lỗi khi lưu thông tin: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+    }
   };
 
   return (
@@ -129,10 +136,20 @@ export const LegalInfoTab: React.FC = () => {
         <div className="flex items-center justify-end">
           <button
             type="submit"
-            className="flex items-center gap-2 px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs rounded-xl shadow-md transition"
+            disabled={isSaving}
+            className="flex items-center gap-2 px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-xs rounded-xl shadow-md transition"
           >
-            <Save className="w-4 h-4" />
-            <span>Lưu Thông tin Pháp lý</span>
+            {isSaving ? (
+              <>
+                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                <span>Đang lưu vào Neon...</span>
+              </>
+            ) : (
+              <>
+                <Save className="w-4 h-4" />
+                <span>Lưu Thông tin Pháp lý</span>
+              </>
+            )}
           </button>
         </div>
       </form>

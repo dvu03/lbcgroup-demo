@@ -44,6 +44,7 @@ export const BrandingIdentityTab: React.FC<BrandingIdentityTabProps> = ({
   const [mediaPickerTarget, setMediaPickerTarget] = useState<"logoHeader" | "logoFooter" | "favicon" | "ogImage" | "popupImage" | null>(null);
   const [showBackToTopIconPicker, setShowBackToTopIconPicker] = useState(false);
   const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const [isSaving, setIsSaving] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
   const [previewErrors, setPreviewErrors] = useState<{
     logoHeader?: boolean;
@@ -146,8 +147,10 @@ export const BrandingIdentityTab: React.FC<BrandingIdentityTabProps> = ({
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSaving(true);
+    setUploadError(null);
     try {
       const finalConfig: SiteConfig = {
         ...formData,
@@ -158,11 +161,18 @@ export const BrandingIdentityTab: React.FC<BrandingIdentityTabProps> = ({
         faviconUrl: formData.favicon || formData.faviconUrl || "",
         favicon: formData.favicon || formData.faviconUrl || "",
       };
-      updateSiteConfig(finalConfig);
-      setUploadError(null);
-      showToast("Đã lưu thành công cấu hình! Toàn bộ website client đã được đồng bộ tức thì.");
+      const res = await updateSiteConfig(finalConfig);
+      setIsSaving(false);
+      if (res.success) {
+        showToast("Đã lưu thành công cấu hình! Toàn bộ website client và Neon DB đã được đồng bộ tức thì.");
+      } else {
+        setUploadError("Không thể lưu cấu hình: " + (res.error || "Lỗi lưu DB"));
+        alert("Lỗi khi lưu cấu hình lên server: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+      }
     } catch (err: any) {
+      setIsSaving(false);
       setUploadError("Không thể lưu cấu hình: " + (err.message || String(err)));
+      alert("Lỗi khi lưu cấu hình: " + (err.message || String(err)));
     }
   };
 
@@ -1750,10 +1760,20 @@ export const BrandingIdentityTab: React.FC<BrandingIdentityTabProps> = ({
           </span>
           <button
             type="submit"
-            className="flex items-center gap-2 px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 active:bg-emerald-900 text-white font-bold text-xs rounded-xl shadow-md transition ml-auto"
+            disabled={isSaving}
+            className="flex items-center gap-2 px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 active:bg-emerald-900 disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-xs rounded-xl shadow-md transition ml-auto"
           >
-            <Save className="w-4 h-4" />
-            <span>LƯU CẤU HÌNH</span>
+            {isSaving ? (
+              <>
+                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                <span>ĐANG LƯU VÀO NEON...</span>
+              </>
+            ) : (
+              <>
+                <Save className="w-4 h-4" />
+                <span>LƯU CẤU HÌNH</span>
+              </>
+            )}
           </button>
         </div>
       </form>

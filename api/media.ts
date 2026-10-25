@@ -22,6 +22,10 @@ export default async function handler(req: any, res: any) {
   // GET: Read all media
   if (req.method === 'GET') {
     try {
+      res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0');
+      res.setHeader('Pragma', 'no-cache');
+      res.setHeader('Expires', '0');
+
       const sql = getDb();
       const rows = await sql`
         SELECT id, name, url, type, mime_type as "mimeType", 

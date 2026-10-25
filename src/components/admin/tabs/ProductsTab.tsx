@@ -70,6 +70,7 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
   const [brandMediaPickerTarget, setBrandMediaPickerTarget] = useState<"logo" | "banner" | null>(null);
 
   const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const [isSaving, setIsSaving] = useState(false);
 
   const showToast = (msg: string) => {
     setToastMsg(msg);
@@ -123,12 +124,18 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
     setEditingProduct(newPrd);
   };
 
-  const handleSaveProductSubmit = (e: React.FormEvent) => {
+  const handleSaveProductSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingProduct) return;
-    saveProduct(editingProduct);
-    showToast(`Đã lưu sản phẩm: "${editingProduct.name}"!`);
-    setEditingProduct(null);
+    setIsSaving(true);
+    const res = await saveProduct(editingProduct);
+    setIsSaving(false);
+    if (res.success) {
+      showToast(`Đã lưu sản phẩm: "${editingProduct.name}"!`);
+      setEditingProduct(null);
+    } else {
+      alert("Lỗi khi lưu sản phẩm: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+    }
   };
 
   // Brand handlers
@@ -146,12 +153,18 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
     setEditingBrand(newBr);
   };
 
-  const handleSaveBrandSubmit = (e: React.FormEvent) => {
+  const handleSaveBrandSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingBrand) return;
-    saveBrand(editingBrand);
-    showToast(`Đã lưu thương hiệu: "${editingBrand.name}"!`);
-    setEditingBrand(null);
+    setIsSaving(true);
+    const res = await saveBrand(editingBrand);
+    setIsSaving(false);
+    if (res.success) {
+      showToast(`Đã lưu thương hiệu: "${editingBrand.name}"!`);
+      setEditingBrand(null);
+    } else {
+      alert("Lỗi khi lưu thương hiệu: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+    }
   };
 
   return (
@@ -853,9 +866,17 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition"
+                  disabled={isSaving}
+                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed rounded-xl shadow-xs transition flex items-center gap-1.5"
                 >
-                  Lưu sản phẩm
+                  {isSaving ? (
+                    <>
+                      <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span>Đang lưu...</span>
+                    </>
+                  ) : (
+                    <span>Lưu sản phẩm</span>
+                  )}
                 </button>
               </div>
             </form>
@@ -1009,9 +1030,17 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition"
+                  disabled={isSaving}
+                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed rounded-xl shadow-xs transition flex items-center gap-1.5"
                 >
-                  Lưu thương hiệu
+                  {isSaving ? (
+                    <>
+                      <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span>Đang lưu...</span>
+                    </>
+                  ) : (
+                    <span>Lưu thương hiệu</span>
+                  )}
                 </button>
               </div>
             </form>
@@ -1027,11 +1056,16 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
         message="Hành động này sẽ xóa sản phẩm khỏi danh mục phân phối trên website."
         confirmLabel="Xóa Sản phẩm"
         cancelLabel="Hủy bỏ"
-        onConfirm={() => {
+        onConfirm={async () => {
           if (deleteConfirmId) {
-            deleteProduct(deleteConfirmId);
+            const id = deleteConfirmId;
             setDeleteConfirmId(null);
-            showToast("Đã xóa sản phẩm thành công!");
+            const res = await deleteProduct(id);
+            if (res.success) {
+              showToast("Đã xóa sản phẩm thành công!");
+            } else {
+              alert("Lỗi khi xóa sản phẩm: " + (res.error || "Không thể xóa"));
+            }
           }
         }}
         onCancel={() => setDeleteConfirmId(null)}
@@ -1045,11 +1079,16 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSubTab = "produ
         message="Hành động này sẽ xóa thương hiệu đối tác khỏi website demo LBC."
         confirmLabel="Xóa Thương hiệu"
         cancelLabel="Hủy bỏ"
-        onConfirm={() => {
+        onConfirm={async () => {
           if (deleteBrandConfirmId) {
-            deleteBrand(deleteBrandConfirmId);
+            const id = deleteBrandConfirmId;
             setDeleteBrandConfirmId(null);
-            showToast("Đã xóa thương hiệu đối tác thành công!");
+            const res = await deleteBrand(id);
+            if (res.success) {
+              showToast("Đã xóa thương hiệu đối tác thành công!");
+            } else {
+              alert("Lỗi khi xóa thương hiệu: " + (res.error || "Không thể xóa"));
+            }
           }
         }}
         onCancel={() => setDeleteBrandConfirmId(null)}

@@ -21,6 +21,7 @@ export const NavigationTab: React.FC = () => {
   const [editingItem, setEditingItem] = useState<NavItem | null>(null);
   const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
   const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const [isSaving, setIsSaving] = useState(false);
 
   const showToast = (msg: string) => {
     setToastMsg(msg);
@@ -37,12 +38,18 @@ export const NavigationTab: React.FC = () => {
     setEditingItem(newItem);
   };
 
-  const handleSave = (e: React.FormEvent) => {
+  const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingItem) return;
-    saveNavItem(editingItem);
-    showToast(`Đã lưu menu: "${editingItem.title}"!`);
-    setEditingItem(null);
+    setIsSaving(true);
+    const res = await saveNavItem(editingItem);
+    setIsSaving(false);
+    if (res.success) {
+      showToast(`Đã lưu menu: "${editingItem.title}"!`);
+      setEditingItem(null);
+    } else {
+      alert("Lỗi khi lưu menu: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+    }
   };
 
   return (
@@ -210,9 +217,17 @@ export const NavigationTab: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition"
+                  disabled={isSaving}
+                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed rounded-xl shadow-xs transition flex items-center gap-1.5"
                 >
-                  Lưu Menu
+                  {isSaving ? (
+                    <>
+                      <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span>Đang lưu...</span>
+                    </>
+                  ) : (
+                    <span>Lưu Menu</span>
+                  )}
                 </button>
               </div>
             </form>
@@ -227,11 +242,16 @@ export const NavigationTab: React.FC = () => {
         message="Hành động này sẽ xóa liên kết khỏi thanh điều hướng chính của website."
         confirmLabel="Xóa Menu"
         cancelLabel="Hủy"
-        onConfirm={() => {
+        onConfirm={async () => {
           if (deleteConfirmId) {
-            deleteNavItem(deleteConfirmId);
+            const id = deleteConfirmId;
             setDeleteConfirmId(null);
-            showToast("Đã xóa mục menu!");
+            const res = await deleteNavItem(id);
+            if (res.success) {
+              showToast("Đã xóa mục menu!");
+            } else {
+              alert("Lỗi khi xóa menu: " + (res.error || "Không thể xóa"));
+            }
           }
         }}
         onCancel={() => setDeleteConfirmId(null)}

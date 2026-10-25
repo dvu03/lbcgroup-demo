@@ -22,6 +22,7 @@ export const LocationsTab: React.FC = () => {
   const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
   const [showMediaPicker, setShowMediaPicker] = useState(false);
   const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const [isSaving, setIsSaving] = useState(false);
 
   const showToast = (msg: string) => {
     setToastMsg(msg);
@@ -43,12 +44,18 @@ export const LocationsTab: React.FC = () => {
     setEditingLoc(newLoc);
   };
 
-  const handleSave = (e: React.FormEvent) => {
+  const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingLoc) return;
-    saveLocation(editingLoc);
-    showToast(`Đã lưu cơ sở: "${editingLoc.shortName}"!`);
-    setEditingLoc(null);
+    setIsSaving(true);
+    const res = await saveLocation(editingLoc);
+    setIsSaving(false);
+    if (res.success) {
+      showToast(`Đã lưu cơ sở: "${editingLoc.shortName}"!`);
+      setEditingLoc(null);
+    } else {
+      alert("Lỗi khi lưu cơ sở: " + (res.error || "Không thể kết nối đến cơ sở dữ liệu"));
+    }
   };
 
   return (
@@ -298,9 +305,17 @@ export const LocationsTab: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition"
+                  disabled={isSaving}
+                  className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed rounded-xl shadow-xs transition flex items-center gap-1.5"
                 >
-                  Lưu cơ sở
+                  {isSaving ? (
+                    <>
+                      <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span>Đang lưu...</span>
+                    </>
+                  ) : (
+                    <span>Lưu cơ sở</span>
+                  )}
                 </button>
               </div>
             </form>
@@ -315,11 +330,16 @@ export const LocationsTab: React.FC = () => {
         message="Hành động này sẽ xóa cơ sở khỏi danh sách địa chỉ phòng khám trên website."
         confirmLabel="Xóa"
         cancelLabel="Hủy"
-        onConfirm={() => {
+        onConfirm={async () => {
           if (deleteConfirmId) {
-            deleteLocation(deleteConfirmId);
+            const id = deleteConfirmId;
             setDeleteConfirmId(null);
-            showToast("Đã xóa cơ sở!");
+            const res = await deleteLocation(id);
+            if (res.success) {
+              showToast("Đã xóa cơ sở!");
+            } else {
+              alert("Lỗi khi xóa cơ sở: " + (res.error || "Không thể xóa"));
+            }
           }
         }}
         onCancel={() => setDeleteConfirmId(null)}
