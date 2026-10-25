@@ -106,3 +106,15 @@ export const initialSideBanners: SideBanner[] = [
     imageUrl: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80"
   }
 ];
+
+export interface HeroSliderSettings {
+  autoplayEnabled: boolean;
+  autoplayInterval: number; // 2 - 15 seconds
+  pauseOnHover?: boolean;
+}
+
+export const defaultHeroSliderSettings: HeroSliderSettings = {
+  autoplayEnabled: true,
+  autoplayInterval: 5,
+  pauseOnHover: true,
+};

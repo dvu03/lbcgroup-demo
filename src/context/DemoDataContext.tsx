@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useRef, ReactNode } from 'react';
 import { initialSiteConfig, SiteConfig } from '../data/siteConfig';
 import { initialHomepageModules, HomepageModuleConfig } from '../data/homepageModules';
-import { initialHeroSlides, initialSideBanners, SlideItem, SideBanner } from '../data/heroSlider';
+import { initialHeroSlides, initialSideBanners, SlideItem, SideBanner, HeroSliderSettings, defaultHeroSliderSettings } from '../data/heroSlider';
 import { initialCoreValues, CoreValue } from '../data/coreValues';
 import { initialPagesConfig, PageBannerConfig } from '../data/pagesConfig';
 import { initialSpecialties, Specialty } from '../data/specialties';
@@ -55,6 +55,9 @@ interface DemoDataContextType {
   saveSlide: (item: SlideItem) => void;
   deleteSlide: (id: string) => void;
   duplicateSlide: (id: string) => void;
+
+  heroSliderSettings: HeroSliderSettings;
+  updateHeroSliderSettings: (settings: Partial<HeroSliderSettings>) => void;
 
   sideBanners: SideBanner[];
   updateSideBanners: (banners: SideBanner[]) => void;
@@ -211,6 +214,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
   const [siteConfig, setSiteConfig] = useState<SiteConfig>(() => loadFromStorage("siteConfig", initialSiteConfig));
   const [homepageModules, setHomepageModules] = useState<HomepageModuleConfig[]>(() => loadFromStorage("homepageModules", initialHomepageModules));
   const [heroSlides, setHeroSlides] = useState<SlideItem[]>(() => loadFromStorage("heroSlides", initialHeroSlides));
+  const [heroSliderSettings, setHeroSliderSettings] = useState<HeroSliderSettings>(() => loadFromStorage("heroSliderSettings", defaultHeroSliderSettings));
   const [sideBanners, setSideBanners] = useState<SideBanner[]>(() => loadFromStorage("sideBanners", initialSideBanners));
   const [coreValues, setCoreValues] = useState<CoreValue[]>(() => loadFromStorage("coreValues", initialCoreValues));
   const [specialties, setSpecialties] = useState<Specialty[]>(() => loadFromStorage("specialties", initialSpecialties));
@@ -255,6 +259,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
         if (data.siteConfig) setSiteConfig(data.siteConfig);
         if (data.homepageModules) setHomepageModules(data.homepageModules);
         if (data.heroSlides) setHeroSlides(data.heroSlides);
+        if (data.heroSliderSettings) setHeroSliderSettings({ ...defaultHeroSliderSettings, ...data.heroSliderSettings });
         if (data.sideBanners) setSideBanners(data.sideBanners);
         if (data.coreValues) setCoreValues(data.coreValues);
         if (data.specialties) setSpecialties(data.specialties);
@@ -331,6 +336,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
   useEffect(() => saveToStorage("siteConfig", siteConfig), [siteConfig]);
   useEffect(() => saveToStorage("homepageModules", homepageModules), [homepageModules]);
   useEffect(() => saveToStorage("heroSlides", heroSlides), [heroSlides]);
+  useEffect(() => saveToStorage("heroSliderSettings", heroSliderSettings), [heroSliderSettings]);
   useEffect(() => saveToStorage("sideBanners", sideBanners), [sideBanners]);
   useEffect(() => saveToStorage("coreValues", coreValues), [coreValues]);
   useEffect(() => saveToStorage("specialties", specialties), [specialties]);
@@ -353,6 +359,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
   useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("siteConfig", siteConfig, "Hệ thống", "Cấu hình chung"); }, [siteConfig]);
   useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("homepageModules", homepageModules, "Trang chủ", "Bố cục Section"); }, [homepageModules]);
   useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("heroSlides", heroSlides, "Hero Banner", "Slide chính"); }, [heroSlides]);
+  useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("heroSliderSettings", heroSliderSettings, "Hero Banner", "Cấu hình chuyển slide"); }, [heroSliderSettings]);
   useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("sideBanners", sideBanners, "Hero Banner", "Banner phụ"); }, [sideBanners]);
   useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("coreValues", coreValues, "Giá trị cốt lõi", "Cốt lõi"); }, [coreValues]);
   useEffect(() => { if (isHydratedRef.current) saveKeyToNeon("specialties", specialties, "Chuyên khoa", "Danh mục chuyên khoa"); }, [specialties]);
@@ -384,6 +391,10 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
       } else if (e.key === STORAGE_PREFIX + "heroSlides") {
         try {
           setHeroSlides(JSON.parse(e.newValue));
+        } catch {}
+      } else if (e.key === STORAGE_PREFIX + "heroSliderSettings") {
+        try {
+          setHeroSliderSettings(JSON.parse(e.newValue));
         } catch {}
       } else if (e.key === STORAGE_PREFIX + "doctors") {
         try {
@@ -459,6 +470,19 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
   };
 
   // Slide & Banner CMS methods
+  const updateHeroSliderSettings = (settings: Partial<HeroSliderSettings>) => {
+    setHeroSliderSettings(prev => {
+      const next = { ...prev, ...settings };
+      logAuditAction(
+        "Hero Banner",
+        "update",
+        "Thời gian chuyển slide",
+        `Tự động: ${next.autoplayEnabled ? 'Bật' : 'Tắt'}, Thời gian: ${next.autoplayInterval}s/slide`
+      );
+      return next;
+    });
+  };
+
   const saveSlide = (item: SlideItem) => {
     setHeroSlides(prev => {
       const idx = prev.findIndex(s => s.id === item.id);
@@ -1108,6 +1132,8 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
         saveSlide,
         deleteSlide,
         duplicateSlide,
+        heroSliderSettings,
+        updateHeroSliderSettings,
         sideBanners,
         updateSideBanners: setSideBanners,
         saveSideBanner,

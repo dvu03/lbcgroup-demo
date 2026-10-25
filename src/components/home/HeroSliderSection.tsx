@@ -4,27 +4,68 @@ import { ChevronLeft, ChevronRight, ArrowRight, Calendar, Sparkles } from 'lucid
 import { useDemoData } from '../../context/DemoDataContext';
 
 export const HeroSliderSection: React.FC = () => {
-  const { heroSlides, sideBanners } = useDemoData();
+  const { heroSlides, sideBanners, heroSliderSettings } = useDemoData();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isTabVisible, setIsTabVisible] = useState(true);
+  const [timerResetKey, setTimerResetKey] = useState(0);
 
-  // Auto slide interval (5.5s)
-  useEffect(() => {
-    if (heroSlides.length <= 1) return;
-    const timer = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % heroSlides.length);
-    }, 5500);
-    return () => clearInterval(timer);
-  }, [heroSlides.length]);
+  // Active slides (filter out disabled slides)
+  const activeSlides = heroSlides.filter(s => s.enabled !== false);
+  const slideCount = activeSlides.length;
+
+  // Settings from CMS with robust fallbacks
+  const autoplayEnabled = (heroSliderSettings?.autoplayEnabled ?? true) && slideCount > 1;
+  const autoplayInterval = Math.max(2, Math.min(15, heroSliderSettings?.autoplayInterval ?? 5));
+  const pauseOnHover = heroSliderSettings?.pauseOnHover ?? true;
+
+  // Reset timer on manual navigation
+  const resetTimer = () => {
+    setTimerResetKey(prev => prev + 1);
+  };
 
   const prevSlide = () => {
-    setCurrentSlide(prev => (prev === 0 ? heroSlides.length - 1 : prev - 1));
+    if (slideCount <= 1) return;
+    setCurrentSlide(prev => (prev === 0 ? slideCount - 1 : prev - 1));
+    resetTimer();
   };
 
   const nextSlide = () => {
-    setCurrentSlide(prev => (prev + 1) % heroSlides.length);
+    if (slideCount <= 1) return;
+    setCurrentSlide(prev => (prev + 1) % slideCount);
+    resetTimer();
   };
+
+  const goToSlide = (idx: number) => {
+    setCurrentSlide(idx);
+    resetTimer();
+  };
+
+  // Pause autoplay when browser tab is inactive (visibility change)
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      setIsTabVisible(document.visibilityState === 'visible');
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+  }, []);
+
+  // Autoplay timer effect
+  useEffect(() => {
+    if (!autoplayEnabled) return;
+    if (!isTabVisible) return;
+    if (pauseOnHover && isHovered) return;
+    if (slideCount <= 1) return;
+
+    const intervalMs = autoplayInterval * 1000;
+    const timer = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % slideCount);
+    }, intervalMs);
+
+    return () => clearInterval(timer);
+  }, [autoplayEnabled, autoplayInterval, isTabVisible, pauseOnHover, isHovered, slideCount, timerResetKey]);
 
   // Touch swipe handling for mobile
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -47,8 +88,9 @@ export const HeroSliderSection: React.FC = () => {
     setTouchEnd(null);
   };
 
-  if (!heroSlides.length) return null;
-  const slide = heroSlides[currentSlide];
+  if (!slideCount) return null;
+  const safeSlideIndex = currentSlide >= slideCount ? 0 : currentSlide;
+  const slide = activeSlides[safeSlideIndex];
 
   return (
     <section className="w-full py-3 sm:py-5">
@@ -62,12 +104,14 @@ export const HeroSliderSection: React.FC = () => {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
             {/* Background Images with Cross-fade & Responsive Picture sources */}
-            {heroSlides.map((s, idx) => (
+            {activeSlides.map((s, idx) => (
               <div
                 key={s.id}
-                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${idx === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${idx === safeSlideIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
                   }`}
               >
                 <picture>
@@ -140,34 +184,40 @@ export const HeroSliderSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Desktop Navigation Arrows (hidden on small mobile to avoid layout clutter) */}
-            <button
-              onClick={prevSlide}
-              className="hidden md:flex absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/40 hover:bg-primary-700 text-white items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 border border-white/15 shadow-md"
-              aria-label="Slide trước"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="hidden md:flex absolute right-3 lg:right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/40 hover:bg-primary-700 text-white items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 border border-white/15 shadow-md"
-              aria-label="Slide tiếp"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-
-            {/* Dots Pagination Pill - Positioned bottom right safely away from left-aligned text & CTA */}
-            <div className="absolute bottom-2.5 right-3 sm:bottom-3 sm:right-6 lg:bottom-4 lg:right-8 z-30 flex items-center gap-1.5 sm:gap-2 bg-black/45 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-white/10 shadow-sm">
-              {heroSlides.map((_, idx) => (
+            {/* Desktop Navigation Arrows (only if multiple slides) */}
+            {slideCount > 1 && (
+              <>
                 <button
-                  key={idx}
-                  onClick={() => setCurrentSlide(idx)}
-                  className={`transition-all duration-300 rounded-full h-1.5 sm:h-2 ${idx === currentSlide ? 'w-5 sm:w-7 bg-primary-400' : 'w-1.5 sm:w-2 bg-white/40 hover:bg-white/70'
-                    }`}
-                  aria-label={`Đi tới slide ${idx + 1}`}
-                />
-              ))}
-            </div>
+                  onClick={prevSlide}
+                  className="hidden md:flex absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/40 hover:bg-primary-700 text-white items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 border border-white/15 shadow-md"
+                  aria-label="Slide trước"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="hidden md:flex absolute right-3 lg:right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/40 hover:bg-primary-700 text-white items-center justify-center backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 border border-white/15 shadow-md"
+                  aria-label="Slide tiếp"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </>
+            )}
+
+            {/* Dots Pagination Pill (only if multiple slides) */}
+            {slideCount > 1 && (
+              <div className="absolute bottom-2.5 right-3 sm:bottom-3 sm:right-6 lg:bottom-4 lg:right-8 z-30 flex items-center gap-1.5 sm:gap-2 bg-black/45 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-white/10 shadow-sm">
+                {activeSlides.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => goToSlide(idx)}
+                    className={`transition-all duration-300 rounded-full h-1.5 sm:h-2 ${idx === safeSlideIndex ? 'w-5 sm:w-7 bg-primary-400' : 'w-1.5 sm:w-2 bg-white/40 hover:bg-white/70'
+                      }`}
+                    aria-label={`Đi tới slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
 
           {/* 2 Sub Banners: Side-by-side (2 columns) on mobile & tablet, stacked vertically on desktop */}

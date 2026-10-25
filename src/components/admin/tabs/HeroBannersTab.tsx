@@ -15,10 +15,14 @@ import {
   Smartphone,
   Monitor,
   CheckCircle2,
-  Sparkles
+  Sparkles,
+  Clock,
+  Play,
+  Pause,
+  RotateCcw
 } from "lucide-react";
 import { useDemoData } from "../../../context/DemoDataContext";
-import { SlideItem, SideBanner } from "../../../data/heroSlider";
+import { SlideItem, SideBanner, HeroSliderSettings } from "../../../data/heroSlider";
 import { MediaLibraryModal } from "../MediaLibraryModal";
 import { ConfirmationModal } from "../ConfirmationModal";
 
@@ -29,6 +33,8 @@ export const HeroBannersTab: React.FC = () => {
     saveSlide,
     deleteSlide,
     duplicateSlide,
+    heroSliderSettings,
+    updateHeroSliderSettings,
     sideBanners,
     saveSideBanner
   } = useDemoData();
@@ -40,6 +46,34 @@ export const HeroBannersTab: React.FC = () => {
   const [mediaPickerTarget, setMediaPickerTarget] = useState<"desktop" | "mobile" | "side" | null>(null);
   const [previewDevice, setPreviewDevice] = useState<"desktop" | "mobile">("desktop");
   const [toastMsg, setToastMsg] = useState<string | null>(null);
+
+  // Local state for autoplay timing preview before saving
+  const [autoplaySettings, setAutoplaySettings] = useState<HeroSliderSettings>(heroSliderSettings);
+  const [hasUnsavedTiming, setHasUnsavedTiming] = useState(false);
+
+  useEffect(() => {
+    setAutoplaySettings(heroSliderSettings);
+    setHasUnsavedTiming(false);
+  }, [heroSliderSettings]);
+
+  const handleTimingChange = (partial: Partial<HeroSliderSettings>) => {
+    setAutoplaySettings(prev => ({ ...prev, ...partial }));
+    setHasUnsavedTiming(true);
+  };
+
+  const handleSaveTiming = () => {
+    updateHeroSliderSettings(autoplaySettings);
+    setHasUnsavedTiming(false);
+    showToast(`Đã lưu cấu hình chuyển slide: ${autoplaySettings.autoplayEnabled ? `${autoplaySettings.autoplayInterval} giây/slide` : 'Tắt tự động'}`);
+  };
+
+  const handleResetDefaultTiming = () => {
+    const defaults: HeroSliderSettings = { autoplayEnabled: true, autoplayInterval: 5, pauseOnHover: true };
+    setAutoplaySettings(defaults);
+    updateHeroSliderSettings(defaults);
+    setHasUnsavedTiming(false);
+    showToast("Đã khôi phục cài đặt mặc định: 5 giây/slide, bật tự động!");
+  };
 
   const showToast = (msg: string) => {
     setToastMsg(msg);
@@ -177,7 +211,191 @@ export const HeroBannersTab: React.FC = () => {
 
       {/* Hero Slides List */}
       {activeSubTab === "slides" && (
-        <div className="space-y-4">
+        <div className="space-y-5">
+          {/* Autoplay & Timing Configuration Card */}
+          <div className="bg-white rounded-2xl border border-neutral-200 p-5 shadow-xs space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-neutral-100 pb-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 shrink-0 shadow-xs">
+                  <Clock className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-neutral-900 font-heading flex items-center gap-2">
+                    <span>Tự động chuyển Slide (Autoplay) & Thời gian</span>
+                    <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${
+                      autoplaySettings.autoplayEnabled
+                        ? "bg-emerald-50 text-emerald-800 border-emerald-200"
+                        : "bg-neutral-100 text-neutral-600 border-neutral-200"
+                    }`}>
+                      {autoplaySettings.autoplayEnabled ? `${autoplaySettings.autoplayInterval} giây/slide` : "Đang tắt"}
+                    </span>
+                    {hasUnsavedTiming && (
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200 animate-pulse">
+                        Chưa lưu
+                      </span>
+                    )}
+                  </h3>
+                  <p className="text-xs text-neutral-500 mt-0.5">
+                    Tùy chỉnh thời gian hiển thị mỗi banner trên trang chủ từ 2 đến 15 giây.
+                  </p>
+                </div>
+              </div>
+
+              {/* Autoplay Switch & Save Button */}
+              <div className="flex items-center gap-3 self-end sm:self-center">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-semibold text-neutral-700">
+                    {autoplaySettings.autoplayEnabled ? "Tự động: BẬT" : "Tự động: TẮT"}
+                  </span>
+                  <label className="relative inline-flex items-center cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={autoplaySettings.autoplayEnabled}
+                      onChange={(e) => handleTimingChange({ autoplayEnabled: e.target.checked })}
+                      className="sr-only peer"
+                    />
+                    <div className="w-11 h-6 bg-neutral-300 peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-600"></div>
+                  </label>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={handleSaveTiming}
+                  className="px-3.5 py-1.5 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition flex items-center gap-1.5"
+                >
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  <span>Lưu thời gian</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Timing Controls (Slider + Number input + Presets + Mini Live Preview) */}
+            {autoplaySettings.autoplayEnabled ? (
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-center pt-1">
+                <div className="md:col-span-8 space-y-3">
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="font-semibold text-neutral-700">
+                      Thời gian hiển thị mỗi slide (2 – 15 giây):
+                    </span>
+                    <span className="font-bold font-mono text-emerald-800 text-sm bg-emerald-50 px-3 py-1 rounded-xl border border-emerald-200">
+                      {autoplaySettings.autoplayInterval} giây/slide
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs text-neutral-400 font-mono">2s</span>
+                    <input
+                      type="range"
+                      min="2"
+                      max="15"
+                      step="1"
+                      value={autoplaySettings.autoplayInterval}
+                      onChange={(e) => handleTimingChange({ autoplayInterval: Number(e.target.value) })}
+                      className="w-full h-2.5 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                    />
+                    <span className="text-xs text-neutral-400 font-mono">15s</span>
+                    <div className="flex items-center gap-1.5 shrink-0 bg-neutral-50 px-2.5 py-1 rounded-xl border border-neutral-300">
+                      <input
+                        type="number"
+                        min="2"
+                        max="15"
+                        value={autoplaySettings.autoplayInterval}
+                        onChange={(e) => {
+                          const val = Math.max(2, Math.min(15, Number(e.target.value) || 5));
+                          handleTimingChange({ autoplayInterval: val });
+                        }}
+                        className="w-12 text-xs font-bold text-center bg-transparent font-mono focus:outline-hidden"
+                      />
+                      <span className="text-xs text-neutral-600 font-medium">giây</span>
+                    </div>
+                  </div>
+
+                  {/* Quick Presets and Reset */}
+                  <div className="flex flex-wrap items-center gap-2 pt-1">
+                    <span className="text-[11px] text-neutral-500 font-medium">Mức mẫu:</span>
+                    {[
+                      { label: "2s (Rất nhanh)", val: 2 },
+                      { label: "3s (Nhanh)", val: 3 },
+                      { label: "5s (Chuẩn)", val: 5 },
+                      { label: "7s (Thư thả)", val: 7 },
+                      { label: "10s (Chậm)", val: 10 },
+                    ].map((preset) => (
+                      <button
+                        key={preset.val}
+                        type="button"
+                        onClick={() => handleTimingChange({ autoplayInterval: preset.val })}
+                        className={`px-2.5 py-1 text-xs rounded-lg border transition font-medium ${
+                          autoplaySettings.autoplayInterval === preset.val
+                            ? "bg-emerald-700 text-white border-emerald-700 font-bold shadow-xs"
+                            : "bg-white text-neutral-700 border-neutral-200 hover:bg-neutral-100"
+                        }`}
+                      >
+                        {preset.label}
+                      </button>
+                    ))}
+
+                    <button
+                      type="button"
+                      onClick={handleResetDefaultTiming}
+                      className="ml-auto text-xs font-semibold text-neutral-600 hover:text-emerald-800 flex items-center gap-1 hover:underline py-1"
+                      title="Khôi phục giá trị mặc định 5 giây/slide"
+                    >
+                      <RotateCcw className="w-3.5 h-3.5" />
+                      <span>Khôi phục mặc định (5s)</span>
+                    </button>
+                  </div>
+
+                  {/* Pause on hover toggle */}
+                  <div className="pt-2 flex items-center gap-2 border-t border-neutral-100">
+                    <input
+                      type="checkbox"
+                      id="pauseOnHoverCheck"
+                      checked={autoplaySettings.pauseOnHover !== false}
+                      onChange={(e) => handleTimingChange({ pauseOnHover: e.target.checked })}
+                      className="w-4 h-4 text-emerald-600 rounded border-neutral-300 focus:ring-emerald-500"
+                    />
+                    <label htmlFor="pauseOnHoverCheck" className="text-xs text-neutral-700 cursor-pointer">
+                      Tự động tạm dừng khi người dùng rê chuột (Hover) vào banner để đọc thông tin
+                    </label>
+                  </div>
+                </div>
+
+                {/* Mini Live Preview Container to test transition speed */}
+                <div className="md:col-span-4 bg-neutral-900 rounded-2xl p-3.5 border border-neutral-800 text-white space-y-2">
+                  <div className="flex items-center justify-between text-xs text-neutral-300">
+                    <span className="font-semibold flex items-center gap-1.5">
+                      <Play className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>Xem thử tốc độ chuyển:</span>
+                    </span>
+                    <span className="font-mono text-xs text-emerald-400 font-bold">
+                      {autoplaySettings.autoplayInterval}s/slide
+                    </span>
+                  </div>
+
+                  <MiniSliderPreview
+                    slides={heroSlides.filter(s => s.enabled !== false)}
+                    interval={autoplaySettings.autoplayInterval}
+                    autoplay={autoplaySettings.autoplayEnabled}
+                  />
+                  <p className="text-[10px] text-neutral-400 text-center">
+                    Thanh màu xanh bên dưới thể hiện thời gian đếm ngược trước khi đổi slide.
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <div className="p-3 bg-neutral-50 border border-neutral-200 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-neutral-600">
+                <span>Tự động chuyển slide đang TẮT. Website sẽ dừng lại ở slide hiện tại và chỉ chuyển khi người dùng tương tác.</span>
+                <button
+                  type="button"
+                  onClick={() => handleTimingChange({ autoplayEnabled: true, autoplayInterval: 5 })}
+                  className="px-3 py-1.5 bg-emerald-700 text-white rounded-lg font-semibold hover:bg-emerald-800 transition shrink-0"
+                >
+                  Bật Autoplay ngay
+                </button>
+              </div>
+            )}
+          </div>
+
           <div className="grid grid-cols-1 gap-4">
             {heroSlides.map((slide, index) => {
               const isFirst = index === 0;
@@ -1036,3 +1254,109 @@ export const HeroBannersTab: React.FC = () => {
     </div>
   );
 };
+
+// Interactive Mini Preview Component to test slide timing & visual rhythm
+const MiniSliderPreview: React.FC<{
+  slides: SlideItem[];
+  interval: number;
+  autoplay: boolean;
+}> = ({ slides, interval, autoplay }) => {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    setProgress(0);
+  }, [activeIdx, interval]);
+
+  useEffect(() => {
+    if (!autoplay || slides.length <= 1) {
+      setProgress(0);
+      return;
+    }
+
+    const stepMs = 50;
+    const totalMs = interval * 1000;
+    const progressPerStep = (stepMs / totalMs) * 100;
+
+    const timer = setInterval(() => {
+      setProgress((prev) => {
+        if (prev + progressPerStep >= 100) {
+          setActiveIdx((curr) => (curr + 1) % slides.length);
+          return 0;
+        }
+        return prev + progressPerStep;
+      });
+    }, stepMs);
+
+    return () => clearInterval(timer);
+  }, [autoplay, interval, slides.length]);
+
+  if (!slides.length) {
+    return (
+      <div className="h-28 flex items-center justify-center text-xs text-neutral-400 bg-neutral-950 rounded-xl border border-neutral-800">
+        Chưa có slide nào được kích hoạt
+      </div>
+    );
+  }
+
+  const current = slides[activeIdx % slides.length];
+
+  return (
+    <div className="relative h-28 rounded-xl overflow-hidden border border-neutral-700 bg-neutral-950 shadow-inner group">
+      <img
+        src={current.desktopImage}
+        alt={current.title}
+        className="w-full h-full object-cover transition-opacity duration-500"
+      />
+      {current.overlayEnabled !== false && (
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundColor: current.overlayColor || '#000000',
+            opacity: (current.overlayOpacity ?? 40) / 100
+          }}
+        />
+      )}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-2.5 z-10 text-white">
+        <span className="text-[9px] font-bold tracking-wider uppercase text-emerald-300 truncate">
+          {current.badge}
+        </span>
+        <span className="text-xs font-bold line-clamp-1">{current.title}</span>
+      </div>
+
+      {/* Progress bar countdown at bottom */}
+      {autoplay && slides.length > 1 && (
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 z-20">
+          <div
+            className="h-full bg-emerald-500 transition-all duration-75"
+            style={{ width: `${Math.min(100, progress)}%` }}
+          />
+        </div>
+      )}
+
+      {/* Counter badge and manual controls in preview */}
+      <div className="absolute top-1.5 right-1.5 z-20 flex items-center gap-1">
+        <button
+          type="button"
+          onClick={() => setActiveIdx((curr) => (curr === 0 ? slides.length - 1 : curr - 1))}
+          className="w-5 h-5 rounded bg-black/60 hover:bg-black/90 text-white flex items-center justify-center text-[11px] font-bold"
+          title="Slide trước"
+        >
+          ‹
+        </button>
+        <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-black/70 text-emerald-300 border border-neutral-700">
+          {(activeIdx % slides.length) + 1}/{slides.length}
+        </span>
+        <button
+          type="button"
+          onClick={() => setActiveIdx((curr) => (curr + 1) % slides.length)}
+          className="w-5 h-5 rounded bg-black/60 hover:bg-black/90 text-white flex items-center justify-center text-[11px] font-bold"
+          title="Slide tiếp"
+        >
+          ›
+        </button>
+      </div>
+    </div>
+  );
+};
+
