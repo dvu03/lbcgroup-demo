@@ -12,6 +12,8 @@ export interface SlideItem {
   altText?: string;
   internalName?: string;
   enabled?: boolean;
+  overlayEnabled?: boolean;
+  overlayColor?: string;
   overlayOpacity?: number;
   textColor?: 'light' | 'dark';
   align?: 'left' | 'center' | 'right';
@@ -26,6 +28,9 @@ export interface SideBanner {
   ctaText: string;
   ctaLink: string;
   imageUrl: string;
+  overlayEnabled?: boolean;
+  overlayColor?: string;
+  overlayOpacity?: number;
 }
 
 export const initialHeroSlides: SlideItem[] = [

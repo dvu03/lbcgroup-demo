@@ -1,5 +1,23 @@
 import { getDb, verifyAdmin } from './_db.js';
 
+let blobPut: any = null;
+let blobDel: any = null;
+
+async function getBlobHelpers() {
+  if (!process.env.BLOB_READ_WRITE_TOKEN) return null;
+  if (!blobPut) {
+    try {
+      const blobModule = await import('@vercel/blob');
+      blobPut = blobModule.put;
+      blobDel = blobModule.del;
+    } catch (e) {
+      console.warn('Vercel Blob module not loaded:', e);
+      return null;
+    }
+  }
+  return { put: blobPut, del: blobDel };
+}
+
 export default async function handler(req: any, res: any) {
   // GET: Read all media
   if (req.method === 'GET') {
@@ -32,9 +50,39 @@ export default async function handler(req: any, res: any) {
       return res.status(400).json({ error: 'Missing required media fields: id, name, url' });
     }
 
-    // Safety limit: Base64 data URLs shouldn't exceed 4MB
-    if (url.startsWith('data:') && url.length > 4 * 1024 * 1024) {
-      return res.status(413).json({ error: 'File size exceeds maximum allowed limit for direct database storage (4MB).' });
+    let finalUrl = url;
+    let storageProvider = isExternal ? 'external' : 'neon-db';
+
+    // If Vercel Blob is configured and file is Data URL, upload directly to Vercel Object Storage
+    if (url.startsWith('data:') && process.env.BLOB_READ_WRITE_TOKEN) {
+      try {
+        const blobHelpers = await getBlobHelpers();
+        if (blobHelpers) {
+          const matches = url.match(/^data:([A-Za-z0-9-+\/.]+);base64,(.+)$/);
+          if (matches && matches.length === 3) {
+            const detectedMime = matches[1];
+            const base64Data = matches[2];
+            const buffer = Buffer.from(base64Data, 'base64');
+            const ext = detectedMime === 'image/webp' ? 'webp' : detectedMime === 'image/svg+xml' ? 'svg' : detectedMime === 'image/png' ? 'png' : 'jpg';
+            const filename = `media/${id}.${ext}`;
+
+            const blobResult = await blobHelpers.put(filename, buffer, {
+              access: 'public',
+              contentType: detectedMime
+            });
+
+            finalUrl = blobResult.url;
+            storageProvider = 'vercel-blob';
+          }
+        }
+      } catch (blobError: any) {
+        console.warn('Vercel Blob upload fallback to Neon DB:', blobError?.message);
+      }
+    }
+
+    // Safety limit: if still Base64, enforce a 3MB limit for database safety
+    if (finalUrl.startsWith('data:') && finalUrl.length > 3 * 1024 * 1024) {
+      return res.status(413).json({ error: 'Dung lượng ảnh vượt quá giới hạn an toàn (3MB). Vui lòng nén ảnh hoặc dùng ảnh WebP.' });
     }
 
     try {
@@ -43,16 +91,23 @@ export default async function handler(req: any, res: any) {
         INSERT INTO media_library (
           id, name, url, type, mime_type, size_bytes, width, height, alt_text, caption, is_external, created_at
         ) VALUES (
-          ${id}, ${name}, ${url}, ${type}, ${mimeType || null}, ${sizeBytes}, 
+          ${id}, ${name}, ${finalUrl}, ${type}, ${mimeType || null}, ${sizeBytes}, 
           ${width || null}, ${height || null}, ${altText || name}, ${caption || null}, ${Boolean(isExternal)}, NOW()
         )
         ON CONFLICT (id) DO UPDATE SET
           name = EXCLUDED.name,
           url = EXCLUDED.url,
-          alt_text = EXCLUDED.alt_text;
+          alt_text = EXCLUDED.alt_text,
+          size_bytes = EXCLUDED.size_bytes;
       `;
 
-      return res.status(201).json({ success: true, id, message: 'Media saved to Neon PostgreSQL' });
+      return res.status(201).json({
+        success: true,
+        id,
+        url: finalUrl,
+        storageProvider,
+        message: storageProvider === 'vercel-blob' ? 'Media saved to Vercel Blob & Neon PostgreSQL' : 'Media saved to Neon PostgreSQL'
+      });
     } catch (error: any) {
       return res.status(500).json({ error: 'Failed to save media', message: error.message });
     }
@@ -71,6 +126,19 @@ export default async function handler(req: any, res: any) {
 
     try {
       const sql = getDb();
+      // If was stored on Vercel Blob, delete blob object as well
+      const rows = await sql`SELECT url FROM media_library WHERE id = ${id} LIMIT 1;`;
+      if (rows.length > 0 && rows[0].url && rows[0].url.includes('vercel-storage.com')) {
+        const blobHelpers = await getBlobHelpers();
+        if (blobHelpers) {
+          try {
+            await blobHelpers.del(rows[0].url);
+          } catch (delErr) {
+            console.warn('Failed to delete blob file from Vercel storage:', delErr);
+          }
+        }
+      }
+
       const result = await sql`DELETE FROM media_library WHERE id = ${id} RETURNING id;`;
       if (result.length === 0) {
         return res.status(404).json({ error: 'Media item not found' });

@@ -78,11 +78,25 @@ export const HeroSliderSection: React.FC = () => {
                     onError={(e) => {
                       e.currentTarget.src = '/images/fallback-clinic.svg';
                     }}
-                    className="w-full h-full object-cover object-center brightness-[0.62]"
+                    className="w-full h-full object-cover object-center"
                   />
                 </picture>
-                {/* Contrast overlay: heavy vertical gradient on mobile, directional left-to-right on desktop */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/40 to-transparent lg:bg-gradient-to-r lg:from-slate-950/65 lg:via-slate-950/30 lg:to-transparent" />
+
+                {/* Configurable Hero Banner Overlay */}
+                {s.overlayEnabled !== false && (
+                  <div
+                    className="absolute inset-0 pointer-events-none transition-opacity duration-300"
+                    style={{
+                      backgroundColor: s.overlayColor || '#000000',
+                      opacity: (s.overlayOpacity ?? 40) / 100
+                    }}
+                  />
+                )}
+
+                {/* Directional contrast gradient for text legibility */}
+                {s.overlayEnabled !== false && (s.overlayOpacity ?? 40) > 0 && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/20 to-transparent lg:bg-gradient-to-r lg:from-slate-950/60 lg:via-slate-950/15 lg:to-transparent pointer-events-none" />
+                )}
               </div>
             ))}
 
@@ -171,10 +185,24 @@ export const HeroSliderSection: React.FC = () => {
                   onError={(e) => {
                     e.currentTarget.src = '/images/fallback-clinic.svg';
                   }}
-                  className="absolute inset-0 w-full h-full object-cover object-center brightness-[0.52] group-hover:scale-105 transition-transform duration-500"
+                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
-                {/* High Contrast Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/40 to-transparent lg:bg-gradient-to-r lg:from-slate-950/60 lg:via-slate-950/30 lg:to-transparent" />
+
+                {/* Configurable Side Banner Overlay */}
+                {banner.overlayEnabled !== false && (
+                  <div
+                    className="absolute inset-0 pointer-events-none transition-opacity duration-300"
+                    style={{
+                      backgroundColor: banner.overlayColor || '#000000',
+                      opacity: (banner.overlayOpacity ?? 45) / 100
+                    }}
+                  />
+                )}
+
+                {/* Directional gradient for text legibility */}
+                {banner.overlayEnabled !== false && (banner.overlayOpacity ?? 45) > 0 && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-950/20 to-transparent lg:bg-gradient-to-r lg:from-slate-950/65 lg:via-slate-950/20 lg:to-transparent pointer-events-none" />
+                )}
 
                 {/* Content */}
                 <div className="relative z-10 space-y-1 sm:space-y-1.5 max-w-[420px]">

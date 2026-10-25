@@ -1,34 +1,49 @@
 import React, { useState, useEffect } from "react";
 import {
   Image as ImageIcon,
+  Film,
   Upload,
   Plus,
-  Search,
-  Filter,
   Trash2,
-  Copy,
   ExternalLink,
-  Film,
-  CheckCircle2,
-  HardDrive,
-  FileText,
-  Eye,
-  Info,
+  Search,
   Grid,
-  List
+  List,
+  CheckCircle2,
+  Copy,
+  AlertTriangle,
+  Info,
+  Calendar,
+  Sparkles,
+  RefreshCw,
+  HardDrive
 } from "lucide-react";
 import {
   MediaItem,
   getAllMediaFromDB,
   saveMediaItemToDB,
   deleteMediaItemFromDB,
-  fileToMediaItem
+  uploadAndSaveMediaFile
 } from "../../../utils/mediaStorage";
+import { formatFileSize } from "../../../utils/imageOptimizer";
 import { ConfirmationModal } from "../ConfirmationModal";
 
 export const MediaLibraryTab: React.FC = () => {
   const [mediaList, setMediaList] = useState<MediaItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState<{
+    stage: 'reading' | 'optimizing' | 'uploading' | 'complete' | 'error';
+    percent: number;
+    message: string;
+    fileName: string;
+    currentIndex: number;
+    totalFiles: number;
+    originalSize?: number;
+    optimizedSize?: number;
+    savingsPercent?: number;
+  } | null>(null);
+
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedType, setSelectedType] = useState<"all" | "image" | "video" | "icon">("all");
   const [selectedItem, setSelectedItem] = useState<MediaItem | null>(null);
@@ -53,6 +68,9 @@ export const MediaLibraryTab: React.FC = () => {
     try {
       const items = await getAllMediaFromDB();
       setMediaList(items);
+      if (items.length > 0 && !selectedItem) {
+        setSelectedItem(items[0]);
+      }
     } catch (e) {
       console.error(e);
     } finally {
@@ -68,17 +86,56 @@ export const MediaLibraryTab: React.FC = () => {
     const files = e.target.files;
     if (!files || files.length === 0) return;
 
+    setIsUploading(true);
+    const uploadedItems: MediaItem[] = [];
+
     for (let i = 0; i < files.length; i++) {
+      const file = files[i];
       try {
-        const item = await fileToMediaItem(files[i]);
-        await saveMediaItemToDB(item);
+        setUploadProgress({
+          stage: 'reading',
+          percent: 10,
+          message: `Đang chuẩn bị (${i + 1}/${files.length}): ${file.name}`,
+          fileName: file.name,
+          currentIndex: i + 1,
+          totalFiles: files.length,
+          originalSize: file.size
+        });
+
+        const item = await uploadAndSaveMediaFile(file, {
+          onProgress: (p) => {
+            setUploadProgress({
+              stage: p.stage,
+              percent: p.percent,
+              message: p.message,
+              fileName: file.name,
+              currentIndex: i + 1,
+              totalFiles: files.length,
+              originalSize: p.originalSize,
+              optimizedSize: p.optimizedSize,
+              savingsPercent: p.savingsPercent
+            });
+          }
+        });
+
+        uploadedItems.push(item);
       } catch (err: any) {
-        alert(err.message || "Lỗi tải file");
+        alert(`Lỗi khi tải tệp "${file.name}": ${err.message || 'Thất bại'}`);
+        break;
       }
     }
 
-    await loadMedia();
-    showToast(`Đã tải lên ${files.length} tệp thành công vào IndexedDB!`);
+    if (uploadedItems.length > 0) {
+      await loadMedia();
+      setSelectedItem(uploadedItems[uploadedItems.length - 1]);
+      showToast(`Đã tải lên và tối ưu hóa ${uploadedItems.length} tệp thành công!`);
+    }
+
+    setTimeout(() => {
+      setIsUploading(false);
+      setUploadProgress(null);
+    }, 600);
+
     e.target.value = "";
   };
 
@@ -96,7 +153,8 @@ export const MediaLibraryTab: React.FC = () => {
       sizeBytes: 0,
       altText: newAlt || newName || "Media Lạc's Beauty Center",
       createdAt: new Date().toISOString(),
-      isExternal: true
+      isExternal: true,
+      storageProvider: 'external'
     };
 
     await saveMediaItemToDB(item);
@@ -132,13 +190,6 @@ export const MediaLibraryTab: React.FC = () => {
     return matchesSearch && matchesType;
   });
 
-  const formatFileSize = (bytes: number) => {
-    if (!bytes) return "URL liên kết ngoài";
-    if (bytes < 1024) return `${bytes} B`;
-    if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
-    return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
-  };
-
   return (
     <div className="space-y-6">
       {/* Header Info Banner */}
@@ -146,20 +197,23 @@ export const MediaLibraryTab: React.FC = () => {
         <div>
           <h2 className="text-base font-bold text-neutral-900 font-heading flex items-center gap-2">
             <ImageIcon className="w-5 h-5 text-emerald-700" />
-            <span>Thư viện Media & Quản lý Tệp Cục bộ</span>
+            <span>Thư viện Media & Tối ưu hóa Ảnh WebP</span>
           </h2>
           <p className="text-xs text-neutral-500 mt-1 max-w-2xl leading-relaxed">
-            Hỗ trợ tải trực tiếp ảnh (JPG, PNG, WebP) và video (MP4) từ máy tính lưu vào IndexedDB cục bộ của trình duyệt. Tệp được lưu giữ vĩnh viễn không bị mất khi tải lại trang và không bị giới hạn 5MB của LocalStorage.
+            Hệ thống tự động nén ảnh raster sang định dạng <strong>WebP</strong> sắc nét, tối ưu dung lượng và đồng bộ lên Neon PostgreSQL / Cloud Storage để toàn bộ khách hàng trên mọi thiết bị đều xem được.
           </p>
         </div>
 
         <div className="flex items-center gap-2.5 shrink-0">
-          <label className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition cursor-pointer">
+          <label className={`flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-white rounded-xl shadow-xs transition ${
+            isUploading ? 'bg-neutral-400 cursor-not-allowed' : 'bg-emerald-700 hover:bg-emerald-800 cursor-pointer'
+          }`}>
             <Upload className="w-4 h-4" />
-            <span>Tải tệp từ máy tính</span>
+            <span>{isUploading ? 'Đang nén & tải lên...' : 'Tải ảnh từ máy (WebP)'}</span>
             <input
               type="file"
               multiple
+              disabled={isUploading}
               accept="image/jpeg,image/png,image/webp,image/svg+xml,video/mp4"
               onChange={handleFileUpload}
               className="hidden"
@@ -177,276 +231,363 @@ export const MediaLibraryTab: React.FC = () => {
         </div>
       </div>
 
+      {/* Real-time Upload Progress Dashboard */}
+      {isUploading && uploadProgress && (
+        <div className="bg-white p-5 border border-emerald-300 rounded-2xl shadow-sm space-y-3 animate-fadeIn">
+          <div className="flex items-center justify-between text-xs">
+            <div className="flex items-center gap-2 font-bold text-neutral-800">
+              <RefreshCw className="w-4 h-4 text-emerald-600 animate-spin" />
+              <span>Đang xử lý ({uploadProgress.currentIndex}/{uploadProgress.totalFiles}): {uploadProgress.fileName}</span>
+            </div>
+            <span className="font-mono text-emerald-700 font-bold text-sm">{uploadProgress.percent}%</span>
+          </div>
+
+          <div className="w-full bg-neutral-100 h-2.5 rounded-full overflow-hidden">
+            <div
+              className="bg-gradient-to-r from-emerald-500 to-teal-500 h-full transition-all duration-300 rounded-full"
+              style={{ width: `${uploadProgress.percent}%` }}
+            />
+          </div>
+
+          <div className="flex items-center justify-between text-xs text-neutral-600">
+            <span>{uploadProgress.message}</span>
+            {uploadProgress.savingsPercent ? (
+              <span className="text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full">
+                Tiết kiệm {uploadProgress.savingsPercent}% dung lượng
+              </span>
+            ) : null}
+          </div>
+        </div>
+      )}
+
       {toastMsg && (
-        <div className="p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs flex items-center gap-2 animate-fadeIn font-medium">
-          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+        <div className="fixed bottom-6 right-6 z-50 bg-emerald-800 text-white px-4 py-2.5 rounded-xl shadow-lg text-xs font-semibold flex items-center gap-2 animate-bounce">
+          <CheckCircle2 className="w-4 h-4" />
           <span>{toastMsg}</span>
         </div>
       )}
 
-      {/* Filter & Search Bar */}
-      <div className="bg-white rounded-2xl p-4 border border-neutral-200 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-3">
-        <div className="flex items-center gap-3 w-full sm:w-auto">
-          <div className="relative flex-1 sm:w-64">
-            <Search className="w-4 h-4 text-neutral-400 absolute left-3 top-1/2 -translate-y-1/2" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Tìm theo tên file, alt text..."
-              className="w-full pl-9 pr-3 py-1.5 text-xs border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden"
-            />
+      {/* Main Container: Media Grid + Inspector Sidebar */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        {/* Left Side: Media Browser (8 cols) */}
+        <div className="lg:col-span-8 space-y-4">
+          {/* Controls Bar: Search, Type Filter & View Mode */}
+          <div className="bg-white p-4 rounded-2xl border border-neutral-200 shadow-xs flex flex-wrap items-center justify-between gap-3">
+            <div className="relative flex-1 min-w-[200px] max-w-sm">
+              <Search className="w-4 h-4 text-neutral-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Tìm kiếm media theo tên..."
+                className="w-full pl-9 pr-3 py-1.5 text-xs bg-neutral-50 border border-neutral-200 rounded-xl focus:bg-white focus:outline-hidden focus:border-emerald-600 transition"
+              />
+            </div>
+
+            <div className="flex items-center gap-2">
+              {/* Type Filter Buttons */}
+              <div className="flex items-center bg-neutral-100 p-1 rounded-xl text-xs">
+                {(["all", "image", "video"] as const).map((type) => (
+                  <button
+                    key={type}
+                    type="button"
+                    onClick={() => setSelectedType(type)}
+                    className={`px-3 py-1 rounded-lg font-medium capitalize transition ${
+                      selectedType === type
+                        ? "bg-white text-emerald-800 shadow-xs font-bold"
+                        : "text-neutral-600 hover:text-neutral-900"
+                    }`}
+                  >
+                    {type === "all" ? "Tất cả" : type === "image" ? "Hình ảnh" : "Video"}
+                  </button>
+                ))}
+              </div>
+
+              {/* View Mode Toggle */}
+              <div className="flex items-center bg-neutral-100 p-1 rounded-xl text-neutral-600">
+                <button
+                  type="button"
+                  onClick={() => setViewMode("grid")}
+                  className={`p-1.5 rounded-lg transition ${
+                    viewMode === "grid" ? "bg-white text-emerald-700 shadow-xs" : "hover:text-neutral-900"
+                  }`}
+                  title="Chế độ lưới"
+                >
+                  <Grid className="w-3.5 h-3.5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setViewMode("list")}
+                  className={`p-1.5 rounded-lg transition ${
+                    viewMode === "list" ? "bg-white text-emerald-700 shadow-xs" : "hover:text-neutral-900"
+                  }`}
+                  title="Chế độ danh sách"
+                >
+                  <List className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div className="relative shrink-0">
-            <select
-              value={selectedType}
-              onChange={(e) => setSelectedType(e.target.value as any)}
-              className="px-3 py-1.5 text-xs border border-neutral-300 rounded-xl bg-white focus:outline-hidden font-medium text-neutral-700"
-            >
-              <option value="all">Tất cả định dạng ({mediaList.length})</option>
-              <option value="image">Hình ảnh</option>
-              <option value="video">Video</option>
-              <option value="icon">Biểu tượng (Icon)</option>
-            </select>
-          </div>
-        </div>
-
-        {/* View Toggle */}
-        <div className="flex items-center gap-1 bg-neutral-100 p-1 rounded-xl shrink-0 self-end sm:self-center">
-          <button
-            type="button"
-            onClick={() => setViewMode("grid")}
-            className={`p-1.5 rounded-lg transition ${
-              viewMode === "grid" ? "bg-white text-emerald-800 shadow-xs" : "text-neutral-500 hover:text-neutral-900"
-            }`}
-            title="Dạng lưới ảnh"
-          >
-            <Grid className="w-4 h-4" />
-          </button>
-          <button
-            type="button"
-            onClick={() => setViewMode("list")}
-            className={`p-1.5 rounded-lg transition ${
-              viewMode === "list" ? "bg-white text-emerald-800 shadow-xs" : "text-neutral-500 hover:text-neutral-900"
-            }`}
-            title="Dạng danh sách file"
-          >
-            <List className="w-4 h-4" />
-          </button>
-        </div>
-      </div>
-
-      {/* Main Content Area: Media Grid / List + Detail Inspector */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-        {/* Left: Gallery List / Grid */}
-        <div className="lg:col-span-2">
+          {/* Media Items Container */}
           {isLoading ? (
-            <div className="py-20 text-center text-xs text-neutral-400 bg-white rounded-2xl border border-neutral-200">
-              Đang tải danh sách media từ IndexedDB...
+            <div className="bg-white p-12 rounded-2xl border border-neutral-200 text-center text-xs text-neutral-400">
+              <RefreshCw className="w-6 h-6 animate-spin mx-auto mb-2 text-emerald-600" />
+              Đang tải danh sách media từ Neon DB...
             </div>
           ) : filteredItems.length === 0 ? (
-            <div className="py-16 text-center text-xs text-neutral-400 bg-white rounded-2xl border border-neutral-200 space-y-2">
+            <div className="bg-white p-12 rounded-2xl border border-neutral-200 text-center text-xs text-neutral-400 space-y-2">
               <ImageIcon className="w-8 h-8 text-neutral-300 mx-auto" />
-              <p>Không tìm thấy tệp media nào phù hợp.</p>
+              <p>Không tìm thấy tệp media nào phù hợp với bộ lọc.</p>
             </div>
           ) : viewMode === "grid" ? (
+            /* Grid Mode */
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               {filteredItems.map((item) => {
                 const isSelected = selectedItem?.id === item.id;
-                const isVideo = item.type === "video";
-
                 return (
                   <div
                     key={item.id}
                     onClick={() => setSelectedItem(item)}
-                    className={`group relative rounded-xl overflow-hidden border cursor-pointer transition-all aspect-square bg-neutral-900 ${
+                    className={`group relative bg-white rounded-2xl overflow-hidden border-2 cursor-pointer transition-all flex flex-col ${
                       isSelected
-                        ? "border-emerald-600 ring-2 ring-emerald-600/40 shadow-md"
-                        : "border-neutral-200 hover:border-neutral-400"
+                        ? "border-emerald-600 shadow-md ring-2 ring-emerald-600/20"
+                        : "border-neutral-200 hover:border-neutral-300 hover:shadow-xs"
                     }`}
                   >
-                    {isVideo ? (
-                      <div className="w-full h-full flex items-center justify-center bg-neutral-950 text-white">
-                        <Film className="w-8 h-8 text-neutral-400 group-hover:text-emerald-400 transition" />
-                      </div>
-                    ) : (
-                      <img
-                        src={item.url}
-                        alt={item.altText || item.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
-                      />
-                    )}
+                    <div className="aspect-square bg-neutral-100 overflow-hidden flex items-center justify-center relative">
+                      {item.type === "video" ? (
+                        <div className="flex flex-col items-center text-neutral-400">
+                          <Film className="w-8 h-8" />
+                          <span className="text-[10px] font-bold mt-1">MP4</span>
+                        </div>
+                      ) : (
+                        <img
+                          src={item.thumbnailUrl || item.url}
+                          alt={item.altText || item.name}
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      )}
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2 text-white">
-                      <p className="text-[10px] font-bold truncate">{item.name}</p>
-                      <p className="text-[9px] text-neutral-300">{formatFileSize(item.sizeBytes)}</p>
+                      {/* Top Badges */}
+                      <div className="absolute top-2 left-2 flex flex-col gap-1">
+                        <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-black/60 text-white backdrop-blur-xs">
+                          {item.mimeType.includes("webp") ? "WEBP" : item.mimeType.includes("svg") ? "SVG" : "IMG"}
+                        </span>
+                      </div>
+
+                      {item.savingsPercent ? (
+                        <div className="absolute top-2 right-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-600 text-white shadow-xs">
+                          -{item.savingsPercent}%
+                        </div>
+                      ) : null}
+
+                      {/* File Size Badge */}
+                      <div className="absolute bottom-2 left-2 px-1.5 py-0.5 rounded text-[9px] font-mono bg-black/60 text-white backdrop-blur-xs">
+                        {formatFileSize(item.sizeBytes)}
+                      </div>
                     </div>
 
-                    {item.isExternal && (
-                      <span className="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded text-[8px] font-bold bg-black/60 text-white">
-                        URL
-                      </span>
-                    )}
+                    <div className="p-2.5 text-[11px] font-medium text-neutral-800 truncate border-t border-neutral-100 flex items-center justify-between">
+                      <span className="truncate">{item.name}</span>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setDeleteConfirmId(item.id);
+                        }}
+                        className="opacity-0 group-hover:opacity-100 p-1 text-neutral-400 hover:text-red-600 transition"
+                        title="Xóa tệp"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
                   </div>
                 );
               })}
             </div>
           ) : (
-            /* List View */
-            <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden shadow-xs">
-              <table className="w-full text-left text-xs text-neutral-600">
-                <thead className="bg-neutral-50 border-b border-neutral-200 text-neutral-800 font-semibold uppercase text-[10px]">
-                  <tr>
-                    <th className="p-3">Tệp</th>
-                    <th className="p-3">Định dạng</th>
-                    <th className="p-3">Dung lượng</th>
-                    <th className="p-3">Kích thước</th>
-                    <th className="p-3 text-right">Thao tác</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-neutral-200">
-                  {filteredItems.map((item) => (
-                    <tr
-                      key={item.id}
-                      onClick={() => setSelectedItem(item)}
-                      className={`cursor-pointer transition hover:bg-neutral-50 ${
-                        selectedItem?.id === item.id ? "bg-emerald-50/60" : ""
-                      }`}
-                    >
-                      <td className="p-3 flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg bg-neutral-100 overflow-hidden border border-neutral-200 shrink-0">
-                          {item.type === "video" ? (
-                            <Film className="w-4 h-4 text-neutral-500 m-2" />
-                          ) : (
-                            <img src={item.url} alt="" className="w-full h-full object-cover" />
-                          )}
+            /* List Mode */
+            <div className="bg-white rounded-2xl border border-neutral-200 overflow-hidden divide-y divide-neutral-100">
+              {filteredItems.map((item) => {
+                const isSelected = selectedItem?.id === item.id;
+                return (
+                  <div
+                    key={item.id}
+                    onClick={() => setSelectedItem(item)}
+                    className={`p-3 flex items-center justify-between gap-4 cursor-pointer text-xs transition ${
+                      isSelected ? "bg-emerald-50/60 font-semibold text-emerald-950" : "hover:bg-neutral-50"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="w-12 h-12 rounded-xl bg-neutral-100 overflow-hidden shrink-0 flex items-center justify-center border border-neutral-200">
+                        {item.type === "video" ? (
+                          <Film className="w-5 h-5 text-neutral-400" />
+                        ) : (
+                          <img src={item.thumbnailUrl || item.url} alt={item.name} className="w-full h-full object-cover" />
+                        )}
+                      </div>
+                      <div className="min-w-0">
+                        <div className="font-bold truncate text-neutral-900">{item.name}</div>
+                        <div className="text-[11px] text-neutral-400 font-normal truncate mt-0.5">
+                          {item.altText || "Chưa có mô tả alt"}
                         </div>
-                        <div className="min-w-0">
-                          <div className="font-bold text-neutral-900 truncate max-w-xs">{item.name}</div>
-                          <div className="text-[10px] text-neutral-400 font-mono">{item.id}</div>
-                        </div>
-                      </td>
-                      <td className="p-3">{item.mimeType}</td>
-                      <td className="p-3">{formatFileSize(item.sizeBytes)}</td>
-                      <td className="p-3">{item.width ? `${item.width}x${item.height}` : "Tự do"}</td>
-                      <td className="p-3 text-right">
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            copyToClipboard(item.url);
-                          }}
-                          className="p-1 hover:text-emerald-700 text-neutral-400 mr-1"
-                          title="Sao chép link"
-                        >
-                          <Copy className="w-3.5 h-3.5" />
-                        </button>
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setDeleteConfirmId(item.id);
-                          }}
-                          className="p-1 hover:text-red-600 text-neutral-400"
-                          title="Xóa tệp"
-                        >
-                          <Trash2 className="w-3.5 h-3.5" />
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-6 shrink-0 text-neutral-500 text-[11px]">
+                      <span className="font-mono bg-neutral-100 px-2 py-0.5 rounded text-[10px] font-bold text-neutral-700">
+                        {item.mimeType.split("/")[1]?.toUpperCase() || "FILE"}
+                      </span>
+                      <span>{formatFileSize(item.sizeBytes)}</span>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setDeleteConfirmId(item.id);
+                        }}
+                        className="p-1.5 text-neutral-400 hover:text-red-600 rounded-lg hover:bg-neutral-100 transition"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>
 
-        {/* Right: Selected Item Inspector */}
-        <div className="bg-white rounded-2xl border border-neutral-200 p-5 shadow-xs space-y-4 sticky top-20">
-          <div className="flex items-center justify-between border-b border-neutral-100 pb-3">
-            <h3 className="font-bold text-neutral-900 text-sm font-heading flex items-center gap-2">
-              <Info className="w-4 h-4 text-emerald-700" />
-              <span>Thông tin tệp chi tiết</span>
+        {/* Right Side: Media Details Inspector (4 cols) */}
+        <div className="lg:col-span-4">
+          <div className="bg-white rounded-2xl border border-neutral-200 p-5 shadow-xs sticky top-24 space-y-4">
+            <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-wider flex items-center gap-1.5">
+              <Info className="w-3.5 h-3.5" />
+              <span>Thông số chi tiết tệp</span>
             </h3>
-            {selectedItem && (
-              <button
-                type="button"
-                onClick={() => setDeleteConfirmId(selectedItem.id)}
-                className="text-xs text-red-600 hover:text-red-800 font-semibold flex items-center gap-1"
-              >
-                <Trash2 className="w-3.5 h-3.5" />
-                <span>Xóa tệp</span>
-              </button>
+
+            {selectedItem ? (
+              <div className="space-y-4 text-xs">
+                {/* Media Preview Box */}
+                <div className="aspect-video bg-neutral-900 rounded-xl overflow-hidden flex items-center justify-center border border-neutral-200 relative group">
+                  {selectedItem.type === "video" ? (
+                    <video src={selectedItem.url} controls className="max-h-full max-w-full" />
+                  ) : (
+                    <img
+                      src={selectedItem.url}
+                      alt={selectedItem.name}
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  )}
+                  <a
+                    href={selectedItem.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-2 right-2 p-1.5 bg-black/60 text-white rounded-lg opacity-0 group-hover:opacity-100 transition"
+                    title="Mở tab mới"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+
+                {/* Metadata Fields */}
+                <div className="space-y-2 text-neutral-600">
+                  <div>
+                    <span className="text-neutral-400 uppercase text-[10px] font-semibold block">Tên tệp:</span>
+                    <span className="font-semibold text-neutral-900 text-sm break-all">{selectedItem.name}</span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2 pt-1 border-t border-neutral-100">
+                    <div>
+                      <span className="text-neutral-400 uppercase text-[10px] font-semibold block">Định dạng:</span>
+                      <span className="font-mono text-[11px] font-bold text-neutral-800 uppercase">{selectedItem.mimeType}</span>
+                    </div>
+                    <div>
+                      <span className="text-neutral-400 uppercase text-[10px] font-semibold block">Dung lượng tối ưu:</span>
+                      <span className="font-bold text-emerald-700">{formatFileSize(selectedItem.sizeBytes)}</span>
+                    </div>
+                  </div>
+
+                  {selectedItem.savingsPercent ? (
+                    <div className="p-2 bg-emerald-50 border border-emerald-200 rounded-xl text-[11px] text-emerald-800 flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-emerald-600 shrink-0" />
+                      <span>
+                        Đã nén tối ưu: <strong>Giảm {selectedItem.savingsPercent}%</strong> (từ {formatFileSize(selectedItem.originalSizeBytes || 0)})
+                      </span>
+                    </div>
+                  ) : null}
+
+                  {selectedItem.width && selectedItem.height ? (
+                    <div className="pt-1 border-t border-neutral-100">
+                      <span className="text-neutral-400 uppercase text-[10px] font-semibold block">Kích thước phân giải:</span>
+                      <span className="font-medium text-neutral-800">{selectedItem.width} × {selectedItem.height} px</span>
+                    </div>
+                  ) : null}
+
+                  <div className="pt-1 border-t border-neutral-100">
+                    <span className="text-neutral-400 uppercase text-[10px] font-semibold block">Vị trí lưu trữ:</span>
+                    <span className="font-medium text-neutral-800">
+                      {selectedItem.storageProvider === 'vercel-blob'
+                        ? 'Vercel Blob Object Storage (CDN)'
+                        : selectedItem.isExternal
+                        ? 'URL Ngoài (CDN)'
+                        : 'Neon PostgreSQL & Cache Cục bộ'}
+                    </span>
+                  </div>
+
+                  <div className="pt-1 border-t border-neutral-100">
+                    <span className="text-neutral-400 uppercase text-[10px] font-semibold block">Mô tả Alt Text:</span>
+                    <span className="font-medium text-neutral-800">{selectedItem.altText || "(Chưa có)"}</span>
+                  </div>
+
+                  <div className="pt-1 border-t border-neutral-100">
+                    <span className="text-neutral-400 uppercase text-[10px] font-semibold block mb-1">Đường dẫn tệp (URL):</span>
+                    <div className="flex items-center gap-1.5">
+                      <input
+                        type="text"
+                        readOnly
+                        value={selectedItem.url}
+                        className="w-full px-2 py-1 text-[11px] bg-neutral-100 border border-neutral-300 rounded-lg font-mono truncate"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => copyToClipboard(selectedItem.url)}
+                        className="p-1.5 bg-neutral-100 hover:bg-neutral-200 text-neutral-700 rounded-lg shrink-0 transition"
+                        title="Sao chép URL"
+                      >
+                        <Copy className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-2 flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => copyToClipboard(selectedItem.url)}
+                    className="flex-1 py-2 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl transition flex items-center justify-center gap-1.5"
+                  >
+                    <Copy className="w-3.5 h-3.5" />
+                    <span>Sao chép Link</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setDeleteConfirmId(selectedItem.id)}
+                    className="p-2 text-red-600 hover:bg-red-50 border border-red-200 rounded-xl transition"
+                    title="Xóa tệp này"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="py-12 text-center text-xs text-neutral-400">
+                Bấm vào bất kỳ tệp ảnh hoặc video nào để xem trước và kiểm tra thông số kỹ thuật.
+              </div>
             )}
           </div>
-
-          {selectedItem ? (
-            <div className="space-y-4 text-xs">
-              {/* Media Preview Box */}
-              <div className="rounded-xl overflow-hidden bg-neutral-900 border border-neutral-200 aspect-video flex items-center justify-center">
-                {selectedItem.type === "video" ? (
-                  <video controls src={selectedItem.url} className="w-full h-full object-contain" />
-                ) : (
-                  <img src={selectedItem.url} alt={selectedItem.altText} className="w-full h-full object-contain" />
-                )}
-              </div>
-
-              <div className="space-y-2">
-                <div>
-                  <span className="text-neutral-400 uppercase text-[10px] font-semibold block">Tên tệp:</span>
-                  <span className="font-bold text-neutral-900 text-sm break-all">{selectedItem.name}</span>
-                </div>
-
-                <div className="grid grid-cols-2 gap-2 pt-1 border-t border-neutral-100">
-                  <div>
-                    <span className="text-neutral-400 uppercase text-[10px] font-semibold block">Loại MIME:</span>
-                    <span className="font-medium text-neutral-800">{selectedItem.mimeType}</span>
-                  </div>
-                  <div>
-                    <span className="text-neutral-400 uppercase text-[10px] font-semibold block">Dung lượng:</span>
-                    <span className="font-medium text-neutral-800">{formatFileSize(selectedItem.sizeBytes)}</span>
-                  </div>
-                </div>
-
-                {selectedItem.width && (
-                  <div className="pt-1 border-t border-neutral-100">
-                    <span className="text-neutral-400 uppercase text-[10px] font-semibold block">Độ phân giải:</span>
-                    <span className="font-medium text-neutral-800">{selectedItem.width} x {selectedItem.height} px</span>
-                  </div>
-                )}
-
-                <div className="pt-1 border-t border-neutral-100">
-                  <span className="text-neutral-400 uppercase text-[10px] font-semibold block">Văn bản thay thế (Alt):</span>
-                  <span className="font-medium text-neutral-800">{selectedItem.altText || "(Chưa có alt text)"}</span>
-                </div>
-
-                <div className="pt-1 border-t border-neutral-100">
-                  <span className="text-neutral-400 uppercase text-[10px] font-semibold block mb-1">Đường dẫn tệp (URL):</span>
-                  <div className="flex items-center gap-1.5">
-                    <input
-                      type="text"
-                      readOnly
-                      value={selectedItem.url}
-                      className="w-full px-2 py-1 text-[11px] bg-neutral-100 border border-neutral-300 rounded-lg font-mono truncate"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => copyToClipboard(selectedItem.url)}
-                      className="p-1.5 bg-neutral-100 hover:bg-neutral-200 text-neutral-700 rounded-lg shrink-0 transition"
-                      title="Sao chép URL"
-                    >
-                      <Copy className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="py-12 text-center text-xs text-neutral-400">
-              Bấm vào bất kỳ tệp ảnh hoặc video nào để xem trước và kiểm tra thông số kỹ thuật.
-            </div>
-          )}
         </div>
       </div>
 
@@ -521,19 +662,19 @@ export const MediaLibraryTab: React.FC = () => {
                 </div>
               </div>
 
-              <div className="px-5 py-4 bg-neutral-50 border-t border-neutral-200 flex items-center justify-end gap-3">
+              <div className="p-5 bg-neutral-50 border-t border-neutral-200 flex items-center justify-end gap-2.5">
                 <button
                   type="button"
                   onClick={() => setShowAddUrlModal(false)}
                   className="px-4 py-2 text-xs font-medium text-neutral-700 bg-white border border-neutral-300 rounded-xl hover:bg-neutral-100 transition"
                 >
-                  Hủy
+                  Hủy bỏ
                 </button>
                 <button
                   type="submit"
                   className="px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl shadow-xs transition"
                 >
-                  Lưu vào Thư viện
+                  Lưu liên kết
                 </button>
               </div>
             </form>
@@ -543,14 +684,13 @@ export const MediaLibraryTab: React.FC = () => {
 
       {/* Delete Confirmation Modal */}
       <ConfirmationModal
-        isOpen={!!deleteConfirmId}
-        type="danger"
-        title="Xóa tệp khỏi Media Library?"
-        message="Hành động này sẽ xóa tệp media khỏi kho lưu trữ IndexedDB cục bộ."
-        confirmLabel="Xóa tệp"
-        cancelLabel="Hủy bỏ"
-        onConfirm={handleDelete}
+        isOpen={Boolean(deleteConfirmId)}
         onCancel={() => setDeleteConfirmId(null)}
+        onConfirm={handleDelete}
+        title="Xóa tệp khỏi kho lưu trữ?"
+        message="Hành động này sẽ xóa tệp media khỏi hệ thống lưu trữ và cơ sở dữ liệu."
+        confirmLabel="Xóa tệp ngay"
+        type="danger"
       />
     </div>
   );

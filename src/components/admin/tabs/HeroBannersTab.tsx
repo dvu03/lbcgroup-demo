@@ -198,7 +198,16 @@ export const HeroBannersTab: React.FC = () => {
                       alt={slide.altText || slide.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2">
+                    {slide.overlayEnabled !== false && (
+                      <div
+                        className="absolute inset-0 pointer-events-none"
+                        style={{
+                          backgroundColor: slide.overlayColor || '#000000',
+                          opacity: (slide.overlayOpacity ?? 40) / 100,
+                        }}
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2 z-10">
                       <span className="text-[10px] text-white/90 font-mono truncate">
                         Slide #{index + 1}
                       </span>
@@ -212,6 +221,9 @@ export const HeroBannersTab: React.FC = () => {
                         {slide.badge}
                       </span>
                       <span className="text-xs text-neutral-400 font-mono">ID: {slide.id}</span>
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-neutral-100 text-neutral-700 border border-neutral-200">
+                        Độ tối: {slide.overlayEnabled === false ? "Tắt (Sáng 100%)" : `${slide.overlayOpacity ?? 40}%`}
+                      </span>
                       {!isEnabled && (
                         <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-neutral-200 text-neutral-600">
                           Tạm ẩn
@@ -307,7 +319,16 @@ export const HeroBannersTab: React.FC = () => {
                   alt={banner.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4 flex flex-col justify-end text-white">
+                {banner.overlayEnabled !== false && (
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      backgroundColor: banner.overlayColor || '#000000',
+                      opacity: (banner.overlayOpacity ?? 45) / 100,
+                    }}
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent p-4 flex flex-col justify-end text-white z-10">
                   <span className="text-[10px] font-bold tracking-wider uppercase text-emerald-300">
                     {banner.tag}
                   </span>
@@ -318,7 +339,12 @@ export const HeroBannersTab: React.FC = () => {
 
               <div className="flex items-center justify-between pt-2">
                 <div>
-                  <span className="text-xs font-bold text-neutral-700">Vị trí: Banner phụ #{index + 1}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-bold text-neutral-700">Vị trí: Banner phụ #{index + 1}</span>
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-neutral-100 text-neutral-700 border border-neutral-200">
+                      Độ tối: {banner.overlayEnabled === false ? "Tắt" : `${banner.overlayOpacity ?? 45}%`}
+                    </span>
+                  </div>
                   <div className="text-[11px] text-neutral-400 font-mono">Link: {banner.ctaLink}</div>
                 </div>
 
@@ -385,11 +411,19 @@ export const HeroBannersTab: React.FC = () => {
                     alt={editingSlide.altText || "Preview"}
                     className="w-full h-full object-cover"
                   />
-                  <div
-                    className="absolute inset-0 bg-black flex flex-col justify-center p-4 text-white"
-                    style={{ opacity: (editingSlide.overlayOpacity ?? 40) / 100 }}
-                  />
-                  <div className="absolute inset-0 flex flex-col justify-center p-4 text-white">
+                  {editingSlide.overlayEnabled !== false && (
+                    <div
+                      className="absolute inset-0 transition-opacity duration-300 pointer-events-none"
+                      style={{
+                        backgroundColor: editingSlide.overlayColor || '#000000',
+                        opacity: (editingSlide.overlayOpacity ?? 40) / 100
+                      }}
+                    />
+                  )}
+                  {editingSlide.overlayEnabled !== false && (editingSlide.overlayOpacity ?? 40) > 0 && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/20 to-transparent lg:bg-gradient-to-r lg:from-slate-950/60 lg:via-slate-950/15 lg:to-transparent pointer-events-none" />
+                  )}
+                  <div className="absolute inset-0 flex flex-col justify-center p-4 text-white z-10">
                     <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-600 text-white w-max mb-1">
                       {editingSlide.badge}
                     </span>
@@ -539,6 +573,135 @@ export const HeroBannersTab: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Overlay & Brightness Controls */}
+                <div className="p-4 bg-neutral-50 rounded-2xl border border-neutral-200 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-emerald-700" />
+                      <span className="text-xs font-bold text-neutral-800 uppercase tracking-wider">
+                        Độ tối & Lớp phủ ảnh (Overlay)
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <label className="text-xs font-medium text-neutral-700 cursor-pointer flex items-center gap-1.5">
+                        <input
+                          type="checkbox"
+                          checked={editingSlide.overlayEnabled !== false}
+                          onChange={(e) => setEditingSlide({ ...editingSlide, overlayEnabled: e.target.checked })}
+                          className="w-4 h-4 text-emerald-600 rounded border-neutral-300 focus:ring-emerald-500"
+                        />
+                        <span>Bật lớp phủ</span>
+                      </label>
+                      <button
+                        type="button"
+                        onClick={() => setEditingSlide({
+                          ...editingSlide,
+                          overlayEnabled: true,
+                          overlayColor: '#000000',
+                          overlayOpacity: 40
+                        })}
+                        className="text-[11px] text-emerald-700 hover:text-emerald-900 underline font-medium"
+                      >
+                        Đặt lại mặc định
+                      </button>
+                    </div>
+                  </div>
+
+                  {editingSlide.overlayEnabled !== false ? (
+                    <div className="space-y-3 pt-2 border-t border-neutral-200">
+                      {/* Slider + Number Input */}
+                      <div>
+                        <div className="flex items-center justify-between text-xs mb-1">
+                          <label className="font-semibold text-neutral-700">
+                            Độ mờ lớp phủ (Độ tối): <span className="text-emerald-700 font-bold font-mono">{editingSlide.overlayOpacity ?? 40}%</span>
+                          </label>
+                          <span className="text-[11px] text-neutral-400">
+                            {(editingSlide.overlayOpacity ?? 40) === 0
+                              ? "0% (Sáng gốc - Không lớp phủ)"
+                              : (editingSlide.overlayOpacity ?? 40) <= 30
+                              ? "Sáng nhẹ"
+                              : (editingSlide.overlayOpacity ?? 40) <= 50
+                              ? "Tiêu chuẩn (Khuyến nghị)"
+                              : "Tối đậm (Tương phản cao)"}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <input
+                            type="range"
+                            min="0"
+                            max="80"
+                            step="1"
+                            value={editingSlide.overlayOpacity ?? 40}
+                            onChange={(e) => setEditingSlide({ ...editingSlide, overlayOpacity: parseInt(e.target.value, 10) })}
+                            className="flex-1 h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                          />
+                          <input
+                            type="number"
+                            min="0"
+                            max="80"
+                            value={editingSlide.overlayOpacity ?? 40}
+                            onChange={(e) => {
+                              const val = Math.min(80, Math.max(0, parseInt(e.target.value, 10) || 0));
+                              setEditingSlide({ ...editingSlide, overlayOpacity: val });
+                            }}
+                            className="w-16 px-2 py-1 text-xs text-center border border-neutral-300 rounded-lg font-mono font-bold"
+                          />
+                          <span className="text-xs text-neutral-500 font-bold">%</span>
+                        </div>
+                      </div>
+
+                      {/* Presets and Color Picker */}
+                      <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
+                        <div className="flex items-center gap-1.5 text-[11px]">
+                          <span className="text-neutral-500">Mức nhanh:</span>
+                          {[
+                            { label: "0% Sáng", val: 0 },
+                            { label: "25% Nhẹ", val: 25 },
+                            { label: "40% Chuẩn", val: 40 },
+                            { label: "60% Tối", val: 60 },
+                            { label: "80% Rất tối", val: 80 }
+                          ].map((p) => (
+                            <button
+                              key={p.val}
+                              type="button"
+                              onClick={() => setEditingSlide({ ...editingSlide, overlayOpacity: p.val })}
+                              className={`px-2 py-0.5 rounded text-[10px] font-medium border transition ${
+                                (editingSlide.overlayOpacity ?? 40) === p.val
+                                  ? "bg-emerald-700 text-white border-emerald-700 font-bold"
+                                  : "bg-white text-neutral-700 border-neutral-200 hover:bg-neutral-100"
+                              }`}
+                            >
+                              {p.label}
+                            </button>
+                          ))}
+                        </div>
+
+                        {/* Color Picker */}
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs text-neutral-600">Màu phủ:</span>
+                          <input
+                            type="color"
+                            value={editingSlide.overlayColor || '#000000'}
+                            onChange={(e) => setEditingSlide({ ...editingSlide, overlayColor: e.target.value })}
+                            className="w-7 h-7 rounded-lg border border-neutral-300 cursor-pointer p-0.5"
+                          />
+                          <input
+                            type="text"
+                            value={editingSlide.overlayColor || '#000000'}
+                            onChange={(e) => setEditingSlide({ ...editingSlide, overlayColor: e.target.value })}
+                            className="w-20 px-2 py-1 text-[11px] font-mono border border-neutral-300 rounded-lg uppercase"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="text-xs text-neutral-400 italic">
+                      Lớp phủ đang tắt. Ảnh sẽ hiển thị độ sáng nguyên bản không bị tối.
+                    </p>
+                  )}
+                </div>
+
                 <div className="flex items-center gap-2 pt-2">
                   <input
                     type="checkbox"
@@ -583,6 +746,36 @@ export const HeroBannersTab: React.FC = () => {
                   Chỉnh sửa Banner phụ: {editingSideBanner.title}
                 </h3>
                 <span className="text-xs text-neutral-400 font-mono">ID: {editingSideBanner.id}</span>
+              </div>
+
+              {/* Side Banner Live Preview Box */}
+              <div className="p-4 bg-neutral-900 border-b border-neutral-800 flex justify-center">
+                <div className="relative w-full max-w-sm h-36 rounded-xl overflow-hidden border border-neutral-700 shadow-md">
+                  <img
+                    src={editingSideBanner.imageUrl || '/images/fallback-clinic.svg'}
+                    alt={editingSideBanner.title}
+                    className="w-full h-full object-cover"
+                  />
+                  {editingSideBanner.overlayEnabled !== false && (
+                    <div
+                      className="absolute inset-0 transition-opacity duration-300 pointer-events-none"
+                      style={{
+                        backgroundColor: editingSideBanner.overlayColor || '#000000',
+                        opacity: (editingSideBanner.overlayOpacity ?? 45) / 100
+                      }}
+                    />
+                  )}
+                  {editingSideBanner.overlayEnabled !== false && (editingSideBanner.overlayOpacity ?? 45) > 0 && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-950/20 to-transparent pointer-events-none" />
+                  )}
+                  <div className="absolute inset-0 flex flex-col justify-end p-3 text-white z-10">
+                    <span className="text-[9px] font-bold tracking-wider uppercase text-emerald-300 bg-emerald-950/70 px-2 py-0.5 rounded-full w-max mb-1">
+                      {editingSideBanner.tag || 'Tag'}
+                    </span>
+                    <h4 className="text-xs font-bold line-clamp-1">{editingSideBanner.title || 'Tiêu đề'}</h4>
+                    <p className="text-[10px] text-neutral-300 line-clamp-1">{editingSideBanner.desc}</p>
+                  </div>
+                </div>
               </div>
 
               <div className="p-6 space-y-4">
@@ -674,6 +867,115 @@ export const HeroBannersTab: React.FC = () => {
                       className="w-full px-3 py-2 text-sm border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden"
                     />
                   </div>
+                </div>
+
+                {/* Overlay & Brightness Controls */}
+                <div className="p-4 rounded-xl border border-neutral-200 bg-neutral-50/70 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="text-xs font-bold text-neutral-800 uppercase tracking-wider">
+                        Độ tối & Lớp phủ ảnh (Overlay)
+                      </h4>
+                      <p className="text-[11px] text-neutral-500">
+                        Chỉnh lớp phủ tối giúp chữ màu trắng nổi bật, hoặc giảm độ tối để ảnh sáng rõ hơn.
+                      </p>
+                    </div>
+                    <label className="relative inline-flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={editingSideBanner.overlayEnabled !== false}
+                        onChange={(e) => setEditingSideBanner({ ...editingSideBanner, overlayEnabled: e.target.checked })}
+                        className="sr-only peer"
+                      />
+                      <div className="w-9 h-5 bg-neutral-300 peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-600"></div>
+                    </label>
+                  </div>
+
+                  {editingSideBanner.overlayEnabled !== false ? (
+                    <div className="space-y-3 pt-2 border-t border-neutral-200">
+                      {/* Opacity slider & number input */}
+                      <div>
+                        <div className="flex items-center justify-between text-xs font-medium text-neutral-700 mb-1">
+                          <span>Độ mờ lớp phủ (0% = Sáng nhất, 80% = Tối nhất)</span>
+                          <span className="font-bold text-emerald-700 font-mono text-sm">
+                            {editingSideBanner.overlayOpacity ?? 45}%
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <input
+                            type="range"
+                            min="0"
+                            max="80"
+                            step="5"
+                            value={editingSideBanner.overlayOpacity ?? 45}
+                            onChange={(e) =>
+                              setEditingSideBanner({ ...editingSideBanner, overlayOpacity: Number(e.target.value) })
+                            }
+                            className="w-full h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                          />
+                          <input
+                            type="number"
+                            min="0"
+                            max="80"
+                            value={editingSideBanner.overlayOpacity ?? 45}
+                            onChange={(e) => {
+                              const val = Math.max(0, Math.min(80, Number(e.target.value) || 0));
+                              setEditingSideBanner({ ...editingSideBanner, overlayOpacity: val });
+                            }}
+                            className="w-14 px-2 py-1 text-xs border border-neutral-300 rounded-lg text-center font-mono font-bold"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Presets and Color Picker */}
+                      <div className="flex items-center justify-between pt-1">
+                        {/* Quick Presets */}
+                        <div className="flex items-center gap-1.5">
+                          <span className="text-[11px] text-neutral-500 font-medium">Mức mẫu:</span>
+                          {[
+                            { label: "Sáng (0%)", val: 0 },
+                            { label: "Nhẹ (25%)", val: 25 },
+                            { label: "Vừa (45%)", val: 45 },
+                            { label: "Đậm (70%)", val: 70 },
+                          ].map((p) => (
+                            <button
+                              key={p.val}
+                              type="button"
+                              onClick={() => setEditingSideBanner({ ...editingSideBanner, overlayOpacity: p.val })}
+                              className={`px-2 py-0.5 rounded text-[10px] font-medium border transition ${
+                                (editingSideBanner.overlayOpacity ?? 45) === p.val
+                                  ? "bg-emerald-700 text-white border-emerald-700 font-bold"
+                                  : "bg-white text-neutral-700 border-neutral-200 hover:bg-neutral-100"
+                              }`}
+                            >
+                              {p.label}
+                            </button>
+                          ))}
+                        </div>
+
+                        {/* Color Picker */}
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs text-neutral-600">Màu:</span>
+                          <input
+                            type="color"
+                            value={editingSideBanner.overlayColor || '#000000'}
+                            onChange={(e) => setEditingSideBanner({ ...editingSideBanner, overlayColor: e.target.value })}
+                            className="w-7 h-7 rounded-lg border border-neutral-300 cursor-pointer p-0.5"
+                          />
+                          <input
+                            type="text"
+                            value={editingSideBanner.overlayColor || '#000000'}
+                            onChange={(e) => setEditingSideBanner({ ...editingSideBanner, overlayColor: e.target.value })}
+                            className="w-20 px-2 py-1 text-[11px] font-mono border border-neutral-300 rounded-lg uppercase"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="text-xs text-neutral-400 italic">
+                      Lớp phủ đang tắt. Ảnh sẽ hiển thị độ sáng nguyên bản không bị tối.
+                    </p>
+                  )}
                 </div>
               </div>
 
