@@ -11,7 +11,6 @@ export const BrandsSection: React.FC = () => {
     <section className="py-12 sm:py-16 md:py-20 bg-slate-50/70 border-y border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          badge="Đối tác quốc tế"
           title="Dược Mỹ Phẩm Chính Hãng"
           subtitle="Hợp tác chính thức cùng các tập đoàn dược mỹ phẩm da liễu hàng đầu thế giới từ Pháp, Tây Ban Nha và Bulgaria."
         />

@@ -12,7 +12,6 @@ export const DoctorsSection: React.FC = () => {
     <section className="py-12 sm:py-16 md:py-20 bg-slate-50/80 border-y border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          badge="Đội ngũ chuyên môn cao cấp"
           title="Bác Sĩ Trình Độ Sau Đại Học"
           subtitle="100% Bác sĩ tại phòng khám tốt nghiệp chuyên khoa Da liễu sau đại học từ các trường Đại học Y Dược danh tiếng, trực tiếp thăm khám và theo dõi suốt phác đồ."
         />

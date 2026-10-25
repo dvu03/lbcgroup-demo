@@ -53,10 +53,7 @@ export const HeaderTopbar: React.FC = () => {
         {/* Left: Rotating Greeting Messages with Pulsing Indicator */}
         {headerConfig.showWelcomeGreeting && (
           <div className="flex items-center gap-2 font-medium min-w-0">
-            <span className="relative flex h-2 w-2">
-              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${isDark ? 'bg-amber-300' : 'bg-primary-400'} opacity-75`}></span>
-              <span className={`relative inline-flex rounded-full h-2 w-2 ${isDark ? 'bg-amber-400' : 'bg-primary-600'}`}></span>
-            </span>
+            <span className={`inline-flex rounded-full h-1.5 w-1.5 ${isDark ? 'bg-amber-300' : 'bg-primary-600'}`}></span>
             <span 
               key={welcomeIndex}
               className={`font-semibold truncate animate-fadeIn ${isDark ? 'text-white' : 'text-primary-900'}`}

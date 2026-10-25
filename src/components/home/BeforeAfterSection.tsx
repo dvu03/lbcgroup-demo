@@ -16,7 +16,6 @@ export const BeforeAfterSection: React.FC = () => {
   return (
     <section className="py-12 sm:py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionTitle
-        badge="Kết quả điều trị thực tế"
         title="Người Thật – Việc Thật (Before / After)"
         subtitle="Mọi hình ảnh ca điều trị đều được lưu trữ hồ sơ y khoa và có văn bản đồng ý chia sẻ của khách hàng. Tuyệt đối không can thiệp chỉnh sửa làm sai lệch kết quả."
       />
@@ -41,8 +40,8 @@ export const BeforeAfterSection: React.FC = () => {
         <div className="lg:col-span-5 space-y-5 sm:space-y-6">
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-primary-100 text-primary-800 uppercase tracking-wide">
-                Mã ca: {activeCase.code}
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-slate-100 text-slate-700 border border-slate-200/80">
+                Hồ sơ: {activeCase.code}
               </span>
               <span className="text-xs font-semibold text-slate-500">
                 {activeCase.sessions}

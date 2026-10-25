@@ -61,10 +61,6 @@ export const TechnologiesSection: React.FC = () => {
       {/* Tiêu đề khối: "Công nghệ cao tại Lạc's" chuẩn theo Brief Sheet 2 */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
         <div>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-primary-100 text-primary-800 uppercase tracking-wide mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-primary-600" />
-            <span>Thiết bị y tế chính hãng</span>
-          </span>
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
             Công nghệ cao tại Lạc's
           </h2>
@@ -132,12 +128,9 @@ export const TechnologiesSection: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
 
                   {/* Top Badges */}
-                  <div className="absolute top-4 left-4 right-4 sm:top-6 sm:left-6 sm:right-6 flex items-center justify-between pointer-events-none">
-                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-primary-900/85 text-primary-200 border border-primary-400/30 backdrop-blur-md uppercase tracking-wider">
-                      {tech.code || `CN-0${idx + 1}`} • Công nghệ cao
-                    </span>
-                    <span className="hidden sm:inline-block px-3 py-1 rounded-full text-[11px] font-medium bg-black/40 text-slate-200 backdrop-blur-md border border-white/10">
-                      Tỷ lệ chuẩn 800×500
+                  <div className="absolute top-4 left-4 sm:top-6 sm:left-6 pointer-events-none">
+                    <span className="px-3 py-1 rounded-full text-[11px] font-medium bg-slate-900/80 text-primary-200 border border-white/20 backdrop-blur-md">
+                      {tech.deviceOrigin ? tech.deviceOrigin.split('–')[0]?.trim() : 'Thiết bị chính hãng'}
                     </span>
                   </div>
 

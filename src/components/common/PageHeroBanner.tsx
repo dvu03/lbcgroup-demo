@@ -91,10 +91,10 @@ export const PageHeroBanner: React.FC<PageHeroBannerProps> = ({
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`max-w-3xl flex flex-col ${alignClasses} space-y-4`}>
             {badge && (
-              <span className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-wider backdrop-blur-md ${
+              <span className={`inline-flex items-center gap-1.5 px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-medium backdrop-blur-md ${
                 isLight
                   ? 'bg-primary-100 text-primary-800 border border-primary-200'
-                  : 'bg-primary-500/20 text-primary-300 border border-primary-400/30'
+                  : 'bg-primary-500/20 text-primary-200 border border-primary-400/30'
               }`}>
                 {badge}
               </span>

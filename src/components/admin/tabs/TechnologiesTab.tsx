@@ -22,6 +22,7 @@ export const TechnologiesTab: React.FC = () => {
   const [editingTech, setEditingTech] = useState<TechnologyItem | null>(null);
   const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
   const [showMediaPicker, setShowMediaPicker] = useState(false);
+  const [mediaTarget, setMediaTarget] = useState<'image' | 'actionImage'>('image');
   const [toastMsg, setToastMsg] = useState<string | null>(null);
 
   const showToast = (msg: string) => {
@@ -218,7 +219,7 @@ export const TechnologiesTab: React.FC = () => {
 
                 <div>
                   <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
-                    Ảnh công nghệ
+                    Ảnh thiết bị (Thumbnail / Thẻ máy)
                   </label>
                   <div className="flex items-center gap-2">
                     <input
@@ -230,12 +231,46 @@ export const TechnologiesTab: React.FC = () => {
                     />
                     <button
                       type="button"
-                      onClick={() => setShowMediaPicker(true)}
-                      className="px-3 py-2 bg-neutral-100 rounded-xl text-xs font-semibold shrink-0"
+                      onClick={() => {
+                        setMediaTarget('image');
+                        setShowMediaPicker(true);
+                      }}
+                      className="px-3 py-2 bg-neutral-100 rounded-xl text-xs font-semibold shrink-0 hover:bg-neutral-200 transition"
                     >
                       Media
                     </button>
                   </div>
+                  <p className="text-[11px] text-neutral-500 mt-1">
+                    Khuyến nghị ảnh thiết bị tỉ lệ 4:3 hoặc 1:1, phông sáng rõ chi tiết đầu máy.
+                  </p>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
+                    Ảnh thao tác lâm sàng (Slider Công nghệ Trang chủ)
+                  </label>
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="url"
+                      value={editingTech.actionImageUrl || ''}
+                      onChange={(e) => setEditingTech({ ...editingTech, actionImageUrl: e.target.value })}
+                      placeholder="https://..."
+                      className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-xl font-mono"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setMediaTarget('actionImage');
+                        setShowMediaPicker(true);
+                      }}
+                      className="px-3 py-2 bg-neutral-100 rounded-xl text-xs font-semibold shrink-0 hover:bg-neutral-200 transition"
+                    >
+                      Media
+                    </button>
+                  </div>
+                  <p className="text-[11px] text-emerald-700 font-medium mt-1">
+                    Khuyến nghị tỉ lệ chuẩn 800×500 px hoặc 16:9 (ảnh chụp Bác sĩ/KTV thao tác máy trong phòng điều trị thật).
+                  </p>
                 </div>
 
                 <div>
@@ -318,11 +353,15 @@ export const TechnologiesTab: React.FC = () => {
         onClose={() => setShowMediaPicker(false)}
         onSelectMedia={(media) => {
           if (editingTech) {
-            setEditingTech({ ...editingTech, imageUrl: media.url });
+            if (mediaTarget === 'actionImage') {
+              setEditingTech({ ...editingTech, actionImageUrl: media.url });
+            } else {
+              setEditingTech({ ...editingTech, imageUrl: media.url });
+            }
           }
           setShowMediaPicker(false);
         }}
-        title="Chọn ảnh Công nghệ từ Media"
+        title={mediaTarget === 'actionImage' ? "Chọn ảnh Thao tác lâm sàng (800×500)" : "Chọn ảnh Thiết bị công nghệ"}
       />
     </div>
   );

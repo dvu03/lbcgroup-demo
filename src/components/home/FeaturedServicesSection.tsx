@@ -1,44 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  ShieldAlert, 
-  Activity, 
-  SunMedium, 
-  Feather, 
-  Syringe, 
-  Zap, 
-  HeartHandshake, 
-  Microscope, 
-  Sparkle,
-  CalendarCheck
-} from 'lucide-react';
+import { ArrowRight, CalendarCheck } from 'lucide-react';
 import { useDemoData } from '../../context/DemoDataContext';
 import { SectionTitle } from '../common/SectionTitle';
+import { DynamicIcon } from '../common/DynamicIcon';
 
 export const FeaturedServicesSection: React.FC = () => {
   const { services } = useDemoData();
-
-  const getServiceIcon = (iconCode: string) => {
-    switch (iconCode) {
-      case 'ICO-D1': return <ShieldAlert className="w-6 h-6 text-primary-600" />;
-      case 'ICO-D2': return <Activity className="w-6 h-6 text-primary-600" />;
-      case 'ICO-D3': return <SunMedium className="w-6 h-6 text-primary-600" />;
-      case 'ICO-D4': return <Feather className="w-6 h-6 text-primary-600" />;
-      case 'ICO-D5': return <Syringe className="w-6 h-6 text-primary-600" />;
-      case 'ICO-D6': return <Zap className="w-6 h-6 text-primary-600" />;
-      case 'ICO-D7': return <HeartHandshake className="w-6 h-6 text-primary-600" />;
-      case 'ICO-D8': return <Microscope className="w-6 h-6 text-primary-600" />;
-      case 'ICO-D9': return <Sparkle className="w-6 h-6 text-primary-600" />;
-      default: return <Activity className="w-6 h-6 text-primary-600" />;
-    }
-  };
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-primary-50/40 border-y border-primary-100/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          badge="Phác đồ chuẩn y khoa"
           title="Dịch Vụ Điều Trị Chuyên Sâu"
           subtitle="9 dịch vụ da liễu và thẩm mỹ được trực tiếp Bác sĩ Sau đại học chẩn đoán và theo dõi định kỳ suốt liệu trình."
         />
@@ -52,9 +25,11 @@ export const FeaturedServicesSection: React.FC = () => {
               className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-primary-400 hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group medical-card-hover"
             >
               <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-primary-50 group-hover:bg-primary-600 group-hover:scale-110 flex items-center justify-center transition-all duration-300 shadow-sm mb-3">
-                <span className="group-hover:text-white transition-colors">
-                  {getServiceIcon(srv.iconCode)}
-                </span>
+                <DynamicIcon
+                  name={srv.iconName}
+                  url={srv.iconUrl}
+                  className="w-6 h-6 text-primary-600 group-hover:text-white transition-colors"
+                />
               </div>
               <h3 className="font-heading font-bold text-xs sm:text-sm text-slate-900 group-hover:text-primary-700 transition-colors leading-snug">
                 {srv.shortName}

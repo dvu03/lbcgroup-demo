@@ -16,7 +16,6 @@ export const NewsTabsSection: React.FC = () => {
     <section className="py-12 sm:py-16 md:py-20 bg-slate-50/70 border-y border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          badge="Kiến thức y khoa & Sự kiện"
           title="Tin Tức & Hoạt Động Phòng Khám"
           subtitle="Cập nhật những kiến thức da liễu chuẩn mực từ bác sĩ và các hoạt động cộng đồng, sự kiện khoa học của LBC Group."
         />

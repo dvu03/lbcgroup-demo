@@ -23,14 +23,13 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
   const HeadingTag = asH1 ? 'h1' : 'h2';
 
   return (
-    <div className={`flex flex-col mb-10 md:mb-14 ${alignmentClass} ${className}`}>
+    <div className={`flex flex-col mb-8 sm:mb-10 md:mb-12 ${alignmentClass} ${className}`}>
       {badge && (
-        <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 ${
+        <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium mb-3 transition-colors ${
           light 
             ? 'bg-white/15 text-white border border-white/20' 
-            : 'bg-primary-100 text-primary-700 border border-primary-200'
+            : 'bg-primary-50 text-primary-800 border border-primary-200/60'
         }`}>
-          <span className="w-1.5 h-1.5 rounded-full bg-primary-600 animate-pulse"></span>
           {badge}
         </span>
       )}
@@ -40,7 +39,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
         {title}
       </HeadingTag>
       {subtitle && (
-        <p className={`mt-3 max-w-2xl text-sm sm:text-base leading-relaxed ${
+        <p className={`mt-2.5 sm:mt-3 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed ${
           light ? 'text-slate-200' : 'text-slate-600'
         }`}>
           {subtitle}

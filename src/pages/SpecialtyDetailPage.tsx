@@ -74,8 +74,8 @@ export const SpecialtyDetailPage: React.FC<SpecialtyDetailPageProps> = ({ forced
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary-500/20 text-primary-300 border border-primary-400/30 backdrop-blur-md uppercase tracking-wider">
-            {specialty.code} • Hệ sinh thái LBC
+          <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-medium bg-primary-500/20 text-primary-200 border border-primary-400/30 backdrop-blur-md">
+            Chuyên khoa trọng tâm
           </span>
           <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white max-w-3xl leading-tight">
             {specialty.name}

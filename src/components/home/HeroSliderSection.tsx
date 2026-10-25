@@ -147,12 +147,13 @@ export const HeroSliderSection: React.FC = () => {
             {/* Slide Text & Action Content */}
             <div className="relative z-20 w-full max-w-full lg:max-w-[560px] p-4 sm:p-7 lg:p-10 pb-12 sm:pb-14 lg:pb-10 text-white flex flex-col justify-center space-y-2 sm:space-y-3.5 box-border">
               {/* Badge */}
-              <div>
-                <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-primary-500/30 text-primary-200 border border-primary-400/40 backdrop-blur-md">
-                  <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary-300 shrink-0" />
-                  <span className="truncate">{slide.badge}</span>
-                </span>
-              </div>
+              {slide.badge && (
+                <div>
+                  <span className="inline-flex items-center px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium bg-primary-950/70 text-primary-200 border border-primary-400/30 backdrop-blur-md">
+                    <span className="truncate">{slide.badge}</span>
+                  </span>
+                </div>
+              )}
 
               {/* Title with fluid responsive clamp (20-34px), robust line-height and break-words */}
               <h1 className="font-heading font-bold text-white drop-shadow-md text-[clamp(1.25rem,4.2vw,2.15rem)] lg:text-[34px] leading-[1.2] lg:leading-[1.25] tracking-tight break-words [overflow-wrap:break-word]">
@@ -174,13 +175,7 @@ export const HeroSliderSection: React.FC = () => {
                   <ArrowRight className="w-3.5 h-3.5 shrink-0" />
                 </Link>
 
-                <Link
-                  to="/dat-lich-kham"
-                  className="min-h-[38px] sm:min-h-[44px] px-3 sm:px-4 py-2 sm:py-2.5 rounded-full bg-white/15 hover:bg-white/25 text-white font-medium text-xs sm:text-sm backdrop-blur-md border border-white/25 transition-all flex items-center justify-center gap-1.5 text-center shrink-0"
-                >
-                  <Calendar className="w-3.5 h-3.5 shrink-0" />
-                  <span>Đặt lịch khám</span>
-                </Link>
+
               </div>
             </div>
 
@@ -256,7 +251,7 @@ export const HeroSliderSection: React.FC = () => {
 
                 {/* Content */}
                 <div className="relative z-10 space-y-1 sm:space-y-1.5 max-w-[420px]">
-                  <span className="text-[9px] sm:text-[11px] font-bold tracking-wider uppercase text-primary-300 bg-primary-950/70 px-2 sm:px-2.5 py-0.5 rounded-full border border-primary-500/30 inline-block mb-0.5">
+                  <span className="text-[9px] sm:text-[11px] font-medium text-primary-200 bg-primary-950/70 px-2 sm:px-2.5 py-0.5 rounded-full border border-primary-500/30 inline-block mb-0.5">
                     {banner.tag}
                   </span>
                   <h3 className="font-heading text-xs sm:text-base lg:text-[19px] font-bold text-white group-hover:text-primary-200 transition-colors leading-snug line-clamp-1 sm:line-clamp-2">
@@ -271,6 +266,7 @@ export const HeroSliderSection: React.FC = () => {
                   </div>
                 </div>
               </Link>
+
             ))}
           </div>
 

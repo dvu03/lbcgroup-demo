@@ -33,7 +33,7 @@ export const AboutSummarySection: React.FC = () => {
   const metricNumber = about?.metricNumber || "10.000+";
   const metricLabel = about?.metricLabel || "Ca điều trị chuẩn Y khoa";
   const metricBadge = about?.metricBadge || "VISIA 3D";
-  const badge = about?.badge || "VỀ CHÚNG TÔI";
+  const badge = about?.badge || "Về chúng tôi";
   const title = about?.title || siteConfig.facilityName;
   const description = about?.description || "Tọa lạc tại trung tâm thành phố Cần Thơ, Lạc's Beauty Center được xây dựng với định vị là phòng khám da liễu chuẩn y khoa chuyên sâu. Chúng tôi không chạy theo các trào lưu làm đẹp lột tẩy cấp tốc, mà kiên định theo đuổi triết lý Y học Cá nhân hóa: mỗi làn da cần một phác đồ khoa học riêng biệt dựa trên bằng chứng soi da vi thể và theo dõi sát sao của bác sĩ chuyên khoa sau đại học.";
 
@@ -152,7 +152,7 @@ export const AboutSummarySection: React.FC = () => {
           <div className="lg:col-span-6 space-y-6">
             <div>
               {badge && (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary-100 text-primary-700 uppercase tracking-wider mb-3">
+                <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-800 border border-primary-200/60 mb-3">
                   {badge}
                 </span>
               )}

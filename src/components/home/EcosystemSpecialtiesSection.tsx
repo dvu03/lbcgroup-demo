@@ -1,27 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Stethoscope, FlaskConical, Pill, Sparkles, GraduationCap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useDemoData } from '../../context/DemoDataContext';
 import { SectionTitle } from '../common/SectionTitle';
+import { DynamicIcon } from '../common/DynamicIcon';
 
 export const EcosystemSpecialtiesSection: React.FC = () => {
   const { specialties } = useDemoData();
 
-  const getIcon = (slug: string) => {
-    switch (slug) {
-      case 'khoa-da-lieu': return <Stethoscope className="w-5 h-5 text-white" />;
-      case 'khoa-xet-nghiem': return <FlaskConical className="w-5 h-5 text-white" />;
-      case 'nha-thuoc': return <Pill className="w-5 h-5 text-white" />;
-      case 'duoc-my-pham': return <Sparkles className="w-5 h-5 text-white" />;
-      case 'dao-tao': return <GraduationCap className="w-5 h-5 text-white" />;
-      default: return <Stethoscope className="w-5 h-5 text-white" />;
-    }
-  };
-
   return (
     <section className="py-12 sm:py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionTitle
-        badge="Hệ sinh thái y tế toàn diện"
         title="5 Chuyên khoa & Lĩnh vực Trọng tâm"
         subtitle="Mô hình khép kín kết hợp giữa thăm khám da liễu, xét nghiệm hỗ trợ, nhà thuốc chuẩn GPP, dược mỹ phẩm quốc tế và học viện đào tạo nghề chuyên sâu."
       />
@@ -40,25 +29,31 @@ export const EcosystemSpecialtiesSection: React.FC = () => {
                 onError={(e) => {
                   e.currentTarget.src = '/images/fallback-clinic.svg';
                 }}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-[0.75]"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.78]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
               
               {/* Badge */}
-              <span className="absolute top-2 left-2 sm:top-3 sm:left-3 px-2 sm:px-2.5 py-0.5 rounded-full text-[8px] sm:text-[10px] font-bold bg-primary-900/80 text-primary-200 border border-primary-500/30 backdrop-blur-sm uppercase">
-                {spec.badge || 'Chuyên khoa'}
-              </span>
+              {spec.badge && (
+                <span className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 px-2 sm:px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-medium bg-slate-900/75 text-slate-200 border border-white/20 backdrop-blur-md">
+                  {spec.badge}
+                </span>
+              )}
 
-              {/* Floating Icon */}
-              <div className="absolute -bottom-3 sm:-bottom-4 right-2 sm:right-4 w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-primary-600 shadow-lg flex items-center justify-center border-2 border-white group-hover:scale-110 transition-transform">
-                <span className="scale-75 sm:scale-100">{getIcon(spec.slug)}</span>
+              {/* Specialty Icon - securely positioned inside header, no overflow-hidden clipping */}
+              <div className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white/95 text-primary-700 shadow-md backdrop-blur-md flex items-center justify-center border border-white/60 group-hover:bg-primary-600 group-hover:text-white transition-all duration-300 z-10">
+                <DynamicIcon
+                  name={spec.iconName}
+                  url={spec.iconUrl}
+                  className="w-4 h-4 sm:w-5 sm:h-5"
+                />
               </div>
             </div>
 
             {/* Card Body */}
-            <div className="p-3 sm:p-5 flex-1 flex flex-col justify-between pt-4 sm:pt-6 space-y-2 sm:space-y-3">
+            <div className="p-3 sm:p-5 flex-1 flex flex-col justify-between pt-3.5 sm:pt-4 space-y-2 sm:space-y-3">
               <div>
-                <span className="text-[9px] sm:text-[10px] font-bold text-primary-600 uppercase tracking-wider block mb-0.5 sm:mb-1">
+                <span className="text-[9px] sm:text-[10px] font-semibold text-primary-700 uppercase tracking-wider block mb-0.5 sm:mb-1">
                   {spec.tagline}
                 </span>
                 <h3 className="font-heading font-bold text-xs sm:text-base lg:text-lg text-slate-900 group-hover:text-primary-700 transition-colors leading-snug line-clamp-2">

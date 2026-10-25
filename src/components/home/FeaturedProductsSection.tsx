@@ -27,7 +27,6 @@ export const FeaturedProductsSection: React.FC = () => {
   return (
     <section className="py-12 sm:py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionTitle
-        badge="Dược mỹ phẩm chọn lọc"
         title="Sản phẩm tiêu biểu"
         subtitle="Bác sĩ phòng khám chọn lọc dựa trên tiêu chuẩn tương thích sinh học, độ an toàn và hiệu quả lâm sàng cho da nhạy cảm."
       />

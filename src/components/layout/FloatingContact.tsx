@@ -78,14 +78,13 @@ export const FloatingContact: React.FC = () => {
             <X className="w-6 h-6" />
           ) : (
             <div className="relative">
-              <Phone className="w-6 h-6 animate-pulse" />
+              <Phone className="w-6 h-6" />
               <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-emerald-400 border-2 border-[#0E7C86]"></span>
             </div>
           )}
         </button>
       </div>
 
-      {/* 2. Mobile Fixed Bottom Bar (Only if not on booking page to avoid clutter) */}
       {/* 2. Mobile Fixed Bottom Bar (Only if not on booking page to avoid clutter) */}
       {!isBookingPage && (
         <div className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-1.5 py-1.5 flex items-center gap-1 shadow-2xl">
@@ -126,7 +125,7 @@ export const FloatingContact: React.FC = () => {
             className="flex-[1.4] py-2 px-2 rounded-xl bg-[#0E7C86] hover:bg-[#0c6b74] text-white text-[11px] font-bold flex items-center justify-center gap-1 shadow-md"
           >
             <Calendar className="w-3.5 h-3.5 shrink-0" />
-            <span className="whitespace-nowrap">ĐẶT LỊCH</span>
+            <span className="whitespace-nowrap">Đặt lịch</span>
           </Link>
         </div>
       )}
