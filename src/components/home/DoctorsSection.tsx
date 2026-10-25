@@ -37,7 +37,7 @@ export const DoctorsSection: React.FC = () => {
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
-                
+
                 {/* Degree Tag */}
                 <span className="absolute top-2 left-2 sm:top-3 sm:left-3 px-2 sm:px-2.5 py-0.5 rounded-full text-[8px] sm:text-[10px] font-bold bg-primary-900/80 text-primary-200 border border-primary-500/40 backdrop-blur-sm">
                   {doc.degree.split(',')[0]}
@@ -46,7 +46,7 @@ export const DoctorsSection: React.FC = () => {
                 {/* Experience badge */}
                 <div className="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between text-white text-[9px] sm:text-[11px]">
                   <span className="bg-slate-900/75 px-1.5 sm:px-2 py-0.5 rounded-md backdrop-blur-sm font-semibold truncate">
-                    {doc.experienceYears}+ Năm KN
+                    {doc.experienceYears && doc.experienceYears > 0 ? `${doc.experienceYears}+ Năm KN` : 'Bác sĩ Da liễu'}
                   </span>
                 </div>
               </div>
@@ -80,6 +80,7 @@ export const DoctorsSection: React.FC = () => {
                   >
                     Đặt lịch với BS
                   </Link>
+
                 </div>
               </div>
             </div>

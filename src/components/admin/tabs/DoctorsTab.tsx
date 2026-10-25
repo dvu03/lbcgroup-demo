@@ -251,7 +251,7 @@ export const DoctorsTab: React.FC = () => {
               {/* Card Footer Actions */}
               <div className="px-4 py-3 bg-neutral-50 border-t border-neutral-100 flex items-center justify-between">
                 <Link
-                  to={`/bs-lac-kim-ngan`}
+                  to={`/${doc.slug}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs font-semibold text-emerald-800 hover:text-emerald-950 flex items-center gap-1"
@@ -503,7 +503,7 @@ export const DoctorsTab: React.FC = () => {
                       type="number"
                       value={editingDoc.experienceYears}
                       onChange={(e) => setEditingDoc({ ...editingDoc, experienceYears: Number(e.target.value) })}
-                      min={1}
+                      min={0}
                       max={50}
                       className="w-full px-3 py-2 text-sm border border-neutral-300 rounded-xl focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 focus:outline-hidden"
                     />

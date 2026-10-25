@@ -53,7 +53,9 @@ export const DoctorsListPage: React.FC = () => {
                 </span>
 
                 <div className="absolute bottom-3 left-3 right-3 text-white text-xs">
-                  <span className="font-semibold">{doc.experienceYears}+ Năm kinh nghiệm</span>
+                  <span className="font-semibold">
+                    {doc.experienceYears && doc.experienceYears > 0 ? `${doc.experienceYears}+ Năm kinh nghiệm` : 'Bác sĩ chuyên khoa Da liễu'}
+                  </span>
                 </div>
               </div>
 

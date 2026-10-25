@@ -27,7 +27,8 @@ export const DoctorDetailPage: React.FC = () => {
     d.slug === slug || 
     d.slug === `bs-${cleanSlug}` || 
     d.slug.replace(/^bs-/, '') === cleanSlug ||
-    d.id === slug
+    d.id === slug ||
+    (d.id === 'doc-01' && (cleanSlug === 'lac-kim-ngan' || cleanSlug === 'lac-thi-kim-ngan'))
   );
 
   if (!foundDoctor && !slug?.startsWith('bs-')) {
@@ -52,7 +53,7 @@ export const DoctorDetailPage: React.FC = () => {
           <div className="mb-8 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-center gap-3">
             <AlertCircle className="w-5 h-5 text-amber-600 shrink-0" />
             <span>
-              <strong>Lưu ý bản Prototype Demo:</strong> Hồ sơ bác sĩ được xây dựng để Ban Giám đốc thẩm định bố cục và tiêu chí chuyên môn. Bản chính thức sẽ được cập nhật sau khi có văn bản ký duyệt và xác thực số CCHN của Sở Y tế.
+              <strong>Lưu ý:</strong> Hồ sơ bác sĩ được cung cấp bởi Phòng khám Da liễu Lạc’s Beauty Center. Các chứng chỉ, bằng cấp và thông tin chuyên môn được chuẩn hóa phục vụ tra cứu thông tin y khoa.
             </span>
           </div>
         )}
@@ -93,8 +94,16 @@ export const DoctorDetailPage: React.FC = () => {
                 </div>
 
                 <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-100 text-xs text-slate-600 space-y-1.5">
-                  <p><strong>Kinh nghiệm:</strong> {doctor.experienceYears} năm thực hành lâm sàng</p>
-                  <p><strong>Pháp lý:</strong> {doctor.licenseNumber}</p>
+                  <p>
+                    <strong>Kinh nghiệm:</strong>{' '}
+                    {doctor.experienceYears && doctor.experienceYears > 0 
+                      ? `${doctor.experienceYears} năm thực hành lâm sàng` 
+                      : 'Đang cập nhật'}
+                  </p>
+                  {doctor.scopeOfPractice && (
+                    <p><strong>Phạm vi hoạt động:</strong> {doctor.scopeOfPractice}</p>
+                  )}
+                  <p><strong>Pháp lý:</strong> {doctor.licenseNumber || 'Đang cập nhật'}</p>
                 </div>
 
                 <div className="space-y-2 pt-2">
@@ -115,74 +124,84 @@ export const DoctorDetailPage: React.FC = () => {
             </div>
 
             {/* Medical Philosophy */}
-            <div className="p-6 rounded-3xl bg-primary-50/70 border border-primary-100 space-y-3">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-primary-700 block">
-                Triết lý hành nghề
-              </span>
-              <blockquote className="font-sans italic text-xs sm:text-sm text-slate-800 leading-relaxed">
-                "{doctor.philosophy}"
-              </blockquote>
-            </div>
+            {doctor.philosophy && doctor.philosophy.trim() && (
+              <div className="p-6 rounded-3xl bg-primary-50/70 border border-primary-100 space-y-3">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-primary-700 block">
+                  Triết lý hành nghề
+                </span>
+                <blockquote className="font-sans italic text-xs sm:text-sm text-slate-800 leading-relaxed">
+                  "{doctor.philosophy}"
+                </blockquote>
+              </div>
+            )}
           </div>
 
           {/* Right Column: Bio, Education, Schedule (lg:col-span-8) */}
           <div className="lg:col-span-8 space-y-8">
             
             {/* Bio */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-100 shadow-sm space-y-3">
-              <h2 className="font-heading font-bold text-xl sm:text-2xl text-slate-900">
-                Tiểu Sử Chuyên Môn
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                {doctor.fullBio}
-              </p>
-            </div>
+            {doctor.fullBio && (
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-100 shadow-sm space-y-3">
+                <h2 className="font-heading font-bold text-xl sm:text-2xl text-slate-900">
+                  Tiểu Sử Chuyên Môn
+                </h2>
+                <div className="text-xs sm:text-sm text-slate-600 leading-relaxed whitespace-pre-line space-y-3">
+                  {doctor.fullBio}
+                </div>
+              </div>
+            )}
 
             {/* Education History */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-100 shadow-sm space-y-4">
-              <h3 className="font-heading font-bold text-lg text-slate-900 flex items-center gap-2">
-                <GraduationCap className="w-5 h-5 text-primary-600" />
-                Quá Trình Đào Tạo Sau Đại Học
-              </h3>
-              <div className="space-y-2.5">
-                {doctor.educationHistory.map((edu, idx) => (
-                  <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
-                    <CheckCircle2 className="w-4 h-4 text-primary-600 shrink-0 mt-0.5" />
-                    <span>{edu}</span>
-                  </div>
-                ))}
+            {doctor.educationHistory && doctor.educationHistory.length > 0 && (
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-100 shadow-sm space-y-4">
+                <h3 className="font-heading font-bold text-lg text-slate-900 flex items-center gap-2">
+                  <GraduationCap className="w-5 h-5 text-primary-600" />
+                  Quá Trình Đào Tạo Sau Đại Học
+                </h3>
+                <div className="space-y-2.5">
+                  {doctor.educationHistory.map((edu, idx) => (
+                    <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
+                      <CheckCircle2 className="w-4 h-4 text-primary-600 shrink-0 mt-0.5" />
+                      <span>{edu}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Certifications */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-100 shadow-sm space-y-4">
-              <h3 className="font-heading font-bold text-lg text-slate-900 flex items-center gap-2">
-                <Award className="w-5 h-5 text-primary-600" />
-                Chứng Chỉ Chuyên Sâu & Đào Tạo Quốc Tế
-              </h3>
-              <div className="space-y-2.5">
-                {doctor.certifications.map((cert, idx) => (
-                  <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>{cert}</span>
-                  </div>
-                ))}
+            {doctor.certifications && doctor.certifications.length > 0 && (
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-100 shadow-sm space-y-4">
+                <h3 className="font-heading font-bold text-lg text-slate-900 flex items-center gap-2">
+                  <Award className="w-5 h-5 text-primary-600" />
+                  Chứng Chỉ Chuyên Sâu & Đào Tạo Chuyên Môn
+                </h3>
+                <div className="space-y-2.5">
+                  {doctor.certifications.map((cert, idx) => (
+                    <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>{cert}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Clinical Strengths */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-100 shadow-sm space-y-4">
-              <h3 className="font-heading font-bold text-lg text-slate-900">
-                Thế Mạnh Điều Trị Chủ Lực
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {doctor.specialtyStrengths.map((str, idx) => (
-                  <div key={idx} className="p-3.5 rounded-2xl bg-slate-50 border border-slate-100 text-xs sm:text-sm font-semibold text-slate-800">
-                    {str}
-                  </div>
-                ))}
+            {doctor.specialtyStrengths && doctor.specialtyStrengths.length > 0 && (
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-100 shadow-sm space-y-4">
+                <h3 className="font-heading font-bold text-lg text-slate-900">
+                  Thế Mạnh Điều Trị Chủ Lực
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {doctor.specialtyStrengths.map((str, idx) => (
+                    <div key={idx} className="p-3.5 rounded-2xl bg-slate-50 border border-slate-100 text-xs sm:text-sm font-semibold text-slate-800">
+                      {str}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Working Schedule at CS01 & CS02 */}
             <div className="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-100 space-y-4">
