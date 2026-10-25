@@ -43,10 +43,15 @@ import {
 import { NavItem, initialNavItems } from "../../../data/navigation";
 import { MediaLibraryModal } from "../MediaLibraryModal";
 import { saveMediaItemToDB, fileToMediaItem } from "../../../utils/mediaStorage";
+import { AdminTabKey } from "../AdminSidebar";
 
 type ActiveSubTab = "banner" | "logo" | "header" | "spacing" | "navigation" | "responsive";
 
-export const BannerTopHeaderTab: React.FC = () => {
+export interface BannerTopHeaderTabProps {
+  onNavigateTab?: (tab: AdminTabKey) => void;
+}
+
+export const BannerTopHeaderTab: React.FC<BannerTopHeaderTabProps> = ({ onNavigateTab }) => {
   const { siteConfig, updateSiteConfig, navItems, updateNavItems } = useDemoData();
 
   const [activeSubTab, setActiveSubTab] = useState<ActiveSubTab>("banner");
@@ -803,348 +808,81 @@ export const BannerTopHeaderTab: React.FC = () => {
       )}
 
       {/* =========================================================================
-          TAB B: LOGO THƯƠNG HIỆU
+          TAB B: LOGO THƯƠNG HIỆU (Đã hợp nhất về Giao diện website -> Nhận diện & Logo)
           ========================================================================= */}
       {activeSubTab === "logo" && (
         <div className="space-y-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            
-            {/* Standard Logo Card */}
-            <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-200/80 space-y-4">
-              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                <div>
-                  <h3 className="font-heading text-base font-bold text-slate-900">
-                    Logo Màu Chuẩn (Nền Sáng)
-                  </h3>
-                  <p className="text-xs text-slate-500">
-                    Dùng cho Header nền trắng hoặc `#EEF7F8`. Hỗ trợ PNG trong suốt, SVG.
-                  </p>
-                </div>
+          <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200/80">
+            <div className="max-w-2xl space-y-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 text-teal-800 text-xs font-bold border border-teal-200">
+                <Check className="w-3.5 h-3.5 text-teal-600" />
+                <span>Đã hợp nhất nguồn dữ liệu duy nhất</span>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Đường dẫn ảnh Logo (URL)
-                </label>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={logoState.logoHeader}
-                    onChange={e => setLogoState(prev => ({ ...prev, logoHeader: e.target.value }))}
-                    placeholder="/images/logo/logo-lbc.png"
-                    className="flex-1 px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-medium focus:outline-none focus:border-primary-600"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setMediaPickerTarget("logoStandard")}
-                    className="px-3.5 py-2.5 rounded-xl bg-primary-50 text-primary-700 hover:bg-primary-100 text-xs font-bold shrink-0 transition-colors"
-                  >
-                    Thư viện
-                  </button>
-                  <label className="px-3.5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold cursor-pointer shrink-0 transition-colors">
-                    <span>Tải tệp</span>
-                    <input
-                      type="file"
-                      accept="image/*"
-                      className="sr-only"
-                      onChange={e => {
-                        if (e.target.files?.[0]) handleDirectFileUpload("logoStandard", e.target.files[0]);
-                      }}
-                    />
-                  </label>
-                </div>
-              </div>
-
-              {/* Preview Standard Logo */}
-              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-center min-h-[120px]">
-                {logoState.logoHeader ? (
-                  <img
-                    src={logoState.logoHeader}
-                    alt="Logo Header preview"
-                    className="max-h-14 w-auto object-contain"
-                  />
-                ) : (
-                  <span className="text-xs text-slate-400 font-medium">Chưa chọn logo màu</span>
-                )}
-              </div>
-            </div>
-
-            {/* White Logo Card */}
-            <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-200/80 space-y-4">
-              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                <div>
-                  <h3 className="font-heading text-base font-bold text-slate-900">
-                    Logo Màu Trắng (Nền Tối)
-                  </h3>
-                  <p className="text-xs text-slate-500">
-                    Dùng khi Header bật chế độ màu xanh thương hiệu hoặc nền tối.
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Đường dẫn Logo Trắng (URL)
-                </label>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={logoState.logoWhiteUrl}
-                    onChange={e => setLogoState(prev => ({ ...prev, logoWhiteUrl: e.target.value }))}
-                    placeholder="/images/logo/logo-lbc-white.svg"
-                    className="flex-1 px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-medium focus:outline-none focus:border-primary-600"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setMediaPickerTarget("logoWhite")}
-                    className="px-3.5 py-2.5 rounded-xl bg-primary-50 text-primary-700 hover:bg-primary-100 text-xs font-bold shrink-0 transition-colors"
-                  >
-                    Thư viện
-                  </button>
-                  <label className="px-3.5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold cursor-pointer shrink-0 transition-colors">
-                    <span>Tải tệp</span>
-                    <input
-                      type="file"
-                      accept="image/*"
-                      className="sr-only"
-                      onChange={e => {
-                        if (e.target.files?.[0]) handleDirectFileUpload("logoWhite", e.target.files[0]);
-                      }}
-                    />
-                  </label>
-                </div>
-              </div>
-
-              {/* Preview White Logo on Dark Background */}
-              <div className="p-6 rounded-2xl bg-[#0E7C86] border border-primary-700 flex items-center justify-center min-h-[120px]">
-                {logoState.logoWhiteUrl ? (
-                  <img
-                    src={logoState.logoWhiteUrl}
-                    alt="Logo Trắng preview"
-                    className="max-h-14 w-auto object-contain"
-                  />
-                ) : (
-                  <span className="text-xs text-white/70 font-medium">Chưa chọn logo trắng (tự dùng logo chuẩn)</span>
-                )}
-              </div>
-            </div>
-
-          </div>
-
-          {/* Sizing & Brand Typography Card */}
-          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-200/80 space-y-6">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-              <div>
-                <h3 className="font-heading text-base font-bold text-slate-900">
-                  Kích thước hiển thị Logo & Xử lý bố cục thông minh
+                <h3 className="text-xl font-heading font-bold text-slate-900">
+                  Quản lý Logo & Nhận diện thương hiệu tập trung
                 </h3>
-                <p className="text-xs text-slate-500">
-                  Khi tắt chữ, vùng logo tự động thu gọn theo kích thước ảnh, ô tìm kiếm và các khối bên phải sẽ tự động co giãn tận dụng tối đa không gian.
+                <p className="text-sm text-slate-600 mt-2 leading-relaxed">
+                  Để đảm bảo tính nhất quán trên toàn bộ website (Header, Footer, Favicon tab trình duyệt và chế độ nền tối), tất cả cấu hình Logo đã được chuyển về khu vực <strong>Giao diện website → Nhận diện & Logo</strong>.
                 </p>
               </div>
-            </div>
 
-            {/* Logo Dimensions Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Chiều rộng Desktop ({headerConfig.logoWidthDesktop || 185}px)
-                </label>
-                <input
-                  type="range"
-                  min="80"
-                  max="320"
-                  value={headerConfig.logoWidthDesktop || 185}
-                  onChange={e => setHeaderConfig(prev => ({ ...prev, logoWidthDesktop: Number(e.target.value) }))}
-                  className="w-full accent-primary-600"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Chiều cao Desktop ({headerConfig.logoHeightDesktop || 48}px)
-                </label>
-                <input
-                  type="range"
-                  min="24"
-                  max="80"
-                  value={headerConfig.logoHeightDesktop || 48}
-                  onChange={e => setHeaderConfig(prev => ({ ...prev, logoHeightDesktop: Number(e.target.value) }))}
-                  className="w-full accent-primary-600"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Chiều rộng Mobile ({headerConfig.logoWidthMobile || 130}px)
-                </label>
-                <input
-                  type="range"
-                  min="60"
-                  max="200"
-                  value={headerConfig.logoWidthMobile || 130}
-                  onChange={e => setHeaderConfig(prev => ({ ...prev, logoWidthMobile: Number(e.target.value) }))}
-                  className="w-full accent-primary-600"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Chiều cao Mobile ({headerConfig.logoHeightMobile || 36}px)
-                </label>
-                <input
-                  type="range"
-                  min="20"
-                  max="60"
-                  value={headerConfig.logoHeightMobile || 36}
-                  onChange={e => setHeaderConfig(prev => ({ ...prev, logoHeightMobile: Number(e.target.value) }))}
-                  className="w-full accent-primary-600"
-                />
-              </div>
-            </div>
-
-            {/* Logo Fit & Alignment */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 border-t border-slate-100">
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Chế độ hiển thị ảnh (Object Fit)
-                </label>
-                <select
-                  value={headerConfig.logoFit || "contain"}
-                  onChange={e => setHeaderConfig(prev => ({ ...prev, logoFit: e.target.value as any }))}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-medium"
-                >
-                  <option value="contain">Contain (Giữ nguyên tỉ lệ ảnh - Khuyên dùng)</option>
-                  <option value="cover">Cover (Bao phủ vùng chứa)</option>
-                  <option value="fill">Fill (Lấp đầy)</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Căn chỉnh chiều dọc
-                </label>
-                <select
-                  value={headerConfig.logoVerticalAlign || "center"}
-                  onChange={e => setHeaderConfig(prev => ({ ...prev, logoVerticalAlign: e.target.value as any }))}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-medium"
-                >
-                  <option value="center">Căn giữa (Center)</option>
-                  <option value="flex-start">Căn trên (Top)</option>
-                  <option value="flex-end">Căn dưới (Bottom)</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Khoảng cách Logo đến Chữ ({headerConfig.gapLogoText ?? 10}px)
-                </label>
-                <input
-                  type="range"
-                  min="0"
-                  max="30"
-                  value={headerConfig.gapLogoText ?? 10}
-                  onChange={e => setHeaderConfig(prev => ({ ...prev, gapLogoText: Number(e.target.value) }))}
-                  className="w-full accent-primary-600"
-                />
-              </div>
-            </div>
-
-            {/* Brand Typography & Visibility Toggles */}
-            <div className="pt-4 border-t border-slate-100 space-y-4">
-              <h4 className="font-heading text-xs font-bold text-slate-700 uppercase tracking-wider">
-                Văn bản thương hiệu bên cạnh Logo (Dynamic Typography)
-              </h4>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Brand Name Controls */}
-                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/70 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-xs text-slate-800">
-                      Tên thương hiệu chính
-                    </span>
-                    <label className="flex items-center gap-1.5 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={headerConfig.showBrandNameText !== false}
-                        onChange={e => setHeaderConfig(prev => ({ ...prev, showBrandNameText: e.target.checked }))}
-                        className="rounded text-primary-600 focus:ring-primary-500"
+              {/* Current Active Brand Assets Summary */}
+              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                  Tài sản thương hiệu đang kích hoạt:
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="p-3 bg-white rounded-xl border border-slate-200 text-center space-y-2">
+                    <span className="text-[11px] font-bold text-slate-500 block">Logo Chuẩn</span>
+                    <div className="h-12 flex items-center justify-center p-1 bg-slate-50 rounded-lg">
+                      <img 
+                        src={siteConfig.logoHeader || siteConfig.logoUrl} 
+                        alt="Logo Header" 
+                        className="max-h-9 object-contain"
+                        onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }}
                       />
-                      <span className="text-[11px] font-semibold text-slate-600">Hiển thị chữ</span>
-                    </label>
+                    </div>
                   </div>
-
-                  <input
-                    type="text"
-                    value={logoState.brandName}
-                    onChange={e => setLogoState(prev => ({ ...prev, brandName: e.target.value }))}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-medium bg-white"
-                    placeholder="Lạc's Beauty Center"
-                  />
-
-                  <div className="flex items-center gap-2">
-                    <label className="text-[11px] text-slate-500 whitespace-nowrap">Cỡ chữ:</label>
-                    <select
-                      value={headerConfig.brandNameFontSize || "16px"}
-                      onChange={e => setHeaderConfig(prev => ({ ...prev, brandNameFontSize: e.target.value }))}
-                      className="px-2.5 py-1 rounded-lg border border-slate-200 text-xs font-medium bg-white"
-                    >
-                      <option value="14px">14px</option>
-                      <option value="15px">15px</option>
-                      <option value="16px">16px (Chuẩn)</option>
-                      <option value="18px">18px</option>
-                      <option value="20px">20px</option>
-                    </select>
-                  </div>
-                </div>
-
-                {/* Facility Subtitle Controls */}
-                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/70 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-xs text-slate-800">
-                      Mô tả / Phân khoa dưới logo
-                    </span>
-                    <label className="flex items-center gap-1.5 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={headerConfig.showFacilitySubtitle !== false}
-                        onChange={e => setHeaderConfig(prev => ({ ...prev, showFacilitySubtitle: e.target.checked }))}
-                        className="rounded text-primary-600 focus:ring-primary-500"
+                  <div className="p-3 bg-slate-900 rounded-xl border border-slate-800 text-center space-y-2">
+                    <span className="text-[11px] font-bold text-slate-300 block">Logo Nền Tối/Footer</span>
+                    <div className="h-12 flex items-center justify-center p-1">
+                      <img 
+                        src={siteConfig.logoWhiteUrl || siteConfig.logoFooterUrl || siteConfig.logoUrl} 
+                        alt="Logo Footer" 
+                        className="max-h-9 object-contain brightness-0 invert"
+                        onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }}
                       />
-                      <span className="text-[11px] font-semibold text-slate-600">Hiển thị chữ</span>
-                    </label>
+                    </div>
                   </div>
-
-                  <input
-                    type="text"
-                    value={logoState.facilityName}
-                    onChange={e => setLogoState(prev => ({ ...prev, facilityName: e.target.value }))}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-medium bg-white"
-                    placeholder="Phòng khám Chuyên khoa Da liễu"
-                  />
-
-                  <div className="flex items-center gap-2">
-                    <label className="text-[11px] text-slate-500 whitespace-nowrap">Cỡ chữ:</label>
-                    <select
-                      value={headerConfig.facilityFontSize || "11px"}
-                      onChange={e => setHeaderConfig(prev => ({ ...prev, facilityFontSize: e.target.value }))}
-                      className="px-2.5 py-1 rounded-lg border border-slate-200 text-xs font-medium bg-white"
-                    >
-                      <option value="10px">10px</option>
-                      <option value="11px">11px (Chuẩn)</option>
-                      <option value="12px">12px</option>
-                      <option value="13px">13px</option>
-                    </select>
+                  <div className="p-3 bg-white rounded-xl border border-slate-200 text-center space-y-2">
+                    <span className="text-[11px] font-bold text-slate-500 block">Tên & Phân Khoa</span>
+                    <div className="h-12 flex flex-col items-center justify-center text-xs">
+                      <span className="font-bold text-slate-900">{siteConfig.brandName || "LBC GROUP"}</span>
+                      <span className="text-[10px] text-slate-500">{siteConfig.facilityName || "Viện Da Liễu"}</span>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Dynamic Behavior Note Alert */}
-              <div className="p-3.5 rounded-2xl bg-sky-50 border border-sky-100 flex items-start gap-2.5 text-xs text-sky-800">
-                <Sparkles className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
-                <p className="leading-relaxed">
-                  <strong>Cơ chế co giãn tự động:</strong> Khi tắt cả Tên thương hiệu và Mô tả phân khoa, thẻ bọc văn bản sẽ được loại bỏ hoàn toàn khỏi DOM (không giữ lại khoảng trống hoặc margin rỗng). Chiều rộng logo sẽ co về kích thước ảnh thực tế, ô tìm kiếm và nhóm chức năng bên phải sẽ tự giãn rộng ra một cách hài hòa!
-                </p>
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <button
+                  type="button"
+                  onClick={() => onNavigateTab ? onNavigateTab("branding") : setActiveSubTab("header")}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-primary-600 hover:bg-primary-700 text-white font-bold text-sm shadow-md transition-all hover:scale-[1.01]"
+                >
+                  <Palette className="w-4 h-4" />
+                  <span>Mở Trung tâm Nhận diện thương hiệu & Logo</span>
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveSubTab("header")}
+                  className="px-5 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm transition-colors"
+                >
+                  Chỉnh sửa Header Chính (Tab C)
+                </button>
               </div>
             </div>
           </div>
@@ -1929,129 +1667,53 @@ export const BannerTopHeaderTab: React.FC = () => {
       )}
 
       {/* =========================================================================
-          TAB E: MENU ĐIỀU HƯỚNG
+          TAB E: MENU ĐIỀU HƯỚNG (Đã hợp nhất về Giao diện website -> Menu & Điều hướng)
           ========================================================================= */}
       {activeSubTab === "navigation" && (
         <div className="space-y-6">
-          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-200/80 space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+          <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200/80">
+            <div className="max-w-2xl space-y-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 text-teal-800 text-xs font-bold border border-teal-200">
+                <Check className="w-3.5 h-3.5 text-teal-600" />
+                <span>Đã hợp nhất quản lý Menu điều hướng</span>
+              </div>
+
               <div>
-                <h3 className="font-heading text-base font-bold text-slate-900 flex items-center gap-2">
-                  <Menu className="w-4 h-4 text-primary-600" />
-                  <span>Danh Sách 10 Mục Menu Điều Hướng LBC (Khu vực 2)</span>
+                <h3 className="text-xl font-heading font-bold text-slate-900">
+                  Quản lý Menu & Thanh điều hướng tập trung
                 </h3>
-                <p className="text-xs text-slate-500">
-                  Dữ liệu đồng bộ trực tiếp với thanh điều hướng website và drawer trên thiết bị di động.
+                <p className="text-sm text-slate-600 mt-2 leading-relaxed">
+                  Để tránh trùng lặp thao tác trên hai bảng dữ liệu khác nhau, menu chính và các liên kết mega menu được quản lý trực tiếp tại mục <strong>Giao diện website → Menu & Điều hướng</strong>. Bấm nút dưới để mở ngay màn hình quản lý chi tiết.
                 </p>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-slate-700">Các mục menu hiện có:</span>
+                  <span className="text-xs font-bold text-primary-700 font-mono bg-primary-50 px-2.5 py-1 rounded-full">
+                    {localNavItems.length} mục
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {localNavItems.map(item => (
+                    <span key={item.id} className="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-xs font-medium text-slate-700">
+                      {item.title}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-2">
                 <button
                   type="button"
-                  onClick={handleAddNavItem}
-                  className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-primary-50 text-primary-700 hover:bg-primary-100 text-xs font-bold transition-colors"
+                  onClick={() => onNavigateTab ? onNavigateTab("navigation") : setActiveSubTab("header")}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-primary-600 hover:bg-primary-700 text-white font-bold text-sm shadow-md transition-all hover:scale-[1.01]"
                 >
-                  <Plus className="w-4 h-4" />
-                  <span>Thêm mục menu</span>
+                  <Menu className="w-4 h-4" />
+                  <span>Mở Quản lý Menu & Điều hướng</span>
+                  <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
-            </div>
-
-            <div className="space-y-3">
-              {localNavItems.map((item, index) => (
-                <div
-                  key={item.id}
-                  className="p-4 rounded-2xl bg-slate-50 border border-slate-200/70 space-y-3"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="flex flex-col gap-1 text-slate-400">
-                      <button
-                        type="button"
-                        onClick={() => handleMoveNavItem(index, "up")}
-                        disabled={index === 0}
-                        className="hover:text-primary-600 disabled:opacity-30"
-                        title="Di chuyển lên"
-                      >
-                        <ArrowUp className="w-3.5 h-3.5" />
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => handleMoveNavItem(index, "down")}
-                        disabled={index === localNavItems.length - 1}
-                        className="hover:text-primary-600 disabled:opacity-30"
-                        title="Di chuyển xuống"
-                      >
-                        <ArrowDown className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-
-                    <div className="w-7 h-7 rounded-lg bg-primary-100 text-primary-700 text-xs font-bold flex items-center justify-center shrink-0">
-                      {index + 1}
-                    </div>
-
-                    <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      <input
-                        type="text"
-                        value={item.title}
-                        onChange={e => handleUpdateNavItem(item.id, { title: e.target.value })}
-                        placeholder="Tên nhãn menu..."
-                        className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold bg-white"
-                      />
-                      <input
-                        type="text"
-                        value={item.path}
-                        onChange={e => handleUpdateNavItem(item.id, { path: e.target.value })}
-                        placeholder="/duong-dan"
-                        className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-medium bg-white"
-                      />
-                    </div>
-
-                    {item.isMega && (
-                      <span className="hidden sm:inline-block px-2.5 py-1 rounded-full text-[10px] font-bold bg-purple-100 text-purple-700 shrink-0">
-                        Mega Menu: {item.megaType}
-                      </span>
-                    )}
-
-                    <div className="flex items-center gap-3 shrink-0">
-                      <label className="flex items-center gap-1.5 text-xs text-slate-700 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={item.isActive !== false}
-                          onChange={e => handleUpdateNavItem(item.id, { isActive: e.target.checked })}
-                          className="rounded text-primary-600"
-                        />
-                        <span className="text-[11px] font-semibold">Bật</span>
-                      </label>
-
-                      <button
-                        type="button"
-                        onClick={() => handleDeleteNavItem(item.id)}
-                        className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors"
-                        title="Xóa mục menu"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Submenu Children Links */}
-                  {item.children && item.children.length > 0 && (
-                    <div className="pl-12 pt-2 border-t border-slate-200/50 space-y-1.5">
-                      <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">
-                        Các mục con ({item.children.length}):
-                      </span>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {item.children.map((child, cIdx) => (
-                          <div key={cIdx} className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs flex items-center justify-between">
-                            <span className="font-semibold text-slate-800">{child.title}</span>
-                            <span className="text-[11px] text-slate-400 font-mono">{child.path}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))}
             </div>
           </div>
         </div>

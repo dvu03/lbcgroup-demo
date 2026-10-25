@@ -30,10 +30,12 @@ import PolicyPage from "./pages/PolicyPage";
 import SearchPage from "./pages/SearchPage";
 import DemoAdminPage from "./pages/DemoAdminPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import { ThemeInjector } from "./components/common/ThemeInjector";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ThemeInjector />
       <Routes>
         <Route path="/" element={<Layout />}>
           {/* Homepage */}

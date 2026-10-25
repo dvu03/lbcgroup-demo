@@ -286,6 +286,78 @@ export interface BackToTopConfig {
   tooltipText?: string;
 }
 
+export interface ThemeConfig {
+  // Typography
+  fontHeading: string;
+  fontBody: string;
+  fontSizeBase: number;
+  fontSizeH1: string;
+  fontSizeH2: string;
+  fontSizeH3: string;
+  fontSizeH4: string;
+  lineHeightBase: number;
+  letterSpacingHeading: string;
+
+  // Colors
+  primaryColor: string;
+  primaryHoverColor: string;
+  primaryLightColor: string;
+  secondaryColor: string;
+  accentColor: string;
+  backgroundColor: string;
+  sectionBgColor: string;
+  textColorMain: string;
+  textColorMuted: string;
+  borderColor: string;
+
+  // Dimensions & Spacings
+  containerMaxWidth: string;
+  sectionPaddingDesktop: number;
+  sectionPaddingMobile: number;
+  cardBorderRadius: string;
+  buttonBorderRadius: string;
+
+  // Banner Heights
+  heroHeightDesktop: number;
+  heroHeightMobile: number;
+  pageBannerHeightDesktop: number;
+  pageBannerHeightMobile: number;
+}
+
+export const defaultThemeConfig: ThemeConfig = {
+  fontHeading: "'Fraunces', Georgia, serif",
+  fontBody: "'Be Vietnam Pro', system-ui, -apple-system, sans-serif",
+  fontSizeBase: 16,
+  fontSizeH1: "clamp(1.875rem, 3.5vw + 1rem, 3rem)",
+  fontSizeH2: "clamp(1.375rem, 2vw + 0.75rem, 2.25rem)",
+  fontSizeH3: "clamp(1.125rem, 1.2vw + 0.5rem, 1.5rem)",
+  fontSizeH4: "1.25rem",
+  lineHeightBase: 1.6,
+  letterSpacingHeading: "-0.015em",
+
+  primaryColor: "#0E7C86",
+  primaryHoverColor: "#0A4F57",
+  primaryLightColor: "#EEF7F8",
+  secondaryColor: "#C49A45",
+  accentColor: "#0E7C86",
+  backgroundColor: "#FFFFFF",
+  sectionBgColor: "#F8FAFC",
+  textColorMain: "#1E293B",
+  textColorMuted: "#64748B",
+  borderColor: "#E2E8F0",
+
+  containerMaxWidth: "1380px",
+  sectionPaddingDesktop: 80,
+  sectionPaddingMobile: 48,
+  cardBorderRadius: "24px",
+  buttonBorderRadius: "9999px",
+
+  heroHeightDesktop: 480,
+  heroHeightMobile: 360,
+  pageBannerHeightDesktop: 320,
+  pageBannerHeightMobile: 220
+};
+
 export interface SiteConfig {
   brandName: string;
   tagline: string;
@@ -357,6 +429,7 @@ export interface SiteConfig {
   fontBody?: string;
   address?: string;
   backToTop?: BackToTopConfig;
+  theme?: ThemeConfig;
 }
 
 export const initialSiteConfig: SiteConfig = {
@@ -490,5 +563,6 @@ export const initialSiteConfig: SiteConfig = {
     borderRadius: "full",
     scrollThreshold: 300,
     tooltipText: "Cuộn lên đầu trang"
-  }
+  },
+  theme: defaultThemeConfig
 };

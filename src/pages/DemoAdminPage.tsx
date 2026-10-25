@@ -26,6 +26,7 @@ import { NavigationTab } from "../components/admin/tabs/NavigationTab";
 import { LegalInfoTab } from "../components/admin/tabs/LegalInfoTab";
 import { BannerTopHeaderTab } from "../components/admin/tabs/BannerTopHeaderTab";
 import { PageBannersTab } from "../components/admin/tabs/PageBannersTab";
+import { AppearanceTab } from "../components/admin/tabs/AppearanceTab";
 
 export default function DemoAdminPage() {
   const {
@@ -107,15 +108,23 @@ export default function DemoAdminPage() {
       case "media-library":
         return <MediaLibraryTab />;
       case "header-footer":
-        return <BannerTopHeaderTab />;
+        return <BannerTopHeaderTab onNavigateTab={setActiveTab} />;
       case "branding":
-        return <BrandingIdentityTab initialSubTab="branding" />;
+        return <AppearanceTab initialSubTab="branding" />;
+      case "typography":
+        return <AppearanceTab initialSubTab="typography" />;
+      case "colors":
+        return <AppearanceTab initialSubTab="colors" />;
+      case "spacing":
+        return <AppearanceTab initialSubTab="spacing" />;
+      case "banners-guide":
+        return <AppearanceTab initialSubTab="banners" />;
       case "cta-contact":
         return <BrandingIdentityTab initialSubTab="contact" />;
       case "seo":
         return <BrandingIdentityTab initialSubTab="seo" />;
       case "ui-config":
-        return <BrandingIdentityTab initialSubTab="ui" />;
+        return <AppearanceTab initialSubTab="colors" />;
       case "leads":
         return <LeadsTab />;
       case "specialties":
