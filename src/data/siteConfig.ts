@@ -269,6 +269,34 @@ export interface AboutSectionConfig {
   ctaLink?: string;
 }
 
+export interface EcosystemSpecialtiesSectionConfig {
+  enabled: boolean;
+  title: string;
+  subtitle: string;
+  defaultBadgeText: string;
+  paddingY: 'compact' | 'normal' | 'spacious';
+  gap: 'sm' | 'md' | 'lg';
+  backgroundColor: string;
+  textColor?: string;
+  desktopLayout: '3-2' | '3-cols' | '2-cols';
+  cardBorderRadius?: 'rounded-xl' | 'rounded-2xl' | 'rounded-3xl';
+  showBadge?: boolean;
+}
+
+export const defaultSpecialtiesSectionConfig: EcosystemSpecialtiesSectionConfig = {
+  enabled: true,
+  title: "5 Chuyên khoa & Lĩnh vực Trọng tâm",
+  subtitle: "Mô hình khép kín kết hợp giữa thăm khám da liễu, xét nghiệm hỗ trợ, nhà thuốc chuẩn GPP, dược mỹ phẩm quốc tế và học viện đào tạo nghề chuyên sâu.",
+  defaultBadgeText: "Chuyên khoa",
+  paddingY: "normal",
+  gap: "md",
+  backgroundColor: "transparent",
+  textColor: "",
+  desktopLayout: "3-2",
+  cardBorderRadius: "rounded-2xl",
+  showBadge: true
+};
+
 export interface BackToTopConfig {
   enabled: boolean;
   iconName: string;
@@ -429,6 +457,7 @@ export interface SiteConfig {
   fontBody?: string;
   address?: string;
   backToTop?: BackToTopConfig;
+  specialtiesSectionConfig?: EcosystemSpecialtiesSectionConfig;
   theme?: ThemeConfig;
 }
 
@@ -564,5 +593,6 @@ export const initialSiteConfig: SiteConfig = {
     scrollThreshold: 300,
     tooltipText: "Cuộn lên đầu trang"
   },
+  specialtiesSectionConfig: defaultSpecialtiesSectionConfig,
   theme: defaultThemeConfig
 };

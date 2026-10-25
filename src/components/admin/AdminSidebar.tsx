@@ -122,7 +122,7 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({
       items: [
         { key: "homepage-sections", label: "Trang chủ & Section", icon: Home },
         { key: "page-banners", label: "Banner & Trang con", icon: Layers },
-        { key: "specialties", label: "Chuyên khoa", icon: Stethoscope },
+        { key: "specialties", label: "5 Chuyên khoa", icon: Stethoscope },
         { key: "services", label: "Dịch vụ điều trị", icon: Scissors, badge: counts.services },
         { key: "doctors", label: "Đội ngũ bác sĩ", icon: Users, badge: counts.doctors },
         { key: "technologies", label: "Công nghệ cao", icon: Cpu },

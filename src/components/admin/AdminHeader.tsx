@@ -29,7 +29,7 @@ const TAB_TITLES: Record<AdminTabKey, { title: string; category: string; descrip
   dashboard: { title: "Tổng quan hệ thống", category: "1. TỔNG QUAN", description: "Báo cáo số liệu và hoạt động gần đây" },
   "homepage-sections": { title: "Trang chủ & Bố cục Section", category: "2. NỘI DUNG WEBSITE", description: "Bật tắt, đổi thứ tự và sửa nội dung các khối" },
   "page-banners": { title: "Banner & Nội dung các trang", category: "2. NỘI DUNG WEBSITE", description: "Quản lý hero banner và nội dung các trang con" },
-  specialties: { title: "Chuyên khoa phòng khám", category: "2. NỘI DUNG WEBSITE", description: "Danh mục chuyên khoa y tế thẩm mỹ" },
+  specialties: { title: "5 Chuyên khoa & Lĩnh vực Trọng tâm", category: "2. NỘI DUNG WEBSITE", description: "Quản lý 5 banner chuyên khoa, bố cục banner ngang và cấu hình section" },
   services: { title: "Danh mục Dịch vụ", category: "2. NỘI DUNG WEBSITE", description: "Quản lý dịch vụ điều trị và chăm sóc da" },
   doctors: { title: "Đội ngũ Bác sĩ & Chuyên gia", category: "2. NỘI DUNG WEBSITE", description: "Hồ sơ bác sĩ chuyên khoa, học vị, ảnh đại diện" },
   technologies: { title: "Công nghệ & Thiết bị", category: "2. NỘI DUNG WEBSITE", description: "Hệ thống máy móc, laser và công nghệ điều trị" },

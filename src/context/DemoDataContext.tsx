@@ -406,6 +406,7 @@ export const DemoDataProvider: React.FC<{ children: ReactNode }> = ({ children }
         else if (e.key === STORAGE_PREFIX + "heroSliderSettings") setHeroSliderSettings(JSON.parse(e.newValue));
         else if (e.key === STORAGE_PREFIX + "doctors") setDoctors(JSON.parse(e.newValue));
         else if (e.key === STORAGE_PREFIX + "services") setServices(JSON.parse(e.newValue));
+        else if (e.key === STORAGE_PREFIX + "specialties") setSpecialties(JSON.parse(e.newValue));
         else if (e.key === STORAGE_PREFIX + "products") setProducts(JSON.parse(e.newValue));
       } catch {}
     };
