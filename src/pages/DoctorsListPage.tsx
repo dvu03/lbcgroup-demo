@@ -47,7 +47,7 @@ export const DoctorsListPage: React.FC = () => {
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent"></div>
-                
+
                 <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-primary-900/80 text-primary-200 border border-primary-500/30 backdrop-blur-sm">
                   {doc.degree.split(',')[0]}
                 </span>
