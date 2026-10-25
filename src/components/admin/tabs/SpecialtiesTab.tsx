@@ -7,7 +7,6 @@ import {
   Edit,
   Trash2,
   CheckCircle2,
-  ExternalLink,
   Layers,
   Image as ImageIcon,
   ArrowUp,
@@ -19,7 +18,11 @@ import {
   Palette,
   ArrowRight,
   Sparkles,
-  RefreshCw
+  RotateCcw,
+  Sliders,
+  AlignLeft,
+  AlignCenter,
+  AlignJustify
 } from "lucide-react";
 import { useDemoData } from "../../../context/DemoDataContext";
 import { Specialty } from "../../../data/specialties";
@@ -46,6 +49,105 @@ const CROP_POSITIONS = [
   { label: "Lệch trái (center left)", value: "center left" },
 ];
 
+// Helper to convert hex to rgba
+function hexToRgba(hexCode: string, alpha: number): string {
+  let clean = (hexCode || "#000000").replace("#", "").trim();
+  if (clean.length === 3) {
+    clean = clean.split("").map((c) => c + c).join("");
+  }
+  if (clean.length !== 6) {
+    return `rgba(0, 0, 0, ${alpha})`;
+  }
+  const r = parseInt(clean.substring(0, 2), 16);
+  const g = parseInt(clean.substring(2, 4), 16);
+  const b = parseInt(clean.substring(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+// Compute overlay background CSS for live preview
+function computePreviewOverlay(
+  banner: Specialty,
+  config: EcosystemSpecialtiesSectionConfig
+): React.CSSProperties {
+  const isEnabled =
+    banner.overlayEnabled !== undefined
+      ? banner.overlayEnabled
+      : config.overlayEnabled !== false;
+
+  if (!isEnabled) {
+    return { display: "none" };
+  }
+
+  const rawColor = banner.overlayColor || config.overlayColor || "black";
+  let hex = "#000000";
+  if (rawColor === "white") hex = "#FFFFFF";
+  else if (rawColor === "black") hex = "#000000";
+  else if (rawColor === "custom") {
+    hex = banner.overlayCustomColor || config.overlayCustomColor || "#000000";
+  } else if (rawColor.startsWith("#")) {
+    hex = rawColor;
+  }
+
+  const opacityVal =
+    banner.overlayOpacity !== undefined
+      ? banner.overlayOpacity
+      : config.overlayOpacity !== undefined
+      ? config.overlayOpacity
+      : 20;
+
+  const baseAlpha = Math.max(0, Math.min(0.8, opacityVal / 100));
+  const mode = banner.overlayMode || config.overlayMode || "gradient-left";
+
+  if (mode === "solid") {
+    return {
+      backgroundColor: hexToRgba(hex, baseAlpha)
+    };
+  }
+
+  if (mode === "gradient-bottom") {
+    const startA =
+      banner.overlayGradientStart !== undefined
+        ? banner.overlayGradientStart / 100
+        : Math.min(0.92, baseAlpha * 1.5 + 0.35);
+    const endA =
+      banner.overlayGradientEnd !== undefined
+        ? banner.overlayGradientEnd / 100
+        : Math.max(0, baseAlpha * 0.3);
+
+    return {
+      background: `linear-gradient(to top, ${hexToRgba(hex, startA)} 0%, ${hexToRgba(
+        hex,
+        (startA + endA) / 2
+      )} 55%, ${hexToRgba(hex, endA)} 100%)`
+    };
+  }
+
+  // Default: 'gradient-left'
+  const startA =
+    banner.overlayGradientStart !== undefined
+      ? banner.overlayGradientStart / 100
+      : Math.min(0.92, baseAlpha * 1.6 + 0.32);
+  const midA = Math.min(
+    0.85,
+    (startA +
+      (banner.overlayGradientEnd !== undefined
+        ? banner.overlayGradientEnd / 100
+        : baseAlpha * 0.35)) /
+      2
+  );
+  const endA =
+    banner.overlayGradientEnd !== undefined
+      ? banner.overlayGradientEnd / 100
+      : Math.max(0, baseAlpha * 0.35);
+
+  return {
+    background: `linear-gradient(to right, ${hexToRgba(hex, startA)} 0%, ${hexToRgba(
+      hex,
+      midA
+    )} 60%, ${hexToRgba(hex, endA)} 100%)`
+  };
+}
+
 export const SpecialtiesTab: React.FC = () => {
   const {
     specialties,
@@ -53,8 +155,7 @@ export const SpecialtiesTab: React.FC = () => {
     saveSpecialty,
     deleteSpecialty,
     siteConfig,
-    updateSiteConfig,
-    refreshFromNeon
+    updateSiteConfig
   } = useDemoData();
 
   // Section level configuration state
@@ -64,7 +165,10 @@ export const SpecialtiesTab: React.FC = () => {
 
   useEffect(() => {
     if (siteConfig.specialtiesSectionConfig) {
-      setSectionConfig(siteConfig.specialtiesSectionConfig);
+      setSectionConfig({
+        ...defaultSpecialtiesSectionConfig,
+        ...siteConfig.specialtiesSectionConfig
+      });
     }
   }, [siteConfig.specialtiesSectionConfig]);
 
@@ -88,10 +192,11 @@ export const SpecialtiesTab: React.FC = () => {
     (a, b) => (a.order || 0) - (b.order || 0)
   );
 
-  const filtered = sortedSpecialties.filter((s) =>
-    s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    (s.badge || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
-    s.shortDesc.toLowerCase().includes(searchQuery.toLowerCase())
+  const filtered = sortedSpecialties.filter(
+    (s) =>
+      s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (s.badge || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
+      s.shortDesc.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const handleCreateNew = () => {
@@ -116,7 +221,12 @@ export const SpecialtiesTab: React.FC = () => {
       altText: "Ảnh minh họa chuyên khoa",
       imagePosition: "center center",
       enabled: true,
-      order: specialties.length + 1
+      order: specialties.length + 1,
+      overlayEnabled: true,
+      overlayColor: "black",
+      overlayOpacity: 20,
+      overlayMode: "gradient-left",
+      contentPosition: "left"
     };
     setEditingSpecialty(newSpec);
   };
@@ -200,14 +310,16 @@ export const SpecialtiesTab: React.FC = () => {
               Module Trang chủ
             </span>
             <span className="text-xs text-neutral-400">•</span>
-            <span className="text-xs font-semibold text-neutral-500">5 Banner ngang chuẩn ảnh mẫu</span>
+            <span className="text-xs font-semibold text-neutral-500">
+              Ảnh nền phủ 100% banner + Overlay chỉnh opacity
+            </span>
           </div>
           <h2 className="text-lg font-bold text-neutral-900 font-heading flex items-center gap-2 mt-1">
             <Stethoscope className="w-5 h-5 text-emerald-700" />
             <span>5 Chuyên khoa & Lĩnh vực Trọng tâm</span>
           </h2>
           <p className="text-xs text-neutral-500 mt-1 max-w-2xl leading-relaxed">
-            Quản lý 5 banner nằm ngang (nội dung bên trái, ảnh minh họa bên phải) trên trang chủ. Bố cục Desktop: Hàng 1 (3 banner), Hàng 2 (2 banner cân đối).
+            Mỗi banner có ảnh phủ kín 100%, nội dung (nhãn, tiêu đề, mô tả, nút CTA) hiển thị nổi trên lớp overlay. Cho phép chỉnh màu và độ mờ opacity (0% - 80%) thời gian thực.
           </p>
         </div>
 
@@ -222,7 +334,7 @@ export const SpecialtiesTab: React.FC = () => {
             }`}
           >
             <Settings2 className="w-4 h-4" />
-            <span>{showSectionSettings ? "Đóng Cấu hình Section" : "Cấu hình Section"}</span>
+            <span>{showSectionSettings ? "Đóng Cấu hình Section" : "Cấu hình Section & Lớp phủ"}</span>
           </button>
 
           <button
@@ -247,12 +359,12 @@ export const SpecialtiesTab: React.FC = () => {
 
       {/* Collapsible Section Configuration Card */}
       {showSectionSettings && (
-        <div className="bg-white rounded-2xl border border-neutral-200 p-5 shadow-xs animate-fadeIn space-y-4">
+        <div className="bg-white rounded-2xl border border-neutral-200 p-5 shadow-xs animate-fadeIn space-y-5">
           <div className="flex items-center justify-between pb-3 border-b border-neutral-100">
             <div className="flex items-center gap-2">
               <Settings2 className="w-4 h-4 text-emerald-700" />
               <h3 className="text-sm font-bold text-neutral-900 font-heading">
-                Cấu hình Chung cho Section "5 Chuyên khoa"
+                Cấu hình Chung cho Section & Lớp phủ (Overlay)
               </h3>
             </div>
             <span className="text-[11px] text-neutral-400">
@@ -260,6 +372,7 @@ export const SpecialtiesTab: React.FC = () => {
             </span>
           </div>
 
+          {/* Section general options */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
             {/* Enable Section Toggle */}
             <div className="p-3 bg-neutral-50 rounded-xl border border-neutral-200 flex items-center justify-between">
@@ -329,7 +442,6 @@ export const SpecialtiesTab: React.FC = () => {
                 onChange={(e) =>
                   setSectionConfig({ ...sectionConfig, title: e.target.value })
                 }
-                placeholder="5 Chuyên khoa & Lĩnh vực Trọng tâm"
                 className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-xl focus:outline-hidden focus:border-emerald-600 font-heading font-semibold"
               />
             </div>
@@ -356,7 +468,7 @@ export const SpecialtiesTab: React.FC = () => {
             </div>
 
             {/* Section Subtitle */}
-            <div className="md:col-span-2">
+            <div className="md:col-span-3">
               <label className="font-semibold text-neutral-800 block mb-1">
                 Mô tả tổng quan Section (Subtitle)
               </label>
@@ -366,56 +478,163 @@ export const SpecialtiesTab: React.FC = () => {
                 onChange={(e) =>
                   setSectionConfig({ ...sectionConfig, subtitle: e.target.value })
                 }
-                placeholder="Mô hình khép kín kết hợp giữa thăm khám da liễu, xét nghiệm hỗ trợ..."
                 className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-xl resize-none focus:outline-hidden focus:border-emerald-600"
               />
             </div>
+          </div>
 
-            {/* Padding & Spacing */}
-            <div className="grid grid-cols-2 gap-2">
+          {/* OVERLAY & OPACITY CONTROLS */}
+          <div className="p-4 bg-emerald-50/50 rounded-2xl border border-emerald-200/80 space-y-4 text-xs">
+            <div className="flex items-center justify-between border-b border-emerald-200/60 pb-2">
+              <span className="font-bold text-neutral-900 flex items-center gap-2">
+                <Sliders className="w-4 h-4 text-emerald-700" />
+                <span>Cấu hình Lớp phủ Ảnh (Overlay & Opacity) Mặc định</span>
+              </span>
+              <span className="text-[11px] text-emerald-800 font-medium">
+                Áp dụng chung cho cả 5 banner (trừ khi banner có cài đặt riêng)
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {/* Overlay Toggle */}
+              <div>
+                <label className="font-semibold text-neutral-800 block mb-1.5">
+                  Bật/tắt lớp phủ
+                </label>
+                <label className="relative inline-flex items-center cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={sectionConfig.overlayEnabled !== false}
+                    onChange={(e) =>
+                      setSectionConfig({ ...sectionConfig, overlayEnabled: e.target.checked })
+                    }
+                    className="sr-only peer"
+                  />
+                  <div className="w-9 h-5 bg-neutral-300 peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-600"></div>
+                </label>
+              </div>
+
+              {/* Overlay Color Mode */}
               <div>
                 <label className="font-semibold text-neutral-800 block mb-1">
-                  Khoảng cách trên/dưới
+                  Màu lớp phủ
+                </label>
+                <div className="flex items-center gap-2">
+                  <select
+                    value={sectionConfig.overlayColor || "black"}
+                    onChange={(e) =>
+                      setSectionConfig({
+                        ...sectionConfig,
+                        overlayColor: e.target.value as "black" | "white" | "custom"
+                      })
+                    }
+                    className="w-full px-2.5 py-1.5 text-xs border border-neutral-300 rounded-lg bg-white"
+                  >
+                    <option value="black">Đen (Chuẩn chữ sáng)</option>
+                    <option value="white">Trắng (Chuẩn chữ tối)</option>
+                    <option value="custom">Màu tùy chỉnh</option>
+                  </select>
+
+                  {sectionConfig.overlayColor === "custom" && (
+                    <input
+                      type="color"
+                      value={sectionConfig.overlayCustomColor || "#000000"}
+                      onChange={(e) =>
+                        setSectionConfig({ ...sectionConfig, overlayCustomColor: e.target.value })
+                      }
+                      className="w-8 h-8 rounded border border-neutral-300 p-0.5 cursor-pointer shrink-0"
+                    />
+                  )}
+                </div>
+              </div>
+
+              {/* Opacity Range Slider (0% - 80%) */}
+              <div className="lg:col-span-2">
+                <div className="flex items-center justify-between mb-1">
+                  <label className="font-semibold text-neutral-800">
+                    Độ mờ lớp phủ (Opacity):{" "}
+                    <span className="text-emerald-700 font-bold font-mono text-sm">
+                      {sectionConfig.overlayOpacity ?? 20}%
+                    </span>
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() => setSectionConfig({ ...sectionConfig, overlayOpacity: 20 })}
+                    className="text-[11px] text-neutral-500 hover:text-emerald-700 flex items-center gap-1 font-medium transition"
+                    title="Khôi phục giá trị mặc định 20%"
+                  >
+                    <RotateCcw className="w-3 h-3" />
+                    <span>Mặc định 20%</span>
+                  </button>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-[11px] text-neutral-400 font-mono">0%</span>
+                  <input
+                    type="range"
+                    min="0"
+                    max="80"
+                    step="1"
+                    value={sectionConfig.overlayOpacity ?? 20}
+                    onChange={(e) =>
+                      setSectionConfig({
+                        ...sectionConfig,
+                        overlayOpacity: parseInt(e.target.value, 10)
+                      })
+                    }
+                    className="w-full h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                  />
+                  <span className="text-[11px] text-neutral-400 font-mono">80%</span>
+                </div>
+                <span className="text-[10px] text-neutral-500 mt-1 block">
+                  Chỉ làm mờ lớp nền phủ, không làm mờ chữ hoặc nút CTA.
+                </span>
+              </div>
+
+              {/* Overlay Mode */}
+              <div>
+                <label className="font-semibold text-neutral-800 block mb-1">
+                  Kiểu lớp phủ (Mode)
                 </label>
                 <select
-                  value={sectionConfig.paddingY || "normal"}
+                  value={sectionConfig.overlayMode || "gradient-left"}
                   onChange={(e) =>
                     setSectionConfig({
                       ...sectionConfig,
-                      paddingY: e.target.value as "compact" | "normal" | "spacious"
+                      overlayMode: e.target.value as "gradient-left" | "gradient-bottom" | "solid"
                     })
                   }
-                  className="w-full px-2.5 py-2 text-xs border border-neutral-300 rounded-xl bg-white focus:outline-hidden"
+                  className="w-full px-2.5 py-1.5 text-xs border border-neutral-300 rounded-lg bg-white"
                 >
-                  <option value="compact">Gọn nhẹ (py-10)</option>
-                  <option value="normal">Tiêu chuẩn (py-16)</option>
-                  <option value="spacious">Rộng rãi (py-20)</option>
+                  <option value="gradient-left">Gradient từ trái sang (Khuyến nghị)</option>
+                  <option value="gradient-bottom">Gradient từ dưới lên</option>
+                  <option value="solid">Phủ đều 100% (Solid)</option>
                 </select>
               </div>
 
+              {/* Banner Height */}
               <div>
                 <label className="font-semibold text-neutral-800 block mb-1">
-                  Khoảng cách giữa thẻ
+                  Chiều cao banner
                 </label>
                 <select
-                  value={sectionConfig.gap || "md"}
+                  value={sectionConfig.bannerHeight || "normal"}
                   onChange={(e) =>
                     setSectionConfig({
                       ...sectionConfig,
-                      gap: e.target.value as "sm" | "md" | "lg"
+                      bannerHeight: e.target.value as "compact" | "normal" | "tall"
                     })
                   }
-                  className="w-full px-2.5 py-2 text-xs border border-neutral-300 rounded-xl bg-white focus:outline-hidden"
+                  className="w-full px-2.5 py-1.5 text-xs border border-neutral-300 rounded-lg bg-white"
                 >
-                  <option value="sm">Hẹp (14px)</option>
-                  <option value="md">Tiêu chuẩn (18px)</option>
-                  <option value="lg">Rộng (24px)</option>
+                  <option value="compact">Gọn nhẹ (~210px)</option>
+                  <option value="normal">Tiêu chuẩn (~235px)</option>
+                  <option value="tall">Thoáng đãng (~260px)</option>
                 </select>
               </div>
             </div>
           </div>
 
-          <div className="flex items-center justify-end pt-3 border-t border-neutral-100">
+          <div className="flex items-center justify-end pt-2 border-t border-neutral-100">
             <button
               type="button"
               disabled={isSavingSection}
@@ -469,6 +688,11 @@ export const SpecialtiesTab: React.FC = () => {
           const isOverLimit = charCount > 120;
           const badgeText = spec.badge?.trim() || sectionConfig.defaultBadgeText || "Chuyên khoa";
 
+          const currentOpacity =
+            spec.overlayOpacity !== undefined
+              ? spec.overlayOpacity
+              : sectionConfig.overlayOpacity ?? 20;
+
           return (
             <div
               key={spec.id}
@@ -478,7 +702,7 @@ export const SpecialtiesTab: React.FC = () => {
                   : "border-neutral-200"
               }`}
             >
-              {/* Left Info: Order Badge + Image Preview + Content Summary */}
+              {/* Left Info: Order Badge + 100% Background Thumbnail + Content Summary */}
               <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
                 {/* Reorder Buttons & Order Number */}
                 <div className="flex flex-col items-center justify-center gap-1 shrink-0 bg-neutral-50 p-1.5 rounded-xl border border-neutral-200">
@@ -505,8 +729,8 @@ export const SpecialtiesTab: React.FC = () => {
                   </button>
                 </div>
 
-                {/* Banner Mini Image Thumbnail */}
-                <div className="w-24 sm:w-28 h-16 sm:h-18 rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200 shrink-0 relative group/thumb">
+                {/* Banner Mini Image Thumbnail (Showing Full Cover & Overlay Preview) */}
+                <div className="w-28 sm:w-32 h-18 sm:h-20 rounded-xl overflow-hidden border border-neutral-200 shrink-0 relative group/thumb shadow-xs">
                   <img
                     src={spec.heroImage}
                     alt={spec.name}
@@ -516,10 +740,18 @@ export const SpecialtiesTab: React.FC = () => {
                       e.currentTarget.src = "/images/fallback-clinic.svg";
                     }}
                   />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/thumb:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="text-[9px] text-white font-semibold px-1 py-0.5 bg-black/60 rounded">
-                      {spec.imagePosition || "center"}
-                    </span>
+                  {/* Overlay preview on thumbnail */}
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      backgroundColor:
+                        spec.overlayColor === "white"
+                          ? `rgba(255,255,255,${currentOpacity / 100})`
+                          : `rgba(0,0,0,${currentOpacity / 100})`
+                    }}
+                  />
+                  <div className="absolute bottom-1 right-1 px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-black/70 text-white backdrop-blur-xs">
+                    {currentOpacity}%
                   </div>
                 </div>
 
@@ -545,12 +777,14 @@ export const SpecialtiesTab: React.FC = () => {
                     {spec.shortDesc}
                   </p>
 
-                  <div className="flex items-center gap-3 mt-1 text-[11px] text-neutral-400">
+                  <div className="flex items-center gap-3 mt-1 text-[11px] text-neutral-400 flex-wrap">
                     <span className={isOverLimit ? "text-red-600 font-semibold" : "text-neutral-500"}>
-                      Độ dài mô tả: {charCount}/120 ký tự {isOverLimit && "⚠️ Quá 120 ký tự"}
+                      Mô tả: {charCount}/120 ký tự {isOverLimit && "⚠️ Quá 120 ký tự"}
                     </span>
                     <span>•</span>
-                    <span>Nút CTA: "{spec.ctaText || "Tìm hiểu"}"</span>
+                    <span>Lớp phủ: <strong>{currentOpacity}%</strong></span>
+                    <span>•</span>
+                    <span>Vị trí: {spec.contentPosition || "Trái"}</span>
                   </div>
                 </div>
               </div>
@@ -573,12 +807,12 @@ export const SpecialtiesTab: React.FC = () => {
                   </span>
                 </div>
 
-                {/* Buttons */}
+                {/* Edit & Delete Buttons */}
                 <div className="flex items-center gap-1.5">
                   <button
                     type="button"
                     onClick={() => setEditingSpecialty({ ...spec })}
-                    className="p-2 text-xs font-semibold text-neutral-700 hover:text-emerald-800 hover:bg-emerald-50 rounded-xl border border-neutral-200 transition flex items-center gap-1"
+                    className="px-3 py-1.5 text-xs font-semibold text-neutral-700 hover:text-emerald-800 hover:bg-emerald-50 rounded-xl border border-neutral-200 transition flex items-center gap-1"
                     title="Chỉnh sửa banner"
                   >
                     <Edit className="w-3.5 h-3.5 text-neutral-600" />
@@ -588,7 +822,7 @@ export const SpecialtiesTab: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setDeleteConfirmId(spec.id)}
-                    className="p-2 text-neutral-400 hover:text-red-600 hover:bg-red-50 rounded-xl transition"
+                    className="p-1.5 text-neutral-400 hover:text-red-600 hover:bg-red-50 rounded-xl transition"
                     title="Xóa banner"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
@@ -602,13 +836,13 @@ export const SpecialtiesTab: React.FC = () => {
 
       {/* Edit Specialty Banner Modal */}
       {editingSpecialty && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs animate-fadeIn overflow-y-auto">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full my-6 overflow-hidden border border-neutral-200 flex flex-col max-h-[92vh]">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/70 backdrop-blur-xs animate-fadeIn overflow-y-auto">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full my-6 overflow-hidden border border-neutral-200 flex flex-col max-h-[92vh]">
             {/* Modal Header */}
-            <div className="p-4 sm:p-5 border-b border-neutral-200 flex items-center justify-between bg-neutral-50/50">
+            <div className="p-4 sm:p-5 border-b border-neutral-200 flex items-center justify-between bg-neutral-50/70">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800">
-                  Cấu hình Banner Ngang
+                  Cấu hình Banner Phủ 100% Ảnh & Lớp Phủ (Overlay)
                 </span>
                 <h3 className="text-base font-bold text-neutral-900 font-heading">
                   Chỉnh sửa: {editingSpecialty.name}
@@ -624,34 +858,81 @@ export const SpecialtiesTab: React.FC = () => {
             </div>
 
             <form onSubmit={handleSaveBanner} className="flex-1 overflow-y-auto">
-              <div className="p-5 sm:p-6 space-y-4 text-xs">
-                {/* LIVE PREVIEW OF HORIZONTAL BANNER */}
+              <div className="p-5 sm:p-6 space-y-5 text-xs">
+                {/* LIVE PREVIEW: FULL 100% BACKGROUND IMAGE WITH REAL-TIME OVERLAY OPACITY */}
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-600 flex items-center gap-1.5">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-700 flex items-center gap-1.5">
                       <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
-                      <span>Xem trước banner trực tiếp (Live Preview)</span>
+                      <span>Xem trước banner trực tiếp (Ảnh phủ 100% + Lớp overlay)</span>
                     </span>
                     <span className="text-[10px] text-neutral-400">
-                      Tỷ lệ & bố cục hiển thị trên trang chủ
+                      Kéo slider bên dưới để xem độ mờ thay đổi tức thì
                     </span>
                   </div>
 
                   {/* Horizontal Banner Preview Box */}
                   <div className="p-3 bg-neutral-100 rounded-2xl border border-neutral-200">
                     <div
-                      className="group relative overflow-hidden bg-white border border-slate-100 rounded-2xl shadow-xs flex flex-row items-stretch min-h-[160px] sm:min-h-[175px]"
-                      style={{
-                        backgroundColor: editingSpecialty.bgColor || undefined,
-                        color: editingSpecialty.textColor || undefined
-                      }}
+                      className={`group relative overflow-hidden rounded-2xl shadow-md flex flex-col justify-between min-h-[190px] sm:min-h-[215px] border ${
+                        editingSpecialty.overlayColor === "white"
+                          ? "border-slate-300"
+                          : "border-white/20"
+                      }`}
                     >
-                      {/* Left Content Column */}
-                      <div className="flex-1 p-3.5 sm:p-4 flex flex-col justify-between z-10 min-w-0 pr-2">
-                        <div>
+                      {/* Background Image: 100% Coverage */}
+                      <img
+                        src={editingSpecialty.heroImage}
+                        alt={editingSpecialty.name}
+                        style={{
+                          objectPosition: editingSpecialty.imagePosition || "center center"
+                        }}
+                        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                        onError={(e) => {
+                          e.currentTarget.src = "/images/fallback-clinic.svg";
+                        }}
+                      />
+
+                      {/* Overlay Layer */}
+                      <div
+                        className="absolute inset-0 pointer-events-none transition-all duration-200"
+                        style={computePreviewOverlay(editingSpecialty, sectionConfig)}
+                      />
+
+                      {/* Content Layer (Relative z-10, never blurred) */}
+                      <div
+                        className={`relative z-10 p-5 flex flex-col justify-between h-full w-full ${
+                          editingSpecialty.contentPosition === "center"
+                            ? "items-center text-center"
+                            : editingSpecialty.contentPosition === "bottom"
+                            ? "items-start justify-end text-left"
+                            : "items-start text-left"
+                        }`}
+                      >
+                        <div
+                          className={`space-y-1.5 ${
+                            editingSpecialty.contentPosition === "center"
+                              ? "max-w-md mx-auto"
+                              : "max-w-[80%]"
+                          }`}
+                        >
                           {/* Badge */}
-                          <div className="mb-1.5">
-                            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-100">
+                          <div>
+                            <span
+                              style={{
+                                color:
+                                  editingSpecialty.badgeColor ||
+                                  (editingSpecialty.overlayColor === "white"
+                                    ? "#047857"
+                                    : "#FFFFFF"),
+                                backgroundColor:
+                                  editingSpecialty.badgeBgColor ||
+                                  (editingSpecialty.overlayColor === "white"
+                                    ? "rgba(236, 253, 245, 0.95)"
+                                    : "rgba(255, 255, 255, 0.22)")
+                              }}
+                              className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold border border-white/30 backdrop-blur-md shadow-2xs"
+                            >
                               {editingSpecialty.badge?.trim() ||
                                 sectionConfig.defaultBadgeText ||
                                 "Chuyên khoa"}
@@ -659,12 +940,31 @@ export const SpecialtiesTab: React.FC = () => {
                           </div>
 
                           {/* Title */}
-                          <h4 className="font-heading font-bold text-sm sm:text-base text-slate-900 line-clamp-1 leading-snug">
+                          <h4
+                            style={{
+                              color:
+                                editingSpecialty.titleColor ||
+                                editingSpecialty.textColor ||
+                                (editingSpecialty.overlayColor === "white"
+                                  ? "#0F172A"
+                                  : "#FFFFFF")
+                            }}
+                            className="font-heading font-bold text-base sm:text-lg leading-snug line-clamp-1 drop-shadow-xs"
+                          >
                             {editingSpecialty.name || "Tên chuyên khoa"}
                           </h4>
 
                           {/* Short Desc */}
-                          <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">
+                          <p
+                            style={{
+                              color:
+                                editingSpecialty.descColor ||
+                                (editingSpecialty.overlayColor === "white"
+                                  ? "#334155"
+                                  : "#F1F5F9")
+                            }}
+                            className="text-xs line-clamp-2 leading-relaxed drop-shadow-2xs opacity-95"
+                          >
                             {editingSpecialty.shortDesc || "Mô tả ngắn phạm vi hoạt động chuyên môn."}
                           </p>
                         </div>
@@ -673,42 +973,178 @@ export const SpecialtiesTab: React.FC = () => {
                         <div className="pt-2">
                           <span
                             style={{
-                              backgroundColor: editingSpecialty.btnBgColor || undefined,
-                              color: editingSpecialty.btnTextColor || undefined
+                              backgroundColor:
+                                editingSpecialty.btnBgColor ||
+                                (editingSpecialty.overlayColor === "white"
+                                  ? "#047857"
+                                  : "#FFFFFF"),
+                              color:
+                                editingSpecialty.btnTextColor ||
+                                (editingSpecialty.overlayColor === "white"
+                                  ? "#FFFFFF"
+                                  : "#0F172A")
                             }}
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-50 text-slate-700 border border-slate-200/70 shadow-2xs"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold backdrop-blur-md shadow-xs"
                           >
                             <span>{editingSpecialty.ctaText || "Tìm hiểu"}</span>
                             <ArrowRight className="w-3.5 h-3.5" />
                           </span>
                         </div>
                       </div>
-
-                      {/* Right Image Illustration */}
-                      <div className="w-[38%] sm:w-[40%] relative overflow-hidden shrink-0 self-stretch">
-                        <img
-                          src={editingSpecialty.heroImage}
-                          alt={editingSpecialty.altText || editingSpecialty.name}
-                          style={{
-                            objectPosition: editingSpecialty.imagePosition || "center center"
-                          }}
-                          className="w-full h-full object-cover brightness-[0.98]"
-                          onError={(e) => {
-                            e.currentTarget.src = "/images/fallback-clinic.svg";
-                          }}
-                        />
-                        <div className="absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white via-white/50 to-transparent pointer-events-none" />
-                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Form Fields */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2 border-t border-neutral-100">
+                {/* OVERLAY & OPACITY SLIDER FOR THIS BANNER */}
+                <div className="p-4 bg-emerald-50/60 rounded-2xl border border-emerald-200/80 space-y-3.5">
+                  <div className="flex items-center justify-between border-b border-emerald-200/60 pb-2">
+                    <span className="font-bold text-neutral-900 flex items-center gap-2">
+                      <Sliders className="w-4 h-4 text-emerald-700" />
+                      <span>Cấu hình Lớp phủ Ảnh (Overlay & Opacity) riêng cho Banner</span>
+                    </span>
+                    <span className="text-[10px] text-neutral-500">
+                      (Ghi đè cấu hình chung của section)
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    {/* Overlay Toggle */}
+                    <div>
+                      <label className="font-semibold text-neutral-800 block mb-1">
+                        Bật lớp phủ
+                      </label>
+                      <label className="relative inline-flex items-center cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={editingSpecialty.overlayEnabled !== false}
+                          onChange={(e) =>
+                            setEditingSpecialty({
+                              ...editingSpecialty,
+                              overlayEnabled: e.target.checked
+                            })
+                          }
+                          className="sr-only peer"
+                        />
+                        <div className="w-9 h-5 bg-neutral-300 peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-600"></div>
+                      </label>
+                    </div>
+
+                    {/* Color Mode */}
+                    <div>
+                      <label className="font-semibold text-neutral-800 block mb-1">
+                        Màu lớp phủ
+                      </label>
+                      <div className="flex items-center gap-2">
+                        <select
+                          value={editingSpecialty.overlayColor || "black"}
+                          onChange={(e) =>
+                            setEditingSpecialty({
+                              ...editingSpecialty,
+                              overlayColor: e.target.value
+                            })
+                          }
+                          className="w-full px-2.5 py-1.5 text-xs border border-neutral-300 rounded-lg bg-white"
+                        >
+                          <option value="black">Đen (Chữ trắng)</option>
+                          <option value="white">Trắng (Chữ tối)</option>
+                          <option value="custom">Tùy chỉnh</option>
+                        </select>
+                        {editingSpecialty.overlayColor === "custom" && (
+                          <input
+                            type="color"
+                            value={editingSpecialty.overlayCustomColor || "#000000"}
+                            onChange={(e) =>
+                              setEditingSpecialty({
+                                ...editingSpecialty,
+                                overlayCustomColor: e.target.value
+                              })
+                            }
+                            className="w-7 h-7 rounded border border-neutral-300 p-0.5 cursor-pointer shrink-0"
+                          />
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Content Position */}
+                    <div>
+                      <label className="font-semibold text-neutral-800 block mb-1">
+                        Vị trí nội dung
+                      </label>
+                      <select
+                        value={editingSpecialty.contentPosition || "left"}
+                        onChange={(e) =>
+                          setEditingSpecialty({
+                            ...editingSpecialty,
+                            contentPosition: e.target.value as "left" | "center" | "bottom"
+                          })
+                        }
+                        className="w-full px-2.5 py-1.5 text-xs border border-neutral-300 rounded-lg bg-white"
+                      >
+                        <option value="left">Bên trái (Khuyến nghị)</option>
+                        <option value="center">Chính giữa</option>
+                        <option value="bottom">Dưới cùng</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Real-time Opacity Range Slider (0% - 80%) */}
+                  <div>
+                    <div className="flex items-center justify-between mb-1">
+                      <label className="font-semibold text-neutral-800">
+                        Độ mờ lớp phủ (Opacity):{" "}
+                        <span className="text-emerald-700 font-bold font-mono text-sm">
+                          {editingSpecialty.overlayOpacity !== undefined
+                            ? editingSpecialty.overlayOpacity
+                            : sectionConfig.overlayOpacity ?? 20}
+                          %
+                        </span>
+                      </label>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setEditingSpecialty({
+                            ...editingSpecialty,
+                            overlayOpacity: 20
+                          })
+                        }
+                        className="text-[11px] text-neutral-500 hover:text-emerald-700 flex items-center gap-1 font-medium transition"
+                        title="Khôi phục giá trị mặc định 20%"
+                      >
+                        <RotateCcw className="w-3 h-3" />
+                        <span>Khôi phục 20%</span>
+                      </button>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-[11px] text-neutral-400 font-mono">0%</span>
+                      <input
+                        type="range"
+                        min="0"
+                        max="80"
+                        step="1"
+                        value={
+                          editingSpecialty.overlayOpacity !== undefined
+                            ? editingSpecialty.overlayOpacity
+                            : sectionConfig.overlayOpacity ?? 20
+                        }
+                        onChange={(e) =>
+                          setEditingSpecialty({
+                            ...editingSpecialty,
+                            overlayOpacity: parseInt(e.target.value, 10)
+                          })
+                        }
+                        className="w-full h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                      />
+                      <span className="text-[11px] text-neutral-400 font-mono">80%</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* BASIC INFO */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   {/* Name / Title */}
                   <div>
                     <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
-                      Tiêu đề Banner (Tên chuyên khoa) *
+                      Tiêu đề Banner *
                     </label>
                     <input
                       type="text"
@@ -735,9 +1171,6 @@ export const SpecialtiesTab: React.FC = () => {
                       placeholder={`Mặc định: "${sectionConfig.defaultBadgeText || "Chuyên khoa"}"`}
                       className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-xl focus:outline-hidden focus:border-emerald-600"
                     />
-                    <span className="text-[10px] text-neutral-400 mt-0.5 block">
-                      Để trống sẽ dùng nhãn mặc định của section ("{sectionConfig.defaultBadgeText || "Chuyên khoa"}")
-                    </span>
                   </div>
                 </div>
 
@@ -767,7 +1200,6 @@ export const SpecialtiesTab: React.FC = () => {
                       })
                     }
                     required
-                    placeholder="Nhập mô tả ngắn gọn về chuyên khoa..."
                     className={`w-full px-3 py-2 text-xs border rounded-xl resize-none focus:outline-hidden ${
                       (editingSpecialty.shortDesc?.length || 0) > 120
                         ? "border-red-400 bg-red-50/30 focus:border-red-600"
@@ -777,7 +1209,7 @@ export const SpecialtiesTab: React.FC = () => {
                   {(editingSpecialty.shortDesc?.length || 0) > 120 && (
                     <div className="flex items-center gap-1 text-[11px] text-red-600 mt-1 font-medium">
                       <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                      <span>Cảnh báo: Mô tả vượt quá 120 ký tự theo brief. Hãy rút gọn lại để banner hiển thị đẹp nhất.</span>
+                      <span>Cảnh báo: Mô tả vượt quá 120 ký tự theo brief. Hãy rút gọn để banner hiển thị đẹp nhất.</span>
                     </div>
                   )}
                 </div>
@@ -819,28 +1251,12 @@ export const SpecialtiesTab: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Custom URL Input if needed */}
-                <div>
-                  <label className="block text-xs font-semibold text-neutral-700 uppercase tracking-wider mb-1">
-                    Hoặc nhập URL / Route tùy chỉnh
-                  </label>
-                  <input
-                    type="text"
-                    value={editingSpecialty.ctaLink}
-                    onChange={(e) =>
-                      setEditingSpecialty({ ...editingSpecialty, ctaLink: e.target.value })
-                    }
-                    placeholder="/khoa-da-lieu"
-                    className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-xl font-mono focus:outline-hidden focus:border-emerald-600"
-                  />
-                </div>
-
                 {/* Banner Image & Crop Position */}
                 <div className="space-y-3 p-3.5 bg-neutral-50 rounded-xl border border-neutral-200">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-semibold text-neutral-800 uppercase tracking-wider flex items-center gap-1.5">
                       <ImageIcon className="w-3.5 h-3.5 text-emerald-700" />
-                      <span>Hình ảnh Banner & Vị trí Crop</span>
+                      <span>Hình ảnh Phủ Nền 100% (Hero Image)</span>
                     </span>
                     <span className="text-[10px] text-neutral-400">
                       Tỷ lệ đề xuất: 800 × 500 px (8:5)
@@ -922,33 +1338,33 @@ export const SpecialtiesTab: React.FC = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-semibold text-neutral-800 uppercase tracking-wider flex items-center gap-1.5">
                       <Palette className="w-3.5 h-3.5 text-emerald-700" />
-                      <span>Tùy biến Màu sắc Thẻ (Tùy chọn)</span>
+                      <span>Tùy biến Màu sắc Nút & Chữ</span>
                     </span>
                     <span className="text-[10px] text-neutral-400">
-                      Mặc định: Nền trắng, Nút xám nhạt
+                      Mặc định tự căn chỉnh độ tương phản theo màu lớp phủ
                     </span>
                   </div>
 
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                     <div>
                       <label className="block text-[10px] font-medium text-neutral-600 mb-1">
-                        Màu nền thẻ
+                        Màu tiêu đề
                       </label>
                       <div className="flex items-center gap-1.5">
                         <input
                           type="color"
-                          value={editingSpecialty.bgColor || "#FFFFFF"}
+                          value={editingSpecialty.titleColor || "#FFFFFF"}
                           onChange={(e) =>
-                            setEditingSpecialty({ ...editingSpecialty, bgColor: e.target.value })
+                            setEditingSpecialty({ ...editingSpecialty, titleColor: e.target.value })
                           }
                           className="w-7 h-7 rounded border border-neutral-300 cursor-pointer p-0.5"
                         />
                         <input
                           type="text"
-                          value={editingSpecialty.bgColor || ""}
+                          value={editingSpecialty.titleColor || ""}
                           placeholder="#FFFFFF"
                           onChange={(e) =>
-                            setEditingSpecialty({ ...editingSpecialty, bgColor: e.target.value })
+                            setEditingSpecialty({ ...editingSpecialty, titleColor: e.target.value })
                           }
                           className="w-full px-2 py-1 text-[11px] font-mono border border-neutral-300 rounded bg-white"
                         />
@@ -957,23 +1373,23 @@ export const SpecialtiesTab: React.FC = () => {
 
                     <div>
                       <label className="block text-[10px] font-medium text-neutral-600 mb-1">
-                        Màu chữ
+                        Màu mô tả
                       </label>
                       <div className="flex items-center gap-1.5">
                         <input
                           type="color"
-                          value={editingSpecialty.textColor || "#0F172A"}
+                          value={editingSpecialty.descColor || "#F1F5F9"}
                           onChange={(e) =>
-                            setEditingSpecialty({ ...editingSpecialty, textColor: e.target.value })
+                            setEditingSpecialty({ ...editingSpecialty, descColor: e.target.value })
                           }
                           className="w-7 h-7 rounded border border-neutral-300 cursor-pointer p-0.5"
                         />
                         <input
                           type="text"
-                          value={editingSpecialty.textColor || ""}
-                          placeholder="#0F172A"
+                          value={editingSpecialty.descColor || ""}
+                          placeholder="#F1F5F9"
                           onChange={(e) =>
-                            setEditingSpecialty({ ...editingSpecialty, textColor: e.target.value })
+                            setEditingSpecialty({ ...editingSpecialty, descColor: e.target.value })
                           }
                           className="w-full px-2 py-1 text-[11px] font-mono border border-neutral-300 rounded bg-white"
                         />
@@ -987,7 +1403,7 @@ export const SpecialtiesTab: React.FC = () => {
                       <div className="flex items-center gap-1.5">
                         <input
                           type="color"
-                          value={editingSpecialty.btnBgColor || "#F8FAFC"}
+                          value={editingSpecialty.btnBgColor || "#FFFFFF"}
                           onChange={(e) =>
                             setEditingSpecialty({ ...editingSpecialty, btnBgColor: e.target.value })
                           }
@@ -996,7 +1412,7 @@ export const SpecialtiesTab: React.FC = () => {
                         <input
                           type="text"
                           value={editingSpecialty.btnBgColor || ""}
-                          placeholder="#F8FAFC"
+                          placeholder="#FFFFFF"
                           onChange={(e) =>
                             setEditingSpecialty({ ...editingSpecialty, btnBgColor: e.target.value })
                           }
@@ -1012,7 +1428,7 @@ export const SpecialtiesTab: React.FC = () => {
                       <div className="flex items-center gap-1.5">
                         <input
                           type="color"
-                          value={editingSpecialty.btnTextColor || "#334155"}
+                          value={editingSpecialty.btnTextColor || "#0F172A"}
                           onChange={(e) =>
                             setEditingSpecialty({ ...editingSpecialty, btnTextColor: e.target.value })
                           }
@@ -1021,7 +1437,7 @@ export const SpecialtiesTab: React.FC = () => {
                         <input
                           type="text"
                           value={editingSpecialty.btnTextColor || ""}
-                          placeholder="#334155"
+                          placeholder="#0F172A"
                           onChange={(e) =>
                             setEditingSpecialty({ ...editingSpecialty, btnTextColor: e.target.value })
                           }
@@ -1086,13 +1502,13 @@ export const SpecialtiesTab: React.FC = () => {
 
       {/* Full Preview Modal */}
       {showFullPreview && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/70 backdrop-blur-sm animate-fadeIn overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/75 backdrop-blur-sm animate-fadeIn overflow-y-auto">
           <div className="bg-white rounded-2xl shadow-2xl max-w-5xl w-full my-6 overflow-hidden border border-neutral-200 flex flex-col max-h-[90vh]">
             <div className="p-4 border-b border-neutral-200 flex items-center justify-between bg-neutral-50">
               <div className="flex items-center gap-2">
                 <Eye className="w-4 h-4 text-emerald-700" />
                 <h3 className="text-sm font-bold text-neutral-900 font-heading">
-                  Xem trước Giao diện Section 5 Chuyên khoa
+                  Xem trước Section 5 Chuyên khoa (100% Ảnh nền + Overlay)
                 </h3>
               </div>
 
@@ -1180,47 +1596,78 @@ export const SpecialtiesTab: React.FC = () => {
                       const badgeText =
                         spec.badge?.trim() || sectionConfig.defaultBadgeText || "Chuyên khoa";
 
+                      const isLight =
+                        spec.overlayColor === "white" ||
+                        (!spec.overlayColor && sectionConfig.overlayColor === "white");
+
                       return (
                         <div
                           key={spec.id}
-                          className={`group relative overflow-hidden bg-white border border-slate-100 rounded-2xl shadow-xs flex flex-row items-stretch min-h-[160px] sm:min-h-[175px] ${colSpanClass}`}
+                          className={`group relative overflow-hidden rounded-2xl shadow-xs flex flex-col justify-between min-h-[190px] sm:min-h-[215px] border ${
+                            isLight ? "border-slate-200" : "border-white/15"
+                          } ${colSpanClass}`}
                         >
-                          <div className="flex-1 p-3.5 sm:p-4 flex flex-col justify-between z-10 min-w-0 pr-2">
-                            <div>
-                              <div className="mb-1.5">
-                                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-100">
+                          {/* Background Image: 100% */}
+                          <img
+                            src={spec.heroImage}
+                            alt={spec.name}
+                            style={{
+                              objectPosition: spec.imagePosition || "center center"
+                            }}
+                            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                            onError={(e) => {
+                              e.currentTarget.src = "/images/fallback-clinic.svg";
+                            }}
+                          />
+
+                          {/* Overlay */}
+                          <div
+                            className="absolute inset-0 pointer-events-none"
+                            style={computePreviewOverlay(spec, sectionConfig)}
+                          />
+
+                          {/* Content */}
+                          <div className="relative z-10 p-5 flex flex-col justify-between h-full w-full">
+                            <div className="max-w-[80%] space-y-1.5">
+                              <div>
+                                <span
+                                  className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold border backdrop-blur-md shadow-2xs ${
+                                    isLight
+                                      ? "bg-emerald-50 text-emerald-800 border-emerald-200"
+                                      : "bg-white/20 text-white border-white/30"
+                                  }`}
+                                >
                                   {badgeText}
                                 </span>
                               </div>
-                              <h4 className="font-heading font-bold text-xs sm:text-sm text-slate-900 line-clamp-1">
+                              <h4
+                                className={`font-heading font-bold text-sm sm:text-base line-clamp-1 drop-shadow-xs ${
+                                  isLight ? "text-slate-900" : "text-white"
+                                }`}
+                              >
                                 {spec.name}
                               </h4>
-                              <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-relaxed">
+                              <p
+                                className={`text-[11px] sm:text-xs line-clamp-2 leading-relaxed drop-shadow-2xs ${
+                                  isLight ? "text-slate-700" : "text-slate-100"
+                                }`}
+                              >
                                 {spec.shortDesc}
                               </p>
                             </div>
 
                             <div className="pt-2">
-                              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-slate-50 text-slate-700 border border-slate-200/70">
+                              <span
+                                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold backdrop-blur-md shadow-xs ${
+                                  isLight
+                                    ? "bg-emerald-700 text-white"
+                                    : "bg-white text-slate-900"
+                                }`}
+                              >
                                 <span>{spec.ctaText || "Tìm hiểu"}</span>
-                                <ArrowRight className="w-3 h-3" />
+                                <ArrowRight className="w-3.5 h-3.5" />
                               </span>
                             </div>
-                          </div>
-
-                          <div className="w-[38%] relative overflow-hidden shrink-0 self-stretch">
-                            <img
-                              src={spec.heroImage}
-                              alt={spec.name}
-                              style={{
-                                objectPosition: spec.imagePosition || "center center"
-                              }}
-                              className="w-full h-full object-cover"
-                              onError={(e) => {
-                                e.currentTarget.src = "/images/fallback-clinic.svg";
-                              }}
-                            />
-                            <div className="absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-white via-white/50 to-transparent pointer-events-none" />
                           </div>
                         </div>
                       );
@@ -1232,7 +1679,7 @@ export const SpecialtiesTab: React.FC = () => {
         </div>
       )}
 
-      {/* Modals */}
+      {/* Confirmation Modal */}
       <ConfirmationModal
         isOpen={!!deleteConfirmId}
         type="danger"
@@ -1255,6 +1702,7 @@ export const SpecialtiesTab: React.FC = () => {
         onCancel={() => setDeleteConfirmId(null)}
       />
 
+      {/* Media Library Picker Modal */}
       <MediaLibraryModal
         isOpen={showMediaPicker}
         onClose={() => setShowMediaPicker(false)}

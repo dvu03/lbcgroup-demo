@@ -281,6 +281,15 @@ export interface EcosystemSpecialtiesSectionConfig {
   desktopLayout: '3-2' | '3-cols' | '2-cols';
   cardBorderRadius?: 'rounded-xl' | 'rounded-2xl' | 'rounded-3xl';
   showBadge?: boolean;
+  // Overlay configuration
+  overlayEnabled: boolean;
+  overlayColor: 'black' | 'white' | 'custom';
+  overlayCustomColor?: string;
+  overlayOpacity: number; // 0 to 80 (default 20)
+  overlayMode: 'gradient-left' | 'gradient-bottom' | 'solid';
+  overlayGradientStart?: number;
+  overlayGradientEnd?: number;
+  bannerHeight?: 'compact' | 'normal' | 'tall';
 }
 
 export const defaultSpecialtiesSectionConfig: EcosystemSpecialtiesSectionConfig = {
@@ -294,7 +303,15 @@ export const defaultSpecialtiesSectionConfig: EcosystemSpecialtiesSectionConfig 
   textColor: "",
   desktopLayout: "3-2",
   cardBorderRadius: "rounded-2xl",
-  showBadge: true
+  showBadge: true,
+  overlayEnabled: true,
+  overlayColor: "black",
+  overlayCustomColor: "#000000",
+  overlayOpacity: 20,
+  overlayMode: "gradient-left",
+  overlayGradientStart: 65,
+  overlayGradientEnd: 15,
+  bannerHeight: "normal"
 };
 
 export interface BackToTopConfig {

@@ -24,8 +24,21 @@ export interface Specialty {
   imagePosition?: string;
   bgColor?: string;
   textColor?: string;
+  titleColor?: string;
+  descColor?: string;
+  badgeColor?: string;
+  badgeBgColor?: string;
   btnBgColor?: string;
   btnTextColor?: string;
+  // Overlay overrides per banner
+  overlayEnabled?: boolean;
+  overlayColor?: 'black' | 'white' | 'custom' | string;
+  overlayCustomColor?: string;
+  overlayOpacity?: number; // 0 to 80
+  overlayMode?: 'gradient-left' | 'gradient-bottom' | 'solid';
+  overlayGradientStart?: number;
+  overlayGradientEnd?: number;
+  contentPosition?: 'left' | 'center' | 'bottom';
 }
 
 export const initialSpecialties: Specialty[] = [
