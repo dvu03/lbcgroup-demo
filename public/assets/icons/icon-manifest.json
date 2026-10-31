@@ -1,0 +1,3700 @@
+[
+  {
+    "name": "dermatology-scar-repair",
+    "category": "dermatology-services",
+    "label": "Trị sẹo rỗ kỹ thuật cao",
+    "description": "Tái tạo phục hồi mô xơ và bóc tách đáy sẹo",
+    "file": "/assets/icons/dermatology-services/dermatology-scar-repair.svg",
+    "usedIn": [
+      "FeaturedServicesSection",
+      "DynamicIcon",
+      "MainNavigation",
+      "SearchBar",
+      "services",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "dermatology-scar-repair",
+      "trị sẹo rỗ kỹ thuật cao",
+      "dermatology-services",
+      "activity",
+      "trị",
+      "sẹo",
+      "thuật",
+      "cao"
+    ]
+  },
+  {
+    "name": "status-error",
+    "category": "status-feedback",
+    "label": "Thông báo lỗi / Cảnh báo",
+    "description": "Biểu tượng cảnh báo lỗi nhập liệu hoặc trạng thái",
+    "file": "/assets/icons/status-feedback/status-error.svg",
+    "usedIn": [
+      "IconPickerModal",
+      "MediaLibraryModal",
+      "BannerTopHeaderTab",
+      "BrandingIdentityTab",
+      "HomepageSectionsTab",
+      "ServicesTab",
+      "SpecialtiesTab",
+      "CartDrawer",
+      "BeforeAfterSection",
+      "BeforeAfterPage",
+      "BookingPage",
+      "CosmeceuticalsPage",
+      "DoctorDetailPage",
+      "LicensesPage",
+      "ProductDetailPage",
+      "ServiceDetailPage",
+      "TechnologiesListPage",
+      "TechnologyDetailPage"
+    ],
+    "keywords": [
+      "status-error",
+      "thông báo lỗi / cảnh báo",
+      "status-feedback",
+      "alert-circle",
+      "thông",
+      "báo",
+      "lỗi",
+      "cảnh"
+    ]
+  },
+  {
+    "name": "status-warning",
+    "category": "status-feedback",
+    "label": "Cảnh báo y khoa",
+    "description": "Biểu tượng lưu ý chống chỉ định hoặc cảnh báo",
+    "file": "/assets/icons/status-feedback/status-warning.svg",
+    "usedIn": [
+      "ConfirmationModal",
+      "AppearanceTab",
+      "AuditLogTab",
+      "BackupRestoreTab",
+      "CaseStudiesTab",
+      "DashboardOverviewTab",
+      "DoctorsTab",
+      "LeadsTab",
+      "LegalInfoTab",
+      "MediaLibraryTab",
+      "DemoAdminPage"
+    ],
+    "keywords": [
+      "status-warning",
+      "cảnh báo y khoa",
+      "status-feedback",
+      "alert-triangle",
+      "cảnh",
+      "báo",
+      "khoa"
+    ]
+  },
+  {
+    "name": "editor-align-center",
+    "category": "shared",
+    "label": "Căn giữa văn bản",
+    "description": "Định dạng căn giữa trình soạn thảo CMS",
+    "file": "/assets/icons/shared/editor-align-center.svg",
+    "usedIn": [
+      "SpecialtiesTab"
+    ],
+    "keywords": [
+      "editor-align-center",
+      "căn giữa văn bản",
+      "shared",
+      "align-center",
+      "căn",
+      "giữa",
+      "văn",
+      "bản"
+    ]
+  },
+  {
+    "name": "editor-align-justify",
+    "category": "shared",
+    "label": "Căn đều văn bản",
+    "description": "Định dạng căn đều hai bên CMS",
+    "file": "/assets/icons/shared/editor-align-justify.svg",
+    "usedIn": [
+      "SpecialtiesTab"
+    ],
+    "keywords": [
+      "editor-align-justify",
+      "căn đều văn bản",
+      "shared",
+      "align-justify",
+      "căn",
+      "đều",
+      "văn",
+      "bản"
+    ]
+  },
+  {
+    "name": "editor-align-left",
+    "category": "shared",
+    "label": "Căn trái văn bản",
+    "description": "Định dạng căn trái lề văn bản",
+    "file": "/assets/icons/shared/editor-align-left.svg",
+    "usedIn": [
+      "SpecialtiesTab"
+    ],
+    "keywords": [
+      "editor-align-left",
+      "căn trái văn bản",
+      "shared",
+      "align-left",
+      "căn",
+      "trái",
+      "văn",
+      "bản"
+    ]
+  },
+  {
+    "name": "navigation-arrow-down",
+    "category": "ui-navigation",
+    "label": "Mũi tên hướng xuống",
+    "description": "Chỉ hướng cuộn trang hoặc menu mở rộng",
+    "file": "/assets/icons/ui-navigation/navigation-arrow-down.svg",
+    "usedIn": [
+      "BannerTopHeaderTab",
+      "HeroBannersTab",
+      "HomepageSectionsTab",
+      "NavigationTab",
+      "SpecialtiesTab"
+    ],
+    "keywords": [
+      "navigation-arrow-down",
+      "mũi tên hướng xuống",
+      "ui-navigation",
+      "arrow-down",
+      "mũi",
+      "tên",
+      "hướng",
+      "xuống"
+    ]
+  },
+  {
+    "name": "navigation-arrow-right",
+    "category": "ui-navigation",
+    "label": "Mũi tên xem tiếp (CTA)",
+    "description": "Kêu gọi hành động xem chi tiết, khám phá",
+    "file": "/assets/icons/ui-navigation/navigation-arrow-right.svg",
+    "usedIn": [
+      "DashboardOverviewTab",
+      "PageBannersTab",
+      "ProductsTab",
+      "SpecialtiesTab",
+      "CartDrawer",
+      "DynamicIcon",
+      "PageHeroBanner",
+      "PopupBanner",
+      "AboutSummarySection",
+      "BeforeAfterSection",
+      "BrandsSection",
+      "CustomerUtilitiesSection",
+      "DoctorsSection",
+      "EcosystemSpecialtiesSection",
+      "FeaturedProductsSection",
+      "FeaturedServicesSection",
+      "HeroSliderSection",
+      "NewsTabsSection",
+      "TechnologiesSection",
+      "SearchBar",
+      "AboutPage",
+      "BeforeAfterPage",
+      "BrandDetailPage",
+      "CareersPage",
+      "ContactPage",
+      "CosmeceuticalsPage",
+      "DoctorsListPage",
+      "NewsDetailPage",
+      "NewsListPage",
+      "NotFoundPage",
+      "PolicyPage",
+      "ProductDetailPage",
+      "SearchPage",
+      "ServiceDetailPage",
+      "ServicesListPage",
+      "SpecialtyDetailPage",
+      "TechnologiesListPage",
+      "TechnologyDetailPage",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "navigation-arrow-right",
+      "mũi tên xem tiếp (cta)",
+      "ui-navigation",
+      "arrow-right",
+      "mũi",
+      "tên",
+      "xem",
+      "tiếp",
+      "(cta)"
+    ]
+  },
+  {
+    "name": "navigation-arrow-up-circle",
+    "category": "ui-navigation",
+    "label": "Nút cuộn tròn lên đầu",
+    "description": "Nút Back To Top dạng vòng tròn",
+    "file": "/assets/icons/ui-navigation/navigation-arrow-up-circle.svg",
+    "usedIn": [
+      "DynamicIcon",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "navigation-arrow-up-circle",
+      "nút cuộn tròn lên đầu",
+      "ui-navigation",
+      "arrow-up-circle",
+      "nút",
+      "cuộn",
+      "tròn",
+      "lên",
+      "đầu"
+    ]
+  },
+  {
+    "name": "navigation-arrow-up-right",
+    "category": "ui-navigation",
+    "label": "Mũi tên mở liên kết ngoài",
+    "description": "Chỉ thị liên kết ngoài website",
+    "file": "/assets/icons/ui-navigation/navigation-arrow-up-right.svg",
+    "usedIn": [
+      "DynamicIcon",
+      "CoreValuesSection",
+      "Footer",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "navigation-arrow-up-right",
+      "mũi tên mở liên kết ngoài",
+      "ui-navigation",
+      "arrow-up-right",
+      "mũi",
+      "tên",
+      "liên",
+      "kết",
+      "ngoài"
+    ]
+  },
+  {
+    "name": "navigation-back-to-top",
+    "category": "ui-navigation",
+    "label": "Nút cuộn lên đầu trang",
+    "description": "Nút Back To Top chuẩn website",
+    "file": "/assets/icons/ui-navigation/navigation-back-to-top.svg",
+    "usedIn": [
+      "BannerTopHeaderTab",
+      "BrandingIdentityTab",
+      "HeroBannersTab",
+      "HomepageSectionsTab",
+      "NavigationTab",
+      "SpecialtiesTab",
+      "BackToTop",
+      "DynamicIcon",
+      "siteConfig",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "navigation-back-to-top",
+      "nút cuộn lên đầu trang",
+      "ui-navigation",
+      "arrow-up",
+      "nút",
+      "cuộn",
+      "lên",
+      "đầu",
+      "trang"
+    ]
+  },
+  {
+    "name": "academy-certificate-award",
+    "category": "academy-training",
+    "label": "Chứng chỉ & Học vị",
+    "description": "Biểu tượng bằng cấp và giải thưởng chuyên môn",
+    "file": "/assets/icons/academy-training/academy-certificate-award.svg",
+    "usedIn": [
+      "DoctorsTab",
+      "HomepageSectionsTab",
+      "DynamicIcon",
+      "AboutSummarySection",
+      "DoctorsSection",
+      "siteConfig",
+      "AboutPage",
+      "DoctorDetailPage",
+      "DoctorsListPage",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "academy-certificate-award",
+      "chứng chỉ & học vị",
+      "academy-training",
+      "award",
+      "chứng",
+      "chỉ",
+      "học"
+    ]
+  },
+  {
+    "name": "ui-notification-bell",
+    "category": "shared",
+    "label": "Chuông thông báo",
+    "description": "Biểu tượng thông báo khách hàng và CMS",
+    "file": "/assets/icons/shared/ui-notification-bell.svg",
+    "usedIn": [
+      "AdminHeader"
+    ],
+    "keywords": [
+      "ui-notification-bell",
+      "chuông thông báo",
+      "shared",
+      "bell",
+      "chuông",
+      "thông",
+      "báo"
+    ]
+  },
+  {
+    "name": "editor-bold",
+    "category": "shared",
+    "label": "Chữ in đậm (B)",
+    "description": "Định dạng chữ in đậm trong CMS",
+    "file": "/assets/icons/shared/editor-bold.svg",
+    "usedIn": [
+      "RichTextEditor"
+    ],
+    "keywords": [
+      "editor-bold",
+      "chữ in đậm (b)",
+      "shared",
+      "bold",
+      "chữ",
+      "đậm",
+      "(b)"
+    ]
+  },
+  {
+    "name": "academy-curriculum-book",
+    "category": "academy-training",
+    "label": "Giáo trình đào tạo",
+    "description": "Tài liệu học thuật và cẩm nang da liễu",
+    "file": "/assets/icons/academy-training/academy-curriculum-book.svg",
+    "usedIn": [
+      "NewsDetailPage",
+      "NewsListPage",
+      "SearchPage"
+    ],
+    "keywords": [
+      "academy-curriculum-book",
+      "giáo trình đào tạo",
+      "academy-training",
+      "book-open",
+      "giáo",
+      "trình",
+      "đào",
+      "tạo"
+    ]
+  },
+  {
+    "name": "pharmacy-packaging-box",
+    "category": "pharmacy-products",
+    "label": "Hộp đóng gói sản phẩm",
+    "description": "Biểu tượng quy cách đóng gói dược mỹ phẩm",
+    "file": "/assets/icons/pharmacy-products/pharmacy-packaging-box.svg",
+    "usedIn": [
+      "AppearanceTab"
+    ],
+    "keywords": [
+      "pharmacy-packaging-box",
+      "hộp đóng gói sản phẩm",
+      "pharmacy-products",
+      "box",
+      "hộp",
+      "đóng",
+      "gói",
+      "sản",
+      "phẩm"
+    ]
+  },
+  {
+    "name": "ui-briefcase-career",
+    "category": "shared",
+    "label": "Cặp hồ sơ / Tuyển dụng",
+    "description": "Biểu tượng cơ hội nghề nghiệp và tuyển dụng LBC",
+    "file": "/assets/icons/shared/ui-briefcase-career.svg",
+    "usedIn": [
+      "CareersPage"
+    ],
+    "keywords": [
+      "ui-briefcase-career",
+      "cặp hồ sơ / tuyển dụng",
+      "shared",
+      "briefcase",
+      "cặp",
+      "tuyển",
+      "dụng"
+    ]
+  },
+  {
+    "name": "navigation-facility-building",
+    "category": "ui-navigation",
+    "label": "Tòa nhà cơ sở 1",
+    "description": "Biểu tượng địa điểm cơ sở phòng khám",
+    "file": "/assets/icons/ui-navigation/navigation-facility-building.svg",
+    "usedIn": [
+      "ContactPage"
+    ],
+    "keywords": [
+      "navigation-facility-building",
+      "tòa nhà cơ sở 1",
+      "ui-navigation",
+      "building",
+      "tòa",
+      "nhà"
+    ]
+  },
+  {
+    "name": "payment-bank-transfer",
+    "category": "payment",
+    "label": "Chuyển khoản ngân hàng",
+    "description": "Phương thức thanh toán qua ngân hàng / VietQR",
+    "file": "/assets/icons/payment/payment-bank-transfer.svg",
+    "usedIn": [
+      "ProductsTab",
+      "BrandDetailPage",
+      "LicensesPage"
+    ],
+    "keywords": [
+      "payment-bank-transfer",
+      "chuyển khoản ngân hàng",
+      "payment",
+      "building2",
+      "chuyển",
+      "khoản",
+      "ngân",
+      "hàng"
+    ]
+  },
+  {
+    "name": "dermatology-visia-booking",
+    "category": "dermatology-services",
+    "label": "Đặt lịch soi da VISIA 3D",
+    "description": "Đăng ký khám và phân tích 8 chỉ số chuyên sâu",
+    "file": "/assets/icons/dermatology-services/dermatology-visia-booking.svg",
+    "usedIn": [
+      "FeaturedServicesSection"
+    ],
+    "keywords": [
+      "dermatology-visia-booking",
+      "đặt lịch soi da visia 3d",
+      "dermatology-services",
+      "calendar-check",
+      "đặt",
+      "lịch",
+      "soi",
+      "visia"
+    ]
+  },
+  {
+    "name": "navigation-schedule-confirm",
+    "category": "ui-navigation",
+    "label": "Xác nhận lịch hẹn",
+    "description": "Lịch hẹn khám đã được tiếp nhận",
+    "file": "/assets/icons/ui-navigation/navigation-schedule-confirm.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "DashboardOverviewTab",
+      "LeadsTab"
+    ],
+    "keywords": [
+      "navigation-schedule-confirm",
+      "xác nhận lịch hẹn",
+      "ui-navigation",
+      "calendar-check2",
+      "xác",
+      "nhận",
+      "lịch",
+      "hẹn"
+    ]
+  },
+  {
+    "name": "navigation-appointment-calendar",
+    "category": "ui-navigation",
+    "label": "Lịch hẹn khám bệnh",
+    "description": "Biểu tượng đặt lịch khám và thời gian biểu",
+    "file": "/assets/icons/ui-navigation/navigation-appointment-calendar.svg",
+    "usedIn": [
+      "ArticlesTab",
+      "BannerTopHeaderTab",
+      "DoctorsTab",
+      "LeadsTab",
+      "MediaLibraryTab",
+      "DynamicIcon",
+      "PageHeroBanner",
+      "CustomerUtilitiesSection",
+      "DoctorsSection",
+      "HeroSliderSection",
+      "NewsTabsSection",
+      "FloatingContact",
+      "HeaderActions",
+      "MainNavigation",
+      "AboutPage",
+      "BeforeAfterPage",
+      "BookingPage",
+      "DoctorDetailPage",
+      "DoctorsListPage",
+      "FacilitiesPage",
+      "FAQPage",
+      "NewsDetailPage",
+      "NewsListPage",
+      "NotFoundPage",
+      "ServiceDetailPage",
+      "ServicesListPage",
+      "SpecialtyDetailPage",
+      "TechnologyDetailPage"
+    ],
+    "keywords": [
+      "navigation-appointment-calendar",
+      "lịch hẹn khám bệnh",
+      "ui-navigation",
+      "calendar",
+      "lịch",
+      "hẹn",
+      "khám",
+      "bệnh"
+    ]
+  },
+  {
+    "name": "status-success",
+    "category": "status-feedback",
+    "label": "Thành công / Hoàn tất",
+    "description": "Trạng thái hoàn thành thành công",
+    "file": "/assets/icons/status-feedback/status-success.svg",
+    "usedIn": [
+      "AdminHeader",
+      "IconPickerModal",
+      "MediaLibraryModal",
+      "AppearanceTab",
+      "ArticlesTab",
+      "AuditLogTab",
+      "BackupRestoreTab",
+      "BrandingIdentityTab",
+      "CaseStudiesTab",
+      "DashboardOverviewTab",
+      "DoctorsTab",
+      "HeroBannersTab",
+      "HomepageSectionsTab",
+      "LeadsTab",
+      "LegalInfoTab",
+      "LocationsTab",
+      "MediaLibraryTab",
+      "NavigationTab",
+      "PageBannersTab",
+      "ProductsTab",
+      "ServicesTab",
+      "SpecialtiesTab",
+      "TechnologiesTab",
+      "DynamicIcon",
+      "AboutSummarySection",
+      "BookingPage",
+      "ContactPage",
+      "DoctorDetailPage",
+      "ProductDetailPage",
+      "ServiceDetailPage",
+      "ServicesListPage",
+      "SpecialtyDetailPage",
+      "TechnologyDetailPage"
+    ],
+    "keywords": [
+      "status-success",
+      "thành công / hoàn tất",
+      "status-feedback",
+      "check-circle2",
+      "thành",
+      "công",
+      "hoàn",
+      "tất"
+    ]
+  },
+  {
+    "name": "status-check",
+    "category": "status-feedback",
+    "label": "Dấu tích xác nhận",
+    "description": "Biểu tượng tích chọn hoặc tiêu chí đã đạt",
+    "file": "/assets/icons/status-feedback/status-check.svg",
+    "usedIn": [
+      "IconPickerModal",
+      "MediaLibraryModal",
+      "AppearanceTab",
+      "BannerTopHeaderTab",
+      "HomepageSectionsTab",
+      "SpecialtiesTab",
+      "DynamicIcon",
+      "BrandsSection"
+    ],
+    "keywords": [
+      "status-check",
+      "dấu tích xác nhận",
+      "status-feedback",
+      "check",
+      "dấu",
+      "tích",
+      "xác",
+      "nhận"
+    ]
+  },
+  {
+    "name": "navigation-chevron-down",
+    "category": "ui-navigation",
+    "label": "Mũi tên mở rộng xuống",
+    "description": "Mở menu thả xuống và câu hỏi thường gặp",
+    "file": "/assets/icons/ui-navigation/navigation-chevron-down.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "BannerTopHeaderTab",
+      "DynamicIcon",
+      "BranchSelector",
+      "HeaderActions",
+      "MainNavigation",
+      "FAQPage",
+      "ServiceDetailPage"
+    ],
+    "keywords": [
+      "navigation-chevron-down",
+      "mũi tên mở rộng xuống",
+      "ui-navigation",
+      "chevron-down",
+      "mũi",
+      "tên",
+      "rộng",
+      "xuống"
+    ]
+  },
+  {
+    "name": "navigation-chevron-left",
+    "category": "ui-navigation",
+    "label": "Mũi tên sang trái",
+    "description": "Chuyển slide hoặc chuyển trang trước",
+    "file": "/assets/icons/ui-navigation/navigation-chevron-left.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "HeroSliderSection",
+      "TechnologiesSection"
+    ],
+    "keywords": [
+      "navigation-chevron-left",
+      "mũi tên sang trái",
+      "ui-navigation",
+      "chevron-left",
+      "mũi",
+      "tên",
+      "sang",
+      "trái"
+    ]
+  },
+  {
+    "name": "navigation-chevron-right",
+    "category": "ui-navigation",
+    "label": "Mũi tên sang phải",
+    "description": "Chuyển slide tiếp theo hoặc mục kế",
+    "file": "/assets/icons/ui-navigation/navigation-chevron-right.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "AppearanceTab",
+      "BannerTopHeaderTab",
+      "NavigationTab",
+      "PageBannersTab",
+      "Breadcrumbs",
+      "DynamicIcon",
+      "PageHeroBanner",
+      "HeroSliderSection",
+      "TechnologiesSection",
+      "AnnouncementBar",
+      "MainNavigation"
+    ],
+    "keywords": [
+      "navigation-chevron-right",
+      "mũi tên sang phải",
+      "ui-navigation",
+      "chevron-right",
+      "mũi",
+      "tên",
+      "sang",
+      "phải"
+    ]
+  },
+  {
+    "name": "navigation-chevron-up",
+    "category": "ui-navigation",
+    "label": "Mũi tên thu gọn lên",
+    "description": "Thu gọn menu hoặc khối nội dung",
+    "file": "/assets/icons/ui-navigation/navigation-chevron-up.svg",
+    "usedIn": [
+      "DynamicIcon",
+      "FloatingContact",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "navigation-chevron-up",
+      "mũi tên thu gọn lên",
+      "ui-navigation",
+      "chevron-up",
+      "mũi",
+      "tên",
+      "thu",
+      "gọn",
+      "lên"
+    ]
+  },
+  {
+    "name": "navigation-chevrons-up",
+    "category": "ui-navigation",
+    "label": "Mũi tên kép lên nhanh",
+    "description": "Nút cuộn nhanh lên đầu trang",
+    "file": "/assets/icons/ui-navigation/navigation-chevrons-up.svg",
+    "usedIn": [
+      "DynamicIcon",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "navigation-chevrons-up",
+      "mũi tên kép lên nhanh",
+      "ui-navigation",
+      "chevrons-up",
+      "mũi",
+      "tên",
+      "kép",
+      "lên",
+      "nhanh"
+    ]
+  },
+  {
+    "name": "ui-clipboard-checklist",
+    "category": "shared",
+    "label": "Bảng kiểm tra phác đồ",
+    "description": "Danh sách quy trình và các bước điều trị",
+    "file": "/assets/icons/shared/ui-clipboard-checklist.svg",
+    "usedIn": [
+      "HeaderActions"
+    ],
+    "keywords": [
+      "ui-clipboard-checklist",
+      "bảng kiểm tra phác đồ",
+      "shared",
+      "clipboard-list",
+      "bảng",
+      "kiểm",
+      "tra",
+      "phác"
+    ]
+  },
+  {
+    "name": "navigation-hours-clock",
+    "category": "ui-navigation",
+    "label": "Giờ mở cửa (08:00 - 20:00)",
+    "description": "Thời gian phục vụ và giờ tiếp nhận khách",
+    "file": "/assets/icons/ui-navigation/navigation-hours-clock.svg",
+    "usedIn": [
+      "ArticlesTab",
+      "AuditLogTab",
+      "BannerTopHeaderTab",
+      "BrandingIdentityTab",
+      "DashboardOverviewTab",
+      "HeroBannersTab",
+      "LeadsTab",
+      "LocationsTab",
+      "ServicesTab",
+      "DynamicIcon",
+      "NewsTabsSection",
+      "BranchSelector",
+      "Footer",
+      "Header",
+      "HeaderTopbar",
+      "AboutPage",
+      "BookingPage",
+      "CareersPage",
+      "ContactPage",
+      "DoctorDetailPage",
+      "DoctorsListPage",
+      "FacilitiesPage",
+      "NewsDetailPage",
+      "NewsListPage",
+      "ServiceDetailPage",
+      "SpecialtyDetailPage"
+    ],
+    "keywords": [
+      "navigation-hours-clock",
+      "giờ mở cửa (08:00 - 20:00)",
+      "ui-navigation",
+      "clock",
+      "giờ",
+      "cửa",
+      "(08:00",
+      "20:00)"
+    ]
+  },
+  {
+    "name": "system-code",
+    "category": "shared",
+    "label": "Mã nhúng HTML/SVG",
+    "description": "Xem và biên tập mã nguồn nhúng",
+    "file": "/assets/icons/shared/system-code.svg",
+    "usedIn": [
+      "RichTextEditor"
+    ],
+    "keywords": [
+      "system-code",
+      "mã nhúng html/svg",
+      "shared",
+      "code",
+      "nhúng",
+      "html/svg"
+    ]
+  },
+  {
+    "name": "system-copy",
+    "category": "shared",
+    "label": "Sao chép vào bộ nhớ",
+    "description": "Nút copy nội dung hoặc mã SVG",
+    "file": "/assets/icons/shared/system-copy.svg",
+    "usedIn": [
+      "ArticlesTab",
+      "BackupRestoreTab",
+      "DoctorsTab",
+      "HeroBannersTab",
+      "MediaLibraryTab",
+      "ProductsTab",
+      "ServicesTab"
+    ],
+    "keywords": [
+      "system-copy",
+      "sao chép vào bộ nhớ",
+      "shared",
+      "copy",
+      "sao",
+      "chép",
+      "vào",
+      "nhớ"
+    ]
+  },
+  {
+    "name": "technology-visia-3d",
+    "category": "technology-equipment",
+    "label": "Máy soi da đa tầng VISIA 3D",
+    "description": "Hệ thống vi xử lý phân tích cấu trúc da chuẩn y khoa",
+    "file": "/assets/icons/technology-equipment/technology-visia-3d.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "DashboardOverviewTab",
+      "HomepageSectionsTab",
+      "TechnologiesTab",
+      "DynamicIcon",
+      "AboutSummarySection",
+      "coreValues",
+      "SearchPage",
+      "ServiceDetailPage",
+      "TechnologiesListPage",
+      "TechnologyDetailPage",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "technology-visia-3d",
+      "máy soi da đa tầng visia 3d",
+      "technology-equipment",
+      "cpu",
+      "máy",
+      "soi",
+      "tầng",
+      "visia"
+    ]
+  },
+  {
+    "name": "payment-credit-card",
+    "category": "payment",
+    "label": "Thẻ tín dụng / Ghi nợ",
+    "description": "Thanh toán quẹt thẻ Visa/Mastercard/JCB",
+    "file": "/assets/icons/payment/payment-credit-card.svg",
+    "usedIn": [
+      "PolicyPage"
+    ],
+    "keywords": [
+      "payment-credit-card",
+      "thẻ tín dụng / ghi nợ",
+      "payment",
+      "credit-card",
+      "thẻ",
+      "tín",
+      "dụng",
+      "ghi"
+    ]
+  },
+  {
+    "name": "system-database",
+    "category": "shared",
+    "label": "Cơ sở dữ liệu hệ thống",
+    "description": "Dữ liệu lưu trữ CMS và Neon DB",
+    "file": "/assets/icons/shared/system-database.svg",
+    "usedIn": [
+      "BackupRestoreTab"
+    ],
+    "keywords": [
+      "system-database",
+      "cơ sở dữ liệu hệ thống",
+      "shared",
+      "database",
+      "liệu",
+      "thống"
+    ]
+  },
+  {
+    "name": "payment-cash",
+    "category": "payment",
+    "label": "Tiền mặt tại quầy",
+    "description": "Phương thức thanh toán tiền mặt tại quầy thu ngân",
+    "file": "/assets/icons/payment/payment-cash.svg",
+    "usedIn": [
+      "ProductsTab",
+      "DynamicIcon",
+      "CareersPage",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "payment-cash",
+      "tiền mặt tại quầy",
+      "payment",
+      "dollar-sign",
+      "tiền",
+      "mặt",
+      "tại",
+      "quầy"
+    ]
+  },
+  {
+    "name": "system-download",
+    "category": "shared",
+    "label": "Tải xuống tệp tin",
+    "description": "Nút tải tài liệu, file SVG hoặc báo cáo",
+    "file": "/assets/icons/shared/system-download.svg",
+    "usedIn": [
+      "BackupRestoreTab",
+      "LeadsTab"
+    ],
+    "keywords": [
+      "system-download",
+      "tải xuống tệp tin",
+      "shared",
+      "download",
+      "tải",
+      "xuống",
+      "tệp",
+      "tin"
+    ]
+  },
+  {
+    "name": "pharmacy-serum-droplet",
+    "category": "pharmacy-products",
+    "label": "Tinh chất serum phục hồi",
+    "description": "Dưỡng chất tinh khiết tái tạo tế bào da",
+    "file": "/assets/icons/pharmacy-products/pharmacy-serum-droplet.svg",
+    "usedIn": [
+      "DynamicIcon",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "pharmacy-serum-droplet",
+      "tinh chất serum phục hồi",
+      "pharmacy-products",
+      "droplet",
+      "tinh",
+      "chất",
+      "serum",
+      "phục",
+      "hồi"
+    ]
+  },
+  {
+    "name": "pharmacy-cleanser-droplets",
+    "category": "pharmacy-products",
+    "label": "Làm sạch & Nước tẩy trang",
+    "description": "Nước tẩy trang và sữa rửa mặt dịu lành",
+    "file": "/assets/icons/pharmacy-products/pharmacy-cleanser-droplets.svg",
+    "usedIn": [
+      "DynamicIcon",
+      "categories",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "pharmacy-cleanser-droplets",
+      "làm sạch & nước tẩy trang",
+      "pharmacy-products",
+      "droplets",
+      "làm",
+      "sạch",
+      "nước",
+      "tẩy",
+      "trang"
+    ]
+  },
+  {
+    "name": "system-edit",
+    "category": "shared",
+    "label": "Chỉnh sửa bài viết",
+    "description": "Nút biên tập dữ liệu trên CMS",
+    "file": "/assets/icons/shared/system-edit.svg",
+    "usedIn": [
+      "ArticlesTab",
+      "CaseStudiesTab",
+      "DoctorsTab",
+      "HeroBannersTab",
+      "HomepageSectionsTab",
+      "LocationsTab",
+      "NavigationTab",
+      "ProductsTab",
+      "ServicesTab",
+      "SpecialtiesTab",
+      "TechnologiesTab"
+    ],
+    "keywords": [
+      "system-edit",
+      "chỉnh sửa bài viết",
+      "shared",
+      "edit",
+      "chỉnh",
+      "sửa",
+      "bài",
+      "viết"
+    ]
+  },
+  {
+    "name": "system-edit-alt",
+    "category": "shared",
+    "label": "Soạn thảo văn bản",
+    "description": "Biểu tượng bút viết và ghi chú",
+    "file": "/assets/icons/shared/system-edit-alt.svg",
+    "usedIn": [
+      "RichTextEditor"
+    ],
+    "keywords": [
+      "system-edit-alt",
+      "soạn thảo văn bản",
+      "shared",
+      "edit3",
+      "soạn",
+      "thảo",
+      "văn",
+      "bản"
+    ]
+  },
+  {
+    "name": "navigation-external-link",
+    "category": "ui-navigation",
+    "label": "Liên kết ngoài trang",
+    "description": "Chuyển tiếp đến trang web thứ ba",
+    "file": "/assets/icons/ui-navigation/navigation-external-link.svg",
+    "usedIn": [
+      "AdminHeader",
+      "AdminSidebar",
+      "MediaLibraryModal",
+      "AppearanceTab",
+      "ArticlesTab",
+      "BannerTopHeaderTab",
+      "BrandingIdentityTab",
+      "CaseStudiesTab",
+      "DoctorsTab",
+      "HeroBannersTab",
+      "HomepageSectionsTab",
+      "LocationsTab",
+      "MediaLibraryTab",
+      "NavigationTab",
+      "PageBannersTab",
+      "ProductsTab",
+      "ServicesTab",
+      "TechnologiesTab",
+      "BranchSelector",
+      "Footer"
+    ],
+    "keywords": [
+      "navigation-external-link",
+      "liên kết ngoài trang",
+      "ui-navigation",
+      "external-link",
+      "liên",
+      "kết",
+      "ngoài",
+      "trang"
+    ]
+  },
+  {
+    "name": "system-eye-off",
+    "category": "shared",
+    "label": "Ẩn hiển thị",
+    "description": "Tắt trạng thái hiển thị của mục",
+    "file": "/assets/icons/shared/system-eye-off.svg",
+    "usedIn": [
+      "HeroBannersTab",
+      "HomepageSectionsTab",
+      "PageBannersTab"
+    ],
+    "keywords": [
+      "system-eye-off",
+      "ẩn hiển thị",
+      "shared",
+      "eye-off",
+      "hiển",
+      "thị"
+    ]
+  },
+  {
+    "name": "system-eye",
+    "category": "shared",
+    "label": "Xem trước / Hiển thị",
+    "description": "Bật trạng thái hiển thị hoặc xem trước",
+    "file": "/assets/icons/shared/system-eye.svg",
+    "usedIn": [
+      "RichTextEditor",
+      "AppearanceTab",
+      "ArticlesTab",
+      "BannerTopHeaderTab",
+      "DashboardOverviewTab",
+      "HeroBannersTab",
+      "HomepageSectionsTab",
+      "PageBannersTab",
+      "SpecialtiesTab"
+    ],
+    "keywords": [
+      "system-eye",
+      "xem trước / hiển thị",
+      "shared",
+      "eye",
+      "xem",
+      "trước",
+      "hiển",
+      "thị"
+    ]
+  },
+  {
+    "name": "brand-facebook",
+    "category": "brand",
+    "label": "Fanpage Facebook chính thức",
+    "description": "Liên kết mạng xã hội Facebook LBC",
+    "file": "/assets/icons/brand/brand-facebook.svg",
+    "usedIn": [
+      "CmsAdmin"
+    ],
+    "keywords": [
+      "brand-facebook",
+      "fanpage facebook chính thức",
+      "brand",
+      "facebook",
+      "fanpage",
+      "chính",
+      "thức"
+    ]
+  },
+  {
+    "name": "brand-clinic-graphic",
+    "category": "brand",
+    "label": "Đồ họa cơ sở phòng khám",
+    "description": "Hình minh họa cơ sở y tế phòng khám",
+    "file": "/assets/icons/brand/brand-clinic-graphic.svg",
+    "usedIn": [
+      "CmsAdmin"
+    ],
+    "keywords": [
+      "brand-clinic-graphic",
+      "đồ họa cơ sở phòng khám",
+      "brand",
+      "fallback-clinic",
+      "họa",
+      "phòng",
+      "khám"
+    ]
+  },
+  {
+    "name": "dermatology-hair-scalp",
+    "category": "dermatology-services",
+    "label": "Trị rụng tóc & Nang tóc",
+    "description": "Kích thích nang tóc và phục hồi da đầu dịu nhẹ",
+    "file": "/assets/icons/dermatology-services/dermatology-hair-scalp.svg",
+    "usedIn": [
+      "FeaturedServicesSection",
+      "DynamicIcon",
+      "MainNavigation",
+      "services",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "dermatology-hair-scalp",
+      "trị rụng tóc & nang tóc",
+      "dermatology-services",
+      "feather",
+      "trị",
+      "rụng",
+      "tóc",
+      "nang"
+    ]
+  },
+  {
+    "name": "medical-file-check",
+    "category": "medical-clinic",
+    "label": "Hồ sơ bệnh án thẩm định",
+    "description": "Hồ sơ bệnh án được bác sĩ ký duyệt",
+    "file": "/assets/icons/medical-clinic/medical-file-check.svg",
+    "usedIn": [
+      "LegalInfoTab"
+    ],
+    "keywords": [
+      "medical-file-check",
+      "hồ sơ bệnh án thẩm định",
+      "medical-clinic",
+      "file-check",
+      "bệnh",
+      "thẩm",
+      "định"
+    ]
+  },
+  {
+    "name": "system-file-code",
+    "category": "shared",
+    "label": "Tập tin mã nguồn",
+    "description": "Biểu tượng tệp cấu hình và mã lập trình",
+    "file": "/assets/icons/shared/system-file-code.svg",
+    "usedIn": [
+      "BackupRestoreTab"
+    ],
+    "keywords": [
+      "system-file-code",
+      "tập tin mã nguồn",
+      "shared",
+      "file-code",
+      "tập",
+      "tin",
+      "nguồn"
+    ]
+  },
+  {
+    "name": "system-file-text",
+    "category": "shared",
+    "label": "Tài liệu văn bản",
+    "description": "Bài viết, chính sách và văn bản y tế",
+    "file": "/assets/icons/shared/system-file-text.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "MediaLibraryModal",
+      "ArticlesTab",
+      "BackupRestoreTab",
+      "DashboardOverviewTab",
+      "ServicesTab",
+      "BookingPage",
+      "DoctorDetailPage",
+      "LicensesPage",
+      "PolicyPage",
+      "SpecialtyDetailPage"
+    ],
+    "keywords": [
+      "system-file-text",
+      "tài liệu văn bản",
+      "shared",
+      "file-text",
+      "tài",
+      "liệu",
+      "văn",
+      "bản"
+    ]
+  },
+  {
+    "name": "media-video-film",
+    "category": "shared",
+    "label": "Video clip giới thiệu",
+    "description": "Biểu tượng video tư liệu điều trị",
+    "file": "/assets/icons/shared/media-video-film.svg",
+    "usedIn": [
+      "MediaLibraryModal",
+      "MediaLibraryTab"
+    ],
+    "keywords": [
+      "media-video-film",
+      "video clip giới thiệu",
+      "shared",
+      "film",
+      "video",
+      "clip",
+      "giới",
+      "thiệu"
+    ]
+  },
+  {
+    "name": "system-filter",
+    "category": "shared",
+    "label": "Bộ lọc chuyên mục",
+    "description": "Lọc theo danh mục và tiêu chí",
+    "file": "/assets/icons/shared/system-filter.svg",
+    "usedIn": [
+      "AuditLogTab",
+      "DoctorsTab",
+      "LeadsTab",
+      "CosmeceuticalsPage",
+      "SearchPage"
+    ],
+    "keywords": [
+      "system-filter",
+      "bộ lọc chuyên mục",
+      "shared",
+      "filter",
+      "lọc",
+      "chuyên",
+      "mục"
+    ]
+  },
+  {
+    "name": "medical-biometric",
+    "category": "medical-clinic",
+    "label": "Vân tay cá nhân hóa",
+    "description": "Phác đồ điều trị y học cá nhân hóa độc bản",
+    "file": "/assets/icons/medical-clinic/medical-biometric.svg",
+    "usedIn": [
+      "HomepageSectionsTab",
+      "DynamicIcon",
+      "AboutSummarySection",
+      "coreValues",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "medical-biometric",
+      "vân tay cá nhân hóa",
+      "medical-clinic",
+      "fingerprint",
+      "vân",
+      "tay",
+      "nhân",
+      "hóa"
+    ]
+  },
+  {
+    "name": "pharmacy-best-seller-flame",
+    "category": "pharmacy-products",
+    "label": "Sản phẩm bán chạy",
+    "description": "Biểu tượng mục hot, sản phẩm bán chạy nhất",
+    "file": "/assets/icons/pharmacy-products/pharmacy-best-seller-flame.svg",
+    "usedIn": [
+      "DynamicIcon",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "pharmacy-best-seller-flame",
+      "sản phẩm bán chạy",
+      "pharmacy-products",
+      "flame",
+      "sản",
+      "phẩm",
+      "bán",
+      "chạy"
+    ]
+  },
+  {
+    "name": "laboratory-flask-conical",
+    "category": "laboratory",
+    "label": "Bình thí nghiệm hóa sinh",
+    "description": "Dụng cụ xét nghiệm vi sinh và Demodex",
+    "file": "/assets/icons/laboratory/laboratory-flask-conical.svg",
+    "usedIn": [
+      "DynamicIcon",
+      "MainNavigation",
+      "specialties",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "laboratory-flask-conical",
+      "bình thí nghiệm hóa sinh",
+      "laboratory",
+      "flask-conical",
+      "bình",
+      "thí",
+      "nghiệm",
+      "hóa",
+      "sinh"
+    ]
+  },
+  {
+    "name": "system-folder-tree",
+    "category": "shared",
+    "label": "Cây thư mục danh mục",
+    "description": "Cấu trúc cây danh mục chuyên khoa",
+    "file": "/assets/icons/shared/system-folder-tree.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "ProductsTab"
+    ],
+    "keywords": [
+      "system-folder-tree",
+      "cây thư mục danh mục",
+      "shared",
+      "folder-tree",
+      "cây",
+      "thư",
+      "mục",
+      "danh"
+    ]
+  },
+  {
+    "name": "navigation-globe",
+    "category": "ui-navigation",
+    "label": "Website chính thức",
+    "description": "Địa chỉ trang web trực tuyến và ngôn ngữ",
+    "file": "/assets/icons/ui-navigation/navigation-globe.svg",
+    "usedIn": [
+      "BrandingIdentityTab",
+      "ProductsTab"
+    ],
+    "keywords": [
+      "navigation-globe",
+      "website chính thức",
+      "ui-navigation",
+      "globe",
+      "website",
+      "chính",
+      "thức"
+    ]
+  },
+  {
+    "name": "academy-graduation",
+    "category": "academy-training",
+    "label": "Tốt nghiệp học viện",
+    "description": "Đào tạo nghề kỹ thuật viên chăm sóc da",
+    "file": "/assets/icons/academy-training/academy-graduation.svg",
+    "usedIn": [
+      "DoctorsTab",
+      "HomepageSectionsTab",
+      "DynamicIcon",
+      "AboutSummarySection",
+      "DoctorsSection",
+      "MainNavigation",
+      "coreValues",
+      "specialties",
+      "DoctorDetailPage",
+      "DoctorsListPage",
+      "SpecialtyDetailPage",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "academy-graduation",
+      "tốt nghiệp học viện",
+      "academy-training",
+      "graduation-cap",
+      "tốt",
+      "nghiệp",
+      "học",
+      "viện"
+    ]
+  },
+  {
+    "name": "ui-grid-layout",
+    "category": "shared",
+    "label": "Bố cục lưới (Grid)",
+    "description": "Chế độ hiển thị dạng lưới",
+    "file": "/assets/icons/shared/ui-grid-layout.svg",
+    "usedIn": [
+      "DoctorsTab",
+      "MediaLibraryTab"
+    ],
+    "keywords": [
+      "ui-grid-layout",
+      "bố cục lưới (grid)",
+      "shared",
+      "grid",
+      "cục",
+      "lưới",
+      "(grid)"
+    ]
+  },
+  {
+    "name": "system-backup-download",
+    "category": "shared",
+    "label": "Tải sao lưu dữ liệu",
+    "description": "Tải file backup dữ liệu trang web",
+    "file": "/assets/icons/shared/system-backup-download.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "BackupRestoreTab"
+    ],
+    "keywords": [
+      "system-backup-download",
+      "tải sao lưu dữ liệu",
+      "shared",
+      "hard-drive-download",
+      "tải",
+      "sao",
+      "lưu",
+      "liệu"
+    ]
+  },
+  {
+    "name": "system-server-storage",
+    "category": "shared",
+    "label": "Bộ nhớ máy chủ",
+    "description": "Dung lượng lưu trữ media máy chủ",
+    "file": "/assets/icons/shared/system-server-storage.svg",
+    "usedIn": [
+      "AdminHeader",
+      "MediaLibraryModal",
+      "DashboardOverviewTab",
+      "MediaLibraryTab"
+    ],
+    "keywords": [
+      "system-server-storage",
+      "bộ nhớ máy chủ",
+      "shared",
+      "hard-drive",
+      "nhớ",
+      "máy",
+      "chủ"
+    ]
+  },
+  {
+    "name": "editor-heading1",
+    "category": "shared",
+    "label": "Tiêu đề cấp 1 (H1)",
+    "description": "Định dạng tiêu đề chính trong bài",
+    "file": "/assets/icons/shared/editor-heading1.svg",
+    "usedIn": [
+      "RichTextEditor"
+    ],
+    "keywords": [
+      "editor-heading1",
+      "tiêu đề cấp 1 (h1)",
+      "shared",
+      "heading1",
+      "tiêu",
+      "cấp",
+      "(h1)"
+    ]
+  },
+  {
+    "name": "editor-heading2",
+    "category": "shared",
+    "label": "Tiêu đề cấp 2 (H2)",
+    "description": "Định dạng tiêu đề phụ trong bài",
+    "file": "/assets/icons/shared/editor-heading2.svg",
+    "usedIn": [
+      "RichTextEditor"
+    ],
+    "keywords": [
+      "editor-heading2",
+      "tiêu đề cấp 2 (h2)",
+      "shared",
+      "heading2",
+      "tiêu",
+      "cấp",
+      "(h2)"
+    ]
+  },
+  {
+    "name": "medical-heart-care",
+    "category": "medical-clinic",
+    "label": "Trái tim tận tâm y đức",
+    "description": "Sứ mệnh chăm sóc tận tâm và y đức bác sĩ",
+    "file": "/assets/icons/medical-clinic/medical-heart-care.svg",
+    "usedIn": [
+      "HomepageSectionsTab",
+      "DynamicIcon",
+      "AboutSummarySection",
+      "MainNavigation",
+      "categories",
+      "services",
+      "siteConfig",
+      "AboutPage",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "medical-heart-care",
+      "trái tim tận tâm y đức",
+      "medical-clinic",
+      "heart-handshake",
+      "trái",
+      "tim",
+      "tận",
+      "tâm",
+      "đức"
+    ]
+  },
+  {
+    "name": "medical-heart-pulse",
+    "category": "medical-clinic",
+    "label": "Nhịp tim sinh học",
+    "description": "Biểu tượng sinh hiệu sức khỏe làn da",
+    "file": "/assets/icons/medical-clinic/medical-heart-pulse.svg",
+    "usedIn": [
+      "DynamicIcon",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "medical-heart-pulse",
+      "nhịp tim sinh học",
+      "medical-clinic",
+      "heart-pulse",
+      "nhịp",
+      "tim",
+      "sinh",
+      "học"
+    ]
+  },
+  {
+    "name": "ui-favorite-heart",
+    "category": "shared",
+    "label": "Mục yêu thích",
+    "description": "Biểu tượng lưu dịch vụ/sản phẩm yêu thích",
+    "file": "/assets/icons/shared/ui-favorite-heart.svg",
+    "usedIn": [
+      "Footer",
+      "ProductDetailPage"
+    ],
+    "keywords": [
+      "ui-favorite-heart",
+      "mục yêu thích",
+      "shared",
+      "heart",
+      "mục",
+      "yêu",
+      "thích"
+    ]
+  },
+  {
+    "name": "status-help",
+    "category": "status-feedback",
+    "label": "Hỏi đáp & Trợ giúp",
+    "description": "Giải đáp thắc mắc và câu hỏi thường gặp",
+    "file": "/assets/icons/status-feedback/status-help.svg",
+    "usedIn": [
+      "BannerTopHeaderTab",
+      "ServicesTab",
+      "DynamicIcon",
+      "CustomerUtilitiesSection",
+      "FAQPage",
+      "ServiceDetailPage"
+    ],
+    "keywords": [
+      "status-help",
+      "hỏi đáp & trợ giúp",
+      "status-feedback",
+      "help-circle",
+      "hỏi",
+      "đáp",
+      "trợ",
+      "giúp"
+    ]
+  },
+  {
+    "name": "system-audit-history",
+    "category": "shared",
+    "label": "Lịch sử cập nhật",
+    "description": "Nhật ký kiểm tra và lịch sử thay đổi CMS",
+    "file": "/assets/icons/shared/system-audit-history.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "AuditLogTab"
+    ],
+    "keywords": [
+      "system-audit-history",
+      "lịch sử cập nhật",
+      "shared",
+      "history",
+      "lịch",
+      "cập",
+      "nhật"
+    ]
+  },
+  {
+    "name": "navigation-home",
+    "category": "ui-navigation",
+    "label": "Trang chủ LBC",
+    "description": "Nút điều hướng về trang chủ website",
+    "file": "/assets/icons/ui-navigation/navigation-home.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "Breadcrumbs",
+      "NotFoundPage"
+    ],
+    "keywords": [
+      "navigation-home",
+      "trang chủ lbc",
+      "ui-navigation",
+      "home",
+      "trang",
+      "chủ",
+      "lbc"
+    ]
+  },
+  {
+    "name": "media-image",
+    "category": "shared",
+    "label": "Hình ảnh / Media",
+    "description": "Biểu tượng tệp hình ảnh trong thư viện",
+    "file": "/assets/icons/shared/media-image.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "IconPickerModal",
+      "MediaLibraryModal",
+      "RichTextEditor",
+      "AppearanceTab",
+      "ArticlesTab",
+      "BannerTopHeaderTab",
+      "BrandingIdentityTab",
+      "CaseStudiesTab",
+      "DoctorsTab",
+      "HeroBannersTab",
+      "HomepageSectionsTab",
+      "LocationsTab",
+      "MediaLibraryTab",
+      "PageBannersTab",
+      "ProductsTab",
+      "ServicesTab",
+      "SpecialtiesTab",
+      "TechnologiesTab"
+    ],
+    "keywords": [
+      "media-image",
+      "hình ảnh / media",
+      "shared",
+      "image",
+      "hình",
+      "ảnh",
+      "media"
+    ]
+  },
+  {
+    "name": "status-info",
+    "category": "status-feedback",
+    "label": "Thông tin chỉ dẫn",
+    "description": "Ghi chú và thông tin hướng dẫn khách hàng",
+    "file": "/assets/icons/status-feedback/status-info.svg",
+    "usedIn": [
+      "AppearanceTab",
+      "LegalInfoTab",
+      "MediaLibraryTab",
+      "PageBannersTab",
+      "ProductDetailPage"
+    ],
+    "keywords": [
+      "status-info",
+      "thông tin chỉ dẫn",
+      "status-feedback",
+      "info",
+      "thông",
+      "tin",
+      "chỉ",
+      "dẫn"
+    ]
+  },
+  {
+    "name": "editor-italic",
+    "category": "shared",
+    "label": "Chữ in nghiêng (I)",
+    "description": "Định dạng chữ in nghiêng trong CMS",
+    "file": "/assets/icons/shared/editor-italic.svg",
+    "usedIn": [
+      "RichTextEditor"
+    ],
+    "keywords": [
+      "editor-italic",
+      "chữ in nghiêng (i)",
+      "shared",
+      "italic",
+      "chữ",
+      "nghiêng",
+      "(i)"
+    ]
+  },
+  {
+    "name": "system-auth-key",
+    "category": "shared",
+    "label": "Mã khóa bảo mật",
+    "description": "Mã xác thực bảo mật và phân quyền",
+    "file": "/assets/icons/shared/system-auth-key.svg",
+    "usedIn": [
+      "BackupRestoreTab"
+    ],
+    "keywords": [
+      "system-auth-key",
+      "mã khóa bảo mật",
+      "shared",
+      "key",
+      "khóa",
+      "bảo",
+      "mật"
+    ]
+  },
+  {
+    "name": "ui-layers-stack",
+    "category": "shared",
+    "label": "Phân tầng chuyên khoa",
+    "description": "Các tầng dịch vụ và hệ sinh thái",
+    "file": "/assets/icons/shared/ui-layers-stack.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "AppearanceTab",
+      "CaseStudiesTab",
+      "DashboardOverviewTab",
+      "HomepageSectionsTab",
+      "NavigationTab",
+      "PageBannersTab",
+      "ProductsTab",
+      "SpecialtiesTab",
+      "DynamicIcon"
+    ],
+    "keywords": [
+      "ui-layers-stack",
+      "phân tầng chuyên khoa",
+      "shared",
+      "layers",
+      "phân",
+      "tầng",
+      "chuyên",
+      "khoa"
+    ]
+  },
+  {
+    "name": "system-dashboard",
+    "category": "shared",
+    "label": "Bảng điều khiển CMS",
+    "description": "Tổng quan bảng quản trị hệ thống LBC",
+    "file": "/assets/icons/shared/system-dashboard.svg",
+    "usedIn": [
+      "AdminSidebar"
+    ],
+    "keywords": [
+      "system-dashboard",
+      "bảng điều khiển cms",
+      "shared",
+      "layout-dashboard",
+      "bảng",
+      "điều",
+      "khiển",
+      "cms"
+    ]
+  },
+  {
+    "name": "ui-layout-template",
+    "category": "shared",
+    "label": "Giao diện trang mẫu",
+    "description": "Bố cục giao diện trang chủ",
+    "file": "/assets/icons/shared/ui-layout-template.svg",
+    "usedIn": [
+      "BannerTopHeaderTab"
+    ],
+    "keywords": [
+      "ui-layout-template",
+      "giao diện trang mẫu",
+      "shared",
+      "layout",
+      "giao",
+      "diện",
+      "trang",
+      "mẫu"
+    ]
+  },
+  {
+    "name": "navigation-link",
+    "category": "ui-navigation",
+    "label": "Đường dẫn liên kết",
+    "description": "Sao chép hoặc chèn liên kết URL",
+    "file": "/assets/icons/ui-navigation/navigation-link.svg",
+    "usedIn": [
+      "RichTextEditor",
+      "HomepageSectionsTab",
+      "PageBannersTab"
+    ],
+    "keywords": [
+      "navigation-link",
+      "đường dẫn liên kết",
+      "ui-navigation",
+      "link",
+      "đường",
+      "dẫn",
+      "liên",
+      "kết"
+    ]
+  },
+  {
+    "name": "editor-list-ordered",
+    "category": "shared",
+    "label": "Danh sách đánh số",
+    "description": "Danh sách các bước có thứ tự",
+    "file": "/assets/icons/shared/editor-list-ordered.svg",
+    "usedIn": [
+      "RichTextEditor"
+    ],
+    "keywords": [
+      "editor-list-ordered",
+      "danh sách đánh số",
+      "shared",
+      "list-ordered",
+      "danh",
+      "sách",
+      "đánh"
+    ]
+  },
+  {
+    "name": "editor-list-bullet",
+    "category": "shared",
+    "label": "Danh sách gạch đầu dòng",
+    "description": "Danh sách không theo thứ tự",
+    "file": "/assets/icons/shared/editor-list-bullet.svg",
+    "usedIn": [
+      "RichTextEditor",
+      "DoctorsTab",
+      "MediaLibraryTab",
+      "NewsDetailPage"
+    ],
+    "keywords": [
+      "editor-list-bullet",
+      "danh sách gạch đầu dòng",
+      "shared",
+      "list",
+      "danh",
+      "sách",
+      "gạch",
+      "đầu",
+      "dòng"
+    ]
+  },
+  {
+    "name": "system-security-lock",
+    "category": "shared",
+    "label": "Khóa bảo mật an toàn",
+    "description": "Bảo mật tài khoản và chứng chỉ SSL",
+    "file": "/assets/icons/shared/system-security-lock.svg",
+    "usedIn": [
+      "PolicyPage"
+    ],
+    "keywords": [
+      "system-security-lock",
+      "khóa bảo mật an toàn",
+      "shared",
+      "lock",
+      "khóa",
+      "bảo",
+      "mật",
+      "toàn"
+    ]
+  },
+  {
+    "name": "navigation-auth-login",
+    "category": "ui-navigation",
+    "label": "Đăng nhập quản trị",
+    "description": "Truy cập cổng quản trị CMS",
+    "file": "/assets/icons/ui-navigation/navigation-auth-login.svg",
+    "usedIn": [
+      "HeaderActions"
+    ],
+    "keywords": [
+      "navigation-auth-login",
+      "đăng nhập quản trị",
+      "ui-navigation",
+      "log-in",
+      "đăng",
+      "nhập",
+      "quản",
+      "trị"
+    ]
+  },
+  {
+    "name": "brand-emblem-lotus",
+    "category": "brand",
+    "label": "Biểu tượng Hoa Sen Y Khoa",
+    "description": "Monogram hoa sen y khoa LBC",
+    "file": "/assets/icons/brand/brand-emblem-lotus.svg",
+    "usedIn": [
+      "CmsAdmin"
+    ],
+    "keywords": [
+      "brand-emblem-lotus",
+      "biểu tượng hoa sen y khoa",
+      "brand",
+      "logo-emblem-medical-lotus",
+      "biểu",
+      "tượng",
+      "hoa",
+      "sen",
+      "khoa"
+    ]
+  },
+  {
+    "name": "brand-logo-color",
+    "category": "brand",
+    "label": "Logo LBC bản chuẩn",
+    "description": "Logo chính thức màu chuẩn của LBC",
+    "file": "/assets/icons/brand/brand-logo-color.svg",
+    "usedIn": [
+      "CmsAdmin"
+    ],
+    "keywords": [
+      "brand-logo-color",
+      "logo lbc bản chuẩn",
+      "brand",
+      "logo-lbc-color",
+      "logo",
+      "lbc",
+      "bản",
+      "chuẩn"
+    ]
+  },
+  {
+    "name": "brand-logo-white",
+    "category": "brand",
+    "label": "Logo LBC bản trắng",
+    "description": "Logo âm bản cho Header/Footer nền tối",
+    "file": "/assets/icons/brand/brand-logo-white.svg",
+    "usedIn": [
+      "CmsAdmin"
+    ],
+    "keywords": [
+      "brand-logo-white",
+      "logo lbc bản trắng",
+      "brand",
+      "logo-lbc-white",
+      "logo",
+      "lbc",
+      "bản",
+      "trắng"
+    ]
+  },
+  {
+    "name": "navigation-mail",
+    "category": "ui-navigation",
+    "label": "Hòm thư Email",
+    "description": "Địa chỉ liên hệ hỗ trợ chính thức",
+    "file": "/assets/icons/ui-navigation/navigation-mail.svg",
+    "usedIn": [
+      "BrandingIdentityTab",
+      "LeadsTab",
+      "Footer",
+      "CareersPage",
+      "ContactPage"
+    ],
+    "keywords": [
+      "navigation-mail",
+      "hòm thư email",
+      "ui-navigation",
+      "mail",
+      "hòm",
+      "thư",
+      "email"
+    ]
+  },
+  {
+    "name": "navigation-location-pin",
+    "category": "ui-navigation",
+    "label": "Vị trí cơ sở phòng khám",
+    "description": "Địa chỉ cơ sở 1 và cơ sở 2 Cần Thơ",
+    "file": "/assets/icons/ui-navigation/navigation-location-pin.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "BannerTopHeaderTab",
+      "BrandingIdentityTab",
+      "LocationsTab",
+      "DynamicIcon",
+      "CustomerUtilitiesSection",
+      "BranchSelector",
+      "FloatingContact",
+      "Footer",
+      "AboutPage",
+      "BookingPage",
+      "CareersPage",
+      "ContactPage",
+      "DoctorDetailPage",
+      "FacilitiesPage"
+    ],
+    "keywords": [
+      "navigation-location-pin",
+      "vị trí cơ sở phòng khám",
+      "ui-navigation",
+      "map-pin",
+      "trí",
+      "phòng",
+      "khám"
+    ]
+  },
+  {
+    "name": "ui-fullscreen-maximize",
+    "category": "shared",
+    "label": "Phóng to toàn màn hình",
+    "description": "Xem ảnh trước sau toàn màn hình",
+    "file": "/assets/icons/shared/ui-fullscreen-maximize.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "AppearanceTab"
+    ],
+    "keywords": [
+      "ui-fullscreen-maximize",
+      "phóng to toàn màn hình",
+      "shared",
+      "maximize2",
+      "phóng",
+      "toàn",
+      "màn",
+      "hình"
+    ]
+  },
+  {
+    "name": "ui-announcement-megaphone",
+    "category": "shared",
+    "label": "Thông báo nổi bật",
+    "description": "Banner thông báo chương trình ưu đãi",
+    "file": "/assets/icons/shared/ui-announcement-megaphone.svg",
+    "usedIn": [
+      "BannerTopHeaderTab"
+    ],
+    "keywords": [
+      "ui-announcement-megaphone",
+      "thông báo nổi bật",
+      "shared",
+      "megaphone",
+      "thông",
+      "báo",
+      "nổi",
+      "bật"
+    ]
+  },
+  {
+    "name": "navigation-menu",
+    "category": "ui-navigation",
+    "label": "Thanh điều hướng Menu",
+    "description": "Nút mở thanh điều hướng mobile",
+    "file": "/assets/icons/ui-navigation/navigation-menu.svg",
+    "usedIn": [
+      "AdminHeader",
+      "AdminSidebar",
+      "BannerTopHeaderTab",
+      "NavigationTab",
+      "DynamicIcon",
+      "HeaderActions"
+    ],
+    "keywords": [
+      "navigation-menu",
+      "thanh điều hướng menu",
+      "ui-navigation",
+      "menu",
+      "thanh",
+      "điều",
+      "hướng"
+    ]
+  },
+  {
+    "name": "navigation-chat-bubble",
+    "category": "ui-navigation",
+    "label": "Hộp thoại chat tư vấn",
+    "description": "Biểu tượng trò chuyện trực tuyến",
+    "file": "/assets/icons/ui-navigation/navigation-chat-bubble.svg",
+    "usedIn": [
+      "FloatingContact",
+      "FAQPage"
+    ],
+    "keywords": [
+      "navigation-chat-bubble",
+      "hộp thoại chat tư vấn",
+      "ui-navigation",
+      "message-circle",
+      "hộp",
+      "thoại",
+      "chat",
+      "vấn"
+    ]
+  },
+  {
+    "name": "brand-messenger",
+    "category": "brand",
+    "label": "Facebook Messenger",
+    "description": "Kênh chat tư vấn qua Messenger",
+    "file": "/assets/icons/brand/brand-messenger.svg",
+    "usedIn": [
+      "CmsAdmin"
+    ],
+    "keywords": [
+      "brand-messenger",
+      "facebook messenger",
+      "brand",
+      "messenger",
+      "facebook"
+    ]
+  },
+  {
+    "name": "laboratory-microscope",
+    "category": "laboratory",
+    "label": "Kính hiển vi soi tươi",
+    "description": "Thiết bị soi da vi sinh và Demodex",
+    "file": "/assets/icons/laboratory/laboratory-microscope.svg",
+    "usedIn": [
+      "DynamicIcon",
+      "MainNavigation",
+      "services",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "laboratory-microscope",
+      "kính hiển vi soi tươi",
+      "laboratory",
+      "microscope",
+      "kính",
+      "hiển",
+      "soi",
+      "tươi"
+    ]
+  },
+  {
+    "name": "ui-desktop-monitor",
+    "category": "shared",
+    "label": "Chế độ xem máy tính",
+    "description": "Xem trước giao diện trên máy tính",
+    "file": "/assets/icons/shared/ui-desktop-monitor.svg",
+    "usedIn": [
+      "BannerTopHeaderTab",
+      "HeroBannersTab"
+    ],
+    "keywords": [
+      "ui-desktop-monitor",
+      "chế độ xem máy tính",
+      "shared",
+      "monitor",
+      "chế",
+      "xem",
+      "máy",
+      "tính"
+    ]
+  },
+  {
+    "name": "navigation-move-up",
+    "category": "ui-navigation",
+    "label": "Nút cuộn di chuyển lên",
+    "description": "Di chuyển vị trí lên trên",
+    "file": "/assets/icons/ui-navigation/navigation-move-up.svg",
+    "usedIn": [
+      "DynamicIcon",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "navigation-move-up",
+      "nút cuộn di chuyển lên",
+      "ui-navigation",
+      "move-up",
+      "nút",
+      "cuộn",
+      "chuyển",
+      "lên"
+    ]
+  },
+  {
+    "name": "navigation-direction-arrow",
+    "category": "ui-navigation",
+    "label": "Mũi tên chỉ đường",
+    "description": "Chỉ đường đến cơ sở phòng khám",
+    "file": "/assets/icons/ui-navigation/navigation-direction-arrow.svg",
+    "usedIn": [
+      "FacilitiesPage"
+    ],
+    "keywords": [
+      "navigation-direction-arrow",
+      "mũi tên chỉ đường",
+      "ui-navigation",
+      "navigation",
+      "mũi",
+      "tên",
+      "chỉ",
+      "đường"
+    ]
+  },
+  {
+    "name": "pharmacy-combo-package",
+    "category": "pharmacy-products",
+    "label": "Combo liệu trình trọn gói",
+    "description": "Bộ sản phẩm đóng gói chăm sóc da",
+    "file": "/assets/icons/pharmacy-products/pharmacy-combo-package.svg",
+    "usedIn": [
+      "ProductsTab",
+      "DynamicIcon",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "pharmacy-combo-package",
+      "combo liệu trình trọn gói",
+      "pharmacy-products",
+      "package",
+      "combo",
+      "liệu",
+      "trình",
+      "trọn",
+      "gói"
+    ]
+  },
+  {
+    "name": "system-theme-palette",
+    "category": "shared",
+    "label": "Bảng màu thương hiệu",
+    "description": "Tùy biến mã màu Teal #0E7C86 trên CMS",
+    "file": "/assets/icons/shared/system-theme-palette.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "AppearanceTab",
+      "BannerTopHeaderTab",
+      "BrandingIdentityTab",
+      "SpecialtiesTab"
+    ],
+    "keywords": [
+      "system-theme-palette",
+      "bảng màu thương hiệu",
+      "shared",
+      "palette",
+      "bảng",
+      "màu",
+      "thương",
+      "hiệu"
+    ]
+  },
+  {
+    "name": "ui-panels-sidebar",
+    "category": "shared",
+    "label": "Bảng điều hướng con",
+    "description": "Khung điều hướng bên hông CMS",
+    "file": "/assets/icons/shared/ui-panels-sidebar.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "BannerTopHeaderTab",
+      "PageBannersTab"
+    ],
+    "keywords": [
+      "ui-panels-sidebar",
+      "bảng điều hướng con",
+      "shared",
+      "panels-top-left",
+      "bảng",
+      "điều",
+      "hướng",
+      "con"
+    ]
+  },
+  {
+    "name": "media-player-pause",
+    "category": "shared",
+    "label": "Tạm dừng video",
+    "description": "Nút tạm dừng phát video",
+    "file": "/assets/icons/shared/media-player-pause.svg",
+    "usedIn": [
+      "HeroBannersTab"
+    ],
+    "keywords": [
+      "media-player-pause",
+      "tạm dừng video",
+      "shared",
+      "pause",
+      "tạm",
+      "dừng",
+      "video"
+    ]
+  },
+  {
+    "name": "navigation-phone-call",
+    "category": "ui-navigation",
+    "label": "Yêu cầu gọi lại",
+    "description": "Để lại số điện thoại để bác sĩ gọi lại",
+    "file": "/assets/icons/ui-navigation/navigation-phone-call.svg",
+    "usedIn": [
+      "AdminSidebar"
+    ],
+    "keywords": [
+      "navigation-phone-call",
+      "yêu cầu gọi lại",
+      "ui-navigation",
+      "phone-call",
+      "yêu",
+      "cầu",
+      "gọi",
+      "lại"
+    ]
+  },
+  {
+    "name": "navigation-hotline-phone",
+    "category": "ui-navigation",
+    "label": "Hotline 1900 6750",
+    "description": "Điện thoại tư vấn trực tiếp 24/7",
+    "file": "/assets/icons/ui-navigation/navigation-hotline-phone.svg",
+    "usedIn": [
+      "BannerTopHeaderTab",
+      "BrandingIdentityTab",
+      "LeadsTab",
+      "LocationsTab",
+      "DynamicIcon",
+      "BranchSelector",
+      "FloatingContact",
+      "Footer",
+      "Header",
+      "HeaderTopbar",
+      "MainNavigation",
+      "BookingPage",
+      "ContactPage",
+      "DoctorDetailPage",
+      "FacilitiesPage",
+      "FAQPage",
+      "ServiceDetailPage",
+      "SpecialtyDetailPage"
+    ],
+    "keywords": [
+      "navigation-hotline-phone",
+      "hotline 1900 6750",
+      "ui-navigation",
+      "phone",
+      "hotline",
+      "1900",
+      "6750"
+    ]
+  },
+  {
+    "name": "pharmacy-medicine",
+    "category": "pharmacy-products",
+    "label": "Thuốc y tế chuẩn GPP",
+    "description": "Viên thuốc điều trị da liễu kê đơn",
+    "file": "/assets/icons/pharmacy-products/pharmacy-medicine.svg",
+    "usedIn": [
+      "DynamicIcon",
+      "MainNavigation",
+      "specialties",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "pharmacy-medicine",
+      "thuốc y tế chuẩn gpp",
+      "pharmacy-products",
+      "pill",
+      "thuốc",
+      "chuẩn",
+      "gpp"
+    ]
+  },
+  {
+    "name": "media-player-play",
+    "category": "shared",
+    "label": "Phát video",
+    "description": "Nút phát video hướng dẫn điều trị",
+    "file": "/assets/icons/shared/media-player-play.svg",
+    "usedIn": [
+      "HeroBannersTab"
+    ],
+    "keywords": [
+      "media-player-play",
+      "phát video",
+      "shared",
+      "play",
+      "phát",
+      "video"
+    ]
+  },
+  {
+    "name": "ui-add-circle",
+    "category": "shared",
+    "label": "Thêm mới dạng nút tròn",
+    "description": "Nút tạo mới mục trong danh sách",
+    "file": "/assets/icons/shared/ui-add-circle.svg",
+    "usedIn": [
+      "DashboardOverviewTab"
+    ],
+    "keywords": [
+      "ui-add-circle",
+      "thêm mới dạng nút tròn",
+      "shared",
+      "plus-circle",
+      "thêm",
+      "mới",
+      "dạng",
+      "nút",
+      "tròn"
+    ]
+  },
+  {
+    "name": "ui-add-item",
+    "category": "shared",
+    "label": "Thêm mới mục",
+    "description": "Nút thêm dịch vụ hoặc banner mới",
+    "file": "/assets/icons/shared/ui-add-item.svg",
+    "usedIn": [
+      "AdminHeader",
+      "ArticlesTab",
+      "BannerTopHeaderTab",
+      "CaseStudiesTab",
+      "DoctorsTab",
+      "HeroBannersTab",
+      "HomepageSectionsTab",
+      "LocationsTab",
+      "MediaLibraryTab",
+      "NavigationTab",
+      "ProductsTab",
+      "ServicesTab",
+      "SpecialtiesTab",
+      "TechnologiesTab"
+    ],
+    "keywords": [
+      "ui-add-item",
+      "thêm mới mục",
+      "shared",
+      "plus",
+      "thêm",
+      "mới",
+      "mục"
+    ]
+  },
+  {
+    "name": "editor-quote",
+    "category": "shared",
+    "label": "Trích dẫn y khoa",
+    "description": "Khối trích dẫn lời khuyên của bác sĩ",
+    "file": "/assets/icons/shared/editor-quote.svg",
+    "usedIn": [
+      "RichTextEditor"
+    ],
+    "keywords": [
+      "editor-quote",
+      "trích dẫn y khoa",
+      "shared",
+      "quote",
+      "trích",
+      "dẫn",
+      "khoa"
+    ]
+  },
+  {
+    "name": "status-refresh-loading",
+    "category": "status-feedback",
+    "label": "Đang làm mới dữ liệu",
+    "description": "Biểu tượng đồng bộ và tải lại",
+    "file": "/assets/icons/status-feedback/status-refresh-loading.svg",
+    "usedIn": [
+      "AdminHeader",
+      "MediaLibraryModal",
+      "BackupRestoreTab",
+      "MediaLibraryTab",
+      "DemoAdminPage"
+    ],
+    "keywords": [
+      "status-refresh-loading",
+      "đang làm mới dữ liệu",
+      "status-feedback",
+      "refresh-cw",
+      "đang",
+      "làm",
+      "mới",
+      "liệu"
+    ]
+  },
+  {
+    "name": "ui-undo-rotate",
+    "category": "shared",
+    "label": "Khôi phục mặc định",
+    "description": "Nút hoàn tác thiết lập ban đầu",
+    "file": "/assets/icons/shared/ui-undo-rotate.svg",
+    "usedIn": [
+      "ConfirmationModal",
+      "AppearanceTab",
+      "AuditLogTab",
+      "BackupRestoreTab",
+      "BannerTopHeaderTab",
+      "HeroBannersTab",
+      "HomepageSectionsTab",
+      "PageBannersTab",
+      "SpecialtiesTab",
+      "PolicyPage",
+      "ProductDetailPage"
+    ],
+    "keywords": [
+      "ui-undo-rotate",
+      "khôi phục mặc định",
+      "shared",
+      "rotate-ccw",
+      "khôi",
+      "phục",
+      "mặc",
+      "định"
+    ]
+  },
+  {
+    "name": "ui-dimension-ruler",
+    "category": "shared",
+    "label": "Kích thước căn chỉnh",
+    "description": "Thước đo tỷ lệ banner và khoảng cách",
+    "file": "/assets/icons/shared/ui-dimension-ruler.svg",
+    "usedIn": [
+      "AdminSidebar"
+    ],
+    "keywords": [
+      "ui-dimension-ruler",
+      "kích thước căn chỉnh",
+      "shared",
+      "ruler",
+      "kích",
+      "thước",
+      "căn",
+      "chỉnh"
+    ]
+  },
+  {
+    "name": "system-save",
+    "category": "shared",
+    "label": "Lưu thay đổi",
+    "description": "Nút lưu thiết lập xuống cơ sở dữ liệu",
+    "file": "/assets/icons/shared/system-save.svg",
+    "usedIn": [
+      "AppearanceTab",
+      "BannerTopHeaderTab",
+      "BrandingIdentityTab",
+      "HomepageSectionsTab",
+      "LegalInfoTab",
+      "PageBannersTab"
+    ],
+    "keywords": [
+      "system-save",
+      "lưu thay đổi",
+      "shared",
+      "save",
+      "lưu",
+      "thay",
+      "đổi"
+    ]
+  },
+  {
+    "name": "medical-clinical-scale",
+    "category": "medical-clinic",
+    "label": "Cân bằng điều trị & Pháp lý",
+    "description": "Biểu tượng tính minh bạch và y đức",
+    "file": "/assets/icons/medical-clinic/medical-clinical-scale.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "LegalInfoTab"
+    ],
+    "keywords": [
+      "medical-clinical-scale",
+      "cân bằng điều trị & pháp lý",
+      "medical-clinic",
+      "scale",
+      "cân",
+      "bằng",
+      "điều",
+      "trị",
+      "pháp"
+    ]
+  },
+  {
+    "name": "ui-scissors-trim",
+    "category": "shared",
+    "label": "Cắt chỉnh ảnh",
+    "description": "Công cụ cắt ghép ảnh trước sau",
+    "file": "/assets/icons/shared/ui-scissors-trim.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "DashboardOverviewTab",
+      "ServicesTab"
+    ],
+    "keywords": [
+      "ui-scissors-trim",
+      "cắt chỉnh ảnh",
+      "shared",
+      "scissors",
+      "cắt",
+      "chỉnh",
+      "ảnh"
+    ]
+  },
+  {
+    "name": "navigation-search",
+    "category": "ui-navigation",
+    "label": "Kính lúp tìm kiếm",
+    "description": "Tìm kiếm dịch vụ, bác sĩ, mỹ phẩm",
+    "file": "/assets/icons/ui-navigation/navigation-search.svg",
+    "usedIn": [
+      "AdminHeader",
+      "AdminSidebar",
+      "IconPickerModal",
+      "MediaLibraryModal",
+      "ArticlesTab",
+      "AuditLogTab",
+      "BannerTopHeaderTab",
+      "BrandingIdentityTab",
+      "CaseStudiesTab",
+      "DoctorsTab",
+      "LeadsTab",
+      "MediaLibraryTab",
+      "ProductsTab",
+      "ServicesTab",
+      "SpecialtiesTab",
+      "TechnologiesTab",
+      "DynamicIcon",
+      "SearchBar",
+      "CosmeceuticalsPage",
+      "FAQPage",
+      "NewsListPage",
+      "NotFoundPage",
+      "SearchPage"
+    ],
+    "keywords": [
+      "navigation-search",
+      "kính lúp tìm kiếm",
+      "ui-navigation",
+      "search",
+      "kính",
+      "lúp",
+      "tìm",
+      "kiếm"
+    ]
+  },
+  {
+    "name": "navigation-send-message",
+    "category": "ui-navigation",
+    "label": "Gửi thông tin liên hệ",
+    "description": "Nút gửi biểu mẫu đăng ký khám",
+    "file": "/assets/icons/ui-navigation/navigation-send-message.svg",
+    "usedIn": [
+      "ContactPage"
+    ],
+    "keywords": [
+      "navigation-send-message",
+      "gửi thông tin liên hệ",
+      "ui-navigation",
+      "send",
+      "gửi",
+      "thông",
+      "tin",
+      "liên"
+    ]
+  },
+  {
+    "name": "system-server-node",
+    "category": "shared",
+    "label": "Máy chủ lưu trữ",
+    "description": "Trạng thái vận hành máy chủ",
+    "file": "/assets/icons/shared/system-server-node.svg",
+    "usedIn": [
+      "BackupRestoreTab"
+    ],
+    "keywords": [
+      "system-server-node",
+      "máy chủ lưu trữ",
+      "shared",
+      "server",
+      "máy",
+      "chủ",
+      "lưu",
+      "trữ"
+    ]
+  },
+  {
+    "name": "shared-settings",
+    "category": "shared",
+    "label": "Cài đặt hệ thống",
+    "description": "Bánh răng cấu hình trang web CMS",
+    "file": "/assets/icons/shared/shared-settings.svg",
+    "usedIn": [
+      "DynamicIcon",
+      "HeaderActions",
+      "HeaderTopbar",
+      "MainNavigation"
+    ],
+    "keywords": [
+      "shared-settings",
+      "cài đặt hệ thống",
+      "shared",
+      "settings",
+      "cài",
+      "đặt",
+      "thống"
+    ]
+  },
+  {
+    "name": "shared-settings-advanced",
+    "category": "shared",
+    "label": "Cài đặt nâng cao",
+    "description": "Tùy biến tham số chuyên sâu",
+    "file": "/assets/icons/shared/shared-settings-advanced.svg",
+    "usedIn": [
+      "SpecialtiesTab"
+    ],
+    "keywords": [
+      "shared-settings-advanced",
+      "cài đặt nâng cao",
+      "shared",
+      "settings2",
+      "cài",
+      "đặt",
+      "nâng",
+      "cao"
+    ]
+  },
+  {
+    "name": "navigation-share-alt",
+    "category": "ui-navigation",
+    "label": "Chia sẻ bài viết",
+    "description": "Nút chia sẻ nhanh nội dung",
+    "file": "/assets/icons/ui-navigation/navigation-share-alt.svg",
+    "usedIn": [
+      "BrandingIdentityTab"
+    ],
+    "keywords": [
+      "navigation-share-alt",
+      "chia sẻ bài viết",
+      "ui-navigation",
+      "share",
+      "chia",
+      "bài",
+      "viết"
+    ]
+  },
+  {
+    "name": "navigation-share",
+    "category": "ui-navigation",
+    "label": "Chia sẻ liên kết mạng",
+    "description": "Chia sẻ phác đồ điều trị",
+    "file": "/assets/icons/ui-navigation/navigation-share.svg",
+    "usedIn": [
+      "BrandingIdentityTab",
+      "NewsDetailPage",
+      "ProductDetailPage"
+    ],
+    "keywords": [
+      "navigation-share",
+      "chia sẻ liên kết mạng",
+      "ui-navigation",
+      "share2",
+      "chia",
+      "liên",
+      "kết",
+      "mạng"
+    ]
+  },
+  {
+    "name": "dermatology-acne-care",
+    "category": "dermatology-services",
+    "label": "Đặc trị mụn kháng trị",
+    "description": "Phác đồ điều trị mụn viêm, mụn ẩn chuyên sâu",
+    "file": "/assets/icons/dermatology-services/dermatology-acne-care.svg",
+    "usedIn": [
+      "FeaturedServicesSection",
+      "LegalInfoTab",
+      "DynamicIcon",
+      "MainNavigation",
+      "categories",
+      "services",
+      "ContactPage",
+      "ServiceDetailPage",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "dermatology-acne-care",
+      "đặc trị mụn kháng trị",
+      "dermatology-services",
+      "shield-alert",
+      "đặc",
+      "trị",
+      "mụn",
+      "kháng"
+    ]
+  },
+  {
+    "name": "medical-safety-shield",
+    "category": "medical-clinic",
+    "label": "Khiên an toàn chuẩn y khoa",
+    "description": "Cam kết vô trùng và an toàn tuyệt đối",
+    "file": "/assets/icons/medical-clinic/medical-safety-shield.svg",
+    "usedIn": [
+      "AppearanceTab",
+      "BackupRestoreTab",
+      "CaseStudiesTab",
+      "HomepageSectionsTab",
+      "TechnologiesTab",
+      "CartDrawer",
+      "DynamicIcon",
+      "AboutSummarySection",
+      "BeforeAfterSection",
+      "BrandsSection",
+      "FeaturedProductsSection",
+      "Footer",
+      "coreValues",
+      "AboutPage",
+      "BeforeAfterPage",
+      "BookingPage",
+      "BrandDetailPage",
+      "CosmeceuticalsPage",
+      "DoctorDetailPage",
+      "FacilitiesPage",
+      "FAQPage",
+      "LicensesPage",
+      "NewsDetailPage",
+      "PolicyPage",
+      "ProductDetailPage",
+      "SpecialtyDetailPage",
+      "TechnologiesListPage",
+      "TechnologyDetailPage",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "medical-safety-shield",
+      "khiên an toàn chuẩn y khoa",
+      "medical-clinic",
+      "shield-check",
+      "khiên",
+      "toàn",
+      "chuẩn",
+      "khoa"
+    ]
+  },
+  {
+    "name": "ui-security-shield",
+    "category": "shared",
+    "label": "Khiên bảo vệ thông tin",
+    "description": "Chính sách bảo mật thông tin bệnh nhân",
+    "file": "/assets/icons/shared/ui-security-shield.svg",
+    "usedIn": [
+      "HomepageSectionsTab",
+      "DynamicIcon",
+      "AboutSummarySection",
+      "siteConfig"
+    ],
+    "keywords": [
+      "ui-security-shield",
+      "khiên bảo vệ thông tin",
+      "shared",
+      "shield",
+      "khiên",
+      "bảo",
+      "thông",
+      "tin"
+    ]
+  },
+  {
+    "name": "brand-shopee",
+    "category": "brand",
+    "label": "Shopee Mall chính hãng",
+    "description": "Gian hàng dược mỹ phẩm Shopee Mall",
+    "file": "/assets/icons/brand/brand-shopee.svg",
+    "usedIn": [
+      "CmsAdmin"
+    ],
+    "keywords": [
+      "brand-shopee",
+      "shopee mall chính hãng",
+      "brand",
+      "shopee",
+      "mall",
+      "chính",
+      "hãng"
+    ]
+  },
+  {
+    "name": "pharmacy-shopping-bag",
+    "category": "pharmacy-products",
+    "label": "Giỏ hàng dược mỹ phẩm",
+    "description": "Túi mua sắm sản phẩm chăm sóc da",
+    "file": "/assets/icons/pharmacy-products/pharmacy-shopping-bag.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "BannerTopHeaderTab",
+      "DashboardOverviewTab",
+      "ProductsTab",
+      "CartDrawer",
+      "DynamicIcon",
+      "FeaturedProductsSection",
+      "HeaderActions",
+      "BrandDetailPage",
+      "CosmeceuticalsPage",
+      "ProductDetailPage",
+      "SearchPage",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "pharmacy-shopping-bag",
+      "giỏ hàng dược mỹ phẩm",
+      "pharmacy-products",
+      "shopping-bag",
+      "giỏ",
+      "hàng",
+      "dược",
+      "phẩm"
+    ]
+  },
+  {
+    "name": "system-sliders-controls",
+    "category": "shared",
+    "label": "Thanh trượt điều khiển",
+    "description": "Căn chỉnh độ sáng và độ mờ banner",
+    "file": "/assets/icons/shared/system-sliders-controls.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "AppearanceTab",
+      "BannerTopHeaderTab",
+      "BrandingIdentityTab",
+      "DashboardOverviewTab",
+      "HeroBannersTab",
+      "PageBannersTab",
+      "SpecialtiesTab"
+    ],
+    "keywords": [
+      "system-sliders-controls",
+      "thanh trượt điều khiển",
+      "shared",
+      "sliders",
+      "thanh",
+      "trượt",
+      "điều",
+      "khiển"
+    ]
+  },
+  {
+    "name": "ui-mobile-smartphone",
+    "category": "shared",
+    "label": "Chế độ xem điện thoại",
+    "description": "Xem trước giao diện responsive mobile",
+    "file": "/assets/icons/shared/ui-mobile-smartphone.svg",
+    "usedIn": [
+      "BannerTopHeaderTab",
+      "HeroBannersTab"
+    ],
+    "keywords": [
+      "ui-mobile-smartphone",
+      "chế độ xem điện thoại",
+      "shared",
+      "smartphone",
+      "chế",
+      "xem",
+      "điện",
+      "thoại"
+    ]
+  },
+  {
+    "name": "dermatology-laser-hair-removal",
+    "category": "dermatology-services",
+    "label": "Triệt lông Diode Laser",
+    "description": "Công nghệ Diode Laser làm mát sapphire",
+    "file": "/assets/icons/dermatology-services/dermatology-laser-hair-removal.svg",
+    "usedIn": [
+      "FeaturedServicesSection",
+      "DynamicIcon",
+      "MainNavigation",
+      "services",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "dermatology-laser-hair-removal",
+      "triệt lông diode laser",
+      "dermatology-services",
+      "sparkle",
+      "triệt",
+      "lông",
+      "diode",
+      "laser"
+    ]
+  },
+  {
+    "name": "dermatology-skin-facial",
+    "category": "dermatology-services",
+    "label": "Chăm sóc da & Trẻ hóa",
+    "description": "Phục hồi hàng rào sinh học và trẻ hóa da",
+    "file": "/assets/icons/dermatology-services/dermatology-skin-facial.svg",
+    "usedIn": [
+      "FeaturedServicesSection",
+      "AdminSidebar",
+      "IconPickerModal",
+      "MediaLibraryModal",
+      "AppearanceTab",
+      "BannerTopHeaderTab",
+      "BrandingIdentityTab",
+      "DashboardOverviewTab",
+      "HeroBannersTab",
+      "HomepageSectionsTab",
+      "MediaLibraryTab",
+      "PageBannersTab",
+      "ProductsTab",
+      "ServicesTab",
+      "SpecialtiesTab",
+      "DynamicIcon",
+      "PopupBanner",
+      "AboutSummarySection",
+      "BeforeAfterSection",
+      "FeaturedProductsSection",
+      "HeroSliderSection",
+      "TechnologiesSection",
+      "AnnouncementBar",
+      "MainNavigation",
+      "SearchBar",
+      "categories",
+      "specialties",
+      "AboutPage",
+      "BrandDetailPage",
+      "ProductDetailPage",
+      "SearchPage",
+      "SpecialtyDetailPage"
+    ],
+    "keywords": [
+      "dermatology-skin-facial",
+      "chăm sóc da & trẻ hóa",
+      "dermatology-services",
+      "sparkles",
+      "chăm",
+      "sóc",
+      "trẻ",
+      "hóa"
+    ]
+  },
+  {
+    "name": "pharmacy-quality-star",
+    "category": "pharmacy-products",
+    "label": "Đánh giá chất lượng 5 sao",
+    "description": "Đánh giá uy tín từ khách hàng",
+    "file": "/assets/icons/pharmacy-products/pharmacy-quality-star.svg",
+    "usedIn": [
+      "ArticlesTab",
+      "ProductsTab",
+      "DynamicIcon",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "pharmacy-quality-star",
+      "đánh giá chất lượng 5 sao",
+      "pharmacy-products",
+      "star",
+      "đánh",
+      "giá",
+      "chất",
+      "lượng",
+      "sao"
+    ]
+  },
+  {
+    "name": "medical-stethoscope",
+    "category": "medical-clinic",
+    "label": "Ống nghe y khoa bác sĩ",
+    "description": "Thăm khám lâm sàng chuyên khoa Da liễu",
+    "file": "/assets/icons/medical-clinic/medical-stethoscope.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "HomepageSectionsTab",
+      "SpecialtiesTab",
+      "DynamicIcon",
+      "AboutSummarySection",
+      "NewsTabsSection",
+      "MainNavigation",
+      "specialties",
+      "AboutPage",
+      "BookingPage",
+      "NotFoundPage",
+      "SearchPage",
+      "ServiceDetailPage",
+      "ServicesListPage",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "medical-stethoscope",
+      "ống nghe y khoa bác sĩ",
+      "medical-clinic",
+      "stethoscope",
+      "ống",
+      "nghe",
+      "khoa",
+      "bác"
+    ]
+  },
+  {
+    "name": "dermatology-pigment-sun",
+    "category": "dermatology-services",
+    "label": "Trị nám & Tàn nhang",
+    "description": "Điều trị rối loạn sắc tố và làm đều màu da",
+    "file": "/assets/icons/dermatology-services/dermatology-pigment-sun.svg",
+    "usedIn": [
+      "FeaturedServicesSection",
+      "DynamicIcon",
+      "MainNavigation",
+      "categories",
+      "services",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "dermatology-pigment-sun",
+      "trị nám & tàn nhang",
+      "dermatology-services",
+      "sun-medium",
+      "trị",
+      "nám",
+      "tàn",
+      "nhang"
+    ]
+  },
+  {
+    "name": "ui-weather-sun",
+    "category": "shared",
+    "label": "Chống nắng & Ánh sáng",
+    "description": "Bảo vệ quang phổ rộng chống tia UV",
+    "file": "/assets/icons/shared/ui-weather-sun.svg",
+    "usedIn": [
+      "DynamicIcon",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "ui-weather-sun",
+      "chống nắng & ánh sáng",
+      "shared",
+      "sun",
+      "chống",
+      "nắng",
+      "ánh",
+      "sáng"
+    ]
+  },
+  {
+    "name": "dermatology-meso-injection",
+    "category": "dermatology-services",
+    "label": "Thẩm mỹ nội khoa (Meso)",
+    "description": "Tiêm vi điểm trẻ hóa da và tiêm BAP",
+    "file": "/assets/icons/dermatology-services/dermatology-meso-injection.svg",
+    "usedIn": [
+      "FeaturedServicesSection",
+      "DynamicIcon",
+      "MainNavigation",
+      "services",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "dermatology-meso-injection",
+      "thẩm mỹ nội khoa (meso)",
+      "dermatology-services",
+      "syringe",
+      "thẩm",
+      "nội",
+      "khoa",
+      "(meso)"
+    ]
+  },
+  {
+    "name": "pharmacy-product-tag",
+    "category": "pharmacy-products",
+    "label": "Nhãn thương hiệu chính hãng",
+    "description": "Phân loại thương hiệu Bioderma, Biotrade",
+    "file": "/assets/icons/pharmacy-products/pharmacy-product-tag.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "HomepageSectionsTab",
+      "ProductsTab",
+      "DynamicIcon",
+      "SearchBar",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "pharmacy-product-tag",
+      "nhãn thương hiệu chính hãng",
+      "pharmacy-products",
+      "tag",
+      "nhãn",
+      "thương",
+      "hiệu",
+      "chính",
+      "hãng"
+    ]
+  },
+  {
+    "name": "brand-tiktok",
+    "category": "brand",
+    "label": "Kênh TikTok LBC",
+    "description": "Video ngắn chia sẻ kiến thức da liễu",
+    "file": "/assets/icons/brand/brand-tiktok.svg",
+    "usedIn": [
+      "CmsAdmin"
+    ],
+    "keywords": [
+      "brand-tiktok",
+      "kênh tiktok lbc",
+      "brand",
+      "tiktok",
+      "kênh",
+      "lbc"
+    ]
+  },
+  {
+    "name": "shared-trash",
+    "category": "shared",
+    "label": "Xóa dữ liệu (Thùng rác)",
+    "description": "Xóa mục khỏi hệ thống CMS",
+    "file": "/assets/icons/shared/shared-trash.svg",
+    "usedIn": [
+      "ConfirmationModal",
+      "MediaLibraryModal",
+      "ArticlesTab",
+      "AuditLogTab",
+      "BannerTopHeaderTab",
+      "BrandingIdentityTab",
+      "CaseStudiesTab",
+      "DoctorsTab",
+      "HeroBannersTab",
+      "HomepageSectionsTab",
+      "LeadsTab",
+      "LocationsTab",
+      "MediaLibraryTab",
+      "NavigationTab",
+      "ProductsTab",
+      "ServicesTab",
+      "SpecialtiesTab",
+      "TechnologiesTab",
+      "CartDrawer",
+      "DemoAdminPage"
+    ],
+    "keywords": [
+      "shared-trash",
+      "xóa dữ liệu (thùng rác)",
+      "shared",
+      "trash2",
+      "xóa",
+      "liệu",
+      "(thùng",
+      "rác)"
+    ]
+  },
+  {
+    "name": "ui-delivery-truck",
+    "category": "shared",
+    "label": "Giao hàng tận nơi",
+    "description": "Chính sách vận chuyển dược mỹ phẩm",
+    "file": "/assets/icons/shared/ui-delivery-truck.svg",
+    "usedIn": [
+      "CustomerUtilitiesSection",
+      "PolicyPage",
+      "ProductDetailPage"
+    ],
+    "keywords": [
+      "ui-delivery-truck",
+      "giao hàng tận nơi",
+      "shared",
+      "truck",
+      "giao",
+      "hàng",
+      "tận",
+      "nơi"
+    ]
+  },
+  {
+    "name": "shared-typography",
+    "category": "shared",
+    "label": "Định dạng chữ",
+    "description": "Kiểu chữ và cỡ chữ trong CMS",
+    "file": "/assets/icons/shared/shared-typography.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "AppearanceTab",
+      "BrandingIdentityTab"
+    ],
+    "keywords": [
+      "shared-typography",
+      "định dạng chữ",
+      "shared",
+      "type",
+      "định",
+      "dạng",
+      "chữ"
+    ]
+  },
+  {
+    "name": "shared-upload",
+    "category": "shared",
+    "label": "Tải tệp tin lên",
+    "description": "Tải ảnh hoặc tài liệu lên thư viện media",
+    "file": "/assets/icons/shared/shared-upload.svg",
+    "usedIn": [
+      "IconPickerModal",
+      "MediaLibraryModal",
+      "AppearanceTab",
+      "BackupRestoreTab",
+      "BannerTopHeaderTab",
+      "BrandingIdentityTab",
+      "MediaLibraryTab"
+    ],
+    "keywords": [
+      "shared-upload",
+      "tải tệp tin lên",
+      "shared",
+      "upload",
+      "tải",
+      "tệp",
+      "tin",
+      "lên"
+    ]
+  },
+  {
+    "name": "doctors-verification-check",
+    "category": "doctors-team",
+    "label": "Bác sĩ đã xác minh",
+    "description": "Hồ sơ bác sĩ đã được thẩm định chứng chỉ",
+    "file": "/assets/icons/doctors-team/doctors-verification-check.svg",
+    "usedIn": [
+      "ServicesTab",
+      "LicensesPage",
+      "NewsDetailPage",
+      "NewsListPage",
+      "SpecialtyDetailPage"
+    ],
+    "keywords": [
+      "doctors-verification-check",
+      "bác sĩ đã xác minh",
+      "doctors-team",
+      "user-check",
+      "bác",
+      "xác",
+      "minh"
+    ]
+  },
+  {
+    "name": "ui-user-register",
+    "category": "shared",
+    "label": "Thêm thành viên mới",
+    "description": "Đăng ký tài khoản khách hàng / kỹ thuật viên",
+    "file": "/assets/icons/shared/ui-user-register.svg",
+    "usedIn": [
+      "HeaderActions"
+    ],
+    "keywords": [
+      "ui-user-register",
+      "thêm thành viên mới",
+      "shared",
+      "user-plus",
+      "thêm",
+      "thành",
+      "viên",
+      "mới"
+    ]
+  },
+  {
+    "name": "doctors-specialist",
+    "category": "doctors-team",
+    "label": "Bác sĩ chuyên khoa",
+    "description": "Hồ sơ cá nhân bác sĩ điều trị",
+    "file": "/assets/icons/doctors-team/doctors-specialist.svg",
+    "usedIn": [
+      "ArticlesTab",
+      "AuditLogTab",
+      "BannerTopHeaderTab",
+      "LeadsTab",
+      "DynamicIcon",
+      "NewsTabsSection",
+      "HeaderActions",
+      "BookingPage",
+      "NewsDetailPage",
+      "SearchPage"
+    ],
+    "keywords": [
+      "doctors-specialist",
+      "bác sĩ chuyên khoa",
+      "doctors-team",
+      "user",
+      "bác",
+      "chuyên",
+      "khoa"
+    ]
+  },
+  {
+    "name": "doctors-team-users",
+    "category": "doctors-team",
+    "label": "Hội đồng bác sĩ LBC",
+    "description": "Đội ngũ chuyên gia và cố vấn chuyên môn",
+    "file": "/assets/icons/doctors-team/doctors-team-users.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "DashboardOverviewTab",
+      "DoctorsTab"
+    ],
+    "keywords": [
+      "doctors-team-users",
+      "hội đồng bác sĩ lbc",
+      "doctors-team",
+      "users",
+      "hội",
+      "đồng",
+      "bác",
+      "lbc"
+    ]
+  },
+  {
+    "name": "navigation-close-x",
+    "category": "ui-navigation",
+    "label": "Nút đóng cửa sổ (X)",
+    "description": "Đóng modal popup và thông báo",
+    "file": "/assets/icons/ui-navigation/navigation-close-x.svg",
+    "usedIn": [
+      "AdminSidebar",
+      "ConfirmationModal",
+      "IconPickerModal",
+      "MediaLibraryModal",
+      "CartDrawer",
+      "DynamicIcon",
+      "PopupBanner",
+      "FloatingContact",
+      "HeaderActions",
+      "MainNavigation",
+      "SearchBar"
+    ],
+    "keywords": [
+      "navigation-close-x",
+      "nút đóng cửa sổ (x)",
+      "ui-navigation",
+      "x",
+      "nút",
+      "đóng",
+      "cửa",
+      "(x)"
+    ]
+  },
+  {
+    "name": "brand-youtube",
+    "category": "brand",
+    "label": "Kênh YouTube chính thức",
+    "description": "Video bài giảng và quy trình điều trị",
+    "file": "/assets/icons/brand/brand-youtube.svg",
+    "usedIn": [
+      "CmsAdmin"
+    ],
+    "keywords": [
+      "brand-youtube",
+      "kênh youtube chính thức",
+      "brand",
+      "youtube",
+      "kênh",
+      "chính",
+      "thức"
+    ]
+  },
+  {
+    "name": "brand-zalo",
+    "category": "brand",
+    "label": "Zalo Official Account",
+    "description": "Tư vấn trực tiếp qua Zalo OA phòng khám",
+    "file": "/assets/icons/brand/brand-zalo.svg",
+    "usedIn": [
+      "CmsAdmin"
+    ],
+    "keywords": [
+      "brand-zalo",
+      "zalo official account",
+      "brand",
+      "zalo",
+      "official",
+      "account"
+    ]
+  },
+  {
+    "name": "dermatology-lifting-contour",
+    "category": "dermatology-services",
+    "label": "Nâng cơ RF Jovena & HIFU",
+    "description": "Nâng cơ trẻ hóa da viền hàm công nghệ cao",
+    "file": "/assets/icons/dermatology-services/dermatology-lifting-contour.svg",
+    "usedIn": [
+      "FeaturedServicesSection",
+      "DynamicIcon",
+      "MainNavigation",
+      "services",
+      "IconPickerModal"
+    ],
+    "keywords": [
+      "dermatology-lifting-contour",
+      "nâng cơ rf jovena & hifu",
+      "dermatology-services",
+      "zap",
+      "nâng",
+      "jovena",
+      "hifu"
+    ]
+  },
+  {
+    "name": "specialties-dermatology",
+    "category": "specialties",
+    "label": "Khoa Da liễu",
+    "description": "Chuyên khoa mũi nhọn chẩn đoán và điều trị bệnh lý da",
+    "file": "/assets/icons/specialties/specialties-dermatology.svg",
+    "usedIn": [
+      "EcosystemSpecialtiesSection",
+      "SpecialtiesTab"
+    ],
+    "keywords": [
+      "specialties-dermatology",
+      "khoa da liễu",
+      "specialties",
+      "chuyên khoa",
+      "hệ sinh thái",
+      "lbc"
+    ]
+  },
+  {
+    "name": "specialties-laboratory",
+    "category": "specialties",
+    "label": "Khoa Xét nghiệm",
+    "description": "Khoa xét nghiệm vi sinh, soi tươi Demodex và nấm da",
+    "file": "/assets/icons/specialties/specialties-laboratory.svg",
+    "usedIn": [
+      "EcosystemSpecialtiesSection",
+      "SpecialtiesTab"
+    ],
+    "keywords": [
+      "specialties-laboratory",
+      "khoa xét nghiệm",
+      "specialties",
+      "chuyên khoa",
+      "hệ sinh thái",
+      "lbc"
+    ]
+  },
+  {
+    "name": "specialties-pharmacy",
+    "category": "specialties",
+    "label": "Nhà thuốc chuẩn GPP",
+    "description": "Nhà thuốc chuyên khoa cung cấp thuốc da liễu chuẩn GPP",
+    "file": "/assets/icons/specialties/specialties-pharmacy.svg",
+    "usedIn": [
+      "EcosystemSpecialtiesSection",
+      "SpecialtiesTab"
+    ],
+    "keywords": [
+      "specialties-pharmacy",
+      "nhà thuốc chuẩn gpp",
+      "specialties",
+      "chuyên khoa",
+      "hệ sinh thái",
+      "lbc"
+    ]
+  },
+  {
+    "name": "specialties-cosmeceuticals",
+    "category": "specialties",
+    "label": "Dược – Mỹ phẩm chính ngạch",
+    "description": "Phân phối dược mỹ phẩm nhập khẩu chính hãng từ châu Âu",
+    "file": "/assets/icons/specialties/specialties-cosmeceuticals.svg",
+    "usedIn": [
+      "EcosystemSpecialtiesSection",
+      "SpecialtiesTab"
+    ],
+    "keywords": [
+      "specialties-cosmeceuticals",
+      "dược – mỹ phẩm chính ngạch",
+      "specialties",
+      "chuyên khoa",
+      "hệ sinh thái",
+      "lbc"
+    ]
+  },
+  {
+    "name": "specialties-academy",
+    "category": "specialties",
+    "label": "Đào tạo nghề – LBC Academy",
+    "description": "Học viện đào tạo kỹ thuật viên spa và chăm sóc da chuẩn y khoa",
+    "file": "/assets/icons/specialties/specialties-academy.svg",
+    "usedIn": [
+      "EcosystemSpecialtiesSection",
+      "SpecialtiesTab"
+    ],
+    "keywords": [
+      "specialties-academy",
+      "đào tạo nghề – lbc academy",
+      "specialties",
+      "chuyên khoa",
+      "hệ sinh thái",
+      "lbc"
+    ]
+  }
+]

@@ -1,0 +1,2405 @@
+{
+  "totalIcons": 148,
+  "similarGroups": [
+    {
+      "group": "Check / Success",
+      "icons": [
+        "check.svg",
+        "check-circle2.svg",
+        "file-check.svg"
+      ]
+    },
+    {
+      "group": "Alert / Warning",
+      "icons": [
+        "alert-circle.svg",
+        "alert-triangle.svg",
+        "shield-alert.svg"
+      ]
+    },
+    {
+      "group": "Shield / Security",
+      "icons": [
+        "shield.svg",
+        "shield-check.svg",
+        "shield-alert.svg"
+      ]
+    },
+    {
+      "group": "Sun / Radiance",
+      "icons": [
+        "sun.svg",
+        "sun-medium.svg"
+      ]
+    },
+    {
+      "group": "Sparkle / Laser / Glow",
+      "icons": [
+        "sparkle.svg",
+        "sparkles.svg"
+      ]
+    },
+    {
+      "group": "Calendar / Booking",
+      "icons": [
+        "calendar.svg",
+        "calendar-check.svg",
+        "calendar-check2.svg"
+      ]
+    },
+    {
+      "group": "Arrows / Directions",
+      "icons": [
+        "arrow-up.svg",
+        "chevron-up.svg",
+        "chevrons-up.svg",
+        "arrow-up-circle.svg",
+        "move-up.svg",
+        "arrow-right.svg",
+        "arrow-up-right.svg"
+      ]
+    },
+    {
+      "group": "Phone / Contact",
+      "icons": [
+        "phone.svg",
+        "phone-call.svg"
+      ]
+    },
+    {
+      "group": "User / Identity",
+      "icons": [
+        "user.svg",
+        "user-check.svg",
+        "user-plus.svg",
+        "users.svg"
+      ]
+    },
+    {
+      "group": "Building / Organization",
+      "icons": [
+        "building.svg",
+        "building2.svg"
+      ]
+    },
+    {
+      "group": "Settings / Configuration",
+      "icons": [
+        "settings.svg",
+        "settings2.svg"
+      ]
+    },
+    {
+      "group": "Edit / Authoring",
+      "icons": [
+        "edit.svg",
+        "edit3.svg"
+      ]
+    },
+    {
+      "group": "Share / Social",
+      "icons": [
+        "share.svg",
+        "share2.svg"
+      ]
+    },
+    {
+      "group": "Visibility / Toggle",
+      "icons": [
+        "eye.svg",
+        "eye-off.svg"
+      ]
+    },
+    {
+      "group": "Droplet / Liquid",
+      "icons": [
+        "droplet.svg",
+        "droplets.svg"
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "file": "activity.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 5,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/components/layout/SearchBar.tsx",
+        "src/data/services.ts",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "alert-circle.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 18,
+      "filesUsed": [
+        "src/components/admin/IconPickerModal.tsx",
+        "src/components/admin/MediaLibraryModal.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/ServicesTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx",
+        "src/components/common/CartDrawer.tsx",
+        "src/components/home/BeforeAfterSection.tsx",
+        "src/pages/BeforeAfterPage.tsx",
+        "src/pages/BookingPage.tsx",
+        "src/pages/CosmeceuticalsPage.tsx",
+        "src/pages/DoctorDetailPage.tsx",
+        "src/pages/LicensesPage.tsx",
+        "src/pages/ProductDetailPage.tsx",
+        "src/pages/ServiceDetailPage.tsx",
+        "src/pages/TechnologiesListPage.tsx",
+        "src/pages/TechnologyDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "alert-triangle.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 11,
+      "filesUsed": [
+        "src/components/admin/ConfirmationModal.tsx",
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/AuditLogTab.tsx",
+        "src/components/admin/tabs/BackupRestoreTab.tsx",
+        "src/components/admin/tabs/CaseStudiesTab.tsx",
+        "src/components/admin/tabs/DashboardOverviewTab.tsx",
+        "src/components/admin/tabs/DoctorsTab.tsx",
+        "src/components/admin/tabs/LeadsTab.tsx",
+        "src/components/admin/tabs/LegalInfoTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx",
+        "src/pages/DemoAdminPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "align-center.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/SpecialtiesTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "align-justify.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/SpecialtiesTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "align-left.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/SpecialtiesTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "arrow-down.svg",
+      "scope": "Admin CMS",
+      "usageCount": 5,
+      "filesUsed": [
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/NavigationTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "arrow-right.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 39,
+      "filesUsed": [
+        "src/components/admin/tabs/DashboardOverviewTab.tsx",
+        "src/components/admin/tabs/PageBannersTab.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx",
+        "src/components/common/CartDrawer.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/common/PageHeroBanner.tsx",
+        "src/components/common/PopupBanner.tsx",
+        "src/components/home/AboutSummarySection.tsx",
+        "src/components/home/BeforeAfterSection.tsx",
+        "src/components/home/BrandsSection.tsx",
+        "src/components/home/CustomerUtilitiesSection.tsx",
+        "src/components/home/DoctorsSection.tsx",
+        "src/components/home/EcosystemSpecialtiesSection.tsx",
+        "src/components/home/FeaturedProductsSection.tsx",
+        "src/components/home/FeaturedServicesSection.tsx",
+        "src/components/home/HeroSliderSection.tsx",
+        "src/components/home/NewsTabsSection.tsx",
+        "src/components/home/TechnologiesSection.tsx",
+        "src/components/layout/SearchBar.tsx",
+        "src/pages/AboutPage.tsx",
+        "src/pages/BeforeAfterPage.tsx",
+        "src/pages/BrandDetailPage.tsx",
+        "src/pages/CareersPage.tsx",
+        "src/pages/ContactPage.tsx",
+        "src/pages/CosmeceuticalsPage.tsx",
+        "src/pages/DoctorsListPage.tsx",
+        "src/pages/NewsDetailPage.tsx",
+        "src/pages/NewsListPage.tsx",
+        "src/pages/NotFoundPage.tsx",
+        "src/pages/PolicyPage.tsx",
+        "src/pages/ProductDetailPage.tsx",
+        "src/pages/SearchPage.tsx",
+        "src/pages/ServiceDetailPage.tsx",
+        "src/pages/ServicesListPage.tsx",
+        "src/pages/SpecialtyDetailPage.tsx",
+        "src/pages/TechnologiesListPage.tsx",
+        "src/pages/TechnologyDetailPage.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "arrow-up-circle.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "arrow-up-right.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 4,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/CoreValuesSection.tsx",
+        "src/components/layout/Footer.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "arrow-up.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 10,
+      "filesUsed": [
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/NavigationTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx",
+        "src/components/common/BackToTop.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/data/siteConfig.ts",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "award.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 10,
+      "filesUsed": [
+        "src/components/admin/tabs/DoctorsTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/AboutSummarySection.tsx",
+        "src/components/home/DoctorsSection.tsx",
+        "src/data/siteConfig.ts",
+        "src/pages/AboutPage.tsx",
+        "src/pages/DoctorDetailPage.tsx",
+        "src/pages/DoctorsListPage.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "bell.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/AdminHeader.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "bold.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/RichTextEditor.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "book-open.svg",
+      "scope": "Frontend",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/pages/NewsDetailPage.tsx",
+        "src/pages/NewsListPage.tsx",
+        "src/pages/SearchPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "box.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/AppearanceTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "briefcase.svg",
+      "scope": "Frontend",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/pages/CareersPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "building.svg",
+      "scope": "Frontend",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/pages/ContactPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "building2.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/pages/BrandDetailPage.tsx",
+        "src/pages/LicensesPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "calendar-check.svg",
+      "scope": "Frontend",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/home/FeaturedServicesSection.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "calendar-check2.svg",
+      "scope": "Admin CMS",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/DashboardOverviewTab.tsx",
+        "src/components/admin/tabs/LeadsTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "calendar.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 28,
+      "filesUsed": [
+        "src/components/admin/tabs/ArticlesTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/DoctorsTab.tsx",
+        "src/components/admin/tabs/LeadsTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/common/PageHeroBanner.tsx",
+        "src/components/home/CustomerUtilitiesSection.tsx",
+        "src/components/home/DoctorsSection.tsx",
+        "src/components/home/HeroSliderSection.tsx",
+        "src/components/home/NewsTabsSection.tsx",
+        "src/components/layout/FloatingContact.tsx",
+        "src/components/layout/HeaderActions.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/pages/AboutPage.tsx",
+        "src/pages/BeforeAfterPage.tsx",
+        "src/pages/BookingPage.tsx",
+        "src/pages/DoctorDetailPage.tsx",
+        "src/pages/DoctorsListPage.tsx",
+        "src/pages/FacilitiesPage.tsx",
+        "src/pages/FAQPage.tsx",
+        "src/pages/NewsDetailPage.tsx",
+        "src/pages/NewsListPage.tsx",
+        "src/pages/NotFoundPage.tsx",
+        "src/pages/ServiceDetailPage.tsx",
+        "src/pages/ServicesListPage.tsx",
+        "src/pages/SpecialtyDetailPage.tsx",
+        "src/pages/TechnologyDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "check-circle2.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 33,
+      "filesUsed": [
+        "src/components/admin/AdminHeader.tsx",
+        "src/components/admin/IconPickerModal.tsx",
+        "src/components/admin/MediaLibraryModal.tsx",
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/ArticlesTab.tsx",
+        "src/components/admin/tabs/AuditLogTab.tsx",
+        "src/components/admin/tabs/BackupRestoreTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/CaseStudiesTab.tsx",
+        "src/components/admin/tabs/DashboardOverviewTab.tsx",
+        "src/components/admin/tabs/DoctorsTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/LeadsTab.tsx",
+        "src/components/admin/tabs/LegalInfoTab.tsx",
+        "src/components/admin/tabs/LocationsTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx",
+        "src/components/admin/tabs/NavigationTab.tsx",
+        "src/components/admin/tabs/PageBannersTab.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/admin/tabs/ServicesTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx",
+        "src/components/admin/tabs/TechnologiesTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/AboutSummarySection.tsx",
+        "src/pages/BookingPage.tsx",
+        "src/pages/ContactPage.tsx",
+        "src/pages/DoctorDetailPage.tsx",
+        "src/pages/ProductDetailPage.tsx",
+        "src/pages/ServiceDetailPage.tsx",
+        "src/pages/ServicesListPage.tsx",
+        "src/pages/SpecialtyDetailPage.tsx",
+        "src/pages/TechnologyDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "check.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 8,
+      "filesUsed": [
+        "src/components/admin/IconPickerModal.tsx",
+        "src/components/admin/MediaLibraryModal.tsx",
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/BrandsSection.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "chevron-down.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 8,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/BranchSelector.tsx",
+        "src/components/layout/HeaderActions.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/pages/FAQPage.tsx",
+        "src/pages/ServiceDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "chevron-left.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/home/HeroSliderSection.tsx",
+        "src/components/home/TechnologiesSection.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "chevron-right.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 12,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/NavigationTab.tsx",
+        "src/components/admin/tabs/PageBannersTab.tsx",
+        "src/components/common/Breadcrumbs.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/common/PageHeroBanner.tsx",
+        "src/components/home/HeroSliderSection.tsx",
+        "src/components/home/TechnologiesSection.tsx",
+        "src/components/layout/AnnouncementBar.tsx",
+        "src/components/layout/MainNavigation.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "chevron-up.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/FloatingContact.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "chevrons-up.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "clipboard-list.svg",
+      "scope": "Frontend",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/layout/HeaderActions.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "clock.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 26,
+      "filesUsed": [
+        "src/components/admin/tabs/ArticlesTab.tsx",
+        "src/components/admin/tabs/AuditLogTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/DashboardOverviewTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx",
+        "src/components/admin/tabs/LeadsTab.tsx",
+        "src/components/admin/tabs/LocationsTab.tsx",
+        "src/components/admin/tabs/ServicesTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/NewsTabsSection.tsx",
+        "src/components/layout/BranchSelector.tsx",
+        "src/components/layout/Footer.tsx",
+        "src/components/layout/Header.tsx",
+        "src/components/layout/HeaderTopbar.tsx",
+        "src/pages/AboutPage.tsx",
+        "src/pages/BookingPage.tsx",
+        "src/pages/CareersPage.tsx",
+        "src/pages/ContactPage.tsx",
+        "src/pages/DoctorDetailPage.tsx",
+        "src/pages/DoctorsListPage.tsx",
+        "src/pages/FacilitiesPage.tsx",
+        "src/pages/NewsDetailPage.tsx",
+        "src/pages/NewsListPage.tsx",
+        "src/pages/ServiceDetailPage.tsx",
+        "src/pages/SpecialtyDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "code.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/RichTextEditor.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "copy.svg",
+      "scope": "Admin CMS",
+      "usageCount": 7,
+      "filesUsed": [
+        "src/components/admin/tabs/ArticlesTab.tsx",
+        "src/components/admin/tabs/BackupRestoreTab.tsx",
+        "src/components/admin/tabs/DoctorsTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/admin/tabs/ServicesTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "cpu.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 12,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/DashboardOverviewTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/TechnologiesTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/AboutSummarySection.tsx",
+        "src/data/coreValues.ts",
+        "src/pages/SearchPage.tsx",
+        "src/pages/ServiceDetailPage.tsx",
+        "src/pages/TechnologiesListPage.tsx",
+        "src/pages/TechnologyDetailPage.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "credit-card.svg",
+      "scope": "Frontend",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/pages/PolicyPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "database.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/BackupRestoreTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "dollar-sign.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 4,
+      "filesUsed": [
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/pages/CareersPage.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "download.svg",
+      "scope": "Admin CMS",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/admin/tabs/BackupRestoreTab.tsx",
+        "src/components/admin/tabs/LeadsTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "droplet.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "droplets.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/data/categories.ts",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "edit.svg",
+      "scope": "Admin CMS",
+      "usageCount": 11,
+      "filesUsed": [
+        "src/components/admin/tabs/ArticlesTab.tsx",
+        "src/components/admin/tabs/CaseStudiesTab.tsx",
+        "src/components/admin/tabs/DoctorsTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/LocationsTab.tsx",
+        "src/components/admin/tabs/NavigationTab.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/admin/tabs/ServicesTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx",
+        "src/components/admin/tabs/TechnologiesTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "edit3.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/RichTextEditor.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "external-link.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 20,
+      "filesUsed": [
+        "src/components/admin/AdminHeader.tsx",
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/MediaLibraryModal.tsx",
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/ArticlesTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/CaseStudiesTab.tsx",
+        "src/components/admin/tabs/DoctorsTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/LocationsTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx",
+        "src/components/admin/tabs/NavigationTab.tsx",
+        "src/components/admin/tabs/PageBannersTab.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/admin/tabs/ServicesTab.tsx",
+        "src/components/admin/tabs/TechnologiesTab.tsx",
+        "src/components/layout/BranchSelector.tsx",
+        "src/components/layout/Footer.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "eye-off.svg",
+      "scope": "Admin CMS",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/components/admin/tabs/HeroBannersTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/PageBannersTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "eye.svg",
+      "scope": "Admin CMS",
+      "usageCount": 9,
+      "filesUsed": [
+        "src/components/admin/RichTextEditor.tsx",
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/ArticlesTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/DashboardOverviewTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/PageBannersTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "facebook.svg",
+      "scope": "Admin CMS",
+      "usageCount": 0,
+      "filesUsed": [],
+      "viewBox": "0 0 24 24",
+      "isOutline": false,
+      "isMultiColor": true
+    },
+    {
+      "file": "fallback-clinic.svg",
+      "scope": "Admin CMS",
+      "usageCount": 0,
+      "filesUsed": [],
+      "viewBox": "0 0 800 500",
+      "isOutline": true,
+      "isMultiColor": true
+    },
+    {
+      "file": "feather.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 4,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/data/services.ts",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "file-check.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/LegalInfoTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "file-code.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/BackupRestoreTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "file-text.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 11,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/MediaLibraryModal.tsx",
+        "src/components/admin/tabs/ArticlesTab.tsx",
+        "src/components/admin/tabs/BackupRestoreTab.tsx",
+        "src/components/admin/tabs/DashboardOverviewTab.tsx",
+        "src/components/admin/tabs/ServicesTab.tsx",
+        "src/pages/BookingPage.tsx",
+        "src/pages/DoctorDetailPage.tsx",
+        "src/pages/LicensesPage.tsx",
+        "src/pages/PolicyPage.tsx",
+        "src/pages/SpecialtyDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "film.svg",
+      "scope": "Admin CMS",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/admin/MediaLibraryModal.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "filter.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 5,
+      "filesUsed": [
+        "src/components/admin/tabs/AuditLogTab.tsx",
+        "src/components/admin/tabs/DoctorsTab.tsx",
+        "src/components/admin/tabs/LeadsTab.tsx",
+        "src/pages/CosmeceuticalsPage.tsx",
+        "src/pages/SearchPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "fingerprint.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 5,
+      "filesUsed": [
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/AboutSummarySection.tsx",
+        "src/data/coreValues.ts",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "flame.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "flask-conical.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 4,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/data/specialties.ts",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "folder-tree.svg",
+      "scope": "Admin CMS",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "globe.svg",
+      "scope": "Admin CMS",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "graduation-cap.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 12,
+      "filesUsed": [
+        "src/components/admin/tabs/DoctorsTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/AboutSummarySection.tsx",
+        "src/components/home/DoctorsSection.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/data/coreValues.ts",
+        "src/data/specialties.ts",
+        "src/pages/DoctorDetailPage.tsx",
+        "src/pages/DoctorsListPage.tsx",
+        "src/pages/SpecialtyDetailPage.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "grid.svg",
+      "scope": "Admin CMS",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/admin/tabs/DoctorsTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "hard-drive-download.svg",
+      "scope": "Admin CMS",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/BackupRestoreTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "hard-drive.svg",
+      "scope": "Admin CMS",
+      "usageCount": 4,
+      "filesUsed": [
+        "src/components/admin/AdminHeader.tsx",
+        "src/components/admin/MediaLibraryModal.tsx",
+        "src/components/admin/tabs/DashboardOverviewTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "heading1.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/RichTextEditor.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "heading2.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/RichTextEditor.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "heart-handshake.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 9,
+      "filesUsed": [
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/AboutSummarySection.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/data/categories.ts",
+        "src/data/services.ts",
+        "src/data/siteConfig.ts",
+        "src/pages/AboutPage.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "heart-pulse.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "heart.svg",
+      "scope": "Frontend",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/layout/Footer.tsx",
+        "src/pages/ProductDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "help-circle.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 6,
+      "filesUsed": [
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/ServicesTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/CustomerUtilitiesSection.tsx",
+        "src/pages/FAQPage.tsx",
+        "src/pages/ServiceDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "history.svg",
+      "scope": "Admin CMS",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/AuditLogTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "home.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/common/Breadcrumbs.tsx",
+        "src/pages/NotFoundPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "image.svg",
+      "scope": "Admin CMS",
+      "usageCount": 19,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/IconPickerModal.tsx",
+        "src/components/admin/MediaLibraryModal.tsx",
+        "src/components/admin/RichTextEditor.tsx",
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/ArticlesTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/CaseStudiesTab.tsx",
+        "src/components/admin/tabs/DoctorsTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/LocationsTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx",
+        "src/components/admin/tabs/PageBannersTab.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/admin/tabs/ServicesTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx",
+        "src/components/admin/tabs/TechnologiesTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "info.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 5,
+      "filesUsed": [
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/LegalInfoTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx",
+        "src/components/admin/tabs/PageBannersTab.tsx",
+        "src/pages/ProductDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "italic.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/RichTextEditor.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "key.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/BackupRestoreTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "layers.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 10,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/CaseStudiesTab.tsx",
+        "src/components/admin/tabs/DashboardOverviewTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/NavigationTab.tsx",
+        "src/components/admin/tabs/PageBannersTab.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx",
+        "src/components/common/DynamicIcon.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "layout-dashboard.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "layout.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "link.svg",
+      "scope": "Admin CMS",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/components/admin/RichTextEditor.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/PageBannersTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "list-ordered.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/RichTextEditor.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "list.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 4,
+      "filesUsed": [
+        "src/components/admin/RichTextEditor.tsx",
+        "src/components/admin/tabs/DoctorsTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx",
+        "src/pages/NewsDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "lock.svg",
+      "scope": "Frontend",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/pages/PolicyPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "log-in.svg",
+      "scope": "Frontend",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/layout/HeaderActions.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "logo-emblem-medical-lotus.svg",
+      "scope": "Admin CMS",
+      "usageCount": 0,
+      "filesUsed": [],
+      "viewBox": "0 0 100 100",
+      "isOutline": true,
+      "isMultiColor": true
+    },
+    {
+      "file": "logo-lbc-color.svg",
+      "scope": "Admin CMS",
+      "usageCount": 0,
+      "filesUsed": [],
+      "viewBox": "0 0 420 100",
+      "isOutline": true,
+      "isMultiColor": true
+    },
+    {
+      "file": "logo-lbc-white.svg",
+      "scope": "Admin CMS",
+      "usageCount": 0,
+      "filesUsed": [],
+      "viewBox": "0 0 420 100",
+      "isOutline": true,
+      "isMultiColor": true
+    },
+    {
+      "file": "mail.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 5,
+      "filesUsed": [
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/LeadsTab.tsx",
+        "src/components/layout/Footer.tsx",
+        "src/pages/CareersPage.tsx",
+        "src/pages/ContactPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "map-pin.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 15,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/LocationsTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/CustomerUtilitiesSection.tsx",
+        "src/components/layout/BranchSelector.tsx",
+        "src/components/layout/FloatingContact.tsx",
+        "src/components/layout/Footer.tsx",
+        "src/pages/AboutPage.tsx",
+        "src/pages/BookingPage.tsx",
+        "src/pages/CareersPage.tsx",
+        "src/pages/ContactPage.tsx",
+        "src/pages/DoctorDetailPage.tsx",
+        "src/pages/FacilitiesPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "maximize2.svg",
+      "scope": "Admin CMS",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/AppearanceTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "megaphone.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "menu.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 6,
+      "filesUsed": [
+        "src/components/admin/AdminHeader.tsx",
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/NavigationTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/HeaderActions.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "message-circle.svg",
+      "scope": "Frontend",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/layout/FloatingContact.tsx",
+        "src/pages/FAQPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "messenger.svg",
+      "scope": "Admin CMS",
+      "usageCount": 0,
+      "filesUsed": [],
+      "viewBox": "0 0 24 24",
+      "isOutline": false,
+      "isMultiColor": true
+    },
+    {
+      "file": "microscope.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 4,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/data/services.ts",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "monitor.svg",
+      "scope": "Admin CMS",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "move-up.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "navigation.svg",
+      "scope": "Frontend",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/pages/FacilitiesPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "package.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "palette.svg",
+      "scope": "Admin CMS",
+      "usageCount": 5,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "panels-top-left.svg",
+      "scope": "Admin CMS",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/PageBannersTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "pause.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/HeroBannersTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "phone-call.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "phone.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 18,
+      "filesUsed": [
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/LeadsTab.tsx",
+        "src/components/admin/tabs/LocationsTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/BranchSelector.tsx",
+        "src/components/layout/FloatingContact.tsx",
+        "src/components/layout/Footer.tsx",
+        "src/components/layout/Header.tsx",
+        "src/components/layout/HeaderTopbar.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/pages/BookingPage.tsx",
+        "src/pages/ContactPage.tsx",
+        "src/pages/DoctorDetailPage.tsx",
+        "src/pages/FacilitiesPage.tsx",
+        "src/pages/FAQPage.tsx",
+        "src/pages/ServiceDetailPage.tsx",
+        "src/pages/SpecialtyDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "pill.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 4,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/data/specialties.ts",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "play.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/HeroBannersTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "plus-circle.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/DashboardOverviewTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "plus.svg",
+      "scope": "Admin CMS",
+      "usageCount": 14,
+      "filesUsed": [
+        "src/components/admin/AdminHeader.tsx",
+        "src/components/admin/tabs/ArticlesTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/CaseStudiesTab.tsx",
+        "src/components/admin/tabs/DoctorsTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/LocationsTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx",
+        "src/components/admin/tabs/NavigationTab.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/admin/tabs/ServicesTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx",
+        "src/components/admin/tabs/TechnologiesTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "quote.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/RichTextEditor.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "refresh-cw.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 5,
+      "filesUsed": [
+        "src/components/admin/AdminHeader.tsx",
+        "src/components/admin/MediaLibraryModal.tsx",
+        "src/components/admin/tabs/BackupRestoreTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx",
+        "src/pages/DemoAdminPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "rotate-ccw.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 11,
+      "filesUsed": [
+        "src/components/admin/ConfirmationModal.tsx",
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/AuditLogTab.tsx",
+        "src/components/admin/tabs/BackupRestoreTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/PageBannersTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx",
+        "src/pages/PolicyPage.tsx",
+        "src/pages/ProductDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "ruler.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "save.svg",
+      "scope": "Admin CMS",
+      "usageCount": 6,
+      "filesUsed": [
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/LegalInfoTab.tsx",
+        "src/components/admin/tabs/PageBannersTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "scale.svg",
+      "scope": "Admin CMS",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/LegalInfoTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "scissors.svg",
+      "scope": "Admin CMS",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/DashboardOverviewTab.tsx",
+        "src/components/admin/tabs/ServicesTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "search.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 23,
+      "filesUsed": [
+        "src/components/admin/AdminHeader.tsx",
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/IconPickerModal.tsx",
+        "src/components/admin/MediaLibraryModal.tsx",
+        "src/components/admin/tabs/ArticlesTab.tsx",
+        "src/components/admin/tabs/AuditLogTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/CaseStudiesTab.tsx",
+        "src/components/admin/tabs/DoctorsTab.tsx",
+        "src/components/admin/tabs/LeadsTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/admin/tabs/ServicesTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx",
+        "src/components/admin/tabs/TechnologiesTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/SearchBar.tsx",
+        "src/pages/CosmeceuticalsPage.tsx",
+        "src/pages/FAQPage.tsx",
+        "src/pages/NewsListPage.tsx",
+        "src/pages/NotFoundPage.tsx",
+        "src/pages/SearchPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "send.svg",
+      "scope": "Frontend",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/pages/ContactPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "server.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/BackupRestoreTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "settings.svg",
+      "scope": "Frontend",
+      "usageCount": 4,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/HeaderActions.tsx",
+        "src/components/layout/HeaderTopbar.tsx",
+        "src/components/layout/MainNavigation.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "settings2.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/SpecialtiesTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "share.svg",
+      "scope": "Admin CMS",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/admin/tabs/BrandingIdentityTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "share2.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/pages/NewsDetailPage.tsx",
+        "src/pages/ProductDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "shield-alert.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 8,
+      "filesUsed": [
+        "src/components/admin/tabs/LegalInfoTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/data/categories.ts",
+        "src/data/services.ts",
+        "src/pages/ContactPage.tsx",
+        "src/pages/ServiceDetailPage.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "shield-check.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 29,
+      "filesUsed": [
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/BackupRestoreTab.tsx",
+        "src/components/admin/tabs/CaseStudiesTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/TechnologiesTab.tsx",
+        "src/components/common/CartDrawer.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/AboutSummarySection.tsx",
+        "src/components/home/BeforeAfterSection.tsx",
+        "src/components/home/BrandsSection.tsx",
+        "src/components/home/FeaturedProductsSection.tsx",
+        "src/components/layout/Footer.tsx",
+        "src/data/coreValues.ts",
+        "src/pages/AboutPage.tsx",
+        "src/pages/BeforeAfterPage.tsx",
+        "src/pages/BookingPage.tsx",
+        "src/pages/BrandDetailPage.tsx",
+        "src/pages/CosmeceuticalsPage.tsx",
+        "src/pages/DoctorDetailPage.tsx",
+        "src/pages/FacilitiesPage.tsx",
+        "src/pages/FAQPage.tsx",
+        "src/pages/LicensesPage.tsx",
+        "src/pages/NewsDetailPage.tsx",
+        "src/pages/PolicyPage.tsx",
+        "src/pages/ProductDetailPage.tsx",
+        "src/pages/SpecialtyDetailPage.tsx",
+        "src/pages/TechnologiesListPage.tsx",
+        "src/pages/TechnologyDetailPage.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "shield.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 4,
+      "filesUsed": [
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/AboutSummarySection.tsx",
+        "src/data/siteConfig.ts"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "shopee.svg",
+      "scope": "Admin CMS",
+      "usageCount": 0,
+      "filesUsed": [],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": true
+    },
+    {
+      "file": "shopping-bag.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 13,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/DashboardOverviewTab.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/common/CartDrawer.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/FeaturedProductsSection.tsx",
+        "src/components/layout/HeaderActions.tsx",
+        "src/pages/BrandDetailPage.tsx",
+        "src/pages/CosmeceuticalsPage.tsx",
+        "src/pages/ProductDetailPage.tsx",
+        "src/pages/SearchPage.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "sliders.svg",
+      "scope": "Admin CMS",
+      "usageCount": 8,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/DashboardOverviewTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx",
+        "src/components/admin/tabs/PageBannersTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "smartphone.svg",
+      "scope": "Admin CMS",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "sparkle.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 4,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/data/services.ts",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "sparkles.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 31,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/IconPickerModal.tsx",
+        "src/components/admin/MediaLibraryModal.tsx",
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/DashboardOverviewTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx",
+        "src/components/admin/tabs/PageBannersTab.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/admin/tabs/ServicesTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/common/PopupBanner.tsx",
+        "src/components/home/AboutSummarySection.tsx",
+        "src/components/home/BeforeAfterSection.tsx",
+        "src/components/home/FeaturedProductsSection.tsx",
+        "src/components/home/HeroSliderSection.tsx",
+        "src/components/home/TechnologiesSection.tsx",
+        "src/components/layout/AnnouncementBar.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/components/layout/SearchBar.tsx",
+        "src/data/categories.ts",
+        "src/data/specialties.ts",
+        "src/pages/AboutPage.tsx",
+        "src/pages/BrandDetailPage.tsx",
+        "src/pages/ProductDetailPage.tsx",
+        "src/pages/SearchPage.tsx",
+        "src/pages/SpecialtyDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "star.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 4,
+      "filesUsed": [
+        "src/components/admin/tabs/ArticlesTab.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "stethoscope.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 15,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/AboutSummarySection.tsx",
+        "src/components/home/NewsTabsSection.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/data/specialties.ts",
+        "src/pages/AboutPage.tsx",
+        "src/pages/BookingPage.tsx",
+        "src/pages/NotFoundPage.tsx",
+        "src/pages/SearchPage.tsx",
+        "src/pages/ServiceDetailPage.tsx",
+        "src/pages/ServicesListPage.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "sun-medium.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 5,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/data/categories.ts",
+        "src/data/services.ts",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "sun.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 2,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "syringe.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 4,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/data/services.ts",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "tag.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 6,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/SearchBar.tsx",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "tiktok.svg",
+      "scope": "Admin CMS",
+      "usageCount": 0,
+      "filesUsed": [],
+      "viewBox": "0 0 24 24",
+      "isOutline": false,
+      "isMultiColor": true
+    },
+    {
+      "file": "trash2.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 20,
+      "filesUsed": [
+        "src/components/admin/ConfirmationModal.tsx",
+        "src/components/admin/MediaLibraryModal.tsx",
+        "src/components/admin/tabs/ArticlesTab.tsx",
+        "src/components/admin/tabs/AuditLogTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/CaseStudiesTab.tsx",
+        "src/components/admin/tabs/DoctorsTab.tsx",
+        "src/components/admin/tabs/HeroBannersTab.tsx",
+        "src/components/admin/tabs/HomepageSectionsTab.tsx",
+        "src/components/admin/tabs/LeadsTab.tsx",
+        "src/components/admin/tabs/LocationsTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx",
+        "src/components/admin/tabs/NavigationTab.tsx",
+        "src/components/admin/tabs/ProductsTab.tsx",
+        "src/components/admin/tabs/ServicesTab.tsx",
+        "src/components/admin/tabs/SpecialtiesTab.tsx",
+        "src/components/admin/tabs/TechnologiesTab.tsx",
+        "src/components/common/CartDrawer.tsx",
+        "src/pages/DemoAdminPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "truck.svg",
+      "scope": "Frontend",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/components/home/CustomerUtilitiesSection.tsx",
+        "src/pages/PolicyPage.tsx",
+        "src/pages/ProductDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "type.svg",
+      "scope": "Admin CMS",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "upload.svg",
+      "scope": "Admin CMS",
+      "usageCount": 7,
+      "filesUsed": [
+        "src/components/admin/IconPickerModal.tsx",
+        "src/components/admin/MediaLibraryModal.tsx",
+        "src/components/admin/tabs/AppearanceTab.tsx",
+        "src/components/admin/tabs/BackupRestoreTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/BrandingIdentityTab.tsx",
+        "src/components/admin/tabs/MediaLibraryTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "user-check.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 5,
+      "filesUsed": [
+        "src/components/admin/tabs/ServicesTab.tsx",
+        "src/pages/LicensesPage.tsx",
+        "src/pages/NewsDetailPage.tsx",
+        "src/pages/NewsListPage.tsx",
+        "src/pages/SpecialtyDetailPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "user-plus.svg",
+      "scope": "Frontend",
+      "usageCount": 1,
+      "filesUsed": [
+        "src/components/layout/HeaderActions.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "user.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 10,
+      "filesUsed": [
+        "src/components/admin/tabs/ArticlesTab.tsx",
+        "src/components/admin/tabs/AuditLogTab.tsx",
+        "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+        "src/components/admin/tabs/LeadsTab.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/home/NewsTabsSection.tsx",
+        "src/components/layout/HeaderActions.tsx",
+        "src/pages/BookingPage.tsx",
+        "src/pages/NewsDetailPage.tsx",
+        "src/pages/SearchPage.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "users.svg",
+      "scope": "Admin CMS",
+      "usageCount": 3,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/tabs/DashboardOverviewTab.tsx",
+        "src/components/admin/tabs/DoctorsTab.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "x.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 11,
+      "filesUsed": [
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/ConfirmationModal.tsx",
+        "src/components/admin/IconPickerModal.tsx",
+        "src/components/admin/MediaLibraryModal.tsx",
+        "src/components/common/CartDrawer.tsx",
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/common/PopupBanner.tsx",
+        "src/components/layout/FloatingContact.tsx",
+        "src/components/layout/HeaderActions.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/components/layout/SearchBar.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    },
+    {
+      "file": "youtube.svg",
+      "scope": "Admin CMS",
+      "usageCount": 0,
+      "filesUsed": [],
+      "viewBox": "0 0 24 24",
+      "isOutline": false,
+      "isMultiColor": true
+    },
+    {
+      "file": "zalo.svg",
+      "scope": "Admin CMS",
+      "usageCount": 0,
+      "filesUsed": [],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": true
+    },
+    {
+      "file": "zap.svg",
+      "scope": "Frontend & Admin",
+      "usageCount": 4,
+      "filesUsed": [
+        "src/components/common/DynamicIcon.tsx",
+        "src/components/layout/MainNavigation.tsx",
+        "src/data/services.ts",
+        "src/components/admin/IconPickerModal.tsx"
+      ],
+      "viewBox": "0 0 24 24",
+      "isOutline": true,
+      "isMultiColor": false
+    }
+  ]
+}

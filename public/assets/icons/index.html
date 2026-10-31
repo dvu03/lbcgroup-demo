@@ -1,0 +1,1804 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kho Thư Viện Icon Chuẩn Lạc's Beauty Center (LBC Assets)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0E7C86;
+      --primary-hover: #096068;
+      --primary-light: #EEF7F8;
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --border: #E2E8F0;
+      --text: #0F172A;
+      --text-muted: #64748B;
+    }
+    .dark-mode {
+      --primary: #14B8A6;
+      --primary-hover: #2DD4BF;
+      --primary-light: #134E4A;
+      --bg: #0F172A;
+      --surface: #1E293B;
+      --border: #334155;
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 60px;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .header {
+      background-color: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 4px 20px -5px rgba(0,0,0,0.05);
+    }
+    .container {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .title-area h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 24px;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .title-area p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn {
+      padding: 8px 16px;
+      border-radius: 9999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s;
+    }
+    .btn:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      color: #FFFFFF;
+    }
+    .search-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .search-input {
+      flex: 1;
+      min-width: 280px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(14, 124, 134, 0.15);
+    }
+    .category-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .tab {
+      padding: 5px 12px;
+      border-radius: 9999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tab.active, .tab:hover {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08);
+      border-color: var(--primary);
+    }
+    .icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      color: var(--primary);
+      transition: transform 0.2s;
+    }
+    .card:hover .icon-box {
+      transform: scale(1.1);
+    }
+    .icon-box svg {
+      width: 26px;
+      height: 26px;
+    }
+    .icon-box.brand-box {
+      width: 64px;
+      height: 52px;
+      background: transparent;
+    }
+    .icon-box.brand-box svg {
+      width: 100%;
+      height: 100%;
+      max-height: 48px;
+    }
+    .icon-name {
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 3px;
+      word-break: break-all;
+    }
+    .icon-title {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      min-height: 32px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .badge-cat {
+      font-size: 9px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(14, 124, 134, 0.1);
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .btn-group {
+      display: flex;
+      gap: 6px;
+      width: 100%;
+    }
+    .btn-action {
+      flex: 1;
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-action:hover {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0F172A;
+      color: #FFFFFF;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      animation: slideIn 0.3s ease;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .stats-bar {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: var(--surface);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-top">
+        <div class="title-area">
+          <h1>Thư Viện Icon Chuẩn Y Khoa Lạc's Beauty Center</h1>
+          <p>Tổ chức theo 12 nhóm lĩnh vực chuyên môn LBC • Chuẩn Vector SVG • Naming [linh-vuc]-[chuc-nang].svg</p>
+        </div>
+        <div class="actions">
+          <button class="btn" id="themeToggle" onclick="toggleTheme()">🌓 Đổi nền Sáng/Tối</button>
+          <a class="btn btn-primary" href="./lbc_icons_all.zip" download="lbc_icons_all.zip" id="btnDownloadAll">📦 Tải Trọn Bộ ZIP</a>
+        </div>
+      </div>
+
+      <div class="search-row">
+        <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm icon (VD: mụn, sẹo, nám, rụng tóc, nâng cơ, bác sĩ, thuốc, kính hiển vi, lịch hẹn, hotline)..." oninput="handleSearch()">
+      </div>
+
+      <div class="category-tabs" id="categoryTabs">
+        
+          <button class="tab active" data-cat="all" onclick="filterCategory('all', this)">Tất cả (92)</button>
+        
+          <button class="tab " data-cat="brand" onclick="filterCategory('brand', this)">A. Thương hiệu (10)</button>
+        
+          <button class="tab " data-cat="medical-clinic" onclick="filterCategory('medical-clinic', this)">B. Y khoa & Lâm sàng (7)</button>
+        
+          <button class="tab " data-cat="dermatology-services" onclick="filterCategory('dermatology-services', this)">C. Dịch vụ Da liễu (10)</button>
+        
+          <button class="tab " data-cat="specialties" onclick="filterCategory('specialties', this)">D. Chuyên khoa (5)</button>
+        
+          <button class="tab " data-cat="technology-equipment" onclick="filterCategory('technology-equipment', this)">E. Công nghệ & Thiết bị (4)</button>
+        
+          <button class="tab " data-cat="laboratory" onclick="filterCategory('laboratory', this)">F. Xét nghiệm & Lab (2)</button>
+        
+          <button class="tab " data-cat="pharmacy-products" onclick="filterCategory('pharmacy-products', this)">G. Nhà thuốc & Sản phẩm (8)</button>
+        
+          <button class="tab " data-cat="academy-training" onclick="filterCategory('academy-training', this)">H. Đào tạo & Học viện (3)</button>
+        
+          <button class="tab " data-cat="doctors-team" onclick="filterCategory('doctors-team', this)">I. Đội ngũ Bác sĩ (3)</button>
+        
+          <button class="tab " data-cat="ui-navigation" onclick="filterCategory('ui-navigation', this)">J. Điều hướng & Giao diện (16)</button>
+        
+          <button class="tab " data-cat="status-feedback" onclick="filterCategory('status-feedback', this)">K. Trạng thái & Thông báo (7)</button>
+        
+          <button class="tab " data-cat="payment" onclick="filterCategory('payment', this)">L. Thanh toán (3)</button>
+        
+          <button class="tab " data-cat="shared" onclick="filterCategory('shared', this)">M. Dùng chung & CMS (14)</button>
+        
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="stats-bar">
+      <span>Đang hiển thị: <strong id="visibleCount">92</strong> / 92 icons</span>
+      <span>• Định dạng: <strong>Vector SVG chuẩn y khoa</strong> (viewBox="0 0 24 24", currentColor)</span>
+      <span>• Thư mục hệ thống: <code>public/assets/icons/[linh-vuc]/</code></span>
+    </div>
+
+    <div class="grid" id="iconGrid">
+      
+        <div class="card" data-name="brand-logo-color" data-label="logo lbc màu chuẩn" data-desc="logo chính thức có biểu tượng hoa sen y khoa và chữ lạc's beauty center" data-cat="brand" data-keywords="logo lbc thuong hieu brand chinh thuc hoa sen">
+          <div class="icon-box brand-box">
+            <!-- LBC Domain Icon: brand-logo-color -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100" width="420" height="100" fill="none">
+  <!-- Monogram Emblem: Medical & Aesthetic Lotus Cross -->
+  <g transform="translate(10, 10)">
+    <rect width="80" height="80" rx="20" fill="#0E7C86" />
+    <circle cx="40" cy="40" r="32" stroke="white" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="3 3"/>
+    <!-- Stylized 'L' & Serene Curve -->
+    <path d="M30 24V56C30 61.5 34.5 66 40 66H56" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="56" cy="30" r="4.5" fill="#5EEAD4" />
+    <path d="M48 40C52 35 58 35 60 40C62 45 56 50 48 54" stroke="#5EEAD4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Typography -->
+  <g transform="translate(105, 22)">
+    <text x="0" y="32" font-family="'Fraunces', serif, 'Times New Roman'" font-size="28" font-weight="700" fill="#0E7C86" letter-spacing="-0.5">
+      Lạc's <tspan font-family="'Be Vietnam Pro', sans-serif" font-weight="600" font-size="22" fill="#0F172A">Beauty Center</tspan>
+    </text>
+    <text x="0" y="54" font-family="'Be Vietnam Pro', sans-serif" font-size="10.5" font-weight="600" fill="#64748B" letter-spacing="1.8">
+      PHÒNG KHÁM CHUYÊN KHOA DA LIỄU
+    </text>
+  </g>
+</svg>
+          </div>
+          <div class="badge-cat">brand</div>
+          <div class="icon-name">brand-logo-color.svg</div>
+          <div class="icon-title" title="Logo chính thức có biểu tượng hoa sen y khoa và chữ Lạc's Beauty Center">Logo LBC màu chuẩn</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'brand-logo-color')">Sao chép SVG</button>
+            <a class="btn-action" href="./brand/brand-logo-color.svg" download="brand-logo-color.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="brand-logo-white" data-label="logo lbc âm bản trắng" data-desc="logo phiên bản màu trắng cho nền tối, thanh điều hướng và chân trang" data-cat="brand" data-keywords="logo white am ban trang header footer">
+          <div class="icon-box brand-box">
+            <!-- LBC Domain Icon: brand-logo-white -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100" width="420" height="100" fill="none">
+  <!-- Monogram Emblem White -->
+  <g transform="translate(10, 10)">
+    <rect width="80" height="80" rx="20" fill="rgba(255, 255, 255, 0.15)" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.5" />
+    <circle cx="40" cy="40" r="32" stroke="white" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="3 3"/>
+    <path d="M30 24V56C30 61.5 34.5 66 40 66H56" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="56" cy="30" r="4.5" fill="#FDE047" />
+    <path d="M48 40C52 35 58 35 60 40C62 45 56 50 48 54" stroke="#FDE047" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Typography White -->
+  <g transform="translate(105, 22)">
+    <text x="0" y="32" font-family="'Fraunces', serif, 'Times New Roman'" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5">
+      Lạc's <tspan font-family="'Be Vietnam Pro', sans-serif" font-weight="600" font-size="22" fill="#E2E8F0">Beauty Center</tspan>
+    </text>
+    <text x="0" y="54" font-family="'Be Vietnam Pro', sans-serif" font-size="10.5" font-weight="600" fill="#94A3B8" letter-spacing="1.8">
+      PHÒNG KHÁM CHUYÊN KHOA DA LIỄU
+    </text>
+  </g>
+</svg>
+          </div>
+          <div class="badge-cat">brand</div>
+          <div class="icon-name">brand-logo-white.svg</div>
+          <div class="icon-title" title="Logo phiên bản màu trắng cho nền tối, thanh điều hướng và chân trang">Logo LBC âm bản trắng</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'brand-logo-white')">Sao chép SVG</button>
+            <a class="btn-action" href="./brand/brand-logo-white.svg" download="brand-logo-white.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="brand-emblem-lotus" data-label="biểu tượng hoa sen y khoa lbc" data-desc="monogram độc bản chữ l cách điệu chữ thập y khoa và búp sen ngọc" data-cat="brand" data-keywords="monogram emblem hoa sen y khoa bieu tuong lotus">
+          <div class="icon-box brand-box">
+            <!-- LBC Domain Icon: brand-emblem-lotus -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" fill="none">
+  <rect width="100" height="100" rx="25" fill="#0E7C86" />
+  <circle cx="50" cy="50" r="40" stroke="white" stroke-width="2" stroke-opacity="0.3" stroke-dasharray="4 4"/>
+  <path d="M38 30V70C38 76.6 43.4 82 50 82H70" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="70" cy="38" r="6" fill="#5EEAD4" />
+  <path d="M60 50C65 44 72 44 75 50C77 56 70 62 60 67" stroke="#5EEAD4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+          </div>
+          <div class="badge-cat">brand</div>
+          <div class="icon-name">brand-emblem-lotus.svg</div>
+          <div class="icon-title" title="Monogram độc bản chữ L cách điệu chữ thập y khoa và búp sen ngọc">Biểu tượng Hoa Sen Y Khoa LBC</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'brand-emblem-lotus')">Sao chép SVG</button>
+            <a class="btn-action" href="./brand/brand-emblem-lotus.svg" download="brand-emblem-lotus.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="brand-clinic-graphic" data-label="đồ họa đại diện cơ sở phòng khám" data-desc="hình minh họa đồ họa cơ sở y tế phòng khám chuẩn gphđ" data-cat="brand" data-keywords="co so phong kham clinic fallback toa nha">
+          <div class="icon-box brand-box">
+            <!-- LBC Domain Icon: brand-clinic-graphic -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" fill="none">
+  <rect width="800" height="500" fill="#EEF7F8"/>
+  <rect x="20" y="20" width="760" height="460" rx="16" fill="white" stroke="#0E7C86" stroke-width="2" stroke-opacity="0.2"/>
+  <circle cx="400" cy="210" r="64" fill="#0E7C86" fill-opacity="0.08" stroke="#0E7C86" stroke-width="2"/>
+  <!-- Cross icon -->
+  <path d="M400 178V242M368 210H432" stroke="#0E7C86" stroke-width="6" stroke-linecap="round"/>
+  <text x="400" y="315" font-family="'Fraunces', serif" font-size="22" font-weight="700" fill="#0E7C86" text-anchor="middle">
+    Lạc's Beauty Center
+  </text>
+  <text x="400" y="345" font-family="'Be Vietnam Pro', sans-serif" font-size="13" font-weight="500" fill="#64748B" text-anchor="middle">
+    Hình ảnh đang được cập nhật từ hệ thống
+  </text>
+</svg>
+          </div>
+          <div class="badge-cat">brand</div>
+          <div class="icon-name">brand-clinic-graphic.svg</div>
+          <div class="icon-title" title="Hình minh họa đồ họa cơ sở y tế phòng khám chuẩn GPHĐ">Đồ họa đại diện cơ sở phòng khám</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'brand-clinic-graphic')">Sao chép SVG</button>
+            <a class="btn-action" href="./brand/brand-clinic-graphic.svg" download="brand-clinic-graphic.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="brand-facebook" data-label="facebook fanpage icon" data-desc="biểu tượng fanpage facebook lạc's beauty center" data-cat="brand" data-keywords="facebook fanpage social mang xa hoi">
+          <div class="icon-box brand-box">
+            <!-- LBC Domain Icon: brand-facebook -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#1877F2">
+  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+</svg>
+          </div>
+          <div class="badge-cat">brand</div>
+          <div class="icon-name">brand-facebook.svg</div>
+          <div class="icon-title" title="Biểu tượng Fanpage Facebook Lạc's Beauty Center">Facebook Fanpage Icon</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'brand-facebook')">Sao chép SVG</button>
+            <a class="btn-action" href="./brand/brand-facebook.svg" download="brand-facebook.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="brand-youtube" data-label="youtube channel icon" data-desc="biểu tượng kênh youtube chính thức lbc" data-cat="brand" data-keywords="youtube video kenh social">
+          <div class="icon-box brand-box">
+            <!-- LBC Domain Icon: brand-youtube -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FF0000">
+  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+</svg>
+          </div>
+          <div class="badge-cat">brand</div>
+          <div class="icon-name">brand-youtube.svg</div>
+          <div class="icon-title" title="Biểu tượng Kênh YouTube chính thức LBC">YouTube Channel Icon</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'brand-youtube')">Sao chép SVG</button>
+            <a class="btn-action" href="./brand/brand-youtube.svg" download="brand-youtube.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="brand-zalo" data-label="zalo official account icon" data-desc="biểu tượng zalo oa phòng khám da liễu" data-cat="brand" data-keywords="zalo chat oa tu van">
+          <div class="icon-box brand-box">
+            <!-- LBC Domain Icon: brand-zalo -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <rect width="24" height="24" rx="6" fill="#0068FF" />
+  <path d="M6 8.5H12L8 15.5H14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="16.5" cy="11.5" r="2.5" stroke="white" stroke-width="1.8"/>
+</svg>
+          </div>
+          <div class="badge-cat">brand</div>
+          <div class="icon-name">brand-zalo.svg</div>
+          <div class="icon-title" title="Biểu tượng Zalo OA Phòng khám Da liễu">Zalo Official Account Icon</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'brand-zalo')">Sao chép SVG</button>
+            <a class="btn-action" href="./brand/brand-zalo.svg" download="brand-zalo.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="brand-tiktok" data-label="tiktok channel icon" data-desc="biểu tượng kênh tiktok lạc's beauty center" data-cat="brand" data-keywords="tiktok video kenh social">
+          <div class="icon-box brand-box">
+            <!-- LBC Domain Icon: brand-tiktok -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000">
+  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.11V9.42a6.33 6.33 0 0 0-.86-.06 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.75a8.16 8.16 0 0 0 4.77 1.52V6.82a4.85 4.85 0 0 1-1-.13z"/>
+</svg>
+          </div>
+          <div class="badge-cat">brand</div>
+          <div class="icon-name">brand-tiktok.svg</div>
+          <div class="icon-title" title="Biểu tượng Kênh TikTok Lạc's Beauty Center">TikTok Channel Icon</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'brand-tiktok')">Sao chép SVG</button>
+            <a class="btn-action" href="./brand/brand-tiktok.svg" download="brand-tiktok.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="brand-shopee" data-label="shopee mall icon" data-desc="biểu tượng gian hàng chính hãng shopee mall" data-cat="brand" data-keywords="shopee mall gian hang mua sam">
+          <div class="icon-box brand-box">
+            <!-- LBC Domain Icon: brand-shopee -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <rect width="24" height="24" rx="6" fill="#EE4D2D" />
+  <path d="M6.5 9.5H17.5L16.2 18H7.8L6.5 9.5Z" fill="white" fill-opacity="0.2" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M9.5 9.5V7C9.5 5.6 10.6 4.5 12 4.5C13.4 4.5 14.5 5.6 14.5 7V9.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M13.5 12C13.5 12.8 12.8 13.5 12 13.5C11.2 13.5 10.5 12.8 10.5 12" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+          </div>
+          <div class="badge-cat">brand</div>
+          <div class="icon-name">brand-shopee.svg</div>
+          <div class="icon-title" title="Biểu tượng Gian hàng chính hãng Shopee Mall">Shopee Mall Icon</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'brand-shopee')">Sao chép SVG</button>
+            <a class="btn-action" href="./brand/brand-shopee.svg" download="brand-shopee.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="brand-messenger" data-label="facebook messenger icon" data-desc="biểu tượng chat facebook messenger phòng khám" data-cat="brand" data-keywords="messenger chat tin nhan tu van">
+          <div class="icon-box brand-box">
+            <!-- LBC Domain Icon: brand-messenger -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#0084FF">
+  <path d="M12 2C6.48 2 2 6.03 2 11C2 13.84 3.46 16.35 5.75 17.9V22L9.67 19.84C10.42 20.05 11.19 20.17 12 20.17C17.52 20.17 22 16.14 22 11.17C22 6.03 17.52 2 12 2ZM13.06 14.28L10.52 11.56L5.56 14.28L11.02 8.48L13.56 11.2L18.52 8.48L13.06 14.28Z"/>
+</svg>
+          </div>
+          <div class="badge-cat">brand</div>
+          <div class="icon-name">brand-messenger.svg</div>
+          <div class="icon-title" title="Biểu tượng Chat Facebook Messenger phòng khám">Facebook Messenger Icon</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'brand-messenger')">Sao chép SVG</button>
+            <a class="btn-action" href="./brand/brand-messenger.svg" download="brand-messenger.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="medical-stethoscope" data-label="ống nghe y khoa" data-desc="biểu tượng chẩn đoán lâm sàng, thăm khám bác sĩ" data-cat="medical-clinic" data-keywords="bac si y khoa ong nghe kham benh chuyen khoa stethoscope">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: medical-stethoscope -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-stethoscope" aria-hidden="true"><path d="M11 2v2"></path><path d="M5 2v2"></path><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"></path><path d="M8 15a6 6 0 0 0 12 0v-3"></path><circle cx="20" cy="10" r="2"></circle></svg>
+          </div>
+          <div class="badge-cat">medical-clinic</div>
+          <div class="icon-name">medical-stethoscope.svg</div>
+          <div class="icon-title" title="Biểu tượng chẩn đoán lâm sàng, thăm khám Bác sĩ">Ống nghe y khoa</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'medical-stethoscope')">Sao chép SVG</button>
+            <a class="btn-action" href="./medical-clinic/medical-stethoscope.svg" download="medical-stethoscope.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="medical-heart-pulse" data-label="nhịp tim sinh học" data-desc="biểu tượng theo dõi sinh hiệu, sức khỏe làn da" data-cat="medical-clinic" data-keywords="nhip tim sinh hoc suc khoe song pulse">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: medical-heart-pulse -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-pulse" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path></svg>
+          </div>
+          <div class="badge-cat">medical-clinic</div>
+          <div class="icon-name">medical-heart-pulse.svg</div>
+          <div class="icon-title" title="Biểu tượng theo dõi sinh hiệu, sức khỏe làn da">Nhịp tim sinh học</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'medical-heart-pulse')">Sao chép SVG</button>
+            <a class="btn-action" href="./medical-clinic/medical-heart-pulse.svg" download="medical-heart-pulse.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="medical-heart-care" data-label="trái tim y đức & tận tâm" data-desc="biểu tượng sứ mệnh chăm sóc tận tâm, đồng hành trọn vẹn" data-cat="medical-clinic" data-keywords="y duc tan tam cham soc dong hanh heart care">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: medical-heart-care -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-handshake" aria-hidden="true"><path d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762"></path></svg>
+          </div>
+          <div class="badge-cat">medical-clinic</div>
+          <div class="icon-name">medical-heart-care.svg</div>
+          <div class="icon-title" title="Biểu tượng sứ mệnh chăm sóc tận tâm, đồng hành trọn vẹn">Trái tim y đức & Tận tâm</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'medical-heart-care')">Sao chép SVG</button>
+            <a class="btn-action" href="./medical-clinic/medical-heart-care.svg" download="medical-heart-care.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="medical-safety-shield" data-label="khiên an toàn y tế" data-desc="biểu tượng cam kết chuẩn y khoa, an toàn điều trị" data-cat="medical-clinic" data-keywords="an toan khien chuan y khoa shield bao ve">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: medical-safety-shield -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+          </div>
+          <div class="badge-cat">medical-clinic</div>
+          <div class="icon-name">medical-safety-shield.svg</div>
+          <div class="icon-title" title="Biểu tượng cam kết chuẩn y khoa, an toàn điều trị">Khiên an toàn y tế</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'medical-safety-shield')">Sao chép SVG</button>
+            <a class="btn-action" href="./medical-clinic/medical-safety-shield.svg" download="medical-safety-shield.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="medical-biometric" data-label="vân tay cá nhân hóa" data-desc="biểu tượng phác đồ y học cá nhân hóa độc bản" data-cat="medical-clinic" data-keywords="van tay ca nhan hoa biometric phac do fingerprint">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: medical-biometric -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-fingerprint-pattern lucide-fingerprint" aria-hidden="true"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"></path><path d="M14 13.12c0 2.38 0 6.38-1 8.88"></path><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"></path><path d="M2 12a10 10 0 0 1 18-6"></path><path d="M2 16h.01"></path><path d="M21.8 16c.2-2 .131-5.354 0-6"></path><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"></path><path d="M8.65 22c.21-.66.45-1.32.57-2"></path><path d="M9 6.8a6 6 0 0 1 9 5.2v2"></path></svg>
+          </div>
+          <div class="badge-cat">medical-clinic</div>
+          <div class="icon-name">medical-biometric.svg</div>
+          <div class="icon-title" title="Biểu tượng phác đồ y học cá nhân hóa độc bản">Vân tay cá nhân hóa</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'medical-biometric')">Sao chép SVG</button>
+            <a class="btn-action" href="./medical-clinic/medical-biometric.svg" download="medical-biometric.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="medical-file-check" data-label="hồ sơ bệnh án thẩm định" data-desc="biểu tượng hồ sơ bệnh án được bác sĩ ký duyệt" data-cat="medical-clinic" data-keywords="benh an ho so tham dinh kiem tra file">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: medical-file-check -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-check" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="m9 15 2 2 4-4"></path></svg>
+          </div>
+          <div class="badge-cat">medical-clinic</div>
+          <div class="icon-name">medical-file-check.svg</div>
+          <div class="icon-title" title="Biểu tượng hồ sơ bệnh án được bác sĩ ký duyệt">Hồ sơ bệnh án thẩm định</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'medical-file-check')">Sao chép SVG</button>
+            <a class="btn-action" href="./medical-clinic/medical-file-check.svg" download="medical-file-check.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="medical-clinical-scale" data-label="cân bằng y học & đạo đức" data-desc="biểu tượng cân bằng liều lượng và tính minh bạch" data-cat="medical-clinic" data-keywords="can bang phap ly dao duc minh bach scale">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: medical-clinical-scale -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scale" aria-hidden="true"><path d="M12 3v18"></path><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path><path d="M7 21h10"></path></svg>
+          </div>
+          <div class="badge-cat">medical-clinic</div>
+          <div class="icon-name">medical-clinical-scale.svg</div>
+          <div class="icon-title" title="Biểu tượng cân bằng liều lượng và tính minh bạch">Cân bằng y học & Đạo đức</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'medical-clinical-scale')">Sao chép SVG</button>
+            <a class="btn-action" href="./medical-clinic/medical-clinical-scale.svg" download="medical-clinical-scale.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="dermatology-acne-care" data-label="đặc trị mụn & mụn kháng trị" data-desc="biểu tượng điều trị mụn chuyên sâu, làm sạch nang lông và ức chế vi khuẩn p.acnes" data-cat="dermatology-services" data-keywords="mun khang tri viem acne tri mun da lieu">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: dermatology-acne-care -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+          </div>
+          <div class="badge-cat">dermatology-services</div>
+          <div class="icon-name">dermatology-acne-care.svg</div>
+          <div class="icon-title" title="Biểu tượng điều trị mụn chuyên sâu, làm sạch nang lông và ức chế vi khuẩn P.acnes">Đặc trị mụn & Mụn kháng trị</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'dermatology-acne-care')">Sao chép SVG</button>
+            <a class="btn-action" href="./dermatology-services/dermatology-acne-care.svg" download="dermatology-acne-care.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="dermatology-scar-repair" data-label="trị sẹo rỗ kỹ thuật cao" data-desc="biểu tượng tái tạo phục hồi mô xơ, bóc tách đáy sẹo và làm phẳng bề mặt da" data-cat="dermatology-services" data-keywords="seo seo ro subcision phuc hoi mo tai tao scar">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: dermatology-scar-repair -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg>
+          </div>
+          <div class="badge-cat">dermatology-services</div>
+          <div class="icon-name">dermatology-scar-repair.svg</div>
+          <div class="icon-title" title="Biểu tượng tái tạo phục hồi mô xơ, bóc tách đáy sẹo và làm phẳng bề mặt da">Trị sẹo rỗ kỹ thuật cao</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'dermatology-scar-repair')">Sao chép SVG</button>
+            <a class="btn-action" href="./dermatology-services/dermatology-scar-repair.svg" download="dermatology-scar-repair.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="dermatology-pigment-sun" data-label="trị nám – tàn nhang & sắc tố" data-desc="biểu tượng điều trị rối loạn sắc tố, ức chế melanin màng đáy và làm sáng da" data-cat="dermatology-services" data-keywords="nam tan nhang doi moi sac to melanin sun">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: dermatology-pigment-sun -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-medium" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 3v1"></path><path d="M12 20v1"></path><path d="M3 12h1"></path><path d="M20 12h1"></path><path d="m18.364 5.636-.707.707"></path><path d="m6.343 17.657-.707.707"></path><path d="m5.636 5.636.707.707"></path><path d="m17.657 17.657.707.707"></path></svg>
+          </div>
+          <div class="badge-cat">dermatology-services</div>
+          <div class="icon-name">dermatology-pigment-sun.svg</div>
+          <div class="icon-title" title="Biểu tượng điều trị rối loạn sắc tố, ức chế melanin màng đáy và làm sáng da">Trị nám – tàn nhang & sắc tố</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'dermatology-pigment-sun')">Sao chép SVG</button>
+            <a class="btn-action" href="./dermatology-services/dermatology-pigment-sun.svg" download="dermatology-pigment-sun.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="dermatology-hair-scalp" data-label="trị rụng tóc & kích thích nang tóc" data-desc="biểu tượng phục hồi nang tóc, kích thích mầm tóc tơ và điều trị hói đầu" data-cat="dermatology-services" data-keywords="rung toc hoi dau nang toc da dau hair scalp">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: dermatology-hair-scalp -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-feather" aria-hidden="true"><path d="M14.086 18.412A2 2 0 0112.67 19H5v-7.672a2 2 0 01.586-1.414L11.75 3.75a6 6 0 118.49 8.49z"></path><path d="M16 8 2 22"></path><path d="M17.488 15H9"></path></svg>
+          </div>
+          <div class="badge-cat">dermatology-services</div>
+          <div class="icon-name">dermatology-hair-scalp.svg</div>
+          <div class="icon-title" title="Biểu tượng phục hồi nang tóc, kích thích mầm tóc tơ và điều trị hói đầu">Trị rụng tóc & Kích thích nang tóc</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'dermatology-hair-scalp')">Sao chép SVG</button>
+            <a class="btn-action" href="./dermatology-services/dermatology-hair-scalp.svg" download="dermatology-hair-scalp.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="dermatology-meso-injection" data-label="thẩm mỹ nội khoa & tiêm vi điểm" data-desc="biểu tượng thủ thuật tiêm vi điểm meso, tiêm bap, trẻ hóa da chuẩn y khoa" data-cat="dermatology-services" data-keywords="tiem meso botox filler noi khoa tre hoa syringe">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: dermatology-meso-injection -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-syringe" aria-hidden="true"><path d="m18 2 4 4"></path><path d="m17 7 3-3"></path><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"></path><path d="m9 11 4 4"></path><path d="m5 19-3 3"></path><path d="m14 4 6 6"></path></svg>
+          </div>
+          <div class="badge-cat">dermatology-services</div>
+          <div class="icon-name">dermatology-meso-injection.svg</div>
+          <div class="icon-title" title="Biểu tượng thủ thuật tiêm vi điểm Meso, tiêm BAP, trẻ hóa da chuẩn y khoa">Thẩm mỹ nội khoa & Tiêm vi điểm</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'dermatology-meso-injection')">Sao chép SVG</button>
+            <a class="btn-action" href="./dermatology-services/dermatology-meso-injection.svg" download="dermatology-meso-injection.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="dermatology-lifting-contour" data-label="nâng cơ trẻ hóa da công nghệ cao" data-desc="biểu tượng sóng rf jovena và hifu kích hoạt co rút sợi collagen viền hàm" data-cat="dermatology-services" data-keywords="nang co jovena rf hifu tre hoa thon gon zap">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: dermatology-lifting-contour -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"></path></svg>
+          </div>
+          <div class="badge-cat">dermatology-services</div>
+          <div class="icon-name">dermatology-lifting-contour.svg</div>
+          <div class="icon-title" title="Biểu tượng sóng RF Jovena và HIFU kích hoạt co rút sợi collagen viền hàm">Nâng cơ trẻ hóa da công nghệ cao</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'dermatology-lifting-contour')">Sao chép SVG</button>
+            <a class="btn-action" href="./dermatology-services/dermatology-lifting-contour.svg" download="dermatology-lifting-contour.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="dermatology-skin-facial" data-label="chăm sóc da chuyên sâu" data-desc="biểu tượng cấp ẩm đa tầng, phục hồi hàng rào sinh học và làm dịu da nhạy cảm" data-cat="dermatology-services" data-keywords="cham soc da phuc hoi dien di cap am mat na facial">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: dermatology-skin-facial -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles lucide-stars" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+          </div>
+          <div class="badge-cat">dermatology-services</div>
+          <div class="icon-name">dermatology-skin-facial.svg</div>
+          <div class="icon-title" title="Biểu tượng cấp ẩm đa tầng, phục hồi hàng rào sinh học và làm dịu da nhạy cảm">Chăm sóc da chuyên sâu</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'dermatology-skin-facial')">Sao chép SVG</button>
+            <a class="btn-action" href="./dermatology-services/dermatology-skin-facial.svg" download="dermatology-skin-facial.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="dermatology-exam-diagnosis" data-label="khám bệnh lý da liễu khác" data-desc="biểu tượng chẩn đoán viêm da cơ địa, viêm da tiết bã, mề đay, vảy nến" data-cat="dermatology-services" data-keywords="kham da benh da vay nen viem da me day cham">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: dermatology-exam-diagnosis -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-microscope" aria-hidden="true"><path d="M6 18h8"></path><path d="M3 22h18"></path><path d="M14 22a7 7 0 1 0 0-14h-1"></path><path d="M9 14h2"></path><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"></path><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"></path></svg>
+          </div>
+          <div class="badge-cat">dermatology-services</div>
+          <div class="icon-name">dermatology-exam-diagnosis.svg</div>
+          <div class="icon-title" title="Biểu tượng chẩn đoán viêm da cơ địa, viêm da tiết bã, mề đay, vảy nến">Khám bệnh lý da liễu khác</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'dermatology-exam-diagnosis')">Sao chép SVG</button>
+            <a class="btn-action" href="./dermatology-services/dermatology-exam-diagnosis.svg" download="dermatology-exam-diagnosis.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="dermatology-laser-hair-removal" data-label="triệt lông diode laser sapphire" data-desc="biểu tượng triệt lông bằng công nghệ diode laser làm mát sapphire không đau" data-cat="dermatology-services" data-keywords="triet long laser diode sapphire nang long">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: dermatology-laser-hair-removal -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkle" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg>
+          </div>
+          <div class="badge-cat">dermatology-services</div>
+          <div class="icon-name">dermatology-laser-hair-removal.svg</div>
+          <div class="icon-title" title="Biểu tượng triệt lông bằng công nghệ Diode Laser làm mát sapphire không đau">Triệt lông Diode Laser Sapphire</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'dermatology-laser-hair-removal')">Sao chép SVG</button>
+            <a class="btn-action" href="./dermatology-services/dermatology-laser-hair-removal.svg" download="dermatology-laser-hair-removal.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="dermatology-visia-booking" data-label="đặt lịch soi da visia 3d" data-desc="biểu tượng đặt lịch khám và phân tích 8 chỉ số chuyên sâu cùng bác sĩ" data-cat="dermatology-services" data-keywords="visia soi da dat lich kham da calendar booking">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: dermatology-visia-booking -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-check" aria-hidden="true"><path d="M8 2v3"></path><path d="M16 2v3"></path><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18"></path><path d="m9 15 2 2 4-4"></path></svg>
+          </div>
+          <div class="badge-cat">dermatology-services</div>
+          <div class="icon-name">dermatology-visia-booking.svg</div>
+          <div class="icon-title" title="Biểu tượng đặt lịch khám và phân tích 8 chỉ số chuyên sâu cùng Bác sĩ">Đặt lịch soi da VISIA 3D</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'dermatology-visia-booking')">Sao chép SVG</button>
+            <a class="btn-action" href="./dermatology-services/dermatology-visia-booking.svg" download="dermatology-visia-booking.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="specialties-dermatology" data-label="khoa da liễu" data-desc="chuyên khoa mũi nhọn chẩn đoán và điều trị bệnh lý da" data-cat="specialties" data-keywords="khoa da lieu chuyen khoa da lieu dermatology">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: specialties-dermatology -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-stethoscope" aria-hidden="true"><path d="M11 2v2"></path><path d="M5 2v2"></path><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"></path><path d="M8 15a6 6 0 0 0 12 0v-3"></path><circle cx="20" cy="10" r="2"></circle></svg>
+          </div>
+          <div class="badge-cat">specialties</div>
+          <div class="icon-name">specialties-dermatology.svg</div>
+          <div class="icon-title" title="Chuyên khoa mũi nhọn chẩn đoán và điều trị bệnh lý da">Khoa Da liễu</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'specialties-dermatology')">Sao chép SVG</button>
+            <a class="btn-action" href="./specialties/specialties-dermatology.svg" download="specialties-dermatology.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="specialties-laboratory" data-label="khoa xét nghiệm" data-desc="khoa xét nghiệm vi sinh, soi tươi demodex và nấm da" data-cat="specialties" data-keywords="khoa xet nghiem lab xet nghiem demodex laboratory">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: specialties-laboratory -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flask-conical" aria-hidden="true"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"></path><path d="M6.453 15h11.094"></path><path d="M8.5 2h7"></path></svg>
+          </div>
+          <div class="badge-cat">specialties</div>
+          <div class="icon-name">specialties-laboratory.svg</div>
+          <div class="icon-title" title="Khoa xét nghiệm vi sinh, soi tươi Demodex và nấm da">Khoa Xét nghiệm</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'specialties-laboratory')">Sao chép SVG</button>
+            <a class="btn-action" href="./specialties/specialties-laboratory.svg" download="specialties-laboratory.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="specialties-pharmacy" data-label="nhà thuốc chuẩn gpp" data-desc="nhà thuốc chuyên khoa cung cấp thuốc da liễu chuẩn gpp" data-cat="specialties" data-keywords="nha thuoc gpp thuoc ke don pharmacy">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: specialties-pharmacy -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pill" aria-hidden="true"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg>
+          </div>
+          <div class="badge-cat">specialties</div>
+          <div class="icon-name">specialties-pharmacy.svg</div>
+          <div class="icon-title" title="Nhà thuốc chuyên khoa cung cấp thuốc da liễu chuẩn GPP">Nhà thuốc chuẩn GPP</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'specialties-pharmacy')">Sao chép SVG</button>
+            <a class="btn-action" href="./specialties/specialties-pharmacy.svg" download="specialties-pharmacy.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="specialties-cosmeceuticals" data-label="dược – mỹ phẩm chính ngạch" data-desc="phân phối dược mỹ phẩm nhập khẩu chính hãng từ châu âu" data-cat="specialties" data-keywords="duoc my pham chinh hang bioderma cosmeceuticals">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: specialties-cosmeceuticals -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles lucide-stars" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+          </div>
+          <div class="badge-cat">specialties</div>
+          <div class="icon-name">specialties-cosmeceuticals.svg</div>
+          <div class="icon-title" title="Phân phối dược mỹ phẩm nhập khẩu chính hãng từ châu Âu">Dược – Mỹ phẩm chính ngạch</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'specialties-cosmeceuticals')">Sao chép SVG</button>
+            <a class="btn-action" href="./specialties/specialties-cosmeceuticals.svg" download="specialties-cosmeceuticals.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="specialties-academy" data-label="đào tạo nghề – lbc academy" data-desc="học viện đào tạo kỹ thuật viên spa và chăm sóc da chuẩn y khoa" data-cat="specialties" data-keywords="dao tao academy hoc vien nghe training">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: specialties-academy -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+          </div>
+          <div class="badge-cat">specialties</div>
+          <div class="icon-name">specialties-academy.svg</div>
+          <div class="icon-title" title="Học viện đào tạo kỹ thuật viên spa và chăm sóc da chuẩn y khoa">Đào tạo nghề – LBC Academy</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'specialties-academy')">Sao chép SVG</button>
+            <a class="btn-action" href="./specialties/specialties-academy.svg" download="specialties-academy.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="technology-visia-3d" data-label="máy soi da đa tầng visia 3d" data-desc="hệ thống chụp và phân tích 8 tầng chỉ số da chuẩn hoa kỳ" data-cat="technology-equipment" data-keywords="visia soi da 3d cong nghe may moc phan tich">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: technology-visia-3d -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu" aria-hidden="true"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>
+          </div>
+          <div class="badge-cat">technology-equipment</div>
+          <div class="icon-name">technology-visia-3d.svg</div>
+          <div class="icon-title" title="Hệ thống chụp và phân tích 8 tầng chỉ số da chuẩn Hoa Kỳ">Máy soi da đa tầng VISIA 3D</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'technology-visia-3d')">Sao chép SVG</button>
+            <a class="btn-action" href="./technology-equipment/technology-visia-3d.svg" download="technology-visia-3d.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="technology-rf-jovena" data-label="sóng rf jovena vi điểm" data-desc="thiết bị sóng rf cao tần tác động tái tạo collagen sâu" data-cat="technology-equipment" data-keywords="jovena rf nang co song cao tan technology">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: technology-rf-jovena -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"></path></svg>
+          </div>
+          <div class="badge-cat">technology-equipment</div>
+          <div class="icon-name">technology-rf-jovena.svg</div>
+          <div class="icon-title" title="Thiết bị sóng RF cao tần tác động tái tạo collagen sâu">Sóng RF Jovena vi điểm</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'technology-rf-jovena')">Sao chép SVG</button>
+            <a class="btn-action" href="./technology-equipment/technology-rf-jovena.svg" download="technology-rf-jovena.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="technology-laser" data-label="laser chọn lọc xung ngắn" data-desc="công nghệ laser tán nhỏ melanin và điều trị sắc tố" data-cat="technology-equipment" data-keywords="laser xung ngan tri nam laser technology">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: technology-laser -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkle" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg>
+          </div>
+          <div class="badge-cat">technology-equipment</div>
+          <div class="icon-name">technology-laser.svg</div>
+          <div class="icon-title" title="Công nghệ laser tán nhỏ melanin và điều trị sắc tố">Laser chọn lọc xung ngắn</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'technology-laser')">Sao chép SVG</button>
+            <a class="btn-action" href="./technology-equipment/technology-laser.svg" download="technology-laser.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="technology-hardware-specs" data-label="thông số kỹ thuật thiết bị" data-desc="biểu tượng bo mạch vi xử lý công nghệ tân tiến" data-cat="technology-equipment" data-keywords="cpu bo mach vi xu ly thiet bi">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: technology-hardware-specs -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu" aria-hidden="true"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>
+          </div>
+          <div class="badge-cat">technology-equipment</div>
+          <div class="icon-name">technology-hardware-specs.svg</div>
+          <div class="icon-title" title="Biểu tượng bo mạch vi xử lý công nghệ tân tiến">Thông số kỹ thuật thiết bị</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'technology-hardware-specs')">Sao chép SVG</button>
+            <a class="btn-action" href="./technology-equipment/technology-hardware-specs.svg" download="technology-hardware-specs.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="laboratory-microscope" data-label="kính hiển vi soi tươi" data-desc="thiết bị phóng đại soi tươi tìm demodex và vi nấm" data-cat="laboratory" data-keywords="kinh hien vi soi tuoi vi sinh microscope">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: laboratory-microscope -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-microscope" aria-hidden="true"><path d="M6 18h8"></path><path d="M3 22h18"></path><path d="M14 22a7 7 0 1 0 0-14h-1"></path><path d="M9 14h2"></path><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"></path><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"></path></svg>
+          </div>
+          <div class="badge-cat">laboratory</div>
+          <div class="icon-name">laboratory-microscope.svg</div>
+          <div class="icon-title" title="Thiết bị phóng đại soi tươi tìm Demodex và vi nấm">Kính hiển vi soi tươi</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'laboratory-microscope')">Sao chép SVG</button>
+            <a class="btn-action" href="./laboratory/laboratory-microscope.svg" download="laboratory-microscope.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="laboratory-flask-conical" data-label="bình thí nghiệm hóa sinh" data-desc="dụng cụ phân tích mẫu xét nghiệm và thử nghiệm vi sinh" data-cat="laboratory" data-keywords="binh thi nghiem ong nghiem hoa sinh flask">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: laboratory-flask-conical -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flask-conical" aria-hidden="true"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"></path><path d="M6.453 15h11.094"></path><path d="M8.5 2h7"></path></svg>
+          </div>
+          <div class="badge-cat">laboratory</div>
+          <div class="icon-name">laboratory-flask-conical.svg</div>
+          <div class="icon-title" title="Dụng cụ phân tích mẫu xét nghiệm và thử nghiệm vi sinh">Bình thí nghiệm hóa sinh</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'laboratory-flask-conical')">Sao chép SVG</button>
+            <a class="btn-action" href="./laboratory/laboratory-flask-conical.svg" download="laboratory-flask-conical.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="pharmacy-medicine" data-label="thuốc y tế chuẩn gpp" data-desc="viên thuốc kê đơn điều trị da liễu chuẩn gpp" data-cat="pharmacy-products" data-keywords="thuoc vien thuoc gpp uong medicine pill">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: pharmacy-medicine -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pill" aria-hidden="true"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg>
+          </div>
+          <div class="badge-cat">pharmacy-products</div>
+          <div class="icon-name">pharmacy-medicine.svg</div>
+          <div class="icon-title" title="Viên thuốc kê đơn điều trị da liễu chuẩn GPP">Thuốc y tế chuẩn GPP</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'pharmacy-medicine')">Sao chép SVG</button>
+            <a class="btn-action" href="./pharmacy-products/pharmacy-medicine.svg" download="pharmacy-medicine.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="pharmacy-cleanser-droplets" data-label="nước làm sạch & tẩy trang" data-desc="dung dịch tẩy trang, sữa rửa mặt dịu lành cho da mẫn cảm" data-cat="pharmacy-products" data-keywords="lam sach tay trang sua rua mat droplets">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: pharmacy-cleanser-droplets -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-droplets" aria-hidden="true"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"></path><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"></path></svg>
+          </div>
+          <div class="badge-cat">pharmacy-products</div>
+          <div class="icon-name">pharmacy-cleanser-droplets.svg</div>
+          <div class="icon-title" title="Dung dịch tẩy trang, sữa rửa mặt dịu lành cho da mẫn cảm">Nước làm sạch & tẩy trang</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'pharmacy-cleanser-droplets')">Sao chép SVG</button>
+            <a class="btn-action" href="./pharmacy-products/pharmacy-cleanser-droplets.svg" download="pharmacy-cleanser-droplets.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="pharmacy-serum-droplet" data-label="tinh chất serum đặc trị" data-desc="giọt tinh chất dưỡng ẩm, phục hồi màng biểu bì" data-cat="pharmacy-products" data-keywords="serum tinh chat duong am giot nuoc droplet">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: pharmacy-serum-droplet -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-droplet" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"></path></svg>
+          </div>
+          <div class="badge-cat">pharmacy-products</div>
+          <div class="icon-name">pharmacy-serum-droplet.svg</div>
+          <div class="icon-title" title="Giọt tinh chất dưỡng ẩm, phục hồi màng biểu bì">Tinh chất serum đặc trị</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'pharmacy-serum-droplet')">Sao chép SVG</button>
+            <a class="btn-action" href="./pharmacy-products/pharmacy-serum-droplet.svg" download="pharmacy-serum-droplet.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="pharmacy-shopping-bag" data-label="túi mua sắm dược mỹ phẩm" data-desc="biểu tượng giỏ hàng và danh mục mua sắm sản phẩm" data-cat="pharmacy-products" data-keywords="gio hang mua sam tui xach shopping cart">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: pharmacy-shopping-bag -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag" aria-hidden="true"><path d="M16 10a4 4 0 0 1-8 0"></path><path d="M3.103 6.034h17.794"></path><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"></path></svg>
+          </div>
+          <div class="badge-cat">pharmacy-products</div>
+          <div class="icon-name">pharmacy-shopping-bag.svg</div>
+          <div class="icon-title" title="Biểu tượng giỏ hàng và danh mục mua sắm sản phẩm">Túi mua sắm dược mỹ phẩm</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'pharmacy-shopping-bag')">Sao chép SVG</button>
+            <a class="btn-action" href="./pharmacy-products/pharmacy-shopping-bag.svg" download="pharmacy-shopping-bag.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="pharmacy-product-tag" data-label="nhãn mác thương hiệu chính hãng" data-desc="nhãn phân loại sản phẩm và thương hiệu ủy quyền" data-cat="pharmacy-products" data-keywords="nhan mac tag thuong hieu brand">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: pharmacy-product-tag -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"></path><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>
+          </div>
+          <div class="badge-cat">pharmacy-products</div>
+          <div class="icon-name">pharmacy-product-tag.svg</div>
+          <div class="icon-title" title="Nhãn phân loại sản phẩm và thương hiệu ủy quyền">Nhãn mác thương hiệu chính hãng</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'pharmacy-product-tag')">Sao chép SVG</button>
+            <a class="btn-action" href="./pharmacy-products/pharmacy-product-tag.svg" download="pharmacy-product-tag.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="pharmacy-combo-package" data-label="hộp sản phẩm đóng gói combo" data-desc="hộp quà tặng combo liệu trình điều trị toàn diện" data-cat="pharmacy-products" data-keywords="hop combo dong goi set package">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: pharmacy-combo-package -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"></path><path d="M12 22V12"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><path d="m7.5 4.27 9 5.15"></path></svg>
+          </div>
+          <div class="badge-cat">pharmacy-products</div>
+          <div class="icon-name">pharmacy-combo-package.svg</div>
+          <div class="icon-title" title="Hộp quà tặng combo liệu trình điều trị toàn diện">Hộp sản phẩm đóng gói combo</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'pharmacy-combo-package')">Sao chép SVG</button>
+            <a class="btn-action" href="./pharmacy-products/pharmacy-combo-package.svg" download="pharmacy-combo-package.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="pharmacy-best-seller-flame" data-label="sản phẩm hot bán chạy" data-desc="nhãn sản phẩm tiêu biểu được bác sĩ khuyên dùng" data-cat="pharmacy-products" data-keywords="hot ban chay tieu bieu flame">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: pharmacy-best-seller-flame -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame" aria-hidden="true"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg>
+          </div>
+          <div class="badge-cat">pharmacy-products</div>
+          <div class="icon-name">pharmacy-best-seller-flame.svg</div>
+          <div class="icon-title" title="Nhãn sản phẩm tiêu biểu được bác sĩ khuyên dùng">Sản phẩm hot bán chạy</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'pharmacy-best-seller-flame')">Sao chép SVG</button>
+            <a class="btn-action" href="./pharmacy-products/pharmacy-best-seller-flame.svg" download="pharmacy-best-seller-flame.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="pharmacy-quality-star" data-label="đánh giá chất lượng 5 sao" data-desc="biểu tượng đánh giá hiệu quả sản phẩm từ khách hàng" data-cat="pharmacy-products" data-keywords="danh gia review 5 sao star">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: pharmacy-quality-star -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+          </div>
+          <div class="badge-cat">pharmacy-products</div>
+          <div class="icon-name">pharmacy-quality-star.svg</div>
+          <div class="icon-title" title="Biểu tượng đánh giá hiệu quả sản phẩm từ khách hàng">Đánh giá chất lượng 5 sao</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'pharmacy-quality-star')">Sao chép SVG</button>
+            <a class="btn-action" href="./pharmacy-products/pharmacy-quality-star.svg" download="pharmacy-quality-star.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="academy-graduation" data-label="mũ tốt nghiệp học viện" data-desc="biểu tượng tốt nghiệp khóa học nghề chăm sóc da chuẩn y khoa" data-cat="academy-training" data-keywords="tot nghiep hoc vien mu academy graduation">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: academy-graduation -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+          </div>
+          <div class="badge-cat">academy-training</div>
+          <div class="icon-name">academy-graduation.svg</div>
+          <div class="icon-title" title="Biểu tượng tốt nghiệp khóa học nghề chăm sóc da chuẩn y khoa">Mũ tốt nghiệp học viện</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'academy-graduation')">Sao chép SVG</button>
+            <a class="btn-action" href="./academy-training/academy-graduation.svg" download="academy-graduation.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="academy-certificate-award" data-label="chứng chỉ chuyên môn" data-desc="chứng chỉ hành nghề và thành tựu đào tạo kỹ thuật viên" data-cat="academy-training" data-keywords="chung chi bang khen thanh tuu award">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: academy-certificate-award -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award" aria-hidden="true"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+          </div>
+          <div class="badge-cat">academy-training</div>
+          <div class="icon-name">academy-certificate-award.svg</div>
+          <div class="icon-title" title="Chứng chỉ hành nghề và thành tựu đào tạo kỹ thuật viên">Chứng chỉ chuyên môn</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'academy-certificate-award')">Sao chép SVG</button>
+            <a class="btn-action" href="./academy-training/academy-certificate-award.svg" download="academy-certificate-award.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="academy-curriculum-book" data-label="giáo trình đào tạo" data-desc="tài liệu và giáo trình giảng dạy da liễu chuẩn mực" data-cat="academy-training" data-keywords="giao trinh sach tai lieu book">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: academy-curriculum-book -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open" aria-hidden="true"><path d="M12 5v16"></path><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"></path></svg>
+          </div>
+          <div class="badge-cat">academy-training</div>
+          <div class="icon-name">academy-curriculum-book.svg</div>
+          <div class="icon-title" title="Tài liệu và giáo trình giảng dạy da liễu chuẩn mực">Giáo trình đào tạo</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'academy-curriculum-book')">Sao chép SVG</button>
+            <a class="btn-action" href="./academy-training/academy-curriculum-book.svg" download="academy-curriculum-book.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="doctors-specialist" data-label="bác sĩ chuyên khoa da liễu" data-desc="biểu tượng hồ sơ cá nhân bác sĩ trình độ sau đại học" data-cat="doctors-team" data-keywords="bac si chuyen gia ho so doctor">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: doctors-specialist -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </div>
+          <div class="badge-cat">doctors-team</div>
+          <div class="icon-name">doctors-specialist.svg</div>
+          <div class="icon-title" title="Biểu tượng hồ sơ cá nhân Bác sĩ trình độ Sau Đại học">Bác sĩ chuyên khoa Da liễu</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'doctors-specialist')">Sao chép SVG</button>
+            <a class="btn-action" href="./doctors-team/doctors-specialist.svg" download="doctors-specialist.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="doctors-team-users" data-label="hội đồng bác sĩ & chuyên môn" data-desc="đội ngũ bác sĩ và kỹ thuật viên chuyên khoa phòng khám" data-cat="doctors-team" data-keywords="doi ngu bac si hoi dong nhan su users">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: doctors-team-users -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+          </div>
+          <div class="badge-cat">doctors-team</div>
+          <div class="icon-name">doctors-team-users.svg</div>
+          <div class="icon-title" title="Đội ngũ bác sĩ và kỹ thuật viên chuyên khoa phòng khám">Hội đồng bác sĩ & Chuyên môn</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'doctors-team-users')">Sao chép SVG</button>
+            <a class="btn-action" href="./doctors-team/doctors-team-users.svg" download="doctors-team-users.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="doctors-degree-award" data-label="bằng cấp & học hàm bác sĩ" data-desc="bằng thạc sĩ, bác sĩ chuyên khoa i da liễu sau đại học" data-cat="doctors-team" data-keywords="bang cap thac si chuyen khoa award">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: doctors-degree-award -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award" aria-hidden="true"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+          </div>
+          <div class="badge-cat">doctors-team</div>
+          <div class="icon-name">doctors-degree-award.svg</div>
+          <div class="icon-title" title="Bằng Thạc sĩ, Bác sĩ Chuyên khoa I Da liễu Sau Đại học">Bằng cấp & Học hàm bác sĩ</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'doctors-degree-award')">Sao chép SVG</button>
+            <a class="btn-action" href="./doctors-team/doctors-degree-award.svg" download="doctors-degree-award.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-menu" data-label="nút menu điều hướng" data-desc="nút đóng mở thanh điều hướng mobile" data-cat="ui-navigation" data-keywords="menu dieu huong thanh menu">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-menu -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-menu.svg</div>
+          <div class="icon-title" title="Nút đóng mở thanh điều hướng mobile">Nút Menu điều hướng</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-menu')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-menu.svg" download="navigation-menu.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-close-x" data-label="nút đóng / thoát (x)" data-desc="nút tắt modal, đóng cửa sổ popup" data-cat="ui-navigation" data-keywords="dong tat close x">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-close-x -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-close-x.svg</div>
+          <div class="icon-title" title="Nút tắt modal, đóng cửa sổ popup">Nút Đóng / Thoát (X)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-close-x')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-close-x.svg" download="navigation-close-x.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-search" data-label="kính lúp tìm kiếm" data-desc="công cụ tìm kiếm dịch vụ, bác sĩ, dược mỹ phẩm" data-cat="ui-navigation" data-keywords="tim kiem tra cuu search">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-search -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-search.svg</div>
+          <div class="icon-title" title="Công cụ tìm kiếm dịch vụ, bác sĩ, dược mỹ phẩm">Kính lúp tìm kiếm</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-search')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-search.svg" download="navigation-search.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-hotline-phone" data-label="hotline 1900 6750" data-desc="nút gọi điện thoại liên hệ trực tiếp phòng khám" data-cat="ui-navigation" data-keywords="hotline dien thoai goi phone">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-hotline-phone -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-hotline-phone.svg</div>
+          <div class="icon-title" title="Nút gọi điện thoại liên hệ trực tiếp phòng khám">Hotline 1900 6750</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-hotline-phone')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-hotline-phone.svg" download="navigation-hotline-phone.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-phone-call" data-label="cuộc gọi tư vấn" data-desc="nút bấm gọi lại tư vấn miễn phí" data-cat="ui-navigation" data-keywords="cuoc goi goi lai phone call">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-phone-call -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call" aria-hidden="true"><path d="M13 2a9 9 0 0 1 9 9"></path><path d="M13 6a5 5 0 0 1 5 5"></path><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-phone-call.svg</div>
+          <div class="icon-title" title="Nút bấm gọi lại tư vấn miễn phí">Cuộc gọi tư vấn</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-phone-call')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-phone-call.svg" download="navigation-phone-call.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-hours-clock" data-label="giờ mở cửa (08:00 - 20:00)" data-desc="biểu tượng thông báo giờ làm việc phòng khám" data-cat="ui-navigation" data-keywords="gio mo cua thoi gian lam viec clock">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-hours-clock -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-hours-clock.svg</div>
+          <div class="icon-title" title="Biểu tượng thông báo giờ làm việc phòng khám">Giờ mở cửa (08:00 - 20:00)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-hours-clock')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-hours-clock.svg" download="navigation-hours-clock.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-location-pin" data-label="địa chỉ cơ sở phòng khám" data-desc="vị trí địa lý cơ sở 1 và cơ sở 2 cần thơ" data-cat="ui-navigation" data-keywords="dia chi co so vi tri ban do map pin">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-location-pin -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-location-pin.svg</div>
+          <div class="icon-title" title="Vị trí địa lý cơ sở 1 và cơ sở 2 Cần Thơ">Địa chỉ cơ sở phòng khám</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-location-pin')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-location-pin.svg" download="navigation-location-pin.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-appointment-calendar" data-label="lịch hẹn khám bệnh" data-desc="biểu tượng chọn ngày và đặt lịch hẹn khám" data-cat="ui-navigation" data-keywords="lich hen ngay thang calendar">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-appointment-calendar -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar" aria-hidden="true"><path d="M8 2v3"></path><path d="M16 2v3"></path><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18"></path></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-appointment-calendar.svg</div>
+          <div class="icon-title" title="Biểu tượng chọn ngày và đặt lịch hẹn khám">Lịch hẹn khám bệnh</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-appointment-calendar')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-appointment-calendar.svg" download="navigation-appointment-calendar.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-back-to-top" data-label="nút cuộn lên đầu trang (back to top)" data-desc="mũi tên hỗ trợ người dùng cuộn nhanh về đầu trang" data-cat="ui-navigation" data-keywords="len dau trang cuon back to top arrow up">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-back-to-top -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up" aria-hidden="true"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-back-to-top.svg</div>
+          <div class="icon-title" title="Mũi tên hỗ trợ người dùng cuộn nhanh về đầu trang">Nút cuộn lên đầu trang (Back to top)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-back-to-top')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-back-to-top.svg" download="navigation-back-to-top.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-arrow-right" data-label="mũi tên xem tiếp (arrow right)" data-desc="nút kêu gọi hành động cta xem chi tiết" data-cat="ui-navigation" data-keywords="mui ten xem tiep cta arrow right">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-arrow-right -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-arrow-right.svg</div>
+          <div class="icon-title" title="Nút kêu gọi hành động CTA xem chi tiết">Mũi tên xem tiếp (Arrow Right)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-arrow-right')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-arrow-right.svg" download="navigation-arrow-right.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-arrow-left" data-label="mũi tên quay lại (arrow left)" data-desc="nút quay lại trang trước" data-cat="ui-navigation" data-keywords="quay lai tro ve arrow left">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-arrow-left -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left" aria-hidden="true"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-arrow-left.svg</div>
+          <div class="icon-title" title="Nút quay lại trang trước">Mũi tên quay lại (Arrow Left)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-arrow-left')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-arrow-left.svg" download="navigation-arrow-left.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-chevron-down" data-label="mũi tên mở rộng (chevron down)" data-desc="mũi tên mở menu thả xuống và câu hỏi thường gặp faq" data-cat="ui-navigation" data-keywords="mo rong xo xuong chevron down">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-chevron-down -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-chevron-down.svg</div>
+          <div class="icon-title" title="Mũi tên mở menu thả xuống và câu hỏi thường gặp FAQ">Mũi tên mở rộng (Chevron Down)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-chevron-down')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-chevron-down.svg" download="navigation-chevron-down.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-chevron-up" data-label="mũi tên thu gọn (chevron up)" data-desc="mũi tên thu gọn danh mục và back to top" data-cat="ui-navigation" data-keywords="thu gon chevron up">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-chevron-up -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up" aria-hidden="true"><path d="m18 15-6-6-6 6"></path></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-chevron-up.svg</div>
+          <div class="icon-title" title="Mũi tên thu gọn danh mục và Back To Top">Mũi tên thu gọn (Chevron Up)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-chevron-up')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-chevron-up.svg" download="navigation-chevron-up.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-mail" data-label="hòm thư điện tử (email)" data-desc="địa chỉ email liên hệ hỗ trợ phòng khám" data-cat="ui-navigation" data-keywords="email thu hop thu mail">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-mail -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-mail.svg</div>
+          <div class="icon-title" title="Địa chỉ email liên hệ hỗ trợ phòng khám">Hòm thư điện tử (Email)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-mail')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-mail.svg" download="navigation-mail.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-share" data-label="chia sẻ liên kết" data-desc="nút chia sẻ bài viết dịch vụ lên mạng xã hội" data-cat="ui-navigation" data-keywords="chia se share lien ket">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-share -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share-2" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-share.svg</div>
+          <div class="icon-title" title="Nút chia sẻ bài viết dịch vụ lên mạng xã hội">Chia sẻ liên kết</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-share')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-share.svg" download="navigation-share.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="navigation-globe" data-label="website trực tuyến" data-desc="biểu tượng website chính thức và ngôn ngữ" data-cat="ui-navigation" data-keywords="website toan cau globe">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: navigation-globe -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+          </div>
+          <div class="badge-cat">ui-navigation</div>
+          <div class="icon-name">navigation-globe.svg</div>
+          <div class="icon-title" title="Biểu tượng website chính thức và ngôn ngữ">Website trực tuyến</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'navigation-globe')">Sao chép SVG</button>
+            <a class="btn-action" href="./ui-navigation/navigation-globe.svg" download="navigation-globe.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="status-success" data-label="trạng thái thành công (check circle)" data-desc="thông báo thao tác gửi lịch hẹn / lưu dữ liệu thành công" data-cat="status-feedback" data-keywords="thanh cong hoan thanh xong success check">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: status-success -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check lucide-check-circle-2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m16 9-5.5 5.5L8 12"></path></svg>
+          </div>
+          <div class="badge-cat">status-feedback</div>
+          <div class="icon-name">status-success.svg</div>
+          <div class="icon-title" title="Thông báo thao tác gửi lịch hẹn / lưu dữ liệu thành công">Trạng thái Thành công (Check Circle)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'status-success')">Sao chép SVG</button>
+            <a class="btn-action" href="./status-feedback/status-success.svg" download="status-success.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="status-check" data-label="dấu tích kiểm tra xác nhận" data-desc="biểu tượng xác nhận các điều khoản hoặc hoàn thành bước" data-cat="status-feedback" data-keywords="xac nhan tich check">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: status-check -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+          </div>
+          <div class="badge-cat">status-feedback</div>
+          <div class="icon-name">status-check.svg</div>
+          <div class="icon-title" title="Biểu tượng xác nhận các điều khoản hoặc hoàn thành bước">Dấu tích kiểm tra xác nhận</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'status-check')">Sao chép SVG</button>
+            <a class="btn-action" href="./status-feedback/status-check.svg" download="status-check.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="status-warning" data-label="cảnh báo y khoa (alert triangle)" data-desc="thông báo lưu ý chống chỉ định hoặc cảnh báo quan trọng" data-cat="status-feedback" data-keywords="canh bao chu y luu y warning">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: status-warning -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-alert lucide-alert-triangle" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+          </div>
+          <div class="badge-cat">status-feedback</div>
+          <div class="icon-name">status-warning.svg</div>
+          <div class="icon-title" title="Thông báo lưu ý chống chỉ định hoặc cảnh báo quan trọng">Cảnh báo y khoa (Alert Triangle)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'status-warning')">Sao chép SVG</button>
+            <a class="btn-action" href="./status-feedback/status-warning.svg" download="status-warning.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="status-error" data-label="thông báo lỗi (alert circle)" data-desc="thông báo lỗi nhập liệu hoặc trạng thái thất bại" data-cat="status-feedback" data-keywords="loi that bai canh bao error">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: status-error -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-alert lucide-alert-circle" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg>
+          </div>
+          <div class="badge-cat">status-feedback</div>
+          <div class="icon-name">status-error.svg</div>
+          <div class="icon-title" title="Thông báo lỗi nhập liệu hoặc trạng thái thất bại">Thông báo lỗi (Alert Circle)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'status-error')">Sao chép SVG</button>
+            <a class="btn-action" href="./status-feedback/status-error.svg" download="status-error.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="status-info" data-label="thông tin hướng dẫn (info)" data-desc="biểu tượng cung cấp thêm thông tin chú thích" data-cat="status-feedback" data-keywords="thong tin chu thich huong dan info">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: status-info -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+          </div>
+          <div class="badge-cat">status-feedback</div>
+          <div class="icon-name">status-info.svg</div>
+          <div class="icon-title" title="Biểu tượng cung cấp thêm thông tin chú thích">Thông tin hướng dẫn (Info)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'status-info')">Sao chép SVG</button>
+            <a class="btn-action" href="./status-feedback/status-info.svg" download="status-info.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="status-help" data-label="trợ giúp & câu hỏi (help)" data-desc="biểu tượng trung tâm trợ giúp và giải đáp thắc mắc" data-cat="status-feedback" data-keywords="tro giup cau hoi thac mac help">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: status-help -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-question-mark lucide-help-circle lucide-circle-help" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>
+          </div>
+          <div class="badge-cat">status-feedback</div>
+          <div class="icon-name">status-help.svg</div>
+          <div class="icon-title" title="Biểu tượng trung tâm trợ giúp và giải đáp thắc mắc">Trợ giúp & Câu hỏi (Help)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'status-help')">Sao chép SVG</button>
+            <a class="btn-action" href="./status-feedback/status-help.svg" download="status-help.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="status-refresh-loading" data-label="đang làm mới / tải lại" data-desc="biểu tượng làm mới danh sách dữ liệu hoặc đồng bộ" data-cat="status-feedback" data-keywords="tai lai lam moi refresh loading">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: status-refresh-loading -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg>
+          </div>
+          <div class="badge-cat">status-feedback</div>
+          <div class="icon-name">status-refresh-loading.svg</div>
+          <div class="icon-title" title="Biểu tượng làm mới danh sách dữ liệu hoặc đồng bộ">Đang làm mới / Tải lại</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'status-refresh-loading')">Sao chép SVG</button>
+            <a class="btn-action" href="./status-feedback/status-refresh-loading.svg" download="status-refresh-loading.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="payment-cash" data-label="tiền mặt tại quầy" data-desc="phương thức thanh toán bằng tiền mặt tại quầy thu ngân phòng khám" data-cat="payment" data-keywords="tien mat quay thu ngan dong tien cash">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: payment-cash -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dollar-sign" aria-hidden="true"><line x1="12" x2="12" y1="2" y2="22"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <div class="badge-cat">payment</div>
+          <div class="icon-name">payment-cash.svg</div>
+          <div class="icon-title" title="Phương thức thanh toán bằng tiền mặt tại quầy thu ngân phòng khám">Tiền mặt tại quầy</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'payment-cash')">Sao chép SVG</button>
+            <a class="btn-action" href="./payment/payment-cash.svg" download="payment-cash.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="payment-credit-card" data-label="thẻ tín dụng / ghi nợ (visa, mastercard)" data-desc="phương thức quẹt thẻ ngân hàng máy pos tại phòng khám" data-cat="payment" data-keywords="the tin dung visa mastercard pos credit card">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: payment-credit-card -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line><path d="M6 14h2"></path></svg>
+          </div>
+          <div class="badge-cat">payment</div>
+          <div class="icon-name">payment-credit-card.svg</div>
+          <div class="icon-title" title="Phương thức quẹt thẻ ngân hàng máy POS tại phòng khám">Thẻ tín dụng / Ghi nợ (Visa, Mastercard)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'payment-credit-card')">Sao chép SVG</button>
+            <a class="btn-action" href="./payment/payment-credit-card.svg" download="payment-credit-card.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="payment-bank-transfer" data-label="chuyển khoản ngân hàng (vietqr)" data-desc="phương thức chuyển khoản ngân hàng qua tài khoản phòng khám" data-cat="payment" data-keywords="chuyen khoan ngan hang vietqr bank transfer">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: payment-bank-transfer -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building-complex lucide-building-2" aria-hidden="true"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>
+          </div>
+          <div class="badge-cat">payment</div>
+          <div class="icon-name">payment-bank-transfer.svg</div>
+          <div class="icon-title" title="Phương thức chuyển khoản ngân hàng qua tài khoản phòng khám">Chuyển khoản ngân hàng (VietQR)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'payment-bank-transfer')">Sao chép SVG</button>
+            <a class="btn-action" href="./payment/payment-bank-transfer.svg" download="payment-bank-transfer.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="shared-settings" data-label="cài đặt hệ thống (settings)" data-desc="bánh răng quản trị hệ thống cms lbc" data-cat="shared" data-keywords="cai dat cau hinh settings">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: shared-settings -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings" aria-hidden="true"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          </div>
+          <div class="badge-cat">shared</div>
+          <div class="icon-name">shared-settings.svg</div>
+          <div class="icon-title" title="Bánh răng quản trị hệ thống CMS LBC">Cài đặt hệ thống (Settings)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'shared-settings')">Sao chép SVG</button>
+            <a class="btn-action" href="./shared/shared-settings.svg" download="shared-settings.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="shared-edit" data-label="chỉnh sửa nội dung (edit)" data-desc="nút biên tập bài viết, dịch vụ, sản phẩm" data-cat="shared" data-keywords="sua bien tap edit">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: shared-edit -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen lucide-pen-box lucide-edit lucide-pen-square" aria-hidden="true"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"></path></svg>
+          </div>
+          <div class="badge-cat">shared</div>
+          <div class="icon-name">shared-edit.svg</div>
+          <div class="icon-title" title="Nút biên tập bài viết, dịch vụ, sản phẩm">Chỉnh sửa nội dung (Edit)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'shared-edit')">Sao chép SVG</button>
+            <a class="btn-action" href="./shared/shared-edit.svg" download="shared-edit.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="shared-trash" data-label="xóa mục (trash)" data-desc="nút xóa dữ liệu vào thùng rác" data-cat="shared" data-keywords="xoa thung rac trash">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: shared-trash -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash lucide-trash-2" aria-hidden="true"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+          </div>
+          <div class="badge-cat">shared</div>
+          <div class="icon-name">shared-trash.svg</div>
+          <div class="icon-title" title="Nút xóa dữ liệu vào thùng rác">Xóa mục (Trash)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'shared-trash')">Sao chép SVG</button>
+            <a class="btn-action" href="./shared/shared-trash.svg" download="shared-trash.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="shared-database" data-label="cơ sở dữ liệu (database)" data-desc="biểu tượng cơ sở dữ liệu neon / cms data" data-cat="shared" data-keywords="co so du lieu database neon">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: shared-database -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg>
+          </div>
+          <div class="badge-cat">shared</div>
+          <div class="icon-name">shared-database.svg</div>
+          <div class="icon-title" title="Biểu tượng cơ sở dữ liệu Neon / CMS Data">Cơ sở dữ liệu (Database)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'shared-database')">Sao chép SVG</button>
+            <a class="btn-action" href="./shared/shared-database.svg" download="shared-database.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="shared-upload" data-label="tải tệp lên (upload)" data-desc="nút tải ảnh hoặc tệp svg lên hệ thống" data-cat="shared" data-keywords="tai len upload chon file">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: shared-upload -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload" aria-hidden="true"><path d="M12 3v12"></path><path d="m17 8-5-5-5 5"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path></svg>
+          </div>
+          <div class="badge-cat">shared</div>
+          <div class="icon-name">shared-upload.svg</div>
+          <div class="icon-title" title="Nút tải ảnh hoặc tệp SVG lên hệ thống">Tải tệp lên (Upload)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'shared-upload')">Sao chép SVG</button>
+            <a class="btn-action" href="./shared/shared-upload.svg" download="shared-upload.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="shared-download" data-label="tải về máy (download)" data-desc="nút tải file báo cáo, tải svg về máy tính" data-cat="shared" data-keywords="tai ve download luu file">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: shared-download -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download" aria-hidden="true"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg>
+          </div>
+          <div class="badge-cat">shared</div>
+          <div class="icon-name">shared-download.svg</div>
+          <div class="icon-title" title="Nút tải file báo cáo, tải SVG về máy tính">Tải về máy (Download)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'shared-download')">Sao chép SVG</button>
+            <a class="btn-action" href="./shared/shared-download.svg" download="shared-download.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="shared-eye" data-label="hiển thị / xem trước (eye)" data-desc="nút bật hiển thị hoặc xem trước giao diện" data-cat="shared" data-keywords="xem hien thi eye">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: shared-eye -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye" aria-hidden="true"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          </div>
+          <div class="badge-cat">shared</div>
+          <div class="icon-name">shared-eye.svg</div>
+          <div class="icon-title" title="Nút bật hiển thị hoặc xem trước giao diện">Hiển thị / Xem trước (Eye)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'shared-eye')">Sao chép SVG</button>
+            <a class="btn-action" href="./shared/shared-eye.svg" download="shared-eye.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="shared-eye-off" data-label="ẩn mục (eye off)" data-desc="nút tắt hiển thị mục khỏi giao diện người dùng" data-cat="shared" data-keywords="an khong hien thi eye off">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: shared-eye-off -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off" aria-hidden="true"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"></path><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"></path><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"></path><path d="m2 2 20 20"></path></svg>
+          </div>
+          <div class="badge-cat">shared</div>
+          <div class="icon-name">shared-eye-off.svg</div>
+          <div class="icon-title" title="Nút tắt hiển thị mục khỏi giao diện người dùng">Ẩn mục (Eye Off)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'shared-eye-off')">Sao chép SVG</button>
+            <a class="btn-action" href="./shared/shared-eye-off.svg" download="shared-eye-off.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="shared-lock" data-label="bảo mật / khóa (lock)" data-desc="biểu tượng khóa quyền quản trị và chứng chỉ ssl" data-cat="shared" data-keywords="khoa bao mat lock">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: shared-lock -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
+          <div class="badge-cat">shared</div>
+          <div class="icon-name">shared-lock.svg</div>
+          <div class="icon-title" title="Biểu tượng khóa quyền quản trị và chứng chỉ SSL">Bảo mật / Khóa (Lock)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'shared-lock')">Sao chép SVG</button>
+            <a class="btn-action" href="./shared/shared-lock.svg" download="shared-lock.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="shared-palette" data-label="màu sắc giao diện (palette)" data-desc="biểu tượng tùy biến bảng màu thương hiệu" data-cat="shared" data-keywords="mau sac giao dien palette">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: shared-palette -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-palette" aria-hidden="true"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"></path><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>
+          </div>
+          <div class="badge-cat">shared</div>
+          <div class="icon-name">shared-palette.svg</div>
+          <div class="icon-title" title="Biểu tượng tùy biến bảng màu thương hiệu">Màu sắc giao diện (Palette)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'shared-palette')">Sao chép SVG</button>
+            <a class="btn-action" href="./shared/shared-palette.svg" download="shared-palette.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="shared-filter" data-label="bộ lọc danh sách (filter)" data-desc="công cụ lọc dữ liệu theo tiêu chí" data-cat="shared" data-keywords="bo loc loc filter">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: shared-filter -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-funnel lucide-filter" aria-hidden="true"><path d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"></path></svg>
+          </div>
+          <div class="badge-cat">shared</div>
+          <div class="icon-name">shared-filter.svg</div>
+          <div class="icon-title" title="Công cụ lọc dữ liệu theo tiêu chí">Bộ lọc danh sách (Filter)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'shared-filter')">Sao chép SVG</button>
+            <a class="btn-action" href="./shared/shared-filter.svg" download="shared-filter.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="shared-copy" data-label="sao chép (copy)" data-desc="nút sao chép mã svg hoặc đường dẫn url" data-cat="shared" data-keywords="sao chep copy">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: shared-copy -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+          </div>
+          <div class="badge-cat">shared</div>
+          <div class="icon-name">shared-copy.svg</div>
+          <div class="icon-title" title="Nút sao chép mã SVG hoặc đường dẫn URL">Sao chép (Copy)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'shared-copy')">Sao chép SVG</button>
+            <a class="btn-action" href="./shared/shared-copy.svg" download="shared-copy.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="shared-code" data-label="mã nhúng html/svg (code)" data-desc="biểu tượng mã nguồn và nhúng svg" data-cat="shared" data-keywords="code ma nguon svg">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: shared-code -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code" aria-hidden="true"><path d="m16 18 6-6-6-6"></path><path d="m8 6-6 6 6 6"></path></svg>
+          </div>
+          <div class="badge-cat">shared</div>
+          <div class="icon-name">shared-code.svg</div>
+          <div class="icon-title" title="Biểu tượng mã nguồn và nhúng SVG">Mã nhúng HTML/SVG (Code)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'shared-code')">Sao chép SVG</button>
+            <a class="btn-action" href="./shared/shared-code.svg" download="shared-code.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+        <div class="card" data-name="shared-typography" data-label="định dạng chữ (type)" data-desc="công cụ soạn thảo văn bản và định dạng font chữ" data-cat="shared" data-keywords="chu font typography type">
+          <div class="icon-box ">
+            <!-- LBC Domain Icon: shared-typography -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-type" aria-hidden="true"><path d="M12 4v16"></path><path d="M4 7V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2"></path><path d="M9 20h6"></path></svg>
+          </div>
+          <div class="badge-cat">shared</div>
+          <div class="icon-name">shared-typography.svg</div>
+          <div class="icon-title" title="Công cụ soạn thảo văn bản và định dạng font chữ">Định dạng chữ (Type)</div>
+          <div class="btn-group">
+            <button class="btn-action" onclick="copySvgCode(this, 'shared-typography')">Sao chép SVG</button>
+            <a class="btn-action" href="./shared/shared-typography.svg" download="shared-typography.svg" style="text-decoration:none;display:flex;align-items:center;justify-content:center;">Tải file</a>
+          </div>
+        </div>
+      
+    </div>
+  </main>
+
+  <div class="toast" id="toast">
+    <span>✓</span>
+    <span id="toastText">Đã sao chép mã SVG vào bộ nhớ tạm!</span>
+  </div>
+
+  <script>
+    let currentCategory = 'all';
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    function filterCategory(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilters();
+    }
+
+    function handleSearch() {
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const q = document.getElementById('searchInput').value.trim().toLowerCase();
+      const cards = document.querySelectorAll('.card');
+      let count = 0;
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-cat');
+        const name = card.getAttribute('data-name');
+        const label = card.getAttribute('data-label');
+        const desc = card.getAttribute('data-desc');
+        const keywords = card.getAttribute('data-keywords');
+
+        const matchCat = currentCategory === 'all' || cat === currentCategory;
+        const matchQuery = !q || name.includes(q) || label.includes(q) || desc.includes(q) || keywords.includes(q);
+
+        if (matchCat && matchQuery) {
+          card.style.display = 'flex';
+          count++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      document.getElementById('visibleCount').innerText = count;
+    }
+
+    function copySvgCode(btn, name) {
+      try {
+        const card = btn.closest('.card');
+        const svgEl = card.querySelector('.icon-box svg');
+        if (!svgEl) throw new Error('Không tìm thấy SVG');
+        const svgText = new XMLSerializer().serializeToString(svgEl);
+        
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(svgText).then(() => {
+            showToast('Đã sao chép mã SVG: ' + name);
+          }).catch(() => fallbackCopy(svgText, name));
+        } else {
+          fallbackCopy(svgText, name);
+        }
+      } catch (e) {
+        showToast('Lỗi khi sao chép: ' + e.message);
+      }
+    }
+
+    function fallbackCopy(text, name) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast('Đã sao chép mã SVG: ' + name);
+      } catch (err) {
+        showToast('Không thể sao chép');
+      }
+      document.body.removeChild(ta);
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toastText').innerText = msg;
+      t.style.display = 'flex';
+      setTimeout(() => {
+        t.style.display = 'none';
+      }, 2500);
+    }
+  </script>
+</body>
+</html>

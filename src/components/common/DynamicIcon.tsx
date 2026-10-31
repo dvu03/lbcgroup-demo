@@ -160,6 +160,119 @@ export function isSafeIconUrl(url?: string): boolean {
   return true;
 }
 
+/**
+ * Mapping of semantic domain icon names to Lucide icon components
+ * for seamless backward and forward compatibility.
+ */
+export const SEMANTIC_TO_LUCIDE_MAP: Record<string, string> = {
+  // A. Dermatology Services (10 Services on Homepage)
+  'dermatology-acne-care': 'ShieldAlert',
+  'dermatology-scar-repair': 'Activity',
+  'dermatology-pigment-sun': 'SunMedium',
+  'dermatology-hair-scalp': 'Feather',
+  'dermatology-meso-injection': 'Syringe',
+  'dermatology-lifting-contour': 'Zap',
+  'dermatology-skin-facial': 'Sparkles',
+  'dermatology-exam-diagnosis': 'Microscope',
+  'dermatology-laser-hair-removal': 'Sparkle',
+  'dermatology-visia-booking': 'CalendarCheck',
+
+  // B. Medical & Clinic
+  'medical-stethoscope': 'Stethoscope',
+  'medical-heart-pulse': 'HeartPulse',
+  'medical-heart-care': 'HeartHandshake',
+  'medical-safety-shield': 'ShieldCheck',
+  'medical-biometric': 'Fingerprint',
+  'medical-file-check': 'FileCheck',
+  'medical-clinical-scale': 'Scale',
+
+  // C. Specialties Ecosystem
+  'specialties-dermatology': 'Stethoscope',
+  'specialties-laboratory': 'FlaskConical',
+  'specialties-pharmacy': 'Pill',
+  'specialties-cosmeceuticals': 'Sparkles',
+  'specialties-academy': 'GraduationCap',
+
+  // D. Technology & Equipment
+  'technology-visia-3d': 'Cpu',
+  'technology-rf-jovena': 'Zap',
+  'technology-laser': 'Sparkle',
+  'technology-hardware-specs': 'Cpu',
+
+  // E. Laboratory
+  'laboratory-microscope': 'Microscope',
+  'laboratory-flask-conical': 'FlaskConical',
+
+  // F. Pharmacy & Products
+  'pharmacy-medicine': 'Pill',
+  'pharmacy-cleanser-droplets': 'Droplets',
+  'pharmacy-serum-droplet': 'Droplet',
+  'pharmacy-shopping-bag': 'ShoppingBag',
+  'pharmacy-product-tag': 'Tag',
+  'pharmacy-combo-package': 'Package',
+  'pharmacy-best-seller-flame': 'Flame',
+  'pharmacy-quality-star': 'Star',
+
+  // G. Academy & Training
+  'academy-graduation': 'GraduationCap',
+  'academy-certificate-award': 'Award',
+  'academy-curriculum-book': 'BookOpen',
+
+  // H. Doctors Team
+  'doctors-specialist': 'User',
+  'doctors-team-users': 'Users',
+  'doctors-degree-award': 'Award',
+  'doctors-verification-check': 'UserCheck',
+
+  // I. UI & Navigation
+  'navigation-menu': 'Menu',
+  'navigation-close-x': 'X',
+  'navigation-search': 'Search',
+  'navigation-hotline-phone': 'Phone',
+  'navigation-phone-call': 'PhoneCall',
+  'navigation-hours-clock': 'Clock',
+  'navigation-location-pin': 'MapPin',
+  'navigation-appointment-calendar': 'Calendar',
+  'navigation-back-to-top': 'ArrowUp',
+  'navigation-arrow-right': 'ArrowRight',
+  'navigation-arrow-left': 'ArrowLeft',
+  'navigation-chevron-down': 'ChevronDown',
+  'navigation-chevron-up': 'ChevronUp',
+  'navigation-mail': 'Mail',
+  'navigation-share': 'Share2',
+  'navigation-globe': 'Globe',
+
+  // J. Status & Feedback
+  'status-success': 'CheckCircle2',
+  'status-check': 'Check',
+  'status-warning': 'AlertTriangle',
+  'status-error': 'AlertCircle',
+  'status-info': 'Info',
+  'status-help': 'HelpCircle',
+  'status-refresh-loading': 'RefreshCw',
+
+  // K. Payment
+  'payment-cash': 'DollarSign',
+  'payment-credit-card': 'CreditCard',
+  'payment-bank-transfer': 'Building2',
+
+  // L. Shared CMS Utilities
+  'shared-settings': 'Settings',
+  'shared-edit': 'Edit',
+  'shared-trash': 'Trash2',
+  'shared-database': 'Database',
+  'shared-upload': 'Upload',
+  'shared-download': 'Download',
+  'shared-eye': 'Eye',
+  'shared-eye-off': 'EyeOff',
+  'shared-lock': 'Lock',
+  'shared-palette': 'Palette',
+  'shared-filter': 'Filter',
+  'shared-copy': 'Copy',
+  'shared-code': 'Code',
+  'shared-typography': 'Type'
+};
+
 export const DynamicIcon: React.FC<DynamicIconProps> = ({
   name,
   url,
@@ -169,11 +282,14 @@ export const DynamicIcon: React.FC<DynamicIconProps> = ({
   fallback,
   alt = "icon"
 }) => {
-  // 1. If safe image/SVG URL is provided, render image
-  if (url && isSafeIconUrl(url)) {
+  // 1. Auto-resolve brand icons to assets if no explicit url is given
+  const resolvedUrl = url || (name && name.startsWith('brand-') ? `/assets/icons/brand/${name}.svg` : undefined);
+
+  // 2. If safe image/SVG URL is provided, render image
+  if (resolvedUrl && isSafeIconUrl(resolvedUrl)) {
     return (
       <img
-        src={url}
+        src={resolvedUrl}
         alt={alt}
         className={`${className} object-contain inline-block shrink-0`}
         style={{
@@ -189,13 +305,16 @@ export const DynamicIcon: React.FC<DynamicIconProps> = ({
     );
   }
 
-  // 2. Otherwise lookup icon from Lucide registry
-  if (name && ICON_REGISTRY[name]) {
-    const Component = ICON_REGISTRY[name];
+  // 3. Resolve semantic name to Lucide name if applicable
+  const effectiveName = name ? (SEMANTIC_TO_LUCIDE_MAP[name] || name) : '';
+
+  // 4. Lookup icon from Lucide registry
+  if (effectiveName && ICON_REGISTRY[effectiveName]) {
+    const Component = ICON_REGISTRY[effectiveName];
     return <Component className={className} size={size} style={style} />;
   }
 
-  // 3. Fallback
+  // 5. Fallback
   if (fallback) {
     return <>{fallback}</>;
   }

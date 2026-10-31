@@ -49,7 +49,12 @@ export const FeaturedServicesSection: React.FC = () => {
             className="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-primary-600 to-primary-800 text-white shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center group medical-card-hover"
           >
             <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/20 group-hover:bg-white text-white group-hover:text-primary-700 group-hover:scale-110 flex items-center justify-center transition-all duration-300 shadow-sm mb-3 backdrop-blur-sm">
-              <CalendarCheck className="w-7 h-7" />
+              <DynamicIcon
+                name="dermatology-visia-booking"
+                url="/assets/icons/dermatology-services/dermatology-visia-booking.svg"
+                className="w-7 h-7"
+                fallback={<CalendarCheck className="w-7 h-7" />}
+              />
             </div>
             <h3 className="font-heading font-bold text-xs sm:text-sm text-white leading-snug">
               Đặt lịch soi da VISIA 3D

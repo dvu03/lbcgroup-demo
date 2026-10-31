@@ -1,0 +1,2620 @@
+[
+  {
+    "name": "Logo-LBC-Color",
+    "kebabName": "logo-lbc-color",
+    "category": "brand",
+    "title": "Logo Lạc's Beauty Center (Bản chuẩn)",
+    "description": "Logo chính thức có chữ và biểu tượng hoa sen y khoa",
+    "isBrand": true,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 100\" width=\"420\" height=\"100\" fill=\"none\">\n  <!-- Monogram Emblem: Medical & Aesthetic Lotus Cross -->\n  <g transform=\"translate(10, 10)\">\n    <rect width=\"80\" height=\"80\" rx=\"20\" fill=\"#0E7C86\" />\n    <circle cx=\"40\" cy=\"40\" r=\"32\" stroke=\"white\" stroke-width=\"1.5\" stroke-opacity=\"0.3\" stroke-dasharray=\"3 3\"/>\n    <!-- Stylized 'L' & Serene Curve -->\n    <path d=\"M30 24V56C30 61.5 34.5 66 40 66H56\" stroke=\"white\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n    <circle cx=\"56\" cy=\"30\" r=\"4.5\" fill=\"#5EEAD4\" />\n    <path d=\"M48 40C52 35 58 35 60 40C62 45 56 50 48 54\" stroke=\"#5EEAD4\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n  </g>\n  <!-- Typography -->\n  <g transform=\"translate(105, 22)\">\n    <text x=\"0\" y=\"32\" font-family=\"'Fraunces', serif, 'Times New Roman'\" font-size=\"28\" font-weight=\"700\" fill=\"#0E7C86\" letter-spacing=\"-0.5\">\n      Lạc's <tspan font-family=\"'Be Vietnam Pro', sans-serif\" font-weight=\"600\" font-size=\"22\" fill=\"#0F172A\">Beauty Center</tspan>\n    </text>\n    <text x=\"0\" y=\"54\" font-family=\"'Be Vietnam Pro', sans-serif\" font-size=\"10.5\" font-weight=\"600\" fill=\"#64748B\" letter-spacing=\"1.8\">\n      PHÒNG KHÁM CHUYÊN KHOA DA LIỄU\n    </text>\n  </g>\n</svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/layout/Header.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/data/siteConfig.ts"
+    ]
+  },
+  {
+    "name": "Logo-LBC-White",
+    "kebabName": "logo-lbc-white",
+    "category": "brand",
+    "title": "Logo Lạc's Beauty Center (Bản trắng âm bản)",
+    "description": "Logo phiên bản nền tối cho Header/Footer",
+    "isBrand": true,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 420 100\" width=\"420\" height=\"100\" fill=\"none\">\n  <!-- Monogram Emblem White -->\n  <g transform=\"translate(10, 10)\">\n    <rect width=\"80\" height=\"80\" rx=\"20\" fill=\"rgba(255, 255, 255, 0.15)\" stroke=\"rgba(255, 255, 255, 0.4)\" stroke-width=\"1.5\" />\n    <circle cx=\"40\" cy=\"40\" r=\"32\" stroke=\"white\" stroke-width=\"1.5\" stroke-opacity=\"0.3\" stroke-dasharray=\"3 3\"/>\n    <path d=\"M30 24V56C30 61.5 34.5 66 40 66H56\" stroke=\"white\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n    <circle cx=\"56\" cy=\"30\" r=\"4.5\" fill=\"#FDE047\" />\n    <path d=\"M48 40C52 35 58 35 60 40C62 45 56 50 48 54\" stroke=\"#FDE047\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n  </g>\n  <!-- Typography White -->\n  <g transform=\"translate(105, 22)\">\n    <text x=\"0\" y=\"32\" font-family=\"'Fraunces', serif, 'Times New Roman'\" font-size=\"28\" font-weight=\"700\" fill=\"#FFFFFF\" letter-spacing=\"-0.5\">\n      Lạc's <tspan font-family=\"'Be Vietnam Pro', sans-serif\" font-weight=\"600\" font-size=\"22\" fill=\"#E2E8F0\">Beauty Center</tspan>\n    </text>\n    <text x=\"0\" y=\"54\" font-family=\"'Be Vietnam Pro', sans-serif\" font-size=\"10.5\" font-weight=\"600\" fill=\"#94A3B8\" letter-spacing=\"1.8\">\n      PHÒNG KHÁM CHUYÊN KHOA DA LIỄU\n    </text>\n  </g>\n</svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/layout/Header.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/data/siteConfig.ts"
+    ]
+  },
+  {
+    "name": "Logo-Emblem-Medical-Lotus",
+    "kebabName": "logo-emblem-medical-lotus",
+    "category": "brand",
+    "title": "Biểu tượng Hoa Sen Y Khoa LBC (Monogram)",
+    "description": "Biểu tượng chữ L cách điệu chữ thập y khoa và búp sen",
+    "isBrand": true,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" width=\"100\" height=\"100\" fill=\"none\">\n  <rect width=\"100\" height=\"100\" rx=\"25\" fill=\"#0E7C86\" />\n  <circle cx=\"50\" cy=\"50\" r=\"40\" stroke=\"white\" stroke-width=\"2\" stroke-opacity=\"0.3\" stroke-dasharray=\"4 4\"/>\n  <path d=\"M38 30V70C38 76.6 43.4 82 50 82H70\" stroke=\"white\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n  <circle cx=\"70\" cy=\"38\" r=\"6\" fill=\"#5EEAD4\" />\n  <path d=\"M60 50C65 44 72 44 75 50C77 56 70 62 60 67\" stroke=\"#5EEAD4\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n</svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/layout/Header.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/data/siteConfig.ts"
+    ]
+  },
+  {
+    "name": "Fallback-Clinic",
+    "kebabName": "fallback-clinic",
+    "category": "brand",
+    "title": "Hình ảnh đại diện Phòng khám (Fallback Graphic)",
+    "description": "Hình minh họa đồ họa cơ sở phòng khám",
+    "isBrand": true,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 500\" width=\"800\" height=\"500\" fill=\"none\">\n  <rect width=\"800\" height=\"500\" fill=\"#EEF7F8\"/>\n  <rect x=\"20\" y=\"20\" width=\"760\" height=\"460\" rx=\"16\" fill=\"white\" stroke=\"#0E7C86\" stroke-width=\"2\" stroke-opacity=\"0.2\"/>\n  <circle cx=\"400\" cy=\"210\" r=\"64\" fill=\"#0E7C86\" fill-opacity=\"0.08\" stroke=\"#0E7C86\" stroke-width=\"2\"/>\n  <!-- Cross icon -->\n  <path d=\"M400 178V242M368 210H432\" stroke=\"#0E7C86\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n  <text x=\"400\" y=\"315\" font-family=\"'Fraunces', serif\" font-size=\"22\" font-weight=\"700\" fill=\"#0E7C86\" text-anchor=\"middle\">\n    Lạc's Beauty Center\n  </text>\n  <text x=\"400\" y=\"345\" font-family=\"'Be Vietnam Pro', sans-serif\" font-size=\"13\" font-weight=\"500\" fill=\"#64748B\" text-anchor=\"middle\">\n    Hình ảnh đang được cập nhật từ hệ thống\n  </text>\n</svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/layout/Header.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/data/siteConfig.ts"
+    ]
+  },
+  {
+    "name": "Facebook",
+    "kebabName": "facebook",
+    "category": "brand",
+    "title": "Facebook Fanpage Icon",
+    "description": "Biểu tượng Fanpage Facebook Lạc's Beauty Center",
+    "isBrand": true,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"#1877F2\">\n  <path d=\"M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z\"/>\n</svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/layout/Header.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/data/siteConfig.ts"
+    ]
+  },
+  {
+    "name": "YouTube",
+    "kebabName": "youtube",
+    "category": "brand",
+    "title": "YouTube Channel Icon",
+    "description": "Biểu tượng Kênh YouTube chính thức LBC",
+    "isBrand": true,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"#FF0000\">\n  <path d=\"M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z\"/>\n</svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/layout/Header.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/data/siteConfig.ts"
+    ]
+  },
+  {
+    "name": "Zalo",
+    "kebabName": "zalo",
+    "category": "brand",
+    "title": "Zalo Official Account Icon",
+    "description": "Biểu tượng Zalo OA Phòng khám Da liễu",
+    "isBrand": true,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\">\n  <rect width=\"24\" height=\"24\" rx=\"6\" fill=\"#0068FF\" />\n  <path d=\"M6 8.5H12L8 15.5H14\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n  <circle cx=\"16.5\" cy=\"11.5\" r=\"2.5\" stroke=\"white\" stroke-width=\"1.8\"/>\n</svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/layout/Header.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/data/siteConfig.ts"
+    ]
+  },
+  {
+    "name": "TikTok",
+    "kebabName": "tiktok",
+    "category": "brand",
+    "title": "TikTok Channel Icon",
+    "description": "Biểu tượng Kênh TikTok Lạc's Beauty Center",
+    "isBrand": true,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"#000000\">\n  <path d=\"M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.11V9.42a6.33 6.33 0 0 0-.86-.06 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.75a8.16 8.16 0 0 0 4.77 1.52V6.82a4.85 4.85 0 0 1-1-.13z\"/>\n</svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/layout/Header.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/data/siteConfig.ts"
+    ]
+  },
+  {
+    "name": "Shopee",
+    "kebabName": "shopee",
+    "category": "brand",
+    "title": "Shopee Mall Icon",
+    "description": "Biểu tượng Gian hàng chính hãng Shopee Mall",
+    "isBrand": true,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\">\n  <rect width=\"24\" height=\"24\" rx=\"6\" fill=\"#EE4D2D\" />\n  <path d=\"M6.5 9.5H17.5L16.2 18H7.8L6.5 9.5Z\" fill=\"white\" fill-opacity=\"0.2\" stroke=\"white\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/>\n  <path d=\"M9.5 9.5V7C9.5 5.6 10.6 4.5 12 4.5C13.4 4.5 14.5 5.6 14.5 7V9.5\" stroke=\"white\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>\n  <path d=\"M13.5 12C13.5 12.8 12.8 13.5 12 13.5C11.2 13.5 10.5 12.8 10.5 12\" stroke=\"white\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n</svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/layout/Header.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/data/siteConfig.ts"
+    ]
+  },
+  {
+    "name": "Messenger",
+    "kebabName": "messenger",
+    "category": "brand",
+    "title": "Facebook Messenger Icon",
+    "description": "Biểu tượng Chat Facebook Messenger phòng khám",
+    "isBrand": true,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"#0084FF\">\n  <path d=\"M12 2C6.48 2 2 6.03 2 11C2 13.84 3.46 16.35 5.75 17.9V22L9.67 19.84C10.42 20.05 11.19 20.17 12 20.17C17.52 20.17 22 16.14 22 11.17C22 6.03 17.52 2 12 2ZM13.06 14.28L10.52 11.56L5.56 14.28L11.02 8.48L13.56 11.2L18.52 8.48L13.06 14.28Z\"/>\n</svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/layout/Header.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/data/siteConfig.ts"
+    ]
+  },
+  {
+    "name": "Activity",
+    "kebabName": "activity",
+    "category": "medical-clinical",
+    "title": "Xung điện / Trị sẹo vi điểm",
+    "description": "Dùng cho điều trị sẹo rỗ, phục hồi mô",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Activity -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-activity\" aria-hidden=\"true\"><path d=\"M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2\"></path></svg>",
+    "usageCount": 5,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/components/layout/SearchBar.tsx",
+      "src/data/services.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "AlertCircle",
+    "kebabName": "alert-circle",
+    "category": "medical-clinical",
+    "title": "AlertCircle",
+    "description": "Icon AlertCircle trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: AlertCircle -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-circle-alert lucide-alert-circle\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"12\" x2=\"12\" y1=\"8\" y2=\"12\"></line><line x1=\"12\" x2=\"12.01\" y1=\"16\" y2=\"16\"></line></svg>",
+    "usageCount": 18,
+    "filesUsed": [
+      "src/components/admin/IconPickerModal.tsx",
+      "src/components/admin/MediaLibraryModal.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/ServicesTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx",
+      "src/components/common/CartDrawer.tsx",
+      "src/components/home/BeforeAfterSection.tsx",
+      "src/pages/BeforeAfterPage.tsx",
+      "src/pages/BookingPage.tsx",
+      "src/pages/CosmeceuticalsPage.tsx",
+      "src/pages/DoctorDetailPage.tsx",
+      "src/pages/LicensesPage.tsx",
+      "src/pages/ProductDetailPage.tsx",
+      "src/pages/ServiceDetailPage.tsx",
+      "src/pages/TechnologiesListPage.tsx",
+      "src/pages/TechnologyDetailPage.tsx"
+    ]
+  },
+  {
+    "name": "AlertTriangle",
+    "kebabName": "alert-triangle",
+    "category": "medical-clinical",
+    "title": "AlertTriangle",
+    "description": "Icon AlertTriangle trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: AlertTriangle -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-triangle-alert lucide-alert-triangle\" aria-hidden=\"true\"><path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\"></path><path d=\"M12 9v4\"></path><path d=\"M12 17h.01\"></path></svg>",
+    "usageCount": 11,
+    "filesUsed": [
+      "src/components/admin/ConfirmationModal.tsx",
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/AuditLogTab.tsx",
+      "src/components/admin/tabs/BackupRestoreTab.tsx",
+      "src/components/admin/tabs/CaseStudiesTab.tsx",
+      "src/components/admin/tabs/DashboardOverviewTab.tsx",
+      "src/components/admin/tabs/DoctorsTab.tsx",
+      "src/components/admin/tabs/LeadsTab.tsx",
+      "src/components/admin/tabs/LegalInfoTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx",
+      "src/pages/DemoAdminPage.tsx"
+    ]
+  },
+  {
+    "name": "AlignCenter",
+    "kebabName": "align-center",
+    "category": "admin-system",
+    "title": "AlignCenter",
+    "description": "Icon AlignCenter trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: AlignCenter -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-text-align-center lucide-align-center\" aria-hidden=\"true\"><path d=\"M21 5H3\"></path><path d=\"M17 12H7\"></path><path d=\"M19 19H5\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/SpecialtiesTab.tsx"
+    ]
+  },
+  {
+    "name": "AlignJustify",
+    "kebabName": "align-justify",
+    "category": "admin-system",
+    "title": "AlignJustify",
+    "description": "Icon AlignJustify trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: AlignJustify -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-text-align-justify lucide-align-justify\" aria-hidden=\"true\"><path d=\"M3 5h18\"></path><path d=\"M3 12h18\"></path><path d=\"M3 19h18\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/SpecialtiesTab.tsx"
+    ]
+  },
+  {
+    "name": "AlignLeft",
+    "kebabName": "align-left",
+    "category": "admin-system",
+    "title": "AlignLeft",
+    "description": "Icon AlignLeft trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: AlignLeft -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-text-align-start lucide-text lucide-align-left\" aria-hidden=\"true\"><path d=\"M21 5H3\"></path><path d=\"M15 12H3\"></path><path d=\"M17 19H3\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/SpecialtiesTab.tsx"
+    ]
+  },
+  {
+    "name": "ArrowDown",
+    "kebabName": "arrow-down",
+    "category": "ui-navigation",
+    "title": "ArrowDown",
+    "description": "Icon ArrowDown trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ArrowDown -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-down\" aria-hidden=\"true\"><path d=\"M12 5v14\"></path><path d=\"m19 12-7 7-7-7\"></path></svg>",
+    "usageCount": 5,
+    "filesUsed": [
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/NavigationTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx"
+    ]
+  },
+  {
+    "name": "ArrowRight",
+    "kebabName": "arrow-right",
+    "category": "ui-navigation",
+    "title": "Mũi tên sang phải CTA",
+    "description": "Dùng cho Xem chi tiết, Đặt lịch hẹn",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ArrowRight -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-right\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg>",
+    "usageCount": 39,
+    "filesUsed": [
+      "src/components/admin/tabs/DashboardOverviewTab.tsx",
+      "src/components/admin/tabs/PageBannersTab.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx",
+      "src/components/common/CartDrawer.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/common/PageHeroBanner.tsx",
+      "src/components/common/PopupBanner.tsx",
+      "src/components/home/AboutSummarySection.tsx",
+      "src/components/home/BeforeAfterSection.tsx",
+      "src/components/home/BrandsSection.tsx",
+      "src/components/home/CustomerUtilitiesSection.tsx",
+      "src/components/home/DoctorsSection.tsx",
+      "src/components/home/EcosystemSpecialtiesSection.tsx",
+      "src/components/home/FeaturedProductsSection.tsx",
+      "src/components/home/FeaturedServicesSection.tsx",
+      "src/components/home/HeroSliderSection.tsx",
+      "src/components/home/NewsTabsSection.tsx",
+      "src/components/home/TechnologiesSection.tsx",
+      "src/components/layout/SearchBar.tsx",
+      "src/pages/AboutPage.tsx",
+      "src/pages/BeforeAfterPage.tsx",
+      "src/pages/BrandDetailPage.tsx",
+      "src/pages/CareersPage.tsx",
+      "src/pages/ContactPage.tsx",
+      "src/pages/CosmeceuticalsPage.tsx",
+      "src/pages/DoctorsListPage.tsx",
+      "src/pages/NewsDetailPage.tsx",
+      "src/pages/NewsListPage.tsx",
+      "src/pages/NotFoundPage.tsx",
+      "src/pages/PolicyPage.tsx",
+      "src/pages/ProductDetailPage.tsx",
+      "src/pages/SearchPage.tsx",
+      "src/pages/ServiceDetailPage.tsx",
+      "src/pages/ServicesListPage.tsx",
+      "src/pages/SpecialtyDetailPage.tsx",
+      "src/pages/TechnologiesListPage.tsx",
+      "src/pages/TechnologyDetailPage.tsx",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "ArrowUp",
+    "kebabName": "arrow-up",
+    "category": "ui-navigation",
+    "title": "Mũi tên cuộn lên đầu trang",
+    "description": "Dùng cho Nút Back To Top",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ArrowUp -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-up\" aria-hidden=\"true\"><path d=\"m5 12 7-7 7 7\"></path><path d=\"M12 19V5\"></path></svg>",
+    "usageCount": 10,
+    "filesUsed": [
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/NavigationTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/common/BackToTop.tsx",
+      "src/data/siteConfig.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "ArrowUpCircle",
+    "kebabName": "arrow-up-circle",
+    "category": "ui-navigation",
+    "title": "ArrowUpCircle",
+    "description": "Icon ArrowUpCircle trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ArrowUpCircle -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-circle-arrow-up lucide-arrow-up-circle\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"m16 12-4-4-4 4\"></path><path d=\"M12 16V8\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "ArrowUpRight",
+    "kebabName": "arrow-up-right",
+    "category": "ui-navigation",
+    "title": "ArrowUpRight",
+    "description": "Icon ArrowUpRight trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ArrowUpRight -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-up-right\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg>",
+    "usageCount": 4,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/CoreValuesSection.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Award",
+    "kebabName": "award",
+    "category": "medical-clinical",
+    "title": "Huy hiệu chuyên môn",
+    "description": "Dùng cho Bác sĩ trình độ Sau Đại học",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Award -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-award\" aria-hidden=\"true\"><path d=\"m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526\"></path><circle cx=\"12\" cy=\"8\" r=\"6\"></circle></svg>",
+    "usageCount": 10,
+    "filesUsed": [
+      "src/components/admin/tabs/DoctorsTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/AboutSummarySection.tsx",
+      "src/components/home/DoctorsSection.tsx",
+      "src/pages/AboutPage.tsx",
+      "src/pages/DoctorDetailPage.tsx",
+      "src/pages/DoctorsListPage.tsx",
+      "src/data/siteConfig.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Bell",
+    "kebabName": "bell",
+    "category": "admin-system",
+    "title": "Bell",
+    "description": "Icon Bell trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Bell -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-bell\" aria-hidden=\"true\"><path d=\"M10.268 21a2 2 0 0 0 3.464 0\"></path><path d=\"M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/AdminHeader.tsx"
+    ]
+  },
+  {
+    "name": "Bold",
+    "kebabName": "bold",
+    "category": "admin-system",
+    "title": "Bold",
+    "description": "Icon Bold trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Bold -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-bold\" aria-hidden=\"true\"><path d=\"M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/RichTextEditor.tsx"
+    ]
+  },
+  {
+    "name": "BookOpen",
+    "kebabName": "book-open",
+    "category": "ui-navigation",
+    "title": "BookOpen",
+    "description": "Icon BookOpen trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: BookOpen -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-book-open\" aria-hidden=\"true\"><path d=\"M12 5v16\"></path><path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\"></path></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/pages/NewsDetailPage.tsx",
+      "src/pages/NewsListPage.tsx",
+      "src/pages/SearchPage.tsx"
+    ]
+  },
+  {
+    "name": "Box",
+    "kebabName": "box",
+    "category": "products-commerce",
+    "title": "Box",
+    "description": "Icon Box trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Box -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-box\" aria-hidden=\"true\"><path d=\"M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z\"></path><path d=\"m3.3 7 8.7 5 8.7-5\"></path><path d=\"M12 22V12\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/AppearanceTab.tsx"
+    ]
+  },
+  {
+    "name": "Briefcase",
+    "kebabName": "briefcase",
+    "category": "ui-navigation",
+    "title": "Briefcase",
+    "description": "Icon Briefcase trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Briefcase -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-briefcase\" aria-hidden=\"true\"><path d=\"M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16\"></path><rect width=\"20\" height=\"14\" x=\"2\" y=\"6\" rx=\"2\"></rect></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/pages/CareersPage.tsx"
+    ]
+  },
+  {
+    "name": "Building",
+    "kebabName": "building",
+    "category": "ui-navigation",
+    "title": "Building",
+    "description": "Icon Building trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Building -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-building\" aria-hidden=\"true\"><path d=\"M12 10h.01\"></path><path d=\"M12 14h.01\"></path><path d=\"M12 6h.01\"></path><path d=\"M16 10h.01\"></path><path d=\"M16 14h.01\"></path><path d=\"M16 6h.01\"></path><path d=\"M8 10h.01\"></path><path d=\"M8 14h.01\"></path><path d=\"M8 6h.01\"></path><path d=\"M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3\"></path><rect x=\"4\" y=\"2\" width=\"16\" height=\"20\" rx=\"2\"></rect></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "name": "Building2",
+    "kebabName": "building2",
+    "category": "ui-navigation",
+    "title": "Building2",
+    "description": "Icon Building2 trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Building2 -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-building-complex lucide-building-2\" aria-hidden=\"true\"><path d=\"M10 12h4\"></path><path d=\"M10 8h4\"></path><path d=\"M14 21v-3a2 2 0 0 0-4 0v3\"></path><path d=\"M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2\"></path><path d=\"M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16\"></path></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/pages/BrandDetailPage.tsx",
+      "src/pages/LicensesPage.tsx"
+    ]
+  },
+  {
+    "name": "Calendar",
+    "kebabName": "calendar",
+    "category": "ui-navigation",
+    "title": "Lịch hẹn khám bệnh",
+    "description": "Dùng cho Đặt lịch khám & Lịch bác sĩ",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Calendar -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-calendar\" aria-hidden=\"true\"><path d=\"M8 2v3\"></path><path d=\"M16 2v3\"></path><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"></rect><path d=\"M3 9h18\"></path></svg>",
+    "usageCount": 28,
+    "filesUsed": [
+      "src/components/admin/tabs/ArticlesTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/DoctorsTab.tsx",
+      "src/components/admin/tabs/LeadsTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/common/PageHeroBanner.tsx",
+      "src/components/home/CustomerUtilitiesSection.tsx",
+      "src/components/home/DoctorsSection.tsx",
+      "src/components/home/HeroSliderSection.tsx",
+      "src/components/home/NewsTabsSection.tsx",
+      "src/components/layout/FloatingContact.tsx",
+      "src/components/layout/HeaderActions.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/pages/AboutPage.tsx",
+      "src/pages/BeforeAfterPage.tsx",
+      "src/pages/BookingPage.tsx",
+      "src/pages/DoctorDetailPage.tsx",
+      "src/pages/DoctorsListPage.tsx",
+      "src/pages/FacilitiesPage.tsx",
+      "src/pages/FAQPage.tsx",
+      "src/pages/NewsDetailPage.tsx",
+      "src/pages/NewsListPage.tsx",
+      "src/pages/NotFoundPage.tsx",
+      "src/pages/ServiceDetailPage.tsx",
+      "src/pages/ServicesListPage.tsx",
+      "src/pages/SpecialtyDetailPage.tsx",
+      "src/pages/TechnologyDetailPage.tsx"
+    ]
+  },
+  {
+    "name": "CalendarCheck",
+    "kebabName": "calendar-check",
+    "category": "ui-navigation",
+    "title": "CalendarCheck",
+    "description": "Icon CalendarCheck trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: CalendarCheck -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-calendar-check\" aria-hidden=\"true\"><path d=\"M8 2v3\"></path><path d=\"M16 2v3\"></path><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"></rect><path d=\"M3 9h18\"></path><path d=\"m9 15 2 2 4-4\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/home/FeaturedServicesSection.tsx"
+    ]
+  },
+  {
+    "name": "CalendarCheck2",
+    "kebabName": "calendar-check2",
+    "category": "ui-navigation",
+    "title": "CalendarCheck2",
+    "description": "Icon CalendarCheck2 trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: CalendarCheck2 -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-calendar-check-2\" aria-hidden=\"true\"><path d=\"M 19 3 L 5 3\"></path><path d=\"M 21 13 L 21 5\"></path><path d=\"M 21 5 A2 2 0 0 0 19 3\"></path><path d=\"M 3 19 A2 2 0 0 0 5 21\"></path><path d=\"M 3 5 L 3 19\"></path><path d=\"M 5 3 A2 2 0 0 0 3 5\"></path><path d=\"m16 19 2 2 4-4\"></path><path d=\"M16 2v3\"></path><path d=\"M3 9h18\"></path><path d=\"M5 21 L12.5 21\"></path><path d=\"M8 2v3\"></path></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/DashboardOverviewTab.tsx",
+      "src/components/admin/tabs/LeadsTab.tsx"
+    ]
+  },
+  {
+    "name": "Check",
+    "kebabName": "check",
+    "category": "medical-clinical",
+    "title": "Check",
+    "description": "Icon Check trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Check -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>",
+    "usageCount": 8,
+    "filesUsed": [
+      "src/components/admin/IconPickerModal.tsx",
+      "src/components/admin/MediaLibraryModal.tsx",
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/BrandsSection.tsx"
+    ]
+  },
+  {
+    "name": "CheckCircle2",
+    "kebabName": "check-circle2",
+    "category": "medical-clinical",
+    "title": "CheckCircle2",
+    "description": "Icon CheckCircle2 trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: CheckCircle2 -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-circle-check lucide-check-circle-2\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"m16 9-5.5 5.5L8 12\"></path></svg>",
+    "usageCount": 33,
+    "filesUsed": [
+      "src/components/admin/AdminHeader.tsx",
+      "src/components/admin/IconPickerModal.tsx",
+      "src/components/admin/MediaLibraryModal.tsx",
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/ArticlesTab.tsx",
+      "src/components/admin/tabs/AuditLogTab.tsx",
+      "src/components/admin/tabs/BackupRestoreTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/CaseStudiesTab.tsx",
+      "src/components/admin/tabs/DashboardOverviewTab.tsx",
+      "src/components/admin/tabs/DoctorsTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/LeadsTab.tsx",
+      "src/components/admin/tabs/LegalInfoTab.tsx",
+      "src/components/admin/tabs/LocationsTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx",
+      "src/components/admin/tabs/NavigationTab.tsx",
+      "src/components/admin/tabs/PageBannersTab.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/admin/tabs/ServicesTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx",
+      "src/components/admin/tabs/TechnologiesTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/AboutSummarySection.tsx",
+      "src/pages/BookingPage.tsx",
+      "src/pages/ContactPage.tsx",
+      "src/pages/DoctorDetailPage.tsx",
+      "src/pages/ProductDetailPage.tsx",
+      "src/pages/ServiceDetailPage.tsx",
+      "src/pages/ServicesListPage.tsx",
+      "src/pages/SpecialtyDetailPage.tsx",
+      "src/pages/TechnologyDetailPage.tsx"
+    ]
+  },
+  {
+    "name": "ChevronDown",
+    "kebabName": "chevron-down",
+    "category": "ui-navigation",
+    "title": "ChevronDown",
+    "description": "Icon ChevronDown trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ChevronDown -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg>",
+    "usageCount": 8,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/BranchSelector.tsx",
+      "src/components/layout/HeaderActions.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/pages/FAQPage.tsx",
+      "src/pages/ServiceDetailPage.tsx"
+    ]
+  },
+  {
+    "name": "ChevronLeft",
+    "kebabName": "chevron-left",
+    "category": "ui-navigation",
+    "title": "ChevronLeft",
+    "description": "Icon ChevronLeft trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ChevronLeft -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-left\" aria-hidden=\"true\"><path d=\"m15 18-6-6 6-6\"></path></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/home/HeroSliderSection.tsx",
+      "src/components/home/TechnologiesSection.tsx"
+    ]
+  },
+  {
+    "name": "ChevronRight",
+    "kebabName": "chevron-right",
+    "category": "ui-navigation",
+    "title": "ChevronRight",
+    "description": "Icon ChevronRight trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ChevronRight -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-right\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"></path></svg>",
+    "usageCount": 12,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/NavigationTab.tsx",
+      "src/components/admin/tabs/PageBannersTab.tsx",
+      "src/components/common/Breadcrumbs.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/common/PageHeroBanner.tsx",
+      "src/components/home/HeroSliderSection.tsx",
+      "src/components/home/TechnologiesSection.tsx",
+      "src/components/layout/AnnouncementBar.tsx",
+      "src/components/layout/MainNavigation.tsx"
+    ]
+  },
+  {
+    "name": "ChevronUp",
+    "kebabName": "chevron-up",
+    "category": "ui-navigation",
+    "title": "Mũi tên nhọn hướng lên",
+    "description": "Dùng cho Thu gọn danh mục & Back To Top",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ChevronUp -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-up\" aria-hidden=\"true\"><path d=\"m18 15-6-6-6 6\"></path></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/FloatingContact.tsx",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "ChevronsUp",
+    "kebabName": "chevrons-up",
+    "category": "ui-navigation",
+    "title": "ChevronsUp",
+    "description": "Icon ChevronsUp trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ChevronsUp -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevrons-up\" aria-hidden=\"true\"><path d=\"m17 11-5-5-5 5\"></path><path d=\"m17 18-5-5-5 5\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "ClipboardList",
+    "kebabName": "clipboard-list",
+    "category": "admin-system",
+    "title": "ClipboardList",
+    "description": "Icon ClipboardList trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ClipboardList -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-clipboard-list\" aria-hidden=\"true\"><rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\"></rect><path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\"></path><path d=\"M12 11h4\"></path><path d=\"M12 16h4\"></path><path d=\"M8 11h.01\"></path><path d=\"M8 16h.01\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/layout/HeaderActions.tsx"
+    ]
+  },
+  {
+    "name": "Clock",
+    "kebabName": "clock",
+    "category": "ui-navigation",
+    "title": "Đồng hồ giờ làm việc",
+    "description": "Dùng cho Giờ mở cửa 08:00 - 20:00",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Clock -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-clock\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M12 6v6l4 2\"></path></svg>",
+    "usageCount": 26,
+    "filesUsed": [
+      "src/components/admin/tabs/ArticlesTab.tsx",
+      "src/components/admin/tabs/AuditLogTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/DashboardOverviewTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx",
+      "src/components/admin/tabs/LeadsTab.tsx",
+      "src/components/admin/tabs/LocationsTab.tsx",
+      "src/components/admin/tabs/ServicesTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/NewsTabsSection.tsx",
+      "src/components/layout/BranchSelector.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/components/layout/Header.tsx",
+      "src/components/layout/HeaderTopbar.tsx",
+      "src/pages/AboutPage.tsx",
+      "src/pages/BookingPage.tsx",
+      "src/pages/CareersPage.tsx",
+      "src/pages/ContactPage.tsx",
+      "src/pages/DoctorDetailPage.tsx",
+      "src/pages/DoctorsListPage.tsx",
+      "src/pages/FacilitiesPage.tsx",
+      "src/pages/NewsDetailPage.tsx",
+      "src/pages/NewsListPage.tsx",
+      "src/pages/ServiceDetailPage.tsx",
+      "src/pages/SpecialtyDetailPage.tsx"
+    ]
+  },
+  {
+    "name": "Code",
+    "kebabName": "code",
+    "category": "admin-system",
+    "title": "Code",
+    "description": "Icon Code trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Code -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-code\" aria-hidden=\"true\"><path d=\"m16 18 6-6-6-6\"></path><path d=\"m8 6-6 6 6 6\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/RichTextEditor.tsx"
+    ]
+  },
+  {
+    "name": "Copy",
+    "kebabName": "copy",
+    "category": "admin-system",
+    "title": "Copy",
+    "description": "Icon Copy trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Copy -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-copy\" aria-hidden=\"true\"><rect width=\"14\" height=\"14\" x=\"8\" y=\"8\" rx=\"2\" ry=\"2\"></rect><path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\"></path></svg>",
+    "usageCount": 7,
+    "filesUsed": [
+      "src/components/admin/tabs/ArticlesTab.tsx",
+      "src/components/admin/tabs/BackupRestoreTab.tsx",
+      "src/components/admin/tabs/DoctorsTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/admin/tabs/ServicesTab.tsx"
+    ]
+  },
+  {
+    "name": "Cpu",
+    "kebabName": "cpu",
+    "category": "medical-clinical",
+    "title": "Vi xử lý công nghệ cao",
+    "description": "Dùng cho Giá trị cốt lõi: Tiên phong công nghệ",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Cpu -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-cpu\" aria-hidden=\"true\"><path d=\"M12 20v2\"></path><path d=\"M12 2v2\"></path><path d=\"M17 20v2\"></path><path d=\"M17 2v2\"></path><path d=\"M2 12h2\"></path><path d=\"M2 17h2\"></path><path d=\"M2 7h2\"></path><path d=\"M20 12h2\"></path><path d=\"M20 17h2\"></path><path d=\"M20 7h2\"></path><path d=\"M7 20v2\"></path><path d=\"M7 2v2\"></path><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\"></rect><rect x=\"8\" y=\"8\" width=\"8\" height=\"8\" rx=\"1\"></rect></svg>",
+    "usageCount": 12,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/DashboardOverviewTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/TechnologiesTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/AboutSummarySection.tsx",
+      "src/pages/SearchPage.tsx",
+      "src/pages/ServiceDetailPage.tsx",
+      "src/pages/TechnologiesListPage.tsx",
+      "src/pages/TechnologyDetailPage.tsx",
+      "src/data/coreValues.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "CreditCard",
+    "kebabName": "credit-card",
+    "category": "products-commerce",
+    "title": "CreditCard",
+    "description": "Icon CreditCard trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: CreditCard -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-credit-card\" aria-hidden=\"true\"><rect width=\"20\" height=\"14\" x=\"2\" y=\"5\" rx=\"2\"></rect><line x1=\"2\" x2=\"22\" y1=\"10\" y2=\"10\"></line><path d=\"M6 14h2\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/pages/PolicyPage.tsx"
+    ]
+  },
+  {
+    "name": "Database",
+    "kebabName": "database",
+    "category": "admin-system",
+    "title": "Database",
+    "description": "Icon Database trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Database -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-database\" aria-hidden=\"true\"><ellipse cx=\"12\" cy=\"5\" rx=\"9\" ry=\"3\"></ellipse><path d=\"M3 5V19A9 3 0 0 0 21 19V5\"></path><path d=\"M3 12A9 3 0 0 0 21 12\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/BackupRestoreTab.tsx"
+    ]
+  },
+  {
+    "name": "DollarSign",
+    "kebabName": "dollar-sign",
+    "category": "products-commerce",
+    "title": "Bảng giá niêm yết",
+    "description": "Dùng cho Bảng giá dịch vụ, tuyển dụng",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: DollarSign -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-dollar-sign\" aria-hidden=\"true\"><line x1=\"12\" x2=\"12\" y1=\"2\" y2=\"22\"></line><path d=\"M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6\"></path></svg>",
+    "usageCount": 4,
+    "filesUsed": [
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/pages/CareersPage.tsx",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Download",
+    "kebabName": "download",
+    "category": "admin-system",
+    "title": "Download",
+    "description": "Icon Download trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Download -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-download\" aria-hidden=\"true\"><path d=\"M12 15V3\"></path><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"></path><path d=\"m7 10 5 5 5-5\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/admin/tabs/BackupRestoreTab.tsx",
+      "src/components/admin/tabs/LeadsTab.tsx"
+    ]
+  },
+  {
+    "name": "Droplet",
+    "kebabName": "droplet",
+    "category": "services-aesthetics",
+    "title": "Giọt tinh chất serum",
+    "description": "Dùng cho Tinh chất đặc trị, phục hồi",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Droplet -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-droplet\" aria-hidden=\"true\"><path d=\"M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Droplets",
+    "kebabName": "droplets",
+    "category": "services-aesthetics",
+    "title": "Giọt nước làm sạch sâu",
+    "description": "Dùng cho Danh mục Sữa rửa mặt & Tẩy trang",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Droplets -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-droplets\" aria-hidden=\"true\"><path d=\"M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z\"></path><path d=\"M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97\"></path></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/data/categories.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Edit",
+    "kebabName": "edit",
+    "category": "admin-system",
+    "title": "Edit",
+    "description": "Icon Edit trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Edit -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-square-pen lucide-pen-box lucide-edit lucide-pen-square\" aria-hidden=\"true\"><path d=\"M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7\"></path><path d=\"M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z\"></path></svg>",
+    "usageCount": 11,
+    "filesUsed": [
+      "src/components/admin/tabs/ArticlesTab.tsx",
+      "src/components/admin/tabs/CaseStudiesTab.tsx",
+      "src/components/admin/tabs/DoctorsTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/LocationsTab.tsx",
+      "src/components/admin/tabs/NavigationTab.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/admin/tabs/ServicesTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx",
+      "src/components/admin/tabs/TechnologiesTab.tsx"
+    ]
+  },
+  {
+    "name": "Edit3",
+    "kebabName": "edit3",
+    "category": "admin-system",
+    "title": "Edit3",
+    "description": "Icon Edit3 trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Edit3 -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-pen-line lucide-edit-3\" aria-hidden=\"true\"><path d=\"M13 21h8\"></path><path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/RichTextEditor.tsx"
+    ]
+  },
+  {
+    "name": "ExternalLink",
+    "kebabName": "external-link",
+    "category": "ui-navigation",
+    "title": "ExternalLink",
+    "description": "Icon ExternalLink trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ExternalLink -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-external-link\" aria-hidden=\"true\"><path d=\"M15 3h6v6\"></path><path d=\"M10 14 21 3\"></path><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"></path></svg>",
+    "usageCount": 20,
+    "filesUsed": [
+      "src/components/admin/AdminHeader.tsx",
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/MediaLibraryModal.tsx",
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/ArticlesTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/CaseStudiesTab.tsx",
+      "src/components/admin/tabs/DoctorsTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/LocationsTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx",
+      "src/components/admin/tabs/NavigationTab.tsx",
+      "src/components/admin/tabs/PageBannersTab.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/admin/tabs/ServicesTab.tsx",
+      "src/components/admin/tabs/TechnologiesTab.tsx",
+      "src/components/layout/BranchSelector.tsx",
+      "src/components/layout/Footer.tsx"
+    ]
+  },
+  {
+    "name": "Eye",
+    "kebabName": "eye",
+    "category": "admin-system",
+    "title": "Eye",
+    "description": "Icon Eye trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Eye -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-eye\" aria-hidden=\"true\"><path d=\"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0\"></path><circle cx=\"12\" cy=\"12\" r=\"3\"></circle></svg>",
+    "usageCount": 9,
+    "filesUsed": [
+      "src/components/admin/RichTextEditor.tsx",
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/ArticlesTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/DashboardOverviewTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/PageBannersTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx"
+    ]
+  },
+  {
+    "name": "EyeOff",
+    "kebabName": "eye-off",
+    "category": "admin-system",
+    "title": "EyeOff",
+    "description": "Icon EyeOff trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: EyeOff -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-eye-off\" aria-hidden=\"true\"><path d=\"M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49\"></path><path d=\"M14.084 14.158a3 3 0 0 1-4.242-4.242\"></path><path d=\"M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143\"></path><path d=\"m2 2 20 20\"></path></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/components/admin/tabs/HeroBannersTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/PageBannersTab.tsx"
+    ]
+  },
+  {
+    "name": "Feather",
+    "kebabName": "feather",
+    "category": "services-aesthetics",
+    "title": "Lông vũ phục hồi dịu nhẹ",
+    "description": "Dùng cho Dịch vụ Điều trị rụng tóc",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Feather -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-feather\" aria-hidden=\"true\"><path d=\"M14.086 18.412A2 2 0 0112.67 19H5v-7.672a2 2 0 01.586-1.414L11.75 3.75a6 6 0 118.49 8.49z\"></path><path d=\"M16 8 2 22\"></path><path d=\"M17.488 15H9\"></path></svg>",
+    "usageCount": 4,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/data/services.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "FileCheck",
+    "kebabName": "file-check",
+    "category": "medical-clinical",
+    "title": "FileCheck",
+    "description": "Icon FileCheck trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: FileCheck -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-file-check\" aria-hidden=\"true\"><path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"></path><path d=\"M14 2v5a1 1 0 0 0 1 1h5\"></path><path d=\"m9 15 2 2 4-4\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/LegalInfoTab.tsx"
+    ]
+  },
+  {
+    "name": "FileCode",
+    "kebabName": "file-code",
+    "category": "admin-system",
+    "title": "FileCode",
+    "description": "Icon FileCode trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: FileCode -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-file-code\" aria-hidden=\"true\"><path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"></path><path d=\"M14 2v5a1 1 0 0 0 1 1h5\"></path><path d=\"M10 12.5 8 15l2 2.5\"></path><path d=\"m14 12.5 2 2.5-2 2.5\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/BackupRestoreTab.tsx"
+    ]
+  },
+  {
+    "name": "FileText",
+    "kebabName": "file-text",
+    "category": "admin-system",
+    "title": "FileText",
+    "description": "Icon FileText trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: FileText -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-file-text\" aria-hidden=\"true\"><path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"></path><path d=\"M14 2v5a1 1 0 0 0 1 1h5\"></path><path d=\"M10 9H8\"></path><path d=\"M16 13H8\"></path><path d=\"M16 17H8\"></path></svg>",
+    "usageCount": 11,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/MediaLibraryModal.tsx",
+      "src/components/admin/tabs/ArticlesTab.tsx",
+      "src/components/admin/tabs/BackupRestoreTab.tsx",
+      "src/components/admin/tabs/DashboardOverviewTab.tsx",
+      "src/components/admin/tabs/ServicesTab.tsx",
+      "src/pages/BookingPage.tsx",
+      "src/pages/DoctorDetailPage.tsx",
+      "src/pages/LicensesPage.tsx",
+      "src/pages/PolicyPage.tsx",
+      "src/pages/SpecialtyDetailPage.tsx"
+    ]
+  },
+  {
+    "name": "Film",
+    "kebabName": "film",
+    "category": "admin-system",
+    "title": "Film",
+    "description": "Icon Film trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Film -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-film\" aria-hidden=\"true\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"></rect><path d=\"M7 3v18\"></path><path d=\"M3 7.5h4\"></path><path d=\"M3 12h18\"></path><path d=\"M3 16.5h4\"></path><path d=\"M17 3v18\"></path><path d=\"M17 7.5h4\"></path><path d=\"M17 16.5h4\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/admin/MediaLibraryModal.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx"
+    ]
+  },
+  {
+    "name": "Filter",
+    "kebabName": "filter",
+    "category": "admin-system",
+    "title": "Filter",
+    "description": "Icon Filter trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Filter -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-funnel lucide-filter\" aria-hidden=\"true\"><path d=\"M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z\"></path></svg>",
+    "usageCount": 5,
+    "filesUsed": [
+      "src/components/admin/tabs/AuditLogTab.tsx",
+      "src/components/admin/tabs/DoctorsTab.tsx",
+      "src/components/admin/tabs/LeadsTab.tsx",
+      "src/pages/CosmeceuticalsPage.tsx",
+      "src/pages/SearchPage.tsx"
+    ]
+  },
+  {
+    "name": "Fingerprint",
+    "kebabName": "fingerprint",
+    "category": "medical-clinical",
+    "title": "Vân tay cá nhân hóa",
+    "description": "Dùng cho Y học Cá nhân hóa",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Fingerprint -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-fingerprint-pattern lucide-fingerprint\" aria-hidden=\"true\"><path d=\"M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4\"></path><path d=\"M14 13.12c0 2.38 0 6.38-1 8.88\"></path><path d=\"M17.29 21.02c.12-.6.43-2.3.5-3.02\"></path><path d=\"M2 12a10 10 0 0 1 18-6\"></path><path d=\"M2 16h.01\"></path><path d=\"M21.8 16c.2-2 .131-5.354 0-6\"></path><path d=\"M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2\"></path><path d=\"M8.65 22c.21-.66.45-1.32.57-2\"></path><path d=\"M9 6.8a6 6 0 0 1 9 5.2v2\"></path></svg>",
+    "usageCount": 5,
+    "filesUsed": [
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/AboutSummarySection.tsx",
+      "src/data/coreValues.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Flame",
+    "kebabName": "flame",
+    "category": "services-aesthetics",
+    "title": "Ngọn lửa sản phẩm hot",
+    "description": "Dùng cho Dịch vụ/Sản phẩm bán chạy",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Flame -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-flame\" aria-hidden=\"true\"><path d=\"M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "FlaskConical",
+    "kebabName": "flask-conical",
+    "category": "medical-clinical",
+    "title": "Bình thí nghiệm hóa sinh",
+    "description": "Dùng cho Khoa Xét nghiệm, Demodex, vi nấm",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: FlaskConical -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-flask-conical\" aria-hidden=\"true\"><path d=\"M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2\"></path><path d=\"M6.453 15h11.094\"></path><path d=\"M8.5 2h7\"></path></svg>",
+    "usageCount": 4,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/data/specialties.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "FolderTree",
+    "kebabName": "folder-tree",
+    "category": "admin-system",
+    "title": "FolderTree",
+    "description": "Icon FolderTree trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: FolderTree -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-folder-tree\" aria-hidden=\"true\"><path d=\"M20 10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2.5a1 1 0 0 1-.8-.4l-.9-1.2A1 1 0 0 0 15 3h-2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z\"></path><path d=\"M20 21a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-2.9a1 1 0 0 1-.88-.55l-.42-.85a1 1 0 0 0-.92-.6H13a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z\"></path><path d=\"M3 5a2 2 0 0 0 2 2h3\"></path><path d=\"M3 3v13a2 2 0 0 0 2 2h3\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx"
+    ]
+  },
+  {
+    "name": "Globe",
+    "kebabName": "globe",
+    "category": "ui-navigation",
+    "title": "Globe",
+    "description": "Icon Globe trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Globe -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-globe\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20\"></path><path d=\"M2 12h20\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx"
+    ]
+  },
+  {
+    "name": "GraduationCap",
+    "kebabName": "graduation-cap",
+    "category": "medical-clinical",
+    "title": "Mũ học thuật / Đào tạo",
+    "description": "Dùng cho Học viện Đào tạo LBC Academy",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: GraduationCap -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-graduation-cap\" aria-hidden=\"true\"><path d=\"M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z\"></path><path d=\"M22 10v6\"></path><path d=\"M6 12.5V16a6 3 0 0 0 12 0v-3.5\"></path></svg>",
+    "usageCount": 12,
+    "filesUsed": [
+      "src/components/admin/tabs/DoctorsTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/AboutSummarySection.tsx",
+      "src/components/home/DoctorsSection.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/pages/DoctorDetailPage.tsx",
+      "src/pages/DoctorsListPage.tsx",
+      "src/pages/SpecialtyDetailPage.tsx",
+      "src/data/coreValues.ts",
+      "src/data/specialties.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Grid",
+    "kebabName": "grid",
+    "category": "admin-system",
+    "title": "Grid",
+    "description": "Icon Grid trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Grid -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-grid-3x3 lucide-grid lucide-grid-3-x-3\" aria-hidden=\"true\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"></rect><path d=\"M3 9h18\"></path><path d=\"M3 15h18\"></path><path d=\"M9 3v18\"></path><path d=\"M15 3v18\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/admin/tabs/DoctorsTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx"
+    ]
+  },
+  {
+    "name": "HardDrive",
+    "kebabName": "hard-drive",
+    "category": "admin-system",
+    "title": "HardDrive",
+    "description": "Icon HardDrive trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: HardDrive -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-hard-drive\" aria-hidden=\"true\"><path d=\"M10 16h.01\"></path><path d=\"M2.212 11.577a2 2 0 0 0-.212.896V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5.527a2 2 0 0 0-.212-.896L18.55 5.11A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z\"></path><path d=\"M21.946 12.013H2.054\"></path><path d=\"M6 16h.01\"></path></svg>",
+    "usageCount": 4,
+    "filesUsed": [
+      "src/components/admin/AdminHeader.tsx",
+      "src/components/admin/MediaLibraryModal.tsx",
+      "src/components/admin/tabs/DashboardOverviewTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx"
+    ]
+  },
+  {
+    "name": "HardDriveDownload",
+    "kebabName": "hard-drive-download",
+    "category": "admin-system",
+    "title": "HardDriveDownload",
+    "description": "Icon HardDriveDownload trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: HardDriveDownload -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-hard-drive-download\" aria-hidden=\"true\"><path d=\"M12 2v8\"></path><path d=\"m16 6-4 4-4-4\"></path><rect width=\"20\" height=\"8\" x=\"2\" y=\"14\" rx=\"2\"></rect><path d=\"M6 18h.01\"></path><path d=\"M10 18h.01\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/BackupRestoreTab.tsx"
+    ]
+  },
+  {
+    "name": "Heading1",
+    "kebabName": "heading1",
+    "category": "admin-system",
+    "title": "Heading1",
+    "description": "Icon Heading1 trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Heading1 -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-heading-1\" aria-hidden=\"true\"><path d=\"M4 12h8\"></path><path d=\"M4 18V6\"></path><path d=\"M12 18V6\"></path><path d=\"m17 12 3-2v8\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/RichTextEditor.tsx"
+    ]
+  },
+  {
+    "name": "Heading2",
+    "kebabName": "heading2",
+    "category": "admin-system",
+    "title": "Heading2",
+    "description": "Icon Heading2 trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Heading2 -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-heading-2\" aria-hidden=\"true\"><path d=\"M4 12h8\"></path><path d=\"M4 18V6\"></path><path d=\"M12 18V6\"></path><path d=\"M21 18h-4c0-4 4-3 4-6 0-1.5-2-2.5-4-1\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/RichTextEditor.tsx"
+    ]
+  },
+  {
+    "name": "Heart",
+    "kebabName": "heart",
+    "category": "services-aesthetics",
+    "title": "Heart",
+    "description": "Icon Heart trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Heart -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-heart\" aria-hidden=\"true\"><path d=\"M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/layout/Footer.tsx",
+      "src/pages/ProductDetailPage.tsx"
+    ]
+  },
+  {
+    "name": "HeartHandshake",
+    "kebabName": "heart-handshake",
+    "category": "medical-clinical",
+    "title": "Trái tim tận tâm y đức",
+    "description": "Dùng cho Sứ mệnh & Chăm sóc tận tâm",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: HeartHandshake -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-heart-handshake\" aria-hidden=\"true\"><path d=\"M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762\"></path></svg>",
+    "usageCount": 9,
+    "filesUsed": [
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/AboutSummarySection.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/pages/AboutPage.tsx",
+      "src/data/categories.ts",
+      "src/data/services.ts",
+      "src/data/siteConfig.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "HeartPulse",
+    "kebabName": "heart-pulse",
+    "category": "medical-clinical",
+    "title": "Nhịp tim sinh học",
+    "description": "Dùng cho sức khỏe, phác đồ cá nhân",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: HeartPulse -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-heart-pulse\" aria-hidden=\"true\"><path d=\"M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5\"></path><path d=\"M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "HelpCircle",
+    "kebabName": "help-circle",
+    "category": "ui-navigation",
+    "title": "HelpCircle",
+    "description": "Icon HelpCircle trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: HelpCircle -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-circle-question-mark lucide-help-circle lucide-circle-help\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3\"></path><path d=\"M12 17h.01\"></path></svg>",
+    "usageCount": 6,
+    "filesUsed": [
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/ServicesTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/CustomerUtilitiesSection.tsx",
+      "src/pages/FAQPage.tsx",
+      "src/pages/ServiceDetailPage.tsx"
+    ]
+  },
+  {
+    "name": "History",
+    "kebabName": "history",
+    "category": "admin-system",
+    "title": "History",
+    "description": "Icon History trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: History -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-rotate-ccw-clock lucide-history\" aria-hidden=\"true\"><path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\"></path><path d=\"M3 3v5h5\"></path><path d=\"M12 7v5l4 2\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/AuditLogTab.tsx"
+    ]
+  },
+  {
+    "name": "Home",
+    "kebabName": "home",
+    "category": "ui-navigation",
+    "title": "Home",
+    "description": "Icon Home trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Home -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-house lucide-home\" aria-hidden=\"true\"><path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\"></path><path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"></path></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/common/Breadcrumbs.tsx",
+      "src/pages/NotFoundPage.tsx"
+    ]
+  },
+  {
+    "name": "Image",
+    "kebabName": "image",
+    "category": "admin-system",
+    "title": "Image",
+    "description": "Icon Image trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Image -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-image\" aria-hidden=\"true\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" ry=\"2\"></rect><circle cx=\"9\" cy=\"9\" r=\"2\"></circle><path d=\"m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21\"></path></svg>",
+    "usageCount": 19,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/IconPickerModal.tsx",
+      "src/components/admin/MediaLibraryModal.tsx",
+      "src/components/admin/RichTextEditor.tsx",
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/ArticlesTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/CaseStudiesTab.tsx",
+      "src/components/admin/tabs/DoctorsTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/LocationsTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx",
+      "src/components/admin/tabs/PageBannersTab.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/admin/tabs/ServicesTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx",
+      "src/components/admin/tabs/TechnologiesTab.tsx"
+    ]
+  },
+  {
+    "name": "Info",
+    "kebabName": "info",
+    "category": "ui-navigation",
+    "title": "Info",
+    "description": "Icon Info trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Info -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-info\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M12 16v-4\"></path><path d=\"M12 8h.01\"></path></svg>",
+    "usageCount": 5,
+    "filesUsed": [
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/LegalInfoTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx",
+      "src/components/admin/tabs/PageBannersTab.tsx",
+      "src/pages/ProductDetailPage.tsx"
+    ]
+  },
+  {
+    "name": "Italic",
+    "kebabName": "italic",
+    "category": "admin-system",
+    "title": "Italic",
+    "description": "Icon Italic trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Italic -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-italic\" aria-hidden=\"true\"><line x1=\"19\" x2=\"10\" y1=\"4\" y2=\"4\"></line><line x1=\"14\" x2=\"5\" y1=\"20\" y2=\"20\"></line><line x1=\"15\" x2=\"9\" y1=\"4\" y2=\"20\"></line></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/RichTextEditor.tsx"
+    ]
+  },
+  {
+    "name": "Key",
+    "kebabName": "key",
+    "category": "admin-system",
+    "title": "Key",
+    "description": "Icon Key trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Key -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-key\" aria-hidden=\"true\"><path d=\"m2 21 9.6-9.6\"></path><path d=\"m7.5 15.5 2.3 2.3a1 1 0 0 1 0 1.4l-2.1 2.1a1 1 0 0 1-1.4 0L4 19\"></path><circle cx=\"15.5\" cy=\"7.5\" r=\"5.5\"></circle></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/BackupRestoreTab.tsx"
+    ]
+  },
+  {
+    "name": "Layers",
+    "kebabName": "layers",
+    "category": "admin-system",
+    "title": "Layers",
+    "description": "Icon Layers trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Layers -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-layers lucide-layers-3\" aria-hidden=\"true\"><path d=\"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z\"></path><path d=\"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12\"></path><path d=\"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17\"></path></svg>",
+    "usageCount": 10,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/CaseStudiesTab.tsx",
+      "src/components/admin/tabs/DashboardOverviewTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/NavigationTab.tsx",
+      "src/components/admin/tabs/PageBannersTab.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx",
+      "src/components/common/DynamicIcon.tsx"
+    ]
+  },
+  {
+    "name": "Layout",
+    "kebabName": "layout",
+    "category": "admin-system",
+    "title": "Layout",
+    "description": "Icon Layout trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Layout -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-panels-top-left lucide-layout\" aria-hidden=\"true\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"></rect><path d=\"M3 9h18\"></path><path d=\"M9 21V9\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx"
+    ]
+  },
+  {
+    "name": "LayoutDashboard",
+    "kebabName": "layout-dashboard",
+    "category": "admin-system",
+    "title": "LayoutDashboard",
+    "description": "Icon LayoutDashboard trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: LayoutDashboard -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-layout-dashboard\" aria-hidden=\"true\"><rect width=\"7\" height=\"9\" x=\"3\" y=\"3\" rx=\"1\"></rect><rect width=\"7\" height=\"5\" x=\"14\" y=\"3\" rx=\"1\"></rect><rect width=\"7\" height=\"9\" x=\"14\" y=\"12\" rx=\"1\"></rect><rect width=\"7\" height=\"5\" x=\"3\" y=\"16\" rx=\"1\"></rect></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx"
+    ]
+  },
+  {
+    "name": "Link",
+    "kebabName": "link",
+    "category": "ui-navigation",
+    "title": "Link",
+    "description": "Icon Link trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Link -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-link\" aria-hidden=\"true\"><path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"></path><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"></path></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/components/admin/RichTextEditor.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/PageBannersTab.tsx"
+    ]
+  },
+  {
+    "name": "List",
+    "kebabName": "list",
+    "category": "admin-system",
+    "title": "List",
+    "description": "Icon List trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: List -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-list\" aria-hidden=\"true\"><path d=\"M3 5h.01\"></path><path d=\"M3 12h.01\"></path><path d=\"M3 19h.01\"></path><path d=\"M8 5h13\"></path><path d=\"M8 12h13\"></path><path d=\"M8 19h13\"></path></svg>",
+    "usageCount": 4,
+    "filesUsed": [
+      "src/components/admin/RichTextEditor.tsx",
+      "src/components/admin/tabs/DoctorsTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx",
+      "src/pages/NewsDetailPage.tsx"
+    ]
+  },
+  {
+    "name": "ListOrdered",
+    "kebabName": "list-ordered",
+    "category": "admin-system",
+    "title": "ListOrdered",
+    "description": "Icon ListOrdered trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ListOrdered -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-list-ordered\" aria-hidden=\"true\"><path d=\"M11 5h10\"></path><path d=\"M11 12h10\"></path><path d=\"M11 19h10\"></path><path d=\"M4 4h1v5\"></path><path d=\"M4 9h2\"></path><path d=\"M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/RichTextEditor.tsx"
+    ]
+  },
+  {
+    "name": "Lock",
+    "kebabName": "lock",
+    "category": "admin-system",
+    "title": "Lock",
+    "description": "Icon Lock trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Lock -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-lock\" aria-hidden=\"true\"><rect width=\"18\" height=\"11\" x=\"3\" y=\"11\" rx=\"2\" ry=\"2\"></rect><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/pages/PolicyPage.tsx"
+    ]
+  },
+  {
+    "name": "LogIn",
+    "kebabName": "log-in",
+    "category": "ui-navigation",
+    "title": "LogIn",
+    "description": "Icon LogIn trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: LogIn -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-log-in\" aria-hidden=\"true\"><path d=\"m10 17 5-5-5-5\"></path><path d=\"M15 12H3\"></path><path d=\"M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/layout/HeaderActions.tsx"
+    ]
+  },
+  {
+    "name": "Mail",
+    "kebabName": "mail",
+    "category": "ui-navigation",
+    "title": "Mail",
+    "description": "Icon Mail trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Mail -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-mail\" aria-hidden=\"true\"><path d=\"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7\"></path><rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"></rect></svg>",
+    "usageCount": 5,
+    "filesUsed": [
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/LeadsTab.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/pages/CareersPage.tsx",
+      "src/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "name": "MapPin",
+    "kebabName": "map-pin",
+    "category": "ui-navigation",
+    "title": "Địa điểm cơ sở phòng khám",
+    "description": "Dùng cho Cơ sở 1 và Cơ sở 2",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: MapPin -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-map-pin\" aria-hidden=\"true\"><path d=\"M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0\"></path><circle cx=\"12\" cy=\"10\" r=\"3\"></circle></svg>",
+    "usageCount": 15,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/LocationsTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/CustomerUtilitiesSection.tsx",
+      "src/components/layout/BranchSelector.tsx",
+      "src/components/layout/FloatingContact.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/pages/AboutPage.tsx",
+      "src/pages/BookingPage.tsx",
+      "src/pages/CareersPage.tsx",
+      "src/pages/ContactPage.tsx",
+      "src/pages/DoctorDetailPage.tsx",
+      "src/pages/FacilitiesPage.tsx"
+    ]
+  },
+  {
+    "name": "Maximize2",
+    "kebabName": "maximize2",
+    "category": "admin-system",
+    "title": "Maximize2",
+    "description": "Icon Maximize2 trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Maximize2 -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-maximize-2\" aria-hidden=\"true\"><path d=\"M15 3h6v6\"></path><path d=\"m21 3-7 7\"></path><path d=\"m3 21 7-7\"></path><path d=\"M9 21H3v-6\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/AppearanceTab.tsx"
+    ]
+  },
+  {
+    "name": "Megaphone",
+    "kebabName": "megaphone",
+    "category": "admin-system",
+    "title": "Megaphone",
+    "description": "Icon Megaphone trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Megaphone -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-megaphone\" aria-hidden=\"true\"><path d=\"M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z\"></path><path d=\"M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14\"></path><path d=\"M8 6v8\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx"
+    ]
+  },
+  {
+    "name": "Menu",
+    "kebabName": "menu",
+    "category": "ui-navigation",
+    "title": "Thanh điều hướng Menu",
+    "description": "Dùng cho Menu mobile",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Menu -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu\" aria-hidden=\"true\"><path d=\"M4 5h16\"></path><path d=\"M4 12h16\"></path><path d=\"M4 19h16\"></path></svg>",
+    "usageCount": 6,
+    "filesUsed": [
+      "src/components/admin/AdminHeader.tsx",
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/NavigationTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/HeaderActions.tsx"
+    ]
+  },
+  {
+    "name": "MessageCircle",
+    "kebabName": "message-circle",
+    "category": "ui-navigation",
+    "title": "MessageCircle",
+    "description": "Icon MessageCircle trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: MessageCircle -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-message-circle\" aria-hidden=\"true\"><path d=\"M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/layout/FloatingContact.tsx",
+      "src/pages/FAQPage.tsx"
+    ]
+  },
+  {
+    "name": "Microscope",
+    "kebabName": "microscope",
+    "category": "medical-clinical",
+    "title": "Kính hiển vi soi tươi",
+    "description": "Dùng cho dịch vụ soi da, vi sinh",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Microscope -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-microscope\" aria-hidden=\"true\"><path d=\"M6 18h8\"></path><path d=\"M3 22h18\"></path><path d=\"M14 22a7 7 0 1 0 0-14h-1\"></path><path d=\"M9 14h2\"></path><path d=\"M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z\"></path><path d=\"M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3\"></path></svg>",
+    "usageCount": 4,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/data/services.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Monitor",
+    "kebabName": "monitor",
+    "category": "admin-system",
+    "title": "Monitor",
+    "description": "Icon Monitor trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Monitor -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-monitor\" aria-hidden=\"true\"><rect width=\"20\" height=\"14\" x=\"2\" y=\"3\" rx=\"2\"></rect><line x1=\"8\" x2=\"16\" y1=\"21\" y2=\"21\"></line><line x1=\"12\" x2=\"12\" y1=\"17\" y2=\"21\"></line></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx"
+    ]
+  },
+  {
+    "name": "MoveUp",
+    "kebabName": "move-up",
+    "category": "ui-navigation",
+    "title": "MoveUp",
+    "description": "Icon MoveUp trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: MoveUp -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-move-up\" aria-hidden=\"true\"><path d=\"M8 6L12 2L16 6\"></path><path d=\"M12 2V22\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Navigation",
+    "kebabName": "navigation",
+    "category": "ui-navigation",
+    "title": "Navigation",
+    "description": "Icon Navigation trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Navigation -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-navigation\" aria-hidden=\"true\"><polygon points=\"3 11 22 2 13 21 11 13 3 11\"></polygon></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/pages/FacilitiesPage.tsx"
+    ]
+  },
+  {
+    "name": "Package",
+    "kebabName": "package",
+    "category": "products-commerce",
+    "title": "Hộp sản phẩm đóng gói",
+    "description": "Dùng cho Bộ sản phẩm combo điều trị",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Package -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-package\" aria-hidden=\"true\"><path d=\"M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z\"></path><path d=\"M12 22V12\"></path><polyline points=\"3.29 7 12 12 20.71 7\"></polyline><path d=\"m7.5 4.27 9 5.15\"></path></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Palette",
+    "kebabName": "palette",
+    "category": "admin-system",
+    "title": "Palette",
+    "description": "Icon Palette trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Palette -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-palette\" aria-hidden=\"true\"><path d=\"M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z\"></path><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\"></circle><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\"></circle><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\"></circle><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"></circle></svg>",
+    "usageCount": 5,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx"
+    ]
+  },
+  {
+    "name": "PanelsTopLeft",
+    "kebabName": "panels-top-left",
+    "category": "admin-system",
+    "title": "PanelsTopLeft",
+    "description": "Icon PanelsTopLeft trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: PanelsTopLeft -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-panels-top-left lucide-layout\" aria-hidden=\"true\"><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"></rect><path d=\"M3 9h18\"></path><path d=\"M9 21V9\"></path></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/PageBannersTab.tsx"
+    ]
+  },
+  {
+    "name": "Pause",
+    "kebabName": "pause",
+    "category": "services-aesthetics",
+    "title": "Pause",
+    "description": "Icon Pause trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Pause -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-pause\" aria-hidden=\"true\"><rect x=\"14\" y=\"3\" width=\"5\" height=\"18\" rx=\"1\"></rect><rect x=\"5\" y=\"3\" width=\"5\" height=\"18\" rx=\"1\"></rect></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/HeroBannersTab.tsx"
+    ]
+  },
+  {
+    "name": "Phone",
+    "kebabName": "phone",
+    "category": "ui-navigation",
+    "title": "Điện thoại Hotline",
+    "description": "Dùng cho Hotline 1900 6750",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Phone -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-phone\" aria-hidden=\"true\"><path d=\"M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384\"></path></svg>",
+    "usageCount": 18,
+    "filesUsed": [
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/LeadsTab.tsx",
+      "src/components/admin/tabs/LocationsTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/BranchSelector.tsx",
+      "src/components/layout/FloatingContact.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/components/layout/Header.tsx",
+      "src/components/layout/HeaderTopbar.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/pages/BookingPage.tsx",
+      "src/pages/ContactPage.tsx",
+      "src/pages/DoctorDetailPage.tsx",
+      "src/pages/FacilitiesPage.tsx",
+      "src/pages/FAQPage.tsx",
+      "src/pages/ServiceDetailPage.tsx",
+      "src/pages/SpecialtyDetailPage.tsx"
+    ]
+  },
+  {
+    "name": "PhoneCall",
+    "kebabName": "phone-call",
+    "category": "ui-navigation",
+    "title": "PhoneCall",
+    "description": "Icon PhoneCall trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: PhoneCall -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-phone-call\" aria-hidden=\"true\"><path d=\"M13 2a9 9 0 0 1 9 9\"></path><path d=\"M13 6a5 5 0 0 1 5 5\"></path><path d=\"M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx"
+    ]
+  },
+  {
+    "name": "Pill",
+    "kebabName": "pill",
+    "category": "medical-clinical",
+    "title": "Viên thuốc y tế chuẩn GPP",
+    "description": "Dùng cho Nhà thuốc chuẩn GPP",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Pill -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-pill\" aria-hidden=\"true\"><path d=\"m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z\"></path><path d=\"m8.5 8.5 7 7\"></path></svg>",
+    "usageCount": 4,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/data/specialties.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Play",
+    "kebabName": "play",
+    "category": "services-aesthetics",
+    "title": "Play",
+    "description": "Icon Play trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Play -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-play\" aria-hidden=\"true\"><path d=\"M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/HeroBannersTab.tsx"
+    ]
+  },
+  {
+    "name": "Plus",
+    "kebabName": "plus",
+    "category": "admin-system",
+    "title": "Plus",
+    "description": "Icon Plus trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Plus -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-plus\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path><path d=\"M12 5v14\"></path></svg>",
+    "usageCount": 14,
+    "filesUsed": [
+      "src/components/admin/AdminHeader.tsx",
+      "src/components/admin/tabs/ArticlesTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/CaseStudiesTab.tsx",
+      "src/components/admin/tabs/DoctorsTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/LocationsTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx",
+      "src/components/admin/tabs/NavigationTab.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/admin/tabs/ServicesTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx",
+      "src/components/admin/tabs/TechnologiesTab.tsx"
+    ]
+  },
+  {
+    "name": "PlusCircle",
+    "kebabName": "plus-circle",
+    "category": "admin-system",
+    "title": "PlusCircle",
+    "description": "Icon PlusCircle trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: PlusCircle -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-circle-plus lucide-plus-circle\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M8 12h8\"></path><path d=\"M12 8v8\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/DashboardOverviewTab.tsx"
+    ]
+  },
+  {
+    "name": "Quote",
+    "kebabName": "quote",
+    "category": "admin-system",
+    "title": "Quote",
+    "description": "Icon Quote trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Quote -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-quote\" aria-hidden=\"true\"><path d=\"M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z\"></path><path d=\"M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/RichTextEditor.tsx"
+    ]
+  },
+  {
+    "name": "RefreshCw",
+    "kebabName": "refresh-cw",
+    "category": "admin-system",
+    "title": "RefreshCw",
+    "description": "Icon RefreshCw trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: RefreshCw -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-refresh-cw\" aria-hidden=\"true\"><path d=\"M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8\"></path><path d=\"M21 3v5h-5\"></path><path d=\"M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16\"></path><path d=\"M8 16H3v5\"></path></svg>",
+    "usageCount": 5,
+    "filesUsed": [
+      "src/components/admin/AdminHeader.tsx",
+      "src/components/admin/MediaLibraryModal.tsx",
+      "src/components/admin/tabs/BackupRestoreTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx",
+      "src/pages/DemoAdminPage.tsx"
+    ]
+  },
+  {
+    "name": "RotateCcw",
+    "kebabName": "rotate-ccw",
+    "category": "products-commerce",
+    "title": "RotateCcw",
+    "description": "Icon RotateCcw trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: RotateCcw -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-rotate-ccw\" aria-hidden=\"true\"><path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\"></path><path d=\"M3 3v5h5\"></path></svg>",
+    "usageCount": 11,
+    "filesUsed": [
+      "src/components/admin/ConfirmationModal.tsx",
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/AuditLogTab.tsx",
+      "src/components/admin/tabs/BackupRestoreTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/PageBannersTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx",
+      "src/pages/PolicyPage.tsx",
+      "src/pages/ProductDetailPage.tsx"
+    ]
+  },
+  {
+    "name": "Ruler",
+    "kebabName": "ruler",
+    "category": "admin-system",
+    "title": "Ruler",
+    "description": "Icon Ruler trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Ruler -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-ruler\" aria-hidden=\"true\"><path d=\"M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z\"></path><path d=\"m14.5 12.5 2-2\"></path><path d=\"m11.5 9.5 2-2\"></path><path d=\"m8.5 6.5 2-2\"></path><path d=\"m17.5 15.5 2-2\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx"
+    ]
+  },
+  {
+    "name": "Save",
+    "kebabName": "save",
+    "category": "admin-system",
+    "title": "Save",
+    "description": "Icon Save trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Save -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-save\" aria-hidden=\"true\"><path d=\"M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z\"></path><path d=\"M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7\"></path><path d=\"M7 3v4a1 1 0 0 0 1 1h7\"></path></svg>",
+    "usageCount": 6,
+    "filesUsed": [
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/LegalInfoTab.tsx",
+      "src/components/admin/tabs/PageBannersTab.tsx"
+    ]
+  },
+  {
+    "name": "Scale",
+    "kebabName": "scale",
+    "category": "medical-clinical",
+    "title": "Scale",
+    "description": "Icon Scale trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Scale -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-scale\" aria-hidden=\"true\"><path d=\"M12 3v18\"></path><path d=\"m19 8 3 8a5 5 0 0 1-6 0zV7\"></path><path d=\"M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1\"></path><path d=\"m5 8 3 8a5 5 0 0 1-6 0zV7\"></path><path d=\"M7 21h10\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/LegalInfoTab.tsx"
+    ]
+  },
+  {
+    "name": "Scissors",
+    "kebabName": "scissors",
+    "category": "services-aesthetics",
+    "title": "Scissors",
+    "description": "Icon Scissors trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Scissors -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-scissors\" aria-hidden=\"true\"><circle cx=\"6\" cy=\"6\" r=\"3\"></circle><path d=\"M8.12 8.12 12 12\"></path><path d=\"M20 4 8.12 15.88\"></path><circle cx=\"6\" cy=\"18\" r=\"3\"></circle><path d=\"M14.8 14.8 20 20\"></path></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/DashboardOverviewTab.tsx",
+      "src/components/admin/tabs/ServicesTab.tsx"
+    ]
+  },
+  {
+    "name": "Search",
+    "kebabName": "search",
+    "category": "ui-navigation",
+    "title": "Kính lúp tìm kiếm",
+    "description": "Dùng cho Tìm kiếm dịch vụ, bác sĩ, sản phẩm",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Search -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-search\" aria-hidden=\"true\"><path d=\"m21 21-4.34-4.34\"></path><circle cx=\"11\" cy=\"11\" r=\"8\"></circle></svg>",
+    "usageCount": 23,
+    "filesUsed": [
+      "src/components/admin/AdminHeader.tsx",
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/IconPickerModal.tsx",
+      "src/components/admin/MediaLibraryModal.tsx",
+      "src/components/admin/tabs/ArticlesTab.tsx",
+      "src/components/admin/tabs/AuditLogTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/CaseStudiesTab.tsx",
+      "src/components/admin/tabs/DoctorsTab.tsx",
+      "src/components/admin/tabs/LeadsTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/admin/tabs/ServicesTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx",
+      "src/components/admin/tabs/TechnologiesTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/SearchBar.tsx",
+      "src/pages/CosmeceuticalsPage.tsx",
+      "src/pages/FAQPage.tsx",
+      "src/pages/NewsListPage.tsx",
+      "src/pages/NotFoundPage.tsx",
+      "src/pages/SearchPage.tsx"
+    ]
+  },
+  {
+    "name": "Send",
+    "kebabName": "send",
+    "category": "admin-system",
+    "title": "Send",
+    "description": "Icon Send trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Send -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-send\" aria-hidden=\"true\"><path d=\"M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z\"></path><path d=\"m21.854 2.147-10.94 10.939\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/pages/ContactPage.tsx"
+    ]
+  },
+  {
+    "name": "Server",
+    "kebabName": "server",
+    "category": "admin-system",
+    "title": "Server",
+    "description": "Icon Server trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Server -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-server\" aria-hidden=\"true\"><rect width=\"20\" height=\"8\" x=\"2\" y=\"2\" rx=\"2\" ry=\"2\"></rect><rect width=\"20\" height=\"8\" x=\"2\" y=\"14\" rx=\"2\" ry=\"2\"></rect><line x1=\"6\" x2=\"6.01\" y1=\"6\" y2=\"6\"></line><line x1=\"6\" x2=\"6.01\" y1=\"18\" y2=\"18\"></line></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/BackupRestoreTab.tsx"
+    ]
+  },
+  {
+    "name": "Settings",
+    "kebabName": "settings",
+    "category": "admin-system",
+    "title": "Bánh răng cài đặt",
+    "description": "Dùng cho Quản trị CMS LBC Admin",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Settings -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-settings\" aria-hidden=\"true\"><path d=\"M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915\"></path><circle cx=\"12\" cy=\"12\" r=\"3\"></circle></svg>",
+    "usageCount": 4,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/HeaderActions.tsx",
+      "src/components/layout/HeaderTopbar.tsx",
+      "src/components/layout/MainNavigation.tsx"
+    ]
+  },
+  {
+    "name": "Settings2",
+    "kebabName": "settings2",
+    "category": "admin-system",
+    "title": "Settings2",
+    "description": "Icon Settings2 trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Settings2 -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-settings-2\" aria-hidden=\"true\"><path d=\"M14 17H5\"></path><path d=\"M19 7h-9\"></path><circle cx=\"17\" cy=\"17\" r=\"3\"></circle><circle cx=\"7\" cy=\"7\" r=\"3\"></circle></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/SpecialtiesTab.tsx"
+    ]
+  },
+  {
+    "name": "Share",
+    "kebabName": "share",
+    "category": "ui-navigation",
+    "title": "Share",
+    "description": "Icon Share trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Share -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-share\" aria-hidden=\"true\"><path d=\"M12 2v13\"></path><path d=\"m16 6-4-4-4 4\"></path><path d=\"M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8\"></path></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/admin/tabs/BrandingIdentityTab.tsx"
+    ]
+  },
+  {
+    "name": "Share2",
+    "kebabName": "share2",
+    "category": "ui-navigation",
+    "title": "Share2",
+    "description": "Icon Share2 trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Share2 -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-share-2\" aria-hidden=\"true\"><circle cx=\"18\" cy=\"5\" r=\"3\"></circle><circle cx=\"6\" cy=\"12\" r=\"3\"></circle><circle cx=\"18\" cy=\"19\" r=\"3\"></circle><line x1=\"8.59\" x2=\"15.42\" y1=\"13.51\" y2=\"17.49\"></line><line x1=\"15.41\" x2=\"8.59\" y1=\"6.51\" y2=\"10.49\"></line></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/pages/NewsDetailPage.tsx",
+      "src/pages/ProductDetailPage.tsx"
+    ]
+  },
+  {
+    "name": "Shield",
+    "kebabName": "shield",
+    "category": "medical-clinical",
+    "title": "Khiên an toàn y tế",
+    "description": "Dùng cho Minh bạch công nghệ & pháp lý",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Shield -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-shield\" aria-hidden=\"true\"><path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\"></path></svg>",
+    "usageCount": 4,
+    "filesUsed": [
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/AboutSummarySection.tsx",
+      "src/data/siteConfig.ts"
+    ]
+  },
+  {
+    "name": "ShieldAlert",
+    "kebabName": "shield-alert",
+    "category": "medical-clinical",
+    "title": "Khiên cảnh báo đặc trị mụn",
+    "description": "Dùng cho Dịch vụ Trị mụn kháng trị",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ShieldAlert -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-shield-alert\" aria-hidden=\"true\"><path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\"></path><path d=\"M12 8v4\"></path><path d=\"M12 16h.01\"></path></svg>",
+    "usageCount": 8,
+    "filesUsed": [
+      "src/components/admin/tabs/LegalInfoTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/pages/ContactPage.tsx",
+      "src/pages/ServiceDetailPage.tsx",
+      "src/data/categories.ts",
+      "src/data/services.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "ShieldCheck",
+    "kebabName": "shield-check",
+    "category": "medical-clinical",
+    "title": "Khiên bảo chứng chuẩn y khoa",
+    "description": "Dùng cho Cam kết chính hãng, vô trùng",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ShieldCheck -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-shield-check\" aria-hidden=\"true\"><path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\"></path><path d=\"m9 12 2 2 4-4\"></path></svg>",
+    "usageCount": 29,
+    "filesUsed": [
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/BackupRestoreTab.tsx",
+      "src/components/admin/tabs/CaseStudiesTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/TechnologiesTab.tsx",
+      "src/components/common/CartDrawer.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/AboutSummarySection.tsx",
+      "src/components/home/BeforeAfterSection.tsx",
+      "src/components/home/BrandsSection.tsx",
+      "src/components/home/FeaturedProductsSection.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/pages/AboutPage.tsx",
+      "src/pages/BeforeAfterPage.tsx",
+      "src/pages/BookingPage.tsx",
+      "src/pages/BrandDetailPage.tsx",
+      "src/pages/CosmeceuticalsPage.tsx",
+      "src/pages/DoctorDetailPage.tsx",
+      "src/pages/FacilitiesPage.tsx",
+      "src/pages/FAQPage.tsx",
+      "src/pages/LicensesPage.tsx",
+      "src/pages/NewsDetailPage.tsx",
+      "src/pages/PolicyPage.tsx",
+      "src/pages/ProductDetailPage.tsx",
+      "src/pages/SpecialtyDetailPage.tsx",
+      "src/pages/TechnologiesListPage.tsx",
+      "src/pages/TechnologyDetailPage.tsx",
+      "src/data/coreValues.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "ShoppingBag",
+    "kebabName": "shopping-bag",
+    "category": "products-commerce",
+    "title": "Túi mua sắm dược mỹ phẩm",
+    "description": "Dùng cho Giỏ hàng & Danh mục sản phẩm",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: ShoppingBag -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-shopping-bag\" aria-hidden=\"true\"><path d=\"M16 10a4 4 0 0 1-8 0\"></path><path d=\"M3.103 6.034h17.794\"></path><path d=\"M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z\"></path></svg>",
+    "usageCount": 13,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/DashboardOverviewTab.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/common/CartDrawer.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/FeaturedProductsSection.tsx",
+      "src/components/layout/HeaderActions.tsx",
+      "src/pages/BrandDetailPage.tsx",
+      "src/pages/CosmeceuticalsPage.tsx",
+      "src/pages/ProductDetailPage.tsx",
+      "src/pages/SearchPage.tsx",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Sliders",
+    "kebabName": "sliders",
+    "category": "admin-system",
+    "title": "Sliders",
+    "description": "Icon Sliders trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Sliders -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-sliders-vertical lucide-sliders\" aria-hidden=\"true\"><path d=\"M10 8h4\"></path><path d=\"M12 21v-9\"></path><path d=\"M12 8V3\"></path><path d=\"M17 16h4\"></path><path d=\"M19 12V3\"></path><path d=\"M19 21v-5\"></path><path d=\"M3 14h4\"></path><path d=\"M5 10V3\"></path><path d=\"M5 21v-7\"></path></svg>",
+    "usageCount": 8,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/DashboardOverviewTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx",
+      "src/components/admin/tabs/PageBannersTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx"
+    ]
+  },
+  {
+    "name": "Smartphone",
+    "kebabName": "smartphone",
+    "category": "admin-system",
+    "title": "Smartphone",
+    "description": "Icon Smartphone trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Smartphone -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-smartphone\" aria-hidden=\"true\"><rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\"></rect><path d=\"M12 18h.01\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx"
+    ]
+  },
+  {
+    "name": "Sparkle",
+    "kebabName": "sparkle",
+    "category": "services-aesthetics",
+    "title": "Tia sáng laser thẩm mỹ",
+    "description": "Dùng cho Triệt lông, laser quang học",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Sparkle -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-sparkle\" aria-hidden=\"true\"><path d=\"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z\"></path></svg>",
+    "usageCount": 4,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/data/services.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Sparkles",
+    "kebabName": "sparkles",
+    "category": "services-aesthetics",
+    "title": "Lấp lánh trẻ hóa da",
+    "description": "Dùng cho Dược mỹ phẩm, trẻ hóa làn da",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Sparkles -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-sparkles lucide-stars\" aria-hidden=\"true\"><path d=\"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z\"></path><path d=\"M20 2v4\"></path><path d=\"M22 4h-4\"></path><circle cx=\"4\" cy=\"20\" r=\"2\"></circle></svg>",
+    "usageCount": 31,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/IconPickerModal.tsx",
+      "src/components/admin/MediaLibraryModal.tsx",
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/DashboardOverviewTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx",
+      "src/components/admin/tabs/PageBannersTab.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/common/PopupBanner.tsx",
+      "src/components/home/AboutSummarySection.tsx",
+      "src/components/home/BeforeAfterSection.tsx",
+      "src/components/home/FeaturedProductsSection.tsx",
+      "src/components/home/HeroSliderSection.tsx",
+      "src/components/home/TechnologiesSection.tsx",
+      "src/components/layout/AnnouncementBar.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/components/layout/SearchBar.tsx",
+      "src/pages/AboutPage.tsx",
+      "src/pages/BrandDetailPage.tsx",
+      "src/pages/ProductDetailPage.tsx",
+      "src/pages/SearchPage.tsx",
+      "src/pages/SpecialtyDetailPage.tsx",
+      "src/components/admin/tabs/ServicesTab.tsx",
+      "src/data/categories.ts",
+      "src/data/specialties.ts"
+    ]
+  },
+  {
+    "name": "Star",
+    "kebabName": "star",
+    "category": "products-commerce",
+    "title": "Ngôi sao đánh giá 5 sao",
+    "description": "Dùng cho Đánh giá chất lượng, hiệu quả",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Star -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-star\" aria-hidden=\"true\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"></path></svg>",
+    "usageCount": 4,
+    "filesUsed": [
+      "src/components/admin/tabs/ArticlesTab.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Stethoscope",
+    "kebabName": "stethoscope",
+    "category": "medical-clinical",
+    "title": "Ống nghe y khoa chuyên khoa",
+    "description": "Dùng cho Khoa Da liễu, hồ sơ Bác sĩ",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Stethoscope -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-stethoscope\" aria-hidden=\"true\"><path d=\"M11 2v2\"></path><path d=\"M5 2v2\"></path><path d=\"M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1\"></path><path d=\"M8 15a6 6 0 0 0 12 0v-3\"></path><circle cx=\"20\" cy=\"10\" r=\"2\"></circle></svg>",
+    "usageCount": 15,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/AboutSummarySection.tsx",
+      "src/components/home/NewsTabsSection.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/pages/AboutPage.tsx",
+      "src/pages/BookingPage.tsx",
+      "src/pages/NotFoundPage.tsx",
+      "src/pages/SearchPage.tsx",
+      "src/pages/ServiceDetailPage.tsx",
+      "src/pages/ServicesListPage.tsx",
+      "src/data/specialties.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Sun",
+    "kebabName": "sun",
+    "category": "services-aesthetics",
+    "title": "Ánh nắng mặt trời",
+    "description": "Dùng cho Chống nắng, làm sáng da",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Sun -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-sun\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 2v2\"></path><path d=\"M12 20v2\"></path><path d=\"m4.93 4.93 1.41 1.41\"></path><path d=\"m17.66 17.66 1.41 1.41\"></path><path d=\"M2 12h2\"></path><path d=\"M20 12h2\"></path><path d=\"m6.34 17.66-1.41 1.41\"></path><path d=\"m19.07 4.93-1.41 1.41\"></path></svg>",
+    "usageCount": 2,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "SunMedium",
+    "kebabName": "sun-medium",
+    "category": "services-aesthetics",
+    "title": "Mặt trời sắc tố & trị nám",
+    "description": "Dùng cho Dịch vụ Trị rối loạn sắc tố",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: SunMedium -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-sun-medium\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"></circle><path d=\"M12 3v1\"></path><path d=\"M12 20v1\"></path><path d=\"M3 12h1\"></path><path d=\"M20 12h1\"></path><path d=\"m18.364 5.636-.707.707\"></path><path d=\"m6.343 17.657-.707.707\"></path><path d=\"m5.636 5.636.707.707\"></path><path d=\"m17.657 17.657.707.707\"></path></svg>",
+    "usageCount": 5,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/data/categories.ts",
+      "src/data/services.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Syringe",
+    "kebabName": "syringe",
+    "category": "medical-clinical",
+    "title": "Kim tiêm vi điểm y khoa",
+    "description": "Dùng cho Tiêm vi điểm, Meso, Thẩm mỹ nội khoa",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Syringe -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-syringe\" aria-hidden=\"true\"><path d=\"m18 2 4 4\"></path><path d=\"m17 7 3-3\"></path><path d=\"M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5\"></path><path d=\"m9 11 4 4\"></path><path d=\"m5 19-3 3\"></path><path d=\"m14 4 6 6\"></path></svg>",
+    "usageCount": 4,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/data/services.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Tag",
+    "kebabName": "tag",
+    "category": "products-commerce",
+    "title": "Nhãn thương hiệu chính ngạch",
+    "description": "Dùng cho Phân loại thương hiệu",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Tag -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-tag\" aria-hidden=\"true\"><path d=\"M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z\"></path><circle cx=\"7.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"></circle></svg>",
+    "usageCount": 6,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/SearchBar.tsx",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  },
+  {
+    "name": "Trash2",
+    "kebabName": "trash2",
+    "category": "admin-system",
+    "title": "Trash2",
+    "description": "Icon Trash2 trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Trash2 -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-trash lucide-trash-2\" aria-hidden=\"true\"><path d=\"M10 11v6\"></path><path d=\"M14 11v6\"></path><path d=\"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6\"></path><path d=\"M3 6h18\"></path><path d=\"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\"></path></svg>",
+    "usageCount": 20,
+    "filesUsed": [
+      "src/components/admin/ConfirmationModal.tsx",
+      "src/components/admin/MediaLibraryModal.tsx",
+      "src/components/admin/tabs/ArticlesTab.tsx",
+      "src/components/admin/tabs/AuditLogTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/CaseStudiesTab.tsx",
+      "src/components/admin/tabs/DoctorsTab.tsx",
+      "src/components/admin/tabs/HeroBannersTab.tsx",
+      "src/components/admin/tabs/HomepageSectionsTab.tsx",
+      "src/components/admin/tabs/LeadsTab.tsx",
+      "src/components/admin/tabs/LocationsTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx",
+      "src/components/admin/tabs/NavigationTab.tsx",
+      "src/components/admin/tabs/ProductsTab.tsx",
+      "src/components/admin/tabs/ServicesTab.tsx",
+      "src/components/admin/tabs/SpecialtiesTab.tsx",
+      "src/components/admin/tabs/TechnologiesTab.tsx",
+      "src/components/common/CartDrawer.tsx",
+      "src/pages/DemoAdminPage.tsx"
+    ]
+  },
+  {
+    "name": "Truck",
+    "kebabName": "truck",
+    "category": "products-commerce",
+    "title": "Truck",
+    "description": "Icon Truck trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Truck -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-truck\" aria-hidden=\"true\"><path d=\"M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2\"></path><path d=\"M15 18H9\"></path><path d=\"M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14\"></path><circle cx=\"17\" cy=\"18\" r=\"2\"></circle><circle cx=\"7\" cy=\"18\" r=\"2\"></circle></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/components/home/CustomerUtilitiesSection.tsx",
+      "src/pages/PolicyPage.tsx",
+      "src/pages/ProductDetailPage.tsx"
+    ]
+  },
+  {
+    "name": "Type",
+    "kebabName": "type",
+    "category": "admin-system",
+    "title": "Type",
+    "description": "Icon Type trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Type -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-type\" aria-hidden=\"true\"><path d=\"M12 4v16\"></path><path d=\"M4 7V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2\"></path><path d=\"M9 20h6\"></path></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx"
+    ]
+  },
+  {
+    "name": "Upload",
+    "kebabName": "upload",
+    "category": "admin-system",
+    "title": "Upload",
+    "description": "Icon Upload trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Upload -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-upload\" aria-hidden=\"true\"><path d=\"M12 3v12\"></path><path d=\"m17 8-5-5-5 5\"></path><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"></path></svg>",
+    "usageCount": 7,
+    "filesUsed": [
+      "src/components/admin/IconPickerModal.tsx",
+      "src/components/admin/MediaLibraryModal.tsx",
+      "src/components/admin/tabs/AppearanceTab.tsx",
+      "src/components/admin/tabs/BackupRestoreTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/BrandingIdentityTab.tsx",
+      "src/components/admin/tabs/MediaLibraryTab.tsx"
+    ]
+  },
+  {
+    "name": "User",
+    "kebabName": "user",
+    "category": "ui-navigation",
+    "title": "User",
+    "description": "Icon User trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: User -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-user\" aria-hidden=\"true\"><path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"></path><circle cx=\"12\" cy=\"7\" r=\"4\"></circle></svg>",
+    "usageCount": 10,
+    "filesUsed": [
+      "src/components/admin/tabs/ArticlesTab.tsx",
+      "src/components/admin/tabs/AuditLogTab.tsx",
+      "src/components/admin/tabs/BannerTopHeaderTab.tsx",
+      "src/components/admin/tabs/LeadsTab.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/home/NewsTabsSection.tsx",
+      "src/components/layout/HeaderActions.tsx",
+      "src/pages/BookingPage.tsx",
+      "src/pages/NewsDetailPage.tsx",
+      "src/pages/SearchPage.tsx"
+    ]
+  },
+  {
+    "name": "UserCheck",
+    "kebabName": "user-check",
+    "category": "ui-navigation",
+    "title": "UserCheck",
+    "description": "Icon UserCheck trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: UserCheck -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-user-check\" aria-hidden=\"true\"><path d=\"m16 11 2 2 4-4\"></path><path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"></path><circle cx=\"9\" cy=\"7\" r=\"4\"></circle></svg>",
+    "usageCount": 5,
+    "filesUsed": [
+      "src/components/admin/tabs/ServicesTab.tsx",
+      "src/pages/LicensesPage.tsx",
+      "src/pages/NewsDetailPage.tsx",
+      "src/pages/NewsListPage.tsx",
+      "src/pages/SpecialtyDetailPage.tsx"
+    ]
+  },
+  {
+    "name": "UserPlus",
+    "kebabName": "user-plus",
+    "category": "ui-navigation",
+    "title": "UserPlus",
+    "description": "Icon UserPlus trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: UserPlus -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-user-plus\" aria-hidden=\"true\"><path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"></path><circle cx=\"9\" cy=\"7\" r=\"4\"></circle><line x1=\"19\" x2=\"19\" y1=\"8\" y2=\"14\"></line><line x1=\"22\" x2=\"16\" y1=\"11\" y2=\"11\"></line></svg>",
+    "usageCount": 1,
+    "filesUsed": [
+      "src/components/layout/HeaderActions.tsx"
+    ]
+  },
+  {
+    "name": "Users",
+    "kebabName": "users",
+    "category": "ui-navigation",
+    "title": "Users",
+    "description": "Icon Users trên giao diện website Lạc's Beauty Center",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Users -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-users\" aria-hidden=\"true\"><path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"></path><path d=\"M16 3.128a4 4 0 0 1 0 7.744\"></path><path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"></path><circle cx=\"9\" cy=\"7\" r=\"4\"></circle></svg>",
+    "usageCount": 3,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/tabs/DashboardOverviewTab.tsx",
+      "src/components/admin/tabs/DoctorsTab.tsx"
+    ]
+  },
+  {
+    "name": "X",
+    "kebabName": "x",
+    "category": "ui-navigation",
+    "title": "Đóng / Tắt cửa sổ",
+    "description": "Dùng cho Đóng popup, đóng modal",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: X -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-x\" aria-hidden=\"true\"><path d=\"M18 6 6 18\"></path><path d=\"m6 6 12 12\"></path></svg>",
+    "usageCount": 11,
+    "filesUsed": [
+      "src/components/admin/AdminSidebar.tsx",
+      "src/components/admin/ConfirmationModal.tsx",
+      "src/components/admin/IconPickerModal.tsx",
+      "src/components/admin/MediaLibraryModal.tsx",
+      "src/components/common/CartDrawer.tsx",
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/common/PopupBanner.tsx",
+      "src/components/layout/FloatingContact.tsx",
+      "src/components/layout/HeaderActions.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/components/layout/SearchBar.tsx"
+    ]
+  },
+  {
+    "name": "Zap",
+    "kebabName": "zap",
+    "category": "services-aesthetics",
+    "title": "Năng lượng nâng cơ cao cấp",
+    "description": "Dùng cho Nâng cơ RF Jovena, HIFU",
+    "isBrand": false,
+    "svg": "<!-- LBC Website Icon: Zap -->\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-zap\" aria-hidden=\"true\"><path d=\"M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z\"></path></svg>",
+    "usageCount": 4,
+    "filesUsed": [
+      "src/components/common/DynamicIcon.tsx",
+      "src/components/layout/MainNavigation.tsx",
+      "src/data/services.ts",
+      "src/components/admin/IconPickerModal.tsx"
+    ]
+  }
+]

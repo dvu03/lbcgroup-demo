@@ -31,7 +31,8 @@ export const initialServices: ServiceItem[] = [
     shortName: "Trị mụn",
     slug: "dieu-tri-mun",
     iconCode: "ICO-D1",
-    iconName: "ShieldAlert",
+    iconName: "dermatology-acne-care",
+    iconUrl: "/assets/icons/dermatology-services/dermatology-acne-care.svg",
     metaDescription: "Thăm khám và điều trị mụn theo phác đồ cá nhân hóa tại Phòng khám Da liễu Lạc's Beauty Center, Cần Thơ – bác sĩ trực tiếp đánh giá và theo dõi.",
     suitableFor: [
       "Mụn bọc, mụn viêm sưng đỏ, mụn mủ dai dẳng",
@@ -76,7 +77,8 @@ Mỗi khách hàng được cấp một bộ dụng cụ tiệt trùng riêng bi
     shortName: "Trị sẹo",
     slug: "dieu-tri-seo",
     iconCode: "ICO-D2",
-    iconName: "Activity",
+    iconName: "dermatology-scar-repair",
+    iconUrl: "/assets/icons/dermatology-services/dermatology-scar-repair.svg",
     metaDescription: "Điều trị sẹo rỗ, sẹo đáy nhọn, sẹo lượn sóng bằng kỹ thuật bóc tách đáy sẹo kết hợp Laser vi điểm tại Lạc's Beauty Center Cần Thơ.",
     suitableFor: [
       "Sẹo rỗ lâu năm do di chứng mụn bọc, mụn nang để lại",
@@ -112,7 +114,8 @@ Sẹo rỗ hình thành do cấu trúc collagen và elastin bị phá hủy nghi
     shortName: "Trị nám – tàn nhang",
     slug: "dieu-tri-nam-tan-nhang",
     iconCode: "ICO-D3",
-    iconName: "SunMedium",
+    iconName: "dermatology-pigment-sun",
+    iconUrl: "/assets/icons/dermatology-services/dermatology-pigment-sun.svg",
     metaDescription: "Phác đồ điều trị nám má, tàn nhang, đồi mồi an toàn bằng công nghệ Laser chọn lọc kết hợp phục hồi màng đáy tại Cần Thơ.",
     suitableFor: [
       "Nám mảng, nám chân sâu, nám hỗn hợp sau sinh hoặc do nội tiết",
@@ -147,7 +150,8 @@ Sẹo rỗ hình thành do cấu trúc collagen và elastin bị phá hủy nghi
     shortName: "Trị rụng tóc",
     slug: "dieu-tri-rung-toc",
     iconCode: "ICO-D4",
-    iconName: "Feather",
+    iconName: "dermatology-hair-scalp",
+    iconUrl: "/assets/icons/dermatology-services/dermatology-hair-scalp.svg",
     metaDescription: "Thăm khám nguyên nhân rụng tóc từng mảng, hói đầu và liệu pháp Mesotherapy kích thích nang tóc tại Lạc's Beauty Center Cần Thơ.",
     suitableFor: [
       "Rụng tóc sau sinh, rụng tóc do stress hoặc rối loạn nội tiết",
@@ -180,7 +184,8 @@ Rụng tóc cần được can thiệp sớm khi nang tóc còn hoạt động. 
     shortName: "Thẩm mỹ nội khoa",
     slug: "tham-my-noi-khoa",
     iconCode: "ICO-D5",
-    iconName: "Syringe",
+    iconName: "dermatology-meso-injection",
+    iconUrl: "/assets/icons/dermatology-services/dermatology-meso-injection.svg",
     metaDescription: "Dịch vụ thẩm mỹ nội khoa, tiêm vi điểm Mesotherapy, tiêm BAP, trẻ hóa da tự nhiên không phẫu thuật do bác sĩ da liễu trực tiếp thực hiện.",
     suitableFor: [
       "Làn da lão hóa, khô sần, chùng nhão, nếp nhăn li ti",
@@ -213,7 +218,8 @@ Mọi thủ thuật thẩm mỹ nội khoa tại Lạc's Beauty Center đều do
     shortName: "Nâng cơ",
     slug: "nang-co",
     iconCode: "ICO-D6",
-    iconName: "Zap",
+    iconName: "dermatology-lifting-contour",
+    iconUrl: "/assets/icons/dermatology-services/dermatology-lifting-contour.svg",
     metaDescription: "Nâng cơ thon gọn hàm, xóa nhăn trẻ hóa da bằng công nghệ sóng RF Jovena và HIFU không xâm lấn tại Lạc's Beauty Center Cần Thơ.",
     suitableFor: [
       "Khách hàng từ 28 tuổi trở lên có dấu hiệu chảy xệ cơ mặt, nọng cằm",
@@ -246,7 +252,8 @@ Sự kết hợp giữa công nghệ sóng RF đơn/đa cực Jovena và sóng s
     shortName: "Chăm sóc da",
     slug: "cham-soc-da-chuyen-sau",
     iconCode: "ICO-D7",
-    iconName: "HeartHandshake",
+    iconName: "dermatology-skin-facial",
+    iconUrl: "/assets/icons/dermatology-services/dermatology-skin-facial.svg",
     metaDescription: "Dịch vụ chăm sóc da chuyên sâu chuẩn y khoa, cấp ẩm đa tầng và phục hồi da nhạy cảm bằng dược mỹ phẩm chính hãng tại Cần Thơ.",
     suitableFor: [
       "Da mệt mỏi, khô ráp, thiếu nước do môi trường điều hòa hoặc nắng gió",
@@ -279,7 +286,8 @@ Không gian phòng khám thanh lịch, hương thơm tinh dầu dịu nhẹ cùn
     shortName: "Bệnh da khác",
     slug: "benh-da-lieu-khac",
     iconCode: "ICO-D8",
-    iconName: "Microscope",
+    iconName: "dermatology-exam-diagnosis",
+    iconUrl: "/assets/icons/dermatology-services/dermatology-exam-diagnosis.svg",
     metaDescription: "Khám và điều trị các bệnh da liễu mạn tính: viêm da cơ địa, viêm da tiết bã, mề đay, vảy nến, chàm da tại Phòng khám Lạc's Beauty Center Cần Thơ.",
     suitableFor: [
       "Viêm da tiếp xúc, viêm da cơ địa ngứa ngáy, nứt nẻ chảy dịch",
@@ -313,7 +321,8 @@ Chúng tôi thấu hiểu nỗi khổ của bệnh nhân mắc các bệnh da li
     shortName: "Triệt lông",
     slug: "triet-long",
     iconCode: "ICO-D9",
-    iconName: "Sparkle",
+    iconName: "dermatology-laser-hair-removal",
+    iconUrl: "/assets/icons/dermatology-services/dermatology-laser-hair-removal.svg",
     metaDescription: "Triệt lông nách, tay chân, bikini bằng công nghệ Diode Laser làm mát thông minh không đau rát tại Lạc's Beauty Center Cần Thơ.",
     suitableFor: [
       "Khách hàng có nhu cầu dọn sạch nang lông vùng nách, mép, tay, chân, bikini",
